@@ -1,0 +1,9 @@
+*~
+.*.swp
+*.kate-swp
+.classpath
+.idea
+.metadata*
+.project
+.settings
+*.bak
