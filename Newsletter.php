@@ -20,13 +20,12 @@ $wgExtensionCredits[ 'other' ][ ] = array(
 	'author'         => array( 'Siebrand Mazeland', ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Newsletter',
 	'descriptionmsg' => 'newsletter-desc',
-	'version'        => '1.0.0',
+	'version'        => '1.1.0',
 );
 
-$dir = __DIR__;
+$wgMessagesDirs[''] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['Newsletter'] = __DIR__ . '/Newsletter.i18n.php';
 
-$wgExtensionMessagesFiles['Newsletter'] = $dir . '/Newsletter.i18n.php';
-
-$wgAutoloadClasses['NewsletterPreferences'] = $dir . '/Newsletter.hooks.php';
+$wgAutoloadClasses['NewsletterPreferences'] = __DIR__ . '/Newsletter.hooks.php';
 
 $wgHooks['GetPreferences'][] = 'NewsletterPreferences::onGetPreferences';
