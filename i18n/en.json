@@ -1,7 +1,12 @@
 {
-    "@metadata": {
-        "authors": []
-    },
-    "newsletter-desc": "Adds a preference for users to subscribe to a newsletter",
-    "newsletter-pref-newsletter": "Send me email newsletters"
+	"@metadata": {
+		"authors": [
+			"Tina Johnson"
+		]
+	},
+	"newsletter-desc": "Adds a preference for users to subscribe to a newsletter",
+	"newslettercreate": "Create newsletters",
+	"newslettermanage": "Manage newsletters",
+	"announceissue-section": "Announce new issue",
+	"createnewsletter-section": "Create newsletter"
 }

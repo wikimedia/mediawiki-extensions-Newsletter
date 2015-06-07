@@ -17,7 +17,7 @@ EOT;
 $wgExtensionCredits[ 'other' ][ ] = array(
 	'path'           => __FILE__,
 	'name'           => 'Newsletter',
-	'author'         => array( 'Siebrand Mazeland', ),
+	'author'         => array( 'Siebrand Mazeland', 'Tina Johnson' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Newsletter',
 	'descriptionmsg' => 'newsletter-desc',
 	'version'        => '1.2.0',
@@ -25,6 +25,13 @@ $wgExtensionCredits[ 'other' ][ ] = array(
 
 $wgMessagesDirs['Newsletter'] = __DIR__ . '/i18n';
 
-$wgAutoloadClasses['NewsletterPreferences'] = __DIR__ . '/Newsletter.hooks.php';
+$wgAutoloadClasses['NewsletterHooks'] = __DIR__ . '/Newsletter.hooks.php';
+$wgAutoloadClasses['SpecialNewsletterCreate'] = __DIR__ . '/includes/SpecialNewsletterCreate.php';
+$wgAutoloadClasses['SpecialNewsletterManage'] = __DIR__ . '/includes/SpecialNewsletterManage.php';
 
-$wgHooks['GetPreferences'][] = 'NewsletterPreferences::onGetPreferences';
+$wgSpecialPages['NewsletterCreate'] = 'SpecialNewsletterCreate';
+$wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
+
+//Register Hooks
+$wgHooks['GetPreferences'][] = 'NewsletterHooks::onGetPreferences';
+$wgHooks['LoadExtensionSchemaUpdates'][] = 'NewsletterHooks::onLoadExtensionSchemaUpdates';

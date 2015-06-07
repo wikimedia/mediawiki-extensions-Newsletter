@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tina Johnson"
+		]
+	},
+	"newsletter-desc": "{{desc|name=Newsletter|url=https://www.mediawiki.org/wiki/Extension:Newsletter}}",
+	"newslettercreate": "Name of special page which creates newsletters as seen in URLs and links",
+	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
+	"announceissue-section": "Section header of [[Special:NewsletterManage]]",
+	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]"
+}
