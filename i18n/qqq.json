@@ -8,5 +8,8 @@
 	"newslettercreate": "Name of special page which creates newsletters as seen in URLs and links",
 	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
 	"announceissue-section": "Section header of [[Special:NewsletterManage]]",
-	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]"
+	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]",
+	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
+	"issue-announce-confirmation": "Confirmation message displayed after announcing a new issue",
+	"requiredlogintext": "Error message to be shown when the user is not logged in"
 }

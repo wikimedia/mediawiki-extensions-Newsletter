@@ -10,6 +10,8 @@ class SpecialNewsletterCreate extends SpecialPage {
 
 	public function execute( $par ) {
 		$this->setHeaders();
+		$output = $this->getOutput();
+		$this->requireLogin( 'requiredlogintext' );
 		$createNewsletterArray = $this->getCreateFormFields();
 
 		# Create HTML forms
@@ -19,6 +21,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 		$createNewsletterForm->setWrapperLegendMsg( 'createnewsletter-section' );
 		# Show HTML forms
 		$createNewsletterForm->show();
+		$output->returnToMain();
 	}
 
 	/**
@@ -70,7 +73,9 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 * @param array $formData The data entered by user in the form
 	 * @return bool
 	 */
-	public function onSubmitNewsletter( array $formData ) {
+	static function onSubmitNewsletter( array $formData ) {
+		global $wgOut;
+
 		if ( isset( $formData['mainpage'] ) ) {
 			$page = Title::newFromText( $formData['mainpage'] );
 			$pageId = $page->getArticleId();
@@ -89,6 +94,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 				'nl_publisher_id' => $formData['publisher']
 			);
 			$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			$wgOut->addWikiMsg( 'newsletter-create-confirmation' );
 
 			return true;
 		}
