@@ -55,9 +55,10 @@ class SpecialNewsletterCreate extends SpecialPage {
 				'options' => array(
 					'weekly' => 'weekly',
 					'monthly' => 'monthly',
+					'quarterly' => 'quarterly'
 				),
 				'size' => 18, # size of 'other' field
-				'maxlength' => 10
+				'maxlength' => 50
 			),
 			'publisher' => array(
 				'type' => 'hidden',
@@ -93,7 +94,11 @@ class SpecialNewsletterCreate extends SpecialPage {
 				'nl_frequency' => $formData['frequency'],
 				'nl_publisher_id' => $formData['publisher']
 			);
-			$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			try {
+				$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			} catch ( DBQueryError $e ) {
+				return 'A newsletter with the same name already exists. Try again with another name';
+			}
 			$wgOut->addWikiMsg( 'newsletter-create-confirmation' );
 
 			return true;
