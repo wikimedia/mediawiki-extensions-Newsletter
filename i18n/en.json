@@ -11,5 +11,14 @@
 	"createnewsletter-section": "Create newsletter",
 	"newsletter-create-confirmation": "Good job! You just created a new newsletter.",
 	"issue-announce-confirmation": "Good job! You just announced a new issue of your newsletter.",
-	"requiredlogintext": "Please login to access this page"
+	"requiredlogintext": "Please login to access this page",
+	"newsletters": "Subscribe or unsubscribe newsletters",
+	"newsletter-subscribe-section": "Subscribe newsletters",
+	"newsletter-unsubscribe-section": "Unsubscribe newsletters",
+	"newsletter-subscribe-confirmation": "You are now subscribed to the newsletter.",
+	"newsletter-unsubscribe-confirmation": "You are now unsubscribed from the newsletter.",
+	"subscribe-button-label": "Subscribe",
+	"unsubscribe-button-label": "Unsubscribe",
+	"available-newsletters-field-label": "Available newsletters",
+	"subscribed-newsletters-field-label": "Subscribed newsletters"
 }

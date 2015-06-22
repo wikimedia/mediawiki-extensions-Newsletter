@@ -28,9 +28,11 @@ $wgMessagesDirs['Newsletter'] = __DIR__ . '/i18n';
 $wgAutoloadClasses['NewsletterHooks'] = __DIR__ . '/Newsletter.hooks.php';
 $wgAutoloadClasses['SpecialNewsletterCreate'] = __DIR__ . '/includes/SpecialNewsletterCreate.php';
 $wgAutoloadClasses['SpecialNewsletterManage'] = __DIR__ . '/includes/SpecialNewsletterManage.php';
+$wgAutoloadClasses['SpecialNewsletters'] = __DIR__ . '/includes/SpecialNewsletters.php';
 
 $wgSpecialPages['NewsletterCreate'] = 'SpecialNewsletterCreate';
 $wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
+$wgSpecialPages['Newsletters'] = 'SpecialNewsletters';
 
 //Register Hooks
 $wgHooks['GetPreferences'][] = 'NewsletterHooks::onGetPreferences';

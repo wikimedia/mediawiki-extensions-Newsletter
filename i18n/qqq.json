@@ -11,5 +11,14 @@
 	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"issue-announce-confirmation": "Confirmation message displayed after announcing a new issue",
-	"requiredlogintext": "Error message to be shown when the user is not logged in"
+	"requiredlogintext": "Error message to be shown when the user is not logged in",
+	"newsletters": "Name of special page for user to subscribe to or unsubscribe from newsletters",
+	"newsletter-subscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to subscribe.",
+	"newsletter-unsubscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to un-subscribe.",
+	"newsletter-subscribe-confirmation": "Confirmation message displayed after subscribing to a newsletter",
+	"newsletter-unsubscribe-confirmation": "Confirmation message displayed after un-subscribing from a newsletter",
+	"subscribe-button-label": "Label of submit button of HTML form which allows users to subscribe.",
+	"unsubscribe-button-label": "Label of submit button of HTML form which allows users to un-subscribe.",
+	"available-newsletters-field-label": "Label of HTML form field which lists all available newsletters in wiki",
+	"subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to."
 }
