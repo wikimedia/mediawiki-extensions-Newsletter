@@ -35,5 +35,4 @@ $wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
 $wgSpecialPages['Newsletters'] = 'SpecialNewsletters';
 
 //Register Hooks
-$wgHooks['GetPreferences'][] = 'NewsletterHooks::onGetPreferences';
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'NewsletterHooks::onLoadExtensionSchemaUpdates';
