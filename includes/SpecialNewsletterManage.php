@@ -70,8 +70,6 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * @return bool
 	 */
 	static function onSubmitIssue( $formData ) {
-		global $wgOut;
-
 		if ( isset( $formData['issue-page'] ) && isset( $formData['issue-newsletter'] ) ) {
 			$issuePage = Title::newFromText( $formData['issue-page'] );
 			$pageId = $issuePage->getArticleId();
@@ -99,7 +97,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'issue_publisher_id' => $formData['publisher']
 			);
 			$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
-			$wgOut->addWikiMsg( 'issue-announce-confirmation' );
+			RequestContext::getMain()->getOutput()->addWikiMsg( 'issue-announce-confirmation' );
 
 			return true;
 		}

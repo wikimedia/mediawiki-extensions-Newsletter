@@ -75,8 +75,6 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 * @return bool
 	 */
 	static function onSubmitNewsletter( array $formData ) {
-		global $wgOut;
-
 		if ( isset( $formData['mainpage'] ) ) {
 			$page = Title::newFromText( $formData['mainpage'] );
 			$pageId = $page->getArticleId();
@@ -99,7 +97,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 			} catch ( DBQueryError $e ) {
 				return 'A newsletter with the same name already exists. Try again with another name';
 			}
-			$wgOut->addWikiMsg( 'newsletter-create-confirmation' );
+			RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 
 			return true;
 		}
