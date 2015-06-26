@@ -42,6 +42,7 @@ class SpecialNewsletters extends SpecialPage {
 			__METHOD__
 		);
 		$newsletterNames = array();
+		$defaultOption = array( '' => null );
 		foreach( $res as $row ) {
 			$newsletterNames[$row->nl_name] = $row->nl_name;
 		}
@@ -49,9 +50,9 @@ class SpecialNewsletters extends SpecialPage {
 		return array(
 			'available-newsletters' => array(
 				'required' => true,
-				'type' => 'selectorother',
+				'type' => 'select',
 				'label' => $this->msg( 'available-newsletters-field-label' )->text(),
-				'options' => $newsletterNames,
+				'options' => array_merge( $defaultOption, $newsletterNames ),
 			),
 			'subscriber' => array(
 				'type' => 'hidden',
@@ -123,6 +124,7 @@ class SpecialNewsletters extends SpecialPage {
 		}
 
 		$newsletterNames = array();
+		$defaultOption = array( '' => null );
 		//get newsletter names
 		foreach ( $newsletterIds as $value ) {
 			$result = $dbr->select(
@@ -138,9 +140,9 @@ class SpecialNewsletters extends SpecialPage {
 		return array(
 			'subscribed-newsletters' => array(
 				'required' => true,
-				'type' => 'selectorother',
+				'type' => 'select',
 				'label' => $this->msg( 'subscribed-newsletters-field-label' )->text(),
-				'options' => $newsletterNames
+				'options' => array_merge( $defaultOption, $newsletterNames )
 			),
 			'un-subscriber' => array(
 				'type' => 'hidden',
