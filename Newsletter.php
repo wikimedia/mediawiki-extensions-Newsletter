@@ -29,6 +29,7 @@ $wgAutoloadClasses['NewsletterHooks'] = __DIR__ . '/Newsletter.hooks.php';
 $wgAutoloadClasses['SpecialNewsletterCreate'] = __DIR__ . '/includes/SpecialNewsletterCreate.php';
 $wgAutoloadClasses['SpecialNewsletterManage'] = __DIR__ . '/includes/SpecialNewsletterManage.php';
 $wgAutoloadClasses['SpecialNewsletters'] = __DIR__ . '/includes/SpecialNewsletters.php';
+$wgAutoloadClasses['EchoNewsletterFormatter'] = __DIR__ . '/includes/EchoNewsletterFormatter.php';
 
 $wgSpecialPages['NewsletterCreate'] = 'SpecialNewsletterCreate';
 $wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
@@ -36,3 +37,5 @@ $wgSpecialPages['Newsletters'] = 'SpecialNewsletters';
 
 //Register Hooks
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'NewsletterHooks::onLoadExtensionSchemaUpdates';
+$wgHooks['BeforeCreateEchoEvent'][] = 'NewsletterHooks::onBeforeCreateEchoEvent';
+$wgHooks['EchoGetDefaultNotifiedUsers'][] = 'NewsletterHooks::onEchoGetDefaultNotifiedUsers';

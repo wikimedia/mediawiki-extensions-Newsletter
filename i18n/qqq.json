@@ -20,5 +20,10 @@
 	"subscribe-button-label": "Label of submit button of HTML form which allows users to subscribe.",
 	"unsubscribe-button-label": "Label of submit button of HTML form which allows users to un-subscribe.",
 	"available-newsletters-field-label": "Label of HTML form field which lists all available newsletters in wiki",
-	"subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to."
+	"subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to.",
+	"echo-category-title-newsletter": "Title of the notification category used by Newsletter extension.\n{{Related|Echo-category-title}}",
+	"echo-pref-tooltip-newsletter": "Short description of the newsletter notification category.\n{{Related|Echo-pref-tooltip}}",
+	"notification-newsletter-title": "Title message of Echo notification to notify a user of a new issue from a newsletter he/she has subscribed to. Parameters:\n* $1 is is the name of the newsletter.",
+	"notification-newsletter-flyout": "Flyout message of Echo notification to notify the user of a new issue from a newsletter he/she has subscribed to. Parameters:\n* $1 is the name of the newsletter.",
+	"notification-link-text-new-issue": "Label of the primary link of the notification-newsletter-flyout, which on clicking navigates the user to the newly announced issue of a newsletter."
 }

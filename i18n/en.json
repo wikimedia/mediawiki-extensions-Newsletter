@@ -20,5 +20,10 @@
 	"subscribe-button-label": "Subscribe",
 	"unsubscribe-button-label": "Unsubscribe",
 	"available-newsletters-field-label": "Available newsletters",
-	"subscribed-newsletters-field-label": "Subscribed newsletters"
+	"subscribed-newsletters-field-label": "Subscribed newsletters",
+	"echo-category-title-newsletter": "Newsletters",
+	"echo-pref-tooltip-newsletter": "Notify me when any of the newsletters to which I have subscribed to announces a new issue.",
+	"notification-newsletter-title": "$1 has announced an issue",
+	"notification-newsletter-flyout": "$1 has announced a new issue",
+	"notification-link-text-new-issue": "View new issue"
 }

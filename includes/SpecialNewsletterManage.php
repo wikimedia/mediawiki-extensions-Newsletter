@@ -73,6 +73,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		if ( isset( $formData['issue-page'] ) && isset( $formData['issue-newsletter'] ) ) {
 			$issuePage = Title::newFromText( $formData['issue-page'] );
 			$pageId = $issuePage->getArticleId();
+			$pageNamepace = $issuePage->getNamespace();
 			//Array index is newsletter-id for selected newsletter in newsletterNames[] above
 			$newsletterId = $formData['issue-newsletter'];
 		} else {
@@ -98,6 +99,28 @@ class SpecialNewsletterManage extends SpecialPage {
 			);
 			$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
 			RequestContext::getMain()->getOutput()->addWikiMsg( 'issue-announce-confirmation' );
+			//trigger notifications
+			$res = $dbr->select(
+				'nl_newsletters',
+				array( 'nl_name' ),
+				array( 'nl_id' => $newsletterId ),
+				__METHOD__,
+				array()
+			);
+			foreach( $res as $row ) {
+				$newsletterName = $row->nl_name;
+			}
+			if ( class_exists( 'EchoEvent' ) ) {
+				EchoEvent::create( array(
+					'type' => 'subscribe-newsletter',
+					'extra' => array(
+						'newsletter' => $newsletterName,
+						'newsletterId' => $newsletterId,
+						'issuePageTitle' => $formData['issue-page'],
+						'issuePageNamespace' => $pageNamepace
+					),
+				));
+			}
 
 			return true;
 		}
