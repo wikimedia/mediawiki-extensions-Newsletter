@@ -11,7 +11,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
-		$this->requireLogin( 'requiredlogintext' );
+		$this->requireLogin();
 		$createNewsletterArray = $this->getCreateFormFields();
 
 		# Create HTML forms

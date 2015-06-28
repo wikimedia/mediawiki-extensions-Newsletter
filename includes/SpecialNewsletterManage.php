@@ -11,7 +11,7 @@ class SpecialNewsletterManage extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
-		$this->requireLogin( 'requiredlogintext' );
+		$this->requireLogin();
 		$announceIssueArray = $this->getAnnounceFormFields();
 
 		# Create HTML forms

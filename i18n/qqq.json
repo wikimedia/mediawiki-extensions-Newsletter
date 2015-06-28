@@ -11,7 +11,6 @@
 	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"issue-announce-confirmation": "Confirmation message displayed after announcing a new issue",
-	"requiredlogintext": "Error message to be shown when the user is not logged in",
 	"newsletters": "Name of special page for user to subscribe to or unsubscribe from newsletters",
 	"newsletter-subscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to subscribe.",
 	"newsletter-unsubscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to un-subscribe.",
