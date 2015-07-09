@@ -30,10 +30,29 @@ $wgAutoloadClasses['SpecialNewsletterCreate'] = __DIR__ . '/includes/SpecialNews
 $wgAutoloadClasses['SpecialNewsletterManage'] = __DIR__ . '/includes/SpecialNewsletterManage.php';
 $wgAutoloadClasses['SpecialNewsletters'] = __DIR__ . '/includes/SpecialNewsletters.php';
 $wgAutoloadClasses['EchoNewsletterFormatter'] = __DIR__ . '/includes/EchoNewsletterFormatter.php';
+$wgAutoloadClasses['NewsletterTablePager'] = __DIR__ . '/includes/SpecialNewsletters.php';
+$wgAutoloadClasses['ApiNewsletter'] = __DIR__ . '/includes/ApiNewsletter.php';
 
 $wgSpecialPages['NewsletterCreate'] = 'SpecialNewsletterCreate';
 $wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
 $wgSpecialPages['Newsletters'] = 'SpecialNewsletters';
+
+$wgAPIModules['newsletterapi'] = 'ApiNewsletter';
+
+$wgResourceModules['ext.newsletter'] = array(
+	'scripts' => 'modules/ext.newsletter.js',
+	'dependencies' => array(
+		'jquery.cookie',
+		'jquery.tabIndex',
+		'mediawiki.jqueryMsg',
+		'mediawiki.api',
+		'jquery.confirmable'
+	),
+
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'Newsletter',
+
+);
 
 //Register Hooks
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'NewsletterHooks::onLoadExtensionSchemaUpdates';
