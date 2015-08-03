@@ -90,14 +90,36 @@ class SpecialNewsletterCreate extends SpecialPage {
 				'nl_desc' => $formData['description'],
 				'nl_main_page_id' => $pageId,
 				'nl_frequency' => $formData['frequency'],
-				'nl_publisher_id' => $formData['publisher']
+				'nl_owner_id' => $formData['publisher']
 			);
+
 			try {
 				$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 			} catch ( DBQueryError $e ) {
 				return 'A newsletter with the same name already exists. Try again with another name';
 			}
 			RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+			//Add newsletter creator as publisher
+			$dbr = wfGetDB( DB_SLAVE );
+			$res = $dbr->select(
+				'nl_newsletters',
+				array( 'nl_id' ),
+				array(
+					'nl_name' => $formData['name']
+				),
+				__METHOD__
+			);
+
+			$newsletterId = array();
+			foreach ( $res as $row ) {
+				$newsletterId = $row->nl_id;
+			}
+
+			$pubRowData = array(
+				'newsletter_id' => $newsletterId,
+				'publisher_id' => $formData['publisher']
+			);
+			$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
 
 			return true;
 		}

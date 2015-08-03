@@ -7,7 +7,8 @@
 	"newsletter-desc": "Adds a preference for users to subscribe to a newsletter",
 	"newslettercreate": "Create newsletters",
 	"newslettermanage": "Manage newsletters",
-	"announceissue-section": "Announce new issue",
+	"announceissueform-announceissue-section": "Announce new issue",
+	"announceissueform-addpublisher-section": "Add Publishers",
 	"createnewsletter-section": "Create newsletter",
 	"newsletter-create-confirmation": "Good job! You just created a new newsletter.",
 	"issue-announce-confirmation": "Good job! You just announced a new issue of your newsletter.",
@@ -28,5 +29,6 @@
 	"newsletter-header-name": "Name of Newsletter",
 	"newsletter-header-description": "Description",
 	"newsletter-header-action": "Subscribed ?",
-	"newsletter-header-subscriber_count": "Subscriber count"
+	"newsletter-header-subscriber_count": "Subscriber count",
+	"new-publisher-confirmation": "New publisher added"
 }

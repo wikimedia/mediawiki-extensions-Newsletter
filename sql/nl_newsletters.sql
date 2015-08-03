@@ -7,5 +7,5 @@ CREATE TABLE /*_*/nl_newsletters(
 	nl_desc VARCHAR (256),
 	nl_main_page_id int NOT NULL,
 	nl_frequency VARCHAR (50) NOT NULL,
-	nl_publisher_id int NOT NULL
+	nl_owner_id int NOT NULL
 )/*$wgDBTableOptions*/;
