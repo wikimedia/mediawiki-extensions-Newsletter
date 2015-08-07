@@ -9,6 +9,7 @@
 	"newslettermanage": "Manage newsletters",
 	"announceissueform-announceissue-section": "Announce new issue",
 	"announceissueform-addpublisher-section": "Add Publishers",
+	"announceissueform-removepublisher-section": "Remove Publishers",
 	"createnewsletter-section": "Create newsletter",
 	"newsletter-create-confirmation": "Good job! You just created a new newsletter.",
 	"issue-announce-confirmation": "Good job! You just announced a new issue of your newsletter.",
@@ -30,5 +31,6 @@
 	"newsletter-header-description": "Description",
 	"newsletter-header-action": "Subscribed ?",
 	"newsletter-header-subscriber_count": "Subscriber count",
-	"new-publisher-confirmation": "New publisher added"
+	"new-publisher-confirmation": "A new publisher has just been added to your newsletter !",
+	"remove-publisher-confirmation": "A publisher was removed from your newsletter."
 }

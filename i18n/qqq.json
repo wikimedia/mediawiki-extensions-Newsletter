@@ -28,5 +28,7 @@
 	"newsletter-header-name": "Label of the first column of table in [[Special:Newsletters]] which lists the names of newsletters",
 	"newsletter-header-description": "Label of the second column of table in [[Special:Newsletters]] which displays a description about the newsletter",
 	"newsletter-header-subscriber_count": "Label of the third column of table in [[Special:Newsletters]] which gives the subscriber count of corresponding newsletter",
-	"newsletter-header-action": "Label of the fourth column of table in [[Special:Newsletters]] which provides radio buttons to subscribe/unsubscribe newsletters"
+	"newsletter-header-action": "Label of the fourth column of table in [[Special:Newsletters]] which provides radio buttons to subscribe/unsubscribe newsletters",
+	"new-publisher-confirmation": "Confirmation message displayed after a new publisher is added for a newsletter through the [[Special:NewsletterManage]] page",
+	"remove-publisher-confirmation": "Confirmation message displayed after a publisher of a newsletter is removed through the [[Special:NewsletterManage]] page"
 }

@@ -31,6 +31,7 @@ class SpecialNewsletterManage extends SpecialPage {
 	protected function getAnnounceFormFields() {
 		$newsletterNames = array();
 		$newsletterIds = array();
+		$ownedNewsletter = array();
 		$defaultOption = array('' => null);
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
@@ -52,9 +53,33 @@ class SpecialNewsletterManage extends SpecialPage {
 				__METHOD__
 			);
 
-			foreach ($resl as $row) {
+			foreach ( $resl as $row ) {
 				$newsletterNames[$row->nl_name] = $row->nl_id;
 			}
+		}
+
+		$newsletters = array();
+		$result = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_name','nl_id' ),
+			array( 'nl_owner_id' => $this->getUser()->getId() ),
+			__METHOD__
+		);
+		foreach ( $result as $row ) {
+			$newsletters[$row->nl_name] = $row->nl_id;
+		}
+		//Get newsletters owned by the logged in user
+		$dbr = wfGetDB( DB_SLAVE );
+		$query = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_name', 'nl_id'),
+			array( 'nl_owner_id' => $this->getUser()->getId() ),
+			__METHOD__,
+			array()
+		);
+
+		foreach ($query as $row) {
+			$ownedNewsletter[$row->nl_name] = $row->nl_id;
 		}
 
 		return array(
@@ -77,12 +102,23 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'addpublisher-section',
 				'label' => 'Name of newsletter',
-				'options' => array_merge( $defaultOption, $newsletterNames )
+				'options' => array_merge( $defaultOption, $ownedNewsletter ),
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
 				'type' => 'text',
 				'label' => "Username",
+			),
+			'remove-publisher-newsletter' => array(
+				'type' => 'select',
+				'section' => 'removepublisher-section',
+				'options' => array_merge( $defaultOption,$newsletters ),
+				'label' => "Name of newsletter"
+			),
+			'remove-publisher-name' => array(
+				'type' => 'text',
+				'section' => 'removepublisher-section',
+				'label' => "Username"
 			)
 		);
 	}
@@ -130,7 +166,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					array()
 				);
 
-				$newsletterName = array();
+				$newsletterName = null;
 				foreach( $res as $row ) {
 					$newsletterName = $row->nl_name;
 				}
@@ -156,22 +192,61 @@ class SpecialNewsletterManage extends SpecialPage {
 			$pubNewsletterId = $formData['newsletter-name'];
 			$user = User::newFromName( $formData['publisher-name'] );
 			if ( $user->isEmailConfirmed() ) {
-				$dbw = wfGetDB(DB_MASTER);
+				$dbww = wfGetDB( DB_MASTER );
 				$rowData = array(
 					'newsletter_id' => $pubNewsletterId,
 					'publisher_id' => $user->getId()
 				);
 				try {
-					$dbw->insert( 'nl_publishers', $rowData, __METHOD__ );
+					$dbww->insert('nl_publishers', $rowData, __METHOD__);
 					RequestContext::getMain()->getOutput()->addWikiMsg( 'new-publisher-confirmation' );
+
 					return true;
 				} catch ( DBQueryError $e ) {
 					return "Invalid username";
 				}
 			} else {
-				return "The provided username does not have a confirmed email address!";
+				return 	"The provided username does not have a confirmed email address !";
 			}
 
+		}
+
+		if ( !empty( $formData['remove-publisher-newsletter'] ) && !empty( $formData['remove-publisher-name'] ) ) {
+			$remNewsletterId = $formData['remove-publisher-newsletter'];
+			$user = User::newFromName($formData['remove-publisher-name']);
+			//Get user id of the newsletter's owner
+			$dbr = wfGetDB( DB_SLAVE );
+			$res = $dbr->select(
+				'nl_newsletters',
+				array( 'nl_owner_id' ),
+				array( 'nl_id' => $formData['remove-publisher-newsletter'] ),
+				__METHOD__,
+				array()
+			);
+			$ownerId = null;
+
+			foreach ( $res as $row ) {
+				$ownerId = $row->nl_owner_id;
+			}
+			//check if the owner is removing himself/herself
+			if ( $ownerId == $user->getId() ) {
+				return "It seems like you are the owner of the newsletter. Please refrain from removing your publisher rights.";
+			}
+
+			$dbw = wfGetDB( DB_MASTER );
+			$rowData = array(
+				'newsletter_id' => $remNewsletterId,
+				'publisher_id' => $user->getId()
+			);
+
+			$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
+			if ( $dbw->affectedRows() === 0 ) {
+				return "The specified user is not a publisher of the newsletter. Check the username and try again.";
+			} else {
+				RequestContext::getMain()->getOutput()->addWikiMsg( 'remove-publisher-confirmation' );
+
+				return true;
+			}
 		}
 
 		return "Required fields are empty.";
