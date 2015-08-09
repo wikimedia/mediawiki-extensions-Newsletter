@@ -32,15 +32,33 @@ $wgAutoloadClasses['SpecialNewsletters'] = __DIR__ . '/includes/SpecialNewslette
 $wgAutoloadClasses['EchoNewsletterFormatter'] = __DIR__ . '/includes/EchoNewsletterFormatter.php';
 $wgAutoloadClasses['NewsletterTablePager'] = __DIR__ . '/includes/SpecialNewsletters.php';
 $wgAutoloadClasses['ApiNewsletter'] = __DIR__ . '/includes/ApiNewsletter.php';
+$wgAutoloadClasses['ApiNewsletterManage'] = __DIR__ . '/includes/ApiNewsletterManage.php';
+$wgAutoloadClasses['NewsletterManageTable'] = __DIR__ . '/includes/SpecialNewsletterManage.php';
 
 $wgSpecialPages['NewsletterCreate'] = 'SpecialNewsletterCreate';
 $wgSpecialPages['NewsletterManage'] = 'SpecialNewsletterManage';
 $wgSpecialPages['Newsletters'] = 'SpecialNewsletters';
 
 $wgAPIModules['newsletterapi'] = 'ApiNewsletter';
+$wgAPIModules['newslettermanageapi'] = 'ApiNewsletterManage';
 
 $wgResourceModules['ext.newsletter'] = array(
 	'scripts' => 'modules/ext.newsletter.js',
+	'dependencies' => array(
+		'jquery.cookie',
+		'jquery.tabIndex',
+		'mediawiki.jqueryMsg',
+		'mediawiki.api',
+		'jquery.confirmable'
+	),
+
+	'localBasePath' => __DIR__,
+	'remoteExtPath' => 'Newsletter',
+
+);
+
+$wgResourceModules['ext.newslettermanage'] = array(
+	'scripts' => 'modules/ext.newslettermanage.js',
 	'dependencies' => array(
 		'jquery.cookie',
 		'jquery.tabIndex',

@@ -4,6 +4,13 @@
  *
  */
 class SpecialNewsletterManage extends SpecialPage {
+	static $fields = array(
+		'newsletter_id' => 'name',
+		'publisher_id' => 'publisher',
+		'permissions' => 'permissions',
+		'action' => 'action'
+	);
+
 	function __construct() {
 		parent::__construct( 'NewsletterManage' );
 	}
@@ -11,6 +18,8 @@ class SpecialNewsletterManage extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
+		$this->getOutput()->addModules( 'ext.newsletter' );
+		$this->getOutput()->addModules( 'ext.newslettermanage' );
 		$this->requireLogin();
 		$announceIssueArray = $this->getAnnounceFormFields();
 
@@ -18,6 +27,14 @@ class SpecialNewsletterManage extends SpecialPage {
 		$announceIssueForm = new HTMLForm( $announceIssueArray, $this->getContext(), 'announceissueform' );
 		$announceIssueForm->setSubmitCallback( array( 'SpecialNewsletterManage', 'onSubmitIssue' ) );
 
+		$table = new NewsletterManageTable();
+		if ( $table->getNumRows() > 0 ) {
+			$output->addHTML(
+				$table->getNavigationBar() .
+				$table->getBody() .
+				$table->getNavigationBar()
+			);
+		}
 		# Show HTML forms
 		$announceIssueForm->show();
 		$output->returnToMain();
@@ -108,17 +125,6 @@ class SpecialNewsletterManage extends SpecialPage {
 				'section' => 'addpublisher-section',
 				'type' => 'text',
 				'label' => "Username",
-			),
-			'remove-publisher-newsletter' => array(
-				'type' => 'select',
-				'section' => 'removepublisher-section',
-				'options' => array_merge( $defaultOption,$newsletters ),
-				'label' => "Name of newsletter"
-			),
-			'remove-publisher-name' => array(
-				'type' => 'text',
-				'section' => 'removepublisher-section',
-				'label' => "Username"
 			)
 		);
 	}
@@ -211,45 +217,148 @@ class SpecialNewsletterManage extends SpecialPage {
 
 		}
 
-		if ( !empty( $formData['remove-publisher-newsletter'] ) && !empty( $formData['remove-publisher-name'] ) ) {
-			$remNewsletterId = $formData['remove-publisher-newsletter'];
-			$user = User::newFromName($formData['remove-publisher-name']);
-			//Get user id of the newsletter's owner
-			$dbr = wfGetDB( DB_SLAVE );
-			$res = $dbr->select(
-				'nl_newsletters',
-				array( 'nl_owner_id' ),
-				array( 'nl_id' => $formData['remove-publisher-newsletter'] ),
-				__METHOD__,
-				array()
-			);
-			$ownerId = null;
-
-			foreach ( $res as $row ) {
-				$ownerId = $row->nl_owner_id;
-			}
-			//check if the owner is removing himself/herself
-			if ( $ownerId == $user->getId() ) {
-				return "It seems like you are the owner of the newsletter. Please refrain from removing your publisher rights.";
-			}
-
-			$dbw = wfGetDB( DB_MASTER );
-			$rowData = array(
-				'newsletter_id' => $remNewsletterId,
-				'publisher_id' => $user->getId()
-			);
-
-			$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
-			if ( $dbw->affectedRows() === 0 ) {
-				return "The specified user is not a publisher of the newsletter. Check the username and try again.";
-			} else {
-				RequestContext::getMain()->getOutput()->addWikiMsg( 'remove-publisher-confirmation' );
-
-				return true;
-			}
-		}
-
 		return "Required fields are empty.";
 
 	}
+}
+
+class NewsletterManageTable extends TablePager {
+	static $newsletterOwners = array();
+	static $newsletterPublishers = array();
+
+	function getFieldNames() {
+		$header = null;
+		if ( is_null( $header ) ) {
+			$header = array();
+			foreach ( SpecialNewsletterManage::$fields as $key => $value ) {
+				$header[$key]= $this->msg( "newslettermanage-header-$value" )->text();
+			}
+		}
+
+		return $header;
+
+	}
+
+	function getQueryInfo() {
+		$info = array(
+			'tables' => array( 'nl_publishers' ),
+			'fields' => array(
+				'newsletter_id',
+				'publisher_id'
+			)
+		);
+
+		//get user ids of all newsletter owners
+		$dbr = wfGetDB( DB_SLAVE );
+		$res = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_owner_id', 'nl_id' ),
+			array(),
+			__METHOD__,
+			array( 'DISTINCT' )
+		);
+		foreach( $res as $row ) {
+			self::$newsletterOwners[$row->nl_id] = $row->nl_owner_id;
+		}
+
+		//get user ids of all publishers
+		$result = $dbr->select(
+			'nl_publishers',
+			array( 'publisher_id', 'newsletter_id' ),
+			array(),
+			__METHOD__,
+			array( 'DISTINCT' )
+		);
+		foreach( $result as $row ) {
+			self::$newsletterPublishers[$row->newsletter_id] = $row->publisher_id;
+		}
+
+		return $info;
+	}
+
+	function formatValue( $field, $value ) {
+		static $previous;
+		static $isOwner;
+
+		switch( $field ) {
+			case 'newsletter_id':
+					if( $previous === $value ){
+
+						return null;
+					} else {
+						$dbr = wfGetDB( DB_SLAVE );
+						$res = $dbr->select(
+							'nl_newsletters',
+							array( 'nl_name' ),
+							array( 'nl_id' => $value ),
+							__METHOD__,
+							array()
+						);
+						$newsletterName = null;
+						foreach( $res as $row ) {
+							$newsletterName = $row->nl_name;
+						}
+						$previous = $value;
+
+						return $newsletterName;
+					}
+			case 'publisher_id' :
+					$user = User::newFromId( $value );
+					if ( self::$newsletterOwners[$previous] === $value ) {
+						$isOwner = true;
+					} else if ( self::$newsletterPublishers[$previous] === $value ) {
+						$isOwner = false;
+					}
+
+					return $user->getName();
+			case 'permissions' :
+					$radioOwner = HTML::element(
+						'input',
+						array(
+							'type' => 'checkbox',
+							'disabled' => 'true',
+							'id' => 'newslettermanage',
+							'checked' => $isOwner ? true : false,						)
+					) . $this->msg( 'owner-radiobutton-label' );
+
+					$radioPublisher = HTML::element(
+						'input',
+						array(
+							'type' => 'checkbox',
+							'disabled' => 'true',
+							'id' => 'newslettermanage',
+							'checked' => $isOwner ? false : true,						)
+					) . $this->msg( 'publisher-radiobutton-label' );
+
+					return $radioOwner . $radioPublisher;
+			case 'action' :
+					$remButton = HTML::element(
+						'input',
+						array(
+							'type' => 'button',
+							'value' => 'Remove',
+							'name' => $previous,
+							'id' => $this->mCurrentRow->publisher_id
+						)
+					);
+
+					return $isOwner ?  '' : $remButton;
+
+		}
+	}
+
+	function getCellAttrs( $field, $value ) {
+		return array(
+			'align' => 'center'
+		);
+	}
+
+	function getDefaultSort() {
+		return 'newsletter_id';
+	}
+
+	function isFieldSortable( $field ) {
+		return false;
+	}
+
 }

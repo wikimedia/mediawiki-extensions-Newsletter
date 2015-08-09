@@ -7,7 +7,8 @@
 	"newsletter-desc": "{{desc|name=Newsletter|url=https://www.mediawiki.org/wiki/Extension:Newsletter}}",
 	"newslettercreate": "Name of special page which creates newsletters as seen in URLs and links",
 	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
-	"announceissue-section": "Section header of [[Special:NewsletterManage]]",
+	"announceissueform-announceissue-section": "Header of section in [[Special:NewsletterManage]] which announces issues",
+	"announceissueform-addpublisher-section": "Header of section in [[Special:NewsletterManage]] which adds publishers",
 	"createnewsletter-section": "Section header of [[Special:NewsletterCreate]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"issue-announce-confirmation": "Confirmation message displayed after announcing a new issue",
@@ -30,5 +31,9 @@
 	"newsletter-header-subscriber_count": "Label of the third column of table in [[Special:Newsletters]] which gives the subscriber count of corresponding newsletter",
 	"newsletter-header-action": "Label of the fourth column of table in [[Special:Newsletters]] which provides radio buttons to subscribe/unsubscribe newsletters",
 	"new-publisher-confirmation": "Confirmation message displayed after a new publisher is added for a newsletter through the [[Special:NewsletterManage]] page",
-	"remove-publisher-confirmation": "Confirmation message displayed after a publisher of a newsletter is removed through the [[Special:NewsletterManage]] page"
+	"newslettermanage-header-name": "Label of the first column of table in [[Special:NewsletterManage]] which lists the names of newsletters",
+	"newslettermanage-header-publisher": "Label of the second column of table in [[Special:NewsletterManage]] which lists the names of all publishers of a newsletter",
+	"newslettermanage-header-permissions": "Label of the third column of table in [[Special:NewsletterManage]] which lists the roles of a user",
+	"owner-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is the owner of the newsletter",
+	"publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter"
 }
