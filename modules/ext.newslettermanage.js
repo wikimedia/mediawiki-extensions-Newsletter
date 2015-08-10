@@ -18,6 +18,5 @@
 			console.log( data );
 		} );
 		$( this ).closest( 'tr' ).remove();
-		location.reload();
 	} );
 } )( jQuery, mediaWiki );
