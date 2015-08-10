@@ -224,7 +224,6 @@ class SpecialNewsletterManage extends SpecialPage {
 
 class NewsletterManageTable extends TablePager {
 	static $newsletterOwners = array();
-	static $newsletterPublishers = array();
 
 	function getFieldNames() {
 		$header = null;
@@ -261,24 +260,11 @@ class NewsletterManageTable extends TablePager {
 			self::$newsletterOwners[$row->nl_id] = $row->nl_owner_id;
 		}
 
-		//get user ids of all publishers
-		$result = $dbr->select(
-			'nl_publishers',
-			array( 'publisher_id', 'newsletter_id' ),
-			array(),
-			__METHOD__,
-			array( 'DISTINCT' )
-		);
-		foreach( $result as $row ) {
-			self::$newsletterPublishers[$row->newsletter_id] = $row->publisher_id;
-		}
-
 		return $info;
 	}
 
 	function formatValue( $field, $value ) {
 		static $previous;
-		static $isOwner;
 
 		switch( $field ) {
 			case 'newsletter_id':
@@ -304,11 +290,6 @@ class NewsletterManageTable extends TablePager {
 					}
 			case 'publisher_id' :
 					$user = User::newFromId( $value );
-					if ( self::$newsletterOwners[$previous] === $value ) {
-						$isOwner = true;
-					} else if ( self::$newsletterPublishers[$previous] === $value ) {
-						$isOwner = false;
-					}
 
 					return $user->getName();
 			case 'permissions' :
@@ -318,7 +299,8 @@ class NewsletterManageTable extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => $isOwner ? true : false,						)
+							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
+								=== $this->mCurrentRow->publisher_id ? true : false,						)
 					) . $this->msg( 'owner-radiobutton-label' );
 
 					$radioPublisher = HTML::element(
@@ -327,7 +309,8 @@ class NewsletterManageTable extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => $isOwner ? false : true,						)
+							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
+								=== $this->mCurrentRow->publisher_id ? false : true,						)
 					) . $this->msg( 'publisher-radiobutton-label' );
 
 					return $radioOwner . $radioPublisher;
@@ -342,7 +325,8 @@ class NewsletterManageTable extends TablePager {
 						)
 					);
 
-					return $isOwner ?  '' : $remButton;
+					return ( self::$newsletterOwners[$this->mCurrentRow->newsletter_id] !== $this->mCurrentRow->publisher_id &&
+						self::$newsletterOwners[$this->mCurrentRow->newsletter_id] == $this->getUser()->getId() ) ? $remButton : '';
 
 		}
 	}
