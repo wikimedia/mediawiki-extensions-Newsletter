@@ -22,9 +22,9 @@ class NewsletterHooks {
 			),
 			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'notification-newsletter-title',
-			'title-params' => array( 'newsletter' ),
+			'title-params' => array( 'newsletter', 'title' ),
 			'flyout-message' => 'notification-newsletter-flyout',
-			'flyout-params' => array( 'newsletter' ),
+			'flyout-params' => array( 'newsletter', 'title' ),
 
 		);
 		return true;

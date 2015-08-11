@@ -10,6 +10,8 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	protected function processParam( $event, $param, $message, $user ) {
 		if ( $param === 'newsletter' ) {
 			$message->params( $event->getExtraParam( 'newsletter' ) );
+		} else if ( $param === 'title' ) {
+			$message->params( $event->getExtraParam( 'issuePageTitle' ) );
 		} else {
 			parent::processParam( $event, $param, $message, $user );
 		}
