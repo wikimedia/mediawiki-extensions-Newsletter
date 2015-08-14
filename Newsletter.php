@@ -76,3 +76,4 @@ $wgResourceModules['ext.newslettermanage'] = array(
 $wgHooks['LoadExtensionSchemaUpdates'][] = 'NewsletterHooks::onLoadExtensionSchemaUpdates';
 $wgHooks['BeforeCreateEchoEvent'][] = 'NewsletterHooks::onBeforeCreateEchoEvent';
 $wgHooks['EchoGetDefaultNotifiedUsers'][] = 'NewsletterHooks::onEchoGetDefaultNotifiedUsers';
+$wgHooks['UnitTestsList'][] = 'NewsletterHooks::onUnitTestsList';
