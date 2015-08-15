@@ -24,7 +24,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		$announceIssueArray = $this->getAnnounceFormFields();
 
 		# Create HTML forms
-		$announceIssueForm = new HTMLForm( $announceIssueArray, $this->getContext(), 'announceissueform' );
+		$announceIssueForm = new HTMLForm( $announceIssueArray, $this->getContext(), 'newsletter-announceissueform' );
 		$announceIssueForm->setSubmitCallback( array( 'SpecialNewsletterManage', 'onSubmitIssue' ) );
 
 		$table = new NewsletterManageTable();
@@ -103,13 +103,13 @@ class SpecialNewsletterManage extends SpecialPage {
 			'issue-newsletter' => array(
 				'type' => 'select',
 				'section' => 'announceissue-section',
-				'label' => 'Name of newsletter',
+				'label' => $this->msg( 'newsletter-name' ),
 				'options' => array_merge( $defaultOption, $newsletterNames ),
 			),
 			'issue-page' => array(
 				'type' => 'text',
 				'section' => 'announceissue-section',
-				'label' => "Title of issue's main page",
+				'label' => $this->msg( 'newsletter-issue-title' ),
 			),
 			'publisher' => array(
 				'type' => 'hidden',
@@ -118,13 +118,13 @@ class SpecialNewsletterManage extends SpecialPage {
 			'newsletter-name' => array(
 				'type' => 'select',
 				'section' => 'addpublisher-section',
-				'label' => 'Name of newsletter',
+				'label' => $this->msg( 'newsletter-name' ),
 				'options' => array_merge( $defaultOption, $ownedNewsletter ),
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
 				'type' => 'text',
-				'label' => "Username",
+				'label' => $this->msg( 'newsletter-publisher-username' ),
 			)
 		);
 	}
@@ -162,7 +162,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					'issue_publisher_id' => $formData['publisher']
 				);
 				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
-				RequestContext::getMain()->getOutput()->addWikiMsg( 'issue-announce-confirmation' );
+				RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
 				//trigger notifications
 				$res = $dbr->select(
 					'nl_newsletters',
@@ -190,7 +190,7 @@ class SpecialNewsletterManage extends SpecialPage {
 
 				return true;
 			} else {
-				return 'The Newsletter issue page cannot be found. Please try again';
+				return RequestContext::getMain()->msg( 'newsletter-issuepage-not-found-error' );
 			}
 		}
 
@@ -205,19 +205,19 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 				try {
 					$dbww->insert('nl_publishers', $rowData, __METHOD__);
-					RequestContext::getMain()->getOutput()->addWikiMsg( 'new-publisher-confirmation' );
+					RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 					return true;
 				} catch ( DBQueryError $e ) {
-					return "Invalid username";
+					return RequestContext::getMain()->msg( 'newsletter-invalid-username-error' );
 				}
 			} else {
-				return 	"The provided username does not have a confirmed email address !";
+				return 	RequestContext::getMain()->msg( 'newsletter-unconfirmed-email-error' );
 			}
 
 		}
 
-		return "Required fields are empty.";
+		return RequestContext::getMain()->msg( 'newsletter-required-fields-error' );
 
 	}
 }
@@ -230,7 +230,7 @@ class NewsletterManageTable extends TablePager {
 		if ( is_null( $header ) ) {
 			$header = array();
 			foreach ( SpecialNewsletterManage::$fields as $key => $value ) {
-				$header[$key]= $this->msg( "newslettermanage-header-$value" )->text();
+				$header[$key]= $this->msg( "newsletter-manage-header-$value" )->text();
 			}
 		}
 
@@ -301,7 +301,7 @@ class NewsletterManageTable extends TablePager {
 							'id' => 'newslettermanage',
 							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
 								=== $this->mCurrentRow->publisher_id ? true : false,						)
-					) . $this->msg( 'owner-radiobutton-label' );
+					) . $this->msg( 'newsletter-owner-radiobutton-label' );
 
 					$radioPublisher = HTML::element(
 						'input',
@@ -311,7 +311,7 @@ class NewsletterManageTable extends TablePager {
 							'id' => 'newslettermanage',
 							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
 								=== $this->mCurrentRow->publisher_id ? false : true,						)
-					) . $this->msg( 'publisher-radiobutton-label' );
+					) . $this->msg( 'newsletter-publisher-radiobutton-label' );
 
 					return $radioOwner . $radioPublisher;
 			case 'action' :

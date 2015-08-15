@@ -18,7 +18,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 		$createNewsletterForm = new HTMLForm( $createNewsletterArray, $this->getContext(), 'createnewsletterform' );
 		$createNewsletterForm->setSubmitText( 'Create newsletter' );
 		$createNewsletterForm->setSubmitCallback( array( 'SpecialNewsletterCreate', 'onSubmitNewsletter' ) );
-		$createNewsletterForm->setWrapperLegendMsg( 'createnewsletter-section' );
+		$createNewsletterForm->setWrapperLegendMsg( 'newsletter-create-section' );
 		# Show HTML forms
 		$createNewsletterForm->show();
 		$output->returnToMain();
@@ -34,28 +34,28 @@ class SpecialNewsletterCreate extends SpecialPage {
 			'name' => array(
 				'type' => 'text',
 				'required' => true,
-				'label' => 'Name of newsletter'
+				'label' => $this->msg( 'newsletter-name' )
 			),
 			'description' => array(
 				'type' => 'textarea',
 				'required' => true,
-				'label' => 'Description',
+				'label' => $this->msg( 'newsletter-desc' ),
 				'rows' => 15,
 				'cols' => 50,
 			),
 			'mainpage' => array(
 				'required' => true,
 				'type' => 'text',
-				'label' => 'Title of Main Page'
+				'label' => $this->msg( 'newsletter-title' )
 			),
 			'frequency' => array(
 				'required' => true,
 				'type' => 'selectorother',
-				'label' => 'Frequency',
+				'label' => $this->msg( 'newsletter-frequency' ),
 				'options' => array(
-					'weekly' => 'weekly',
-					'monthly' => 'monthly',
-					'quarterly' => 'quarterly'
+					'weekly' => $this->msg( 'newsletter-option-weekly' ),
+					'monthly' => $this->msg( 'newsletter-option-monthly' ),
+					'quarterly' => $this->msg( 'newsletter-option-quarterly' )
 				),
 				'size' => 18, # size of 'other' field
 				'maxlength' => 50
@@ -96,7 +96,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 			try {
 				$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 			} catch ( DBQueryError $e ) {
-				return 'A newsletter with the same name already exists. Try again with another name';
+				return RequestContext::getMain()->msg( 'newsletter-exist-error' );
 			}
 			RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 			//Add newsletter creator as publisher
@@ -124,6 +124,6 @@ class SpecialNewsletterCreate extends SpecialPage {
 			return true;
 		}
 
-		return 'The Newsletter main page cannot be found. Please try again';
+		return RequestContext::getMain()->msg( 'newsletter-mainpage-not-found-error' );
 	}
 }
