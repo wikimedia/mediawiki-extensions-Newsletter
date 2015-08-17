@@ -144,7 +144,7 @@ class NewsletterTablePager extends TablePager {
 							'checked' => in_array( $this->mCurrentRow->nl_id,
 									SpecialNewsletters::$subscribedNewsletterId ) ? true : false,
 							)
-					).$this->msg( 'subscribe-button-label' );
+					).$this->msg( 'newsletter-subscribe-button-label' );
 				$radioUnSubscribe = Html::element(
 							'input',
 							array(
@@ -154,7 +154,7 @@ class NewsletterTablePager extends TablePager {
 							'checked' => in_array( $this->mCurrentRow->nl_id,
 									SpecialNewsletters::$subscribedNewsletterId ) ? false : true,
 							)
-				).$this->msg( 'unsubscribe-button-label' );
+				).$this->msg( 'newsletter-unsubscribe-button-label' );
 
 				return $radioSubscribe . $radioUnSubscribe;
 		}

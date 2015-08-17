@@ -17,13 +17,13 @@ class NewsletterHooks {
 		);
 		$notifications['subscribe-newsletter'] = array(
 			'primary-link' => array(
-				'message' => 'notification-link-text-new-issue',
+				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
 			),
 			'formatter-class' => 'EchoNewsletterFormatter',
-			'title-message' => 'notification-newsletter-title',
+			'title-message' => 'newsletter-notification-title',
 			'title-params' => array( 'newsletter', 'title' ),
-			'flyout-message' => 'notification-newsletter-flyout',
+			'flyout-message' => 'newsletter-notification-flyout',
 			'flyout-params' => array( 'newsletter', 'title' ),
 
 		);
