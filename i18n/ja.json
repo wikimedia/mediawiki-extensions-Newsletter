@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sujiniku"
+		]
+	},
+	"newsletter-desc": "説明",
+	"newslettercreate": "ニュースレターの作成",
+	"newslettermanage": "ニュースレターの管理",
+	"newsletter-name": "ニュースレターの名前",
+	"newsletter-title": "メインページのタイトル",
+	"newsletter-frequency": "頻度",
+	"newsletter-option-weekly": "週間",
+	"newsletter-option-monthly": "月次",
+	"newsletter-publisher-username": "利用者名",
+	"newsletter-issuepage-not-found-error": "ニュースレターの議題のページが見つかりません。もう一度ためしてください。",
+	"newsletter-invalid-username-error": "無効な利用者名",
+	"newsletter-required-fields-error": "要求された領域が空です",
+	"newsletter-announceissueform-announceissue-section": "新しい議題のアナウンス",
+	"newsletter-create-section": "ニュースレターの作成",
+	"newsletter-create-confirmation": "よくできました！　あなたは新しい議題を作成しました。",
+	"newsletter-issue-announce-confirmation": "よくできました！　あなたは、あなたのニュースレターの新しい議題をアナウンスしました。",
+	"newsletters": "ニュースレター",
+	"newsletter-unsubscribe-section": "ニュースレターをUnsubscribeする",
+	"newsletter-subscribe-button-label": "はい",
+	"newsletter-unsubscribe-button-label": "いいえ",
+	"echo-category-title-newsletter": "ニュースレター",
+	"newsletter-notification-title": "$1 が議題をアナウンスしています。",
+	"newsletter-notification-flyout": "$1 が新しい議題をアナウンスしています。",
+	"newsletter-notification-link-text-new-issue": "新しい議題を表示",
+	"newsletter-header-name": "ニュースレターの名前",
+	"newsletter-header-description": "説明",
+	"newsletter-header-action": "Subscribeしますか？",
+	"newsletter-manage-header-name": "ニュースレター",
+	"newsletter-manage-header-publisher": "貢献者",
+	"newsletter-manage-header-permissions": "許可",
+	"newsletter-manage-header-action": "活動",
+	"newsletter-owner-radiobutton-label": "所有者"
+}

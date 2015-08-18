@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tina Johnson"
+			"Tina Johnson",
+			"Liuxinyu970226",
+			"Robby"
 		]
 	},
-	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:NewsletterCreate]]",
+	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:NewsletterCreate]]\n{{Identical|Description}}",
 	"newslettercreate": "Name of special page which creates newsletters as seen in URLs and links",
 	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
 	"newsletter-name": "Label of the field which takes the name of newsletter as input in [[Special:NewsletterManage]] and [[Special:NewsletterCreate]]",
@@ -14,7 +16,7 @@
 	"newsletter-option-monthly": "Option message of the 'monthly' option in the drop down menu for frequency field in [[Special:NewsletterCreate]]",
 	"newsletter-option-quarterly": "Option message of the 'quarterly' option in the drop down menu for frequency field in [[Special:NewsletterCreate]]",
 	"newsletter-issue-title": "Label of the field which takes the title of the issue as input in [[Special:NewsletterManage]]",
-	"newsletter-publisher-username": "Label of the field which takes the username of the publisher to be added as input in [[Special:NewsletterManage]]",
+	"newsletter-publisher-username": "Label of the field which takes the username of the publisher to be added as input in [[Special:NewsletterManage]]\n{{Identical|Username}}",
 	"newsletter-issuepage-not-found-error": "Error message to be displayed when newsletter issue page cannot be found while adding new issue in [[Special:NewsletterManage]]",
 	"newsletter-invalid-username-error": "Error message to be displayed when invalid username given as input in [[Special:NewsletterManage]]",
 	"newsletter-unconfirmed-email-error": "Error message to be displayed in [[Special:NewsletterManage]] when the username of the publisher to be added does not have a confirmed email address",
@@ -31,8 +33,8 @@
 	"newsletter-unsubscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to un-subscribe.",
 	"newsletter-subscribe-confirmation": "Confirmation message displayed after subscribing to a newsletter",
 	"newsletter-unsubscribe-confirmation": "Confirmation message displayed after un-subscribing from a newsletter",
-	"newsletter-subscribe-button-label": "Label of submit button of HTML form which allows users to subscribe.",
-	"newsletter-unsubscribe-button-label": "Label of submit button of HTML form which allows users to un-subscribe.",
+	"newsletter-subscribe-button-label": "Label of submit button of HTML form which allows users to subscribe.\n{{Identical|Yes}}",
+	"newsletter-unsubscribe-button-label": "Label of submit button of HTML form which allows users to un-subscribe.\n{{Identical|No}}",
 	"newsletter-available-newsletters-field-label": "Label of HTML form field which lists all available newsletters in wiki",
 	"newsletter-subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to.",
 	"echo-category-title-newsletter": "Title of the notification category used by Newsletter extension.\n{{Related|Echo-category-title}}",
@@ -45,7 +47,8 @@
 	"newsletter-new-publisher-confirmation": "Confirmation message displayed after a new publisher is added for a newsletter through the [[Special:NewsletterManage]] page",
 	"newsletter-manage-header-name": "Label of the first column of table in [[Special:NewsletterManage]] which lists the names of newsletters",
 	"newsletter-manage-header-publisher": "Label of the second column of table in [[Special:NewsletterManage]] which lists the names of all publishers of a newsletter",
-	"newsletter-manage-header-permissions": "Label of the third column of table in [[Special:NewsletterManage]] which lists the roles of a user",
+	"newsletter-manage-header-permissions": "Label of the third column of table in [[Special:NewsletterManage]] which lists the roles of a user\n{{Identical|Permission}}",
+	"newsletter-manage-header-action": "{{Identical|Action}}",
 	"newsletter-owner-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is the owner of the newsletter",
 	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter"
 }

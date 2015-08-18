@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Chrumps"
+		]
+	},
+	"newsletter-desc": "Opis",
+	"newsletter-frequency": "Częstość",
+	"newsletter-option-weekly": "tygodniowo",
+	"newsletter-option-monthly": "miesięcznie",
+	"newsletter-option-quarterly": "kwartalnie",
+	"newsletter-publisher-username": "Nazwa użytkownika",
+	"newsletter-invalid-username-error": "Nieprawidłowa nazwa użytkownika",
+	"newsletter-subscribe-button-label": "Tak",
+	"newsletter-unsubscribe-button-label": "Nie",
+	"newsletter-header-description": "Opis",
+	"newsletter-manage-header-permissions": "Uprawnienia",
+	"newsletter-owner-radiobutton-label": "Właściciel"
+}

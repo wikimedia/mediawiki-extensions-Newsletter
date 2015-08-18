@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Robby"
+		]
+	},
+	"newsletter-desc": "Beschreiwung",
+	"newsletter-frequency": "Frequenz",
+	"newsletter-publisher-username": "Benotzernumm",
+	"newsletter-subscribe-button-label": "Jo",
+	"newsletter-unsubscribe-button-label": "Neen",
+	"newsletter-header-description": "Beschreiwung",
+	"newsletter-manage-header-name": "Newsletter",
+	"newsletter-manage-header-action": "Aktioun"
+}
