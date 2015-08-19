@@ -32,6 +32,7 @@
 	"newsletter-available-newsletters-field-label": "Rondschrihve em Aanjbott",
 	"newsletter-subscribed-newsletters-field-label": "Rondschrihve em Abonnemang",
 	"echo-category-title-newsletter": "Rondschrihve",
+	"newsletter-notification-flyout": "{{GENDER:$1|Dä|Dat|Dä Metmaacher|De|Dat}} $1 hädd_en neu Ußjahb aanjeköndesch",
 	"newsletter-notification-link-text-new-issue": "Donn de neuje Ußjahb belohre",
 	"newsletter-header-name": "Däm Rondschrihve sine Nahme",
 	"newsletter-header-action": "Em Abbonnemong?",
