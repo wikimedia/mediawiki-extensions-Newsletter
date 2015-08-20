@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aftabuzzaman"
+		]
+	},
+	"newsletter-desc": "বিবরণ",
+	"newsletter-option-weekly": "সাপ্তাহিক",
+	"newsletter-option-monthly": "মাসিক",
+	"newsletter-option-quarterly": "ত্রৈমাসিক",
+	"newsletter-publisher-username": "ব্যবহারকারী নাম",
+	"newsletter-invalid-username-error": "অগ্রহণযোগ্য ব্যবহারকারী নাম",
+	"newsletter-subscribe-button-label": "হ্যাঁ",
+	"newsletter-unsubscribe-button-label": "না",
+	"newsletter-header-description": "বিবরণ",
+	"newsletter-manage-header-publisher": "অবদানকারী",
+	"newsletter-manage-header-permissions": "অনুমতি",
+	"newsletter-manage-header-action": "কার্য",
+	"newsletter-owner-radiobutton-label": "মালিক",
+	"newsletter-publisher-radiobutton-label": "প্রকাশক"
+}

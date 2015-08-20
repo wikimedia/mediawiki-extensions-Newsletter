@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Gomoko"
+		]
+	},
+	"newsletter-desc": "Description",
+	"newslettercreate": "Créer des bulletins d’information",
+	"newslettermanage": "Gérer des bulletins d’information",
+	"newsletter-name": "Nom du bulletin d’information",
+	"newsletter-title": "Titre de la page principale",
+	"newsletter-frequency": "Fréquence",
+	"newsletter-option-weekly": "hebdomadaire",
+	"newsletter-option-monthly": "mensuel",
+	"newsletter-option-quarterly": "trimestriel",
+	"newsletter-issue-title": "Titre du sujet de la page principale",
+	"newsletter-publisher-username": "Nom d’utilisateur",
+	"newsletter-issuepage-not-found-error": "La page du sujet du bulletin d’information est introuvable. Veuillez réessayer",
+	"newsletter-invalid-username-error": "Nom d’utilisateur non valide",
+	"newsletter-unconfirmed-email-error": "Le nom d’utilisateur fourni n’a pas d’adresse de courriel confirmée !",
+	"newsletter-required-fields-error": "Les champs obligatoires sont vides",
+	"newsletter-exist-error": "Un bulletin d’information avec le même nom existe déjà. Veuillez réessayer avec un autre nom",
+	"newsletter-mainpage-not-found-error": "La page principale du bulletin d’information est introuvable. Veuillez réessayer"
+}
