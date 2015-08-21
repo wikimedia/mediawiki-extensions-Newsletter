@@ -5,11 +5,18 @@
 		]
 	},
 	"newsletter-desc": "Beschreiwung",
+	"newsletter-name": "Numm vun der Newsletter",
+	"newsletter-title": "Titel vun der Haaptsäit",
 	"newsletter-frequency": "Frequenz",
+	"newsletter-option-weekly": "all Woch",
+	"newsletter-option-monthly": "all Mount",
+	"newsletter-option-quarterly": "all 3 Méint",
 	"newsletter-publisher-username": "Benotzernumm",
 	"newsletter-subscribe-button-label": "Jo",
 	"newsletter-unsubscribe-button-label": "Neen",
+	"newsletter-header-name": "Numm vun der Newsletter",
 	"newsletter-header-description": "Beschreiwung",
 	"newsletter-manage-header-name": "Newsletter",
+	"newsletter-manage-header-permissions": "Autorisatiounen",
 	"newsletter-manage-header-action": "Aktioun"
 }

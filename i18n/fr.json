@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Titip1995"
 		]
 	},
 	"newsletter-desc": "Description",
@@ -20,5 +21,34 @@
 	"newsletter-unconfirmed-email-error": "Le nom d’utilisateur fourni n’a pas d’adresse de courriel confirmée !",
 	"newsletter-required-fields-error": "Les champs obligatoires sont vides",
 	"newsletter-exist-error": "Un bulletin d’information avec le même nom existe déjà. Veuillez réessayer avec un autre nom",
-	"newsletter-mainpage-not-found-error": "La page principale du bulletin d’information est introuvable. Veuillez réessayer"
+	"newsletter-mainpage-not-found-error": "La page principale du bulletin d’information est introuvable. Veuillez réessayer",
+	"newsletter-announceissueform-announceissue-section": "Annoncer un nouveau numéro",
+	"newsletter-announceissueform-addpublisher-section": "Ajouter des éditeurs",
+	"newsletter-create-section": "Créer une newsletter",
+	"newsletter-create-confirmation": "Félicitationsǃ Vous venez de créer une nouvelle newsletter.",
+	"newsletter-issue-announce-confirmation": "Félicitationsǃ Vous venez d'annoncer un nouveau numéro de votre newsletter.",
+	"newsletters": "Newsletters",
+	"newsletter-subscribe-section": "S'abonner à la newsletter",
+	"newsletter-unsubscribe-section": "Se désabonner des newsletters",
+	"newsletter-subscribe-confirmation": "Vous êtes maintenant désabonné à la newsletter.",
+	"newsletter-unsubscribe-confirmation": "Vous êtes maintenant désabonné de la newsletter.",
+	"newsletter-subscribe-button-label": "Oui",
+	"newsletter-unsubscribe-button-label": "Non",
+	"newsletter-available-newsletters-field-label": "Newsletters disponibles",
+	"newsletter-subscribed-newsletters-field-label": "Newsletters auxquelles vous êtes abonné(e)",
+	"echo-category-title-newsletter": "Newsletters",
+	"echo-pref-tooltip-newsletter": "M'avertir quand l'une des newsletters auxquelles je suis abonné(e) annonce un nouveau numéro.",
+	"newsletter-notification-title": "$1 à annoncé un nouveau numéro",
+	"newsletter-notification-flyout": "$1 à annoncé un nouveau numéro",
+	"newsletter-notification-link-text-new-issue": "Voir le nouveau numéro",
+	"newsletter-header-name": "Nom de la newsletter",
+	"newsletter-header-description": "Description",
+	"newsletter-header-action": "Abonné?",
+	"newsletter-header-subscriber_count": "Nombre d'abonnés",
+	"newsletter-new-publisher-confirmation": "Un nouvel éditeur vient d'être ajouté a votre newsletterǃ",
+	"newsletter-manage-header-name": "Newsletter",
+	"newsletter-manage-header-publisher": "Contributeurs",
+	"newsletter-manage-header-action": "Action",
+	"newsletter-owner-radiobutton-label": "Propriétaire",
+	"newsletter-publisher-radiobutton-label": "Éditeur"
 }
