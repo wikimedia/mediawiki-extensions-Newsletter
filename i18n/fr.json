@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Gomoko",
-			"Titip1995"
+			"Titip1995",
+			"Wladek92"
 		]
 	},
 	"newsletter-desc": "Description",
@@ -48,6 +49,7 @@
 	"newsletter-new-publisher-confirmation": "Un nouvel éditeur vient d'être ajouté a votre newsletterǃ",
 	"newsletter-manage-header-name": "Newsletter",
 	"newsletter-manage-header-publisher": "Contributeurs",
+	"newsletter-manage-header-permissions": "Droits",
 	"newsletter-manage-header-action": "Action",
 	"newsletter-owner-radiobutton-label": "Propriétaire",
 	"newsletter-publisher-radiobutton-label": "Éditeur"
