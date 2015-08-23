@@ -3,7 +3,8 @@
 		"authors": [
 			"Gomoko",
 			"Titip1995",
-			"Wladek92"
+			"Wladek92",
+			"Urhixidur"
 		]
 	},
 	"newsletter-desc": "Description",
@@ -28,7 +29,7 @@
 	"newsletter-create-section": "Créer une newsletter",
 	"newsletter-create-confirmation": "Félicitationsǃ Vous venez de créer une nouvelle newsletter.",
 	"newsletter-issue-announce-confirmation": "Félicitationsǃ Vous venez d'annoncer un nouveau numéro de votre newsletter.",
-	"newsletters": "Newsletters",
+	"newsletters": "Bulletins d'informations",
 	"newsletter-subscribe-section": "S'abonner à la newsletter",
 	"newsletter-unsubscribe-section": "Se désabonner des newsletters",
 	"newsletter-subscribe-confirmation": "Vous êtes maintenant désabonné à la newsletter.",
@@ -39,7 +40,7 @@
 	"newsletter-subscribed-newsletters-field-label": "Newsletters auxquelles vous êtes abonné(e)",
 	"echo-category-title-newsletter": "Newsletters",
 	"echo-pref-tooltip-newsletter": "M'avertir quand l'une des newsletters auxquelles je suis abonné(e) annonce un nouveau numéro.",
-	"newsletter-notification-title": "$1 à annoncé un nouveau numéro",
+	"newsletter-notification-title": "$1 a annoncé un nouveau numéro",
 	"newsletter-notification-flyout": "$1 à annoncé un nouveau numéro",
 	"newsletter-notification-link-text-new-issue": "Voir le nouveau numéro",
 	"newsletter-header-name": "Nom de la newsletter",
