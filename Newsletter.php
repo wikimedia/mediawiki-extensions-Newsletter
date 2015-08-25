@@ -24,6 +24,7 @@ $wgExtensionCredits[ 'other' ][ ] = array(
 );
 
 $wgMessagesDirs['Newsletter'] = __DIR__ . '/i18n';
+$wgExtensionMessagesFiles['NewsletterAlias'] = __DIR__ . '/Newsletter.alias.php';
 
 $wgAutoloadClasses['NewsletterHooks'] = __DIR__ . '/Newsletter.hooks.php';
 $wgAutoloadClasses['SpecialNewsletterCreate'] = __DIR__ . '/includes/SpecialNewsletterCreate.php';
