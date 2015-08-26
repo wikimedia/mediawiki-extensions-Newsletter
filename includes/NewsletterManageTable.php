@@ -2,7 +2,7 @@
 
 class NewsletterManageTable extends TablePager {
 
-	public static $newsletterOwners = array();
+	private $newsletterOwners = array();
 
 	public function getFieldNames() {
 		$header = null;
@@ -36,7 +36,7 @@ class NewsletterManageTable extends TablePager {
 			array( 'DISTINCT' )
 		);
 		foreach ( $res as $row ) {
-			self::$newsletterOwners[$row->nl_id] = $row->nl_owner_id;
+			$this->newsletterOwners[$row->nl_id] = $row->nl_owner_id;
 		}
 
 		return $info;
@@ -78,7 +78,7 @@ class NewsletterManageTable extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
+							'checked' => $this->newsletterOwners[$this->mCurrentRow->newsletter_id]
 							=== $this->mCurrentRow->publisher_id ? true : false,
 						)
 					) . $this->msg( 'newsletter-owner-radiobutton-label' );
@@ -89,7 +89,7 @@ class NewsletterManageTable extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
+							'checked' => $this->newsletterOwners[$this->mCurrentRow->newsletter_id]
 							=== $this->mCurrentRow->publisher_id ? false : true,
 						)
 					) . $this->msg( 'newsletter-publisher-radiobutton-label' );
@@ -106,9 +106,9 @@ class NewsletterManageTable extends TablePager {
 					)
 				);
 
-				return ( self::$newsletterOwners[$this->mCurrentRow->newsletter_id] !==
+				return ( $this->newsletterOwners[$this->mCurrentRow->newsletter_id] !==
 					$this->mCurrentRow->publisher_id &&
-					self::$newsletterOwners[$this->mCurrentRow->newsletter_id] ==
+					$this->newsletterOwners[$this->mCurrentRow->newsletter_id] ==
 					$this->getUser()->getId() ) ? $remButton : '';
 
 		}
