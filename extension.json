@@ -1,0 +1,73 @@
+{
+	"name": "Newsletter",
+	"version": "1.2.0",
+	"author": [
+		"Siebrand Mazeland",
+		"Tina Johnson"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Newsletter",
+	"descriptionmsg": "newsletter-desc",
+	"license-name": "GPL-2.0+",
+	"type": "other",
+	"SpecialPages": {
+		"NewsletterCreate": "SpecialNewsletterCreate",
+		"NewsletterManage": "SpecialNewsletterManage",
+		"Newsletters": "SpecialNewsletters"
+	},
+	"APIModules": {
+		"newsletterapi": "ApiNewsletter",
+		"newslettermanageapi": "ApiNewsletterManage"
+	},
+	"MessagesDirs": {
+		"Newsletter": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"NewsletterAlias": "Newsletter.alias.php"
+	},
+	"AutoloadClasses": {
+		"NewsletterHooks": "Newsletter.hooks.php",
+		"SpecialNewsletterCreate": "includes/SpecialNewsletterCreate.php",
+		"SpecialNewsletterManage": "includes/SpecialNewsletterManage.php",
+		"SpecialNewsletters": "includes/SpecialNewsletters.php",
+		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
+		"NewsletterTablePager": "includes/SpecialNewsletters.php",
+		"ApiNewsletter": "includes/ApiNewsletter.php",
+		"ApiNewsletterManage": "includes/ApiNewsletterManage.php",
+		"NewsletterManageTable": "includes/SpecialNewsletterManage.php"
+	},
+	"ResourceModules": {
+		"ext.newsletter": {
+			"scripts": "ext.newsletter.js",
+			"dependencies": [
+				"mediawiki.api"
+			]
+		},
+		"ext.newslettermanage": {
+			"scripts": "ext.newslettermanage.js",
+			"dependencies": [
+				"mediawiki.api"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "modules",
+		"remoteExtPath": "Newsletter/modules"
+	},
+	"Hooks": {
+		"LoadExtensionSchemaUpdates": [
+			"NewsletterHooks::onLoadExtensionSchemaUpdates"
+		],
+		"BeforeCreateEchoEvent": [
+			"NewsletterHooks::onBeforeCreateEchoEvent"
+		],
+		"EchoGetDefaultNotifiedUsers": [
+			"NewsletterHooks::onEchoGetDefaultNotifiedUsers"
+		],
+		"UnitTestsList": [
+			"NewsletterHooks::onUnitTestsList"
+		]
+	},
+	"manifest_version": 1
+}
