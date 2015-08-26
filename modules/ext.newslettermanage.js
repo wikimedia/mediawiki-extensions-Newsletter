@@ -15,7 +15,7 @@
 			todo: 'removepublisher'
 
 		} ).done( function ( data ) {
-			console.log( data );
+			mw.log( data );
 		} );
 		$( this ).closest( 'tr' ).remove();
 	} );

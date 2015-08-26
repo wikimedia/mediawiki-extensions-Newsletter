@@ -12,7 +12,7 @@
 			newsletterId: newsletterId,
 			todo: 'subscribe'
 		} ).done( function ( data ) {
-			console.log( data );
+			mw.log( data );
 		} );
         document.getElementById( 'newsletter-' + newsletterId ).value++;
 	} );
@@ -25,7 +25,7 @@
 			todo: 'unsubscribe'
 
 		} ).done( function ( data ) {
-			console.log( data );
+			mw.log( data );
 		} );
         document.getElementById( 'newsletter-' + newsletterId ).value--;
 	} );
