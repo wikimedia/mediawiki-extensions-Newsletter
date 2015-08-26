@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Macofe"
+		]
+	},
+	"newsletter-desc": "Descripció",
+	"newsletter-frequency": "Freqüència",
+	"newsletter-publisher-username": "Nom d'usuari",
+	"newsletter-subscribe-button-label": "Sí­",
+	"newsletter-unsubscribe-button-label": "No",
+	"newsletter-header-description": "Descripció",
+	"newsletter-manage-header-publisher": "Coŀlaboradors",
+	"newsletter-manage-header-permissions": "Permisos",
+	"newsletter-manage-header-action": "Acció",
+	"newsletter-owner-radiobutton-label": "Propietari"
+}
