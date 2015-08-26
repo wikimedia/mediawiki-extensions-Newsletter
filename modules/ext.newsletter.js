@@ -7,7 +7,7 @@
 	var api = new mw.Api();
 	$( 'input[type=radio][value=subscribe]' ).change( function() {
 		var newsletterId = ( this.name ).substr( ( this.name ).indexOf( "-" ) + 1 );
-		api.post( {
+		api.postWithToken( 'edit', {
 			action: 'newsletterapi',
 			newsletterId: newsletterId,
 			todo: 'subscribe'
@@ -19,7 +19,7 @@
 
 	$( 'input[type=radio][value=unsubscribe]' ).change( function() {
 		var newsletterId = ( this.name ).substr( ( this.name ).indexOf( "-" ) + 1 );
-		api.post( {
+		api.postWithToken( 'edit', {
 			action: 'newsletterapi',
 			newsletterId: newsletterId,
 			todo: 'unsubscribe'

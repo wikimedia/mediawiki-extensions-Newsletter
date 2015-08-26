@@ -8,7 +8,7 @@
 	$( 'input[type=button]').click( function() {
 		var remNewsletterId = this.name;
 		var publisherId = this.id;
-		api.post( {
+		api.postWithToken( 'edit', {
 			action: 'newslettermanageapi',
 			publisher: publisherId,
 			newsletterId: remNewsletterId,

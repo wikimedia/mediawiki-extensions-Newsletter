@@ -37,4 +37,12 @@ class ApiNewsletter extends ApiBase {
 		);
 	}
 
+	public function needsToken() {
+		return 'csrf';
+	}
+
+	public function mustBePosted() {
+		return true;
+	}
+
 }

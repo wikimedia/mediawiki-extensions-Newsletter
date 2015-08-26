@@ -15,8 +15,8 @@ class ApiNewsletterTest extends ApiTestCase {
 		parent::setUp();
 		$dbw = wfGetDB( DB_MASTER );
 
-		$user = User::newFromName( "Owner" );
-		$user->addToDatabase();
+		$user = self::$users['sysop']->getUser();
+		$this->doLogin( 'sysop' );
 
 		$rowData = array(
 			'nl_name' => 'MyNewsletter',
@@ -48,7 +48,7 @@ class ApiNewsletterTest extends ApiTestCase {
 	}
 
 	public function testApiNewsletterForSubscribingNewsletter() {
-		$this->doApiRequest(
+		$this->doApiRequestWithToken(
 			array(
 				'action' => 'newsletterapi',
 				'newsletterId' => $this->getNewsletterId(),
@@ -70,7 +70,7 @@ class ApiNewsletterTest extends ApiTestCase {
 	}
 
 	public function testApiNewsletterForUnsubscribingNewsletter() {
-		$this->doApiRequest(
+		$this->doApiRequestWithToken(
 			array(
 				'action' => 'newsletterapi',
 				'newsletterId' => $this->getNewsletterId(),
