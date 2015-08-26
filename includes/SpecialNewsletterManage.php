@@ -1,17 +1,18 @@
 <?php
+
 /**
  * Special page for announcing issues and managing newsletters
- *
  */
 class SpecialNewsletterManage extends SpecialPage {
-	static $fields = array(
+
+	public static $fields = array(
 		'newsletter_id' => 'name',
 		'publisher_id' => 'publisher',
 		'permissions' => 'permissions',
-		'action' => 'action'
+		'action' => 'action',
 	);
 
-	function __construct() {
+	public function __construct() {
 		parent::__construct( 'NewsletterManage' );
 	}
 
@@ -24,7 +25,11 @@ class SpecialNewsletterManage extends SpecialPage {
 		$announceIssueArray = $this->getAnnounceFormFields();
 
 		# Create HTML forms
-		$announceIssueForm = new HTMLForm( $announceIssueArray, $this->getContext(), 'newsletter-announceissueform' );
+		$announceIssueForm = new HTMLForm(
+			$announceIssueArray,
+			$this->getContext(),
+			'newsletter-announceissueform'
+		);
 		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
 
 		$table = new NewsletterManageTable();
@@ -113,7 +118,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			),
 			'publisher' => array(
 				'type' => 'hidden',
-				'default' => $this->getUser()->getId()
+				'default' => $this->getUser()->getId(),
 			),
 			'newsletter-name' => array(
 				'type' => 'select',
@@ -125,7 +130,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'section' => 'addpublisher-section',
 				'type' => 'text',
 				'label-message' => 'newsletter-publisher-username',
-			)
+			),
 		);
 	}
 
@@ -134,6 +139,7 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * form for announcing issues
 	 *
 	 * @param array $formData The data entered by user in the form
+	 *
 	 * @return bool|array true on success, array on error
 	 */
 	public function onSubmitIssue( $formData ) {
@@ -159,7 +165,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					'issue_id' => $issueCount + 1,
 					'issue_page_id' => $pageId,
 					'issue_newsletter_id' => $newsletterId,
-					'issue_publisher_id' => $formData['publisher']
+					'issue_publisher_id' => $formData['publisher'],
 				);
 				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
 				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
@@ -177,15 +183,17 @@ class SpecialNewsletterManage extends SpecialPage {
 					$newsletterName = $row->nl_name;
 				}
 				if ( class_exists( 'EchoEvent' ) ) {
-					EchoEvent::create( array(
-						'type' => 'subscribe-newsletter',
-						'extra' => array(
-							'newsletter' => $newsletterName,
-							'newsletterId' => $newsletterId,
-							'issuePageTitle' => $formData['issue-page'],
-							'issuePageNamespace' => $pageNamepace
-						),
-					) );
+					EchoEvent::create(
+						array(
+							'type' => 'subscribe-newsletter',
+							'extra' => array(
+								'newsletter' => $newsletterName,
+								'newsletterId' => $newsletterId,
+								'issuePageTitle' => $formData['issue-page'],
+								'issuePageNamespace' => $pageNamepace,
+							),
+						)
+					);
 				}
 
 				return true;
@@ -201,7 +209,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				$dbww = wfGetDB( DB_MASTER );
 				$rowData = array(
 					'newsletter_id' => $pubNewsletterId,
-					'publisher_id' => $user->getId()
+					'publisher_id' => $user->getId(),
 				);
 				//Automatically subscribe publishers to the newsletter
 				$subscribeRowData = array(
@@ -211,7 +219,8 @@ class SpecialNewsletterManage extends SpecialPage {
 				try {
 					$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
 					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
-				} catch ( DBQueryError $e ) {
+				}
+				catch ( DBQueryError $e ) {
 					return array( 'newsletter-invalid-username-error' );
 				}
 				try{
@@ -231,9 +240,10 @@ class SpecialNewsletterManage extends SpecialPage {
 }
 
 class NewsletterManageTable extends TablePager {
-	static $newsletterOwners = array();
 
-	function getFieldNames() {
+	public static $newsletterOwners = array();
+
+	public function getFieldNames() {
 		$header = null;
 		if ( is_null( $header ) ) {
 			$header = array();
@@ -246,13 +256,13 @@ class NewsletterManageTable extends TablePager {
 
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$info = array(
 			'tables' => array( 'nl_publishers' ),
 			'fields' => array(
 				'newsletter_id',
-				'publisher_id'
-			)
+				'publisher_id',
+			),
 		);
 
 		// get user ids of all newsletter owners
@@ -271,85 +281,89 @@ class NewsletterManageTable extends TablePager {
 		return $info;
 	}
 
-	function formatValue( $field, $value ) {
+	public function formatValue( $field, $value ) {
 		static $previous;
 
-		switch( $field ) {
+		switch ( $field ) {
 			case 'newsletter_id':
-					if ( $previous === $value ) {
+				if ( $previous === $value ) {
 
-						return null;
-					} else {
-						$dbr = wfGetDB( DB_SLAVE );
-						$res = $dbr->select(
-							'nl_newsletters',
-							array( 'nl_name' ),
-							array( 'nl_id' => $value ),
-							__METHOD__,
-							array()
-						);
-						$newsletterName = null;
-						foreach ( $res as $row ) {
-							$newsletterName = $row->nl_name;
-						}
-						$previous = $value;
-
-						return $newsletterName;
+					return null;
+				} else {
+					$dbr = wfGetDB( DB_SLAVE );
+					$res = $dbr->select(
+						'nl_newsletters',
+						array( 'nl_name' ),
+						array( 'nl_id' => $value ),
+						__METHOD__,
+						array()
+					);
+					$newsletterName = null;
+					foreach ( $res as $row ) {
+						$newsletterName = $row->nl_name;
 					}
-			case 'publisher_id' :
-					$user = User::newFromId( $value );
+					$previous = $value;
 
-					return $user->getName();
+					return $newsletterName;
+				}
+			case 'publisher_id' :
+				$user = User::newFromId( $value );
+
+				return $user->getName();
 			case 'permissions' :
-					$radioOwner = HTML::element(
+				$radioOwner = HTML::element(
 						'input',
 						array(
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
 							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
-								=== $this->mCurrentRow->publisher_id ? true : false,						)
+							=== $this->mCurrentRow->publisher_id ? true : false,
+						)
 					) . $this->msg( 'newsletter-owner-radiobutton-label' );
 
-					$radioPublisher = HTML::element(
+				$radioPublisher = HTML::element(
 						'input',
 						array(
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
 							'checked' => self::$newsletterOwners[$this->mCurrentRow->newsletter_id]
-								=== $this->mCurrentRow->publisher_id ? false : true,						)
+							=== $this->mCurrentRow->publisher_id ? false : true,
+						)
 					) . $this->msg( 'newsletter-publisher-radiobutton-label' );
 
-					return $radioOwner . $radioPublisher;
+				return $radioOwner . $radioPublisher;
 			case 'action' :
-					$remButton = HTML::element(
-						'input',
-						array(
-							'type' => 'button',
-							'value' => 'Remove',
-							'name' => $previous,
-							'id' => $this->mCurrentRow->publisher_id
-						)
-					);
+				$remButton = HTML::element(
+					'input',
+					array(
+						'type' => 'button',
+						'value' => 'Remove',
+						'name' => $previous,
+						'id' => $this->mCurrentRow->publisher_id,
+					)
+				);
 
-					return ( self::$newsletterOwners[$this->mCurrentRow->newsletter_id] !== $this->mCurrentRow->publisher_id &&
-						self::$newsletterOwners[$this->mCurrentRow->newsletter_id] == $this->getUser()->getId() ) ? $remButton : '';
+				return ( self::$newsletterOwners[$this->mCurrentRow->newsletter_id] !==
+					$this->mCurrentRow->publisher_id &&
+					self::$newsletterOwners[$this->mCurrentRow->newsletter_id] ==
+					$this->getUser()->getId() ) ? $remButton : '';
 
 		}
 	}
 
-	function getCellAttrs( $field, $value ) {
+	public function getCellAttrs( $field, $value ) {
 		return array(
-			'align' => 'center'
+			'align' => 'center',
 		);
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'newsletter_id';
 	}
 
-	function isFieldSortable( $field ) {
+	public function isFieldSortable( $field ) {
 		return false;
 	}
 

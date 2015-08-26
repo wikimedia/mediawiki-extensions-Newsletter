@@ -10,7 +10,7 @@ $specialPageAliases = array();
 
 /** English */
 $specialPageAliases['en'] = array(
-	'NewsletterCreate' => array( 'CreateNewsletter'),
-	'NewsletterManage' => array( 'ManageNewsletter'),
-	'Newsletters' => array( 'Newsletters'),
+	'NewsletterCreate' => array( 'CreateNewsletter' ),
+	'NewsletterManage' => array( 'ManageNewsletter' ),
+	'Newsletters' => array( 'Newsletters' ),
 );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Unit test to test Api module - ApiNewsletter
  *
@@ -8,9 +9,9 @@
  * @covers ApiNewsletter
  * @author Tina Johnson
  */
-
 class ApiNewsletterTest extends ApiTestCase {
-	protected  function setUp() {
+
+	protected function setUp() {
 		parent::setUp();
 		$dbw = wfGetDB( DB_MASTER );
 
@@ -22,11 +23,11 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_desc' => 'This is a newsletter',
 			'nl_main_page_id' => 1,
 			'nl_frequency' => 'monthly',
-			'nl_owner_id' => $user->getId()
+			'nl_owner_id' => $user->getId(),
 		);
 		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		$this->tablesUsed = array( 'nl_newsletters' );
-            }
+	}
 
 	protected function getNewsletterId() {
 		$dbr = wfGetDB( DB_SLAVE );
@@ -34,7 +35,7 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_newsletters',
 			array( 'nl_id' ),
 			array(
-			'nl_name' => 'MyNewsletter'
+				'nl_name' => 'MyNewsletter',
 			),
 			__METHOD__
 		);
@@ -46,19 +47,21 @@ class ApiNewsletterTest extends ApiTestCase {
 		return $newsletterId;
 	}
 
-	function testApiNewsletterForSubscribingNewsletter() {
-		$this->doApiRequest( array(
-			'action' => 'newsletterapi',
-			'newsletterId' => $this->getNewsletterId(),
-			'todo' => 'subscribe'
-		) );
+	public function testApiNewsletterForSubscribingNewsletter() {
+		$this->doApiRequest(
+			array(
+				'action' => 'newsletterapi',
+				'newsletterId' => $this->getNewsletterId(),
+				'todo' => 'subscribe',
+			)
+		);
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			array( 'subscriber_id' ),
 			array(
-			'newsletter_id' => $this->getNewsletterId()
+				'newsletter_id' => $this->getNewsletterId(),
 			),
 			__METHOD__
 		);
@@ -66,23 +69,26 @@ class ApiNewsletterTest extends ApiTestCase {
 		$this->assertEquals( $result, 1 );
 	}
 
-	function testApiNewsletterForUnsubscribingNewsletter() {
-		$this->doApiRequest( array(
-			'action' => 'newsletterapi',
-			'newsletterId' => $this->getNewsletterId(),
-			'todo' => 'unsubscribe'
-		) );
+	public function testApiNewsletterForUnsubscribingNewsletter() {
+		$this->doApiRequest(
+			array(
+				'action' => 'newsletterapi',
+				'newsletterId' => $this->getNewsletterId(),
+				'todo' => 'unsubscribe',
+			)
+		);
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			array( 'subscriber_id' ),
 			array(
-			'newsletter_id' => $this->getNewsletterId()
+				'newsletter_id' => $this->getNewsletterId(),
 			),
 			__METHOD__
 		);
 
 		$this->assertEquals( $result, 0 );
 	}
+
 }

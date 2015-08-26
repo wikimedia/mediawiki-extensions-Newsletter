@@ -1,25 +1,25 @@
 <?php
+
 /**
  * Special page for subscribing/un-subscribing a newsletter
- *
  */
 class SpecialNewsletters extends SpecialPage {
 
-	static $fields = array(
+	public static $fields = array(
 		'nl_name' => 'name',
 		'nl_desc' => 'description',
 		'subscriber_count' => 'subscriber_count',
-		'action' => 'action'
+		'action' => 'action',
 	);
 
 	# Array containing all newsletter ids in nl_subscriptions table
-	static $allSubscribedNewsletterId = array();
+	public static $allSubscribedNewsletterId = array();
 
 	# Array containing all newsletter ids to which the logged in user is subscribed to
-	static $subscribedNewsletterId = array();
+	public static $subscribedNewsletterId = array();
 
 	# Subscriber count
-	static $subscriberCount = array();
+	public static $subscriberCount = array();
 
 	public function __construct() {
 		parent::__construct( 'Newsletters' );
@@ -42,7 +42,7 @@ class SpecialNewsletters extends SpecialPage {
 		}
 	}
 
-	static function getSubscribedNewsletters( $id ) {
+	public static function getSubscribedNewsletters( $id ) {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_subscriptions',
@@ -74,12 +74,9 @@ class SpecialNewsletters extends SpecialPage {
 	}
 }
 
-
-
-
 class NewsletterTablePager extends TablePager {
 
-	function getFieldNames() {
+	public function getFieldNames() {
 		static $headers = null;
 		if ( is_null( $headers ) ) {
 			$headers = array();
@@ -91,21 +88,21 @@ class NewsletterTablePager extends TablePager {
 		return $headers;
 	}
 
-	function getQueryInfo() {
+	public function getQueryInfo() {
 		$info = array(
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
 				'nl_name',
 				'nl_desc',
-				'nl_id'
-			)
+				'nl_id',
+			),
 		);
 
 		return $info;
 	}
 
-	function formatValue( $field, $value ) {
-		switch( $field ) {
+	public function formatValue( $field, $value ) {
+		switch ( $field ) {
 			case 'nl_name':
 				$dbr = wfGetDB( DB_SLAVE );
 				$res = $dbr->select(
@@ -123,52 +120,62 @@ class NewsletterTablePager extends TablePager {
 				$url = $mainPageId ? Title::newFromID( $mainPageId )->getFullURL() : "#";
 
 				return '<a href="' . $url . '">' . $value . '</a>';
-			case 'nl_desc': return $value;
+			case 'nl_desc':
+				return $value;
 			case 'subscriber_count':
-				return HTML::element( 'input',
+				return HTML::element(
+					'input',
 					array(
-					'type' => 'textbox',
-					'readonly' => 'true',
-					'id' => 'newsletter-' . $this->mCurrentRow->nl_id,
-					'value' => in_array( $this->mCurrentRow->nl_id, SpecialNewsletters::$allSubscribedNewsletterId ) ?
-						SpecialNewsletters::$subscriberCount[$this->mCurrentRow->nl_id] : 0,
+						'type' => 'textbox',
+						'readonly' => 'true',
+						'id' => 'newsletter-' . $this->mCurrentRow->nl_id,
+						'value' => in_array(
+							$this->mCurrentRow->nl_id,
+							SpecialNewsletters::$allSubscribedNewsletterId
+						) ?
+							SpecialNewsletters::$subscriberCount[$this->mCurrentRow->nl_id] : 0,
 
-					) );
+					)
+				);
 			case 'action' :
 				$radioSubscribe = Html::element(
-							'input',
-							array(
+						'input',
+						array(
 							'type' => 'radio',
 							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
 							'value' => 'subscribe',
-							'checked' => in_array( $this->mCurrentRow->nl_id,
-									SpecialNewsletters::$subscribedNewsletterId ) ? true : false,
-							)
+							'checked' => in_array(
+								$this->mCurrentRow->nl_id,
+								SpecialNewsletters::$subscribedNewsletterId
+							) ? true : false,
+						)
 					) . $this->msg( 'newsletter-subscribe-button-label' );
 				$radioUnSubscribe = Html::element(
-							'input',
-							array(
+						'input',
+						array(
 							'type' => 'radio',
 							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
 							'value' => 'unsubscribe',
-							'checked' => in_array( $this->mCurrentRow->nl_id,
-									SpecialNewsletters::$subscribedNewsletterId ) ? false : true,
-							)
-				) . $this->msg( 'newsletter-unsubscribe-button-label' );
+							'checked' => in_array(
+								$this->mCurrentRow->nl_id,
+								SpecialNewsletters::$subscribedNewsletterId
+							) ? false : true,
+						)
+					) . $this->msg( 'newsletter-unsubscribe-button-label' );
 
 				return $radioSubscribe . $radioUnSubscribe;
 		}
 	}
 
-	function endQuery( $value ) {
+	public function endQuery( $value ) {
 		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 	}
 
-	function getDefaultSort() {
+	public function getDefaultSort() {
 		return 'nl_name';
 	}
 
-	function isFieldSortable( $field ) {
+	public function isFieldSortable( $field ) {
 		return false;
 	}
 

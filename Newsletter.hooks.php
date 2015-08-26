@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Class to add Hooks used by Newsletter.
  */
 class NewsletterHooks {
+
 	/**
 	 * Function to be called before EchoEvent
 	 *
@@ -10,7 +12,7 @@ class NewsletterHooks {
 	 * @param array $notificationCategories Echo notification categories
 	 * @return bool
 	 */
-	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories  ) {
+	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories ) {
 		$notificationCategories['newsletter'] = array(
 			'priority' => 3,
 			'tooltip' => 'echo-pref-tooltip-newsletter',
@@ -79,4 +81,5 @@ class NewsletterHooks {
 
 		return true;
 	}
+
 }
