@@ -49,7 +49,7 @@ class NewsletterHooks {
 				__METHOD__,
 				array()
 			);
-			foreach( $res as $row ) {
+			foreach ( $res as $row ) {
 				$recipient = User::newFromId( $row->subscriber_id );
 				$id = $row->subscriber_id;
 				$users[$id] = $recipient;

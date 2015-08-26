@@ -3,13 +3,13 @@
  * API to manage newsletters
  *
  */
-class ApiNewsletterManage extends ApiBase{
+class ApiNewsletterManage extends ApiBase {
 	public function execute() {
 		$dbw = wfGetDB( DB_MASTER );
 		if ( $this->getMain()->getVal( 'todo' ) === 'removepublisher' ) {
 			$rowData = array(
 				'newsletter_id' => $this->getMain()->getVal( 'newsletterId' ),
-				'publisher_id' => $this->getMain()->getVal('publisher')
+				'publisher_id' => $this->getMain()->getVal( 'publisher' )
 			);
 			$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		}

@@ -6,7 +6,7 @@
  */
 class SpecialNewsletterCreate extends SpecialPage {
 	public function __construct() {
-		parent::__construct('NewsletterCreate');
+		parent::__construct( 'NewsletterCreate' );
 	}
 
 	public function execute( $par ) {
@@ -84,7 +84,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 		}
 		if ( isset( $formData['name'] ) && isset( $formData['description'] ) && ( $pageId !== 0 ) &&
 			isset( $formData['mainpage'] ) && isset( $formData['frequency'] ) && isset( $formData['publisher'] ) ) {
-			//inserting into database
+			// inserting into database
 			$dbw = wfGetDB( DB_MASTER );
 			$rowData = array(
 				'nl_name' => $formData['name'],
@@ -100,7 +100,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 				return array( 'newsletter-exist-error' );
 			}
 			$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
-			//Add newsletter creator as publisher
+			// Add newsletter creator as publisher
 			$dbr = wfGetDB( DB_SLAVE );
 			$res = $dbr->select(
 				'nl_newsletters',

@@ -49,7 +49,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		$newsletterNames = array();
 		$newsletterIds = array();
 		$ownedNewsletter = array();
-		$defaultOption = array('' => null);
+		$defaultOption = array( '' => null );
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_publishers',
@@ -58,11 +58,11 @@ class SpecialNewsletterManage extends SpecialPage {
 			__METHOD__
 		);
 
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			$newsletterIds[$row->newsletter_id] = $row->newsletter_id;
 		}
 
-		foreach( $newsletterIds as $value ) {
+		foreach ( $newsletterIds as $value ) {
 			$resl = $dbr->select(
 				'nl_newsletters',
 				array( 'nl_name', 'nl_id' ),
@@ -78,24 +78,24 @@ class SpecialNewsletterManage extends SpecialPage {
 		$newsletters = array();
 		$result = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name','nl_id' ),
+			array( 'nl_name', 'nl_id' ),
 			array( 'nl_owner_id' => $this->getUser()->getId() ),
 			__METHOD__
 		);
 		foreach ( $result as $row ) {
 			$newsletters[$row->nl_name] = $row->nl_id;
 		}
-		//Get newsletters owned by the logged in user
+		// Get newsletters owned by the logged in user
 		$dbr = wfGetDB( DB_SLAVE );
 		$query = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name', 'nl_id'),
+			array( 'nl_name', 'nl_id' ),
 			array( 'nl_owner_id' => $this->getUser()->getId() ),
 			__METHOD__,
 			array()
 		);
 
-		foreach ($query as $row) {
+		foreach ( $query as $row ) {
 			$ownedNewsletter[$row->nl_name] = $row->nl_id;
 		}
 
@@ -142,9 +142,9 @@ class SpecialNewsletterManage extends SpecialPage {
 			$issuePage = Title::newFromText( $formData['issue-page'] );
 			$pageId = $issuePage->getArticleId();
 			$pageNamepace = $issuePage->getNamespace();
-			//Array index is newsletter-id for selected newsletter in newsletterNames[] above
+			// Array index is newsletter-id for selected newsletter in newsletterNames[] above
 			if ( ( $pageId !== 0 ) && isset( $newsletterId ) && isset( $formData['publisher'] ) ) {
-				//Find number of existing issues
+				// Find number of existing issues
 				$dbr = wfGetDB( DB_SLAVE );
 				$issueCount = $dbr->selectRowCount(
 					'nl_issues',
@@ -153,7 +153,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					__METHOD__,
 					array()
 				);
-				//inserting to database
+				// inserting to database
 				$dbw = wfGetDB( DB_MASTER );
 				$rowData = array(
 					'issue_id' => $issueCount + 1,
@@ -163,7 +163,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
 				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
-				//trigger notifications
+				// trigger notifications
 				$res = $dbr->select(
 					'nl_newsletters',
 					array( 'nl_name' ),
@@ -173,7 +173,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 
 				$newsletterName = null;
-				foreach( $res as $row ) {
+				foreach ( $res as $row ) {
 					$newsletterName = $row->nl_name;
 				}
 				if ( class_exists( 'EchoEvent' ) ) {
@@ -185,7 +185,7 @@ class SpecialNewsletterManage extends SpecialPage {
 							'issuePageTitle' => $formData['issue-page'],
 							'issuePageNamespace' => $pageNamepace
 						),
-					));
+					) );
 				}
 
 				return true;
@@ -204,7 +204,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					'publisher_id' => $user->getId()
 				);
 				try {
-					$dbww->insert('nl_publishers', $rowData, __METHOD__);
+					$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
 					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 					return true;
@@ -230,7 +230,7 @@ class NewsletterManageTable extends TablePager {
 		if ( is_null( $header ) ) {
 			$header = array();
 			foreach ( SpecialNewsletterManage::$fields as $key => $value ) {
-				$header[$key]= $this->msg( "newsletter-manage-header-$value" )->text();
+				$header[$key] = $this->msg( "newsletter-manage-header-$value" )->text();
 			}
 		}
 
@@ -247,7 +247,7 @@ class NewsletterManageTable extends TablePager {
 			)
 		);
 
-		//get user ids of all newsletter owners
+		// get user ids of all newsletter owners
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_newsletters',
@@ -256,7 +256,7 @@ class NewsletterManageTable extends TablePager {
 			__METHOD__,
 			array( 'DISTINCT' )
 		);
-		foreach( $res as $row ) {
+		foreach ( $res as $row ) {
 			self::$newsletterOwners[$row->nl_id] = $row->nl_owner_id;
 		}
 
@@ -268,7 +268,7 @@ class NewsletterManageTable extends TablePager {
 
 		switch( $field ) {
 			case 'newsletter_id':
-					if( $previous === $value ){
+					if ( $previous === $value ) {
 
 						return null;
 					} else {
@@ -281,7 +281,7 @@ class NewsletterManageTable extends TablePager {
 							array()
 						);
 						$newsletterName = null;
-						foreach( $res as $row ) {
+						foreach ( $res as $row ) {
 							$newsletterName = $row->nl_name;
 						}
 						$previous = $value;
