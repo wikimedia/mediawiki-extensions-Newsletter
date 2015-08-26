@@ -25,7 +25,7 @@ class SpecialNewsletterManage extends SpecialPage {
 
 		# Create HTML forms
 		$announceIssueForm = new HTMLForm( $announceIssueArray, $this->getContext(), 'newsletter-announceissueform' );
-		$announceIssueForm->setSubmitCallback( array( 'SpecialNewsletterManage', 'onSubmitIssue' ) );
+		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
 
 		$table = new NewsletterManageTable();
 		if ( $table->getNumRows() > 0 ) {
@@ -134,9 +134,9 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * form for announcing issues
 	 *
 	 * @param array $formData The data entered by user in the form
-	 * @return bool
+	 * @return bool|array true on success, array on error
 	 */
-	static function onSubmitIssue( $formData ) {
+	public function onSubmitIssue( $formData ) {
 		$newsletterId = $formData['issue-newsletter'];
 		if ( !empty( $formData['issue-page'] ) && !empty( $formData['issue-newsletter'] ) ) {
 			$issuePage = Title::newFromText( $formData['issue-page'] );
@@ -162,7 +162,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					'issue_publisher_id' => $formData['publisher']
 				);
 				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
-				RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
+				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
 				//trigger notifications
 				$res = $dbr->select(
 					'nl_newsletters',
@@ -190,7 +190,7 @@ class SpecialNewsletterManage extends SpecialPage {
 
 				return true;
 			} else {
-				return RequestContext::getMain()->msg( 'newsletter-issuepage-not-found-error' );
+				return array( 'newsletter-issuepage-not-found-error' );
 			}
 		}
 
@@ -205,19 +205,19 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 				try {
 					$dbww->insert('nl_publishers', $rowData, __METHOD__);
-					RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
+					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 					return true;
 				} catch ( DBQueryError $e ) {
-					return RequestContext::getMain()->msg( 'newsletter-invalid-username-error' );
+					return array( 'newsletter-invalid-username-error' );
 				}
 			} else {
-				return 	RequestContext::getMain()->msg( 'newsletter-unconfirmed-email-error' );
+				return array( 'newsletter-unconfirmed-email-error' );
 			}
 
 		}
 
-		return RequestContext::getMain()->msg( 'newsletter-required-fields-error' );
+		return array( 'newsletter-required-fields-error' );
 
 	}
 }

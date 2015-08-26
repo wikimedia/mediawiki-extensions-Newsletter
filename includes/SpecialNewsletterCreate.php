@@ -2,6 +2,7 @@
 /**
  * Special page for creating newsletters
  *
+ * @todo Make this extend FormSpecialPage
  */
 class SpecialNewsletterCreate extends SpecialPage {
 	public function __construct() {
@@ -17,7 +18,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 		# Create HTML forms
 		$createNewsletterForm = new HTMLForm( $createNewsletterArray, $this->getContext(), 'createnewsletterform' );
 		$createNewsletterForm->setSubmitTextMsg( 'newsletter-create-submit' );
-		$createNewsletterForm->setSubmitCallback( array( 'SpecialNewsletterCreate', 'onSubmitNewsletter' ) );
+		$createNewsletterForm->setSubmitCallback( array( $this, 'onSubmitNewsletter' ) );
 		$createNewsletterForm->setWrapperLegendMsg( 'newsletter-create-section' );
 		# Show HTML forms
 		$createNewsletterForm->show();
@@ -72,14 +73,14 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 * form for creating newsletters
 	 *
 	 * @param array $formData The data entered by user in the form
-	 * @return bool
+	 * @return bool|array true on success, array on error
 	 */
-	static function onSubmitNewsletter( array $formData ) {
+	public function onSubmitNewsletter( array $formData ) {
 		if ( isset( $formData['mainpage'] ) ) {
 			$page = Title::newFromText( $formData['mainpage'] );
 			$pageId = $page->getArticleId();
 		} else {
-			return RequestContext::getMain()->msg( 'newsletter-create-mainpage-error' );
+			return array( 'newsletter-create-mainpage-error' );
 		}
 		if ( isset( $formData['name'] ) && isset( $formData['description'] ) && ( $pageId !== 0 ) &&
 			isset( $formData['mainpage'] ) && isset( $formData['frequency'] ) && isset( $formData['publisher'] ) ) {
@@ -96,9 +97,9 @@ class SpecialNewsletterCreate extends SpecialPage {
 			try {
 				$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 			} catch ( DBQueryError $e ) {
-				return RequestContext::getMain()->msg( 'newsletter-exist-error' );
+				return array( 'newsletter-exist-error' );
 			}
-			RequestContext::getMain()->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+			$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 			//Add newsletter creator as publisher
 			$dbr = wfGetDB( DB_SLAVE );
 			$res = $dbr->select(
@@ -124,6 +125,6 @@ class SpecialNewsletterCreate extends SpecialPage {
 			return true;
 		}
 
-		return RequestContext::getMain()->msg( 'newsletter-mainpage-not-found-error' );
+		return array( 'newsletter-mainpage-not-found-error' );
 	}
 }
