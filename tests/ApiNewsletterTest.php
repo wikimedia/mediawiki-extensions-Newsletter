@@ -11,6 +11,13 @@
  */
 class ApiNewsletterTest extends ApiTestCase {
 
+	public function __construct( $name = null, array $data = array(), $dataName = '' ) {
+		parent::__construct( $name, $data, $dataName );
+
+		$this->tablesUsed[] = 'nl_newsletters';
+		$this->tablesUsed[] = 'nl_subscriptions';
+	}
+
 	protected function setUp() {
 		parent::setUp();
 		$dbw = wfGetDB( DB_MASTER );
@@ -26,7 +33,6 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_owner_id' => $user->getId(),
 		);
 		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
-		$this->tablesUsed = array( 'nl_newsletters' );
 	}
 
 	protected function getNewsletterId() {
