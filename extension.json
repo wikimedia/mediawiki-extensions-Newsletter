@@ -35,7 +35,7 @@
 		"NewsletterTablePager": "includes/SpecialNewsletters.php",
 		"ApiNewsletter": "includes/ApiNewsletter.php",
 		"ApiNewsletterManage": "includes/ApiNewsletterManage.php",
-		"NewsletterManageTable": "includes/SpecialNewsletterManage.php"
+		"NewsletterManageTable": "includes/NewsletterManageTable.php"
 	},
 	"ResourceModules": {
 		"ext.newsletter": {
