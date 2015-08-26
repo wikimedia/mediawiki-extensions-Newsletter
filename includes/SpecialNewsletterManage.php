@@ -103,13 +103,13 @@ class SpecialNewsletterManage extends SpecialPage {
 			'issue-newsletter' => array(
 				'type' => 'select',
 				'section' => 'announceissue-section',
-				'label' => $this->msg( 'newsletter-name' ),
+				'label-message' => 'newsletter-name',
 				'options' => array_merge( $defaultOption, $newsletterNames ),
 			),
 			'issue-page' => array(
 				'type' => 'text',
 				'section' => 'announceissue-section',
-				'label' => $this->msg( 'newsletter-issue-title' ),
+				'label-message' => 'newsletter-issue-title',
 			),
 			'publisher' => array(
 				'type' => 'hidden',
@@ -118,13 +118,13 @@ class SpecialNewsletterManage extends SpecialPage {
 			'newsletter-name' => array(
 				'type' => 'select',
 				'section' => 'addpublisher-section',
-				'label' => $this->msg( 'newsletter-name' ),
+				'label-message' => 'newsletter-name',
 				'options' => array_merge( $defaultOption, $ownedNewsletter ),
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
 				'type' => 'text',
-				'label' => $this->msg( 'newsletter-publisher-username' ),
+				'label-message' => 'newsletter-publisher-username',
 			)
 		);
 	}
