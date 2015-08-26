@@ -21,6 +21,7 @@ $wgExtensionCredits[ 'other' ][ ] = array(
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Newsletter',
 	'descriptionmsg' => 'newsletter-desc',
 	'version'        => '1.2.0',
+	'license-name'   => 'GPL-2.0+',
 );
 
 $wgMessagesDirs['Newsletter'] = __DIR__ . '/i18n';
