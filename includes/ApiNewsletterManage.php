@@ -6,6 +6,12 @@
 class ApiNewsletterManage extends ApiBase {
 
 	public function execute() {
+
+		$user = $this->getUser();
+		if ( !$user->isLoggedIn() ) {
+			$this->dieUsage( 'You must be logged-in to interact with newsletters', 'notloggedin' );
+		}
+
 		$dbw = wfGetDB( DB_MASTER );
 		if ( $this->getMain()->getVal( 'todo' ) === 'removepublisher' ) {
 			$rowData = array(

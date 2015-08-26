@@ -3,11 +3,17 @@
 class ApiNewsletter extends ApiBase {
 
 	public function execute() {
+
+		$user = $this->getUser();
+		if ( !$user->isLoggedIn() ) {
+			$this->dieUsage( 'You must be logged-in to interact with newsletters', 'notloggedin' );
+		}
+
 		$dbw = wfGetDB( DB_MASTER );
 		if ( $this->getMain()->getVal( 'todo' ) === 'subscribe' ) {
 			$rowData = array(
 				'newsletter_id' => $this->getMain()->getVal( 'newsletterId' ),
-				'subscriber_id' => $this->getUser()->getId(),
+				'subscriber_id' => $user->getId(),
 			);
 			$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__ );
 		}
@@ -15,7 +21,7 @@ class ApiNewsletter extends ApiBase {
 		if ( $this->getMain()->getVal( 'todo' ) === 'unsubscribe' ) {
 			$rowData = array(
 				'newsletter_id' => $this->getMain()->getVal( 'newsletterId' ),
-				'subscriber_id' => $this->getUser()->getId(),
+				'subscriber_id' => $user->getId(),
 			);
 			$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 		}
