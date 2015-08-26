@@ -68,10 +68,10 @@ class NewsletterHooks {
 	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/sql/nl_newsletters.sql', true );
-		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/sql/nl_issues.sql', true );
-		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql', true );
-		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql', true );
+		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/sql/nl_newsletters.sql' );
+		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/sql/nl_issues.sql' );
+		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql' );
+		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql' );
 
 		return true;
 	}
