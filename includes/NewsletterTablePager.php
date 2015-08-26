@@ -93,10 +93,6 @@ class NewsletterTablePager extends TablePager {
 		}
 	}
 
-	public function endQuery( $value ) {
-		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
-	}
-
 	public function getDefaultSort() {
 		return 'nl_name';
 	}
