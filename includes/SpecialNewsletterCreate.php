@@ -16,7 +16,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 
 		# Create HTML forms
 		$createNewsletterForm = new HTMLForm( $createNewsletterArray, $this->getContext(), 'createnewsletterform' );
-		$createNewsletterForm->setSubmitText( 'Create newsletter' );
+		$createNewsletterForm->setSubmitTextMsg( 'newsletter-create-submit' );
 		$createNewsletterForm->setSubmitCallback( array( 'SpecialNewsletterCreate', 'onSubmitNewsletter' ) );
 		$createNewsletterForm->setWrapperLegendMsg( 'newsletter-create-section' );
 		# Show HTML forms
@@ -34,24 +34,24 @@ class SpecialNewsletterCreate extends SpecialPage {
 			'name' => array(
 				'type' => 'text',
 				'required' => true,
-				'label' => $this->msg( 'newsletter-name' )
+				'label-message' => 'newsletter-name',
 			),
 			'description' => array(
 				'type' => 'textarea',
 				'required' => true,
-				'label' => $this->msg( 'newsletter-desc' ),
+				'label-message' => 'newsletter-desc',
 				'rows' => 15,
 				'cols' => 50,
 			),
 			'mainpage' => array(
 				'required' => true,
 				'type' => 'text',
-				'label' => $this->msg( 'newsletter-title' )
+				'label-message' => 'newsletter-title',
 			),
 			'frequency' => array(
 				'required' => true,
 				'type' => 'selectorother',
-				'label' => $this->msg( 'newsletter-frequency' ),
+				'label-message' => 'newsletter-frequency',
 				'options' => array(
 					'weekly' => $this->msg( 'newsletter-option-weekly' ),
 					'monthly' => $this->msg( 'newsletter-option-monthly' ),
@@ -79,7 +79,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 			$page = Title::newFromText( $formData['mainpage'] );
 			$pageId = $page->getArticleId();
 		} else {
-			return 'Unknown Newsletter main page entered. Please try again';
+			return RequestContext::getMain()->msg( 'newsletter-create-mainpage-error' );
 		}
 		if ( isset( $formData['name'] ) && isset( $formData['description'] ) && ( $pageId !== 0 ) &&
 			isset( $formData['mainpage'] ) && isset( $formData['frequency'] ) && isset( $formData['publisher'] ) ) {
