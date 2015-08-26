@@ -32,7 +32,7 @@
 		"SpecialNewsletterManage": "includes/SpecialNewsletterManage.php",
 		"SpecialNewsletters": "includes/SpecialNewsletters.php",
 		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
-		"NewsletterTablePager": "includes/SpecialNewsletters.php",
+		"NewsletterTablePager": "includes/NewsletterTablePager.php",
 		"ApiNewsletter": "includes/ApiNewsletter.php",
 		"ApiNewsletterManage": "includes/ApiNewsletterManage.php",
 		"NewsletterManageTable": "includes/NewsletterManageTable.php"
