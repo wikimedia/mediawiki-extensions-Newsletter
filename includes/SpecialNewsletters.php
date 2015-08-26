@@ -29,12 +29,12 @@ class SpecialNewsletters extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->requireLogin();
-		$out = $this->getOutput();
-		$this->getOutput()->addModules( 'ext.newsletter' );
+		$output = $this->getOutput();
+		$output->addModules( 'ext.newsletter' );
 		$pager = new NewsletterTablePager();
 
 		if ( $pager->getNumRows() > 0 ) {
-			$out->addHTML(
+			$output->addHTML(
 				$pager->getNavigationBar() .
 				$pager->getBody() .
 				$pager->getNavigationBar()

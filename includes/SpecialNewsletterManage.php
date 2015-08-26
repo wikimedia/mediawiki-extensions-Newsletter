@@ -19,8 +19,8 @@ class SpecialNewsletterManage extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
-		$this->getOutput()->addModules( 'ext.newsletter' );
-		$this->getOutput()->addModules( 'ext.newslettermanage' );
+		$output->addModules( 'ext.newsletter' );
+		$output->addModules( 'ext.newslettermanage' );
 		$this->requireLogin();
 		$announceIssueArray = $this->getAnnounceFormFields();
 
