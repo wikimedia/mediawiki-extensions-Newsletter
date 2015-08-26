@@ -4,17 +4,20 @@ class NewsletterManageTable extends TablePager {
 
 	private $newsletterOwners = array();
 
+	/**
+	 * @see TablePager::getFieldnames
+	 * @var array|null
+	 */
+	private $fieldNames = null;
+
 	public function getFieldNames() {
-		$header = null;
-		if ( is_null( $header ) ) {
-			$header = array();
+		if ( $this->fieldNames === null ) {
+			$this->fieldNames = array();
 			foreach ( SpecialNewsletterManage::$fields as $key => $value ) {
-				$header[$key] = $this->msg( "newsletter-manage-header-$value" )->text();
+				$this->fieldNames[$key] = $this->msg( "newsletter-manage-header-$value" )->text();
 			}
 		}
-
-		return $header;
-
+		return $this->fieldNames;
 	}
 
 	public function getQueryInfo() {
