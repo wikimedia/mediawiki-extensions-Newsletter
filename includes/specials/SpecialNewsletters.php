@@ -22,13 +22,6 @@ class SpecialNewsletters extends SpecialPage {
 	 */
 	public static $subscribedNewsletterId = array();
 
-	/**
-	 * Subscriber count
-	 * @var array
-	 * @todo FIXME this is called from other classes
-	 */
-	public static $subscriberCount = array();
-
 	public function __construct() {
 		parent::__construct( 'Newsletters' );
 		self::getSubscribedNewsletters( $this->getUser()->getId() );
@@ -68,14 +61,7 @@ class SpecialNewsletters extends SpecialPage {
 		);
 
 		foreach ( $resl as $row ) {
-			$result = $dbr->selectRowCount(
-				'nl_subscriptions',
-				array(),
-				array( 'newsletter_id' => $row->newsletter_id ),
-				__METHOD__
-			);
 			self::$allSubscribedNewsletterId[] = $row->newsletter_id;
-			self::$subscriberCount[$row->newsletter_id] = $result;
 		}
 	}
 

@@ -25,11 +25,15 @@ class NewsletterTablePager extends TablePager {
 
 	public function getQueryInfo() {
 		$info = array(
-			'tables' => array( 'nl_newsletters' ),
+			'tables' => array( 'nl_newsletters', 'nl_subscriptions' ),
 			'fields' => array(
 				'nl_name',
 				'nl_desc',
 				'nl_id',
+				'subscribers' => ( 'COUNT(nl_subscriptions.newsletter_id)' ),
+			),
+			'join_conds' => array(
+				'nl_subscriptions' => array( 'LEFT JOIN', 'newsletter_id = nl_id' ),
 			),
 		);
 
@@ -64,11 +68,7 @@ class NewsletterTablePager extends TablePager {
 						'type' => 'textbox',
 						'readonly' => 'true',
 						'id' => 'newsletter-' . $this->mCurrentRow->nl_id,
-						'value' => in_array(
-							$this->mCurrentRow->nl_id,
-							SpecialNewsletters::$allSubscribedNewsletterId
-						) ?
-							SpecialNewsletters::$subscriberCount[$this->mCurrentRow->nl_id] : 0,
+						'value' => $this->mCurrentRow->subscribers,
 
 					)
 				);

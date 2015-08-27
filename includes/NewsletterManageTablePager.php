@@ -29,7 +29,7 @@ class NewsletterManageTablePager extends TablePager {
 			'fields' => array(
 				'newsletter_id',
 				'publisher_id',
-				'is_owner' => ( 'publisher_id = nl_owner_id' ),
+				'is_owner' => 'publisher_id = nl_owner_id',
 			),
 			'join_conds' => array(
 				'nl_newsletters' => array( 'LEFT JOIN', 'newsletter_id = nl_id' ),
