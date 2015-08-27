@@ -198,33 +198,39 @@ class SpecialNewsletterManage extends SpecialPage {
 		if ( !empty( $formData['newsletter-name'] ) && !empty( $formData['publisher-name'] ) ) {
 			$pubNewsletterId = $formData['newsletter-name'];
 			$user = User::newFromName( $formData['publisher-name'] );
-			if ( $user->isEmailConfirmed() ) {
-				$dbww = wfGetDB( DB_MASTER );
-				$rowData = array(
-					'newsletter_id' => $pubNewsletterId,
-					'publisher_id' => $user->getId(),
-				);
-				//Automatically subscribe publishers to the newsletter
-				$subscribeRowData = array(
-					'newsletter_id' => $pubNewsletterId,
-					'subscriber_id' => $user->getId()
-				);
-				try {
-					$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
-					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
-				}
-				catch ( DBQueryError $e ) {
-					return array( 'newsletter-invalid-username-error' );
-				}
-				try{
-					$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
-				} catch ( DBQueryError $ed ) {
-				}
 
-				return true;
-			} else {
+			if ( !$user || $user->isAnon() ) {
+				return array( 'newsletter-invalid-username-error' );
+			}
+
+			if ( !$user->isEmailConfirmed() ) {
 				return array( 'newsletter-unconfirmed-email-error' );
 			}
+
+			$dbww = wfGetDB( DB_MASTER );
+			$rowData = array(
+				'newsletter_id' => $pubNewsletterId,
+				'publisher_id' => $user->getId(),
+			);
+			//Automatically subscribe publishers to the newsletter
+			$subscribeRowData = array(
+				'newsletter_id' => $pubNewsletterId,
+				'subscriber_id' => $user->getId(),
+			);
+			try {
+				$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
+				$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
+			}
+			catch ( DBQueryError $e ) {
+				return array( 'newsletter-invalid-username-error' );
+			}
+			try {
+				$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
+			}
+			catch ( DBQueryError $ed ) {
+			}
+
+			return true;
 
 		}
 
