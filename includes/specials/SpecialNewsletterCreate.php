@@ -140,7 +140,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 */
 	private function autoSubscribe( $newsletterId, $ownerId ) {
 		$dbw = wfGetDB( DB_MASTER );
-
 		// add owner as a publisher
 		$pubRowData = array(
 			'newsletter_id' => $newsletterId,
@@ -148,12 +147,8 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		);
 		$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
 
-		// add owner as a subscriber
-		$subRowData = array(
-			'newsletter_id' => $newsletterId,
-			'subscriber_id' => $ownerId,
-		);
-		$dbw->insert( 'nl_subscriptions', $subRowData, __METHOD__ );
+		$table = SubscriptionsTable::newFromGlobalState();
+		$table->addSubscription( $ownerId, $newsletterId );
 
 		return true;
 	}

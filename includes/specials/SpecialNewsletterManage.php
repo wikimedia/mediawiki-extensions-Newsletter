@@ -224,11 +224,8 @@ class SpecialNewsletterManage extends SpecialPage {
 			catch ( DBQueryError $e ) {
 				return array( 'newsletter-invalid-username-error' );
 			}
-			try {
-				$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
-			}
-			catch ( DBQueryError $ed ) {
-			}
+			$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
+			$subscriptionsTable->addSubscription( $user->getId(), $pubNewsletterId );
 
 			return true;
 
