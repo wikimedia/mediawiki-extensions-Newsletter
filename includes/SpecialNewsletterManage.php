@@ -210,13 +210,16 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 				try {
 					$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
-					$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
 					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
-
-					return true;
 				} catch ( DBQueryError $e ) {
 					return array( 'newsletter-invalid-username-error' );
 				}
+				try{
+					$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
+				} catch ( DBQueryError $ed ) {
+				}
+
+				return true;
 			} else {
 				return array( 'newsletter-unconfirmed-email-error' );
 			}
@@ -224,7 +227,6 @@ class SpecialNewsletterManage extends SpecialPage {
 		}
 
 		return array( 'newsletter-required-fields-error' );
-
 	}
 }
 
