@@ -21,11 +21,7 @@ class SpecialNewsletters extends SpecialPage {
 		$pager = new NewsletterTablePager();
 
 		if ( $pager->getNumRows() > 0 ) {
-			$out->addHTML(
-				$pager->getNavigationBar() .
-				$pager->getBody() .
-				$pager->getNavigationBar()
-			);
+			$out->addParserOutput( $pager->getFullOutput() );
 		} else {
 			$out->showErrorPage( 'newsletters', 'newsletter-none-found' );
 		}

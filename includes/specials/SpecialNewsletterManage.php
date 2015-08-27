@@ -28,13 +28,9 @@ class SpecialNewsletterManage extends SpecialPage {
 		);
 		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
 
-		$table = new NewsletterManageTablePager();
-		if ( $table->getNumRows() > 0 ) {
-			$output->addHTML(
-				$table->getNavigationBar() .
-				$table->getBody() .
-				$table->getNavigationBar()
-			);
+		$pager = new NewsletterManageTablePager();
+		if ( $pager->getNumRows() > 0 ) {
+			$output->addParserOutput( $pager->getFullOutput() );
 			// Show HTML forms
 			$announceIssueForm->show();
 		} else {
