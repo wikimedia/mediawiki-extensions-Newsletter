@@ -17,6 +17,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		$output = $this->getOutput();
 		$output->addModules( 'ext.newsletter' );
 		$output->addModules( 'ext.newslettermanage' );
+		$output->setSubtitle( SpecialNewsletters::getSubtitleLinks() );
 		$this->requireLogin();
 		$announceIssueArray = $this->getAnnounceFormFields();
 
@@ -40,7 +41,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		} else {
 			$output->showErrorPage( 'newslettermanage', 'newsletter-none-found' );
 		}
-
+		$output->returnToMain();
 	}
 
 	/**

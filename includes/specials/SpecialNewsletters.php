@@ -37,18 +37,19 @@ class SpecialNewsletters extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->requireLogin();
-		$output = $this->getOutput();
-		$output->addModules( 'ext.newsletter' );
+		$out = $this->getOutput();
+		$out->addModules( 'ext.newsletter' );
+		$out->setSubtitle( self::getSubtitleLinks() );
 		$pager = new NewsletterTablePager();
 
 		if ( $pager->getNumRows() > 0 ) {
-			$output->addHTML(
+			$out->addHTML(
 				$pager->getNavigationBar() .
 				$pager->getBody() .
 				$pager->getNavigationBar()
 			);
 		} else {
-			$output->showErrorPage( 'newsletters', 'newsletter-none-found' );
+			$out->showErrorPage( 'newsletters', 'newsletter-none-found' );
 		}
 	}
 
@@ -76,5 +77,34 @@ class SpecialNewsletters extends SpecialPage {
 			self::$allSubscribedNewsletterId[] = $row->newsletter_id;
 			self::$subscriberCount[$row->newsletter_id] = $result;
 		}
+	}
+
+	/**
+	 * Get links to newsletter special pages shown in the subtitle
+	 *
+	 * @return string
+	 */
+	public static function getSubtitleLinks() {
+		global $wgLang;
+
+		$pages = array(
+			'list' => 'Newsletters',
+			'create' => 'NewsletterCreate',
+			'manage' => 'NewsletterManage',
+		);
+
+		$links = array();
+		foreach ( $pages as $txt => $title ) {
+			// 'newsletter-subtitlelinks-list'
+			// 'newsletter-subtitlelinks-create'
+			// 'newsletter-subtitlelinks-manage'
+			$links[] = Linker::linkKnown(
+				SpecialPage::getTitleFor( $title ),
+				wfMessage( 'newsletter-subtitlelinks-' . $txt )->escaped()
+			);
+		}
+
+		return wfMessage( 'parentheses' )->rawParams( $wgLang->pipeList( $links ) )->escaped();
+
 	}
 }
