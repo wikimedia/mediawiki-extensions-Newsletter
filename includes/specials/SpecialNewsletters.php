@@ -2,6 +2,9 @@
 
 /**
  * Special page for subscribing/un-subscribing a newsletter
+ *
+ * @license GNU GPL v2+
+ * @author Tina Johnson
  */
 class SpecialNewsletters extends SpecialPage {
 

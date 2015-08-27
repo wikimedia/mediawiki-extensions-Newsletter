@@ -2,6 +2,9 @@
 
 /**
  * API to manage newsletters
+ *
+ * @license GNU GPL v2+
+ * @author Tina Johnson
  */
 class ApiNewsletterManage extends ApiBase {
 

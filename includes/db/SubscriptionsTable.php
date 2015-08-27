@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @license GNU GPL v2+
+ * @author Adam Shorland
+ */
 class SubscriptionsTable {
 
 	private $readDb;

@@ -3,6 +3,8 @@
 /**
  * Special page for creating newsletters
  *
+ * @license GNU GPL v2+
+ * @author Tina Johnson
  */
 class SpecialNewsletterCreate extends FormSpecialPage {
 

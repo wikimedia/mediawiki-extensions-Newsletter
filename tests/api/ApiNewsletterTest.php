@@ -6,7 +6,9 @@
  * @group API
  * @group medium
  * @group Database
+ *
  * @covers ApiNewsletter
+ *
  * @author Tina Johnson
  */
 class ApiNewsletterTest extends ApiTestCase {

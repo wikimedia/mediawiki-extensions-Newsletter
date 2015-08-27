@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @license GNU GPL v2+
+ * @author Tina Johnson
+ */
 class NewsletterTablePager extends TablePager {
 
 	/**
