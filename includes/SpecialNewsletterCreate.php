@@ -3,32 +3,25 @@
 /**
  * Special page for creating newsletters
  *
- * @todo Make this extend FormSpecialPage
  */
-class SpecialNewsletterCreate extends SpecialPage {
+class SpecialNewsletterCreate extends FormSpecialPage {
+
 
 	public function __construct() {
 		parent::__construct( 'NewsletterCreate' );
 	}
 
 	public function execute( $par ) {
-		$this->setHeaders();
-		$output = $this->getOutput();
 		$this->requireLogin();
-		$createNewsletterArray = $this->getCreateFormFields();
+		parent::execute( $par );
+	}
 
-		# Create HTML forms
-		$createNewsletterForm = new HTMLForm(
-			$createNewsletterArray,
-			$this->getContext(),
-			'createnewsletterform'
-		);
-		$createNewsletterForm->setSubmitTextMsg( 'newsletter-create-submit' );
-		$createNewsletterForm->setSubmitCallback( array( $this, 'onSubmitNewsletter' ) );
-		$createNewsletterForm->setWrapperLegendMsg( 'newsletter-create-section' );
-		# Show HTML forms
-		$createNewsletterForm->show();
-		$output->returnToMain();
+	/**
+	 * @param HTMLForm $form
+	 */
+	protected function alterForm( HTMLForm $form ) {
+		$form->setSubmitTextMsg( 'newsletter-create-submit' );
+		$form->setWrapperLegendMsg( 'newsletter-create-section' );
 	}
 
 	/**
@@ -36,7 +29,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 *
 	 * @return array
 	 */
-	protected function getCreateFormFields() {
+	protected function getFormFields() {
 		return array(
 			'name' => array(
 				'type' => 'text',
@@ -67,6 +60,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 				'size' => 18, # size of 'other' field
 				'maxlength' => 50,
 			),
+			// @todo FIXME: this shouldn't be a form field
 			'publisher' => array(
 				'type' => 'hidden',
 				'default' => $this->getUser()->getId(),
@@ -82,7 +76,7 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 *
 	 * @return bool|array true on success, array on error
 	 */
-	public function onSubmitNewsletter( array $formData ) {
+	public function onSubmit( array $formData ) {
 		if ( isset( $formData['mainpage'] ) ) {
 			$page = Title::newFromText( $formData['mainpage'] );
 			$pageId = $page->getArticleId();
@@ -146,12 +140,14 @@ class SpecialNewsletterCreate extends SpecialPage {
 	 */
 	private function autoSubscribe( $newsletterId, $ownerId ) {
 		$dbw = wfGetDB( DB_MASTER );
+
 		// add owner as a publisher
 		$pubRowData = array(
 			'newsletter_id' => $newsletterId,
 			'publisher_id' => $ownerId,
 		);
 		$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
+
 		// add owner as a subscriber
 		$subRowData = array(
 			'newsletter_id' => $newsletterId,
