@@ -115,16 +115,36 @@ class SpecialNewsletterCreate extends SpecialPage {
 			foreach ( $res as $row ) {
 				$newsletterId = $row->nl_id;
 			}
-
-			$pubRowData = array(
-				'newsletter_id' => $newsletterId,
-				'publisher_id' => $formData['publisher']
-			);
-			$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
+			$this->autoSubscribe( $newsletterId, $formData['publisher'] );
 
 			return true;
 		}
 
 		return array( 'newsletter-mainpage-not-found-error' );
+	}
+
+	/**
+	 * Automatically subscribe and add owner as publisher of the newsletter
+	 *
+	 * @param int $newsletterId Id of the newsletter
+	 * @param int $ownerId User Id of the owner
+	 * @return bool
+	 */
+	function autoSubscribe( $newsletterId, $ownerId ) {
+		$dbw = wfGetDB( DB_MASTER );
+		//add owner as a publisher
+		$pubRowData = array(
+			'newsletter_id' => $newsletterId,
+			'publisher_id' => $ownerId
+		);
+		$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
+		//add owner as a subscriber
+		$subRowData = array(
+			'newsletter_id' => $newsletterId,
+			'subscriber_id' => $ownerId
+		);
+		$dbw->insert( 'nl_subscriptions', $subRowData, __METHOD__ );
+
+		return true;
 	}
 }

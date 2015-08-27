@@ -203,8 +203,14 @@ class SpecialNewsletterManage extends SpecialPage {
 					'newsletter_id' => $pubNewsletterId,
 					'publisher_id' => $user->getId()
 				);
+				//Automatically subscribe publishers to the newsletter
+				$subscribeRowData = array(
+					'newsletter_id' => $pubNewsletterId,
+					'subscriber_id' => $user->getId()
+				);
 				try {
 					$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
+					$dbww->insert( 'nl_subscriptions', $subscribeRowData, __METHOD__ );
 					$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 					return true;
