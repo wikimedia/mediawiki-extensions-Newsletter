@@ -50,27 +50,4 @@ class SubscriptionsTable {
 		return $this->writeDb->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 	}
 
-	/**
-	 * @param int $userId
-	 *
-	 * @throws DBQueryError
-	 *
-	 * @return int[]
-	 */
-	public function getSubscriptionsForUser( $userId ) {
-		$res = $this->readDb->select(
-			'nl_subscriptions',
-			array( 'newsletter_id' ),
-			array( 'subscriber_id' => $userId ),
-			__METHOD__
-		);
-
-		$newsletterIds = array();
-		foreach ( $res as $row ) {
-			$newsletterIds[] = $row->newsletter_id;
-		}
-
-		return $newsletterIds;
-	}
-
 }

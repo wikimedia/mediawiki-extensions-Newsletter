@@ -24,6 +24,8 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function getQueryInfo() {
+		$userId = $this->getUser()->getId();
+		//TODO we could probably just retrieve all subscribers IDs as a string here.
 		$info = array(
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
@@ -31,6 +33,7 @@ class NewsletterTablePager extends TablePager {
 				'nl_desc',
 				'nl_id',
 				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE newsletter_id = nl_id )' ),
+				'current_user_subscribed' => "$userId IN (SELECT subscriber_id FROM nl_subscriptions WHERE newsletter_id = nl_id )" ,
 			),
 			'options' => array( 'DISTINCT nl_id' ),
 		);
@@ -77,10 +80,7 @@ class NewsletterTablePager extends TablePager {
 							'type' => 'radio',
 							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
 							'value' => 'subscribe',
-							'checked' => in_array(
-								$this->mCurrentRow->nl_id,
-								SpecialNewsletters::$subscribedNewsletterId
-							) ? true : false,
+							'checked' => $this->mCurrentRow->current_user_subscribed,
 						)
 					) . $this->msg( 'newsletter-subscribe-button-label' );
 				$radioUnSubscribe = Html::element(
@@ -89,10 +89,7 @@ class NewsletterTablePager extends TablePager {
 							'type' => 'radio',
 							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
 							'value' => 'unsubscribe',
-							'checked' => in_array(
-								$this->mCurrentRow->nl_id,
-								SpecialNewsletters::$subscribedNewsletterId
-							) ? false : true,
+							'checked' => !$this->mCurrentRow->current_user_subscribed,
 						)
 					) . $this->msg( 'newsletter-unsubscribe-button-label' );
 

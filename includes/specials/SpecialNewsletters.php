@@ -8,16 +8,8 @@
  */
 class SpecialNewsletters extends SpecialPage {
 
-	/**
-	 * Array containing all newsletter ids to which the logged in user is subscribed to
-	 * @var array
-	 * @todo FIXME this is called from other classes
-	 */
-	public static $subscribedNewsletterId = array();
-
 	public function __construct() {
 		parent::__construct( 'Newsletters' );
-		self::getSubscribedNewsletters( $this->getUser()->getId() );
 	}
 
 	public function execute( $par ) {
@@ -37,12 +29,6 @@ class SpecialNewsletters extends SpecialPage {
 		} else {
 			$out->showErrorPage( 'newsletters', 'newsletter-none-found' );
 		}
-	}
-
-	public static function getSubscribedNewsletters( $userId ) {
-		$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
-		$userSubscriptions = $subscriptionsTable->getSubscriptionsForUser( $userId );
-		self::$subscribedNewsletterId = $userSubscriptions;
 	}
 
 }
