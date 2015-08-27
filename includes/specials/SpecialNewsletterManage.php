@@ -41,7 +41,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		} else {
 			$output->showErrorPage( 'newslettermanage', 'newsletter-none-found' );
 		}
-		$output->returnToMain();
+
 	}
 
 	/**
