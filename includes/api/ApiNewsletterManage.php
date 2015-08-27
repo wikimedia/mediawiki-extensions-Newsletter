@@ -34,7 +34,7 @@ class ApiNewsletterManage extends ApiBase {
 					ApiBase::PARAM_REQUIRED => true,
 				),
 				'todo' => array(
-					ApiBase::PARAM_TYPE => 'string',
+					ApiBase::PARAM_TYPE => array( 'removepublisher' ),
 					ApiBase::PARAM_REQUIRED => true,
 				),
 				'publisher' => array(

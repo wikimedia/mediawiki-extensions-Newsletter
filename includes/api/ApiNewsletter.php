@@ -36,7 +36,7 @@ class ApiNewsletter extends ApiBase {
 					ApiBase::PARAM_REQUIRED => true,
 				),
 				'todo' => array(
-					ApiBase::PARAM_TYPE => 'string',
+					ApiBase::PARAM_TYPE => array( 'subscribe', 'unsubscribe' ),
 					ApiBase::PARAM_REQUIRED => true,
 				),
 			)
