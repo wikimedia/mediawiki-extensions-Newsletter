@@ -4,7 +4,7 @@
 			"Bjankuloski06"
 		]
 	},
-	"newsletter-desc": "Опис",
+	"newsletter-extension-desc": "Опис",
 	"newslettercreate": "Направи билтен",
 	"newslettermanage": "Раководење со билтени",
 	"newsletter-name": "Назив на билтенот",
@@ -24,7 +24,9 @@
 	"newsletter-announceissueform-announceissue-section": "Објави ново издание",
 	"newsletter-announceissueform-addpublisher-section": "Додај издавачи",
 	"newsletter-create-section": "Направи билтен",
+	"newsletter-create-submit": "Направи билтен",
 	"newsletter-create-confirmation": "Одлично! Штотуку направивте нов билтен.",
+	"newsletter-create-mainpage-error": "Внесена е непозната главна страница на билтен. Обидете се повторно.",
 	"newsletter-issue-announce-confirmation": "Одлично! Штотуку најавивте ново издание на вашиот билтен.",
 	"newsletters": "Билтени",
 	"newsletter-subscribe-section": "Претплата на билтени",

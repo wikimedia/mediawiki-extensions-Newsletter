@@ -4,7 +4,7 @@
 			"Macofe"
 		]
 	},
-	"newsletter-desc": "Descripción",
+	"newsletter-extension-desc": "Descripción",
 	"newslettercreate": "Crear boletines",
 	"newslettermanage": "Gestionar boletines",
 	"newsletter-name": "Nombre del boletín",
@@ -24,7 +24,9 @@
 	"newsletter-announceissueform-announceissue-section": "Anunciar una edición nueva",
 	"newsletter-announceissueform-addpublisher-section": "Añadir editores",
 	"newsletter-create-section": "Crear boletín",
+	"newsletter-create-submit": "Crear boletín",
 	"newsletter-create-confirmation": "¡Buen trabajo! Acabas de crear un nuevo boletín.",
+	"newsletter-create-mainpage-error": "Se desconoce la página principal de boletín ingresada. Intenta de nuevo",
 	"newsletter-issue-announce-confirmation": "¡Buen trabajo! Acabas de anunciar una edición nueva de tu boletín.",
 	"newsletters": "Boletines",
 	"newsletter-subscribe-section": "Suscribirse a boletines",

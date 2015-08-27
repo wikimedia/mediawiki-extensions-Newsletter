@@ -4,7 +4,7 @@
 			"Liuxinyu970226"
 		]
 	},
-	"newsletter-desc": "描述",
+	"newsletter-extension-desc": "描述",
 	"newslettercreate": "创建新闻报",
 	"newslettermanage": "管理新闻报",
 	"newsletter-name": "新闻报名称",
@@ -24,7 +24,9 @@
 	"newsletter-announceissueform-announceissue-section": "公告新的期刊",
 	"newsletter-announceissueform-addpublisher-section": "添加发布者",
 	"newsletter-create-section": "创建新闻报",
+	"newsletter-create-submit": "创建新闻报",
 	"newsletter-create-confirmation": "真棒！您刚刚创建了一个新的新闻报。",
+	"newsletter-create-mainpage-error": "输入了未知的新闻报首页。请重试",
 	"newsletter-issue-announce-confirmation": "真棒！您刚刚公告了您的新闻报的新期刊。",
 	"newsletters": "新闻报",
 	"newsletter-subscribe-section": "订阅新闻报",

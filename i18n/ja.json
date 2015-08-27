@@ -4,7 +4,7 @@
 			"Sujiniku"
 		]
 	},
-	"newsletter-desc": "説明",
+	"newsletter-extension-desc": "説明",
 	"newslettercreate": "ニュースレターの作成",
 	"newslettermanage": "ニュースレターの管理",
 	"newsletter-name": "ニュースレターの名前",
@@ -18,6 +18,7 @@
 	"newsletter-required-fields-error": "要求された領域が空です",
 	"newsletter-announceissueform-announceissue-section": "新しい議題のアナウンス",
 	"newsletter-create-section": "ニュースレターの作成",
+	"newsletter-create-submit": "ニュースレターの作成",
 	"newsletter-create-confirmation": "よくできました！　あなたは新しい議題を作成しました。",
 	"newsletter-issue-announce-confirmation": "よくできました！　あなたは、あなたのニュースレターの新しい議題をアナウンスしました。",
 	"newsletters": "ニュースレター",
