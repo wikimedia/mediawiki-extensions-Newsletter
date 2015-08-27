@@ -5,13 +5,6 @@
  */
 class SpecialNewsletterManage extends SpecialPage {
 
-	public static $fields = array(
-		'newsletter_id' => 'name',
-		'publisher_id' => 'publisher',
-		'permissions' => 'permissions',
-		'action' => 'action',
-	);
-
 	public function __construct() {
 		parent::__construct( 'NewsletterManage' );
 	}

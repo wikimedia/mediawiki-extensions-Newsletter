@@ -5,13 +5,6 @@
  */
 class SpecialNewsletters extends SpecialPage {
 
-	public static $fields = array(
-		'nl_name' => 'name',
-		'nl_desc' => 'description',
-		'subscriber_count' => 'subscriber_count',
-		'action' => 'action',
-	);
-
 	# Array containing all newsletter ids in nl_subscriptions table
 	public static $allSubscribedNewsletterId = array();
 

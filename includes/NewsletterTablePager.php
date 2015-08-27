@@ -3,17 +3,18 @@
 class NewsletterTablePager extends TablePager {
 
 	/**
-	 * @see TablePager::getFieldnames
-	 * @var array|null
+	 * @var null|string[]
 	 */
 	private $fieldNames = null;
 
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
-			$this->fieldNames = array();
-			foreach ( SpecialNewsletters::$fields as $field => $property ) {
-				$this->fieldNames[$field] = $this->msg( "newsletter-header-$property" )->text();
-			}
+			$this->fieldNames = array(
+				'nl_name' => $this->msg( 'newsletter-header-name' )->text(),
+				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
+				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
+				'action' => $this->msg( 'newsletter-header-action' )->text(),
+			);
 		}
 		return $this->fieldNames;
 	}
