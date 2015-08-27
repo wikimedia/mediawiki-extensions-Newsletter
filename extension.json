@@ -28,6 +28,7 @@
 	},
 	"AutoloadClasses": {
 		"NewsletterHooks": "Newsletter.hooks.php",
+		"LinksGenerator": "includes/specials/LinksGenerator.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
 		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",

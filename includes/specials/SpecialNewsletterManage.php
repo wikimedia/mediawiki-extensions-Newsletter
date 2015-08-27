@@ -17,7 +17,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		$output = $this->getOutput();
 		$output->addModules( 'ext.newsletter' );
 		$output->addModules( 'ext.newslettermanage' );
-		$output->setSubtitle( SpecialNewsletters::getSubtitleLinks() );
+		$output->setSubtitle( LinksGenerator::getSubtitleLinks() );
 		$this->requireLogin();
 		$announceIssueArray = $this->getAnnounceFormFields();
 
