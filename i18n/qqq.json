@@ -6,10 +6,11 @@
 			"Robby"
 		]
 	},
-	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:NewsletterCreate]]\n{{Identical|Description}}",
+	"newsletter-extension-desc": "Description of the extension",
 	"newslettercreate": "Name of special page which creates newsletters as seen in URLs and links",
 	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
 	"newsletter-name": "Label of the field which takes the name of newsletter as input in [[Special:NewsletterManage]] and [[Special:NewsletterCreate]]",
+	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:NewsletterCreate]]\n{{Identical|Description}}",
 	"newsletter-title": "Label of the field which takes the title of Main Page of newsletter as input in [[Special:NewsletterCreate]]",
 	"newsletter-frequency": "Label of the field which takes the frequency of newsletter as input in [[Special:NewsletterCreate]]\n{{Identical|Frequency}}",
 	"newsletter-option-weekly": "Option message of the 'weekly' option of the frequency field in [[Special:NewsletterCreate]]\n{{Identical|Weekly}}",

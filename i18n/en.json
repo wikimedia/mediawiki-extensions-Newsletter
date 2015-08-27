@@ -4,10 +4,11 @@
 			"Tina Johnson"
 		]
 	},
-	"newsletter-desc": "Adds a preference for users to subscribe to a newsletter",
+	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
 	"newslettercreate": "Create newsletters",
 	"newslettermanage": "Manage newsletters",
 	"newsletter-name": "Name of newsletter",
+	"newsletter-desc": "Description",
 	"newsletter-title": "Title of Main Page",
 	"newsletter-frequency": "Frequency",
 	"newsletter-option-weekly": "weekly",
