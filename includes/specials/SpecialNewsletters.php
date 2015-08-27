@@ -9,13 +9,6 @@
 class SpecialNewsletters extends SpecialPage {
 
 	/**
-	 * Array containing all newsletter ids in nl_subscriptions table
-	 * @var array
-	 * @todo FIXME this is called from other classes
-	 */
-	public static $allSubscribedNewsletterId = array();
-
-	/**
 	 * Array containing all newsletter ids to which the logged in user is subscribed to
 	 * @var array
 	 * @todo FIXME this is called from other classes
@@ -50,19 +43,6 @@ class SpecialNewsletters extends SpecialPage {
 		$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
 		$userSubscriptions = $subscriptionsTable->getSubscriptionsForUser( $userId );
 		self::$subscribedNewsletterId = $userSubscriptions;
-
-		$dbr = wfGetDB( DB_SLAVE );
-
-		$resl = $dbr->select(
-			'nl_subscriptions',
-			array( 'newsletter_id' ),
-			array(),
-			__METHOD__
-		);
-
-		foreach ( $resl as $row ) {
-			self::$allSubscribedNewsletterId[] = $row->newsletter_id;
-		}
 	}
 
 }
