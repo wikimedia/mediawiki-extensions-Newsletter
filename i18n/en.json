@@ -37,6 +37,7 @@
 	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-available-newsletters-field-label": "Available newsletters",
 	"newsletter-subscribed-newsletters-field-label": "Subscribed newsletters",
+	"newsletter-none-found": "No newsletters exist. You can create a new newsletter through [[Special:CreateNewsletter]].",
 	"echo-category-title-newsletter": "Newsletters",
 	"echo-pref-tooltip-newsletter": "Notify me when any of the newsletters to which I have subscribed to announces a new issue.",
 	"newsletter-notification-title": "$1 has announced an issue",

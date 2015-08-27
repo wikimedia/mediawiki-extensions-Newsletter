@@ -32,6 +32,8 @@ class SpecialNewsletters extends SpecialPage {
 				$pager->getBody() .
 				$pager->getNavigationBar()
 			);
+		} else {
+			$output->showErrorPage( 'newsletters', 'newsletter-none-found' );
 		}
 	}
 

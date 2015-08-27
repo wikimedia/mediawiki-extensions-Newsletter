@@ -32,10 +32,12 @@ class SpecialNewsletterManage extends SpecialPage {
 				$table->getBody() .
 				$table->getNavigationBar()
 			);
+			// Show HTML forms
+			$announceIssueForm->show();
+		} else {
+			$output->showErrorPage( 'newslettermanage', 'newsletter-none-found' );
 		}
-		# Show HTML forms
-		$announceIssueForm->show();
-		$output->returnToMain();
+
 	}
 
 	/**
