@@ -25,16 +25,14 @@ class NewsletterTablePager extends TablePager {
 
 	public function getQueryInfo() {
 		$info = array(
-			'tables' => array( 'nl_newsletters', 'nl_subscriptions' ),
+			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				'subscribers' => ( 'COUNT(nl_subscriptions.newsletter_id)' ),
+				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE newsletter_id = nl_id )' ),
 			),
-			'join_conds' => array(
-				'nl_subscriptions' => array( 'LEFT JOIN', 'newsletter_id = nl_id' ),
-			),
+			'options' => array( 'DISTINCT nl_id' ),
 		);
 
 		return $info;
