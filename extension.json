@@ -32,12 +32,12 @@
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
 		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
+		"NewsletterManageTablePager": "includes/specials/pagers/NewsletterManageTablePager.php",
+		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
 		"ApiNewsletter": "includes/api/ApiNewsletter.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"SubscriptionsTable": "includes/db/SubscriptionsTable.php",
-		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
-		"NewsletterManageTablePager": "includes/NewsletterManageTablePager.php",
-		"NewsletterTablePager": "includes/NewsletterTablePager.php"
+		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php"
 	},
 	"ResourceModules": {
 		"ext.newsletter": {
