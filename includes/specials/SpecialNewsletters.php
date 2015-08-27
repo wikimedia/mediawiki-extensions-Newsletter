@@ -5,13 +5,25 @@
  */
 class SpecialNewsletters extends SpecialPage {
 
-	# Array containing all newsletter ids in nl_subscriptions table
+	/**
+	 * Array containing all newsletter ids in nl_subscriptions table
+	 * @var array
+	 * @todo FIXME this is called from other classes
+	 */
 	public static $allSubscribedNewsletterId = array();
 
-	# Array containing all newsletter ids to which the logged in user is subscribed to
+	/**
+	 * Array containing all newsletter ids to which the logged in user is subscribed to
+	 * @var array
+	 * @todo FIXME this is called from other classes
+	 */
 	public static $subscribedNewsletterId = array();
 
-	# Subscriber count
+	/**
+	 * Subscriber count
+	 * @var array
+	 * @todo FIXME this is called from other classes
+	 */
 	public static $subscriberCount = array();
 
 	public function __construct() {
@@ -37,17 +49,12 @@ class SpecialNewsletters extends SpecialPage {
 		}
 	}
 
-	public static function getSubscribedNewsletters( $id ) {
+	public static function getSubscribedNewsletters( $userId ) {
+		$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
+		$userSubscriptions = $subscriptionsTable->getSubscriptionsForUser( $userId );
+		self::$subscribedNewsletterId = $userSubscriptions;
+
 		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			'nl_subscriptions',
-			array( 'newsletter_id' ),
-			array( 'subscriber_id' => $id ),
-			__METHOD__
-		);
-		foreach ( $res as $row ) {
-			self::$subscribedNewsletterId[] = $row->newsletter_id;
-		}
 
 		$resl = $dbr->select(
 			'nl_subscriptions',
