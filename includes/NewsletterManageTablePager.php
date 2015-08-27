@@ -2,8 +2,6 @@
 
 class NewsletterManageTablePager extends TablePager {
 
-	private $newsletterOwners = array();
-
 	/**
 	 * @var null|string[]
 	 */
@@ -22,28 +20,17 @@ class NewsletterManageTablePager extends TablePager {
 	}
 
 	public function getQueryInfo() {
-		$info = array(
-			'tables' => array( 'nl_publishers' ),
+		return array(
+			'tables' => array( 'nl_publishers', 'nl_newsletters' ),
 			'fields' => array(
 				'newsletter_id',
 				'publisher_id',
+				'is_owner' => ( 'publisher_id = nl_owner_id' ),
+			),
+			'join_conds' => array(
+				'nl_newsletters' => array( 'LEFT JOIN', 'newsletter_id = nl_id' ),
 			),
 		);
-
-		// get user ids of all newsletter owners
-		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			'nl_newsletters',
-			array( 'nl_owner_id', 'nl_id' ),
-			array(),
-			__METHOD__,
-			array( 'DISTINCT' )
-		);
-		foreach ( $res as $row ) {
-			$this->newsletterOwners[$row->nl_id] = $row->nl_owner_id;
-		}
-
-		return $info;
 	}
 
 	public function formatValue( $field, $value ) {
@@ -82,8 +69,7 @@ class NewsletterManageTablePager extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => $this->newsletterOwners[$this->mCurrentRow->newsletter_id]
-							=== $this->mCurrentRow->publisher_id ? true : false,
+							'checked' => $this->mCurrentRow->is_owner ? true : false,
 						)
 					) . $this->msg( 'newsletter-owner-radiobutton-label' );
 
@@ -93,28 +79,26 @@ class NewsletterManageTablePager extends TablePager {
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => $this->newsletterOwners[$this->mCurrentRow->newsletter_id]
-							=== $this->mCurrentRow->publisher_id ? false : true,
+							'checked' => $this->mCurrentRow->is_owner ? false : true,
 						)
 					) . $this->msg( 'newsletter-publisher-radiobutton-label' );
 
 				return $radioOwner . $radioPublisher;
 			case 'action' :
-				$remButton = HTML::element(
-					'input',
-					array(
-						'type' => 'button',
-						'value' => 'Remove',
-						'name' => $previous,
-						'id' => $this->mCurrentRow->publisher_id,
-					)
-				);
+				$isCurrentUser = $this->mCurrentRow->publisher_id == $this->getUser()->getId();
 
-				return ( $this->newsletterOwners[$this->mCurrentRow->newsletter_id] !==
-					$this->mCurrentRow->publisher_id &&
-					$this->newsletterOwners[$this->mCurrentRow->newsletter_id] ==
-					$this->getUser()->getId() ) ? $remButton : '';
-
+				if ( !$this->mCurrentRow->is_owner && !$isCurrentUser ) {
+					return HTML::element(
+						'input',
+						array(
+							'type' => 'button',
+							'value' => 'Remove',
+							'name' => $previous,
+							'id' => $this->mCurrentRow->publisher_id,
+						)
+					);
+				}
+				return '';
 		}
 	}
 
