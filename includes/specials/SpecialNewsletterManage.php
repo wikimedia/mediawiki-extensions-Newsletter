@@ -32,7 +32,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		);
 		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
 
-		$table = new NewsletterManageTable();
+		$table = new NewsletterManageTablePager();
 		if ( $table->getNumRows() > 0 ) {
 			$output->addHTML(
 				$table->getNavigationBar() .

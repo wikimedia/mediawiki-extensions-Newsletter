@@ -1,6 +1,6 @@
 <?php
 
-class NewsletterManageTable extends TablePager {
+class NewsletterManageTablePager extends TablePager {
 
 	private $newsletterOwners = array();
 

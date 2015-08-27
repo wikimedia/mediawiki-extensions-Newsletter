@@ -28,14 +28,14 @@
 	},
 	"AutoloadClasses": {
 		"NewsletterHooks": "Newsletter.hooks.php",
-		"SpecialNewsletterCreate": "includes/SpecialNewsletterCreate.php",
-		"SpecialNewsletterManage": "includes/SpecialNewsletterManage.php",
-		"SpecialNewsletters": "includes/SpecialNewsletters.php",
+		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
+		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
+		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
+		"ApiNewsletter": "includes/api/ApiNewsletter.php",
+		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
-		"NewsletterTablePager": "includes/NewsletterTablePager.php",
-		"ApiNewsletter": "includes/ApiNewsletter.php",
-		"ApiNewsletterManage": "includes/ApiNewsletterManage.php",
-		"NewsletterManageTable": "includes/NewsletterManageTable.php"
+		"NewsletterManageTablePager": "includes/NewsletterManageTablePager.php",
+		"NewsletterTablePager": "includes/NewsletterTablePager.php"
 	},
 	"ResourceModules": {
 		"ext.newsletter": {
