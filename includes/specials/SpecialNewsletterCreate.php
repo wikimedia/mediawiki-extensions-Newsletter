@@ -93,40 +93,24 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			isset( $formData['frequency'] ) &&
 			isset( $formData['publisher'] )
 		) {
-			// inserting into database
-			$dbw = wfGetDB( DB_MASTER );
-			$rowData = array(
-				'nl_name' => $formData['name'],
-				'nl_desc' => $formData['description'],
-				'nl_main_page_id' => $pageId,
-				'nl_frequency' => $formData['frequency'],
-				'nl_owner_id' => $formData['publisher'],
+			$db = NewsletterDb::newFromGlobalState();
+			$newsletterAdded = $db->addNewsletter(
+				$formData['name'],
+				$formData['description'],
+				$pageId,
+				$formData['frequency'],
+				$formData['publisher']
 			);
 
-			try {
-				$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
-			}
-			catch ( DBQueryError $e ) {
+			if ( !$newsletterAdded ) {
 				return array( 'newsletter-exist-error' );
 			}
+
 			$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
-			// Add newsletter creator as publisher
-			$dbr = wfGetDB( DB_SLAVE );
-			$res = $dbr->select(
-				'nl_newsletters',
-				array( 'nl_id' ),
-				array(
-					'nl_name' => $formData['name'],
-				),
-				__METHOD__
-			);
 
-			$newsletterId = array();
-			foreach ( $res as $row ) {
-				$newsletterId = $row->nl_id;
-			}
-			$this->autoSubscribe( $newsletterId, $formData['publisher'] );
+			$newsletter = $db->getNewsletterForPageId( $pageId );
 
+			$this->autoSubscribe( $newsletter->getId(), $formData['publisher'] );
 
 			return true;
 		}

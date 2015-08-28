@@ -37,7 +37,8 @@
 		"ApiNewsletter": "includes/api/ApiNewsletter.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"NewsletterDb": "includes/NewsletterDb.php",
-		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php"
+		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
+		"Newsletter": "includes/Newsletter.php"
 	},
 	"ResourceModules": {
 		"ext.newsletter": {

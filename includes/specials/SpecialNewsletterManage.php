@@ -51,25 +51,12 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * @return array
 	 */
 	private function getAnnounceFormFields() {
-		$dbr = wfGetDB( DB_SLAVE );
-
 		$db = NewsletterDb::newFromGlobalState();
-		$userPublishedNewsletters = $db->getNewsletterIdsForPublisher(
-			$this->getUser()->getId()
-		);
+		$userPublishedNewsletters = $db->getNewslettersUserIsPublisherOf( $this->getUser() );
 
-		$newsletterNames = array();
-		foreach ( $userPublishedNewsletters as $value ) {
-			$resl = $dbr->select(
-				'nl_newsletters',
-				array( 'nl_name', 'nl_id' ),
-				array( 'nl_id' => $value ),
-				__METHOD__
-			);
-
-			foreach ( $resl as $row ) {
-				$newsletterNames[$row->nl_name] = $row->nl_id;
-			}
+		$newsletterNameMap = array();
+		foreach ( $userPublishedNewsletters as $newsletter ) {
+			$newsletterNameMap[$newsletter->getName()] = $newsletter->getId();
 		}
 
 		return array(
@@ -77,7 +64,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'announceissue-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( array( '' => null ), $newsletterNames ),
+				'options' => array_merge( array( '' => null ), $newsletterNameMap ),
 			),
 			'issue-page' => array(
 				'type' => 'text',
@@ -97,19 +84,12 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * @return array
 	 */
 	private function getPublisherFormFields() {
-		// Get newsletters owned by the logged in user
-		$dbr = wfGetDB( DB_SLAVE );
-		$query = $dbr->select(
-			'nl_newsletters',
-			array( 'nl_name', 'nl_id' ),
-			array( 'nl_owner_id' => $this->getUser()->getId() ),
-			__METHOD__,
-			array()
-		);
+		$db = NewsletterDb::newFromGlobalState();
+		$userOwnedNewsletters = $db->getNewslettersUserIsOwnerOf( $this->getUser() );
 
-		$ownedNewsletter = array();
-		foreach ( $query as $row ) {
-			$ownedNewsletter[$row->nl_name] = $row->nl_id;
+		$ownedNewsletterMap = array();
+		foreach ( $userOwnedNewsletters as $newsletter ) {
+			$ownedNewsletterMap[$newsletter->getName()] = $newsletter->getId();
 		}
 
 		return array(
@@ -117,7 +97,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'addpublisher-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( array( '' => null ), $ownedNewsletter ),
+				'options' => array_merge( array( '' => null ), $ownedNewsletterMap ),
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
@@ -167,26 +147,16 @@ class SpecialNewsletterManage extends SpecialPage {
 				);
 				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
 				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
-				// trigger notifications
-				$res = $dbr->select(
-					'nl_newsletters',
-					array( 'nl_name' ),
-					array( 'nl_id' => $newsletterId ),
-					__METHOD__,
-					array()
-				);
 
-				$newsletterName = null;
-				foreach ( $res as $row ) {
-					$newsletterName = $row->nl_name;
-				}
+				$db = NewsletterDb::newFromGlobalState();
+				$newsletter = $db->getNewsletter( $newsletterId );
 				if ( class_exists( 'EchoEvent' ) ) {
 					EchoEvent::create(
 						array(
 							'type' => 'subscribe-newsletter',
 							'extra' => array(
-								'newsletter' => $newsletterName,
-								'newsletterId' => $newsletterId,
+								'newsletter' => $newsletter->getName(),
+								'newsletterId' => $newsletter->getId(),
 								'issuePageTitle' => $formData['issue-page'],
 								'issuePageNamespace' => $pageNamepace,
 							),

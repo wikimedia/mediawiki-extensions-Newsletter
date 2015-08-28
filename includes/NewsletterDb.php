@@ -83,24 +83,123 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $userId
+	 * @param string $name
+	 * @param string $description
+	 * @param int $pageId
+	 * @param string $frequency
+	 * @param int $ownerId
 	 *
-	 * @return int[]
+	 * @return bool success of the action
 	 */
-	public function getNewsletterIdsForPublisher( $userId ) {
+	public function addNewsletter( $name, $description, $pageId, $frequency, $ownerId ) {
+		$rowData = array(
+			'nl_name' => $name,
+			'nl_desc' => $description,
+			'nl_main_page_id' => $pageId,
+			'nl_frequency' => $frequency,
+			'nl_owner_id' => $ownerId,
+		);
+		try{
+			return $this->writeDb->insert( 'nl_newsletters', $rowData, __METHOD__ );
+		} catch ( DBQueryError $ex ) {
+			return false;
+		}
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return Newsletter
+	 */
+	public function getNewsletter( $id ) {
 		$res = $this->readDb->select(
-			'nl_publishers',
-			array( 'newsletter_id' ),
-			array( 'publisher_id' => $userId ),
+			'nl_newsletters',
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency', 'nl_owner_id' ),
+			array( 'nl_id' => $id ),
 			__METHOD__
 		);
 
-		$newsletterIds = array();
-		foreach ( $res as $row ) {
-			$newsletterIds[] = $row->newsletter_id;
+		return $this->getNewsletterFromRow( $res->current() );
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return Newsletter
+	 */
+	public function getNewsletterForPageId( $id ) {
+		$res = $this->readDb->select(
+			'nl_newsletters',
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency', 'nl_owner_id' ),
+			array( 'nl_main_page_id' => $id ),
+			__METHOD__
+		);
+
+		return $this->getNewsletterFromRow( $res->current() );
+	}
+
+	/**
+	 * @param User $user
+	 *
+	 * @return Newsletter[]
+	 */
+	public function getNewslettersUserIsOwnerOf( User $user ) {
+		$res = $this->readDb->select(
+			array( 'nl_newsletters' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency', 'nl_owner_id' ),
+			array( 'nl_owner_id' => $user->getId() ),
+			__METHOD__
+		);
+
+		return $this->getNewslettersFromResult( $res );
+	}
+
+	/**
+	 * @param User $user
+	 *
+	 * @return Newsletter[]
+	 */
+	public function getNewslettersUserIsPublisherOf( User $user ) {
+		$res = $this->readDb->select(
+			array( 'nl_publishers', 'nl_newsletters' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency', 'nl_owner_id' ),
+			array( 'publisher_id' => $user->getId() ),
+			__METHOD__,
+			array(),
+			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=newsletter_id' ) )
+		);
+
+		return $this->getNewslettersFromResult( $res );
+	}
+
+	/**
+	 * @param ResultWrapper $result
+	 *
+	 * @return Newsletter[]
+	 */
+	private function getNewslettersFromResult( ResultWrapper $result ) {
+		$newsletters = array();
+		foreach ( $result as $row ) {
+			$newsletters[] = $this->getNewsletterFromRow( $row );
 		}
 
-		return $newsletterIds;
+		return $newsletters;
+	}
+
+	/**
+	 * @param stdClass $row
+	 *
+	 * @return Newsletter
+	 */
+	private function getNewsletterFromRow( $row ) {
+		return new Newsletter(
+			$row->nl_id,
+			$row->nl_name,
+			$row->nl_desc,
+			$row->nl_main_page_id,
+			$row->nl_frequency,
+			$row->nl_owner_id
+		);
 	}
 
 }
