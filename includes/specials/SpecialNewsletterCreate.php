@@ -28,8 +28,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	}
 
 	/**
-	 * Function to generate Create Newsletter Form
-	 *
 	 * @return array
 	 */
 	protected function getFormFields() {
@@ -38,6 +36,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'type' => 'text',
 				'required' => true,
 				'label-message' => 'newsletter-name',
+				'maxlength' => 50
 			),
 			'description' => array(
 				'type' => 'textarea',
@@ -45,6 +44,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
 				'cols' => 50,
+				'maxlength' => 767
 			),
 			'mainpage' => array(
 				'required' => true,
@@ -62,61 +62,65 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				),
 				'size' => 18, # size of 'other' field
 				'maxlength' => 50,
-			),
-			// @todo FIXME: this shouldn't be a form field
-			'publisher' => array(
-				'type' => 'hidden',
-				'default' => $this->getUser()->getId(),
-			),
+			)
 		);
 	}
 
 	/**
-	 * Perform insert query on newsletter table with data retrieved from HTML
-	 * form for creating newsletters
+	 * Do input validation, error handling and create a new newletter.
 	 *
-	 * @param array $formData The data entered by user in the form
-	 *
+	 * @param array $data The data entered by user in the form
 	 * @return bool|array true on success, array on error
 	 */
-	public function onSubmit( array $formData ) {
-		if ( isset( $formData['mainpage'] ) ) {
-			$page = Title::newFromText( $formData['mainpage'] );
-			$pageId = $page->getArticleId();
-		} else {
-			return array( 'newsletter-create-mainpage-error' );
+	public function onSubmit( array $data ) {
+
+		$mainTitle = Title::newFromText( $data['mainpage'] );
+		if ( !$mainTitle ) {
+			return array( 'newsletter-create-mainpage-invalid' );
 		}
-		if ( isset( $formData['name'] ) &&
-			isset( $formData['description'] ) &&
-			( $pageId !== 0 ) &&
-			isset( $formData['mainpage'] ) &&
-			isset( $formData['frequency'] ) &&
-			isset( $formData['publisher'] )
+
+		$articleId = $mainTitle->getArticleId();
+		if ( !$articleId ) {
+			return array( 'newsletter-mainpage-not-found-error' );
+		}
+
+		$publisherId = $this->getUser()->getId();
+
+		if ( isset( $data['name'] ) &&
+			isset( $data['description'] ) &&
+			( $articleId !== 0 ) &&
+			isset( $data['mainpage'] ) &&
+			isset( $data['frequency'] )
 		) {
 			$db = NewsletterDb::newFromGlobalState();
 			$newsletterAdded = $db->addNewsletter(
-				$formData['name'],
-				$formData['description'],
-				$pageId,
-				$formData['frequency'],
-				$formData['publisher']
+				trim( $data['name'] ),
+				$data['description'],
+				$articleId,
+				$data['frequency'],
+				$publisherId
 			);
 
 			if ( !$newsletterAdded ) {
 				return array( 'newsletter-exist-error' );
 			}
 
-			$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+			$newsletter = $db->getNewsletterForPageId( $articleId );
 
-			$newsletter = $db->getNewsletterForPageId( $pageId );
-
-			$this->autoSubscribe( $newsletter->getId(), $formData['publisher'] );
+			$this->autoSubscribe( $newsletter->getId(), $publisherId );
 
 			return true;
 		}
 
-		return array( 'newsletter-mainpage-not-found-error' );
+		// Could not insert - newsletter by this name already exists
+		return array( 'newsletter-exist-error' );
+
 	}
+
+	public function onSuccess() {
+		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+	}
+
 
 	/**
 	 * Automatically subscribe and add owner as publisher of the newsletter
