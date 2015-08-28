@@ -33,28 +33,26 @@ class NewsletterHooks {
 	}
 
 	/**
-	* Add user to be notified on echo event
-	*
-	* @param EchoEvent $event
-	* @param User[] $users
-	* @return bool
-	*/
+	 * Add user to be notified on echo event
+	 *
+	 * @todo Use the JobQueue for this to make sure it scales amazingly
+	 *
+	 * @param EchoEvent $event
+	 * @param User[] $users
+	 * @return bool
+	 */
 	public static function onEchoGetDefaultNotifiedUsers( $event, &$users ) {
-		$extra = $event->getExtra();
 		$eventType = $event->getType();
 		if ( $eventType === 'subscribe-newsletter' ) {
-			$dbr = wfGetDB( DB_SLAVE );
-			$res = $dbr->select(
-				'nl_subscriptions',
-				array( 'subscriber_id' ),
-				array( 'newsletter_id' => $extra['newsletterId'] ),
-				__METHOD__,
-				array()
-			);
-			foreach ( $res as $row ) {
-				$recipient = User::newFromId( $row->subscriber_id );
-				$id = $row->subscriber_id;
-				$users[$id] = $recipient;
+			$extra = $event->getExtra();
+
+			$db = NewsletterDb::newFromGlobalState();
+			$userIds = $db->getUserIdsSubscribedToNewsletter( $extra['newsletterId'] );
+
+			//TODO queries to the user table should be done in batches using UserArray::newFromIds
+			foreach ( $userIds as $userId ) {
+				$recipient = User::newFromId( $userId );
+				$users[$userId] = $recipient;
 			}
 		}
 

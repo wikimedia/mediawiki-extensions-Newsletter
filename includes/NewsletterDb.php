@@ -51,6 +51,27 @@ class NewsletterDb {
 	}
 
 	/**
+	 * @param int $newsletterId
+	 *
+	 * @return int[]
+	 */
+	public function getUserIdsSubscribedToNewsletter( $newsletterId ) {
+		$res = $this->readDb->select(
+			'nl_subscriptions',
+			array( 'subscriber_id' ),
+			array( 'newsletter_id' => $newsletterId ),
+			__METHOD__,
+			array()
+		);
+
+		$subscriberIds = array();
+		foreach ( $res as $row ) {
+			$subscriberIds[] = $row->subscriber_id;
+		}
+		return $subscriberIds;
+	}
+
+	/**
 	 * @param int $userId
 	 * @param int $newsletterId
 	 *
