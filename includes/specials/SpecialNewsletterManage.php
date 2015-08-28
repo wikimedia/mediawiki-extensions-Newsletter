@@ -113,7 +113,8 @@ class SpecialNewsletterManage extends SpecialPage {
 	 *
 	 * @param array $formData The data entered by user in the form
 	 *
-	 * @return bool|array true on success, array on error
+	 * @return array|bool true on success, array on error
+	 * @throws MWException
 	 */
 	public function onSubmitIssue( $formData ) {
 		if ( !isset( $formData['issue-page'] ) || !isset( $formData['issue-newsletter'] ) ) {
@@ -128,27 +129,18 @@ class SpecialNewsletterManage extends SpecialPage {
 			$pageNamepace = $issuePage->getNamespace();
 			// Array index is newsletter-id for selected newsletter in newsletterNames[] above
 			if ( ( $pageId !== 0 ) && isset( $newsletterId ) && isset( $formData['publisher'] ) ) {
-				// Find number of existing issues
-				$dbr = wfGetDB( DB_SLAVE );
-				$issueCount = $dbr->selectRowCount(
-					'nl_issues',
-					array( 'issue_id' ),
-					array( 'issue_newsletter_id' => $newsletterId ),
-					__METHOD__,
-					array()
+				$db = NewsletterDb::newFromGlobalState();
+				$issueCreated = $db->addNewsletterIssue(
+					$newsletterId,
+					$pageId,
+					$formData['publisher']
 				);
-				// inserting to database
-				$dbw = wfGetDB( DB_MASTER );
-				$rowData = array(
-					'issue_id' => $issueCount + 1,
-					'issue_page_id' => $pageId,
-					'issue_newsletter_id' => $newsletterId,
-					'issue_publisher_id' => $formData['publisher'],
-				);
-				$dbw->insert( 'nl_issues', $rowData, __METHOD__ );
+				if ( !$issueCreated ) {
+					// TODO better output message here with i18n....
+					throw new MWException( 'Failed to create newsletter issue' );
+				}
 				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
 
-				$db = NewsletterDb::newFromGlobalState();
 				$newsletter = $db->getNewsletter( $newsletterId );
 				if ( class_exists( 'EchoEvent' ) ) {
 					EchoEvent::create(

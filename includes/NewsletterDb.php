@@ -202,4 +202,35 @@ class NewsletterDb {
 		);
 	}
 
+	/**
+	 * @param int $newsletterId
+	 * @param int $pageId
+	 * @param int $publisherId
+	 *
+	 * @todo this should probably be done in a transaction (even though conflicts are unlikely)
+	 *
+	 * @return bool
+	 */
+	public function addNewsletterIssue( $newsletterId, $pageId, $publisherId ) {
+		//Note: the writeDb is used as this is used in the next insert
+		$lastIssueId = $this->writeDb->selectRowCount(
+			'nl_issues',
+			array( 'issue_id' ),
+			array( 'issue_newsletter_id' => $newsletterId ),
+			__METHOD__
+		);
+
+		$rowData = array(
+			'issue_id' => $lastIssueId + 1,
+			'issue_page_id' => $pageId,
+			'issue_newsletter_id' => $newsletterId,
+			'issue_publisher_id' => $publisherId,
+		);
+		try{
+			return $this->writeDb->insert( 'nl_issues', $rowData, __METHOD__ );
+		} catch ( DBQueryError $ex ) {
+			return false;
+		}
+	}
+
 }
