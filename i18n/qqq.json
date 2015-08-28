@@ -25,7 +25,7 @@
 	"newsletter-exist-error": "Error message to be displayed in [[Special:NewsletterCreate]] when trying to create a newsletter with same name as an existing newsletter",
 	"newsletter-mainpage-not-found-error": "Error message to be displayed in [[Special:NewsletterCreate]] when trying to create a newsletter with invalid main page",
 	"newsletter-announceissueform-announceissue-section": "Header of section in [[Special:NewsletterManage]] which announces issues",
-	"newsletter-announceissueform-addpublisher-section": "Header of section in [[Special:NewsletterManage]] which adds publishers",
+	"newsletter-addpublisherform-addpublisher-section": "Header of section in [[Special:NewsletterManage]] which adds publishers",
 	"newsletter-create-section": "Section header of [[Special:NewsletterCreate]]",
 	"newsletter-create-submit": "Label of submit button on [[Special:NewsletterCreate]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",

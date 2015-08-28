@@ -18,21 +18,27 @@ class SpecialNewsletterManage extends SpecialPage {
 		$output->addModules( 'ext.newslettermanage' );
 		$output->setSubtitle( LinksGenerator::getSubtitleLinks() );
 		$this->requireLogin();
-		$announceIssueArray = $this->getAnnounceFormFields();
 
 		# Create HTML forms
 		$announceIssueForm = new HTMLForm(
-			$announceIssueArray,
+			$this->getAnnounceFormFields(),
 			$this->getContext(),
 			'newsletter-announceissueform'
 		);
 		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
+		$addPublisherForm = new HTMLForm(
+			$this->getPublisherFormFields(),
+			$this->getContext(),
+			'newsletter-addpublisherform'
+		);
+		$addPublisherForm->setSubmitCallback( array( $this, 'onSubmitPublisher' ) );
 
 		$pager = new NewsletterManageTablePager();
 		if ( $pager->getNumRows() > 0 ) {
 			$output->addParserOutput( $pager->getFullOutput() );
 			// Show HTML forms
 			$announceIssueForm->show();
+			$addPublisherForm->show();
 		} else {
 			$output->showErrorPage( 'newslettermanage', 'newsletter-none-found' );
 		}
@@ -44,10 +50,7 @@ class SpecialNewsletterManage extends SpecialPage {
 	 *
 	 * @return array
 	 */
-	protected function getAnnounceFormFields() {
-		$newsletterNames = array();
-		$ownedNewsletter = array();
-		$defaultOption = array( '' => null );
+	private function getAnnounceFormFields() {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$db = NewsletterDb::newFromGlobalState();
@@ -55,6 +58,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			$this->getUser()->getId()
 		);
 
+		$newsletterNames = array();
 		foreach ( $userPublishedNewsletters as $value ) {
 			$resl = $dbr->select(
 				'nl_newsletters',
@@ -68,36 +72,12 @@ class SpecialNewsletterManage extends SpecialPage {
 			}
 		}
 
-		$newsletters = array();
-		$result = $dbr->select(
-			'nl_newsletters',
-			array( 'nl_name', 'nl_id' ),
-			array( 'nl_owner_id' => $this->getUser()->getId() ),
-			__METHOD__
-		);
-		foreach ( $result as $row ) {
-			$newsletters[$row->nl_name] = $row->nl_id;
-		}
-		// Get newsletters owned by the logged in user
-		$dbr = wfGetDB( DB_SLAVE );
-		$query = $dbr->select(
-			'nl_newsletters',
-			array( 'nl_name', 'nl_id' ),
-			array( 'nl_owner_id' => $this->getUser()->getId() ),
-			__METHOD__,
-			array()
-		);
-
-		foreach ( $query as $row ) {
-			$ownedNewsletter[$row->nl_name] = $row->nl_id;
-		}
-
 		return array(
 			'issue-newsletter' => array(
 				'type' => 'select',
 				'section' => 'announceissue-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( $defaultOption, $newsletterNames ),
+				'options' => array_merge( array( '' => null ), $newsletterNames ),
 			),
 			'issue-page' => array(
 				'type' => 'text',
@@ -108,11 +88,36 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'hidden',
 				'default' => $this->getUser()->getId(),
 			),
+		);
+	}
+
+	/**
+	 * Function to generate Add Publisher form
+	 *
+	 * @return array
+	 */
+	private function getPublisherFormFields() {
+		// Get newsletters owned by the logged in user
+		$dbr = wfGetDB( DB_SLAVE );
+		$query = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_name', 'nl_id' ),
+			array( 'nl_owner_id' => $this->getUser()->getId() ),
+			__METHOD__,
+			array()
+		);
+
+		$ownedNewsletter = array();
+		foreach ( $query as $row ) {
+			$ownedNewsletter[$row->nl_name] = $row->nl_id;
+		}
+
+		return array(
 			'newsletter-name' => array(
 				'type' => 'select',
 				'section' => 'addpublisher-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( $defaultOption, $ownedNewsletter ),
+				'options' => array_merge( array( '' => null ), $ownedNewsletter ),
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
@@ -131,8 +136,13 @@ class SpecialNewsletterManage extends SpecialPage {
 	 * @return bool|array true on success, array on error
 	 */
 	public function onSubmitIssue( $formData ) {
-		$newsletterId = $formData['issue-newsletter'];
+		if ( !isset( $formData['issue-page'] ) || !isset( $formData['issue-newsletter'] ) ) {
+			// This is not the form that was submitted
+			return false;
+		}
+
 		if ( !empty( $formData['issue-page'] ) && !empty( $formData['issue-newsletter'] ) ) {
+			$newsletterId = $formData['issue-newsletter'];
 			$issuePage = Title::newFromText( $formData['issue-page'] );
 			$pageId = $issuePage->getArticleId();
 			$pageNamepace = $issuePage->getNamespace();
@@ -190,6 +200,23 @@ class SpecialNewsletterManage extends SpecialPage {
 			}
 		}
 
+		return array( 'newsletter-required-fields-error' );
+	}
+
+	/**
+	 * Perform insert query on issues table with data retrieved from HTML
+	 * form for announcing issues
+	 *
+	 * @param array $formData The data entered by user in the form
+	 *
+	 * @return bool|array true on success, array on error
+	 */
+	public function onSubmitPublisher( $formData ) {
+		if ( !isset( $formData['newsletter-name'] ) || !isset( $formData['publisher-name'] ) ) {
+			// This is not the form that was submitted
+			return false;
+		}
+
 		if ( !empty( $formData['newsletter-name'] ) && !empty( $formData['publisher-name'] ) ) {
 			$pubNewsletterId = $formData['newsletter-name'];
 			$user = User::newFromName( $formData['publisher-name'] );
@@ -209,9 +236,9 @@ class SpecialNewsletterManage extends SpecialPage {
 			$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 			return true;
-
 		}
 
 		return array( 'newsletter-required-fields-error' );
 	}
+
 }

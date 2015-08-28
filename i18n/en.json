@@ -23,7 +23,7 @@
 	"newsletter-exist-error": "A newsletter with the same name already exists. Try again with another name",
 	"newsletter-mainpage-not-found-error": "The Newsletter main page cannot be found. Please try again",
 	"newsletter-announceissueform-announceissue-section": "Announce new issue",
-	"newsletter-announceissueform-addpublisher-section": "Add publishers",
+	"newsletter-addpublisherform-addpublisher-section": "Add publishers",
 	"newsletter-create-section": "Create newsletter",
 	"newsletter-create-submit": "Create newsletter",
 	"newsletter-create-confirmation": "A new newsletter has been successfully created. You can manage newsletters through [[Special:ManageNewsletter]].",
