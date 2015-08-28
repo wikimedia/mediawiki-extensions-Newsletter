@@ -16,13 +16,13 @@ class ApiNewsletter extends ApiBase {
 		$userId = $user->getId();
 		$newsletterId = $this->getMain()->getVal( 'newsletterId' );
 
-		$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
+		$db = NewsletterDb::newFromGlobalState();
 
 		if ( $this->getMain()->getVal( 'todo' ) === 'subscribe' ) {
-			$subscriptionsTable->addSubscription( $userId, $newsletterId );
+			$db->addSubscription( $userId, $newsletterId );
 			//TODO if failed to add subscription then tell the user somehow
 		} elseif ( $this->getMain()->getVal( 'todo' ) === 'unsubscribe' ) {
-			$subscriptionsTable->removeSubscription( $userId, $newsletterId );
+			$db->removeSubscription( $userId, $newsletterId );
 			//TODO if failed to remove subscription then tell the user somehow
 		}
 	}

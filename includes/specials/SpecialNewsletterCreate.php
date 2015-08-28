@@ -139,21 +139,11 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 *
 	 * @param int $newsletterId Id of the newsletter
 	 * @param int $ownerId User Id of the owner
-	 * @return bool
 	 */
 	private function autoSubscribe( $newsletterId, $ownerId ) {
-		$dbw = wfGetDB( DB_MASTER );
-		// add owner as a publisher
-		$pubRowData = array(
-			'newsletter_id' => $newsletterId,
-			'publisher_id' => $ownerId,
-		);
-		$dbw->insert( 'nl_publishers', $pubRowData, __METHOD__ );
-
-		$table = SubscriptionsTable::newFromGlobalState();
-		$table->addSubscription( $ownerId, $newsletterId );
-
-		return true;
+		$db = NewsletterDb::newFromGlobalState();
+		$db->addPublisher( $ownerId, $newsletterId );
+		$db->addSubscription( $ownerId, $newsletterId );
 	}
 
 }

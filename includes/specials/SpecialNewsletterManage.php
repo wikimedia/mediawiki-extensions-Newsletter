@@ -46,22 +46,16 @@ class SpecialNewsletterManage extends SpecialPage {
 	 */
 	protected function getAnnounceFormFields() {
 		$newsletterNames = array();
-		$newsletterIds = array();
 		$ownedNewsletter = array();
 		$defaultOption = array( '' => null );
 		$dbr = wfGetDB( DB_SLAVE );
-		$res = $dbr->select(
-			'nl_publishers',
-			array( 'newsletter_id' ),
-			array( 'publisher_id' => $this->getUser()->getId() ),
-			__METHOD__
+
+		$db = NewsletterDb::newFromGlobalState();
+		$userPublishedNewsletters = $db->getNewsletterIdsForPublisher(
+			$this->getUser()->getId()
 		);
 
-		foreach ( $res as $row ) {
-			$newsletterIds[$row->newsletter_id] = $row->newsletter_id;
-		}
-
-		foreach ( $newsletterIds as $value ) {
+		foreach ( $userPublishedNewsletters as $value ) {
 			$resl = $dbr->select(
 				'nl_newsletters',
 				array( 'nl_name', 'nl_id' ),
@@ -208,25 +202,11 @@ class SpecialNewsletterManage extends SpecialPage {
 				return array( 'newsletter-unconfirmed-email-error' );
 			}
 
-			$dbww = wfGetDB( DB_MASTER );
-			$rowData = array(
-				'newsletter_id' => $pubNewsletterId,
-				'publisher_id' => $user->getId(),
-			);
-			//Automatically subscribe publishers to the newsletter
-			$subscribeRowData = array(
-				'newsletter_id' => $pubNewsletterId,
-				'subscriber_id' => $user->getId(),
-			);
-			try {
-				$dbww->insert( 'nl_publishers', $rowData, __METHOD__ );
-				$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
-			}
-			catch ( DBQueryError $e ) {
-				return array( 'newsletter-invalid-username-error' );
-			}
-			$subscriptionsTable = SubscriptionsTable::newFromGlobalState();
-			$subscriptionsTable->addSubscription( $user->getId(), $pubNewsletterId );
+			$db = NewsletterDb::newFromGlobalState();
+			$db->addPublisher( $user->getId(), $pubNewsletterId );
+			$db->addSubscription( $user->getId(), $pubNewsletterId );
+
+			$this->getOutput()->addWikiMsg( 'newsletter-new-publisher-confirmation' );
 
 			return true;
 

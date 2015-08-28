@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @covers SubscriptionsTable
+ * @covers NewsletterDb
  */
-class SubscriptionsTableTest extends PHPUnit_Framework_TestCase {
+class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 	/**
 	 * @return PHPUnit_Framework_MockObject_MockObject|IDatabase
@@ -22,20 +22,10 @@ class SubscriptionsTableTest extends PHPUnit_Framework_TestCase {
 			)
 			->will( $this->returnValue( true ) );
 
-		$table = new SubscriptionsTable( $this->getMockIDatabase(), $mockWriteDb );
+		$table = new NewsletterDb( $this->getMockIDatabase(), $mockWriteDb );
 		$result = $table->addSubscription( 1, 2 );
 
 		$this->assertEquals( true, $result );
-	}
-
-	public function testRemoveSubscriber() {
-		//TODO implement me
-		$this->markTestIncomplete( 'Not yet implemented' );
-	}
-
-	public function testGetSubscriptionsForUser() {
-		//TODO implement me
-		$this->markTestIncomplete( 'Not yet implemented' );
 	}
 
 }

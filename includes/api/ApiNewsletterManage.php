@@ -15,13 +15,13 @@ class ApiNewsletterManage extends ApiBase {
 			$this->dieUsage( 'You must be logged-in to interact with newsletters', 'notloggedin' );
 		}
 
-		$dbw = wfGetDB( DB_MASTER );
+		//TODO should probably do something here depending on the result..
 		if ( $this->getMain()->getVal( 'todo' ) === 'removepublisher' ) {
-			$rowData = array(
-				'newsletter_id' => $this->getMain()->getVal( 'newsletterId' ),
-				'publisher_id' => $this->getMain()->getVal( 'publisher' ),
+			$db = NewsletterDb::newFromGlobalState();
+			$db->removePublisher(
+				$this->getMain()->getVal( 'publisher' ),
+				$this->getMain()->getVal( 'newsletterId' )
 			);
-			$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		}
 	}
 
