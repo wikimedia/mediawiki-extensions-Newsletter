@@ -23,7 +23,7 @@
 	"newsletter-exist-error": "Інформаційний лист з таким самим ім'ям уже існує. Спробуйте придумати іншу назву",
 	"newsletter-mainpage-not-found-error": "Неможливо знайти головну сторінку інформаційного листа. Будь ласка, спробуйте знову",
 	"newsletter-announceissueform-announceissue-section": "Анонс нового випуску",
-	"newsletter-announceissueform-addpublisher-section": "Додати видавців",
+	"newsletter-addpublisherform-addpublisher-section": "Додати видавців",
 	"newsletter-create-section": "Створити інформаційний лист",
 	"newsletter-create-confirmation": "Гарна робота! Ви щойно створили новий інформаційний лист.",
 	"newsletter-issue-announce-confirmation": "Чудова робота! Щойно ви анонсували новий номер вашого бюлетеня.",

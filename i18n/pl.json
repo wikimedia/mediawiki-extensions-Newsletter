@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Macofe"
 		]
 	},
 	"newsletter-extension-desc": "Opis",
+	"newsletter-desc": "Opis",
 	"newsletter-frequency": "Częstość",
 	"newsletter-option-weekly": "tygodniowo",
 	"newsletter-option-monthly": "miesięcznie",

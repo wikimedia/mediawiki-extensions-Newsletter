@@ -1,13 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Metalhead64"
+			"Metalhead64",
+			"Macofe"
 		]
 	},
 	"newsletter-extension-desc": "Ermöglicht es Benutzern, Newsletter zu veröffentlichen und zu abonnieren",
 	"newslettercreate": "Newsletter erstellen",
 	"newslettermanage": "Newsletter verwalten",
 	"newsletter-name": "Name des Newsletters",
+	"newsletter-desc": "Beschreibung",
 	"newsletter-title": "Titel der Hauptseite",
 	"newsletter-frequency": "Häufigkeit",
 	"newsletter-option-weekly": "wöchentlich",
@@ -22,7 +24,7 @@
 	"newsletter-exist-error": "Ein Newsletter mit dem gleichen Namen ist bereits vorhanden. Bitte versuche es mit einem anderen Namen.",
 	"newsletter-mainpage-not-found-error": "Die Hauptseite des Newsletters kann nicht gefunden werden. Bitte erneut versuchen.",
 	"newsletter-announceissueform-announceissue-section": "Neue Ausgabe ankündigen",
-	"newsletter-announceissueform-addpublisher-section": "Herausgeber hinzufügen",
+	"newsletter-addpublisherform-addpublisher-section": "Herausgeber hinzufügen",
 	"newsletter-create-section": "Newsletter erstellen",
 	"newsletter-create-submit": "Newsletter erstellen",
 	"newsletter-create-confirmation": "Es wurde erfolgreich ein neuer Newsletter erstellt. Du kannst Newsletter verwalten auf [[Special:ManageNewsletter]].",

@@ -23,7 +23,7 @@
 	"newsletter-exist-error": "使用相同名稱的報紙已存在，請使用其他名稱",
 	"newsletter-mainpage-not-found-error": "查無報紙首頁，請再試一次。",
 	"newsletter-announceissueform-announceissue-section": "發佈新出版",
-	"newsletter-announceissueform-addpublisher-section": "加入發佈者",
+	"newsletter-addpublisherform-addpublisher-section": "加入發佈者",
 	"newsletter-create-section": "建立報紙",
 	"newsletter-create-confirmation": "很好！您剛建立了一份新的報紙。",
 	"newsletter-issue-announce-confirmation": "很好！您剛出版了您的報紙。",
