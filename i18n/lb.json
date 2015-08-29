@@ -4,7 +4,7 @@
 			"Robby"
 		]
 	},
-	"newsletter-extension-desc": "Beschreiwung",
+	"newsletter-extension-desc": "Erméiglecht et Benotzer fir Newsletteren ze publizéieren an z'abonnéieren",
 	"newsletter-name": "Numm vun der Newsletter",
 	"newsletter-desc": "Beschreiwung",
 	"newsletter-title": "Titel vun der Haaptsäit",
@@ -13,8 +13,11 @@
 	"newsletter-option-monthly": "all Mount",
 	"newsletter-option-quarterly": "all 3 Méint",
 	"newsletter-publisher-username": "Benotzernumm",
+	"newsletter-mainpage-not-found-error": "D'Haaptsäit vun der Newsletter gëtt et net. Probéiert w.e.g. nach eng Kéier.",
 	"newsletter-announceissueform-announceissue-section": "Eng nei Ausgab ukënnegen",
-	"newsletter-create-confirmation": "Gut gemaach! Dir hutt elo grad eng nei Newsletter gemaacht.",
+	"newsletter-create-confirmation": "Eng nei Newsletter gouf gemaacht. Dir kënnt Newslettere op [[Special:ManageNewsletter]] geréieren.",
+	"newsletter-subtitlelinks-list": "Lëscht vun Newsletteren",
+	"newsletter-subtitlelinks-manage": "Newsletter geréieren",
 	"newsletter-subscribe-button-label": "Jo",
 	"newsletter-unsubscribe-button-label": "Neen",
 	"newsletter-available-newsletters-field-label": "Disponibel Newsletteren",
