@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @covers NewsletterTablePager
+ *
+ * @author Addshore
+ */
 class NewsletterTablePagerTest extends PHPUnit_Framework_TestCase {
 
 	private $mockSeekCounter;

@@ -2,6 +2,8 @@
 
 /**
  * @covers NewsletterDb
+ *
+ * @author Addshore
  */
 class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 

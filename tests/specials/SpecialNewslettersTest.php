@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * @covers SpecialNewsletters
+ *
+ * @group SpecialPage
+ *
+ * @author Addshore
+ */
 class SpecialNewslettersTest extends SpecialPageTestBase{
 
 	protected function newSpecialPage() {
