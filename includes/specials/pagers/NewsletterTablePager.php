@@ -11,6 +11,13 @@ class NewsletterTablePager extends TablePager {
 	 */
 	private $fieldNames = null;
 
+	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
+		if ( $readDb !== null ) {
+			$this->mDb = $readDb;
+		}
+		parent::__construct( $context );
+	}
+
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = array(
