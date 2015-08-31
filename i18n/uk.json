@@ -5,10 +5,11 @@
 			"Dars"
 		]
 	},
-	"newsletter-extension-desc": "Опис",
+	"newsletter-extension-desc": "Дозволяє користувачам публікувати і підписуватися на інформаційні бюлетені",
 	"newslettercreate": "Створити інформаційні листи",
 	"newslettermanage": "Керування інформаційними листами",
 	"newsletter-name": "Назва інформаційного листа",
+	"newsletter-desc": "Опис",
 	"newsletter-title": "Назва головної сторінки",
 	"newsletter-frequency": "Частота",
 	"newsletter-option-weekly": "щотижневий",

@@ -30,7 +30,7 @@
 	"newsletter-create-section": "Créer une newsletter",
 	"newsletter-create-submit": "Créer un bulletin d’informations",
 	"newsletter-create-confirmation": "Un nouveau bulletin d'information a été créé avec succès. Vous pouvez gérer les bulletins d'information par le biais de [[Special:ManageNewsletter]].",
-	"newsletter-create-mainpage-error": "La page principale de bulletin d’informations saisie est  inconnue. Veuillez réessayer",
+	"newsletter-create-mainpage-error": "La page principale de bulletin d’informations saisie contient des caractères non valides. Veuillez réessayer",
 	"newsletter-issue-announce-confirmation": "Félicitationsǃ Vous venez d'annoncer un nouveau numéro de votre newsletter.",
 	"newsletter-subtitlelinks-list": "Liste de bulletins d'information",
 	"newsletter-subtitlelinks-create": "Créer un nouveau bulletin d'information",

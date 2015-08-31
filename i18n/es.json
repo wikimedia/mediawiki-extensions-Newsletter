@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Rafael.minuesa"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -27,7 +28,7 @@
 	"newsletter-create-section": "Crear boletín",
 	"newsletter-create-submit": "Crear boletín",
 	"newsletter-create-confirmation": "Se ha creado con éxito un boletín nuevo. Puedes gestionar los boletines mediante [[Special:ManageNewsletter]].",
-	"newsletter-create-mainpage-error": "Se desconoce la página principal de boletín ingresada. Intenta de nuevo",
+	"newsletter-create-mainpage-error": "Caracteres no válidos ingresados en la página principal del Boletín de noticias. Por favor, inténtelo de nuevo",
 	"newsletter-issue-announce-confirmation": "¡Buen trabajo! Acabas de anunciar una edición nueva de tu boletín.",
 	"newsletter-subtitlelinks-list": "Lista de boletines",
 	"newsletter-subtitlelinks-create": "Crear un boletín nuevo",
