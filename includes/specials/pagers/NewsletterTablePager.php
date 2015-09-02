@@ -98,7 +98,8 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function getDefaultSort() {
-		return 'nl_name';
+		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
+		return 'current_user_subscribed';
 	}
 
 	public function isFieldSortable( $field ) {
