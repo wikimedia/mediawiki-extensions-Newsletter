@@ -21,8 +21,8 @@ class NewsletterManageTablePager extends TablePager {
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = array(
-				'newsletter_id' => $this->msg( 'newsletter-manage-header-name' )->text(),
-				'publisher_id' => $this->msg( 'newsletter-manage-header-publisher' )->text(),
+				'nl_id' => $this->msg( 'newsletter-manage-header-name' )->text(),
+				'nlp_publisher_id' => $this->msg( 'newsletter-manage-header-publisher' )->text(),
 				'permissions' => $this->msg( 'newsletter-manage-header-permissions' )->text(),
 				'action' => $this->msg( 'newsletter-manage-header-action' )->text(),
 			);
@@ -34,12 +34,12 @@ class NewsletterManageTablePager extends TablePager {
 		return array(
 			'tables' => array( 'nl_publishers', 'nl_newsletters' ),
 			'fields' => array(
-				'newsletter_id',
-				'publisher_id',
-				'is_owner' => 'publisher_id = nl_owner_id',
+				'nl_id',
+				'nlp_publisher_id',
+				'is_owner' => 'nlp_publisher_id = nl_owner_id',
 			),
 			'join_conds' => array(
-				'nl_newsletters' => array( 'LEFT JOIN', 'newsletter_id = nl_id' ),
+				'nl_newsletters' => array( 'LEFT JOIN', 'nlp_newsletter_id = nl_id' ),
 			),
 		);
 	}
@@ -48,11 +48,12 @@ class NewsletterManageTablePager extends TablePager {
 		static $previous;
 
 		switch ( $field ) {
-			case 'newsletter_id':
+			case 'nl_id':
 				if ( $previous === $value ) {
 
 					return null;
 				} else {
+					// @todo should be retrieved as a batch
 					$dbr = wfGetDB( DB_SLAVE );
 					$res = $dbr->select(
 						'nl_newsletters',
@@ -69,7 +70,7 @@ class NewsletterManageTablePager extends TablePager {
 
 					return $newsletterName;
 				}
-			case 'publisher_id' :
+			case 'nlp_publisher_id' :
 				$user = User::newFromId( $value );
 
 				return $user->getName();
@@ -96,16 +97,16 @@ class NewsletterManageTablePager extends TablePager {
 
 				return $radioOwner . $radioPublisher;
 			case 'action' :
-				$isCurrentUser = $this->mCurrentRow->publisher_id == $this->getUser()->getId();
+				$isCurrentUser = $this->mCurrentRow->nlp_publisher_id == $this->getUser()->getId();
 
 				if ( !$this->mCurrentRow->is_owner && !$isCurrentUser ) {
 					return HTML::element(
 						'input',
 						array(
 							'type' => 'button',
-							'value' => 'Remove',
+							'value' => 'Remove', // @todo needs i18n
 							'name' => $previous,
-							'id' => $this->mCurrentRow->publisher_id,
+							'id' => $this->mCurrentRow->nlp_publisher_id,
 						)
 					);
 				}
@@ -120,7 +121,7 @@ class NewsletterManageTablePager extends TablePager {
 	}
 
 	public function getDefaultSort() {
-		return 'newsletter_id';
+		return 'nl_id';
 	}
 
 	public function isFieldSortable( $field ) {
