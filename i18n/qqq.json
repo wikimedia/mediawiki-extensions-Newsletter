@@ -58,5 +58,6 @@
 	"newsletter-manage-header-permissions": "Label of the third column of table in [[Special:NewsletterManage]] which lists the roles of a user\n{{Identical|Permission}}",
 	"newsletter-manage-header-action": "{{Identical|Action}}",
 	"newsletter-owner-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is the owner of the newsletter\n{{Identical|Owner}}",
-	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter\n{{Identical|Publisher}}"
+	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter\n{{Identical|Publisher}}",
+	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:NewsletterManage]]"
 }

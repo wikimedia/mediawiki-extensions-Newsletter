@@ -64,7 +64,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'announceissue-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( array( '' => null ), $newsletterNameMap ),
+				'options' => array( $this->msg( 'newsletter-dropdown-default-message' )->text() => null ) + $newsletterNameMap,
 			),
 			'issue-page' => array(
 				'type' => 'text',
@@ -97,7 +97,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'addpublisher-section',
 				'label-message' => 'newsletter-name',
-				'options' => array_merge( array( '' => null ), $ownedNewsletterMap ),
+				'options' => array( $this->msg( 'newsletter-dropdown-default-message' )->text() => null ) + $ownedNewsletterMap,
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
