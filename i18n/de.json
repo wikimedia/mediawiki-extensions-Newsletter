@@ -58,5 +58,6 @@
 	"newsletter-manage-header-permissions": "Berechtigungen",
 	"newsletter-manage-header-action": "Aktion",
 	"newsletter-owner-radiobutton-label": "Besitzer",
-	"newsletter-publisher-radiobutton-label": "Herausgeber"
+	"newsletter-publisher-radiobutton-label": "Herausgeber",
+	"newsletter-dropdown-default-message": "Bitte einen Newsletter auswählen"
 }
