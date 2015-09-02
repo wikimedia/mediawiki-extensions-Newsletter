@@ -3,6 +3,7 @@
 /**
  * @license GNU GPL v2+
  * @author Tina Johnson
+ * @todo Optimize queries here
  */
 class NewsletterTablePager extends TablePager {
 
@@ -32,8 +33,8 @@ class NewsletterTablePager extends TablePager {
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE newsletter_id = nl_id )' ),
-				'current_user_subscribed' => "$userId IN (SELECT subscriber_id FROM nl_subscriptions WHERE newsletter_id = nl_id )" ,
+				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' ),
+				'current_user_subscribed' => "$userId IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )" ,
 			),
 			'options' => array( 'DISTINCT nl_id' ),
 		);
@@ -44,6 +45,7 @@ class NewsletterTablePager extends TablePager {
 	public function formatValue( $field, $value ) {
 		switch ( $field ) {
 			case 'nl_name':
+				// @todo do batch queries instead of separate queries for each row
 				$dbr = wfGetDB( DB_SLAVE );
 				$res = $dbr->select(
 					'nl_newsletters',

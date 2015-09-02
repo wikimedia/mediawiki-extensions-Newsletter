@@ -18,7 +18,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 			->method( 'insert' )
 			->with(
 				'nl_subscriptions',
-				array( 'subscriber_id' => 1, 'newsletter_id' => 2 )
+				array( 'nls_subscriber_id' => 1, 'nls_newsletter_id' => 2 )
 			)
 			->will( $this->returnValue( true ) );
 

@@ -26,8 +26,8 @@ class NewsletterDb {
 	 */
 	public function addSubscription( $userId, $newsletterId ) {
 		$rowData = array(
-			'newsletter_id' => $newsletterId,
-			'subscriber_id' =>$userId,
+			'nls_newsletter_id' => $newsletterId,
+			'nls_subscriber_id' =>$userId,
 		);
 		try{
 			return $this->writeDb->insert( 'nl_subscriptions', $rowData, __METHOD__ );
@@ -44,8 +44,8 @@ class NewsletterDb {
 	 */
 	public function removeSubscription( $userId, $newsletterId ) {
 		$rowData = array(
-			'newsletter_id' => $newsletterId,
-			'subscriber_id' => $userId,
+			'nls_newsletter_id' => $newsletterId,
+			'nls_subscriber_id' => $userId,
 		);
 		return $this->writeDb->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 	}
@@ -56,17 +56,18 @@ class NewsletterDb {
 	 * @return int[]
 	 */
 	public function getUserIdsSubscribedToNewsletter( $newsletterId ) {
+		// @todo use selectFieldValues() here
 		$res = $this->readDb->select(
 			'nl_subscriptions',
-			array( 'subscriber_id' ),
-			array( 'newsletter_id' => $newsletterId ),
+			array( 'nls_subscriber_id' ),
+			array( 'nls_newsletter_id' => $newsletterId ),
 			__METHOD__,
 			array()
 		);
 
 		$subscriberIds = array();
 		foreach ( $res as $row ) {
-			$subscriberIds[] = $row->subscriber_id;
+			$subscriberIds[] = $row->nls_subscriber_id;
 		}
 		return $subscriberIds;
 	}
@@ -79,8 +80,8 @@ class NewsletterDb {
 	 */
 	public function addPublisher( $userId, $newsletterId ) {
 		$rowData = array(
-			'newsletter_id' => $newsletterId,
-			'publisher_id' =>$userId,
+			'nlp_newsletter_id' => $newsletterId,
+			'nlp_publisher_id' =>$userId,
 		);
 		try{
 			return $this->writeDb->insert( 'nl_publishers', $rowData, __METHOD__ );
@@ -97,8 +98,8 @@ class NewsletterDb {
 	 */
 	public function removePublisher( $userId, $newsletterId ) {
 		$rowData = array(
-			'newsletter_id' => $newsletterId,
-			'publisher_id' => $userId,
+			'nlp_newsletter_id' => $newsletterId,
+			'nlp_publisher_id' => $userId,
 		);
 		return $this->writeDb->delete( 'nl_publishers', $rowData, __METHOD__ );
 	}
@@ -184,10 +185,10 @@ class NewsletterDb {
 		$res = $this->readDb->select(
 			array( 'nl_publishers', 'nl_newsletters' ),
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency', 'nl_owner_id' ),
-			array( 'publisher_id' => $user->getId() ),
+			array( 'nlp_publisher_id' => $user->getId() ),
 			__METHOD__,
 			array(),
-			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=newsletter_id' ) )
+			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=nlp_newsletter_id' ) )
 		);
 
 		return $this->getNewslettersFromResult( $res );
@@ -236,16 +237,16 @@ class NewsletterDb {
 		//Note: the writeDb is used as this is used in the next insert
 		$lastIssueId = $this->writeDb->selectRowCount(
 			'nl_issues',
-			array( 'issue_id' ),
-			array( 'issue_newsletter_id' => $newsletterId ),
+			array( 'nli_issue_id' ),
+			array( 'nli_newsletter_id' => $newsletterId ),
 			__METHOD__
 		);
-
+		// @todo should probably AUTO INCREMENT here
 		$rowData = array(
-			'issue_id' => $lastIssueId + 1,
-			'issue_page_id' => $pageId,
-			'issue_newsletter_id' => $newsletterId,
-			'issue_publisher_id' => $publisherId,
+			'nli_issue_id' => $lastIssueId + 1,
+			'nli_page_id' => $pageId,
+			'nli_newsletter_id' => $newsletterId,
+			'nli_publisher_id' => $publisherId,
 		);
 		try{
 			return $this->writeDb->insert( 'nl_issues', $rowData, __METHOD__ );
