@@ -57,5 +57,6 @@
 	"newsletter-manage-header-permissions": "权限",
 	"newsletter-manage-header-action": "操作",
 	"newsletter-owner-radiobutton-label": "主人",
-	"newsletter-publisher-radiobutton-label": "发布者"
+	"newsletter-publisher-radiobutton-label": "发布者",
+	"newsletter-dropdown-default-message": "请选择一个"
 }

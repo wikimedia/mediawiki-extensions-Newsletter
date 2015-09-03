@@ -2,13 +2,15 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Cwlin0416"
+			"Cwlin0416",
+			"MoonYaksha"
 		]
 	},
 	"newsletter-extension-desc": "描述",
 	"newslettercreate": "建立報紙",
 	"newslettermanage": "管理報紙",
 	"newsletter-name": "報紙名稱",
+	"newsletter-desc": "描述",
 	"newsletter-title": "首頁標題",
 	"newsletter-frequency": "頻率",
 	"newsletter-option-weekly": "每週",
@@ -21,7 +23,7 @@
 	"newsletter-unconfirmed-email-error": "提供的使用者名稱尚未確認電子郵件位址！",
 	"newsletter-required-fields-error": "必填欄位為空的",
 	"newsletter-exist-error": "使用相同名稱的報紙已存在，請使用其他名稱",
-	"newsletter-mainpage-not-found-error": "查無報紙首頁，請再試一次。",
+	"newsletter-mainpage-not-found-error": "報紙首頁不存在，請再試一次。",
 	"newsletter-announceissueform-announceissue-section": "發佈新出版",
 	"newsletter-addpublisherform-addpublisher-section": "加入發佈者",
 	"newsletter-create-section": "建立報紙",
@@ -51,5 +53,6 @@
 	"newsletter-manage-header-permissions": "權限",
 	"newsletter-manage-header-action": "動作",
 	"newsletter-owner-radiobutton-label": "擁有者",
-	"newsletter-publisher-radiobutton-label": "出版者"
+	"newsletter-publisher-radiobutton-label": "出版者",
+	"newsletter-dropdown-default-message": "請擇一"
 }

@@ -8,6 +8,7 @@
 	"newslettercreate": "Lääsch e Rondschrihve aan",
 	"newslettermanage": "Rondschrihve verwallde",
 	"newsletter-name": "Däm Rondschrihve sine Nahme",
+	"newsletter-desc": "Äkliehrong",
 	"newsletter-title": "De Övverschreff vun dä Sigg zum erin kumme",
 	"newsletter-frequency": "Wi öff",
 	"newsletter-option-weekly": "wöschentlesch",
@@ -24,6 +25,7 @@
 	"newsletter-announceissueform-announceissue-section": "Donn en neuje Ußjahb aankönndejje.",
 	"newsletter-addpublisherform-addpublisher-section": "Donn Erußjävver derbei.",
 	"newsletter-create-section": "Lääsch e Rondschrihve aan",
+	"newsletter-create-submit": "Lääsch e Rondschrihve aan",
 	"newsletter-create-confirmation": "Aanjelaat.",
 	"newsletter-issue-announce-confirmation": "Aanjeköndesch.",
 	"newsletter-subtitlelinks-list": "Leß met de Rondschrihve",
@@ -53,5 +55,6 @@
 	"newsletter-manage-header-permissions": "Rääschde",
 	"newsletter-manage-header-action": "Akßjuhn",
 	"newsletter-owner-radiobutton-label": "Besetzer",
-	"newsletter-publisher-radiobutton-label": "Veröffentlescher"
+	"newsletter-publisher-radiobutton-label": "Veröffentlescher",
+	"newsletter-dropdown-default-message": "Donn jäd ußsöhke"
 }

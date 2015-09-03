@@ -22,7 +22,7 @@
 	"newsletter-issuepage-not-found-error": "La page du sujet du bulletin d’information est introuvable. Veuillez réessayer",
 	"newsletter-invalid-username-error": "Nom d’utilisateur non valide",
 	"newsletter-unconfirmed-email-error": "Le nom d’utilisateur fourni n’a pas d’adresse de courriel confirmée !",
-	"newsletter-required-fields-error": "Les champs obligatoires sont vides",
+	"newsletter-required-fields-error": "Les champs nécessaires sont vides",
 	"newsletter-exist-error": "Un bulletin d’information avec le même nom existe déjà. Veuillez réessayer avec un autre nom",
 	"newsletter-mainpage-not-found-error": "La page principale du bulletin d’information est introuvable. Veuillez réessayer",
 	"newsletter-announceissueform-announceissue-section": "Annoncer un nouveau numéro",
@@ -60,5 +60,6 @@
 	"newsletter-manage-header-permissions": "Droits",
 	"newsletter-manage-header-action": "Action",
 	"newsletter-owner-radiobutton-label": "Propriétaire",
-	"newsletter-publisher-radiobutton-label": "Éditeur"
+	"newsletter-publisher-radiobutton-label": "Éditeur",
+	"newsletter-dropdown-default-message": "Veuillez en sélectionner un"
 }

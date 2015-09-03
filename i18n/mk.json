@@ -21,13 +21,13 @@
 	"newsletter-unconfirmed-email-error": "Укажаното корисничко име нема потврдена е-пошта!",
 	"newsletter-required-fields-error": "Задолжителните полиња се празни.",
 	"newsletter-exist-error": "Веќе постои билтен со тој назив. Пробајте друг",
-	"newsletter-mainpage-not-found-error": "Не ја најдов главната страница на билтенот. Обидете се пак",
+	"newsletter-mainpage-not-found-error": "Главната страница на билтенот не постои. Обидете се повторно.",
 	"newsletter-announceissueform-announceissue-section": "Објави ново издание",
 	"newsletter-addpublisherform-addpublisher-section": "Додај издавачи",
 	"newsletter-create-section": "Направи билтен",
 	"newsletter-create-submit": "Направи билтен",
 	"newsletter-create-confirmation": "Штотуку е направен нов билтен. Можете да раководите со билтени преку [[Special:ManageNewsletter]].",
-	"newsletter-create-mainpage-error": "Внесена е непозната главна страница на билтен. Обидете се повторно.",
+	"newsletter-create-mainpage-error": "Внесени се неважечки знаци за главната страница на билтенот. Обидете се повторно",
 	"newsletter-issue-announce-confirmation": "Одлично! Штотуку најавивте ново издание на вашиот билтен.",
 	"newsletter-subtitlelinks-list": "Список на билтени",
 	"newsletter-subtitlelinks-create": "Направете нов билтен",
@@ -57,5 +57,6 @@
 	"newsletter-manage-header-permissions": "Дозволи",
 	"newsletter-manage-header-action": "Дејство",
 	"newsletter-owner-radiobutton-label": "Сопственик",
-	"newsletter-publisher-radiobutton-label": "Издавач"
+	"newsletter-publisher-radiobutton-label": "Издавач",
+	"newsletter-dropdown-default-message": "Одберете едно"
 }

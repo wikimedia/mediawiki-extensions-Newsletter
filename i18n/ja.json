@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sujiniku"
+			"Sujiniku",
+			"Otokoume"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -22,6 +23,7 @@
 	"newsletter-create-section": "ニュースレターの作成",
 	"newsletter-create-submit": "ニュースレターの作成",
 	"newsletter-create-confirmation": "ニュースレターの作成が成功しました！　ニュースレターの管理は、[[Special:ManageNewsletter]]を介して、できます。",
+	"newsletter-create-mainpage-error": "入力された文字は無効です。もう一度やり直してください",
 	"newsletter-issue-announce-confirmation": "よくできました！　あなたは、あなたのニュースレターの新しい議題をアナウンスしました。",
 	"newsletter-subtitlelinks-list": "ニュースレターの一覧",
 	"newsletter-subtitlelinks-create": "新たなニュースレターの作成",
@@ -30,6 +32,7 @@
 	"newsletter-unsubscribe-section": "ニュースレターをUnsubscribeする",
 	"newsletter-subscribe-button-label": "はい",
 	"newsletter-unsubscribe-button-label": "いいえ",
+	"newsletter-none-found": "ニュースレターが存在しません。[[Special:CreateNewsletter]] で新しいニュースレターを作成することができます。",
 	"echo-category-title-newsletter": "ニュースレター",
 	"newsletter-notification-title": "$1 が議題をアナウンスしています。",
 	"newsletter-notification-flyout": "$1 が新しい議題をアナウンスしています。",
@@ -41,5 +44,6 @@
 	"newsletter-manage-header-publisher": "貢献者",
 	"newsletter-manage-header-permissions": "許可",
 	"newsletter-manage-header-action": "活動",
-	"newsletter-owner-radiobutton-label": "所有者"
+	"newsletter-owner-radiobutton-label": "所有者",
+	"newsletter-dropdown-default-message": "選択してください"
 }
