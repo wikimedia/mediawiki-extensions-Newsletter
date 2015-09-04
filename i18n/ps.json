@@ -1,0 +1,35 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ahmed-Najib-Biabani-Ibrahimkhel"
+		]
+	},
+	"newslettercreate": "خبرليکونه جوړول",
+	"newslettermanage": "خبرليکونه مهارول",
+	"newsletter-name": "د خبرليک نوم",
+	"newsletter-desc": "څرگندونه",
+	"newsletter-title": "د لومړي مخ سرليک",
+	"newsletter-option-weekly": "اونيز",
+	"newsletter-option-monthly": "مياشتينی",
+	"newsletter-option-quarterly": "درې مياشتينی",
+	"newsletter-publisher-username": "کارن-نوم",
+	"newsletter-invalid-username-error": "ناسم کارن-نوم",
+	"newsletter-create-section": "خبرليک جوړول",
+	"newsletter-create-submit": "خبرليک جوړول",
+	"newsletter-subtitlelinks-list": "د خبرليکونو لړليک",
+	"newsletter-subtitlelinks-create": "يو نوی خبرليک جوړول",
+	"newsletter-subtitlelinks-manage": "خبرليک مهارول",
+	"newsletters": "خبرليکونه",
+	"newsletter-subscribe-button-label": "هو",
+	"newsletter-unsubscribe-button-label": "نه",
+	"echo-category-title-newsletter": "خبرليکونه",
+	"newsletter-header-name": "د خبرليک نوم",
+	"newsletter-header-description": "څرگندونه",
+	"newsletter-manage-header-name": "خبرليک",
+	"newsletter-manage-header-publisher": "ونډه وال",
+	"newsletter-manage-header-permissions": "پرېښې",
+	"newsletter-manage-header-action": "چاره",
+	"newsletter-owner-radiobutton-label": "خاوند",
+	"newsletter-publisher-radiobutton-label": "خپرونکی",
+	"newsletter-dropdown-default-message": "لطفاً يو وټاکئ"
+}

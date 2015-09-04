@@ -5,5 +5,9 @@
 		]
 	},
 	"newsletter-desc": "Beskrivning",
-	"newsletter-create-submit": "Skapa nyhetsbrev"
+	"newsletter-create-submit": "Skapa nyhetsbrev",
+	"newsletter-subtitlelinks-list": "Lista över nyhetsbrev",
+	"newsletter-subtitlelinks-create": "Skapa ett nytt nyhetsbrev",
+	"newsletter-subtitlelinks-manage": "Hantera nyhetsbrev",
+	"newsletter-dropdown-default-message": "Var god välj en"
 }

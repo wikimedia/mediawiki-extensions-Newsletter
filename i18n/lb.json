@@ -26,5 +26,6 @@
 	"newsletter-header-description": "Beschreiwung",
 	"newsletter-manage-header-name": "Newsletter",
 	"newsletter-manage-header-permissions": "Autorisatiounen",
-	"newsletter-manage-header-action": "Aktioun"
+	"newsletter-manage-header-action": "Aktioun",
+	"newsletter-dropdown-default-message": "Sicht w.e.g. eng eraus"
 }
