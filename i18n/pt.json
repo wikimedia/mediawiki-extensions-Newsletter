@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Vitorvicentevalente"
 		]
 	},
 	"newsletter-extension-desc": "Descrição",
@@ -12,5 +13,6 @@
 	"newsletter-unsubscribe-button-label": "Não",
 	"newsletter-header-description": "Descrição",
 	"newsletter-manage-header-action": "Ação",
-	"newsletter-owner-radiobutton-label": "Proprietário"
+	"newsletter-owner-radiobutton-label": "Proprietário",
+	"newsletter-dropdown-default-message": "Por favor, selecione um"
 }
