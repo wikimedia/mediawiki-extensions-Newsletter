@@ -5,15 +5,48 @@
  *
  * @license GNU GPL v2+
  * @author Adam Shorland
+ * @author Glaisher
  */
 class Newsletter {
-
+	/**
+	 * @var int
+	 */
 	private $id;
+
+	/**
+	 * @var string
+	 */
 	private $name;
+
+	/**
+	 * @var string
+	 */
 	private $description;
+
+	/**
+	 * @var int
+	 */
 	private $pageId;
+
+	/**
+	 * @var string
+	 */
 	private $frequency;
+
+	/**
+	 * @var int
+	 */
 	private $ownerId;
+
+	/**
+	 * @var array
+	 */
+	private $publishers;
+
+	/**
+	 * @var array
+	 */
+	private $subscribers;
 
 	/**
 	 * @param int|null $id
@@ -24,12 +57,22 @@ class Newsletter {
 	 * @param int $ownerId
 	 */
 	public function __construct( $id, $name, $description, $pageId, $frequency, $ownerId ) {
-		$this->id = $id;
+		$this->id = (int)$id;
 		$this->name = $name;
 		$this->description = $description;
-		$this->pageId = $pageId;
+		$this->pageId = (int)$pageId;
 		$this->frequency = $frequency;
-		$this->ownerId = $ownerId;
+		$this->ownerId = (int)$ownerId;
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return Newsletter|null null if no newsletter exists with the provided id
+	 */
+	public static function newFromID( $id ) {
+		return NewsletterDb::newFromGlobalState()
+			->getNewsletter( $id );
 	}
 
 	/**
@@ -72,6 +115,74 @@ class Newsletter {
 	 */
 	public function getOwnerId() {
 		return $this->ownerId;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSubscribers() {
+		$this->loadSubscribers();
+		return $this->subscribers;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSubscriberCount() {
+		$this->loadSubscribers();
+		return count( $this->subscribers );
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getPublishers() {
+		$this->loadPublishers();
+		return $this->publishers;
+	}
+
+	/**
+	 * @todo this is probably not scalable...
+	 *
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	public function isSubscribed( User $user ) {
+		$this->loadSubscribers();
+		return in_array( $user->getId(), $this->subscribers );
+	}
+
+	/**
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	public function isPublisher( User $user ) {
+		$this->loadPublishers();
+		return in_array( $user->getId(), $this->publishers );
+	}
+
+	/**
+	 * Load the publishers from the database if it has not been queried yet
+	 */
+	private function loadPublishers() {
+		if ( $this->publishers === null ) {
+			// Not queried yet so let's do it now
+			$this->publishers = NewsletterDb::newFromGlobalState()
+				->getPublishersFromID( $this->id );
+		}
+	}
+
+	/**
+	 * Load the subscribers from the database if it has not been queried yet
+	 */
+	private function loadSubscribers() {
+		if ( $this->subscribers === null ) {
+			// Not queried yet so let's do it now
+			$this->subscribers = NewsletterDb::newFromGlobalState()
+				->getSubscribersFromID( $this->id );
+		}
 	}
 
 }

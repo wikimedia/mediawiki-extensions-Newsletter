@@ -12,7 +12,8 @@
 	"SpecialPages": {
 		"NewsletterCreate": "SpecialNewsletterCreate",
 		"NewsletterManage": "SpecialNewsletterManage",
-		"Newsletters": "SpecialNewsletters"
+		"Newsletters": "SpecialNewsletters",
+		"Newsletter": "SpecialNewsletter"
 	},
 	"APIModules": {
 		"newsletterapi": "ApiNewsletter",
@@ -29,6 +30,7 @@
 	"AutoloadClasses": {
 		"NewsletterHooks": "Newsletter.hooks.php",
 		"LinksGenerator": "includes/specials/LinksGenerator.php",
+		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
 		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
@@ -70,6 +72,9 @@
 		],
 		"UnitTestsList": [
 			"NewsletterHooks::onUnitTestsList"
+		],
+		"LoginFormValidErrorMessages": [
+			"NewsletterHooks::onLoginFormValidErrorMessages"
 		]
 	},
 	"manifest_version": 1

@@ -27,9 +27,9 @@ class NewsletterDb {
 	public function addSubscription( $userId, $newsletterId ) {
 		$rowData = array(
 			'nls_newsletter_id' => $newsletterId,
-			'nls_subscriber_id' =>$userId,
+			'nls_subscriber_id' => $userId,
 		);
-		try{
+		try {
 			return $this->writeDb->insert( 'nl_subscriptions', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
@@ -81,9 +81,9 @@ class NewsletterDb {
 	public function addPublisher( $userId, $newsletterId ) {
 		$rowData = array(
 			'nlp_newsletter_id' => $newsletterId,
-			'nlp_publisher_id' =>$userId,
+			'nlp_publisher_id' => $userId,
 		);
-		try{
+		try {
 			return $this->writeDb->insert( 'nl_publishers', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
@@ -121,7 +121,7 @@ class NewsletterDb {
 			'nl_frequency' => $frequency,
 			'nl_owner_id' => $ownerId,
 		);
-		try{
+		try {
 			return $this->writeDb->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
@@ -131,7 +131,22 @@ class NewsletterDb {
 	/**
 	 * @param int $id
 	 *
-	 * @return Newsletter
+	 * @todo make this more reliable and scalable
+	 */
+	public function deleteNewsletter( $id ) {
+		$dbw = $this->writeDb;
+		$dbw->begin( __METHOD__ );
+		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
+		$dbw->commit( __METHOD__ );
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public function getNewsletter( $id ) {
 		$res = $this->readDb->select(
@@ -141,7 +156,40 @@ class NewsletterDb {
 			__METHOD__
 		);
 
+		if ( $res->numRows() === 0 ) {
+			return null;
+		}
+
 		return $this->getNewsletterFromRow( $res->current() );
+	}
+
+
+	/**
+	 * @param int $id
+	 *
+	 * @return array
+	 */
+	public function getPublishersFromID( $id ) {
+		return $this->readDb->selectFieldValues(
+			'nl_publishers',
+			'nlp_publisher_id',
+			array( 'nlp_newsletter_id' => $id ),
+			__METHOD__
+		);
+	}
+
+	/**
+	 * @param int $id
+	 *
+	 * @return array
+	 */
+	public function getSubscribersFromID( $id ) {
+		return $this->readDb->selectFieldValues(
+			'nl_subscriptions',
+			'nls_subscriber_id',
+			array( 'nls_newsletter_id' => $id ),
+			__METHOD__
+		);
 	}
 
 	/**
@@ -234,7 +282,7 @@ class NewsletterDb {
 	 * @return bool
 	 */
 	public function addNewsletterIssue( $newsletterId, $pageId, $publisherId ) {
-		//Note: the writeDb is used as this is used in the next insert
+		// Note: the writeDb is used as this is used in the next insert
 		$lastIssueId = $this->writeDb->selectRowCount(
 			'nl_issues',
 			array( 'nli_issue_id' ),
@@ -248,7 +296,7 @@ class NewsletterDb {
 			'nli_newsletter_id' => $newsletterId,
 			'nli_publisher_id' => $publisherId,
 		);
-		try{
+		try {
 			return $this->writeDb->insert( 'nl_issues', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
