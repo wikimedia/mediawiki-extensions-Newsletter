@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Banjo"
+			"Banjo",
+			"Elisardojm"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
@@ -27,25 +28,36 @@
 	"newsletter-create-section": "Crear boletín de novas",
 	"newsletter-create-submit": "Crear boletín de novas",
 	"newsletter-create-confirmation": "Creouse un novo boletín de novas con éxisto. Pode xestionar os boletíns de novas a través de [[Special:ManageNewsletter]].",
+	"newsletter-create-mainpage-error": "Caracteres non válidos engadidos na páxina principal do boletín. Probe de novo",
+	"newsletter-issue-announce-confirmation": "Bo traballo! Acaba de anunciar unha edición nova do seu boletín.",
 	"newsletter-subtitlelinks-list": "Lista de boletíns de novas",
 	"newsletter-subtitlelinks-create": "Crear un novo boletín de novas",
 	"newsletter-subtitlelinks-manage": "Xestionar boletín de novas",
 	"newsletters": "Boletín de novas",
 	"newsletter-subscribe-section": "Subscribirse a boletíns de novas",
 	"newsletter-unsubscribe-section": "Cancelar subscricións a boletíns de novas",
+	"newsletter-subscribe-confirmation": "Agora está subscrito ó boletín.",
+	"newsletter-unsubscribe-confirmation": "Agora está borrado da subscrición do boletín.",
 	"newsletter-subscribe-button-label": "Si",
 	"newsletter-unsubscribe-button-label": "Non",
 	"newsletter-available-newsletters-field-label": "Boletíns de novas dispoñibles",
+	"newsletter-subscribed-newsletters-field-label": "Boletíns subscritos",
+	"newsletter-none-found": "Non existen boletíns. Pode crear un boletín novo mediante [[Special:CreateNewsletter]].",
 	"echo-category-title-newsletter": "Boletíns de novas",
+	"echo-pref-tooltip-newsletter": "Avisarme cando calquera dos boletíns ós que estou subscrito anuncie unha edición nova.",
+	"newsletter-notification-title": "$1 anunciou un novo número",
+	"newsletter-notification-flyout": "$1 anunciou un novo número",
 	"newsletter-notification-link-text-new-issue": "Ver novo número",
 	"newsletter-header-name": "Nome do boletín de novas",
 	"newsletter-header-description": "Descrición",
 	"newsletter-header-action": "Subscrito?",
 	"newsletter-header-subscriber_count": "Conta de subscritores",
+	"newsletter-new-publisher-confirmation": "Un novo editor acaba de unirse ó seu boletín.",
 	"newsletter-manage-header-name": "Boletín de novas",
 	"newsletter-manage-header-publisher": "Colaboradores",
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-owner-radiobutton-label": "Propietario",
-	"newsletter-publisher-radiobutton-label": "Editor"
+	"newsletter-publisher-radiobutton-label": "Editor",
+	"newsletter-dropdown-default-message": "Por favor seleccione un"
 }
