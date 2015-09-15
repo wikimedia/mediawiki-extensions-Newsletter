@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tina Johnson"
+			"Tina Johnson",
+			"Thomas Arrow"
 		]
 	},
 	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
@@ -50,6 +51,7 @@
 	"newsletter-header-name": "Name of newsletter",
 	"newsletter-header-description": "Description",
 	"newsletter-header-action": "Subscribed?",
+	"newsletter-header-frequency": "Frequency",
 	"newsletter-header-subscriber_count": "Subscriber count",
 	"newsletter-new-publisher-confirmation": "A new publisher has just been added to your newsletter!",
 	"newsletter-manage-header-name": "Newsletter",

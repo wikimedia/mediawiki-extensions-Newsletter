@@ -24,6 +24,7 @@ class NewsletterTablePager extends TablePager {
 			$this->fieldNames = array(
 				'nl_name' => $this->msg( 'newsletter-header-name' )->text(),
 				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
+				'nl_frequency' => $this->msg ( 'newsletter-header-frequency' )->text(),
 				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
 				'action' => $this->msg( 'newsletter-header-action' )->text(),
 			);
@@ -40,6 +41,7 @@ class NewsletterTablePager extends TablePager {
 				'nl_name',
 				'nl_desc',
 				'nl_id',
+				'nl_frequency',
 				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' ),
 				'current_user_subscribed' => "$userId IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )" ,
 			),
@@ -70,6 +72,8 @@ class NewsletterTablePager extends TablePager {
 
 				return '<a href="' . $url . '">' . $value . '</a>';
 			case 'nl_desc':
+				return $value;
+			case 'nl_frequency':
 				return $value;
 			case 'subscriber_count':
 				return HTML::element(
