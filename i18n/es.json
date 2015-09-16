@@ -51,6 +51,7 @@
 	"newsletter-header-name": "Nombre del boletín",
 	"newsletter-header-description": "Descripción",
 	"newsletter-header-action": "¿Suscrito?",
+	"newsletter-header-frequency": "Frecuencia",
 	"newsletter-header-subscriber_count": "Número de suscriptores",
 	"newsletter-new-publisher-confirmation": "Uno editor nuev se acaba de añadir a tu boletín.",
 	"newsletter-manage-header-name": "Boletín",

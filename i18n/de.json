@@ -51,6 +51,7 @@
 	"newsletter-header-name": "Name des Newsletters",
 	"newsletter-header-description": "Beschreibung",
 	"newsletter-header-action": "Abonniert?",
+	"newsletter-header-frequency": "Häufigkeit",
 	"newsletter-header-subscriber_count": "Abonnentenzähler",
 	"newsletter-new-publisher-confirmation": "Es wurde soeben ein neuer Herausgeber zu deinem Newsletter hinzugefügt!",
 	"newsletter-manage-header-name": "Newsletter",

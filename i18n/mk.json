@@ -50,6 +50,7 @@
 	"newsletter-header-name": "Назив на билтенот",
 	"newsletter-header-description": "Опис",
 	"newsletter-header-action": "Претплатено?",
+	"newsletter-header-frequency": "Честота",
 	"newsletter-header-subscriber_count": "Претплатници",
 	"newsletter-new-publisher-confirmation": "Штотуку е додаден нов издавач кон вашиот билтен!",
 	"newsletter-manage-header-name": "Билтен",
