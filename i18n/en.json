@@ -60,5 +60,7 @@
 	"newsletter-manage-header-action": "Action",
 	"newsletter-owner-radiobutton-label": "Owner",
 	"newsletter-publisher-radiobutton-label": "Publisher",
-	"newsletter-dropdown-default-message": "Please select one"
+	"newsletter-dropdown-default-message": "Please select one",
+	"right-newsletter-addpublisher": "Give publisher rights to users",
+	"action-newsletter-addpublisher": "give publisher rights to users"
 }
