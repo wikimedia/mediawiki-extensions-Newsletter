@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Cwlin0416",
-			"MoonYaksha"
+			"MoonYaksha",
+			"LNDDYL"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱報紙的功能",
@@ -46,6 +47,7 @@
 	"newsletter-header-name": "報紙名稱",
 	"newsletter-header-description": "描述",
 	"newsletter-header-action": "訂閱？",
+	"newsletter-header-frequency": "頻率",
 	"newsletter-header-subscriber_count": "訂閱數",
 	"newsletter-new-publisher-confirmation": "新出版者已加入您的報紙！",
 	"newsletter-manage-header-name": "報紙",
