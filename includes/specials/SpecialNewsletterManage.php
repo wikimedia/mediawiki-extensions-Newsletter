@@ -3,6 +3,7 @@
 /**
  * Special page for announcing issues and managing newsletters
  *
+ * @todo Merge functionality with SpecialNewsletter
  * @license GNU GPL v2+
  * @author Tina Johnson
  */

@@ -60,6 +60,15 @@ class NewsletterHooks {
 	}
 
 	/**
+	 * Allows to add our own error message to LoginForm
+	 *
+	 * @param array $messages
+	 */
+	public static function onLoginFormValidErrorMessages( &$messages ) {
+		$messages[] = 'newsletter-subscribe-loginrequired'; // on Special:Newsletter/id/subscribe
+	}
+
+	/**
 	 * Add tables to Database
 	 *
 	 * @param DatabaseUpdater $updater

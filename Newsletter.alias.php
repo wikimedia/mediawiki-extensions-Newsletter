@@ -13,4 +13,5 @@ $specialPageAliases['en'] = array(
 	'NewsletterCreate' => array( 'CreateNewsletter' ),
 	'NewsletterManage' => array( 'ManageNewsletter' ),
 	'Newsletters' => array( 'Newsletters' ),
+	'Newsletter' => array( 'Newsletter' )
 );
