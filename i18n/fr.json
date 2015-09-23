@@ -4,7 +4,8 @@
 			"Gomoko",
 			"Titip1995",
 			"Wladek92",
-			"Urhixidur"
+			"Urhixidur",
+			"Macofe"
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s'abonner à des bulletins d'information",
@@ -53,6 +54,7 @@
 	"newsletter-header-name": "Nom de la newsletter",
 	"newsletter-header-description": "Description",
 	"newsletter-header-action": "Abonné?",
+	"newsletter-header-frequency": "Fréquence",
 	"newsletter-header-subscriber_count": "Nombre d'abonnés",
 	"newsletter-new-publisher-confirmation": "Un nouvel éditeur vient d'être ajouté a votre newsletterǃ",
 	"newsletter-manage-header-name": "Newsletter",

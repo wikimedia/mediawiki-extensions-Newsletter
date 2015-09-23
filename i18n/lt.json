@@ -1,0 +1,29 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zygimantus"
+		]
+	},
+	"newsletter-notfound": "Naujienlaiškis nerastas:",
+	"newsletter-view": "Peržiūrėti naujienlaiškio detales",
+	"newsletter-user-subscribed": "Jūs esate užsiprenumeravęs šį naujienlaiškį.",
+	"newsletter-view-id": "Naujienlaiškio ID:",
+	"newsletter-view-name": "Naujienlaiškio pavadinimas:",
+	"newsletter-view-mainpage": "Pagrindinis puslapis:",
+	"newsletter-view-frequency": "Dažnis:",
+	"newsletter-view-description": "Aprašymas:",
+	"newsletter-view-owner": "Savininkas:",
+	"newsletter-view-subscriber-count": "Prenumeratorių skaičius:",
+	"newsletter-delete-button": "Ištrinti",
+	"newsletter-manage-button": "Tvarkyti",
+	"newsletter-unsubscribe-button": "Nutraukti prenumeratą",
+	"newsletter-subscribe-button": "Prenumeruoti",
+	"newsletter-delete": "Ištrinti naujienlaiškį",
+	"newsletter-delete-nopermission": "Jūs neturite teisių ištrinti šį naujienlaiškį.",
+	"newsletter-deletenewsletter-button": "Ištrinti šį naujienlaiškį",
+	"newsletter-delete-success": "Naujienlaiškis #$1 buvo pašalintas.",
+	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",
+	"newsletter-do-subscribe": "Užsisakyti šį naujienlaiškį",
+	"newsletter-do-unsubscribe": "Atsisakyti naujienlaiškio",
+	"newsletter-header-frequency": "Dažnis"
+}
