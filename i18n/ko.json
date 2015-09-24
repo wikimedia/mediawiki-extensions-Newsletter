@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Revi"
+		]
+	},
+	"newsletter-extension-desc": "뉴스레터를 만들고 배포할 수 있도록 함",
+	"newslettercreate": "뉴스레터 만들기",
+	"newslettermanage": "뉴스레터 관리하기",
+	"newsletter-name": "뉴스레터 이름",
+	"newsletter-desc": "설명",
+	"newsletter-title": "대문 이름",
+	"newsletter-frequency": "주기",
+	"newsletter-option-weekly": "매주",
+	"newsletter-option-monthly": "매달",
+	"newsletter-option-quarterly": "분기별",
+	"newsletter-publisher-username": "사용자 이름",
+	"newsletter-subscribe-button-label": "예",
+	"newsletter-unsubscribe-button-label": "아니오"
+}

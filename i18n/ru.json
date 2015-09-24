@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ghiutun"
+			"Ghiutun",
+			"INS Pirat"
 		]
 	},
-	"newsletter-desc": "Описание"
+	"newsletter-desc": "Описание",
+	"newsletter-delete-button": "Удалить",
+	"newsletter-subscribe-button": "Подписаться"
 }
