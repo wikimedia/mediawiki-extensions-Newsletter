@@ -11,6 +11,11 @@ class NewsletterManageTablePager extends TablePager {
 	 */
 	private $fieldNames = null;
 
+	/**
+	 * @var array List of newsletters for which the current user is a publisher
+	 */
+	private $newslettersOfPublisher;
+
 	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
@@ -31,12 +36,20 @@ class NewsletterManageTablePager extends TablePager {
 	}
 
 	public function getQueryInfo() {
+
+		$this->newslettersOfPublisher = $this->mDb->selectFieldValues(
+			'nl_publishers',
+			'nlp_newsletter_id',
+			array( 'nlp_publisher_id' => $this->getUser()->getId() ),
+			__METHOD__
+		);
+
 		return array(
-			'tables' => array( 'nl_publishers', 'nl_newsletters' ),
+			'tables' => array( 'nl_newsletters', 'nl_publishers' ),
 			'fields' => array(
 				'nl_id',
+				'nl_name',
 				'nlp_publisher_id',
-				'is_owner' => 'nlp_publisher_id = nl_owner_id',
 			),
 			'join_conds' => array(
 				'nl_newsletters' => array( 'LEFT JOIN', 'nlp_newsletter_id = nl_id' ),
@@ -46,67 +59,40 @@ class NewsletterManageTablePager extends TablePager {
 
 	public function formatValue( $field, $value ) {
 		static $previous;
+		$isPublisher = in_array( $this->mCurrentRow->nl_id, $this->newslettersOfPublisher );
 
 		switch ( $field ) {
 			case 'nl_id':
 				if ( $previous === $value ) {
-
 					return null;
 				} else {
-					// @todo should be retrieved as a batch
-					$dbr = wfGetDB( DB_SLAVE );
-					$res = $dbr->select(
-						'nl_newsletters',
-						array( 'nl_name' ),
-						array( 'nl_id' => $value ),
-						__METHOD__,
-						array()
-					);
-					$newsletterName = null;
-					foreach ( $res as $row ) {
-						$newsletterName = $row->nl_name;
-					}
 					$previous = $value;
-
-					return $newsletterName;
+					return htmlspecialchars( $this->mCurrentRow->nl_name );
 				}
-			case 'nlp_publisher_id' :
-				$user = User::newFromId( $value );
 
-				return $user->getName();
+			case 'nlp_publisher_id':
+				return User::newFromId( $value )->getName();
+
 			case 'permissions' :
-				$radioOwner = HTML::element(
+				return HTML::element(
 						'input',
 						array(
 							'type' => 'checkbox',
 							'disabled' => 'true',
 							'id' => 'newslettermanage',
-							'checked' => $this->mCurrentRow->is_owner ? true : false,
+							'checked' => $isPublisher ? true : false,
 						)
-					) . $this->msg( 'newsletter-owner-radiobutton-label' );
+					) . $this->msg( 'newsletter-publisher-radiobutton-label' )->text();
 
-				$radioPublisher = HTML::element(
-						'input',
-						array(
-							'type' => 'checkbox',
-							'disabled' => 'true',
-							'id' => 'newslettermanage',
-							'checked' => $this->mCurrentRow->is_owner ? false : true,
-						)
-					) . $this->msg( 'newsletter-publisher-radiobutton-label' );
-
-				return $radioOwner . $radioPublisher;
-			case 'action' :
-				$isCurrentUser = $this->mCurrentRow->nlp_publisher_id == $this->getUser()->getId();
-
-				if ( !$this->mCurrentRow->is_owner && !$isCurrentUser ) {
+			case 'action':
+				if ( $isPublisher ) {
 					return HTML::element(
 						'input',
 						array(
 							'type' => 'button',
 							'value' => 'Remove', // @todo needs i18n
 							'name' => $previous,
-							'id' => $this->mCurrentRow->nlp_publisher_id,
+							'id' => $this->getUser()->getId(),
 						)
 					);
 				}
