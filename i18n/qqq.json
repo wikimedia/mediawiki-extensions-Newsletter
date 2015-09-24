@@ -92,5 +92,7 @@
 	"newsletter-manage-header-action": "{{Identical|Action}}",
 	"newsletter-owner-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is the owner of the newsletter\n{{Identical|Owner}}",
 	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter\n{{Identical|Publisher}}",
-	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:NewsletterManage]]"
+	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:NewsletterManage]]",
+	"right-newsletter-addpublisher": "{{doc-right|newsletter-addpublisher}}",
+	"action-newsletter-addpublisher": "{{doc-action|newsletter-addpublisher}}"
 }

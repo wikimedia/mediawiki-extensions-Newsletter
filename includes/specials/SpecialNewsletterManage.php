@@ -27,19 +27,24 @@ class SpecialNewsletterManage extends SpecialPage {
 			'newsletter-announceissueform'
 		);
 		$announceIssueForm->setSubmitCallback( array( $this, 'onSubmitIssue' ) );
-		$addPublisherForm = new HTMLForm(
-			$this->getPublisherFormFields(),
-			$this->getContext(),
-			'newsletter-addpublisherform'
-		);
-		$addPublisherForm->setSubmitCallback( array( $this, 'onSubmitPublisher' ) );
 
 		$pager = new NewsletterManageTablePager();
 		if ( $pager->getNumRows() > 0 ) {
 			$output->addParserOutput( $pager->getFullOutput() );
 			// Show HTML forms
 			$announceIssueForm->show();
-			$addPublisherForm->show();
+
+			if ( $this->getUser()->isAllowed( 'newsletter-addpublisher' ) ) {
+				// The user does not have required permissions
+				$addPublisherForm = new HTMLForm(
+					$this->getPublisherFormFields(),
+					$this->getContext(),
+					'newsletter-addpublisherform'
+				);
+				$addPublisherForm->setSubmitCallback( array( $this, 'onSubmitPublisher' ) );
+				$addPublisherForm->show();
+			}
+
 		} else {
 			$output->showErrorPage( 'newslettermanage', 'newsletter-none-found' );
 		}
@@ -128,6 +133,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			$issuePage = Title::newFromText( $formData['issue-page'] );
 			$pageId = $issuePage->getArticleId();
 			$pageNamepace = $issuePage->getNamespace();
+
 			// Array index is newsletter-id for selected newsletter in newsletterNames[] above
 			if ( ( $pageId !== 0 ) && isset( $newsletterId ) && isset( $formData['publisher'] ) ) {
 				$db = NewsletterDb::newFromGlobalState();
@@ -136,6 +142,7 @@ class SpecialNewsletterManage extends SpecialPage {
 					$pageId,
 					$formData['publisher']
 				);
+
 				if ( !$issueCreated ) {
 					// TODO better output message here with i18n....
 					throw new MWException( 'Failed to create newsletter issue' );
@@ -143,6 +150,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				$this->getOutput()->addWikiMsg( 'newsletter-issue-announce-confirmation' );
 
 				$newsletter = $db->getNewsletter( $newsletterId );
+
 				if ( class_exists( 'EchoEvent' ) ) {
 					EchoEvent::create(
 						array(
