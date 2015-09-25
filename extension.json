@@ -47,7 +47,8 @@
 		"ApiNewsletter": "includes/api/ApiNewsletter.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"NewsletterDb": "includes/NewsletterDb.php",
-		"EchoNewsletterFormatter": "includes/EchoNewsletterFormatter.php",
+		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
+		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"Newsletter": "includes/Newsletter.php"
 	},
 	"ResourceModules": {
@@ -74,9 +75,6 @@
 		],
 		"BeforeCreateEchoEvent": [
 			"NewsletterHooks::onBeforeCreateEchoEvent"
-		],
-		"EchoGetDefaultNotifiedUsers": [
-			"NewsletterHooks::onEchoGetDefaultNotifiedUsers"
 		],
 		"UnitTestsList": [
 			"NewsletterHooks::onUnitTestsList"

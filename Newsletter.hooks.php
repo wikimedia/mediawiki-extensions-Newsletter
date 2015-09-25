@@ -17,10 +17,14 @@ class NewsletterHooks {
 			'priority' => 3,
 			'tooltip' => 'echo-pref-tooltip-newsletter',
 		);
+		// @todo rename event as this is misleading - we're not really subscribing here
 		$notifications['subscribe-newsletter'] = array(
 			'primary-link' => array(
 				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
+			),
+			'user-locators' => array(
+				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			),
 			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
@@ -29,33 +33,6 @@ class NewsletterHooks {
 			'flyout-params' => array( 'newsletter', 'title' ),
 
 		);
-		return true;
-	}
-
-	/**
-	 * Add user to be notified on echo event
-	 *
-	 * @todo Use the JobQueue for this to make sure it scales amazingly
-	 *
-	 * @param EchoEvent $event
-	 * @param User[] $users
-	 * @return bool
-	 */
-	public static function onEchoGetDefaultNotifiedUsers( $event, &$users ) {
-		$eventType = $event->getType();
-		if ( $eventType === 'subscribe-newsletter' ) {
-			$extra = $event->getExtra();
-
-			$db = NewsletterDb::newFromGlobalState();
-			$userIds = $db->getUserIdsSubscribedToNewsletter( $extra['newsletterId'] );
-
-			//TODO queries to the user table should be done in batches using UserArray::newFromIds
-			foreach ( $userIds as $userId ) {
-				$recipient = User::newFromId( $userId );
-				$users[$userId] = $recipient;
-			}
-		}
-
 		return true;
 	}
 
