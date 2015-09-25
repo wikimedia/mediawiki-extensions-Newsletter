@@ -4,7 +4,9 @@
 			"Zygimantus"
 		]
 	},
+	"newsletter-subscribe-loginrequired": "Prašome prisijungti jei norite užsisakyti [[Specialus:Naujienlaiškiai|naujienlaiškius]].",
 	"newsletter-notfound": "Naujienlaiškis nerastas:",
+	"newsletter-not-found-id": "Naujienlaiškis su šiuo ID neegzistuoja.",
 	"newsletter-view": "Peržiūrėti naujienlaiškio detales",
 	"newsletter-user-subscribed": "Jūs esate užsiprenumeravęs šį naujienlaiškį.",
 	"newsletter-view-id": "Naujienlaiškio ID:",
@@ -25,5 +27,7 @@
 	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",
 	"newsletter-do-subscribe": "Užsisakyti šį naujienlaiškį",
 	"newsletter-do-unsubscribe": "Atsisakyti naujienlaiškio",
-	"newsletter-header-frequency": "Dažnis"
+	"newsletter-header-frequency": "Dažnis",
+	"right-newsletter-addpublisher": "Duoti leidėjo teises vartotojams",
+	"action-newsletter-addpublisher": "duoti leidėjo teises vartotojams"
 }

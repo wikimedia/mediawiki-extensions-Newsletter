@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ammartivari"
+			"Ammartivari",
+			"Kosovastar"
 		]
 	},
-	"newsletter-desc": "Përshkrimi"
+	"newsletter-desc": "Përshkrimi",
+	"newsletter-view-owner": "Pronari"
 }

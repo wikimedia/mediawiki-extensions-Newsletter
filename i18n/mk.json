@@ -90,5 +90,7 @@
 	"newsletter-manage-header-action": "Дејство",
 	"newsletter-owner-radiobutton-label": "Сопственик",
 	"newsletter-publisher-radiobutton-label": "Издавач",
-	"newsletter-dropdown-default-message": "Одберете едно"
+	"newsletter-dropdown-default-message": "Одберете едно",
+	"right-newsletter-addpublisher": "Доделување права на издавач",
+	"action-newsletter-addpublisher": "доделување права на издавач"
 }

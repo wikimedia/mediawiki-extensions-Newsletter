@@ -42,6 +42,7 @@
 	"newsletter-view-frequency": "頻度",
 	"newsletter-view-description": "説明:",
 	"newsletter-view-owner": "所有者:",
+	"newsletter-view-publishers": "{{PLURAL:$1|公開者:}}",
 	"newsletter-view-subscriber-count": "購読者数:",
 	"newsletter-delete-button": "削除",
 	"newsletter-manage-button": "管理",
