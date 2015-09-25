@@ -39,6 +39,7 @@ class NewsletterTablePager extends TablePager {
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
 				'nl_name',
+				'nl_main_page_id',
 				'nl_desc',
 				'nl_id',
 				'nl_frequency',
@@ -54,23 +55,12 @@ class NewsletterTablePager extends TablePager {
 	public function formatValue( $field, $value ) {
 		switch ( $field ) {
 			case 'nl_name':
-				// @todo do batch queries instead of separate queries for each row
-				$dbr = wfGetDB( DB_SLAVE );
-				$res = $dbr->select(
-					'nl_newsletters',
-					array( 'nl_main_page_id' ),
-					array( 'nl_name' => $value ),
-					__METHOD__
-				);
-
-				$mainPageId = '';
-				foreach ( $res as $row ) {
-					$mainPageId = $row->nl_main_page_id;
+				$title = Title::newFromID( $this->mCurrentRow->nl_main_page_id );
+				if ( $title ) {
+					return Linker::link( $title, htmlspecialchars( $value ) );
+				} else {
+					return htmlspecialchars( $value );
 				}
-
-				$url = $mainPageId ? Title::newFromID( $mainPageId )->getFullURL() : "#";
-
-				return '<a href="' . $url . '">' . $value . '</a>';
 			case 'nl_desc':
 				return $value;
 			case 'nl_frequency':
