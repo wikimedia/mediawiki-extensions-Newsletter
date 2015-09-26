@@ -55,7 +55,7 @@
 	"newsletter-view-subscriber-count": "Label for newsletter's subscriber count field. Shown on Special:Newsletter/<id>.",
 	"newsletter-delete-button": "Label for \"Delete\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/delete. Only shown if the current user has permissions to delete the newsletter.\n{{Identical|Delete}}",
 	"newsletter-manage-button": "Label for \"Manage\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/manage. Only shown if the current user has permissions to manage the newsletter. Manage actions include adding publishers, removing publishers and announcing new issues.",
-	"newsletter-unsubscribe-button": "Label for \"Unsubscribe\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/unsubscribe. Shown only for logged-in users and if the user is currently subscribed to the newsletter.",
+	"newsletter-unsubscribe-button": "Label for \"Unsubscribe\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/unsubscribe. Shown only for logged-in users and if the user is currently subscribed to the newsletter.\n{{Identical|Unsubscribe}}",
 	"newsletter-subscribe-button": "Label for \"Subscribe\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/unsubscribe. Shown only for logged-in users and if the user is currently not subscribed to the newsletter.",
 	"newsletter-delete": "Header message shown on Special:Newsletter/<id>/delete.\n\nSee also:\n* {{msg-mw|newsletter-view}}\n*{{msg-mw|newsletter-subscribe}}",
 	"newsletter-delete-nopermission": "Error message shown on Special:Newsletter/<id>/delete if the current user does not have the permission to delete the newsletter.",
