@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hiba Alshawi"
+			"Hiba Alshawi",
+			"Meno25"
 		]
 	},
+	"newsletter-desc": "الوصف",
 	"newsletter-mainpage-not-found-error": "النشرة الإخبارية لصفحة الرئيسية غير موجودة. حاول مرة اخرى.",
+	"newsletter-view-description": "الوصف:",
+	"newsletter-header-description": "الوصف",
 	"newsletter-dropdown-default-message": "الرجاء اختيار واحدة"
 }
