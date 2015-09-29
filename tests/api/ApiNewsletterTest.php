@@ -32,7 +32,6 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_desc' => 'This is a newsletter',
 			'nl_main_page_id' => 1,
 			'nl_frequency' => 'monthly',
-			'nl_owner_id' => $user->getId(),
 		);
 		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 	}

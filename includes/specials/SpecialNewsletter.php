@@ -105,7 +105,6 @@ class SpecialNewsletter extends SpecialPage {
 
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$this->doLinkCacheQuery( $publishers );
-		$owner = User::newFromID( $this->newsletter->getOwnerId() );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 
 		$form = $this->getHTMLForm(
@@ -140,13 +139,6 @@ class SpecialNewsletter extends SpecialPage {
 					'default' => $this->newsletter->getDescription(),
 					'rows' => 6,
 					'readonly' => true,
-				),
-				'owner' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-owner',
-					'default' => Linker::link( $owner->getUserPage(), $owner->getName() ) .
-						Linker::userToolLinks( $owner->getId(), $owner->getName() ),
-					'raw' => true,
 				),
 				'publishers' => array(
 					'type' => 'info',
@@ -189,8 +181,8 @@ class SpecialNewsletter extends SpecialPage {
 		$buttons = array();
 		$this->getOutput()->enableOOUI();
 
-		if ( $user->getID() === $this->newsletter->getOwnerID() ) {
-			// Show delete button for owners only
+		// Only publishers can manage and delete newsletters
+		if ( $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-delete-button' )->escaped(),
@@ -199,10 +191,7 @@ class SpecialNewsletter extends SpecialPage {
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
 				)
 			);
-		}
 
-		if ( $this->newsletter->isPublisher( $user ) ) {
-			// Only publishers can manage newsletters
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
@@ -346,7 +335,7 @@ class SpecialNewsletter extends SpecialPage {
 
 	/**
 	 * Build the delete form for Special:Newsletter/$id/delete
-	 * Only newsletter owner have access to this form currently.
+	 * Only newsletter publishers have access to this form currently.
 	 */
 	protected function doDeleteExecute() {
 		$user = $this->getUser();
@@ -359,8 +348,8 @@ class SpecialNewsletter extends SpecialPage {
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
-		if ( $this->newsletter->getOwnerID() !== $user->getId() ) {
-			// only owner can delete newsletter (for now)
+		if ( $this->newsletter->isPublisher( $user ) ) {
+			// only publishers can delete newsletter (for now)
 			$out->showPermissionsErrorPage(
 				array( array( 'newsletter-delete-nopermission' ) )
 			);

@@ -91,11 +91,9 @@ class SpecialNewsletterManage extends SpecialPage {
 	 */
 	private function getPublisherFormFields() {
 		$db = NewsletterDb::newFromGlobalState();
-		$userOwnedNewsletters = $db->getNewslettersUserIsOwnerOf( $this->getUser() );
-
-		$ownedNewsletterMap = array();
-		foreach ( $userOwnedNewsletters as $newsletter ) {
-			$ownedNewsletterMap[$newsletter->getName()] = $newsletter->getId();
+		$newsletters = array();
+		foreach ( $db->getAllNewsletters() as $newsletter ) {
+			$newsletters[$newsletter->getName()] = $newsletter->getId();
 		}
 
 		return array(
@@ -103,7 +101,8 @@ class SpecialNewsletterManage extends SpecialPage {
 				'type' => 'select',
 				'section' => 'addpublisher-section',
 				'label-message' => 'newsletter-name',
-				'options' => array( $this->msg( 'newsletter-dropdown-default-message' )->text() => null ) + $ownedNewsletterMap,
+				'options' => array( $this->msg( 'newsletter-dropdown-default-message' )->text() => null )
+					+ $newsletters,
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',

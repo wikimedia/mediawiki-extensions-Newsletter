@@ -84,8 +84,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			return array( 'newsletter-mainpage-not-found-error' );
 		}
 
-		$publisherId = $this->getUser()->getId();
-
 		if ( isset( $data['name'] ) &&
 			isset( $data['description'] ) &&
 			( $articleId !== 0 ) &&
@@ -97,8 +95,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				trim( $data['name'] ),
 				$data['description'],
 				$articleId,
-				$data['frequency'],
-				$publisherId
+				$data['frequency']
 			);
 
 			if ( !$newsletterAdded ) {
@@ -107,7 +104,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 			$newsletter = $db->getNewsletterForPageId( $articleId );
 
-			$this->autoSubscribe( $newsletter->getId(), $publisherId );
+			$this->autoSubscribe( $newsletter->getId(), $this->getUser()->getId() );
 
 			return true;
 		}
@@ -123,15 +120,15 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 
 	/**
-	 * Automatically subscribe and add owner as publisher of the newsletter
+	 * Automatically subscribe and add creator as publisher of the newsletter
 	 *
 	 * @param int $newsletterId Id of the newsletter
-	 * @param int $ownerId User Id of the owner
+	 * @param int $userID User Id of the publisher
 	 */
-	private function autoSubscribe( $newsletterId, $ownerId ) {
+	private function autoSubscribe( $newsletterId, $userID ) {
 		$db = NewsletterDb::newFromGlobalState();
-		$db->addPublisher( $ownerId, $newsletterId );
-		$db->addSubscription( $ownerId, $newsletterId );
+		$db->addPublisher( $userID, $newsletterId );
+		$db->addSubscription( $userID, $newsletterId );
 	}
 
 }
