@@ -11,7 +11,6 @@
 	"newsletter-view-mainpage": "Pàgina principal:",
 	"newsletter-view-frequency": "Freqüència:",
 	"newsletter-view-description": "Descripció:",
-	"newsletter-view-owner": "Propietari:",
 	"newsletter-delete-button": "Suprimeix",
 	"newsletter-subscribe-button-label": "Sí­",
 	"newsletter-unsubscribe-button-label": "No",
@@ -19,6 +18,5 @@
 	"newsletter-header-frequency": "Freqüència",
 	"newsletter-manage-header-publisher": "Coŀlaboradors",
 	"newsletter-manage-header-permissions": "Permisos",
-	"newsletter-manage-header-action": "Acció",
-	"newsletter-owner-radiobutton-label": "Propietari"
+	"newsletter-manage-header-action": "Acció"
 }

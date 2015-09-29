@@ -10,7 +10,6 @@
 	"newsletter-view-mainpage": "Pagina principale:",
 	"newsletter-view-frequency": "Frequenza:",
 	"newsletter-view-description": "Descrizione:",
-	"newsletter-view-owner": "Proprietario:",
 	"newsletter-delete-button": "Cancella",
 	"newsletter-manage-button": "Amministra",
 	"newsletter-subscribe-button": "Iscriviti",
@@ -19,6 +18,5 @@
 	"newsletter-header-description": "Descrizione",
 	"newsletter-header-frequency": "Frequenza",
 	"newsletter-manage-header-permissions": "Permessi",
-	"newsletter-manage-header-action": "Azione",
-	"newsletter-owner-radiobutton-label": "Proprietario"
+	"newsletter-manage-header-action": "Azione"
 }

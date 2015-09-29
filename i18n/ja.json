@@ -41,7 +41,6 @@
 	"newsletter-view-mainpage": "メインページ:",
 	"newsletter-view-frequency": "頻度",
 	"newsletter-view-description": "説明:",
-	"newsletter-view-owner": "所有者:",
 	"newsletter-view-publishers": "{{PLURAL:$1|公開者:}}",
 	"newsletter-view-subscriber-count": "購読者数:",
 	"newsletter-delete-button": "削除",
@@ -76,7 +75,6 @@
 	"newsletter-manage-header-publisher": "貢献者",
 	"newsletter-manage-header-permissions": "許可",
 	"newsletter-manage-header-action": "活動",
-	"newsletter-owner-radiobutton-label": "所有者",
 	"newsletter-dropdown-default-message": "選択してください",
 	"right-newsletter-addpublisher": "利用者たちに公開者の権利を与える",
 	"action-newsletter-addpublisher": "利用者たちに公開者の権利を与える"

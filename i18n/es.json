@@ -46,7 +46,6 @@
 	"newsletter-view-mainpage": "Página principal:",
 	"newsletter-view-frequency": "Frecuencia:",
 	"newsletter-view-description": "Descripción:",
-	"newsletter-view-owner": "Propietario:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
 	"newsletter-view-subscriber-count": "Número de suscriptores:",
 	"newsletter-delete-button": "Eliminar",
@@ -89,7 +88,6 @@
 	"newsletter-manage-header-publisher": "Colaboradores",
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
-	"newsletter-owner-radiobutton-label": "Propietario",
 	"newsletter-publisher-radiobutton-label": "Editor",
 	"newsletter-dropdown-default-message": "Selecciona uno"
 }
