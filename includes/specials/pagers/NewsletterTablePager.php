@@ -39,7 +39,6 @@ class NewsletterTablePager extends TablePager {
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
 				'nl_name',
-				'nl_main_page_id',
 				'nl_desc',
 				'nl_id',
 				'nl_frequency',
@@ -55,9 +54,9 @@ class NewsletterTablePager extends TablePager {
 	public function formatValue( $field, $value ) {
 		switch ( $field ) {
 			case 'nl_name':
-				$title = Title::newFromID( $this->mCurrentRow->nl_main_page_id );
+				$title = SpecialPage::getTitleFor( 'Newsletter', $this->mCurrentRow->nl_id );
 				if ( $title ) {
-					return Linker::link( $title, htmlspecialchars( $value ) );
+					return Linker::linkKnown( $title, htmlspecialchars( $value ) );
 				} else {
 					return htmlspecialchars( $value );
 				}
