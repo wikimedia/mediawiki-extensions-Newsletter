@@ -35,7 +35,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			$announceIssueForm->show();
 
 			if ( $this->getUser()->isAllowed( 'newsletter-addpublisher' ) ) {
-				// The user does not have required permissions
+				// The user have required permissions
 				$addPublisherForm = new HTMLForm(
 					$this->getPublisherFormFields(),
 					$this->getContext(),

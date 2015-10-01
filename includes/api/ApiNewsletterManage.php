@@ -15,6 +15,10 @@ class ApiNewsletterManage extends ApiBase {
 			$this->dieUsage( 'You must be logged-in to interact with newsletters', 'notloggedin' );
 		}
 
+		if ( !$user->isAllowed( 'newsletter-addpublisher' ) ) {
+			$this->dieUsage( 'You do not have the necessary rights to interact with the newsletter', 'notnewsletteradmin' );
+		}
+
 		//TODO should probably do something here depending on the result..
 		if ( $this->getMain()->getVal( 'todo' ) === 'removepublisher' ) {
 			$db = NewsletterDb::newFromGlobalState();
