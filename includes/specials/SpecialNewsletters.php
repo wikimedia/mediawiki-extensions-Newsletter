@@ -14,9 +14,11 @@ class SpecialNewsletters extends SpecialPage {
 
 	public function execute( $par ) {
 		$this->setHeaders();
-		$this->requireLogin();
 		$out = $this->getOutput();
-		$out->addModules( 'ext.newsletter' );
+		if ( $this->getUser()->isLoggedIn() ) {
+			// IPs cannot subscribe
+			$out->addModules( 'ext.newsletter' );
+		}
 		$out->setSubtitle( LinksGenerator::getSubtitleLinks() );
 		$pager = new NewsletterTablePager();
 
