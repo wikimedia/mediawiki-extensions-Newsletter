@@ -26,14 +26,18 @@ class NewsletterTablePager extends TablePager {
 				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
 				'nl_frequency' => $this->msg ( 'newsletter-header-frequency' )->text(),
 				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
-				'action' => $this->msg( 'newsletter-header-action' )->text(),
 			);
+
+			if ( $this->getUser()->isLoggedIn() ) {
+				// Only logged-in users can (un)subscribe
+				$this->fieldNames['action'] = $this->msg( 'newsletter-header-action' )->text();
+			}
 		}
+
 		return $this->fieldNames;
 	}
 
 	public function getQueryInfo() {
-		$userId = $this->getUser()->getId();
 		//TODO we could probably just retrieve all subscribers IDs as a string here.
 		$info = array(
 			'tables' => array( 'nl_newsletters' ),
@@ -43,10 +47,14 @@ class NewsletterTablePager extends TablePager {
 				'nl_id',
 				'nl_frequency',
 				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' ),
-				'current_user_subscribed' => "$userId IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )" ,
 			),
 			'options' => array( 'DISTINCT nl_id' ),
 		);
+
+		if ( $this->getUser()->isLoggedIn() ) {
+			$info['fields']['current_user_subscribed'] = $this->mDb->addQuotes( $this->getUser()->getId() ) .
+				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )';
+		}
 
 		return $info;
 	}
@@ -101,7 +109,8 @@ class NewsletterTablePager extends TablePager {
 
 	public function getDefaultSort() {
 		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
-		return 'current_user_subscribed';
+		$sort = $this->getUser()->isLoggedIn() ? 'current_user_subscribed' : 'nl_name';
+		return $sort;
 	}
 
 	public function isFieldSortable( $field ) {
