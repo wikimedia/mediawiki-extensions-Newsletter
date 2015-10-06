@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sjoerddebruin"
+		]
+	},
+	"newsletter-notfound": "Nieuwsbrief niet gevonden",
+	"newsletter-view": "Nieuwsbriefgegevens weergeven",
+	"newsletter-view-id": "Nieuwsbrief-id:",
+	"newsletter-view-name": "Naam van nieuwsbrief:",
+	"newsletter-view-mainpage": "Hoofdpagina:",
+	"newsletter-view-frequency": "Frequentie:",
+	"newsletter-view-description": "Beschrijving:",
+	"newsletter-view-publishers": "{{PLURAL:$1|Uitgever:|Uitgevers:}}",
+	"newsletter-view-subscriber-count": "Aantal abonnees:",
+	"newsletter-delete-button": "Verwijderen",
+	"newsletter-manage-button": "Beheren",
+	"newsletter-unsubscribe-button": "Uitschrijven",
+	"newsletter-subscribe-button": "Abonneren",
+	"newsletter-delete": "Nieuwsbrief verwijderen",
+	"newsletter-deletenewsletter-button": "Deze nieuwsbrief verwijderen",
+	"newsletter-do-subscribe": "Op deze nieuwsbrief abonneren",
+	"newsletter-do-unsubscribe": "Uitschrijven voor deze nieuwsbrief",
+	"newsletter-header-frequency": "Frequentie"
+}
