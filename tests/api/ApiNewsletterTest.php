@@ -57,9 +57,9 @@ class ApiNewsletterTest extends ApiTestCase {
 	public function testApiNewsletterForSubscribingNewsletter() {
 		$this->doApiRequestWithToken(
 			array(
-				'action' => 'newsletterapi',
-				'newsletterId' => $this->getNewsletterId(),
-				'todo' => 'subscribe',
+				'action' => 'newslettersubscribe',
+				'id' => $this->getNewsletterId(),
+				'do' => 'subscribe',
 			)
 		);
 
@@ -68,7 +68,7 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_subscriptions',
 			array( 'subscriber_id' ),
 			array(
-				'newsletter_id' => $this->getNewsletterId(),
+				'nls_newsletter_id' => $this->getNewsletterId(),
 			),
 			__METHOD__
 		);
@@ -79,9 +79,17 @@ class ApiNewsletterTest extends ApiTestCase {
 	public function testApiNewsletterForUnsubscribingNewsletter() {
 		$this->doApiRequestWithToken(
 			array(
-				'action' => 'newsletterapi',
-				'newsletterId' => $this->getNewsletterId(),
-				'todo' => 'unsubscribe',
+				'action' => 'newslettersubscribe',
+				'id' => $this->getNewsletterId(),
+				'do' => 'subscribe',
+			)
+		);
+
+		$this->doApiRequestWithToken(
+			array(
+				'action' => 'newslettersubscribe',
+				'id' => $this->getNewsletterId(),
+				'do' => 'unsubscribe',
 			)
 		);
 
@@ -90,7 +98,7 @@ class ApiNewsletterTest extends ApiTestCase {
 			'nl_subscriptions',
 			array( 'subscriber_id' ),
 			array(
-				'newsletter_id' => $this->getNewsletterId(),
+				'nls_newsletter_id' => $this->getNewsletterId(),
 			),
 			__METHOD__
 		);

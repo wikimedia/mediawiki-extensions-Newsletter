@@ -171,4 +171,43 @@ class Newsletter {
 		}
 	}
 
+	/**
+	 * Subscribe the specified user to this newsletter
+	 *
+	 * @param User $user
+	 *
+	 * @return Status
+	 */
+	public function subscribe( User $user ) {
+		if ( $user->isAnon() ) {
+			// IPs are not allowed to subscribe
+			return Status::newFatal( 'newsletter-subscribe-ip-notallowed' );
+		}
+
+		$ndb = NewsletterDb::newFromGlobalState();
+
+		if ( $ndb->addSubscription( $user->getId(), $this->id ) ) {
+			return Status::newGood();
+		} else {
+			return Status::newFatal( 'newsletter-subscribe-fail', $this->name );
+		}
+	}
+
+	/**
+	 * Unsubscribe the specified user from this newsletter
+	 *
+	 * @param User $user
+	 *
+	 * @return Status
+	 */
+	public function unsubscribe( User $user ) {
+		$ndb = NewsletterDb::newFromGlobalState();
+
+		if ( $ndb->removeSubscription( $user->getId(), $this->id ) ) {
+			return Status::newGood();
+		} else {
+			return Status::newFatal( 'newsletter-unsubscribe-fail', $this->name );
+		}
+	}
+
 }

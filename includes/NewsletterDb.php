@@ -29,11 +29,10 @@ class NewsletterDb {
 			'nls_newsletter_id' => $newsletterId,
 			'nls_subscriber_id' => $userId,
 		);
-		try {
-			return $this->writeDb->insert( 'nl_subscriptions', $rowData, __METHOD__ );
-		} catch ( DBQueryError $ex ) {
-			return false;
-		}
+
+		$this->writeDb->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
+
+		return (bool)$this->writeDb->affectedRows();
 	}
 
 	/**
@@ -47,7 +46,9 @@ class NewsletterDb {
 			'nls_newsletter_id' => $newsletterId,
 			'nls_subscriber_id' => $userId,
 		);
-		return $this->writeDb->delete( 'nl_subscriptions', $rowData, __METHOD__ );
+		$this->writeDb->delete( 'nl_subscriptions', $rowData, __METHOD__ );
+
+		return (bool)$this->writeDb->affectedRows();
 	}
 
 	/**

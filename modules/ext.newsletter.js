@@ -8,9 +8,9 @@
 	$( 'input[type=radio][value=subscribe]' ).change( function() {
 		var newsletterId = ( this.name ).substr( ( this.name ).indexOf( "-" ) + 1 );
 		api.postWithToken( 'edit', {
-			action: 'newsletterapi',
-			newsletterId: newsletterId,
-			todo: 'subscribe'
+			action: 'newslettersubscribe',
+			id: newsletterId,
+			do: 'subscribe'
 		} ).done( function ( data ) {
 			mw.log( data );
 		} );
@@ -20,9 +20,9 @@
 	$( 'input[type=radio][value=unsubscribe]' ).change( function() {
 		var newsletterId = ( this.name ).substr( ( this.name ).indexOf( "-" ) + 1 );
 		api.postWithToken( 'edit', {
-			action: 'newsletterapi',
-			newsletterId: newsletterId,
-			todo: 'unsubscribe'
+			action: 'newslettersubscribe',
+			id: newsletterId,
+			do: 'unsubscribe'
 
 		} ).done( function ( data ) {
 			mw.log( data );

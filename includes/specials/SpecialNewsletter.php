@@ -287,7 +287,7 @@ class SpecialNewsletter extends SpecialPage {
 				)
 			);
 		} else {
-			// Show the subscribe form as the user is not subscribed currently
+			// Show the subscribe form if the user is not subscribed currently
 			$txt = $this->msg( 'newsletter-subscribe-text', $this->newsletter->getName() )->parse();
 			$button = array(
 				'subscribe' => array(
@@ -310,27 +310,28 @@ class SpecialNewsletter extends SpecialPage {
 	/**
 	 * Submit callback for subscribe form.
 	 *
-	 * @todo make sure that it was actually changed before outputting the result
-	 *
-	 * @return bool
+	 * @return Status
 	 */
 	public function submitSubscribeForm() {
 		$request = $this->getRequest();
-		$ndbw = NewsletterDb::newFromGlobalState();
-		$userId = $this->getUser()->getId();
-		$nlId = $this->newsletter->getId();
-		$name = $this->newsletter->getName();
+		$user = $this->getUser();
 
 		if ( $request->getCheck( 'subscribe' ) ) {
-			$ndbw->addSubscription( $userId, $nlId );
-			$this->getOutput()->addWikiMsg( 'newsletter-subscribe-success', $name );
-
+			$status = $this->newsletter->subscribe( $user );
+			$action = 'subscribe';
 		} elseif ( $request->getCheck( 'unsubscribe' ) ) {
-			$ndbw->removeSubscription( $userId, $nlId );
-			$this->getOutput()->addWikiMsg( 'newsletter-unsubscribe-success', $name );
+			$status = $this->newsletter->unsubscribe( $user );
+			$action = 'unsubscribe';
 		}
 
-		return true;
+		if ( $status->isGood() ) {
+			// @todo We could probably do this in a better way
+			// Add the success message if the action was successful
+			// Messages used: 'newsletter-subscribe-success', 'newsletter-unsubscribe-success'
+			$this->getOutput()->addWikiMsg( "newsletter-$action-success", $this->newsletter->getName() );
+		}
+
+		return $status;
 	}
 
 	/**
