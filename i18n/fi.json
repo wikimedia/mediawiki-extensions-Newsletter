@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nike"
+			"Nike",
+			"Pyscowicz"
 		]
 	},
-	"newsletter-create-submit": "Luo uutiskirje"
+	"newsletter-create-submit": "Luo uutiskirje",
+	"newsletter-delete-button": "Poista"
 }

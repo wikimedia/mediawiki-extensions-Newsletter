@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Beta16"
 		]
 	},
-	"newsletter-extension-desc": "Descrizione",
+	"newsletter-extension-desc": "Consente agli utenti di pubblicare e iscriversi alla newsletter",
 	"newsletter-desc": "Descrizione",
 	"newsletter-frequency": "Frequenza",
 	"newsletter-view-mainpage": "Pagina principale:",
