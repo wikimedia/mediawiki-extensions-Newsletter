@@ -112,7 +112,7 @@ class Newsletter {
 	}
 
 	/**
-	 * @return array
+	 * @return int
 	 */
 	public function getSubscriberCount() {
 		$this->loadSubscribers();
