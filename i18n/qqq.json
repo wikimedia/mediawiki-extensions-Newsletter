@@ -65,9 +65,12 @@
 	"newsletter-subscribe-text": "Introductory message shown on Special:Newsletter/<id>/subscribe if the current user is not subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
 	"newsletter-do-subscribe": "Label for button shown on Special:Newsletter/<id>/subscribe. Adds the user as a subscriber to the newsletter when clicked on.",
 	"newsletter-subscribe-success": "Success message shown on Special:Newsletter/<id>/subscribe when the user gets subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
+	"newsletter-subscribe-fail": "Error message shown when the user attempts to subscribe and if subscription fails.\n\nParameters:\n* $1 - Name of the newsletter",
+	"newsletter-subscribe-ip-notallowed": "Error message shown to anonymous users when they attempt to subscribe to a newsletter. This is shown because anonymous users are not allowed to subscribe to newsletters.",
 	"newsletter-unsubscribe-text": "Introductory message shown on Special:Newsletter/<id>/unsubscribe if the current user is subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
 	"newsletter-do-unsubscribe": "Label for button shown on Special:Newsletter/<id>/unsubscribe. Unsubscribes the current user from the newsletter when clicked on.",
 	"newsletter-unsubscribe-success": "Success message shown on Special:Newsletter/<id>/unsubscribe when the user gets unsubscribed from the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
+	"newsletter-unsubscribe-fail": "Error message shown when the user attempts to unsubscribe but fails to do so.\n\nParameters:\n* $1 - Name of the newsletter",
 	"newsletter-subscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to subscribe.",
 	"newsletter-unsubscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to un-subscribe.",
 	"newsletter-subscribe-confirmation": "Confirmation message displayed after subscribing to a newsletter",
@@ -93,5 +96,10 @@
 	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:NewsletterManage]] which is checked if the user is a publisher of the newsletter\n{{Identical|Publisher}}",
 	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:NewsletterManage]].\n\nSee also:\n* {{msg-mw|Newsletter-name}} (label of the field)",
 	"right-newsletter-addpublisher": "{{doc-right|newsletter-addpublisher}}",
-	"action-newsletter-addpublisher": "{{doc-action|newsletter-addpublisher}}"
+	"action-newsletter-addpublisher": "{{doc-action|newsletter-addpublisher}}",
+	"apihelp-newslettersubscribe-description": "{{doc-apihelp-description|newslettersubscribe}}",
+	"apihelp-newslettersubscribe-param-id": "{{doc-apihelp-param|newslettersubscribe|id}}",
+	"apihelp-newslettersubscribe-param-do": "{{doc-apihelp-param|newslettersubscribe|do}}",
+	"apihelp-newslettersubscribe-example-1": "{{doc-apihelp-example|newslettersubscribe}}",
+	"apihelp-newslettersubscribe-example-2": "{{doc-apihelp-example|newslettersubscribe}}"
 }

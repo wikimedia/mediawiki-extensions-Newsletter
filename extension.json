@@ -24,7 +24,7 @@
 		"Newsletter": "SpecialNewsletter"
 	},
 	"APIModules": {
-		"newsletterapi": "ApiNewsletter",
+		"newslettersubscribe": "ApiNewsletterSubscribe",
 		"newslettermanageapi": "ApiNewsletterManage"
 	},
 	"MessagesDirs": {
@@ -36,20 +36,20 @@
 		"NewsletterAlias": "Newsletter.alias.php"
 	},
 	"AutoloadClasses": {
+		"Newsletter": "includes/Newsletter.php",
+		"NewsletterDb": "includes/NewsletterDb.php",
 		"NewsletterHooks": "Newsletter.hooks.php",
 		"LinksGenerator": "includes/specials/LinksGenerator.php",
 		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
+		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
 		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
-		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
-		"NewsletterManageTablePager": "includes/specials/pagers/NewsletterManageTablePager.php",
 		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
-		"ApiNewsletter": "includes/api/ApiNewsletter.php",
+		"NewsletterManageTablePager": "includes/specials/pagers/NewsletterManageTablePager.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
-		"NewsletterDb": "includes/NewsletterDb.php",
+		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
 		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
-		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
-		"Newsletter": "includes/Newsletter.php"
+		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php"
 	},
 	"ResourceModules": {
 		"ext.newsletter": {

@@ -21,8 +21,10 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 			->with(
 				'nl_subscriptions',
 				array( 'nls_subscriber_id' => 1, 'nls_newsletter_id' => 2 )
-			)
-			->will( $this->returnValue( true ) );
+			);
+		$mockWriteDb->expects( $this->once() )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 1 ) );
 
 		$table = new NewsletterDb( $this->getMockIDatabase(), $mockWriteDb );
 		$result = $table->addSubscription( 1, 2 );
