@@ -6,7 +6,8 @@
 			"Wladek92",
 			"Urhixidur",
 			"Macofe",
-			"Orlodrim"
+			"Orlodrim",
+			"Mattho69"
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des infolettres",
@@ -65,6 +66,7 @@
 	"newsletter-subscribe-text": "Cette page vous permet de vous abonner à l’infolettre « $1 ». Si vous vous abonnez, les nouveaux numéros vous seront annoncés par une notification.",
 	"newsletter-do-subscribe": "S’abonner à cette infolettre",
 	"newsletter-subscribe-success": "Vous vous êtes abonné{{GENDER:||e}} à l’infolettre « $1 ». Les nouveaux numéros de cette infolettre vous seront désormais annoncés par une notification.",
+	"newsletter-subscribe-ip-notallowed": "Veuillez vous connecter pour vous abonner à une newsletter.",
 	"newsletter-unsubscribe-text": "Cette page vous permet de vous désabonner de l’infolettre « $1 ». Si vous vous désabonnez, vous ne recevrez plus de notifications lors de la sortie de nouveaux numéros.",
 	"newsletter-do-unsubscribe": "Se désabonner de cette infolettre",
 	"newsletter-unsubscribe-success": "Vous n’êtes plus abonné à l’infolettre « $1 » et vous ne recevrez plus de notifications lors la sortie de nouveaux numéros.",
@@ -95,5 +97,6 @@
 	"newsletter-publisher-radiobutton-label": "Éditeur",
 	"newsletter-dropdown-default-message": "Veuillez en sélectionner un",
 	"right-newsletter-addpublisher": "Donner à des utilisateurs le droit de publier des infolettres",
-	"action-newsletter-addpublisher": "donner à des utilisateurs le droit de publier des infolettres"
+	"action-newsletter-addpublisher": "donner à des utilisateurs le droit de publier des infolettres",
+	"apihelp-newslettersubscribe-description": "Vous abonner ou vous désabonner d'une newsletter."
 }
