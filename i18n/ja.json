@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sujiniku",
-			"Otokoume"
+			"Otokoume",
+			"2nd-player"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -17,7 +18,9 @@
 	"newsletter-publisher-username": "利用者名",
 	"newsletter-issuepage-not-found-error": "ニュースレターの議題のページが見つかりません。もう一度ためしてください。",
 	"newsletter-invalid-username-error": "無効な利用者名",
-	"newsletter-required-fields-error": "要求された領域が空です",
+	"newsletter-unconfirmed-email-error": "提供された利用者名は、確認されたメールアドレスを持っていません！",
+	"newsletter-required-fields-error": "必要な領域が空です",
+	"newsletter-exist-error": "既に同じ名前のニュースレターが存在しています。別の名前で試してください。",
 	"newsletter-mainpage-not-found-error": "ニュースレターのメインページが存在しません。もう一度、ためしてください。",
 	"newsletter-announceissueform-announceissue-section": "新しい議題のアナウンス",
 	"newsletter-create-section": "ニュースレターの作成",
@@ -45,7 +48,7 @@
 	"newsletter-view-subscriber-count": "購読者数:",
 	"newsletter-delete-button": "削除",
 	"newsletter-manage-button": "管理",
-	"newsletter-unsubscribe-button": "購読の停止",
+	"newsletter-unsubscribe-button": "退会",
 	"newsletter-subscribe-button": "入会",
 	"newsletter-delete": "ニュースレターを削除",
 	"newsletter-delete-nopermission": "あなたには、このニュースレターを削除する許可がありません。",
@@ -56,10 +59,15 @@
 	"newsletter-subscribe-text": "このインターフェースで、ニュースレター「$1」への加入ができます。加入すると、このニュースレターで議題が新しく発言されるたびに、あなたは通知を受け取ることになります。",
 	"newsletter-do-subscribe": "このニュースレターに入会する",
 	"newsletter-subscribe-success": "あなたは、「$1」ニュースレターの入会者です。このニュースレターで新しい議題が発言されるたび、あなたは通知を受け取ることになります。",
+	"newsletter-subscribe-fail": "あなたは既にニュースレターに入会しているとして扱われているので、ニュースレター「$1」に入会できません。",
+	"newsletter-subscribe-ip-notallowed": "ニュースレターを購読するには、ログインしてください。",
 	"newsletter-unsubscribe-text": "このインターフェースで、ニュースレター「$1」からの退会ができます。退会すると、このニュースレターで議題が新しく発言されても、あなたは通知が止まります。",
 	"newsletter-do-unsubscribe": "このニュースレターから退会する",
 	"newsletter-unsubscribe-success": "あなたは、もはや「$1」ニュースレターの入会者でなく、このニュースレターで新しい議題が発言されても、あなたは通知を受け取れません。",
-	"newsletter-unsubscribe-section": "ニュースレターをUnsubscribeする",
+	"newsletter-unsubscribe-fail": "あなたは現在はニュースレターに入会していないとして扱われているので、ニュースレター「$1」からの退会ができません。",
+	"newsletter-unsubscribe-section": "ニュースレターを退会する",
+	"newsletter-subscribe-confirmation": "あなたは現在そのニュースレターに加入済みの状態です。",
+	"newsletter-unsubscribe-confirmation": "あなたは今、ニュースレターから退会している状態です。",
 	"newsletter-subscribe-button-label": "はい",
 	"newsletter-unsubscribe-button-label": "いいえ",
 	"newsletter-none-found": "ニュースレターが存在しません。[[Special:CreateNewsletter]] で新しいニュースレターを作成することができます。",
@@ -77,5 +85,8 @@
 	"newsletter-manage-header-action": "活動",
 	"newsletter-dropdown-default-message": "選択してください",
 	"right-newsletter-addpublisher": "利用者たちに公開者の権利を与える",
-	"action-newsletter-addpublisher": "利用者たちに公開者の権利を与える"
+	"action-newsletter-addpublisher": "利用者たちに公開者の権利を与える",
+	"apihelp-newslettersubscribe-description": "ニュースレターの入会または退会をする。",
+	"apihelp-newslettersubscribe-example-1": "id 1 でニュースレターを購読する。",
+	"apihelp-newslettersubscribe-example-2": "id 2 でニュースレターから退会する。"
 }
