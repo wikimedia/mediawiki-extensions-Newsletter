@@ -61,6 +61,7 @@
 	"newsletter-subscribe-text": "Esta interfaz te permite suscribirte al boletín \"$1\". Si te suscribes, recibirás notificaciones cuando se anuncien nuevas ediciones de este boletín.",
 	"newsletter-do-subscribe": "Suscribirse a este boletín",
 	"newsletter-subscribe-success": "Te has suscrito al boletín \"$1\". Ahora recibirás notificaciones cuando se anuncien nuevas ediciones de este boletín.",
+	"newsletter-subscribe-ip-notallowed": "Inicia sesión para suscribirte a un boletín.",
 	"newsletter-unsubscribe-text": "Esta interfaz te permite desuscribirte del boletín \"$1\". Si te desuscribes, ya no recibirás notificaciones cuando se anuncien nuevas ediciones de este boletín.",
 	"newsletter-do-unsubscribe": "Desuscribirse de este boletín",
 	"newsletter-unsubscribe-success": "Ya no estás suscrito al boletín \"$1\" y no recibirás notificaciones cuando se anuncien nuevas ediciones de este boletín.",
@@ -89,5 +90,8 @@
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-publisher-radiobutton-label": "Editor",
-	"newsletter-dropdown-default-message": "Selecciona uno"
+	"newsletter-dropdown-default-message": "Selecciona uno",
+	"apihelp-newslettersubscribe-description": "Suscribirse a o desuscribirse de un boletín.",
+	"apihelp-newslettersubscribe-example-1": "Suscribirse al boletín con identificador 1.",
+	"apihelp-newslettersubscribe-example-2": "Desuscribirse al boletín con identificador 2."
 }
