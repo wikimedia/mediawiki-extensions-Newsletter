@@ -1,0 +1,28 @@
+/**
+ * Used on Special:Newsletters. We use the OOUI color scheme here. :)
+ */
+
+a.newsletter-subscribed {
+	color: #D11D13;
+	font-weight: bold;
+}
+
+a.newsletter-subscribed:hover {
+    color: #8C130D;
+    text-decoration: none;
+}
+
+a.newsletter-unsubscribed {
+	color: #00AF89;
+	font-weight: bold;
+}
+
+a.newsletter-unsubscribed:hover {
+    color: #008064;
+    text-decoration: none;
+}
+
+.newsletter-link-disabled {
+	pointer-events: none;
+	cursor: default;
+}

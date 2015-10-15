@@ -54,8 +54,18 @@
 	"ResourceModules": {
 		"ext.newsletter": {
 			"scripts": "ext.newsletter.js",
+			"styles": "ext.newsletter.css",
+			"position": "top",
 			"dependencies": [
 				"mediawiki.api"
+			],
+			"messages": [
+				"newsletter-subscribe-button",
+				"newsletter-unsubscribe-button",
+				"newsletter-unsubscribing",
+				"newsletter-subscribing",
+				"newsletter-subscribe-success",
+				"newsletter-unsubscribe-success"
 			]
 		},
 		"ext.newslettermanage": {

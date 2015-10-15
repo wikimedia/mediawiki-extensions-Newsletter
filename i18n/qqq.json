@@ -77,6 +77,8 @@
 	"newsletter-unsubscribe-confirmation": "Confirmation message displayed after un-subscribing from a newsletter",
 	"newsletter-subscribe-button-label": "Label of submit button of HTML form which allows users to subscribe.\n{{Identical|Yes}}",
 	"newsletter-unsubscribe-button-label": "Label of submit button of HTML form which allows users to un-subscribe.\n{{Identical|No}}",
+	"newsletter-subscribing": "Message shown on Special:Newsletters while subscription is in progress when the user presses subscribe button.",
+	"newsletter-unsubscribing": "Message shown on Special:Newsletters while unsubscription is in progress when the user presses the unsubscribe button.",
 	"newsletter-available-newsletters-field-label": "Label of HTML form field which lists all available newsletters in wiki",
 	"newsletter-subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to.",
 	"newsletter-none-found": "Error message shown on [[Special:Newsletters]] and [[Special:ManageNewsletter]] if no newsletters were found on the wiki.",
