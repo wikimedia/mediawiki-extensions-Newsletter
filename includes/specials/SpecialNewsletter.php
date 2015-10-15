@@ -309,7 +309,7 @@ class SpecialNewsletter extends SpecialPage {
 
 	/**
 	 * Submit callback for subscribe form.
-	 *
+	 * @throws Exception
 	 * @return Status
 	 */
 	public function submitSubscribeForm() {
@@ -323,7 +323,9 @@ class SpecialNewsletter extends SpecialPage {
 			$status = $this->newsletter->unsubscribe( $user );
 			$action = 'unsubscribe';
 		}
-
+		if ( !isset( $status ) ) {
+			throw new Exception( "POST data corrupted or required parameter missing from request" );
+		}
 		if ( $status->isGood() ) {
 			// @todo We could probably do this in a better way
 			// Add the success message if the action was successful
