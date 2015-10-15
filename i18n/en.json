@@ -98,6 +98,7 @@
 	"newsletter-dropdown-default-message": "Please select one",
 	"right-newsletter-addpublisher": "Give publisher rights to users",
 	"action-newsletter-addpublisher": "give publisher rights to users",
+	"newsletters-summary": "This page allows you to browse through a list of all newsletters on this wiki and allows users to subscribe to or unsubscribe from them. You can also choose your newsletter subscription options through the  [[Special:Preferences#mw-prefsection-echo|preferences]] interface.",
 	"apihelp-newslettersubscribe-description": "Subscribe to or unsubscribe from a newsletter.",
 	"apihelp-newslettersubscribe-param-id": "ID of the newsletter for which the subscription should be changed.",
 	"apihelp-newslettersubscribe-param-do": "Action to do. Should be either <kbd>subscribe</kbd> or <kbd>unsubscribe</kbd>.",

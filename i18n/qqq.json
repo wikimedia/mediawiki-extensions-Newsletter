@@ -102,6 +102,7 @@
 	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:NewsletterManage]].\n\nSee also:\n* {{msg-mw|Newsletter-name}} (label of the field)",
 	"right-newsletter-addpublisher": "{{doc-right|newsletter-addpublisher}}",
 	"action-newsletter-addpublisher": "{{doc-action|newsletter-addpublisher}}",
+	"newsletters-summary": "Introductory message shown on top of [[Special:Newsletters]]. Do not translate the anchor of Special:Preferences link. (\"#mw-prefsection-echo\" part).",
 	"apihelp-newslettersubscribe-description": "{{doc-apihelp-description|newslettersubscribe}}",
 	"apihelp-newslettersubscribe-param-id": "{{doc-apihelp-param|newslettersubscribe|id}}",
 	"apihelp-newslettersubscribe-param-do": "{{doc-apihelp-param|newslettersubscribe|do}}",
