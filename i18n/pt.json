@@ -61,6 +61,7 @@
 	"newsletter-subscribe-text": "Esta interface permite-lhe subscrever o boletim informativo \"$1\". Ao inscrever-se, irá receber notificações quando forem anunciadas novas edições do boletim.",
 	"newsletter-do-subscribe": "Subscrever este boletim",
 	"newsletter-subscribe-success": "Subscreveu o boletim informativo \"$1\". Receberá agora notificações quando forem anunciadas novas edições do mesmo.",
+	"newsletter-subscribe-ip-notallowed": "Inicie sessão para subscrever o boletim informativo.",
 	"newsletter-unsubscribe-text": "Esta interface permite-lhe cancelar a subscrição do boletim informativo \"$1\". Se anular a inscrição, não receberá mais notificações quando forem anunciadas novas edições do boletim.",
 	"newsletter-do-unsubscribe": "Cancelar subscrição deste boletim informativo",
 	"newsletter-unsubscribe-success": "Já não é subscritor do boletim informativo \"$1\" e não receberá notificações quando forem anunciadas novas edições do mesmo.",

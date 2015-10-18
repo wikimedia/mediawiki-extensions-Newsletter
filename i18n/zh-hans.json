@@ -90,5 +90,6 @@
 	"newsletter-publisher-radiobutton-label": "发布者",
 	"newsletter-dropdown-default-message": "请选择一个",
 	"right-newsletter-addpublisher": "向用户提供发布者权限",
-	"action-newsletter-addpublisher": "向用户提供发布者权限"
+	"action-newsletter-addpublisher": "向用户提供发布者权限",
+	"apihelp-newslettersubscribe-param-do": "要进行的操作。应为<kbd>subscribe</kbd>或<kbd>unsubscribe</kbd>二者之一。"
 }
