@@ -73,6 +73,8 @@
 	"newsletter-unsubscribe-confirmation": "Du hast jetzt den Newsletter abbestellt.",
 	"newsletter-subscribe-button-label": "Ja",
 	"newsletter-unsubscribe-button-label": "Nein",
+	"newsletter-subscribing": "Abonniere …",
+	"newsletter-unsubscribing": "Bestelle ab …",
 	"newsletter-available-newsletters-field-label": "Verfügbare Newsletter",
 	"newsletter-subscribed-newsletters-field-label": "Abonnierte Newsletter",
 	"newsletter-none-found": "Es sind keine Newsletter vorhanden. Du kannst einen neuen Newsletter auf [[Special:CreateNewsletter]] erstellen.",
@@ -94,5 +96,6 @@
 	"newsletter-publisher-radiobutton-label": "Herausgeber",
 	"newsletter-dropdown-default-message": "Bitte einen Newsletter auswählen",
 	"right-newsletter-addpublisher": "Herausgeberrechte an Benutzer vergeben",
-	"action-newsletter-addpublisher": "Herausgeberrechte an Benutzer zu vergeben"
+	"action-newsletter-addpublisher": "Herausgeberrechte an Benutzer zu vergeben",
+	"newsletters-summary": "Diese Seite erlaubt dir das Durchsuchen einer Liste aller Newsletter auf diesem Wiki sowie das Abonnieren und Abbestellen dieser Newsletter. Du kannst auch deine Newsletter-Abonnementoptionen mithilfe der [[Special:Preferences#mw-prefsection-echo|Einstellungen]]-Oberfläche auswählen."
 }
