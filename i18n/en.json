@@ -74,6 +74,8 @@
 	"newsletter-unsubscribe-confirmation": "You are now unsubscribed from the newsletter.",
 	"newsletter-subscribe-button-label": "Yes",
 	"newsletter-unsubscribe-button-label": "No",
+	"newsletter-subscribing": "Subscribing...",
+	"newsletter-unsubscribing": "Unsubscribing...",
 	"newsletter-available-newsletters-field-label": "Available newsletters",
 	"newsletter-subscribed-newsletters-field-label": "Subscribed newsletters",
 	"newsletter-none-found": "No newsletters exist. You can create a new newsletter through [[Special:CreateNewsletter]].",

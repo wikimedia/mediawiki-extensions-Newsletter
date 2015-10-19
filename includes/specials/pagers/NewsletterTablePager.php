@@ -60,9 +60,10 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function formatValue( $field, $value ) {
+		$id = $this->mCurrentRow->nl_id;
 		switch ( $field ) {
 			case 'nl_name':
-				$title = SpecialPage::getTitleFor( 'Newsletter', $this->mCurrentRow->nl_id );
+				$title = SpecialPage::getTitleFor( 'Newsletter', $id );
 				if ( $title ) {
 					return Linker::linkKnown( $title, htmlspecialchars( $value ) );
 				} else {
@@ -73,38 +74,58 @@ class NewsletterTablePager extends TablePager {
 			case 'nl_frequency':
 				return $value;
 			case 'subscriber_count':
+				// @todo Make this prettier
 				return HTML::element(
 					'input',
 					array(
 						'type' => 'textbox',
 						'readonly' => 'true',
-						'id' => 'newsletter-' . $this->mCurrentRow->nl_id,
+						'id' => 'newsletter-' . $id,
 						'value' => $this->mCurrentRow->subscribers,
 
 					)
 				);
 			case 'action' :
-				$radioSubscribe = Html::element(
-						'input',
+				if ( $this->mCurrentRow->current_user_subscribed ) {
+					$title = SpecialPage::getTitleFor( 'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE );
+					$link = Linker::linkKnown( $title,
+						$this->msg( 'newsletter-unsubscribe-button' )->escaped(),
 						array(
-							'type' => 'radio',
-							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
-							'value' => 'subscribe',
-							'checked' => $this->mCurrentRow->current_user_subscribed,
+							'class' => 'newsletter-subscription newsletter-subscribed',
+							'id' => 'nl-' . $id
 						)
-					) . $this->msg( 'newsletter-subscribe-button-label' );
-				$radioUnSubscribe = Html::element(
-						'input',
+					);
+				} else {
+					$title = SpecialPage::getTitleFor( 'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_SUBSCRIBE );
+					$link = Linker::linkKnown(
+						$title,
+						$this->msg( 'newsletter-subscribe-button' )->escaped(),
 						array(
-							'type' => 'radio',
-							'name' => 'nl_id-' . $this->mCurrentRow->nl_id,
-							'value' => 'unsubscribe',
-							'checked' => !$this->mCurrentRow->current_user_subscribed,
+							'class' => 'newsletter-subscription newsletter-unsubscribed',
+							'id' => 'nl-' . $id
 						)
-					) . $this->msg( 'newsletter-unsubscribe-button-label' );
+					);
+				}
 
-				return $radioSubscribe . $radioUnSubscribe;
+				return $link;
 		}
+	}
+
+	/*
+	 * @return array
+	 */
+	public function getCellAttrs( $field, $value ) {
+		$ret = parent::getCellAttrs( $field, $value );
+		switch( $field ) {
+			case 'nl_desc':
+				$ret['width'] = '50%';
+				break;
+			case 'action':
+				$ret['width'] = '25%';
+				break;
+		}
+
+		return $ret;
 	}
 
 	public function getDefaultSort() {
