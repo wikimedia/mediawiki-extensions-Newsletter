@@ -70,6 +70,8 @@
 	"newsletter-unsubscribe-confirmation": "あなたは今、ニュースレターから退会している状態です。",
 	"newsletter-subscribe-button-label": "はい",
 	"newsletter-unsubscribe-button-label": "いいえ",
+	"newsletter-subscribing": "参加中...",
+	"newsletter-unsubscribing": "退会中...",
 	"newsletter-none-found": "ニュースレターが存在しません。[[Special:CreateNewsletter]] で新しいニュースレターを作成することができます。",
 	"echo-category-title-newsletter": "ニュースレター",
 	"newsletter-notification-title": "$1 が議題をアナウンスしています。",

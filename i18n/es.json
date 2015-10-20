@@ -73,6 +73,8 @@
 	"newsletter-unsubscribe-confirmation": "Ahora estás desuscrito del boletín.",
 	"newsletter-subscribe-button-label": "Sí",
 	"newsletter-unsubscribe-button-label": "No",
+	"newsletter-subscribing": "Suscribiendo...",
+	"newsletter-unsubscribing": "Desuscribiendo...",
 	"newsletter-available-newsletters-field-label": "Boletines dispomibles",
 	"newsletter-subscribed-newsletters-field-label": "Boletines suscritos",
 	"newsletter-none-found": "No existen boletines. Puedes crear un boletín nuevo mediante [[Special:CreateNewsletter]].",

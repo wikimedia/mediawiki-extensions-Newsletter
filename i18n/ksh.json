@@ -38,6 +38,8 @@
 	"newsletter-unsubscribe-confirmation": "Do häs jäz keij Abonnemang mih för dat Rondschrihve.",
 	"newsletter-subscribe-button-label": "Joh",
 	"newsletter-unsubscribe-button-label": "Nää",
+	"newsletter-subscribing": "Ben aam Abonnehre …",
+	"newsletter-unsubscribing": "Ben aam Affbeschtälle …",
 	"newsletter-available-newsletters-field-label": "Rondschrihve em Aanjbott",
 	"newsletter-subscribed-newsletters-field-label": "Rondschrihve em Abonnemang",
 	"newsletter-none-found": "Et sinn-er kein Rondschrihve doh. mer kann e neu Rondschrihve aanlähje övver di Sigg [[Special:CreateNewsletter]]. ",
