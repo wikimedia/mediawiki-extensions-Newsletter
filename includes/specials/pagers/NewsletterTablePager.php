@@ -8,9 +8,14 @@
 class NewsletterTablePager extends TablePager {
 
 	/**
-	 * @var null|string[]
+	 * @var string[]
 	 */
-	private $fieldNames = null;
+	private $fieldNames;
+
+	/**
+	 * @var string
+	 */
+	private $option;
 
 	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
 		if ( $readDb !== null ) {
@@ -38,6 +43,8 @@ class NewsletterTablePager extends TablePager {
 
 	public function getQueryInfo() {
 		//TODO we could probably just retrieve all subscribers IDs as a string here.
+
+		$userId = $this->getUser()->getId();
 		$info = array(
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
@@ -49,8 +56,18 @@ class NewsletterTablePager extends TablePager {
 			'options' => array( 'DISTINCT nl_id' ),
 		);
 
+		if ( $this->option == 'subscribed' ) {
+			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
+				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
+		} else if ( $this->option == 'unsubscribed' ) {
+			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
+				' NOT IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
+		} else {
+			$info['conds'] = null;
+		}
+
 		if ( $this->getUser()->isLoggedIn() ) {
-			$info['fields']['current_user_subscribed'] = $this->mDb->addQuotes( $this->getUser()->getId() ) .
+			$info['fields']['current_user_subscribed'] = $this->mDb->addQuotes( $userId ) .
 				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )';
 		}
 
@@ -128,4 +145,7 @@ class NewsletterTablePager extends TablePager {
 		return false;
 	}
 
+	public function setUserOption( $value ) {
+		$this->option = $value;
+	}
 }

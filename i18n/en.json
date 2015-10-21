@@ -73,6 +73,7 @@
 	"newsletter-available-newsletters-field-label": "Available newsletters",
 	"newsletter-subscribed-newsletters-field-label": "Subscribed newsletters",
 	"newsletter-none-found": "No newsletters exist. You can create a new newsletter through [[Special:CreateNewsletter]].",
+	"newsletter-list-search-none-found": "No newsletters match your query.",
 	"echo-category-title-newsletter": "Newsletters",
 	"echo-pref-tooltip-newsletter": "Notify me when any of the newsletters to which I have subscribed to announces a new issue.",
 	"newsletter-notification-title": "$1 has announced an issue",
@@ -96,5 +97,11 @@
 	"apihelp-newslettersubscribe-param-id": "ID of the newsletter for which the subscription should be changed.",
 	"apihelp-newslettersubscribe-param-do": "Action to do. Should be either <kbd>subscribe</kbd> or <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Subscribe to newsletter with id 1.",
-	"apihelp-newslettersubscribe-example-2": "Unsubscribe from newsletter with id 2."
+	"apihelp-newslettersubscribe-example-2": "Unsubscribe from newsletter with id 2.",
+	"newsletter-list-table": "Filter table by: ",
+	"newsletter-list-section":  "Search for newsletters",
+	"newsletter-list-option-all": "All newsletters",
+	"newsletter-list-option-subscribed": "Newsletters I am subscribed to",
+	"newsletter-list-option-unsubscribed": "Newsletters I am not subscribed to",
+	"newsletter-list-go-button": "Go"
 }
