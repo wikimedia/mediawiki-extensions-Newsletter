@@ -25,8 +25,13 @@
 	"newsletter-delete-success": "Naujienlaiškis #$1 buvo pašalintas.",
 	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",
 	"newsletter-do-subscribe": "Užsisakyti šį naujienlaiškį",
+	"newsletter-subscribe-ip-notallowed": "Prašome prisijungti jei norite užsisakyti naujienlaiškį.",
 	"newsletter-do-unsubscribe": "Atsisakyti naujienlaiškio",
+	"newsletter-subscribing": "Prenumeruojama...",
 	"newsletter-header-frequency": "Dažnis",
 	"right-newsletter-addpublisher": "Duoti leidėjo teises vartotojams",
-	"action-newsletter-addpublisher": "duoti leidėjo teises vartotojams"
+	"action-newsletter-addpublisher": "duoti leidėjo teises vartotojams",
+	"apihelp-newslettersubscribe-description": "Užsisakyti ar atsisakyti naujienlaiškio.",
+	"apihelp-newslettersubscribe-example-1": "Užsiprenumeruokite naujienlaiškį su id 1.",
+	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2."
 }

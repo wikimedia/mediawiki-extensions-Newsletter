@@ -97,5 +97,7 @@
 	"newsletter-dropdown-default-message": "Bitte einen Newsletter auswählen",
 	"right-newsletter-addpublisher": "Herausgeberrechte an Benutzer vergeben",
 	"action-newsletter-addpublisher": "Herausgeberrechte an Benutzer zu vergeben",
-	"newsletters-summary": "Diese Seite erlaubt dir das Durchsuchen einer Liste aller Newsletter auf diesem Wiki sowie das Abonnieren und Abbestellen dieser Newsletter. Du kannst auch deine Newsletter-Abonnementoptionen mithilfe der [[Special:Preferences#mw-prefsection-echo|Einstellungen]]-Oberfläche auswählen."
+	"newsletters-summary": "Diese Seite erlaubt dir das Durchsuchen einer Liste aller Newsletter auf diesem Wiki sowie das Abonnieren und Abbestellen dieser Newsletter. Du kannst auch deine Newsletter-Abonnementoptionen mithilfe der [[Special:Preferences#mw-prefsection-echo|Einstellungen]]-Oberfläche auswählen.",
+	"apihelp-newslettersubscribe-example-1": "Abonniert den Newsletter mit der Kennung 1.",
+	"apihelp-newslettersubscribe-example-2": "Bestellt den Newsletter mit der Kennung 2 ab."
 }

@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"Siebrand"
 		]
 	},
 	"newsletter-notfound": "Nieuwsbrief niet gevonden",
 	"newsletter-view": "Nieuwsbriefgegevens weergeven",
-	"newsletter-view-id": "Nieuwsbrief-id:",
+	"newsletter-view-id": "Nieuwsbrief-ID:",
 	"newsletter-view-name": "Naam van nieuwsbrief:",
 	"newsletter-view-mainpage": "Hoofdpagina:",
 	"newsletter-view-frequency": "Frequentie:",
@@ -18,8 +19,18 @@
 	"newsletter-unsubscribe-button": "Uitschrijven",
 	"newsletter-subscribe-button": "Abonneren",
 	"newsletter-delete": "Nieuwsbrief verwijderen",
-	"newsletter-deletenewsletter-button": "Deze nieuwsbrief verwijderen",
+	"newsletter-deletenewsletter-button": "Nieuwsbrief verwijderen",
 	"newsletter-do-subscribe": "Op deze nieuwsbrief abonneren",
+	"newsletter-subscribe-fail": "Het was niet mogelijk te abonneren op de nieuwsbrief \"$1\" omdat u al bent geabonneerd op deze nieuwsbrief.",
+	"newsletter-subscribe-ip-notallowed": "Meld u aan om te abonneren op een nieuwsbrief.",
 	"newsletter-do-unsubscribe": "Uitschrijven voor deze nieuwsbrief",
-	"newsletter-header-frequency": "Frequentie"
+	"newsletter-unsubscribe-fail": "Het was niet mogelijk uit te schrijven van de nieuwsbrief \"$1\" omdat u niet bent geabonneerd op deze nieuwsbrief.",
+	"newsletter-subscribing": "Aan het abonneren...",
+	"newsletter-unsubscribing": "Aan het afmelden...",
+	"newsletter-header-frequency": "Frequentie",
+	"apihelp-newslettersubscribe-description": "Abonneren op of uitschrijven voor een nieuwsbrief.",
+	"apihelp-newslettersubscribe-param-id": "Het ID van de nieuwsbrief waarvoor het abonnement moet worden gewijzigd.",
+	"apihelp-newslettersubscribe-param-do": "Uit te voeren handeling. Moet <kbd>subscribe</kbd> of <kbd>unsubscribe</kbd> zijn.",
+	"apihelp-newslettersubscribe-example-1": "Abonneren op de nieuwsbrief met ID 1.",
+	"apihelp-newslettersubscribe-example-2": "Uitschrijven voor de nieuwsbrief met ID 2."
 }
