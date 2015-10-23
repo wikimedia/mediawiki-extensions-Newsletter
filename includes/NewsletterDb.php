@@ -52,28 +52,6 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $newsletterId
-	 *
-	 * @return int[]
-	 */
-	public function getUserIdsSubscribedToNewsletter( $newsletterId ) {
-		// @todo use selectFieldValues() here
-		$res = $this->readDb->select(
-			'nl_subscriptions',
-			array( 'nls_subscriber_id' ),
-			array( 'nls_newsletter_id' => $newsletterId ),
-			__METHOD__,
-			array()
-		);
-
-		$subscriberIds = array();
-		foreach ( $res as $row ) {
-			$subscriberIds[] = $row->nls_subscriber_id;
-		}
-		return $subscriberIds;
-	}
-
-	/**
 	 * @param int $userId
 	 * @param int $newsletterId
 	 *
@@ -166,7 +144,7 @@ class NewsletterDb {
 	/**
 	 * @param int $id
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function getPublishersFromID( $id ) {
 		return $this->readDb->selectFieldValues(
@@ -180,7 +158,7 @@ class NewsletterDb {
 	/**
 	 * @param int $id
 	 *
-	 * @return array
+	 * @return string[]
 	 */
 	public function getSubscribersFromID( $id ) {
 		return $this->readDb->selectFieldValues(
