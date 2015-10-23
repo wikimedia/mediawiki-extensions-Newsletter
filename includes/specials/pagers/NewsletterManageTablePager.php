@@ -26,10 +26,10 @@ class NewsletterManageTablePager extends TablePager {
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = array(
-				'nl_id' => $this->msg( 'newsletter-manage-header-name' )->text(),
-				'nlp_publisher_id' => $this->msg( 'newsletter-manage-header-publisher' )->text(),
-				'permissions' => $this->msg( 'newsletter-manage-header-permissions' )->text(),
-				'action' => $this->msg( 'newsletter-manage-header-action' )->text(),
+				'nl_id' => $this->msg( 'newsletter-manage-header-name' )->escaped(),
+				'nlp_publisher_id' => $this->msg( 'newsletter-manage-header-publisher' )->escaped(),
+				'permissions' => $this->msg( 'newsletter-manage-header-permissions' )->escaped(),
+				'action' => $this->msg( 'newsletter-manage-header-action' )->escaped(),
 			);
 		}
 		return $this->fieldNames;
@@ -71,7 +71,7 @@ class NewsletterManageTablePager extends TablePager {
 				}
 
 			case 'nlp_publisher_id':
-				return User::newFromId( $value )->getName();
+				return htmlspecialchars( User::newFromId( $value )->getName() );
 
 			case 'permissions' :
 				return HTML::element(
@@ -82,7 +82,7 @@ class NewsletterManageTablePager extends TablePager {
 							'id' => 'newslettermanage',
 							'checked' => $isPublisher ? true : false,
 						)
-					) . $this->msg( 'newsletter-publisher-radiobutton-label' )->text();
+					) . $this->msg( 'newsletter-publisher-radiobutton-label' )->escaped();
 
 			case 'action':
 				if ( $isPublisher ) {

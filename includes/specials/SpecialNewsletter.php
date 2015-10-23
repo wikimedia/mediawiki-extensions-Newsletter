@@ -122,8 +122,9 @@ class SpecialNewsletter extends SpecialPage {
 				'mainpage' => array(
 					'type' => 'info',
 					'label-message' => 'newsletter-view-mainpage',
-					'default' => Linker::link( $mainTitle, $mainTitle->getPrefixedText() ) . ' ' .
-						$this->msg( 'parentheses' )->rawParams(
+					'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) )
+						. ' '
+						. $this->msg( 'parentheses' )->rawParams(
 							Linker::link( $mainTitle, 'hist', array(), array( 'action' => 'history' ) )
 						)->escaped(),
 					'raw' => true,
