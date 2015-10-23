@@ -47,8 +47,9 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'maxlength' => 767
 			),
 			'mainpage' => array(
+				'type' => 'title',
+				'exists' => true,
 				'required' => true,
-				'type' => 'text',
 				'label-message' => 'newsletter-title',
 			),
 			'frequency' => array(
@@ -76,13 +77,12 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 		$mainTitle = Title::newFromText( $data['mainpage'] );
 		if ( !$mainTitle ) {
-			return array( 'newsletter-create-mainpage-invalid' );
+			// HTMLTitleTextField should do validation but we can't be sure about
+			// it so let's check again here - otherwise this may throw fatals below
+			return array( 'newsletter-create-mainpage-error' );
 		}
 
 		$articleId = $mainTitle->getArticleId();
-		if ( !$articleId ) {
-			return array( 'newsletter-mainpage-not-found-error' );
-		}
 
 		if ( isset( $data['name'] ) &&
 			isset( $data['description'] ) &&

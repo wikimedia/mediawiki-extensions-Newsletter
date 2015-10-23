@@ -27,7 +27,6 @@
 	"newsletter-unconfirmed-email-error": "Error message to be displayed in [[Special:ManageNewsletter]] when the username of the publisher to be added does not have a confirmed email address",
 	"newsletter-required-fields-error": "Error message to be displayed when required fields are empty in [[Special:ManageNewsletter]]",
 	"newsletter-exist-error": "Error message to be displayed in [[Special:CreateNewsletter]] when trying to create a newsletter with same name as an existing newsletter",
-	"newsletter-mainpage-not-found-error": "Error message to be displayed in [[Special:CreateNewsletter]] when trying to create a newsletter with invalid main page",
 	"newsletter-announceissueform-announceissue-section": "Header of section in [[Special:ManageNewsletter]] which announces issues",
 	"newsletter-addpublisherform-addpublisher-section": "Header of section in [[Special:ManageNewsletter]] which adds publishers",
 	"newsletter-create-section": "Section header of [[Special:CreateNewsletter]]",
