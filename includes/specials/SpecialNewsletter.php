@@ -352,7 +352,7 @@ class SpecialNewsletter extends SpecialPage {
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
-		if ( $this->newsletter->isPublisher( $user ) ) {
+		if ( !$this->newsletter->isPublisher( $user ) ) {
 			// only publishers can delete newsletter (for now)
 			$out->showPermissionsErrorPage(
 				array( array( 'newsletter-delete-nopermission' ) )
