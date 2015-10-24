@@ -91,6 +91,9 @@
 		],
 		"LoginFormValidErrorMessages": [
 			"NewsletterHooks::onLoginFormValidErrorMessages"
+		],
+		"UserMergeAccountFields": [
+			"NewsletterHooks::onUserMergeAccountFields"
 		]
 	},
 	"manifest_version": 1
