@@ -96,7 +96,9 @@
 	"newsletter-dropdown-default-message": "请选择一个",
 	"right-newsletter-addpublisher": "向用户提供发布者权限",
 	"action-newsletter-addpublisher": "向用户提供发布者权限",
+	"newsletters-summary": "此页面允许您浏览此wiki所有新闻报列表，并允许用户订阅或退订它们。您也可以通过[[Special:Preferences#mw-prefsection-echo|参数设置]]界面选择您的新闻报订阅选项。",
 	"apihelp-newslettersubscribe-description": "订阅或退订一则新闻报。",
+	"apihelp-newslettersubscribe-param-id": "应更改订阅选项的新闻报的ID。",
 	"apihelp-newslettersubscribe-param-do": "要进行的操作。应为<kbd>subscribe</kbd>或<kbd>unsubscribe</kbd>二者之一。",
 	"apihelp-newslettersubscribe-example-1": "订阅ID为1的新闻报纸。",
 	"apihelp-newslettersubscribe-example-2": "退订ID为2的新闻报纸。"
