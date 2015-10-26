@@ -22,15 +22,15 @@ class NewsletterTablePager extends TablePager {
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = array(
-				'nl_name' => $this->msg( 'newsletter-header-name' )->text(),
-				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
-				'nl_frequency' => $this->msg ( 'newsletter-header-frequency' )->text(),
-				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
+				'nl_name' => $this->msg( 'newsletter-header-name' )->escaped(),
+				'nl_desc' => $this->msg( 'newsletter-header-description' )->escaped(),
+				'nl_frequency' => $this->msg ( 'newsletter-header-frequency' )->escaped(),
+				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->escaped(),
 			);
 
 			if ( $this->getUser()->isLoggedIn() ) {
 				// Only logged-in users can (un)subscribe
-				$this->fieldNames['action'] = $this->msg( 'newsletter-header-action' )->text();
+				$this->fieldNames['action'] = $this->msg( 'newsletter-header-action' )->escaped();
 			}
 		}
 
@@ -70,9 +70,9 @@ class NewsletterTablePager extends TablePager {
 					return htmlspecialchars( $value );
 				}
 			case 'nl_desc':
-				return $value;
+				return htmlspecialchars( $value );
 			case 'nl_frequency':
-				return $value;
+				return htmlspecialchars( $value );
 			case 'subscriber_count':
 				// @todo Make this prettier
 				return HTML::element(
