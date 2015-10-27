@@ -22,7 +22,6 @@
 	"newsletter-unconfirmed-email-error": "El nombre de usuario proporcionado no tiene una dirección de correo electrónico confirmada.",
 	"newsletter-required-fields-error": "Los campos obligatorios están vacíos",
 	"newsletter-exist-error": "Ya existe un boletín con el mismo nombre. Inténtalo de nuevo con otro nombre",
-	"newsletter-mainpage-not-found-error": "No existe la página principal del boletín. Inténtalo de nuevo.",
 	"newsletter-announceissueform-announceissue-section": "Anunciar una edición nueva",
 	"newsletter-addpublisherform-addpublisher-section": "Añadir editores",
 	"newsletter-create-section": "Crear boletín",

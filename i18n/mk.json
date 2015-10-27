@@ -21,7 +21,6 @@
 	"newsletter-unconfirmed-email-error": "Укажаното корисничко име нема потврдена е-пошта!",
 	"newsletter-required-fields-error": "Задолжителните полиња се празни.",
 	"newsletter-exist-error": "Веќе постои билтен со тој назив. Пробајте друг",
-	"newsletter-mainpage-not-found-error": "Главната страница на билтенот не постои. Обидете се повторно.",
 	"newsletter-announceissueform-announceissue-section": "Објави ново издание",
 	"newsletter-addpublisherform-addpublisher-section": "Додај издавачи",
 	"newsletter-create-section": "Направи билтен",

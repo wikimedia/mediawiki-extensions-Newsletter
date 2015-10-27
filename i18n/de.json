@@ -22,7 +22,6 @@
 	"newsletter-unconfirmed-email-error": "Der angegebene Benutzername hat keine bestätigte E-Mail-Adresse!",
 	"newsletter-required-fields-error": "Die erforderlichen Felder sind leer",
 	"newsletter-exist-error": "Ein Newsletter mit dem gleichen Namen ist bereits vorhanden. Bitte versuche es mit einem anderen Namen.",
-	"newsletter-mainpage-not-found-error": "Die Hauptseite des Newsletters ist nicht vorhanden. Bitte erneut versuchen.",
 	"newsletter-announceissueform-announceissue-section": "Neue Ausgabe ankündigen",
 	"newsletter-addpublisherform-addpublisher-section": "Herausgeber hinzufügen",
 	"newsletter-create-section": "Newsletter erstellen",

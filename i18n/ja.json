@@ -21,7 +21,6 @@
 	"newsletter-unconfirmed-email-error": "提供された利用者名は、確認されたメールアドレスを持っていません！",
 	"newsletter-required-fields-error": "必要な領域が空です",
 	"newsletter-exist-error": "既に同じ名前のニュースレターが存在しています。別の名前で試してください。",
-	"newsletter-mainpage-not-found-error": "ニュースレターのメインページが存在しません。もう一度、ためしてください。",
 	"newsletter-announceissueform-announceissue-section": "新しい議題のアナウンス",
 	"newsletter-create-section": "ニュースレターの作成",
 	"newsletter-create-submit": "ニュースレターの作成",
