@@ -2,22 +2,24 @@
  * Used on Special:Newsletters. We use the OOUI color scheme here. :)
  */
 
-a.newsletter-subscribed {
+.newsletter-subscribed,
+.newsletter-subscribed:link, .newsletter-subscribed:visited {
 	color: #D11D13;
 	font-weight: bold;
 }
 
-a.newsletter-subscribed:hover {
+.newsletter-subscribed:hover, .newsletter-subscribed:active {
     color: #8C130D;
     text-decoration: none;
 }
 
-a.newsletter-unsubscribed {
+.newsletter-unsubscribed,
+.newsletter-unsubscribed:link, .newsletter-unsubscribed:visited {
 	color: #00AF89;
 	font-weight: bold;
 }
 
-a.newsletter-unsubscribed:hover {
+.newsletter-unsubscribed:hover, .newsletter-unsubscribed:active {
     color: #008064;
     text-decoration: none;
 }
