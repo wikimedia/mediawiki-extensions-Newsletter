@@ -106,56 +106,63 @@ class SpecialNewsletter extends SpecialPage {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$this->doLinkCacheQuery( $publishers );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
+		$fields = array(
+			'id' => array(
+				'type' => 'info',
+				'label-message' => 'newsletter-view-id',
+				'default' => (string)$this->newsletter->getId(),
+			),
+			'name' => array(
+				'type' => 'info',
+				'label-message' => 'newsletter-view-name',
+				'default' => $this->newsletter->getName(),
+			),
+			'mainpage' => array(
+				'type' => 'info',
+				'label-message' => 'newsletter-view-mainpage',
+				'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) )
+					. ' '
+					. $this->msg( 'parentheses' )->rawParams(
+						Linker::link( $mainTitle, 'hist', array(), array( 'action' => 'history' ) )
+					)->escaped(),
+				'raw' => true,
+			),
+			'frequency' => array(
+				'type' => 'info',
+				'label-message' => 'newsletter-view-frequency',
+				'default' => $this->newsletter->getFrequency(),
+			),
+			'description' => array(
+				'type' => 'textarea',
+				'label-message' => 'newsletter-view-description',
+				'default' => $this->newsletter->getDescription(),
+				'rows' => 6,
+				'readonly' => true,
+			),
+			'publishers' => array(
+				'type' => 'info',
+				'label' => $this->msg( 'newsletter-view-publishers' )->numParams( count( $publishers ) )->parse(),
+				'default' => $this->buildUserList( $publishers ),
+				'raw' => true,
+			),
+			'subscribe' => array(
+				'type' => 'info',
+				'label-message' => 'newsletter-view-subscriber-count',
+				'raw' => true,
+				'default' => $this->getLanguage()->formatNum( $this->newsletter->getSubscriberCount() ),
+			),
+		);
+
+		if ( count( $publishers ) === 0 ) {
+			// Show another message if there are no publishers instead of nothing
+			$fields['publishers']['default'] = $this->msg( 'newsletter-view-no-publishers' )->escaped();
+		}
 
 		$form = $this->getHTMLForm(
-			array(
-				'id' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-id',
-					'default' => (string)$this->newsletter->getId(),
-				),
-				'name' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-name',
-					'default' => $this->newsletter->getName(),
-				),
-				'mainpage' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-mainpage',
-					'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) )
-						. ' '
-						. $this->msg( 'parentheses' )->rawParams(
-							Linker::link( $mainTitle, 'hist', array(), array( 'action' => 'history' ) )
-						)->escaped(),
-					'raw' => true,
-				),
-				'frequency' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-frequency',
-					'default' => $this->newsletter->getFrequency(),
-				),
-				'description' => array(
-					'type' => 'textarea',
-					'label-message' => 'newsletter-view-description',
-					'default' => $this->newsletter->getDescription(),
-					'rows' => 6,
-					'readonly' => true,
-				),
-				'publishers' => array(
-					'type' => 'info',
-					'label' => $this->msg( 'newsletter-view-publishers' )->numParams( count( $publishers ) )->parse(),
-					'default' => $this->buildUserList( $publishers ),
-					'raw' => true,
-				),
-				'subscribe' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-subscriber-count',
-					'raw' => true,
-					'default' => $this->getLanguage()->formatNum( $this->newsletter->getSubscriberCount() ),
-				),
-			),
+			$fields,
 			function() { return false; } // nothing to submit - the buttons on this page are just links
 		);
+
 		if ( $user->isLoggedIn() ) {
 			// Tell the current logged-in user whether they are subscribed or not
 			$form->addFooterText(

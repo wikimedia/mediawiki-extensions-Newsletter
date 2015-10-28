@@ -52,6 +52,7 @@
 	"newsletter-view-description": "Label for newsletter description field. Shown on Special:Newsletter/<id>\n{{Identical|Description}}",
 	"newsletter-view-publishers": "Label for newsletter's publisher(s) field. Shown on Special:Newsletter/<id>.\n\nParameters:\n* $1 - Number of publishers for the newsletter, for use with PLURAL.",
 	"newsletter-view-subscriber-count": "Label for newsletter's subscriber count field. Shown on Special:Newsletter/<id>.",
+	"newsletter-view-no-publishers": "Message shown on Special:Newsletter if there are no publishers for the newsletter.",
 	"newsletter-delete-button": "Label for \"Delete\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/delete. Only shown if the current user has permissions to delete the newsletter.\n{{Identical|Delete}}",
 	"newsletter-manage-button": "Label for \"Manage\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/manage. Only shown if the current user has permissions to manage the newsletter. Manage actions include adding publishers, removing publishers and announcing new issues.",
 	"newsletter-unsubscribe-button": "Label for \"Unsubscribe\" button shown on Special:Newsletter/<id>. Links to Special:Newsletter/<id>/unsubscribe. Shown only for logged-in users and if the user is currently subscribed to the newsletter.\n{{Identical|Unsubscribe}}",

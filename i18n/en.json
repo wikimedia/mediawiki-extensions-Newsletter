@@ -48,6 +48,7 @@
 	"newsletter-view-description": "Description:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Publisher:|Publishers:}}",
 	"newsletter-view-subscriber-count": "Subscriber count:",
+	"newsletter-view-no-publishers": "No publishers.",
 	"newsletter-delete-button": "Delete",
 	"newsletter-manage-button": "Manage",
 	"newsletter-unsubscribe-button": "Unsubscribe",
