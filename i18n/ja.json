@@ -25,7 +25,7 @@
 	"newsletter-create-section": "ニュースレターの作成",
 	"newsletter-create-submit": "ニュースレターの作成",
 	"newsletter-create-confirmation": "ニュースレターの作成が成功しました！　ニュースレターの管理は、[[Special:ManageNewsletter]]を介して、できます。",
-	"newsletter-create-mainpage-error": "入力された文字は無効です。もう一度やり直してください",
+	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",
 	"newsletter-issue-announce-confirmation": "よくできました！　あなたは、あなたのニュースレターの新しい議題をアナウンスしました。",
 	"newsletter-subtitlelinks-list": "ニュースレターの一覧",
 	"newsletter-subtitlelinks-create": "新たなニュースレターの作成",

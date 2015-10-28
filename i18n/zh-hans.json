@@ -26,7 +26,7 @@
 	"newsletter-create-section": "创建新闻报",
 	"newsletter-create-submit": "创建新闻报",
 	"newsletter-create-confirmation": "一个新的新闻报已被成功创建。您可以通过[[Special:ManageNewsletter]]管理新闻报。",
-	"newsletter-create-mainpage-error": "输入了无效字符的新闻报首页。请重试",
+	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
 	"newsletter-issue-announce-confirmation": "真棒！您刚刚公告了您的新闻报的新期刊。",
 	"newsletter-subtitlelinks-list": "新闻报列表",
 	"newsletter-subtitlelinks-create": "创建一个新的新闻报",
