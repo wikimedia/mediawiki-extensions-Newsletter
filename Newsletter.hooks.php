@@ -66,4 +66,16 @@ class NewsletterHooks {
 		return true;
 	}
 
+	/**
+	 * Tables that Extension:UserMerge needs to update
+	 *
+	 * @param array $updateFields
+	 * @return bool
+	 */
+	public static function onUserMergeAccountFields( array &$updateFields ) {
+		$updateFields[] = array( 'nl_publishers', 'nlp_publisher_id' );
+		$updateFields[] = array( 'nl_subscriptions', 'nls_subscriber_id' );
+
+		return true;
+	}
 }
