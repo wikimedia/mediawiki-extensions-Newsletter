@@ -153,7 +153,7 @@ class SpecialNewsletterManage extends SpecialPage {
 				if ( class_exists( 'EchoEvent' ) ) {
 					EchoEvent::create(
 						array(
-							'type' => 'subscribe-newsletter',
+							'type' => 'newsletter-announce',
 							'extra' => array(
 								'newsletter' => $newsletter->getName(),
 								'newsletterId' => $newsletter->getId(),

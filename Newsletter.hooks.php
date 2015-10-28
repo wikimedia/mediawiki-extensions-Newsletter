@@ -17,8 +17,8 @@ class NewsletterHooks {
 			'priority' => 3,
 			'tooltip' => 'echo-pref-tooltip-newsletter',
 		);
-		// @todo rename event as this is misleading - we're not really subscribing here
-		$notifications['subscribe-newsletter'] = array(
+
+		$notifications['newsletter-announce'] = array(
 			'primary-link' => array(
 				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
