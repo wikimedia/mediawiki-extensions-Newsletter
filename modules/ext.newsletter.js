@@ -29,7 +29,8 @@
 			var promise,
 				$link = $( this ),
 				newsletterId = ( $link.prop( 'id' ) )
-					.substr( ( $link.prop( 'id' ) ).indexOf( '-' ) + 1 );
+					.substr( ( $link.prop( 'id' ) ).indexOf( '-' ) + 1 ),
+				$subscriberCount = $( 'span#nl-count-' + newsletterId );
 
 			// Avoid double clicks while in progress .newsletter-link-disabled also helps with this
 			if ( $link.data( 'nlDisabled' ) ) {
@@ -46,7 +47,7 @@
 				promise = doAPIRequest( 'unsubscribe', newsletterId )
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'subscribe' );
-						$( 'input#newsletter-' + newsletterId ).get( 0 ).value--;
+						$subscriberCount.text( parseInt( $subscriberCount.text() ) - 1 );
 						mw.notify( mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name ) );
 					} );
 			} else {
@@ -56,7 +57,7 @@
 				promise = doAPIRequest( 'subscribe', newsletterId )
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'unsubscribe' );
-						$( 'input#newsletter-' + newsletterId ).get( 0 ).value++;
+						$subscriberCount.text( parseInt( $subscriberCount.text() ) + 1 );
 						mw.notify( mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name ) );
 					} );
 			}

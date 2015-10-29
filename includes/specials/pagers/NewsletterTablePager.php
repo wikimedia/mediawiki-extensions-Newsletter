@@ -74,16 +74,10 @@ class NewsletterTablePager extends TablePager {
 			case 'nl_frequency':
 				return htmlspecialchars( $value );
 			case 'subscriber_count':
-				// @todo Make this prettier
 				return HTML::element(
-					'input',
-					array(
-						'type' => 'textbox',
-						'readonly' => 'true',
-						'id' => 'newsletter-' . $id,
-						'value' => $this->mCurrentRow->subscribers,
-
-					)
+					'span',
+					array( 'id' => "nl-count-$id" ),
+					$this->mCurrentRow->subscribers
 				);
 			case 'action' :
 				if ( $this->mCurrentRow->current_user_subscribed ) {
@@ -92,7 +86,7 @@ class NewsletterTablePager extends TablePager {
 						$this->msg( 'newsletter-unsubscribe-button' )->escaped(),
 						array(
 							'class' => 'newsletter-subscription newsletter-subscribed',
-							'id' => 'nl-' . $id
+							'id' => "nl-$id"
 						)
 					);
 				} else {
@@ -102,7 +96,7 @@ class NewsletterTablePager extends TablePager {
 						$this->msg( 'newsletter-subscribe-button' )->escaped(),
 						array(
 							'class' => 'newsletter-subscription newsletter-unsubscribed',
-							'id' => 'nl-' . $id
+							'id' => "nl-$id"
 						)
 					);
 				}
