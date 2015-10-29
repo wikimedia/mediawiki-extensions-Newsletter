@@ -47,6 +47,7 @@
 	"newsletter-view-description": "Beschreibung:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Herausgeber:}}",
 	"newsletter-view-subscriber-count": "Abonnentenzähler:",
+	"newsletter-view-no-publishers": "Keine Herausgeber.",
 	"newsletter-delete-button": "Löschen",
 	"newsletter-manage-button": "Verwalten",
 	"newsletter-unsubscribe-button": "Abbestellen",

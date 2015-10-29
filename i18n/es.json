@@ -27,7 +27,7 @@
 	"newsletter-create-section": "Crear boletín",
 	"newsletter-create-submit": "Crear boletín",
 	"newsletter-create-confirmation": "Se ha creado con éxito un boletín nuevo. Puedes gestionar los boletines mediante [[Special:ManageNewsletter]].",
-	"newsletter-create-mainpage-error": "Caracteres no válidos ingresados en la página principal del boletín. Inténtalo de nuevo",
+	"newsletter-create-mainpage-error": "No es válida la página principal del boletín. Inténtalo de nuevo.",
 	"newsletter-issue-announce-confirmation": "¡Buen trabajo! Acabas de anunciar una edición nueva de tu boletín.",
 	"newsletter-subtitlelinks-list": "Lista de boletines",
 	"newsletter-subtitlelinks-create": "Crear un boletín nuevo",
