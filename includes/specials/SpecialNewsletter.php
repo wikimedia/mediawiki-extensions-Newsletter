@@ -229,11 +229,11 @@ class SpecialNewsletter extends SpecialPage {
 	 * Batch query to determine whether user pages and user talk pages exist
 	 * or not and add them to LinkCache
 	 *
-	 * @param UserArray $users
+	 * @param Iterator $users
 	 *
 	 * @return string
 	 */
-	private function doLinkCacheQuery( UserArray $users ) {
+	private function doLinkCacheQuery( Iterator $users ) {
 		$batch = new LinkBatch();
 		foreach ( $users as $user ) {
 			$batch->addObj( $user->getUserPage() );
@@ -246,11 +246,11 @@ class SpecialNewsletter extends SpecialPage {
 	/**
 	 * Get a list of users with user-related links next to each username
 	 *
-	 * @param UserArray $users
+	 * @param Iterator $users
 	 *
 	 * @return string
 	 */
-	private function buildUserList( UserArray $users ) {
+	private function buildUserList( Iterator $users ) {
 		$str = '';
 		foreach ( $users as $user ) {
 			$str .= Html::rawElement(
