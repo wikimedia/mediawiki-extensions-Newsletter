@@ -46,6 +46,7 @@
 	"newsletter-view-description": "描述：",
 	"newsletter-view-publishers": "{{PLURAL:$1|发布者：}}",
 	"newsletter-view-subscriber-count": "订阅者数量：",
+	"newsletter-view-no-publishers": "没有发布者。",
 	"newsletter-delete-button": "删除",
 	"newsletter-manage-button": "管理",
 	"newsletter-unsubscribe-button": "取消订阅",
