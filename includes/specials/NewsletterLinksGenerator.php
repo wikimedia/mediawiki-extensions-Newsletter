@@ -4,7 +4,7 @@
  * @license GNU GPL v2+
  * @author Glaisher
  */
-class LinksGenerator {
+class NewsletterLinksGenerator {
 
 	/**
 	 * Get links to newsletter special pages shown in the subtitle
