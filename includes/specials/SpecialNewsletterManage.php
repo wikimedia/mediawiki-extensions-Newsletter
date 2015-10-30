@@ -17,7 +17,7 @@ class SpecialNewsletterManage extends SpecialPage {
 		$this->setHeaders();
 		$output = $this->getOutput();
 		$output->addModules( 'ext.newslettermanage' );
-		$output->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks() );
+		$output->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
 		$this->requireLogin();
 
 		# Create HTML forms

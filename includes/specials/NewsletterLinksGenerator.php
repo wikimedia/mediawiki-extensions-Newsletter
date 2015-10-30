@@ -9,11 +9,11 @@ class NewsletterLinksGenerator {
 	/**
 	 * Get links to newsletter special pages shown in the subtitle
 	 *
+	 * @param IContextSource $context
+	 *
 	 * @return string
 	 */
-	public static function getSubtitleLinks() {
-		global $wgLang;
-
+	public static function getSubtitleLinks( IContextSource $context ) {
 		$pages = array(
 			'list' => 'Newsletters',
 			'create' => 'NewsletterCreate',
@@ -27,11 +27,11 @@ class NewsletterLinksGenerator {
 			// 'newsletter-subtitlelinks-manage'
 			$links[] = Linker::linkKnown(
 				SpecialPage::getTitleFor( $title ),
-				wfMessage( 'newsletter-subtitlelinks-' . $txt )->escaped()
+				$context->msg( 'newsletter-subtitlelinks-' . $txt )->escaped()
 			);
 		}
 
-		return wfMessage( 'parentheses' )->rawParams( $wgLang->pipeList( $links ) )->escaped();
+		return $context->msg( 'parentheses' )->rawParams( $context->getLanguage()->pipeList( $links ) )->escaped();
 	}
 
 }

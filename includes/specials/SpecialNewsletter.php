@@ -65,7 +65,7 @@ class SpecialNewsletter extends SpecialPage {
 			// Just show an error message if we couldn't find a newsletter
 			$out->showErrorPage( 'newsletter-notfound', 'newsletter-not-found-id' );
 		}
-		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks() );
+		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
 	}
 
 	/**
