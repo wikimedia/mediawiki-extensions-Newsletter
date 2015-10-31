@@ -22,7 +22,7 @@ class SpecialNewsletters extends SpecialPage {
 			$out->addModuleStyles( 'ext.newsletter.styles' );
 			$out->addModules( 'ext.newsletter' );
 		}
-		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks() );
+		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
 
 		$pager = new NewsletterTablePager();
 		if ( $pager->getNumRows() > 0 ) {
