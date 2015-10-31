@@ -51,5 +51,6 @@
 	"newsletter-manage-header-action": "Aktioun",
 	"newsletter-dropdown-default-message": "Sicht w.e.g. eng eraus",
 	"apihelp-newslettersubscribe-description": "Abonnéieren oder ofmelle vun enger Newsletter.",
-	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1."
+	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
+	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen."
 }
