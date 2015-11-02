@@ -30,8 +30,7 @@ class ApiNewsletterTest extends ApiTestCase {
 		$rowData = array(
 			'nl_name' => 'MyNewsletter',
 			'nl_desc' => 'This is a newsletter',
-			'nl_main_page_id' => 1,
-			'nl_frequency' => 'monthly',
+			'nl_main_page_id' => 1
 		);
 		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 	}

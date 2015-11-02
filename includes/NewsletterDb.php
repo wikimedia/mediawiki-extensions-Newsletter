@@ -87,16 +87,14 @@ class NewsletterDb {
 	 * @param string $name
 	 * @param string $description
 	 * @param int $pageId
-	 * @param string $frequency
 	 *
 	 * @return bool success of the action
 	 */
-	public function addNewsletter( $name, $description, $pageId, $frequency ) {
+	public function addNewsletter( $name, $description, $pageId ) {
 		$rowData = array(
 			'nl_name' => $name,
 			'nl_desc' => $description,
 			'nl_main_page_id' => $pageId,
-			'nl_frequency' => $frequency,
 		);
 		try {
 			return $this->writeDb->insert( 'nl_newsletters', $rowData, __METHOD__ );
@@ -128,7 +126,7 @@ class NewsletterDb {
 	public function getNewsletter( $id ) {
 		$res = $this->readDb->select(
 			'nl_newsletters',
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nl_id' => $id ),
 			__METHOD__
 		);
@@ -177,7 +175,7 @@ class NewsletterDb {
 	public function getNewsletterForPageId( $id ) {
 		$res = $this->readDb->select(
 			'nl_newsletters',
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nl_main_page_id' => $id ),
 			__METHOD__
 		);
@@ -193,7 +191,7 @@ class NewsletterDb {
 	public function getNewslettersUserIsPublisherOf( User $user ) {
 		$res = $this->readDb->select(
 			array( 'nl_publishers', 'nl_newsletters' ),
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nlp_publisher_id' => $user->getId() ),
 			__METHOD__,
 			array(),
@@ -211,7 +209,7 @@ class NewsletterDb {
 	public function getAllNewsletters() {
 		$res = $this->readDb->select(
 			array( 'nl_newsletters' ),
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id', 'nl_frequency' ),
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array(),
 			__METHOD__
 		);
@@ -243,8 +241,7 @@ class NewsletterDb {
 			$row->nl_id,
 			$row->nl_name,
 			$row->nl_desc,
-			$row->nl_main_page_id,
-			$row->nl_frequency
+			$row->nl_main_page_id
 		);
 	}
 

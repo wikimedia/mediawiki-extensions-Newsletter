@@ -52,18 +52,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'required' => true,
 				'label-message' => 'newsletter-title',
 			),
-			'frequency' => array(
-				'required' => true,
-				'type' => 'selectorother',
-				'label-message' => 'newsletter-frequency',
-				'options' => array(
-					'weekly' => $this->msg( 'newsletter-option-weekly' ),
-					'monthly' => $this->msg( 'newsletter-option-monthly' ),
-					'quarterly' => $this->msg( 'newsletter-option-quarterly' ),
-				),
-				'size' => 18, # size of 'other' field
-				'maxlength' => 50,
-			)
 		);
 	}
 
@@ -87,15 +75,13 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		if ( isset( $data['name'] ) &&
 			isset( $data['description'] ) &&
 			( $articleId !== 0 ) &&
-			isset( $data['mainpage'] ) &&
-			isset( $data['frequency'] )
+			isset( $data['mainpage'] )
 		) {
 			$db = NewsletterDb::newFromGlobalState();
 			$newsletterAdded = $db->addNewsletter(
 				trim( $data['name'] ),
 				$data['description'],
-				$articleId,
-				$data['frequency']
+				$articleId
 			);
 
 			if ( !$newsletterAdded ) {

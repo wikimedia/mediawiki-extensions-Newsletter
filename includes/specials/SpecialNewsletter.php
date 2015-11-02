@@ -125,11 +125,6 @@ class SpecialNewsletter extends SpecialPage {
 					)->escaped(),
 				'raw' => true,
 			),
-			'frequency' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-frequency',
-				'default' => $this->newsletter->getFrequency(),
-			),
 			'description' => array(
 				'type' => 'textarea',
 				'label-message' => 'newsletter-view-description',

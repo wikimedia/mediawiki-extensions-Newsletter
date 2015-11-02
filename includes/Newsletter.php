@@ -29,11 +29,6 @@ class Newsletter {
 	private $pageId;
 
 	/**
-	 * @var string
-	 */
-	private $frequency;
-
-	/**
 	 * @var array
 	 */
 	private $publishers;
@@ -48,14 +43,12 @@ class Newsletter {
 	 * @param string $name
 	 * @param string $description
 	 * @param int $pageId
-	 * @param string $frequency
 	 */
-	public function __construct( $id, $name, $description, $pageId, $frequency ) {
+	public function __construct( $id, $name, $description, $pageId ) {
 		$this->id = (int)$id;
 		$this->name = $name;
 		$this->description = $description;
 		$this->pageId = (int)$pageId;
-		$this->frequency = $frequency;
 	}
 
 	/**
@@ -94,13 +87,6 @@ class Newsletter {
 	 */
 	public function getPageId() {
 		return $this->pageId;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getFrequency() {
-		return $this->frequency;
 	}
 
 	/**
