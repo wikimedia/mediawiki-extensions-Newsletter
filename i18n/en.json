@@ -37,7 +37,6 @@
 	"newsletter-view-text": "This page allows you to view details about specific newsletters. There is also an [[Special:Newsletters|overview of all newsletters]] on this wiki.",
 	"newsletter-user-subscribed": "You are currently subscribed to this newsletter.",
 	"newsletter-user-notsubscribed": "You are currently not subscribed to this newsletter. You may subscribe to this newsletter by pressing the \"{{int:newsletter-subscribe-button}}\" button if you wish to do so.",
-	"newsletter-view-id": "Newsletter ID:",
 	"newsletter-view-name": "Newsletter name:",
 	"newsletter-view-mainpage": "Main page:",
 	"newsletter-view-description": "Description:",
