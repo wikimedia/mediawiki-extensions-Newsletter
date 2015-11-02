@@ -80,8 +80,7 @@ class SpecialNewsletter extends SpecialPage {
 		$form = HTMLForm::factory(
 			'ooui',
 			$fields,
-			$this->getContext(),
-			''
+			$this->getContext()
 		);
 		$form->setSubmitCallback( $submit );
 
@@ -104,7 +103,6 @@ class SpecialNewsletter extends SpecialPage {
 		$this->getOutput()->addHTML( $html );
 
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
-		$this->doLinkCacheQuery( $publishers );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 		$fields = array(
 			'id' => array(
@@ -142,19 +140,21 @@ class SpecialNewsletter extends SpecialPage {
 			'publishers' => array(
 				'type' => 'info',
 				'label' => $this->msg( 'newsletter-view-publishers' )->numParams( count( $publishers ) )->parse(),
-				'default' => $this->buildUserList( $publishers ),
-				'raw' => true,
 			),
 			'subscribe' => array(
 				'type' => 'info',
 				'label-message' => 'newsletter-view-subscriber-count',
-				'raw' => true,
 				'default' => $this->getLanguage()->formatNum( $this->newsletter->getSubscriberCount() ),
 			),
 		);
 
-		if ( count( $publishers ) === 0 ) {
-			// Show another message if there are no publishers instead of nothing
+		if ( count( $publishers ) > 0 ) {
+			// Have this here to avoid calling unneeded functions
+			$this->doLinkCacheQuery( $publishers );
+			$fields['publishers']['default'] = $this->buildUserList( $publishers );
+			$fields['publishers']['raw'] = true;
+		} else {
+			// Show a message if there are no publishers instead of nothing
 			$fields['publishers']['default'] = $this->msg( 'newsletter-view-no-publishers' )->escaped();
 		}
 
@@ -170,7 +170,7 @@ class SpecialNewsletter extends SpecialPage {
 					$this->newsletter->isSubscribed( $user )
 						? 'newsletter-user-subscribed'
 						: 'newsletter-user-notsubscribed'
-				)->text()
+				)->escaped()
 			);
 		}
 		$form->suppressDefaultSubmit();
@@ -284,7 +284,8 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( $this->newsletter->isSubscribed( $this->getUser() ) ) {
 			// User is subscribed so show the unsubscribe form
-			$txt = $this->msg( 'newsletter-unsubscribe-text', $this->newsletter->getName() )->parse();
+			$txt = $this->msg( 'newsletter-subscribe-text' )
+				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse();
 			$button = array(
 				'unsubscribe' => array(
 					'type' => 'submit',
@@ -296,7 +297,8 @@ class SpecialNewsletter extends SpecialPage {
 			);
 		} else {
 			// Show the subscribe form if the user is not subscribed currently
-			$txt = $this->msg( 'newsletter-subscribe-text', $this->newsletter->getName() )->parse();
+			$txt = $this->msg( 'newsletter-subscribe-text' )
+				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse();
 			$button = array(
 				'subscribe' => array(
 					'type' => 'submit',
@@ -331,14 +333,19 @@ class SpecialNewsletter extends SpecialPage {
 			$status = $this->newsletter->unsubscribe( $user );
 			$action = 'unsubscribe';
 		}
+
 		if ( !isset( $status ) ) {
-			throw new Exception( "POST data corrupted or required parameter missing from request" );
+			throw new Exception( 'POST data corrupted or required parameter missing from request' );
 		}
+
 		if ( $status->isGood() ) {
 			// @todo We could probably do this in a better way
 			// Add the success message if the action was successful
 			// Messages used: 'newsletter-subscribe-success', 'newsletter-unsubscribe-success'
-			$this->getOutput()->addWikiMsg( "newsletter-$action-success", $this->newsletter->getName() );
+			$this->getOutput()->addHTML(
+				$this->msg( "newsletter-$action-success" )
+					->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse()
+			);
 		}
 
 		return $status;
@@ -371,7 +378,10 @@ class SpecialNewsletter extends SpecialPage {
 
 		// @todo add reason field when logging is implemented
 		$form = $this->getHTMLForm( array(), array( $this, 'submitDeleteForm' ) );
-		$form->addHeaderText( $this->msg( 'newsletter-delete-text', $this->newsletter->getName() )->text() );
+		$form->addHeaderText(
+			$this->msg( 'newsletter-delete-text' )
+				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse()
+		);
 		$form->setSubmitTextMsg( 'newsletter-deletenewsletter-button' );
 		$form->setSubmitDestructive();
 
