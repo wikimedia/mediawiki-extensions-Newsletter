@@ -11,10 +11,6 @@
 	"newsletter-name": "Nome do boletín de novas",
 	"newsletter-desc": "Descrición",
 	"newsletter-title": "Título da Páxina Principal",
-	"newsletter-frequency": "Frecuencia",
-	"newsletter-option-weekly": "semanalmente",
-	"newsletter-option-monthly": "mensualmente",
-	"newsletter-option-quarterly": "trimestralmente",
 	"newsletter-issue-title": "Título da páxina principal do número do boletín",
 	"newsletter-publisher-username": "Nome de usuario",
 	"newsletter-issuepage-not-found-error": "A páxina do número do boletín de novas non se atopou. Por favor, ténteo de novo.",
@@ -22,7 +18,6 @@
 	"newsletter-unconfirmed-email-error": "O nome de usuario fornecido non ten un enderezo de correo electrónico confirmado asociado!",
 	"newsletter-required-fields-error": "Os campos requiridos están baleiros.",
 	"newsletter-exist-error": "Xa exsiste un boletín de novas co mesmo nome. Inténteo de novo con outro nome",
-	"newsletter-mainpage-not-found-error": "A páxina principal do boletín de novas non existe. Por favor, inténteo de novo.",
 	"newsletter-announceissueform-announceissue-section": "Anunciar un novo número do boletín",
 	"newsletter-addpublisherform-addpublisher-section": "Engadir editores",
 	"newsletter-create-section": "Crear boletín de novas",
@@ -44,7 +39,6 @@
 	"newsletter-view-id": "Identificador do boletín:",
 	"newsletter-view-name": "Nome do boletín:",
 	"newsletter-view-mainpage": "Páxina principal:",
-	"newsletter-view-frequency": "Frecuencia:",
 	"newsletter-view-description": "Descrición:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
 	"newsletter-view-subscriber-count": "Número de subscriptores:",
@@ -64,6 +58,8 @@
 	"newsletter-unsubscribe-confirmation": "Agora está borrado da subscrición do boletín.",
 	"newsletter-subscribe-button-label": "Si",
 	"newsletter-unsubscribe-button-label": "Non",
+	"newsletter-subscribing": "Subscribindo...",
+	"newsletter-unsubscribing": "Cancelando a subscrición...",
 	"newsletter-available-newsletters-field-label": "Boletíns de novas dispoñibles",
 	"newsletter-subscribed-newsletters-field-label": "Boletíns subscritos",
 	"newsletter-none-found": "Non existen boletíns. Pode crear un boletín novo mediante [[Special:CreateNewsletter]].",
@@ -82,5 +78,6 @@
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-publisher-radiobutton-label": "Editor",
-	"newsletter-dropdown-default-message": "Por favor seleccione un"
+	"newsletter-dropdown-default-message": "Por favor seleccione un",
+	"right-newsletter-addpublisher": "Dar dereitos de editor a usuarios"
 }
