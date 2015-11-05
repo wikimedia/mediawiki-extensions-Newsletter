@@ -105,11 +105,6 @@ class SpecialNewsletter extends SpecialPage {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 		$fields = array(
-			'id' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-id',
-				'default' => (string)$this->newsletter->getId(),
-			),
 			'name' => array(
 				'type' => 'info',
 				'label-message' => 'newsletter-view-name',
@@ -118,11 +113,7 @@ class SpecialNewsletter extends SpecialPage {
 			'mainpage' => array(
 				'type' => 'info',
 				'label-message' => 'newsletter-view-mainpage',
-				'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) )
-					. ' '
-					. $this->msg( 'parentheses' )->rawParams(
-						Linker::link( $mainTitle, 'hist', array(), array( 'action' => 'history' ) )
-					)->escaped(),
+				'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) ),
 				'raw' => true,
 			),
 			'description' => array(
