@@ -43,7 +43,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'required' => true,
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
-				'cols' => 50,
 				'maxlength' => 767
 			),
 			'mainpage' => array(
@@ -98,6 +97,10 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		// Could not insert - newsletter by this name already exists
 		return array( 'newsletter-exist-error' );
 
+	}
+
+	protected function getDisplayFormat() {
+		return 'ooui';
 	}
 
 	public function onSuccess() {
