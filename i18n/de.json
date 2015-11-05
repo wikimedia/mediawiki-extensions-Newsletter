@@ -36,7 +36,6 @@
 	"newsletter-view-text": "Diese Seite erlaubt dir, Einzelheiten über spezielle Newsletter anzusehen. Es gibt auch eine [[Special:Newsletters|Übersicht aller Newsletter]] auf diesem Wiki.",
 	"newsletter-user-subscribed": "Du hast derzeit diesen Newsletter abonniert.",
 	"newsletter-user-notsubscribed": "Du hast diesen Newsletter derzeit nicht abonniert. Du kannst diesen Newsletter abonnieren durch das Anklicken der Schaltfläche „{{int:newsletter-subscribe-button}}“, falls du das möchtest.",
-	"newsletter-view-id": "Kennung des Newsletters:",
 	"newsletter-view-name": "Name des Newsletters:",
 	"newsletter-view-mainpage": "Hauptseite:",
 	"newsletter-view-description": "Beschreibung:",

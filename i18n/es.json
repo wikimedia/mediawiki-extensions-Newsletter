@@ -36,7 +36,6 @@
 	"newsletter-view-text": "Esta página te permite ver los detalles acerca de boletines específicos. También hay un [[Special:Newsletters|resumen de todos los boletines]] en este wiki.",
 	"newsletter-user-subscribed": "Actualmente estás suscrito a este boletín.",
 	"newsletter-user-notsubscribed": "Actualmente no estás suscrito a este boletín. Puedes suscribirte a este boletín pulsando el botón \"{{int:newsletter-subscribe-button}}\".",
-	"newsletter-view-id": "Identificador del boletín:",
 	"newsletter-view-name": "Nombre del boletín:",
 	"newsletter-view-mainpage": "Página principal:",
 	"newsletter-view-description": "Descripción:",

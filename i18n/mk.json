@@ -35,7 +35,6 @@
 	"newsletter-view-text": "На страницава се наведени подробности за даден билтен. Има и [[Special:Newsletters|преглед на сите билтени]] на ова вики.",
 	"newsletter-user-subscribed": "Претплатени сте на билтенов.",
 	"newsletter-user-notsubscribed": "Не сте претплатени на билтенов. Доколку сакате, можете да се претплатите на копчето „{{int:newsletter-subscribe-button}}“.",
-	"newsletter-view-id": "Назнака на билтенот:",
 	"newsletter-view-name": "Име на билтенот:",
 	"newsletter-view-mainpage": "Главна страница:",
 	"newsletter-view-description": "Опис:",

@@ -35,7 +35,6 @@
 	"newsletter-view-text": "此页面允许您查看有关特定新闻报的详细信息。此wiki也有[[Special:Newsletters|所有新闻报的概览]]。",
 	"newsletter-user-subscribed": "您当前已订阅新闻报。",
 	"newsletter-user-notsubscribed": "您当前尚未订阅此新闻报。如果您希望订阅，您可以通过按下“{{int:newsletter-subscribe-button}}”按钮订阅。",
-	"newsletter-view-id": "新闻报ID：",
 	"newsletter-view-name": "新闻报名称：",
 	"newsletter-view-mainpage": "首页：",
 	"newsletter-view-description": "描述：",
