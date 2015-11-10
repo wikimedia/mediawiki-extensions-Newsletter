@@ -15,6 +15,10 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	protected function processParam( $event, $param, $message, $user ) {
 		if ( $param === 'newsletter' ) {
 			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
+		} elseif( $param === 'newsletter-name' ){
+
+			// @todo Standardize 'newsletter-name' for clarity
+			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
 		} else {
 			parent::processParam( $event, $param, $message, $user );
 		}
@@ -46,5 +50,4 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 
 		return array( $target, $query );
 	}
-
 }
