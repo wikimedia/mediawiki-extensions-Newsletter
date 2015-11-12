@@ -41,6 +41,7 @@
 	"newsletter-view-description": "Descrición:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
 	"newsletter-view-subscriber-count": "Número de subscriptores:",
+	"newsletter-view-no-publishers": "Sen editores.",
 	"newsletter-delete-button": "Borrar",
 	"newsletter-manage-button": "Xestionar",
 	"newsletter-unsubscribe-button": "Cancelar a subscrición",
@@ -54,6 +55,8 @@
 	"newsletter-subscribe-text": "Esta interface permítelle subscribirse ó boletín \"$1\". Se se subscribe, recibirá notificacións cando se anuncien novas edicións deste boletín.",
 	"newsletter-do-subscribe": "Subscribir a este boletín",
 	"newsletter-subscribe-success": "Subscribiuse ó boletín \"$1\". Agora recibirá notificacións cando se anuncien novas edicións deste boletín.",
+	"newsletter-subscribe-fail": "Non pode subscribirse ó boletín \"$1\" porque xa está subscrito.",
+	"newsletter-subscribe-ip-notallowed": "Por favor, comece a sesión para subscribirse a un boletín.",
 	"newsletter-subscribe-section": "Subscribirse a boletíns de novas",
 	"newsletter-unsubscribe-section": "Cancelar subscricións a boletíns de novas",
 	"newsletter-subscribe-confirmation": "Agora está subscrito ó boletín.",
@@ -76,10 +79,11 @@
 	"newsletter-header-subscriber_count": "Conta de subscritores",
 	"newsletter-new-publisher-confirmation": "Un novo editor acaba de unirse ó seu boletín.",
 	"newsletter-manage-header-name": "Boletín de novas",
-	"newsletter-manage-header-publisher": "Colaboradores",
+	"newsletter-manage-header-publisher": "Editores",
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-publisher-radiobutton-label": "Editor",
 	"newsletter-dropdown-default-message": "Por favor seleccione un",
-	"right-newsletter-addpublisher": "Dar dereitos de editor a usuarios"
+	"right-newsletter-addpublisher": "Dar dereitos de editor a usuarios",
+	"action-newsletter-addpublisher": "dar permisos de editor a usuarios"
 }

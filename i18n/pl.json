@@ -7,14 +7,11 @@
 	},
 	"newsletter-extension-desc": "Opis",
 	"newsletter-desc": "Opis",
-	"newsletter-frequency": "Częstość",
-	"newsletter-option-weekly": "tygodniowo",
-	"newsletter-option-monthly": "miesięcznie",
-	"newsletter-option-quarterly": "kwartalnie",
 	"newsletter-publisher-username": "Nazwa użytkownika",
 	"newsletter-invalid-username-error": "Nieprawidłowa nazwa użytkownika",
 	"newsletter-view-mainpage": "Strona główna:",
 	"newsletter-view-description": "Opis:",
+	"newsletter-view-no-publishers": "Brak wydawców.",
 	"newsletter-delete-button": "Usuń",
 	"newsletter-manage-button": "Zarządzaj",
 	"newsletter-unsubscribe-button": "Zrezygnuj z subskrypcji",
@@ -22,6 +19,6 @@
 	"newsletter-subscribe-button-label": "Tak",
 	"newsletter-unsubscribe-button-label": "Nie",
 	"newsletter-header-description": "Opis",
-	"newsletter-header-frequency": "Częstość",
+	"newsletter-manage-header-publisher": "Wydawcy",
 	"newsletter-manage-header-permissions": "Uprawnienia"
 }
