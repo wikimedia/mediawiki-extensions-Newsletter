@@ -24,7 +24,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 */
 	protected function alterForm( HTMLForm $form ) {
 		$form->setSubmitTextMsg( 'newsletter-create-submit' );
-		$form->setWrapperLegendMsg( 'newsletter-create-section' );
 	}
 
 	/**
