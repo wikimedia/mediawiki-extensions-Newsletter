@@ -25,7 +25,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			$output->addParserOutput( $pager->getFullOutput() );
 			// Show HTML forms
 
-			if ( $this->getUser()->isAllowed( 'newsletter-addpublisher' ) ) {
+			if ( $this->getUser()->isAllowed( 'newsletter-manage' ) ) {
 				// The user have required permissions
 				$addPublisherForm = new HTMLForm(
 					$this->getPublisherFormFields(),

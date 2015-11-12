@@ -8,15 +8,17 @@
 	$( 'input[type=button]').click( function() {
 		var remNewsletterId = this.name;
 		var publisherId = this.id;
+		var $that = $( this );
+
 		api.postWithToken( 'edit', {
 			action: 'newslettermanageapi',
 			publisher: publisherId,
-			newsletterId: remNewsletterId,
-			todo: 'removepublisher'
+			id: remNewsletterId,
+			do: 'removepublisher'
 
 		} ).done( function ( data ) {
 			mw.log( data );
+			$that.closest( 'tr' ).remove();
 		} );
-		$( this ).closest( 'tr' ).remove();
 	} );
 } )( jQuery, mediaWiki );

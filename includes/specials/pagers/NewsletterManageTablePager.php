@@ -85,7 +85,7 @@ class NewsletterManageTablePager extends TablePager {
 					) . $this->msg( 'newsletter-publisher-radiobutton-label' )->escaped();
 
 			case 'action':
-				if ( $isPublisher ) {
+				if ( $isPublisher || $this->getUser()->isAllowed( 'newsletter-manage' ) ) {
 					return HTML::element(
 						'input',
 						array(

@@ -10,11 +10,11 @@
 	"license-name": "GPL-2.0",
 	"type": "other",
 	"AvailableRights": [
-		"newsletter-addpublisher"
+		"newsletter-manage"
 	],
 	"GroupPermissions": {
 		"sysop": {
-			"newsletter-addpublisher": true
+			"newsletter-manage": true
 		}
        },
 	"SpecialPages": {
