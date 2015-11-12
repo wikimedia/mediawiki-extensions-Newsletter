@@ -75,6 +75,8 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function formatValue( $field, $value ) {
+		global $wgContLang;
+
 		$id = $this->mCurrentRow->nl_id;
 		switch ( $field ) {
 			case 'nl_name':
@@ -85,7 +87,7 @@ class NewsletterTablePager extends TablePager {
 					return htmlspecialchars( $value );
 				}
 			case 'nl_desc':
-				return htmlspecialchars( $value );
+				return $wgContLang->truncate( htmlspecialchars( $value ), 644 );
 			case 'subscriber_count':
 				return HTML::element(
 					'span',

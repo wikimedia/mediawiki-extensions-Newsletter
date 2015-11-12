@@ -43,7 +43,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'required' => true,
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
-				'maxlength' => 767
+				'maxlength' => 600000,
 			),
 			'mainpage' => array(
 				'type' => 'title',
@@ -61,6 +61,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @return bool|array true on success, array on error
 	 */
 	public function onSubmit( array $data ) {
+		global $wgContLang;
 
 		$mainTitle = Title::newFromText( $data['mainpage'] );
 		if ( !$mainTitle ) {
@@ -84,9 +85,14 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			isset( $data['mainpage'] )
 		) {
 			$db = NewsletterDb::newFromGlobalState();
+
+			// nl_newsletters.nl_desc is a blob but put some limit
+			// here which is less than max size for blobs
+			$description = $wgContLang->truncate( trim( $data['description'] ), 600000 );
+
 			$newsletterAdded = $db->addNewsletter(
 				trim( $data['name'] ),
-				$data['description'],
+				$description,
 				$articleId
 			);
 
