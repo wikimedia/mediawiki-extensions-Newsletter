@@ -10,7 +10,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 
 	public function __construct() {
-		parent::__construct( 'NewsletterCreate' );
+		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
 	}
 
 	public function execute( $par ) {
