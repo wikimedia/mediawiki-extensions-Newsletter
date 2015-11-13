@@ -196,4 +196,15 @@ class Newsletter {
 		}
 	}
 
+	/**
+	 * Check whether the user is allowed to delete the newsletter.
+	 *
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	public function canDelete( User $user ) {
+		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-delete' );
+	}
+
 }

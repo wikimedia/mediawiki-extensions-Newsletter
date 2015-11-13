@@ -179,8 +179,8 @@ class SpecialNewsletter extends SpecialPage {
 		$buttons = array();
 		$this->getOutput()->enableOOUI();
 
-		// Only publishers can manage and delete newsletters
-		if ( $this->newsletter->isPublisher( $user ) ) {
+		if ( $this->newsletter->canDelete( $user ) ) {
+			// This is visible to publishers and users with 'newsletter-delete' right
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-delete-button' )->escaped(),
@@ -189,7 +189,10 @@ class SpecialNewsletter extends SpecialPage {
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
 				)
 			);
+		}
 
+		if ( $this->newsletter->isPublisher( $user ) ) {
+			// @todo show this to all users who can manage, not just publishers
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
@@ -501,12 +504,8 @@ class SpecialNewsletter extends SpecialPage {
 			throw new UserBlockedError( $user->getBlock() );
 		}
 
-		if ( !$this->newsletter->isPublisher( $user ) ) {
-			// only publishers can delete newsletter (for now)
-			$out->showPermissionsErrorPage(
-				array( array( 'newsletter-delete-nopermission' ) )
-			);
-			return;
+		if ( !$this->newsletter->canDelete( $user ) ) {
+			throw new PermissionsError( 'newsletter-delete' );
 		}
 
 		$out->setPageTitle( $this->msg( 'newsletter-delete' ) );
