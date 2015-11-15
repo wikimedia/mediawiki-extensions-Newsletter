@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nguyên Lê"
+			"Nguyên Lê",
+			"Minh Nguyen"
 		]
 	},
-	"newsletter-subscribing": "Đang đăng kí...",
-	"newsletter-unsubscribing": "Đang hủy đăng kí..."
+	"newsletter-subscribing": "Đang đăng ký…",
+	"newsletter-unsubscribing": "Đang hủy đăng ký…"
 }

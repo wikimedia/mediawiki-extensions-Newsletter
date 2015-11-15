@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sator"
+			"Sator",
+			"Subi"
 		]
 	},
 	"newsletter-desc": "Deskribapena",
+	"newsletter-subscribing": "Harpidetzen",
+	"newsletter-unsubscribing": "Harpidetza kentzen...",
 	"newsletter-dropdown-default-message": "Hautatu bat, mesedez"
 }
