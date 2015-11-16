@@ -11,6 +11,7 @@ class SpecialNewsletter extends SpecialPage {
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 	const NEWSLETTER_DELETE = 'delete';
+	const NEWSLETTER_ANNOUNCE = 'announce';
 
 	/**
 	 * @var Newsletter|null
@@ -52,6 +53,9 @@ class SpecialNewsletter extends SpecialPage {
 				case self::NEWSLETTER_SUBSCRIBE:
 				case self::NEWSLETTER_UNSUBSCRIBE:
 					$this->doSubscribeExecute();
+					break;
+				case self::NEWSLETTER_ANNOUNCE:
+					$this->doAnnounceExecute();
 					break;
 				case self::NEWSLETTER_DELETE:
 					$this->doDeleteExecute();
@@ -194,6 +198,15 @@ class SpecialNewsletter extends SpecialPage {
 					'href' => SpecialPage::getTitleFor( 'NewsletterManage' )->getFullURL()
 				)
 			);
+
+			$buttons[] = new OOUI\ButtonWidget(
+				array(
+					'label' => $this->msg( 'newsletter-announce-button' )->escaped(),
+					'flags' => array( 'progressive' ),
+					'icon' => 'comment',
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_ANNOUNCE )->getFullURL()
+				)
+			);
 		}
 
 		if ( $this->newsletter->isSubscribed( $user ) ) {
@@ -301,6 +314,142 @@ class SpecialNewsletter extends SpecialPage {
 		$form->suppressDefaultSubmit();
 		$form->show();
 		$this->getOutput()->addReturnTo( SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ) );
+	}
+
+	/**
+	 * Build the announce form for Special:Newsletter/$id/announce. This does
+	 * permissions and read-only check as well and handles showing error and
+	 * success pages.
+	 *
+	 * @throws UserBlockedError
+	 */
+	protected function doAnnounceExecute() {
+		$user = $this->getUser();
+		$out = $this->getOutput();
+
+		// Echo handles read-only mode on their own but we'll now let the user know
+		// that wiki is currently in read-only mode and stop from here.
+		$this->checkReadOnly();
+
+		if ( $user->isBlocked() ) {
+			// Blocked users should just stay blocked.
+			throw new UserBlockedError( $user->getBlock() );
+		}
+
+		if ( !$this->newsletter->isPublisher( $user ) ) {
+			$out->showPermissionsErrorPage(
+				array( array( 'newsletter-announce-nopermission' ) )
+			);
+			return;
+		}
+
+		$out->setPageTitle(
+			$this->msg( 'newsletter-announce' )->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
+		);
+
+		$fields = array(
+			'issuepage' => array(
+				'type' => 'title',
+				'name' => 'issuepage',
+				'creatable' => true,
+				'required' => true,
+				'label-message' => 'newsletter-announce-issuetitle',
+				'default' => '',
+			),
+			'summary' => array(
+				// @todo currently unused
+				// @todo add a help message explaining what this does
+				'type' => 'text',
+				'name' => 'summary',
+				'label-message' => 'newsletter-announce-summary',
+				'maxlength' => '255',
+				'autofocus' => true,
+			),
+		);
+
+		$form = $this->getHTMLForm(
+			$fields,
+			array( $this, 'submitAnnounceForm' )
+		);
+		$form->setSubmitTextMsg( 'newsletter-announce-submit' );
+
+		$status = $form->show();
+		if ( $status === true ) {
+			// Success!
+			$out->addHTML(
+				$this->msg( 'newsletter-announce-success' )
+					->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
+					->numParams( $this->newsletter->getSubscriberCount() )
+					->parseAsBlock()
+			);
+			$out->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
+		}
+	}
+
+	/**
+	 * Submit callback for the announce form (validate, add to issues table and create
+	 * Echo event). This assumes that permissions check etc has been done already.
+	 *
+	 * @param array $data
+	 *
+	 * @return Status|bool true on success, Status fatal otherwise
+	 * @throws Exception if Echo is not installed
+	 */
+	public function submitAnnounceForm( array $data ) {
+		$title = Title::newFromText( $data['issuepage'] );
+
+		// Do some basic validation on the issue page
+		if ( !$title ) {
+			return Status::newFatal( 'newsletter-announce-invalid-page' );
+		}
+
+
+		if ( !$title->exists() ) {
+			return Status::newFatal( 'newsletter-announce-nonexistent-page' );
+		}
+
+		if ( $title->inNamespace( NS_FILE ) ) {
+			// Eh..
+			return Status::newFatal( 'newsletter-announce-invalid-page' );
+		}
+
+		// Validate summary
+		$reasonSpamMatch = EditPage::matchSummarySpamRegex( $data['summary'] );
+		if ( $reasonSpamMatch ) {
+			return Status::newFatal( 'spamprotectionmatch', $reasonSpamMatch );
+		}
+
+		if ( !class_exists( 'EchoEvent' ) ) {
+			throw new Exception ( 'Echo extension is not installed.' );
+		}
+
+		// Everything seems okay. Let's try to do it for real now.
+		$db = NewsletterDb::newFromGlobalState();
+		$success = $db->addNewsletterIssue(
+			$this->newsletter->getId(),
+			$title->getArticleId(),
+			$this->getUser()->getId()
+		);
+
+		if ( !$success ) {
+			// DB insert failed. :( so don't create an Echo event and stop from here
+			return Status::newFatal( 'newsletter-announce-failure' );
+		}
+
+		EchoEvent::create(
+			array(
+				'type' => 'newsletter-announce',
+				'extra' => array(
+					'newsletter' => $this->newsletter->getName(),
+					'newsletterId' => $this->newsletter->getId(),
+					'issuePageTitle' => $title->getPrefixedText(),
+					'issuePageNamespace' => $title->getNamespace(), // @todo we can just get this from issuePageTitle
+				),
+			)
+		);
+
+		// Yay!
+		return true;
 	}
 
 	/**
