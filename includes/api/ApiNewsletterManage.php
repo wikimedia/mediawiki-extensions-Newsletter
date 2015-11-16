@@ -70,6 +70,18 @@ class ApiNewsletterManage extends ApiBase {
 		);
 	}
 
+	/**
+	 * @see ApiBase::getExamplesMessages()
+	 */
+	protected function getExamplesMessages() {
+		return array(
+			'action=newslettermanage&id=1&do=addpublisher&publisher=3'
+				=> 'apihelp-newslettermanage-example-1',
+			'action=newslettermanage&id=2&do=removepublisher&publisher=5'
+				=> 'apihelp-newslettermanage-example-2',
+		);
+	}
+
 	public function isWriteMode() {
 		return true;
 	}
