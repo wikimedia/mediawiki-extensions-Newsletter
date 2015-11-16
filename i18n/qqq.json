@@ -83,6 +83,7 @@
 	"newsletter-available-newsletters-field-label": "Label of HTML form field which lists all available newsletters in wiki",
 	"newsletter-subscribed-newsletters-field-label": "Label of HTML form field which lists all newsletters to which user is subscribed to.",
 	"newsletter-none-found": "Error message shown on [[Special:Newsletters]] and [[Special:ManageNewsletter]] if no newsletters were found on the wiki.",
+	"newsletter-list-search-none-found": "Error message shown on [[Special:Newsletters]] if no newsletters found after user searches the table using filters",
 	"echo-category-title-newsletter": "Title of the notification category used by Newsletter extension.\n{{Related|Echo-category-title}}\n{{Identical|Newsletter}}",
 	"echo-pref-tooltip-newsletter": "Short description of the newsletter notification category.\n{{Related|Echo-pref-tooltip}}",
 	"newsletter-notification-title": "Used as a Echo notification message",
@@ -106,5 +107,11 @@
 	"apihelp-newslettersubscribe-param-id": "{{doc-apihelp-param|newslettersubscribe|id}}",
 	"apihelp-newslettersubscribe-param-do": "{{doc-apihelp-param|newslettersubscribe|do}}",
 	"apihelp-newslettersubscribe-example-1": "{{doc-apihelp-example|newslettersubscribe}}",
-	"apihelp-newslettersubscribe-example-2": "{{doc-apihelp-example|newslettersubscribe}}"
+	"apihelp-newslettersubscribe-example-2": "{{doc-apihelp-example|newslettersubscribe}}",
+	"newsletter-list-table": "Label of the drop down menu in [[Special:Newsletters]], the options of which can be used to customize the search of newsletters",
+	"newsletter-list-section":  "Section header of HTML form in [[Special:Newsletters]] used to search for newsletters",
+	"newsletter-list-option-all": "Option of the drop down menu in [[Special:Newsletters]] to display all newsletters",
+	"newsletter-list-option-subscribed": "Option of the drop down menu in [[Special:Newsletters]] to display those newsletters to which the logged in user is subscribed to",
+	"newsletter-list-option-unsubscribed": "Option of the drop down menu in [[Special:Newsletters]] to display those newsletters to which the logged in user is not subscribed to",
+	"newsletter-list-go-button": "Label of the submit button of the HTML form in [[Special:Newsletters]]"
 }
