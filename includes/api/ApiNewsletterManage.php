@@ -6,7 +6,6 @@
  * @license GNU GPL v2+
  * @author Tina Johnson
  *
- * @todo Rename this module to newslettermanage
  * @todo Add i18n
  */
 class ApiNewsletterManage extends ApiBase {

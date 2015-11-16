@@ -11,7 +11,7 @@
 		var $that = $( this );
 
 		api.postWithToken( 'edit', {
-			action: 'newslettermanageapi',
+			action: 'newslettermanage',
 			publisher: publisherId,
 			id: remNewsletterId,
 			do: 'removepublisher'
