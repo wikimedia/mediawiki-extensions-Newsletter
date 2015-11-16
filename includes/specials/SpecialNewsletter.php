@@ -191,8 +191,7 @@ class SpecialNewsletter extends SpecialPage {
 			);
 		}
 
-		if ( $this->newsletter->isPublisher( $user ) ) {
-			// @todo show this to all users who can manage, not just publishers
+		if ( $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
@@ -201,7 +200,9 @@ class SpecialNewsletter extends SpecialPage {
 					'href' => SpecialPage::getTitleFor( 'NewsletterManage' )->getFullURL()
 				)
 			);
+		}
 
+		if ( $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-announce-button' )->escaped(),

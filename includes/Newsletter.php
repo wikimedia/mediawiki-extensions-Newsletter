@@ -207,4 +207,14 @@ class Newsletter {
 		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-delete' );
 	}
 
+	/**
+	 * Check whether the user is allowed to manage the newsletter.
+	 *
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	public function canManage( User $user ) {
+		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-manage' );
+	}
 }
