@@ -40,6 +40,8 @@
 	"newsletter-manage-button": "管理",
 	"newsletter-unsubscribe-button": "退会",
 	"newsletter-subscribe-button": "入会",
+	"newsletter-announce-button": "アナウンス",
+	"newsletter-announce-submit": "アナウンス",
 	"newsletter-announce-summary": "この議題の要約",
 	"newsletter-delete": "ニュースレターを削除",
 	"newsletter-delete-text": "このインターフェースで、ニュースレター「$1」を削除することができます。あなたがこれを行おうとしてることを確認してください。<strong>この操作は取消しできません。</strong>",

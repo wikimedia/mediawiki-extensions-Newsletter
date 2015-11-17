@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Banjo",
-			"Elisardojm"
+			"Elisardojm",
+			"Loischantada"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
-	"newslettercreate": "Crear boletíns de novas",
+	"newslettercreate": "Crear boletín de novas",
 	"newslettermanage": "Xestionar boletíns de novas",
 	"newsletter-name": "Nome do boletín de novas",
 	"newsletter-desc": "Descrición",
@@ -41,6 +42,11 @@
 	"newsletter-manage-button": "Xestionar",
 	"newsletter-unsubscribe-button": "Cancelar a subscrición",
 	"newsletter-subscribe-button": "Subscribirse",
+	"newsletter-announce-button": "Anunciar",
+	"newsletter-announce": "Anunciar un asunto novo de \"1$\"",
+	"newsletter-announce-submit": "Anunciar",
+	"newsletter-announce-issuetitle": "Título de páxina do asunto",
+	"newsletter-announce-summary": "Resumo deste asunto",
 	"newsletter-delete": "Eliminar boletín",
 	"newsletter-delete-text": "Esta interface pode usarse para eliminar o boletín \"$1\". Confirme que quere facer isto. <strong>Esta acción non se pode desfacer.</strong>",
 	"newsletter-deletenewsletter-button": "Eliminar este boletín",
@@ -77,5 +83,12 @@
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-publisher-radiobutton-label": "Editor",
-	"newsletter-dropdown-default-message": "Por favor seleccione un"
+	"newsletter-dropdown-default-message": "Por favor seleccione un",
+	"right-newsletter-create": "Crear boletín de novas",
+	"right-newsletter-delete": "Eliminar boletín",
+	"action-newsletter-delete": "Eliminar boletín",
+	"action-newsletter-manage": "Xestionar boletíns de novas",
+	"newsletter-list-section": "Buscar boletíns de novas",
+	"newsletter-list-option-unsubscribed": "Boletín de novas Non estou subscrito a",
+	"newsletter-list-go-button": "Ir"
 }

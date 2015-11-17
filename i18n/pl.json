@@ -20,5 +20,6 @@
 	"newsletter-unsubscribe-button-label": "Nie",
 	"newsletter-header-description": "Opis",
 	"newsletter-manage-header-publisher": "Wydawcy",
-	"newsletter-manage-header-permissions": "Uprawnienia"
+	"newsletter-manage-header-permissions": "Uprawnienia",
+	"newsletter-list-go-button": "Dalej"
 }

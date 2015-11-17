@@ -4,8 +4,21 @@
 			"V.narsikar"
 		]
 	},
+	"newslettercreate": "वार्तापत्र तयार करा",
 	"newsletter-view-mainpage": "मुख्य पान:",
 	"newsletter-view-no-publishers": "प्रकाशक नाहीत.",
 	"newsletter-delete-button": "वगळा",
-	"newsletter-manage-button": "व्यवस्थापन करा"
+	"newsletter-manage-button": "व्यवस्थापन करा",
+	"newsletter-announce-button": "घोषणा करा",
+	"newsletter-announce-nopermission": "आपण या वार्तापत्राचे प्रकाशक नाहीत.",
+	"newsletter-announce-submit": "घोषणा करा",
+	"newsletter-manage-header-publisher": "प्रकाशक",
+	"right-newsletter-create": "वार्तापत्रे तयार करा",
+	"action-newsletter-create": "वार्तापत्रे तयार करा",
+	"right-newsletter-delete": "वार्तापत्रे वगळा",
+	"action-newsletter-delete": "वार्तापत्रे वगळा",
+	"action-newsletter-manage": "वार्तापत्रांचे व्यवस्थापन करा",
+	"newsletter-list-section": "वार्तापत्रांसाठी शोधा",
+	"newsletter-list-option-all": "सर्व वार्तापत्रे",
+	"newsletter-list-go-button": "जा"
 }
