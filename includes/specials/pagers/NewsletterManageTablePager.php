@@ -92,7 +92,7 @@ class NewsletterManageTablePager extends TablePager {
 							'type' => 'button',
 							'value' => 'Remove', // @todo needs i18n
 							'name' => $previous,
-							'id' => $this->getUser()->getId(),
+							'id' => $this->mCurrentRow->nlp_publisher_id,
 						)
 					);
 				}
