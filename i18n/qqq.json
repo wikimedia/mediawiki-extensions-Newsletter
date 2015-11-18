@@ -115,5 +115,5 @@
 	"newsletter-list-option-all": "Option of the drop down menu in [[Special:Newsletters]] to display all newsletters",
 	"newsletter-list-option-subscribed": "Option of the drop down menu in [[Special:Newsletters]] to display those newsletters to which the logged in user is subscribed to",
 	"newsletter-list-option-unsubscribed": "Option of the drop down menu in [[Special:Newsletters]] to display those newsletters to which the logged in user is not subscribed to",
-	"newsletter-list-go-button": "Label of the submit button of the HTML form in [[Special:Newsletters]]"
+	"newsletter-list-go-button": "Label of the submit button of the HTML form in [[Special:Newsletters]]\n{{Identical|Go}}"
 }

@@ -4,5 +4,8 @@
 			"Joetaras"
 		]
 	},
-	"newsletter-header-frequency": "Frequenze"
+	"right-newsletter-create": "Ccreje 'na newsletter",
+	"action-newsletter-create": "ccreje 'na newsletter",
+	"action-newsletter-delete": "scangille 'a newsletter",
+	"newsletter-list-table": "Filtre 'a tabbelle da:"
 }

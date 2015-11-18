@@ -9,7 +9,6 @@
 	"newsletter-desc": "Beschreiwung",
 	"newsletter-title": "Titel vun der Haaptsäit",
 	"newsletter-publisher-username": "Benotzernumm",
-	"newsletter-announceissueform-announceissue-section": "Eng nei Ausgab ukënnegen",
 	"newsletter-create-submit": "Newsletter uleeën",
 	"newsletter-create-confirmation": "Eng nei Newsletter gouf gemaacht. Dir kënnt Newslettere op [[Special:ManageNewsletter]] geréieren.",
 	"newsletter-subtitlelinks-list": "Lëscht vun Newsletteren",
@@ -24,8 +23,8 @@
 	"newsletter-view-description": "Beschreiwung:",
 	"newsletter-delete-button": "Läschen",
 	"newsletter-subscribe-button": "Abonnéieren",
+	"newsletter-announce-button": "Ukënnegen",
 	"newsletter-delete": "Newsletter läschen",
-	"newsletter-delete-nopermission": "Dir sidd net berechtegt fir dës Newsletter ze läschen.",
 	"newsletter-deletenewsletter-button": "Dës Newsletter läschen",
 	"newsletter-delete-success": "Newsletter $1 gouf geläscht.",
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",
@@ -44,7 +43,9 @@
 	"newsletter-manage-header-permissions": "Autorisatiounen",
 	"newsletter-manage-header-action": "Aktioun",
 	"newsletter-dropdown-default-message": "Sicht w.e.g. eng eraus",
+	"right-newsletter-delete": "Newslettere läschen",
 	"apihelp-newslettersubscribe-description": "Abonnéieren oder ofmelle vun enger Newsletter.",
 	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
-	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen."
+	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",
+	"newsletter-list-go-button": "Lass"
 }
