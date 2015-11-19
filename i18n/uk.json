@@ -3,11 +3,12 @@
 		"authors": [
 			"Base",
 			"Dars",
-			"Ата"
+			"Ата",
+			"Lxlalexlxl"
 		]
 	},
 	"newsletter-extension-desc": "Дозволяє користувачам публікувати і підписуватися на інформаційні бюлетені",
-	"newslettercreate": "Створити інформаційні листи",
+	"newslettercreate": "Створити інформаційний лист",
 	"newslettermanage": "Керування інформаційними листами",
 	"newsletter-name": "Назва інформаційного листа",
 	"newsletter-desc": "Опис",

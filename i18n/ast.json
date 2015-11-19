@@ -1,0 +1,32 @@
+{
+	"@metadata": {
+		"authors": [
+			"Xuacu"
+		]
+	},
+	"newslettercreate": "Crear boletinos",
+	"newslettercreate-text": "Esta páxina te permite crear un boletín nuevu. Va añadísete como editor y va suscribísete al boletín al crealu.",
+	"newsletter-announce-button": "Anunciar",
+	"newsletter-announce-nopermission": "Nun yes un editor d'esti boletín.",
+	"newsletter-announce": "Anunciar una nueva edición de «$1»",
+	"newsletter-announce-submit": "Anunciar",
+	"newsletter-announce-issuetitle": "Títulu de páxina de la edición",
+	"newsletter-announce-summary": "Resume d'esta edición",
+	"newsletter-announce-success": "Anuncióse una nueva edición de «$1» a $2 {{PLURAL:$2|suscriptor|suscriptores}}.",
+	"newsletter-announce-invalid-page": "Escribe un títulu válidu pa la páxina de la edición.",
+	"newsletter-announce-nonexistent-page": "Nun esiste la páxina de la edición dada. Escribe una páxina esistente.",
+	"newsletter-announce-failure": "Non pudo anunciase una edición nueva. Vuelve a intentalo.",
+	"newsletter-list-search-none-found": "Nengún boletín coincide cola to consulta.",
+	"right-newsletter-create": "Crear boletinos",
+	"action-newsletter-create": "crear boletinos",
+	"right-newsletter-delete": "Desaniciar boletinos",
+	"action-newsletter-delete": "desaniciar boletinos",
+	"right-newsletter-manage": "Amestar o quitar editores de boletinos",
+	"action-newsletter-manage": "xestionar boletinos",
+	"newsletter-list-table": "Filtriar la tabla por:",
+	"newsletter-list-section": "Buscar boletinos",
+	"newsletter-list-option-all": "Tolos boletinos",
+	"newsletter-list-option-subscribed": "Boletinos a los que toi soscritu",
+	"newsletter-list-option-unsubscribed": "Boletinos a los que nun toi soscritu",
+	"newsletter-list-go-button": "Dir"
+}
