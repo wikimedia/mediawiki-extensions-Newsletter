@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Leeheonjin"
+		]
+	},
+	"newslettercreate": "Maglalang ulat-balita (''newsletter'')",
+	"newsletter-announce-button": "Iyanunsyu",
+	"newsletter-announce-submit": "Iyanunsyu",
+	"right-newsletter-create": "Maglalang ulat-balita (''newsletters'')",
+	"action-newsletter-create": "Maglalang ulat-balita (''newsletters'')",
+	"right-newsletter-delete": "Buran ulat-balita (''newsletters'')",
+	"action-newsletter-delete": "buran ulat-balita (''newsletters'')",
+	"newsletter-list-option-all": "Deng egana-ganang ulat-balita",
+	"newsletter-list-go-button": "Sulung"
+}
