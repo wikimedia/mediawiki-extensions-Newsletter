@@ -25,6 +25,7 @@
 	"newsletter-subscribe-button": "Abonnéieren",
 	"newsletter-announce-button": "Ukënnegen",
 	"newsletter-announce-submit": "Ukënnegen",
+	"newsletter-announce-summary": "Resumé vun dëser Ausgab",
 	"newsletter-delete": "Newsletter läschen",
 	"newsletter-deletenewsletter-button": "Dës Newsletter läschen",
 	"newsletter-delete-success": "Newsletter $1 gouf geläscht.",
@@ -48,6 +49,7 @@
 	"apihelp-newslettersubscribe-description": "Abonnéieren oder ofmelle vun enger Newsletter.",
 	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
 	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",
+	"newsletter-list-table": "Tabell filteren no:",
 	"newsletter-list-option-all": "Alle Newsletteren",
 	"newsletter-list-go-button": "Lass"
 }

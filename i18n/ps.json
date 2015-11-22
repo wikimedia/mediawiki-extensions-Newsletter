@@ -4,7 +4,7 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
-	"newslettercreate": "خبرليکونه جوړول",
+	"newslettercreate": "خبرليک جوړول",
 	"newslettermanage": "خبرليکونه مهارول",
 	"newsletter-name": "د خبرليک نوم",
 	"newsletter-desc": "څرگندونه",
@@ -16,6 +16,8 @@
 	"newsletter-subtitlelinks-create": "يو نوی خبرليک جوړول",
 	"newsletter-subtitlelinks-manage": "خبرليک مهارول",
 	"newsletters": "خبرليکونه",
+	"newsletter-announce-button": "خبرول",
+	"newsletter-announce-submit": "خبرول",
 	"newsletter-subscribe-button-label": "هو",
 	"newsletter-unsubscribe-button-label": "نه",
 	"echo-category-title-newsletter": "خبرليکونه",
@@ -26,5 +28,10 @@
 	"newsletter-manage-header-permissions": "پرېښې",
 	"newsletter-manage-header-action": "چاره",
 	"newsletter-publisher-radiobutton-label": "خپرونکی",
-	"newsletter-dropdown-default-message": "لطفاً يو وټاکئ"
+	"newsletter-dropdown-default-message": "لطفاً يو وټاکئ",
+	"action-newsletter-create": "خبرليکونه جوړول",
+	"action-newsletter-delete": "خبرليکونه ړنگول",
+	"action-newsletter-manage": "خبرليکونه مهارول",
+	"newsletter-list-option-all": "ټول خبرليکونه",
+	"newsletter-list-go-button": "ورځه"
 }
