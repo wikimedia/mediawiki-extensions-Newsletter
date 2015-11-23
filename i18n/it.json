@@ -2,21 +2,30 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Beta16"
+			"Beta16",
+			"Fringio"
 		]
 	},
 	"newsletter-extension-desc": "Consente agli utenti di pubblicare e iscriversi alla newsletter",
+	"newslettercreate": "Crea newsletter",
 	"newsletter-desc": "Descrizione",
 	"newsletter-view-mainpage": "Pagina principale:",
 	"newsletter-view-description": "Descrizione:",
 	"newsletter-delete-button": "Cancella",
 	"newsletter-manage-button": "Amministra",
 	"newsletter-subscribe-button": "Iscriviti",
+	"newsletter-announce-button": "Annunci",
 	"newsletter-subscribe-button-label": "Sì",
 	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-header-description": "Descrizione",
 	"newsletter-manage-header-permissions": "Permessi",
 	"newsletter-manage-header-action": "Azione",
+	"right-newsletter-create": "Crea newsletter",
+	"action-newsletter-create": "crea newsletter",
+	"action-newsletter-delete": "elimina newsletter",
+	"action-newsletter-manage": "gestisci newsletter",
 	"newsletter-list-table": "Filtra tabella per:",
+	"newsletter-list-option-all": "Tutte le newsletter",
+	"newsletter-list-option-unsubscribed": "Newsletter a cui non sono iscritto",
 	"newsletter-list-go-button": "Vai"
 }
