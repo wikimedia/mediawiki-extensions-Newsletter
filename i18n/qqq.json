@@ -11,7 +11,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Description of the extension",
-	"newslettercreate": "Name of [[Special:CreateNewsletter]]. This is used as the header on this page and shown in links to the page.",
 	"newslettermanage": "Name of special page which announces issues as seen in URLs and links",
 	"newsletter-name": "Label of the field which takes the name of newsletter as input in [[Special:ManageNewsletter]] and [[Special:CreateNewsletter]]",
 	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:CreateNewsletter]]\n{{Identical|Description}}",
@@ -22,6 +21,7 @@
 	"newsletter-required-fields-error": "Error message to be displayed when required fields are empty in [[Special:ManageNewsletter]]",
 	"newsletter-exist-error": "Error message to be displayed in [[Special:CreateNewsletter]] when trying to create a newsletter with same name as an existing newsletter",
 	"newsletter-addpublisherform-addpublisher-section": "Header of section in [[Special:ManageNewsletter]] which adds publishers",
+	"newslettercreate": "Name of [[Special:CreateNewsletter]]. This is used as the header on this page and shown in links to the page.",
 	"newsletter-create-submit": "Label of submit button on [[Special:CreateNewsletter]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"newsletter-create-mainpage-error": "Error message shown on [[Special:CreateNewsletter]] if the page entered on main page field does not exist.",

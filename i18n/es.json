@@ -6,8 +6,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
-	"newslettercreate": "Crear boletín",
-	"newslettercreate-text": "Esta página te permite crear un boletín nuevo. Se te añadirá como un editor y se te suscribirá al boletín en su creación.",
 	"newslettermanage": "Gestionar boletines",
 	"newsletter-name": "Nombre del boletín",
 	"newsletter-desc": "Descripción",
@@ -18,6 +16,8 @@
 	"newsletter-required-fields-error": "Los campos obligatorios están vacíos",
 	"newsletter-exist-error": "Ya existe un boletín con el mismo nombre. Inténtalo de nuevo con otro nombre",
 	"newsletter-addpublisherform-addpublisher-section": "Añadir editores",
+	"newslettercreate": "Crear boletín",
+	"newslettercreate-text": "Esta página te permite crear un boletín nuevo. Se te añadirá como un editor y se te suscribirá al boletín en su creación.",
 	"newsletter-create-submit": "Crear boletín",
 	"newsletter-create-confirmation": "Se ha creado con éxito un boletín nuevo. Puedes gestionar los boletines mediante [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "No es válida la página principal del boletín. Inténtalo de nuevo.",

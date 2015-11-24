@@ -7,7 +7,6 @@
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
-	"newslettercreate": "ニュースレターを作成する",
 	"newslettermanage": "ニュースレターの管理",
 	"newsletter-name": "ニュースレターの名前",
 	"newsletter-desc": "説明",
@@ -17,6 +16,7 @@
 	"newsletter-unconfirmed-email-error": "提供された利用者名は、確認されたメールアドレスを持っていません！",
 	"newsletter-required-fields-error": "必要な領域が空です",
 	"newsletter-exist-error": "既に同じ名前のニュースレターが存在しています。別の名前で試してください。",
+	"newslettercreate": "ニュースレターを作成する",
 	"newsletter-create-submit": "ニュースレターの作成",
 	"newsletter-create-confirmation": "ニュースレターの作成が成功しました！　ニュースレターの管理は、[[Special:ManageNewsletter]]を介して、できます。",
 	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",

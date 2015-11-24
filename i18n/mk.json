@@ -5,8 +5,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Овозможува корисниците да објавуваат и да се претплаќаат на билтени",
-	"newslettercreate": "Направи билтен",
-	"newslettercreate-text": "Страницава ви овозможува да направите нов билте. Ќе бидете заведени како издавач и претплатени на билтенот со неговото создавање.",
 	"newslettermanage": "Раководење со билтени",
 	"newsletter-name": "Назив на билтенот",
 	"newsletter-desc": "Опис",
@@ -17,6 +15,8 @@
 	"newsletter-required-fields-error": "Задолжителните полиња се празни.",
 	"newsletter-exist-error": "Веќе постои билтен со тој назив. Пробајте друг",
 	"newsletter-addpublisherform-addpublisher-section": "Додај издавачи",
+	"newslettercreate": "Направи билтен",
+	"newslettercreate-text": "Страницава ви овозможува да направите нов билте. Ќе бидете заведени како издавач и претплатени на билтенот со неговото создавање.",
 	"newsletter-create-submit": "Направи билтен",
 	"newsletter-create-confirmation": "Штотуку е направен нов билтен. Можете да раководите со билтени преку [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Внесена е неважечка слика за главната страница на билтенот. Обидете се повторно",

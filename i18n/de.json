@@ -6,8 +6,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Ermöglicht es Benutzern, Newsletter zu veröffentlichen und zu abonnieren",
-	"newslettercreate": "Newsletter erstellen",
-	"newslettercreate-text": "Diese Seite erlaubt dir, einen neuen Newsletter zu erstellen. Du wirst als Herausgeber hinzugefügt und bei Erstellung den Newsletter abonnieren.",
 	"newslettermanage": "Newsletter verwalten",
 	"newsletter-name": "Name des Newsletters",
 	"newsletter-desc": "Beschreibung",
@@ -18,6 +16,8 @@
 	"newsletter-required-fields-error": "Die erforderlichen Felder sind leer",
 	"newsletter-exist-error": "Ein Newsletter mit dem gleichen Namen ist bereits vorhanden. Bitte versuche es mit einem anderen Namen.",
 	"newsletter-addpublisherform-addpublisher-section": "Herausgeber hinzufügen",
+	"newslettercreate": "Newsletter erstellen",
+	"newslettercreate-text": "Diese Seite erlaubt dir, einen neuen Newsletter zu erstellen. Du wirst als Herausgeber hinzugefügt und bei Erstellung den Newsletter abonnieren.",
 	"newsletter-create-submit": "Newsletter erstellen",
 	"newsletter-create-confirmation": "Es wurde erfolgreich ein neuer Newsletter erstellt. Du kannst Newsletter verwalten auf [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Ungültige Newsletter-Hauptseite eingegeben. Bitte erneut versuchen.",

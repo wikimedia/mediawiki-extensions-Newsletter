@@ -4,13 +4,13 @@
 			"Ahmed-Najib-Biabani-Ibrahimkhel"
 		]
 	},
-	"newslettercreate": "خبرليک جوړول",
 	"newslettermanage": "خبرليکونه مهارول",
 	"newsletter-name": "د خبرليک نوم",
 	"newsletter-desc": "څرگندونه",
 	"newsletter-title": "د لومړي مخ سرليک",
 	"newsletter-publisher-username": "کارن-نوم",
 	"newsletter-invalid-username-error": "ناسم کارن-نوم",
+	"newslettercreate": "خبرليک جوړول",
 	"newsletter-create-submit": "خبرليک جوړول",
 	"newsletter-subtitlelinks-list": "د خبرليکونو لړليک",
 	"newsletter-subtitlelinks-create": "يو نوی خبرليک جوړول",

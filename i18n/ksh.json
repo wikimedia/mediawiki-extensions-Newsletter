@@ -5,7 +5,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Löht Metmaacher Rondschrihve veröffentlesche un abbonnehre",
-	"newslettercreate": "E Rondschrihve aanlähje",
 	"newslettermanage": "Rondschrihve verwallde",
 	"newsletter-name": "Däm Rondschrihve sine Nahme",
 	"newsletter-desc": "Äkliehrong",
@@ -16,6 +15,7 @@
 	"newsletter-required-fields-error": "Mühdejje Fälder sin läddesch.",
 	"newsletter-exist-error": "E rondschrihve met däm Anhme jidd_et alld, doh moß De ene anndere nämme.",
 	"newsletter-addpublisherform-addpublisher-section": "Donn Erußjävver derbei.",
+	"newslettercreate": "E Rondschrihve aanlähje",
 	"newsletter-create-submit": "Lääsch e Rondschrihve aan",
 	"newsletter-create-confirmation": "Aanjelaat.",
 	"newsletter-subtitlelinks-list": "Leß met de Rondschrihve",

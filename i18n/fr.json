@@ -11,8 +11,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des infolettres",
-	"newslettercreate": "Créer le bulletin d’information",
-	"newslettercreate-text": "La page vous permet de créer un nouveau bulletin d’information. Vous y serez ajouté comme éditeur et y serez abonné à sa création.",
 	"newslettermanage": "Gérer des infolettres",
 	"newsletter-name": "Nom de l’infolettre",
 	"newsletter-desc": "Description",
@@ -23,6 +21,8 @@
 	"newsletter-required-fields-error": "Des champs nécessaires sont vides",
 	"newsletter-exist-error": "Il existe déjà une infolettre portant ce nom. Veuillez réessayer avec un autre nom",
 	"newsletter-addpublisherform-addpublisher-section": "Ajouter des éditeurs",
+	"newslettercreate": "Créer le bulletin d’information",
+	"newslettercreate-text": "La page vous permet de créer un nouveau bulletin d’information. Vous y serez ajouté comme éditeur et y serez abonné à sa création.",
 	"newsletter-create-submit": "Créer l’infolettre",
 	"newsletter-create-confirmation": "Une nouvelle infolettre a été créée avec succès. Vous pouvez gérer les infolettres par le biais de [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Page principale du bulletin d’information entrée non valide. Veuillez réessayer.",

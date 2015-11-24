@@ -8,7 +8,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Дозволяє користувачам публікувати і підписуватися на інформаційні бюлетені",
-	"newslettercreate": "Створити інформаційний лист",
 	"newslettermanage": "Керування інформаційними листами",
 	"newsletter-name": "Назва інформаційного листа",
 	"newsletter-desc": "Опис",
@@ -19,6 +18,7 @@
 	"newsletter-required-fields-error": "Обов'язкові поля мають бути заповненими",
 	"newsletter-exist-error": "Інформаційний лист з таким самим ім'ям уже існує. Спробуйте придумати іншу назву",
 	"newsletter-addpublisherform-addpublisher-section": "Додати видавців",
+	"newslettercreate": "Створити інформаційний лист",
 	"newsletter-create-submit": "Створити розсилку новин",
 	"newsletter-create-confirmation": "Було успішно створено новий інформаційний лист. Ви можете керувати інформаційним листом через [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Неприпустима назва головної сторінки розсилки. Будь ласка, спробуйте ще раз.",
