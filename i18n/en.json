@@ -7,8 +7,6 @@
 		]
 	},
 	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
-	"newslettercreate": "Create newsletter",
-	"newslettercreate-text": "This page allows you to create a new newsletter. You will be added as a publisher and subscribed to the newsletter on its creation.",
 	"newslettermanage": "Manage newsletters",
 	"newsletter-name": "Name of newsletter",
 	"newsletter-desc": "Description",
@@ -19,6 +17,8 @@
 	"newsletter-required-fields-error": "Required fields are empty",
 	"newsletter-exist-error": "A newsletter with the same name already exists. Try again with another name",
 	"newsletter-addpublisherform-addpublisher-section": "Add publishers",
+	"newslettercreate": "Create newsletter",
+	"newslettercreate-text": "This page allows you to create a new newsletter. You will be added as a publisher and subscribed to the newsletter on its creation. All fields are required.",
 	"newsletter-create-submit": "Create newsletter",
 	"newsletter-create-confirmation": "A new newsletter has been successfully created. You can manage newsletters through [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Invalid newsletter main page entered. Please try again.",
