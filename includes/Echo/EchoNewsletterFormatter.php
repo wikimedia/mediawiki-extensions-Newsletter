@@ -14,9 +14,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 */
 	protected function processParam( $event, $param, $message, $user ) {
 		if ( $param === 'newsletter' ) {
-			$message->params( $event->getExtraParam( 'newsletter' ) );
-		} elseif ( $param === 'title' ) {
-			$message->params( $event->getExtraParam( 'issuePageTitle' ) );
+			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
 		} else {
 			parent::processParam( $event, $param, $message, $user );
 		}
@@ -32,17 +30,21 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 * @return array including target URL
 	 */
 	protected function getLinkParams( $event, $user, $destination ) {
-		if ( $destination === 'new-issue' ) {
-			return array(
-				Title::makeTitle(
-					$event->getExtraParam( 'issuePageNamespace' ),
-					$event->getExtraParam( 'issuePageTitle' )
-				),
-				array(),
-			);
-		} else {
-			return parent::getLinkParams( $event, $user, $destination );
+		$target = null;
+		$query = array();
+		switch ( $destination ) {
+			case 'new-issue':
+				// Placeholder for T119090 - currently the same as 'title'
+				$target = $event->getTitle();
+				break;
+			case 'newsletter':
+				$target = SpecialPage::getTitleFor( 'Newsletter', $event->getExtraParam( 'newsletter-id' ) );
+				break;
+			default:
+				return parent::getLinkParams( $event, $user, $destination );
 		}
+
+		return array( $target, $query );
 	}
 
 }

@@ -19,20 +19,26 @@ class NewsletterHooks {
 		);
 
 		$notifications['newsletter-announce'] = array(
+			'category' => 'newsletter',
+			'section' => 'alert',
 			'primary-link' => array(
 				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
+			),
+			'secondary-link' => array(
+				'message' => 'newsletter-notification-link-text-view-newsletter',
+				'destination' => 'newsletter'
 			),
 			'user-locators' => array(
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			),
 			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
-			'title-params' => array( 'newsletter', 'title' ),
+			'title-params' => array( 'newsletter', 'title', 'agent' ),
 			'flyout-message' => 'newsletter-notification-flyout',
-			'flyout-params' => array( 'newsletter', 'title' ),
-
+			'payload' => array( 'summary' ),
 		);
+
 		return true;
 	}
 
@@ -61,6 +67,7 @@ class NewsletterHooks {
 	}
 
 	public static function onUnitTestsList( &$files ) {
+		// @todo FIXME: This does NOT work. https://gerrit.wikimedia.org/r/248377
 		$files = array_merge( $files, glob( __DIR__ . '/tests/*Test.php' ) );
 
 		return true;

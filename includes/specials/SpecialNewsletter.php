@@ -46,7 +46,6 @@ class SpecialNewsletter extends SpecialPage {
 		$out = $this->getOutput();
 		$this->newsletter = Newsletter::newFromID( (int)$id );
 
-
 		if ( $this->newsletter ) {
 			// Newsletter exists for the given subpage id - let's check what they want to do
 			switch ( $action ) {
@@ -69,6 +68,7 @@ class SpecialNewsletter extends SpecialPage {
 			// Just show an error message if we couldn't find a newsletter
 			$out->showErrorPage( 'newsletter-notfound', 'newsletter-not-found-id' );
 		}
+
 		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
 	}
 
@@ -361,12 +361,11 @@ class SpecialNewsletter extends SpecialPage {
 				'default' => '',
 			),
 			'summary' => array(
-				// @todo currently unused
 				// @todo add a help message explaining what this does
 				'type' => 'text',
 				'name' => 'summary',
 				'label-message' => 'newsletter-announce-summary',
-				'maxlength' => '255',
+				'maxlength' => '160',
 				'autofocus' => true,
 			),
 		);
@@ -443,12 +442,14 @@ class SpecialNewsletter extends SpecialPage {
 		EchoEvent::create(
 			array(
 				'type' => 'newsletter-announce',
+				'title' => $title,
 				'extra' => array(
-					'newsletter' => $this->newsletter->getName(),
-					'newsletterId' => $this->newsletter->getId(),
-					'issuePageTitle' => $title->getPrefixedText(),
-					'issuePageNamespace' => $title->getNamespace(), // @todo we can just get this from issuePageTitle
+					'newsletter-name' => $this->newsletter->getName(),
+					'newsletter-id' => $this->newsletter->getId(),
+					'section-text' => trim( $data['summary'] ),
+					'notifyAgent' => true,
 				),
+				'agent' => $this->getUser()
 			)
 		);
 

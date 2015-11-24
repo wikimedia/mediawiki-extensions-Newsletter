@@ -57,6 +57,10 @@
 		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php"
 	},
+	"DefaultUserOptions": {
+		"echo-subscriptions-web-newsletter": true,
+		"echo-subscriptions-email-newsletter": true
+	},
 	"ResourceModules": {
 		"ext.newsletter": {
 			"scripts": "ext.newsletter.js",
