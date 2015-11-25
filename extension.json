@@ -23,6 +23,11 @@
 			"newsletter-manage": true
 		}
        },
+    "RateLimits": {
+		"newsletter": {
+			"user": [ 3, 3600 ]
+		}
+	},
 	"SpecialPages": {
 		"NewsletterCreate": "SpecialNewsletterCreate",
 		"NewsletterManage": "SpecialNewsletterManage",

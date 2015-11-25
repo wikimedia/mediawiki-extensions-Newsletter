@@ -8,7 +8,6 @@
  */
 class SpecialNewsletterCreate extends FormSpecialPage {
 
-
 	public function __construct() {
 		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
 	}
@@ -70,6 +69,13 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			return array( 'newsletter-create-mainpage-error' );
 		}
 
+		$user = $this->getUser();
+		if ( $user->pingLimiter( 'newsletter' ) ) {
+			// Default user access level for creating a newsletter is quite low
+			// so add a throttle here to prevent abuse (eg. mass vandalism spree)
+			throw new ThrottledError;
+		}
+
 		$articleId = $mainTitle->getArticleId();
 
 		if ( isset( $data['name'] ) &&
@@ -85,12 +91,13 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			);
 
 			if ( !$newsletterAdded ) {
+				// @todo FIXME: This shouldn't be thrown for main page key collisions
 				return array( 'newsletter-exist-error' );
 			}
 
 			$newsletter = $db->getNewsletterForPageId( $articleId );
 
-			$this->autoSubscribe( $newsletter->getId(), $this->getUser()->getId() );
+			$this->autoSubscribe( $newsletter->getId(), $user->getId() );
 
 			return true;
 		}
