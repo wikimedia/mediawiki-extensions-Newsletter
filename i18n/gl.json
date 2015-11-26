@@ -18,7 +18,7 @@
 	"newsletter-exist-error": "Xa exsiste un boletín de novas co mesmo nome. Inténteo de novo con outro nome",
 	"newsletter-addpublisherform-addpublisher-section": "Engadir editores",
 	"newslettercreate": "Crear boletín de novas",
-	"newslettercreate-text": "Esta páxina permítelle crear un boletín novo. Será engadido como editor e será subscrito ó boletín na súa creación.",
+	"newslettercreate-text": "Esta páxina permítelle crear un boletín novo. Será engadido como editor e será subscrito ó boletín na súa creación. Son necesarios todos os campos.",
 	"newsletter-create-submit": "Crear boletín de novas",
 	"newsletter-create-confirmation": "Creouse un novo boletín de novas con éxisto. Pode xestionar os boletíns de novas a través de [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Non é válida a páxina principal do boletín. Probe de novo.",

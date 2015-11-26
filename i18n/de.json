@@ -17,7 +17,7 @@
 	"newsletter-exist-error": "Ein Newsletter mit dem gleichen Namen ist bereits vorhanden. Bitte versuche es mit einem anderen Namen.",
 	"newsletter-addpublisherform-addpublisher-section": "Herausgeber hinzufügen",
 	"newslettercreate": "Newsletter erstellen",
-	"newslettercreate-text": "Diese Seite erlaubt dir, einen neuen Newsletter zu erstellen. Du wirst als Herausgeber hinzugefügt und bei Erstellung den Newsletter abonnieren.",
+	"newslettercreate-text": "Diese Seite erlaubt dir, einen neuen Newsletter zu erstellen. Du wirst bei seiner Erstellung als Herausgeber und Abonnent hinzugefügt. Alle Felder sind erforderlich.",
 	"newsletter-create-submit": "Newsletter erstellen",
 	"newsletter-create-confirmation": "Es wurde erfolgreich ein neuer Newsletter erstellt. Du kannst Newsletter verwalten auf [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Ungültige Newsletter-Hauptseite eingegeben. Bitte erneut versuchen.",

@@ -16,7 +16,7 @@
 	"newsletter-exist-error": "同名的新闻报已存在。请尝试其他名称",
 	"newsletter-addpublisherform-addpublisher-section": "添加发布者",
 	"newslettercreate": "创建新闻报",
-	"newslettercreate-text": "此页面允许您创建一个新的新闻报。您将被添加为发布者，并在它创建之时订阅新闻报。",
+	"newslettercreate-text": "此页面允许您创建一个新的新闻报。您将被添加为发布者，并在它创建之时订阅新闻报。所有字段均为必填项。",
 	"newsletter-create-submit": "创建新闻报",
 	"newsletter-create-confirmation": "一个新的新闻报已被成功创建。您可以通过[[Special:ManageNewsletter]]管理新闻报。",
 	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
