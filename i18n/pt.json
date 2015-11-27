@@ -2,29 +2,25 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Vitorvicentevalente"
+			"Vitorvicentevalente",
+			"Imperadeiro90"
 		]
 	},
 	"newsletter-extension-desc": "Permite que os utilizadores publiquem e subscrevam boletins informativos",
-	"newslettercreate": "Criar boletins informativos",
 	"newslettermanage": "Gerir boletins informativos",
 	"newsletter-name": "Nome do boletim informativo",
 	"newsletter-desc": "Descrição",
 	"newsletter-title": "Título da Página Principal",
-	"newsletter-issue-title": "Título da página principal da edição",
 	"newsletter-publisher-username": "Nome de utilizador",
-	"newsletter-issuepage-not-found-error": "A página da edição do boletim informativo não foi encontrada. Por favor, tente novamente",
 	"newsletter-invalid-username-error": "Nome de utilizador(a) inválido",
 	"newsletter-unconfirmed-email-error": "O nome de utilizador(a) fornecido não possui um endereço de correio eletrónico confirmado!",
 	"newsletter-required-fields-error": "Campos de preenchimento obrigatório em branco",
 	"newsletter-exist-error": "Já existe um boletim informativo com este nome. Por favor, tente outro.",
-	"newsletter-announceissueform-announceissue-section": "Anunciar nova edição",
 	"newsletter-addpublisherform-addpublisher-section": "Adicionar editores",
-	"newsletter-create-section": "Criar boletins informativos",
+	"newslettercreate": "Criar boletins informativos",
 	"newsletter-create-submit": "Criar boletins informativos",
 	"newsletter-create-confirmation": "Foi criado um novo boletim informativo com sucesso. Pode gerir os boletins através de [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Foram inseridos caracteres inválidos na página principal do boletim. Por favor, tente novamente",
-	"newsletter-issue-announce-confirmation": "Bom trabalho! Acabou de anunciar uma nova edição do seu boletim informativo.",
 	"newsletter-subtitlelinks-list": "Lista de boletins informativos",
 	"newsletter-subtitlelinks-create": "Criar novo boletim informativo",
 	"newsletter-subtitlelinks-manage": "Gerir boletins informativos",
@@ -36,7 +32,6 @@
 	"newsletter-view-text": "Esta página permite-lhe ver os detalhes sobre boletins informativos específicos. Também existe uma [[Special:Newsletters|visão geral de todos os boletins]] nesta wiki.",
 	"newsletter-user-subscribed": "Está inscrito para este boletim informativo.",
 	"newsletter-user-notsubscribed": "Atualmente não está inscrito neste boletim informativo. Poderá subscrevê-lo ao clicar em \"{{int:newsletter-subscribe-button}}\", se desejar.",
-	"newsletter-view-id": "ID de boletim:",
 	"newsletter-view-name": "Nome de boletim:",
 	"newsletter-view-mainpage": "Página principal:",
 	"newsletter-view-description": "Descrição:",
@@ -47,7 +42,6 @@
 	"newsletter-unsubscribe-button": "Anular subscrição",
 	"newsletter-subscribe-button": "Subscrever",
 	"newsletter-delete": "Eliminar boletim informativo",
-	"newsletter-delete-nopermission": "Não possui privilégios para eliminar este boletim informativo.",
 	"newsletter-delete-text": "Esta interface pode ser usada para eliminar o boletim informativo \"$1\". Por favor, confirme a sua intenção. <strong>Esta ação não pode ser desfeita.</strong>",
 	"newsletter-deletenewsletter-button": "Eliminar este boletim informativo",
 	"newsletter-delete-success": "Boletim informativo $1 eliminado.",
@@ -81,11 +75,9 @@
 	"newsletter-header-subscriber_count": "Número de subscritos",
 	"newsletter-new-publisher-confirmation": "Foi adicionado um novo editor ao seu boletim informativo!",
 	"newsletter-manage-header-name": "Boletim informativo",
-	"newsletter-manage-header-publisher": "Contribuidores",
+	"newsletter-manage-header-publisher": "Editores",
 	"newsletter-manage-header-permissions": "Privilégios",
 	"newsletter-manage-header-action": "Ação",
 	"newsletter-publisher-radiobutton-label": "Editor",
-	"newsletter-dropdown-default-message": "Por favor, selecione um",
-	"right-newsletter-addpublisher": "Atribuir privilégios de editor a utilizadores",
-	"action-newsletter-addpublisher": "atribuir privilégios de editor a utilizadores"
+	"newsletter-dropdown-default-message": "Por favor, selecione um"
 }
