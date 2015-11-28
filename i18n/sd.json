@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mehtab ahmed"
+			"Mehtab ahmed",
+			"Aursani"
 		]
 	},
-	"newsletter-view-no-publishers": "ڪوبه ڇپيندڙ نه.",
-	"newsletter-manage-header-publisher": "ڇپيندڙ"
+	"newsletter-view-no-publishers": "ڪي بہ شايع ڪندڙ نہ آهن.",
+	"newsletter-manage-header-publisher": "شايع ڪندڙ"
 }
