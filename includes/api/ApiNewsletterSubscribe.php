@@ -64,6 +64,7 @@ class ApiNewsletterSubscribe extends ApiBase {
 				=> 'apihelp-newslettersubscribe-example-2',
 		);
 	}
+
 	public function isWriteMode() {
 		return true;
 	}
