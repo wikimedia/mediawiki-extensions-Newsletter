@@ -19,7 +19,6 @@
 	"newsletter-unsubscribe-button": "Nutraukti prenumeratą",
 	"newsletter-subscribe-button": "Prenumeruoti",
 	"newsletter-delete": "Ištrinti naujienlaiškį",
-	"newsletter-delete-nopermission": "Jūs neturite teisių ištrinti šį naujienlaiškį.",
 	"newsletter-deletenewsletter-button": "Ištrinti šį naujienlaiškį",
 	"newsletter-delete-success": "Naujienlaiškis #$1 buvo pašalintas.",
 	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",
@@ -28,9 +27,12 @@
 	"newsletter-do-unsubscribe": "Atsisakyti naujienlaiškio",
 	"newsletter-subscribing": "Prenumeruojama...",
 	"newsletter-unsubscribing": "Nebeprenumeruojama...",
-	"right-newsletter-addpublisher": "Duoti leidėjo teises vartotojams",
-	"action-newsletter-addpublisher": "duoti leidėjo teises vartotojams",
+	"newsletter-notification-link-text-view-newsletter": "Žiūrėti naujienlaiškį",
+	"right-newsletter-create": "Sukurti naujienlaiškius",
+	"action-newsletter-create": "sukurti naujienlaiškius",
+	"action-newsletter-delete": "ištrinti naujienlaiškius",
 	"apihelp-newslettersubscribe-description": "Užsisakyti ar atsisakyti naujienlaiškio.",
 	"apihelp-newslettersubscribe-example-1": "Užsiprenumeruokite naujienlaiškį su id 1.",
-	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2."
+	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2.",
+	"newsletter-list-table": "Filtruoti lentelę pagal:"
 }
