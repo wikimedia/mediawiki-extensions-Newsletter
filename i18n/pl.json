@@ -27,6 +27,6 @@
 	"action-newsletter-create": "stwórz newslettery",
 	"action-newsletter-delete": "usuń newslettery",
 	"apihelp-newslettermanage-description": "Zarządzaj newsletterem.",
-	"newsletter-list-table": "Posortuj tabele po:",
+	"newsletter-list-table": "Posortuj tabele według:",
 	"newsletter-list-go-button": "Dalej"
 }

@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Fader"
 		]
 	},
 	"newsletter-desc": "Beskrivning",
@@ -20,15 +21,19 @@
 	"newsletter-manage-button": "Hantera",
 	"newsletter-unsubscribe-button": "Sluta prenumerera",
 	"newsletter-subscribe-button": "Prenumerera",
+	"newsletter-announce-nopermission": "Du är inte utgivare för detta nyhetsbrev.",
 	"newsletter-delete": "Radera nyhetsbrev",
 	"newsletter-deletenewsletter-button": "Radera denna nyhetsbrev",
 	"newsletter-do-subscribe": "Prenumerera på detta nyhetsbrev",
+	"newsletter-notification-link-text-view-newsletter": "Visa nyhetsbrev",
+	"newsletter-manage-header-publisher": "Utgivare",
 	"newsletter-dropdown-default-message": "Var god välj en",
 	"right-newsletter-create": "Skapa nyhetsbrev",
 	"action-newsletter-create": "skapa nyhetsbrev",
 	"right-newsletter-delete": "Radera nyhetsbrev",
 	"action-newsletter-delete": "radera nyhetsbrev",
 	"action-newsletter-manage": "hantera nyhetsbrev",
+	"apihelp-newslettermanage-description": "Hantera ett nyhetsbrev.",
 	"newsletter-list-section": "Sök efter nyhetsbrev",
 	"newsletter-list-option-all": "Alla nyhetsbrev",
 	"newsletter-list-option-subscribed": "Nyhetsbrev jag prenumererar på",
