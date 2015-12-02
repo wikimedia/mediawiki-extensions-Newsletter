@@ -64,7 +64,7 @@ class SpecialNewsletterManage extends SpecialPage {
 			),
 			'publisher-name' => array(
 				'section' => 'addpublisher-section',
-				'type' => 'text',
+				'type' => 'user',
 				'label-message' => 'newsletter-publisher-username',
 			),
 		);
