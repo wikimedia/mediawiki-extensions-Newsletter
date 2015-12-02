@@ -186,7 +186,7 @@ class SpecialNewsletter extends SpecialPage {
 					'label' => $this->msg( 'newsletter-delete-button' )->escaped(),
 					'flags' => array( 'destructive' ),
 					'icon' => 'remove',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
+					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
 				)
 			);
 		}
@@ -208,7 +208,7 @@ class SpecialNewsletter extends SpecialPage {
 					'label' => $this->msg( 'newsletter-announce-button' )->escaped(),
 					'flags' => array( 'progressive' ),
 					'icon' => 'comment',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_ANNOUNCE )->getFullURL()
+					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				)
 			);
 		}
@@ -218,7 +218,7 @@ class SpecialNewsletter extends SpecialPage {
 				array(
 					'label' => $this->msg( 'newsletter-unsubscribe-button' )->escaped(),
 					'flags' => array( 'primary', 'destructive' ),
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
+					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 				)
 			);
 		} else {
@@ -226,7 +226,7 @@ class SpecialNewsletter extends SpecialPage {
 				array(
 					'label' => $this->msg( 'newsletter-subscribe-button' )->escaped(),
 					'flags' => array( 'primary', 'constructive' ),
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' . self::NEWSLETTER_SUBSCRIBE )->getFullURL()
+					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 				)
 			);
 		}
@@ -317,7 +317,7 @@ class SpecialNewsletter extends SpecialPage {
 		$form->addHeaderText( $txt );
 		$form->suppressDefaultSubmit();
 		$form->show();
-		$this->getOutput()->addReturnTo( SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ) );
+		$this->getOutput()->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
 	}
 
 	/**
@@ -523,7 +523,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( !$form->show() ) {
 			// After submission, no point in showing showing the return to link if the newsletter was just deleted
-			$out->addReturnTo( SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ) );
+			$out->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
 		}
 	}
 
