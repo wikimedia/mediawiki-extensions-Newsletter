@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Revi",
-			"Hwangjy9"
+			"Hwangjy9",
+			"고솜"
 		]
 	},
 	"newsletter-extension-desc": "뉴스레터를 만들고 배포할 수 있도록 함",
@@ -34,13 +35,14 @@
 	"newsletter-subscribe-button-label": "예",
 	"newsletter-unsubscribe-button-label": "아니오",
 	"newsletter-notification-link-text-new-issue": "새 제호 보기",
+	"newsletter-notification-link-text-view-newsletter": "뉴스레터 보이기",
 	"newsletter-header-name": "뉴스레터 이름",
 	"newsletter-header-description": "설명",
 	"newsletter-header-action": "구독되었습니까?",
 	"newsletter-header-subscriber_count": "구독자 수",
 	"newsletter-new-publisher-confirmation": "뉴스레터에 새 발행자가 추가되었습니다!",
 	"newsletter-manage-header-name": "뉴스레터",
-	"newsletter-manage-header-publisher": "기여자",
+	"newsletter-manage-header-publisher": "게시자",
 	"newsletter-manage-header-permissions": "권한",
 	"newsletter-manage-header-action": "행위",
 	"newsletter-publisher-radiobutton-label": "발행자",
