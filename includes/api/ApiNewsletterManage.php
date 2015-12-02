@@ -20,7 +20,7 @@ class ApiNewsletterManage extends ApiBase {
 			$this->dieUsage( 'Newsletter does not exist', 'notfound' );
 		}
 
-		if ( !$newsletter->isPublisher( $user ) && !$user->isAllowed( 'newsletter-manage' ) ) {
+		if ( !$newsletter->canManage( $user ) ) {
 			$this->dieUsage( 'You do not have permission to manage newsletters.', 'nopermissions' );
 		}
 
