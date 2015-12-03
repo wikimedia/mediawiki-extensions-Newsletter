@@ -54,7 +54,7 @@
 		"NewsletterManageTablePager": "includes/specials/pagers/NewsletterManageTablePager.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
-		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
+		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php"
 	},
 	"DefaultUserOptions": {

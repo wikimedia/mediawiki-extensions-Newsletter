@@ -32,7 +32,8 @@ class NewsletterHooks {
 			'user-locators' => array(
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			),
-			'formatter-class' => 'EchoNewsletterFormatter',
+			'presentation-model' => 'EchoNewsletterPresentationModel',
+			// 'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
 			'title-params' => array( 'newsletter', 'title', 'agent' ),
 			'flyout-message' => 'newsletter-notification-flyout',
