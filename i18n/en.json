@@ -114,6 +114,7 @@
 	"apihelp-newslettermanage-param-publisher": "User ID of the publisher to manage.",
 	"apihelp-newslettermanage-example-1": "Add a publisher with a user id of 3 to newsletter with id 1.",
 	"apihelp-newslettermanage-example-2": "Remove publisher with a user id of 5 from newsletter with id 2.",
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|has announced}} a new issue of $3.",
 	"newsletter-list-table": "Filter table by: ",
 	"newsletter-list-section":  "Search for newsletters",
 	"newsletter-list-option-all": "All newsletters",
