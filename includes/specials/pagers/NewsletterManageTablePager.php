@@ -97,6 +97,8 @@ class NewsletterManageTablePager extends TablePager {
 					);
 				}
 				return '';
+			default:
+				return '';
 		}
 	}
 

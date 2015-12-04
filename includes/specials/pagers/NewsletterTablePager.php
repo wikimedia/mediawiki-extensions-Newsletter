@@ -51,7 +51,7 @@ class NewsletterTablePager extends TablePager {
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				'subscribers' => ( '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' ),
+				'subscribers' => '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )',
 			),
 			'options' => array( 'DISTINCT nl_id' ),
 		);
@@ -59,7 +59,7 @@ class NewsletterTablePager extends TablePager {
 		if ( $this->option == 'subscribed' ) {
 			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
 				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
-		} else if ( $this->option == 'unsubscribed' ) {
+		} elseif ( $this->option == 'unsubscribed' ) {
 			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
 				' NOT IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
 		} else {
@@ -94,7 +94,9 @@ class NewsletterTablePager extends TablePager {
 				);
 			case 'action' :
 				if ( $this->mCurrentRow->current_user_subscribed ) {
-					$title = SpecialPage::getTitleFor( 'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE );
+					$title = SpecialPage::getTitleFor(
+						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE
+					);
 					$link = Linker::linkKnown( $title,
 						$this->msg( 'newsletter-unsubscribe-button' )->escaped(),
 						array(
@@ -103,7 +105,9 @@ class NewsletterTablePager extends TablePager {
 						)
 					);
 				} else {
-					$title = SpecialPage::getTitleFor( 'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_SUBSCRIBE );
+					$title = SpecialPage::getTitleFor(
+						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_SUBSCRIBE
+					);
 					$link = Linker::linkKnown(
 						$title,
 						$this->msg( 'newsletter-subscribe-button' )->escaped(),
@@ -124,7 +128,7 @@ class NewsletterTablePager extends TablePager {
 	public function getCellAttrs( $field, $value ) {
 		$ret = parent::getCellAttrs( $field, $value );
 		// @todo use CSS, not inline HTML
-		switch( $field ) {
+		switch ( $field ) {
 			case 'nl_name':
 				$ret['width'] = '20%';
 				break;
@@ -155,4 +159,5 @@ class NewsletterTablePager extends TablePager {
 	public function setUserOption( $value ) {
 		$this->option = $value;
 	}
+
 }
