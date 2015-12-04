@@ -31,17 +31,16 @@ class ApiNewsletterManage extends ApiBase {
 
 		$ndb = NewsletterDb::newFromGlobalState();
 
-		switch ( $params['do'] ) {
-			case 'addpublisher':
-				$status = $ndb->addPublisher( $publisher->getId(), $params['id'] );
-				break;
-			case 'removepublisher':
-				$status = $ndb->removePublisher( $publisher->getId(), $params['id'] );
-				break;
+		$success =false;
+		$action = $params['do'];
+		if ( $action === 'addpublisher' ) {
+			$success = $ndb->addPublisher( $publisher->getId(), $params['id'] );
+		} elseif ( $action === 'removepublisher' ) {
+			$success = $ndb->removePublisher( $publisher->getId(), $params['id'] );
 		}
 
-		if ( !$status ) {
-			$this->dieUsage( 'Manage action failed. Please try again.', 'managefailure' );
+		if ( !$success ) {
+			$this->dieUsage( "Manage action: $action failed. Please try again.", 'managefailure' );
 		}
 
 		// Success
