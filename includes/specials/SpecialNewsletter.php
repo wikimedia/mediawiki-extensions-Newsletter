@@ -477,9 +477,7 @@ class SpecialNewsletter extends SpecialPage {
 		} elseif ( $request->getCheck( 'unsubscribe' ) ) {
 			$status = $this->newsletter->unsubscribe( $user );
 			$action = 'unsubscribe';
-		}
-
-		if ( !isset( $status ) ) {
+		} else {
 			throw new Exception( 'POST data corrupted or required parameter missing from request' );
 		}
 
