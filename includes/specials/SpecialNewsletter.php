@@ -129,7 +129,9 @@ class SpecialNewsletter extends SpecialPage {
 			),
 			'publishers' => array(
 				'type' => 'info',
-				'label' => $this->msg( 'newsletter-view-publishers' )->numParams( count( $publishers ) )->parse(),
+				'label' => $this->msg( 'newsletter-view-publishers' )
+					->numParams( count( $publishers ) )
+					->parse(),
 			),
 			'subscribe' => array(
 				'type' => 'info',
@@ -150,7 +152,9 @@ class SpecialNewsletter extends SpecialPage {
 
 		$form = $this->getHTMLForm(
 			$fields,
-			function() { return false; } // nothing to submit - the buttons on this page are just links
+			function() {
+				return false;
+			} // nothing to submit - the buttons on this page are just links
 		);
 
 		if ( $user->isLoggedIn() ) {
@@ -348,7 +352,8 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		$out->setPageTitle(
-			$this->msg( 'newsletter-announce' )->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
+			$this->msg( 'newsletter-announce' )
+				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
 		);
 
 		$fields = array(
@@ -423,7 +428,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		if ( !class_exists( 'EchoEvent' ) ) {
-			throw new Exception ( 'Echo extension is not installed.' );
+			throw new Exception( 'Echo extension is not installed.' );
 		}
 
 		// Everything seems okay. Let's try to do it for real now.
@@ -522,7 +527,7 @@ class SpecialNewsletter extends SpecialPage {
 		$form->setSubmitDestructive();
 
 		if ( !$form->show() ) {
-			// After submission, no point in showing showing the return to link if the newsletter was just deleted
+			// After submission, no point in showing the return to link if the newsletter was just deleted
 			$out->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
 		}
 	}
@@ -549,4 +554,5 @@ class SpecialNewsletter extends SpecialPage {
 	public function isListed() {
 		return false;
 	}
+
 }
