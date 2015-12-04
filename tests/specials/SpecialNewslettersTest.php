@@ -4,6 +4,7 @@
  * @covers SpecialNewsletters
  *
  * @group SpecialPage
+ * @group Database
  *
  * @author Addshore
  */
