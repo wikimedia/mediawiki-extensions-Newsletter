@@ -203,8 +203,6 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param User $user
-	 *
 	 * @return Newsletter[]
 	 */
 	public function getAllNewsletters() {
