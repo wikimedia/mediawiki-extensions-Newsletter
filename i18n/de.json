@@ -104,6 +104,7 @@
 	"newsletters-summary": "Diese Seite erlaubt dir das Durchsuchen einer Liste aller Newsletter auf diesem Wiki sowie das Abonnieren und Abbestellen dieser Newsletter. Du kannst auch deine Newsletter-Abonnementoptionen mithilfe der [[Special:Preferences#mw-prefsection-echo|Einstellungen]]-Oberfläche auswählen.",
 	"apihelp-newslettersubscribe-example-1": "Abonniert den Newsletter mit der Kennung 1.",
 	"apihelp-newslettersubscribe-example-2": "Bestellt den Newsletter mit der Kennung 2 ab.",
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|hat}} eine neue Ausgabe von $3 angekündigt.",
 	"newsletter-list-table": "Tabelle sortieren nach:",
 	"newsletter-list-section": "Nach Newslettern suchen",
 	"newsletter-list-option-all": "Alle Newsletter",

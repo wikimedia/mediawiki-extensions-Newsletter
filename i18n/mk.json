@@ -112,6 +112,7 @@
 	"apihelp-newslettermanage-param-publisher": "Назнака на издавачот.",
 	"apihelp-newslettermanage-example-1": "Додајте издавач со корисничка назнака 3 во билтен со назнака 1.",
 	"apihelp-newslettermanage-example-2": "Отстранете издавач со корисничка назнака 5 од билтен со назнака 2.",
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|објави}} нов број на $3.",
 	"newsletter-list-table": "Филтрирај ја табелата по:",
 	"newsletter-list-section": "Пребарајте по билтените",
 	"newsletter-list-option-all": "Сите билтени",
