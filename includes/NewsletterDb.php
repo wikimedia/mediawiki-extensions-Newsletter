@@ -111,12 +111,12 @@ class NewsletterDb {
 	 */
 	public function deleteNewsletter( $id ) {
 		$dbw = $this->writeDb;
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
 		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
 		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
-		$dbw->commit( __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
 	}
 
 	/**
