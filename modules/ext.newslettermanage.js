@@ -5,9 +5,9 @@
 ( function ( $, mw ) {
 	'use strict';
 	var api = new mw.Api();
-	$( 'input[type=button]').click( function() {
-		var confirmBox = confirm("Are you certain you wish to remove this publisher?");
-		if (confirmBox === true) {
+	$( 'input[type=button]' ).click( function() {
+		var confirmBox = confirm( "Are you certain you wish to remove this publisher?" );
+		if ( confirmBox === true ) {
 			var remNewsletterId = this.name;
 			var publisherId = this.id;
 			var $that = $( this );
