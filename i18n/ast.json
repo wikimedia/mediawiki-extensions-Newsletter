@@ -5,7 +5,7 @@
 		]
 	},
 	"newslettercreate": "Crear boletinos",
-	"newslettercreate-text": "Esta páxina te permite crear un boletín nuevu. Va añadísete como editor y va suscribísete al boletín al crealu.",
+	"newslettercreate-text": "Esta páxina te permite crear un boletín nuevu. Va añadísete como editor y va suscribísete al boletín al crealu. Tolos campos son obligatorios.",
 	"newsletter-announce-button": "Anunciar",
 	"newsletter-announce-nopermission": "Nun yes un editor d'esti boletín.",
 	"newsletter-announce": "Anunciar una nueva edición de «$1»",
