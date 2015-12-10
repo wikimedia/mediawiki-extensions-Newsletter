@@ -114,6 +114,7 @@
 	"apihelp-newslettermanage-param-publisher": "Identificador do editor a xestionar.",
 	"apihelp-newslettermanage-example-1": "Engadir un editor con identificador 3 ó boletín con identificador 1.",
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
+	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
 	"newsletter-list-table": "Filtrar táboa por:",
 	"newsletter-list-section": "Buscar boletíns de novas",
 	"newsletter-list-option-all": "Todos os boletíns",
