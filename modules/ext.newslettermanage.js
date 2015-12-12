@@ -12,7 +12,7 @@
 			var publisherId = this.id;
 			var $that = $( this );
 
-			api.postWithToken( 'edit', {
+			api.postWithToken( 'csrf', {
 				action: 'newslettermanage',
 				publisher: publisherId,
 				id: remNewsletterId,

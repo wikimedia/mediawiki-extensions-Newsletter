@@ -7,7 +7,7 @@
 	function doAPIRequest( action, nlId ) {
 		var api = new mw.Api();
 
-		return api.postWithToken( 'edit', {
+		return api.postWithToken( 'csrf', {
 			action: 'newslettersubscribe',
 			id: nlId,
 			do: action
