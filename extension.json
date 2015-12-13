@@ -79,6 +79,19 @@
 				"newsletter-unsubscribe-success"
 			]
 		},
+		"ext.newsletter.delete": {
+			"scripts": "ext.newsletter.delete.js",
+			"position": "bottom",
+			"dependencies": [
+				"oojs-ui"
+			],
+			"messages": [
+				"newsletter-delete-confirmation",
+				"newsletter-delete-confirm-details",
+				"newsletter-delete-confirm-cancel",
+				"newsletter-delete-confirm-delete"
+			]
+		},
 		"ext.newsletter.styles": {
 			"position": "top",
 			"styles": "ext.newsletter.css"
