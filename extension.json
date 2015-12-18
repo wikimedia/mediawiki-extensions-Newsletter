@@ -74,6 +74,8 @@
 				"newsletter-unsubscribing",
 				"newsletter-subscribing",
 				"newsletter-subscribe-success",
+				"newsletter-subscribe-error",
+				"newsletter-unsubscribe-error",
 				"newsletter-unsubscribe-success"
 			]
 		},

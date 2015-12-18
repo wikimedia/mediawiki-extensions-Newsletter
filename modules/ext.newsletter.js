@@ -43,23 +43,30 @@
 			if ( $link.hasClass( 'newsletter-subscribed' ) ) {
 				// Currently subscribed so let them unsubscribe.
 				$link.text( mw.msg( 'newsletter-unsubscribing' ) );
-				// @todo Handle failures as well
 				promise = doAPIRequest( 'unsubscribe', newsletterId )
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'subscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) - 1 );
 						mw.notify( mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name ) );
+					} )
+					.fail( function ( data ) {
+						updateLinkAttribs( $link, 'unsubscribe' );
+						mw.notify( mw.msg( 'newsletter-unsubscribe-error' ), { type : 'error' } );
 					} );
 			} else {
 				// Not subscribed currently.
 				$link.text( mw.msg( 'newsletter-subscribing' ) );
-				// @todo Handle failures as well
 				promise = doAPIRequest( 'subscribe', newsletterId )
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'unsubscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) + 1 );
 						mw.notify( mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name ) );
+					} )
+					.fail( function ( data ) {
+						updateLinkAttribs( $link, 'subscribe' );
+						mw.notify( mw.msg( 'newsletter-subscribe-error' ), { type : 'error' } );
 					} );
+
 			}
 
 			promise.always( function () {
