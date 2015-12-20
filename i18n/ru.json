@@ -2,10 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Ghiutun",
-			"INS Pirat"
+			"INS Pirat",
+			"Metastasis"
 		]
 	},
 	"newsletter-desc": "Описание",
 	"newsletter-delete-button": "Удалить",
-	"newsletter-subscribe-button": "Подписаться"
+	"newsletter-subscribe-button": "Подписаться",
+	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",
+	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка."
 }
