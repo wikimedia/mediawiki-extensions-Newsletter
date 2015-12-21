@@ -17,6 +17,8 @@
 	"newsletter-manage-button": "Zarządzaj",
 	"newsletter-unsubscribe-button": "Zrezygnuj z subskrypcji",
 	"newsletter-subscribe-button": "Subskrybuj",
+	"newsletter-subscribe-error": "Podczas próby zapisania się na newsletter wystąpił błąd.",
+	"newsletter-unsubscribe-error": "Podczas próby wypisania się z newslettera wystąpił błąd.",
 	"newsletter-subscribe-button-label": "Tak",
 	"newsletter-unsubscribe-button-label": "Nie",
 	"newsletter-notification-link-text-view-newsletter": "Pokaż newsletter",
