@@ -1,0 +1,6 @@
+{
+	"preset": "wikimedia",
+	"requireVarDeclFirst": null,
+	"validateQuoteMarks": null,
+	"requireMultipleVarDecl": null
+}

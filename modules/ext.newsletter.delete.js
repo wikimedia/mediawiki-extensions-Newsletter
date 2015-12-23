@@ -4,7 +4,7 @@
  */
 ( function ( mw, $, OO ) {
 	'use strict';
-	$( '#newsletter-delete-button button' ).on( 'click', function( e ) {
+	$( '#newsletter-delete-button button' ).on( 'click', function ( e ) {
 		var messageDialog = new OO.ui.MessageDialog();
 		var windowManager = new OO.ui.WindowManager();
 
@@ -21,10 +21,10 @@
 				label: mw.msg( 'newsletter-delete-confirm-delete' ),
 				action: 'delete',
 				flags: [ 'primary', 'destructive' ]
-			}, ],
+			} ]
 		} )
-		.then( function( opened ) {
-			opened.then( function( closing, data ) {
+		.then( function ( opened ) {
+			opened.then( function ( closing, data ) {
 				if ( data && data.action === 'delete' ) {
 					// Clicked delete button - submit the form and do the deletion
 					$( '#newsletter-delete-form' ).submit();

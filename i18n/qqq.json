@@ -22,6 +22,7 @@
 	"newsletter-exist-error": "Error message to be displayed in [[Special:CreateNewsletter]] when trying to create a newsletter with same name as an existing newsletter",
 	"newsletter-addpublisherform-addpublisher-section": "Header of section in [[Special:ManageNewsletter]] which adds publishers",
 	"newslettercreate": "Name of [[Special:CreateNewsletter]]. This is used as the header on this page and shown in links to the page.",
+	"newslettercreate-text": "Introductory message shown on top of Special:CreateNewsletter.",
 	"newsletter-create-submit": "Label of submit button on [[Special:CreateNewsletter]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"newsletter-create-mainpage-error": "Error message shown on [[Special:CreateNewsletter]] if the page entered on main page field does not exist.",
