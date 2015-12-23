@@ -1,22 +1,20 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe"
+			"Macofe",
+			"Jaumeortola"
 		]
 	},
 	"newsletter-extension-desc": "Descripció",
 	"newsletter-desc": "Descripció",
-	"newsletter-frequency": "Freqüència",
 	"newsletter-publisher-username": "Nom d'usuari",
 	"newsletter-view-mainpage": "Pàgina principal:",
-	"newsletter-view-frequency": "Freqüència:",
 	"newsletter-view-description": "Descripció:",
 	"newsletter-delete-button": "Suprimeix",
 	"newsletter-subscribe-button-label": "Sí­",
 	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-header-description": "Descripció",
-	"newsletter-header-frequency": "Freqüència",
-	"newsletter-manage-header-publisher": "Coŀlaboradors",
+	"newsletter-manage-header-publisher": "Editors",
 	"newsletter-manage-header-permissions": "Permisos",
 	"newsletter-manage-header-action": "Acció"
 }
