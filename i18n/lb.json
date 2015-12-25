@@ -31,6 +31,7 @@
 	"newsletter-delete-success": "Newsletter $1 gouf geläscht.",
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",
 	"newsletter-subscribe-fail": "D'Newsletter \"$1\" konnt net abonnéiert ginn, well Dir se schonn abonnéiert hutt.",
+	"newsletter-subscribe-error": "Feeler  beim Abonnéiere vun der Newsletter.",
 	"newsletter-subscribe-ip-notallowed": "Loggt Iech w.e.g. a fir eng Newsletter z'abonnéieren.",
 	"newsletter-unsubscribe-error": "Feeler beim Ofbestelle vun der Newsletter.",
 	"newsletter-subscribe-button-label": "Jo",
