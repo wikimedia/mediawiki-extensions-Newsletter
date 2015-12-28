@@ -97,6 +97,8 @@
 	"newsletter-manage-header-action": "Aktion",
 	"newsletter-publisher-radiobutton-label": "Herausgeber",
 	"newsletter-dropdown-default-message": "Bitte einen Newsletter auswählen",
+	"newsletter-delete-confirmation": "Bist du sicher, dass du diesen Newsletter löschen möchtest?",
+	"newsletter-delete-confirm-delete": "Löschen",
 	"right-newsletter-create": "Newsletter erstellen",
 	"action-newsletter-create": "Newsletter zu erstellen",
 	"right-newsletter-delete": "Newsletter löschen",
