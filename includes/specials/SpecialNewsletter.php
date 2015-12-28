@@ -514,6 +514,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		$out->setPageTitle( $this->msg( 'newsletter-delete' ) );
+		$out->addModules( 'ext.newsletter.delete' ); // Adds confirmation dialog box
 
 		// @todo add reason field when logging is implemented
 		$form = $this->getHTMLForm( array(), array( $this, 'submitDeleteForm' ) );
@@ -521,6 +522,8 @@ class SpecialNewsletter extends SpecialPage {
 			$this->msg( 'newsletter-delete-text' )
 				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse()
 		);
+		$form->setId( 'newsletter-delete-form' );
+		$form->setSubmitID( 'newsletter-delete-button' );
 		$form->setSubmitTextMsg( 'newsletter-deletenewsletter-button' );
 		$form->setSubmitDestructive();
 
