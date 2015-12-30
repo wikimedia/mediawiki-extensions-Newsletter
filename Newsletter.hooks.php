@@ -33,11 +33,15 @@ class NewsletterHooks {
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			),
 			'presentation-model' => 'EchoNewsletterPresentationModel',
-			// 'formatter-class' => 'EchoNewsletterFormatter',
+			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
 			'title-params' => array( 'newsletter', 'title', 'agent' ),
 			'flyout-message' => 'newsletter-notification-flyout',
 			'payload' => array( 'summary' ),
+			'email-subject-message' => 'newsletter-email-subject',
+			'email-subject-params' => array( 'newsletter' ),
+			'email-body-batch-message' => 'newsletter-email-batch-body',
+			'email-body-batch-params' =>  array( 'newsletter' , 'agent' ),
 		);
 
 		return true;

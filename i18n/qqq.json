@@ -90,6 +90,8 @@
 	"newsletter-notification-flyout": "Used as a Echo notification flyout message when a new issue of a newsletter is announced. \n* $1 is the name of the newsletter.\n* $2 is title of the issue page.\n* $3 is the username of the user who announced the new issue.",
 	"newsletter-notification-link-text-new-issue": "Label of the primary link of the notification-newsletter-flyout, which on clicking navigates the user to the newly announced issue of a newsletter.",
 	"newsletter-notification-link-text-view-newsletter": "Label for button that links to the newsletter page.",
+	"newsletter-email-subject": "Text of the email subject when a new newsletter is announced Parameters:\n* $1 is the name of the newsletter.",
+	"newsletter-email-batch-body" : "First line of the email body when a new newsletter is announced Parameters:\n* $1 is the name of the newsletter.\n* $2 is the username of the user who announced the new issue.",
 	"newsletter-header-name": "Label of the newsletter name column of table in [[Special:Newsletters]] which lists the names of newsletters",
 	"newsletter-header-description": "Label of the description column of table in [[Special:Newsletters]] which displays a description about the newsletter\n{{Identical|Description}}",
 	"newsletter-header-action": "Label of the subscribe column of table in [[Special:Newsletters]] which provides radio buttons to subscribe/unsubscribe newsletters\n{{Identical|Subscribed}}",

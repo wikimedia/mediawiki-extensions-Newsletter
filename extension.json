@@ -60,7 +60,8 @@
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
 		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
-		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php"
+		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
+		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php"
 	},
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-newsletter": true,
