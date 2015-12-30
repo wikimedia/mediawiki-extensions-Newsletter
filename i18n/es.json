@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Macofe",
-			"Rafael.minuesa"
+			"Rafael.minuesa",
+			"Yllelder"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -95,6 +96,10 @@
 	"newsletter-manage-header-action": "Acción",
 	"newsletter-publisher-radiobutton-label": "Editor",
 	"newsletter-dropdown-default-message": "Selecciona uno",
+	"newsletter-delete-confirmation": "¿Estás seguro que quieres eliminar este boletín?",
+	"newsletter-delete-confirm-details": "Ten en cuenta que esta acción no es reversible y los datos no se podrán restaurar una vez hayan sido eliminados.",
+	"newsletter-delete-confirm-cancel": "Cancelar",
+	"newsletter-delete-confirm-delete": "Eliminar",
 	"right-newsletter-create": "Crear boletines",
 	"action-newsletter-create": "crear boletines",
 	"right-newsletter-delete": "Eliminar boletines",

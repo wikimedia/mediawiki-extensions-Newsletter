@@ -22,6 +22,8 @@
 	"newsletter-header-description": "Descrizione",
 	"newsletter-manage-header-permissions": "Permessi",
 	"newsletter-manage-header-action": "Azione",
+	"newsletter-delete-confirm-cancel": "Annulla",
+	"newsletter-delete-confirm-delete": "Cancella",
 	"right-newsletter-create": "Crea newsletter",
 	"action-newsletter-create": "creare newsletter",
 	"right-newsletter-delete": "Cancella newsletter",

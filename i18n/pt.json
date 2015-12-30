@@ -83,5 +83,9 @@
 	"newsletter-manage-header-action": "Ação",
 	"newsletter-publisher-radiobutton-label": "Editor",
 	"newsletter-dropdown-default-message": "Por favor, selecione um",
+	"newsletter-delete-confirmation": "Tem a certeza de que deseja eliminar este boletim?",
+	"newsletter-delete-confirm-details": "Esta ação é irreversível e os dados não podem ser restaurados depois de eliminados.",
+	"newsletter-delete-confirm-cancel": "Cancelar",
+	"newsletter-delete-confirm-delete": "Eliminar",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunciou}} uma nova edição de $3."
 }
