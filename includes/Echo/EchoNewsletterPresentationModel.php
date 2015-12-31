@@ -36,4 +36,9 @@ class EchoNewsletterPresentationModel extends EchoEventPresentationModel {
 		// Add the newsletter name
 		return $msg->params( $this->event->getExtraParam( 'newsletter-name' ) );
 	}
+
+	public function getBodyMessage() {
+		return $this->msg( 'notification-body-newsletter-announce' )
+			->params( $this->event->getExtraParam( 'section-text' ) );
+	}
 }
