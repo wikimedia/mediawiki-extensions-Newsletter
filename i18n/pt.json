@@ -68,7 +68,7 @@
 	"newsletter-none-found": "Não existem boletins informativos. Pode criar um novo em [[Special:CreateNewsletter]].",
 	"echo-category-title-newsletter": "Boletins informativos",
 	"echo-pref-tooltip-newsletter": "Notificar-me quando forem anunciadas novas edições para boletins informativos aos quais estou subscrito.",
-	"newsletter-notification-title": "[[User:$3|$3]] anunciou uma [[$2|nova edição]] de $1.",
+	"newsletter-notification-title": "[[User:$3|$3]] anunciou uma [[$2|nova edição]] de \"$1\".",
 	"newsletter-notification-flyout": "$3 anunciou uma nova edição de $1.",
 	"newsletter-notification-link-text-new-issue": "Ver nova edição",
 	"newsletter-notification-link-text-view-newsletter": "Ver boletim",

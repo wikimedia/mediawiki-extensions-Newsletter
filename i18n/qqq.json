@@ -99,7 +99,7 @@
 	"newsletter-new-publisher-confirmation": "Confirmation message displayed after a new publisher is added for a newsletter through the [[Special:ManageNewsletter]] page",
 	"newsletter-manage-header-name": "Label of the name column of table in [[Special:ManageNewsletter]] which lists the names of newsletters\n{{Identical|Newsletter}}",
 	"newsletter-manage-header-publisher": "Label of the publisher names column of table in [[Special:ManageNewsletter]] which lists the names of all publishers of a newsletter\n{{Identical|Publisher}}",
-	"newsletter-manage-header-permissions": "Label of the user roles column of table in [[Special:ManageNewsletter]] which lists the roles of a user\n{{Identical|Permission}}",
+	"newsletter-manage-header-permissions": "Label of the user roles column of table in [[Special:ManageNewsletter]] which lists the roles of a user",
 	"newsletter-manage-header-action": "{{Identical|Action}}",
 	"newsletter-publisher-radiobutton-label": "Label of radio button in 'Permissions' column in [[Special:ManageNewsletter]] which is checked if the user is a publisher of the newsletter\n{{Identical|Publisher}}",
 	"newsletter-dropdown-default-message": "Default option of drop down menus to select newsletters in [[Special:ManageNewsletter]].\n\nSee also:\n* {{msg-mw|Newsletter-name}} (label of the field)",

@@ -42,6 +42,7 @@
 	"newsletter-none-found": "Et gëtt keng Nesletteren. Dir kënnt eng nei Newsletter iwwer [[Special:CreateNewsletter]] uleeën.",
 	"echo-category-title-newsletter": "Newsletteren",
 	"newsletter-notification-link-text-view-newsletter": "Newsletter weisen",
+	"newsletter-email-subject": "Eng nei Ausgab vu(n) $1 gouf annoncéiert.",
 	"newsletter-email-batch-body": "$2 huet eng nei Ausgab vum $1 annoncéiert.",
 	"newsletter-header-name": "Numm vun der Newsletter",
 	"newsletter-header-description": "Beschreiwung",
