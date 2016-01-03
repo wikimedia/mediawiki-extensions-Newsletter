@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Arief"
+		]
+	},
+	"newsletter-email-subject": "Masalah baru $1 telah diumumkan.",
+	"newsletter-manage-header-permissions": "izin pengguna",
+	"newsletter-delete-confirmation": "Apakah Anda yakin ingin menghapus komentar ini?",
+	"newsletter-delete-confirm-details": "Perhatikan bahwa tindakan ini tidak reversibel dan data tidak dapat dikembalikan setelah telah dihapus.",
+	"newsletter-delete-confirm-cancel": "Batalkan",
+	"newsletter-delete-confirm-delete": "Hapus"
+}

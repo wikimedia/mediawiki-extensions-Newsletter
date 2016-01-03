@@ -1,18 +1,18 @@
 {
 	"@metadata": {
 		"authors": [
-			"Reza1615"
+			"Reza1615",
+			"GMozafarian"
 		]
 	},
 	"newsletter-desc": "توضیح",
-	"newsletter-frequency": "فرکانس",
 	"newsletter-publisher-username": "نام کاربری",
 	"newsletter-invalid-username-error": "نام کاربری نادرست",
 	"newsletter-subscribe-button-label": "بله",
 	"newsletter-unsubscribe-button-label": "خیر",
 	"newsletter-header-description": "توضیح",
-	"newsletter-header-frequency": "فرکانس",
 	"newsletter-manage-header-publisher": "مشارکت‌کنندگان",
+	"newsletter-manage-header-permissions": "اختیارات کاربر",
 	"newsletter-manage-header-action": "فعالیت",
 	"newsletter-publisher-radiobutton-label": "ناشر"
 }
