@@ -31,6 +31,8 @@
 	"newsletter-manage-header-action": "چاره",
 	"newsletter-publisher-radiobutton-label": "خپروونکی",
 	"newsletter-dropdown-default-message": "لطفاً يو وټاکئ",
+	"newsletter-delete-confirm-cancel": "ناگارل",
+	"newsletter-delete-confirm-delete": "ړنگول",
 	"right-newsletter-create": "خبرليکونه جوړول",
 	"action-newsletter-create": "خبرليکونه جوړول",
 	"action-newsletter-delete": "خبرليکونه ړنگول",
