@@ -35,13 +35,14 @@ class NewsletterHooks {
 			'presentation-model' => 'EchoNewsletterPresentationModel',
 			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
-			'title-params' => array( 'newsletter', 'title', 'agent' ),
+			'title-params' => array( 'newsletter', 'title', 'agent', 'name' ),
 			'flyout-message' => 'newsletter-notification-flyout',
+			'flyout-params' => array( 'newsletter', 'agent', 'name' ),
 			'payload' => array( 'summary' ),
 			'email-subject-message' => 'newsletter-email-subject',
 			'email-subject-params' => array( 'newsletter' ),
 			'email-body-batch-message' => 'newsletter-email-batch-body',
-			'email-body-batch-params' =>  array( 'newsletter' , 'agent' ),
+			'email-body-batch-params' =>  array( 'newsletter', 'agent', 'name' ),
 		);
 
 		return true;
