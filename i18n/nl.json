@@ -33,6 +33,8 @@
 	"newsletter-unsubscribing": "Aan het afmelden...",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
 	"newsletter-manage-header-publisher": "Uitgevers",
+	"newsletter-delete-confirm-cancel": "Annuleren",
+	"newsletter-delete-confirm-delete": "Verwijderen",
 	"right-newsletter-create": "Nieuwsbrieven aanmaken",
 	"action-newsletter-create": "nieuwsbrieven aanmaken",
 	"right-newsletter-delete": "Nieuwsbrieven verwijderen",
