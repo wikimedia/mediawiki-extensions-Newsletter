@@ -20,6 +20,8 @@
 	"newsletter-announce-invalid-page": "अंकाच्या पानासाठी कृपया वैध शीर्षक टाका.",
 	"newsletter-announce-nonexistent-page": "पुरविलेले अंकपान अस्तित्वात नाही.कृपया अस्तित्वात असलेले पान टाका.",
 	"newsletter-announce-failure": "नविन अंकाची घोषणा करता आली नाही. कृपया पुन्हा प्रयत्न करा.",
+	"newsletter-subscribe-error": "वार्तापत्राचे वर्गणीदार होण्यात त्रुटी.",
+	"newsletter-unsubscribe-error": "वार्तापत्राचे अ-वर्गणीदार होण्यात त्रुटी.",
 	"newsletter-subscribing": "वर्गणीदार होत आहे...",
 	"newsletter-list-search-none-found": "आपल्या पृच्छेशी कोणतीच वार्तापत्रे जुळत नाहीत.",
 	"newsletter-notification-link-text-view-newsletter": "वार्तापत्र पाहा",
