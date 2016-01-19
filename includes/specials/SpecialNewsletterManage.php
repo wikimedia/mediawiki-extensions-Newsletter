@@ -13,6 +13,10 @@ class SpecialNewsletterManage extends SpecialPage {
 		parent::__construct( 'NewsletterManage' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
