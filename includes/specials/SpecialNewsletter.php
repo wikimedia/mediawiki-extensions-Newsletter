@@ -22,6 +22,10 @@ class SpecialNewsletter extends SpecialPage {
 		parent::__construct( 'Newsletter' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	/**
 	 * @param string|null $par subpage parameter
 	 */
