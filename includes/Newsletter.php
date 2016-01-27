@@ -4,7 +4,7 @@
  * Class representing a newsletter
  *
  * @license GNU GPL v2+
- * @author Adam Shorland
+ * @author Addshore
  * @author Glaisher
  */
 class Newsletter {

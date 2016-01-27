@@ -2,7 +2,7 @@
 
 /**
  * @license GNU GPL v2+
- * @author Adam Shorland
+ * @author Addshore
  */
 class NewsletterDb {
 
