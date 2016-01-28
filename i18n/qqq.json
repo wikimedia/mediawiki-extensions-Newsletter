@@ -26,6 +26,7 @@
 	"newsletter-create-submit": "Label of submit button on [[Special:CreateNewsletter]]",
 	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
 	"newsletter-create-mainpage-error": "Error message shown on [[Special:CreateNewsletter]] if the page entered on main page field does not exist.",
+	"newsletter-create-short-description-error": "Error message shown on [[Special:CreateNewsletter]] if the text entered in the description field is too short.",
 	"newsletter-subtitlelinks-list": "Label for link to [[Special:Newsletters]] shown under the header on Newsletter special pages.\n\nSee also:\n* {{msg-mw|newsletter-subtitlelinks-create}}\n*{{msg-mw|newsletter-subtitlelinks-manage}}",
 	"newsletter-subtitlelinks-create": "Label for link to [[Special:CreateNewsletter]] shown under the header on Newsletter special pages.\n\nSee also:\n* {{msg-mw|newsletter-subtitlelinks-list}}\n*{{msg-mw|newsletter-subtitlelinks-manage}}",
 	"newsletter-subtitlelinks-manage": "Label for link to [[Special:ManageNewsletter]] shown under the header on Newsletter special pages.\n\nSee also:\n* {{msg-mw|newsletter-subtitlelinks-create}}\n*{{msg-mw|newsletter-subtitlelinks-list}}",

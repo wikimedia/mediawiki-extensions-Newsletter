@@ -22,6 +22,7 @@
 	"newsletter-create-submit": "Create newsletter",
 	"newsletter-create-confirmation": "A new newsletter has been successfully created. You can manage newsletters through [[Special:ManageNewsletter]].",
 	"newsletter-create-mainpage-error": "Invalid newsletter main page entered. Please try again.",
+	"newsletter-create-short-description-error": "The description is too short (less than 30 characters). Please try again.",
 	"newsletter-subtitlelinks-list": "List of newsletters",
 	"newsletter-subtitlelinks-create": "Create a new newsletter",
 	"newsletter-subtitlelinks-manage": "Manage newsletter",

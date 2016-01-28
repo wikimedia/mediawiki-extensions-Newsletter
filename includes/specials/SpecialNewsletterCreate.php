@@ -84,6 +84,10 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			( $articleId !== 0 ) &&
 			isset( $data['mainpage'] )
 		) {
+			if ( strlen ( $data['description'] ) < 30 ) {
+				return array( 'newsletter-create-short-description-error' );
+			}
+
 			$db = NewsletterDb::newFromGlobalState();
 
 			// nl_newsletters.nl_desc is a blob but put some limit
