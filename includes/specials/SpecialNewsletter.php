@@ -458,7 +458,8 @@ class SpecialNewsletter extends SpecialPage {
 					'section-text' => trim( $data['summary'] ),
 					'notifyAgent' => true,
 				),
-				'agent' => $this->getUser()
+				'agent' => $this->getUser(),
+				'name' => $this->getUser()->getName()
 			)
 		);
 
