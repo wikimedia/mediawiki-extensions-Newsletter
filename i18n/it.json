@@ -16,6 +16,7 @@
 	"newsletter-required-fields-error": "I campi obbligatori sono vuoti",
 	"newslettercreate": "Crea newsletter",
 	"newsletter-create-submit": "Crea newsletter",
+	"newsletter-create-short-description-error": "La descrizione è troppo breve (meno di 30 caratteri). Riprova.",
 	"newsletter-subtitlelinks-list": "Elenco delle newsletter",
 	"newsletter-subtitlelinks-create": "Crea una nuova newsletter",
 	"newsletter-subtitlelinks-manage": "Gestione newsletter",
