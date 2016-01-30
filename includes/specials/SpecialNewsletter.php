@@ -103,12 +103,11 @@ class SpecialNewsletter extends SpecialPage {
 		$user = $this->getUser();
 		$this->getOutput()->setPageTitle( $this->msg( 'newsletter-view' ) );
 
-		$html = $this->msg( 'newsletter-view-text' )->parseAsBlock();
 		if ( $user->isLoggedIn() ) {
 			// buttons are only shown for logged-in users
-			 $html .= $this->getNewsletterActionButtons();
+			 $html = $this->getNewsletterActionButtons();
+			 $this->getOutput()->addHTML( $html );
 		}
-		$this->getOutput()->addHTML( $html );
 
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
@@ -161,16 +160,6 @@ class SpecialNewsletter extends SpecialPage {
 			} // nothing to submit - the buttons on this page are just links
 		);
 
-		if ( $user->isLoggedIn() ) {
-			// Tell the current logged-in user whether they are subscribed or not
-			$form->addFooterText(
-				$this->msg(
-					$this->newsletter->isSubscribed( $user )
-						? 'newsletter-user-subscribed'
-						: 'newsletter-user-notsubscribed'
-				)->escaped()
-			);
-		}
 		$form->suppressDefaultSubmit();
 		$form->show();
 	}
