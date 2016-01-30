@@ -24,8 +24,8 @@ class SpecialNewsletters extends SpecialPage {
 		$out = $this->getOutput();
 		if ( $this->getUser()->isLoggedIn() ) {
 			// IPs cannot subscribe and these modules are only used for subscription functionality.
-			$out->addModuleStyles( 'ext.newsletter.styles' );
-			$out->addModules( 'ext.newsletter' );
+			$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
+			$out->addModules( 'ext.newsletter.newsletters' );
 		}
 
 		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );

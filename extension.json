@@ -68,8 +68,8 @@
 		"echo-subscriptions-email-newsletter": true
 	},
 	"ResourceModules": {
-		"ext.newsletter": {
-			"scripts": "ext.newsletter.js",
+		"ext.newsletter.newsletters": {
+			"scripts": "ext.newsletter.newsletters.js",
 			"position": "bottom",
 			"dependencies": [
 				"mediawiki.api"
@@ -98,12 +98,12 @@
 				"newsletter-delete-confirm-delete"
 			]
 		},
-		"ext.newsletter.styles": {
+		"ext.newsletter.newsletters.styles": {
 			"position": "top",
-			"styles": "ext.newsletter.css"
+			"styles": "ext.newsletter.newsletters.styles.css"
 		},
-		"ext.newslettermanage": {
-			"scripts": "ext.newslettermanage.js",
+		"ext.newsletter.manage": {
+			"scripts": "ext.newsletter.manage.js",
 			"dependencies": [
 				"mediawiki.api"
 			]
