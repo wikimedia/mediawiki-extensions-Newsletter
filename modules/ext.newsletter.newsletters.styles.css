@@ -1,27 +1,27 @@
 /**
- * Used on Special:Newsletters. We use the OOUI color scheme here. :)
+ * Used on Special:Newsletters.
  */
 
 .newsletter-subscribed,
 .newsletter-subscribed:link, .newsletter-subscribed:visited {
-	color: #D11D13;
+	color: #13385A;
 	font-weight: bold;
 }
 
 .newsletter-subscribed:hover, .newsletter-subscribed:active {
-    color: #8C130D;
-    text-decoration: none;
+	color: #0c1f30;
+	text-decoration: none;
 }
 
 .newsletter-unsubscribed,
 .newsletter-unsubscribed:link, .newsletter-unsubscribed:visited {
-	color: #00AF89;
+	color: #245e8f;
 	font-weight: bold;
 }
 
 .newsletter-unsubscribed:hover, .newsletter-unsubscribed:active {
-    color: #008064;
-    text-decoration: none;
+	color: #173d5d;
+	text-decoration: none;
 }
 
 .newsletter-link-disabled {

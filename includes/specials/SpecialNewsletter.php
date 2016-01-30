@@ -192,7 +192,6 @@ class SpecialNewsletter extends SpecialPage {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-delete-button' )->escaped(),
-					'flags' => array( 'destructive' ),
 					'icon' => 'remove',
 					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
 				)
@@ -203,7 +202,6 @@ class SpecialNewsletter extends SpecialPage {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
-					'flags' => array(),
 					'icon' => 'settings',
 					'href' => SpecialPage::getTitleFor( 'NewsletterManage' )->getFullURL()
 				)
@@ -214,7 +212,6 @@ class SpecialNewsletter extends SpecialPage {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-announce-button' )->escaped(),
-					'flags' => array( 'progressive' ),
 					'icon' => 'comment',
 					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				)
@@ -225,7 +222,7 @@ class SpecialNewsletter extends SpecialPage {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-unsubscribe-button' )->escaped(),
-					'flags' => array( 'primary', 'destructive' ),
+					'flags' => array( 'destructive' ),
 					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 				)
 			);
@@ -233,7 +230,7 @@ class SpecialNewsletter extends SpecialPage {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $this->msg( 'newsletter-subscribe-button' )->escaped(),
-					'flags' => array( 'primary', 'constructive' ),
+					'flags' => array( 'constructive' ),
 					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 				)
 			);
