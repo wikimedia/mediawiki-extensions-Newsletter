@@ -20,7 +20,7 @@ class SpecialNewsletterManage extends SpecialPage {
 	public function execute( $par ) {
 		$this->setHeaders();
 		$output = $this->getOutput();
-		$output->addModules( 'ext.newslettermanage' );
+		$output->addModules( 'ext.newsletter.manage' );
 		$output->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
 		$this->requireLogin();
 
