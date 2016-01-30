@@ -19,7 +19,6 @@ class SpecialNewsletters extends SpecialPage {
 
 	public function execute( $par ) {
 		$this->setHeaders();
-		$this->outputHeader();
 
 		$out = $this->getOutput();
 		if ( $this->getUser()->isLoggedIn() ) {
