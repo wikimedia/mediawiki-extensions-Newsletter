@@ -1,7 +1,17 @@
 /**
- * Used on Special:Newsletters.
+ * Stylesheet used on Special:Newsletters.
  */
 
+/**
+ * Hide the submit button for users with JS enabled as simply choosing from the dropdown
+ * submits the form for them. The associated JS code is located at ext.newsletter.newsletters
+ * module. This is done here instead of that module to prevent FOUCs.
+ */
+.client-js #mw-newsletter-filter-submit {
+	display: none;
+}
+
+/* Styling for "Subscribe/Unsubscribe" links */
 .newsletter-subscribed,
 .newsletter-subscribed:link, .newsletter-subscribed:visited {
 	color: #13385A;

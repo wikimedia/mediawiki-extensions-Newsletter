@@ -72,7 +72,8 @@
 			"scripts": "ext.newsletter.newsletters.js",
 			"position": "bottom",
 			"dependencies": [
-				"mediawiki.api"
+				"mediawiki.api",
+				"oojs-ui"
 			],
 			"messages": [
 				"newsletter-subscribe-button",
