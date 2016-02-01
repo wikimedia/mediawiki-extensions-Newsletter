@@ -17,13 +17,13 @@
 	 * Event handler for clicks on 'action' field link. Allows subscribing and unsubscribing
 	 * with a single click. The user is notified once the API request is done.
 	 */
-	function doAPIRequest( action, nlId ) {
+	function doAPIRequest( doAction, nlId ) {
 		var api = new mw.Api();
 
 		return api.postWithToken( 'csrf', {
 			action: 'newslettersubscribe',
 			id: nlId,
-			do: action
+			do: doAction
 		} );
 	}
 
@@ -41,8 +41,7 @@
 		$( 'a.newsletter-subscription' ).click( function ( event ) {
 			var promise,
 				$link = $( this ),
-				newsletterId = ( $link.prop( 'id' ) )
-					.substr( ( $link.prop( 'id' ) ).indexOf( '-' ) + 1 ),
+				newsletterId = $link.data( 'newsletter-id' ),
 				$subscriberCount = $( 'span#nl-count-' + newsletterId );
 
 			// Avoid double clicks while in progress .newsletter-link-disabled also helps with this
