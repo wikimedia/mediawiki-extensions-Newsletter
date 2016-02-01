@@ -59,8 +59,8 @@ class NewsletterDb {
 	 */
 	public function addPublisher( $userId, $newsletterId ) {
 		$rowData = array(
-			'nlp_newsletter_id' => $newsletterId,
-			'nlp_publisher_id' => $userId,
+			'nlp_newsletter_id' => (int)$newsletterId,
+			'nlp_publisher_id' => (int)$userId,
 		);
 		$this->writeDb->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
 
@@ -76,8 +76,8 @@ class NewsletterDb {
 	 */
 	public function removePublisher( $userId, $newsletterId ) {
 		$rowData = array(
-			'nlp_newsletter_id' => $newsletterId,
-			'nlp_publisher_id' => $userId,
+			'nlp_newsletter_id' => (int)$newsletterId,
+			'nlp_publisher_id' => (int)$userId,
 		);
 		$this->writeDb->delete( 'nl_publishers', $rowData, __METHOD__ );
 
