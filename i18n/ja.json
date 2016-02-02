@@ -64,7 +64,7 @@
 	"newsletter-none-found": "ニュースレターが存在しません。[[Special:CreateNewsletter]] で新しいニュースレターを作成することができます。",
 	"echo-category-title-newsletter": "ニュースレター",
 	"newsletter-notification-title": "[[User:$3|$3]] が「$1」の[[$2|新しい議題]]を{{GENDER:$4|アナウンスしています}}。",
-	"newsletter-notification-flyout": "$3 が$1の新しい議題を{{GENDER:$3|アナウンスしています}}。",
+	"newsletter-notification-flyout": "$2 が$1の新しい議題を{{GENDER:$3|アナウンスしています}}。",
 	"newsletter-notification-link-text-new-issue": "新しい議題を表示",
 	"newsletter-notification-link-text-view-newsletter": "ニュースレターを表示",
 	"newsletter-email-batch-body": "$2 が$1の新しい議題を{{GENDER:$3|アナウンスしています}}。",
