@@ -115,7 +115,7 @@
 	"apihelp-newslettermanage-example-1": "Fügt einen Herausgeber mit der Benutzerkennung 3 zu dem Newsletter mit der Kennung 1 hinzu.",
 	"apihelp-newslettermanage-example-2": "Entfernt den Herausgeber mit der Benutzerkennung 5 von dem Newsletter mit der Kennung 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|hat}} eine neue Ausgabe von $3 angekündigt.",
-	"newsletter-list-table": "Tabelle sortieren nach:",
+	"newsletter-list-table": "Sortieren nach:",
 	"newsletter-list-section": "Nach Newslettern suchen",
 	"newsletter-list-option-all": "Alle Newsletter",
 	"newsletter-list-option-subscribed": "Newsletter, die ich abonniert habe",
