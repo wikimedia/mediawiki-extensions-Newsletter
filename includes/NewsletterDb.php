@@ -6,16 +6,14 @@
  */
 class NewsletterDb {
 
-	private $readDb;
-	private $writeDb;
+	private $lb;
 
-	public function __construct( IDatabase $readDb, IDatabase $writeDb ) {
-		$this->readDb = $readDb;
-		$this->writeDb = $writeDb;
+	public function __construct( LoadBalancer $lb ) {
+		$this->lb = $lb;
 	}
 
 	public static function newFromGlobalState() {
-		return new self( wfGetDB( DB_SLAVE ), wfGetDB( DB_MASTER ) );
+		return new self( wfGetLB() );
 	}
 
 	/**
@@ -30,9 +28,10 @@ class NewsletterDb {
 			'nls_subscriber_id' => $userId,
 		);
 
-		$this->writeDb->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
 
-		return (bool)$this->writeDb->affectedRows();
+		return (bool)$dbw->affectedRows();
 	}
 
 	/**
@@ -46,9 +45,11 @@ class NewsletterDb {
 			'nls_newsletter_id' => $newsletterId,
 			'nls_subscriber_id' => $userId,
 		);
-		$this->writeDb->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 
-		return (bool)$this->writeDb->affectedRows();
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
+
+		return (bool)$dbw->affectedRows();
 	}
 
 	/**
@@ -62,9 +63,11 @@ class NewsletterDb {
 			'nlp_newsletter_id' => (int)$newsletterId,
 			'nlp_publisher_id' => (int)$userId,
 		);
-		$this->writeDb->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
 
-		return $this->writeDb->affectedRows() === 1;
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
+
+		return $dbw->affectedRows() === 1;
 
 	}
 
@@ -79,9 +82,11 @@ class NewsletterDb {
 			'nlp_newsletter_id' => (int)$newsletterId,
 			'nlp_publisher_id' => (int)$userId,
 		);
-		$this->writeDb->delete( 'nl_publishers', $rowData, __METHOD__ );
 
-		return $this->writeDb->affectedRows() === 1;
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
+
+		return $dbw->affectedRows() === 1;
 	}
 
 	/**
@@ -97,8 +102,10 @@ class NewsletterDb {
 			'nl_desc' => $description,
 			'nl_main_page_id' => $pageId,
 		);
+
 		try {
-			return $this->writeDb->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			$dbw = $this->lb->getConnection( DB_MASTER );
+			return $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
 		}
@@ -110,7 +117,7 @@ class NewsletterDb {
 	 * @todo make this more reliable and scalable
 	 */
 	public function deleteNewsletter( $id ) {
-		$dbw = $this->writeDb;
+		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
 		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
@@ -125,7 +132,8 @@ class NewsletterDb {
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public function getNewsletter( $id ) {
-		$res = $this->readDb->select(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$res = $dbr->select(
 			'nl_newsletters',
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nl_id' => $id ),
@@ -146,7 +154,9 @@ class NewsletterDb {
 	 * @return string[]
 	 */
 	public function getPublishersFromID( $id ) {
-		return $this->readDb->selectFieldValues(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		return $dbr->selectFieldValues(
 			'nl_publishers',
 			'nlp_publisher_id',
 			array( 'nlp_newsletter_id' => $id ),
@@ -160,7 +170,9 @@ class NewsletterDb {
 	 * @return string[]
 	 */
 	public function getSubscribersFromID( $id ) {
-		return $this->readDb->selectFieldValues(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		return $dbr->selectFieldValues(
 			'nl_subscriptions',
 			'nls_subscriber_id',
 			array( 'nls_newsletter_id' => $id ),
@@ -174,7 +186,9 @@ class NewsletterDb {
 	 * @return Newsletter
 	 */
 	public function getNewsletterForPageId( $id ) {
-		$res = $this->readDb->select(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$res = $dbr->select(
 			'nl_newsletters',
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nl_main_page_id' => $id ),
@@ -190,7 +204,9 @@ class NewsletterDb {
 	 * @return Newsletter[]
 	 */
 	public function getNewslettersUserIsPublisherOf( User $user ) {
-		$res = $this->readDb->select(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$res = $dbr->select(
 			array( 'nl_publishers', 'nl_newsletters' ),
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array( 'nlp_publisher_id' => $user->getId() ),
@@ -206,7 +222,9 @@ class NewsletterDb {
 	 * @return Newsletter[]
 	 */
 	public function getAllNewsletters() {
-		$res = $this->readDb->select(
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$res = $dbr->select(
 			array( 'nl_newsletters' ),
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
 			array(),
@@ -255,7 +273,9 @@ class NewsletterDb {
 	 */
 	public function addNewsletterIssue( $newsletterId, $pageId, $publisherId ) {
 		// Note: the writeDb is used as this is used in the next insert
-		$lastIssueId = $this->writeDb->selectRowCount(
+		$dbw = $this->lb->getConnection( DB_MASTER );
+
+		$lastIssueId = $dbw->selectRowCount(
 			'nl_issues',
 			array( 'nli_issue_id' ),
 			array( 'nli_newsletter_id' => $newsletterId ),
@@ -269,7 +289,7 @@ class NewsletterDb {
 			'nli_publisher_id' => $publisherId,
 		);
 		try {
-			return $this->writeDb->insert( 'nl_issues', $rowData, __METHOD__ );
+			return $dbw->insert( 'nl_issues', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			return false;
 		}
