@@ -30,8 +30,10 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
+		$success = (bool)$dbw->affectedRows();
+		$this->lb->reuseConnection( $dbw );
 
-		return (bool)$dbw->affectedRows();
+		return $success;
 	}
 
 	/**
@@ -48,8 +50,10 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
+		$success = (bool)$dbw->affectedRows();
+		$this->lb->reuseConnection( $dbw );
 
-		return (bool)$dbw->affectedRows();
+		return $success;
 	}
 
 	/**
@@ -66,8 +70,10 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
+		$success = (bool)$dbw->affectedRows();
+		$this->lb->reuseConnection( $dbw );
 
-		return $dbw->affectedRows() === 1;
+		return $success;
 
 	}
 
@@ -85,8 +91,10 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
+		$success = (bool)$dbw->affectedRows();
+		$this->lb->reuseConnection( $dbw );
 
-		return $dbw->affectedRows() === 1;
+		return $success;
 	}
 
 	/**
@@ -103,12 +111,16 @@ class NewsletterDb {
 			'nl_main_page_id' => $pageId,
 		);
 
+
+		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
-			$dbw = $this->lb->getConnection( DB_MASTER );
-			return $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			$success = $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
-			return false;
+			$success = false;
 		}
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
 	}
 
 	/**
@@ -124,6 +136,7 @@ class NewsletterDb {
 		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
 		$dbw->endAtomic( __METHOD__ );
+		$this->lb->reuseConnection( $dbw );
 	}
 
 	/**
@@ -139,6 +152,7 @@ class NewsletterDb {
 			array( 'nl_id' => $id ),
 			__METHOD__
 		);
+		$this->lb->reuseConnection( $dbr );
 
 		if ( $res->numRows() === 0 ) {
 			return null;
@@ -156,12 +170,15 @@ class NewsletterDb {
 	public function getPublishersFromID( $id ) {
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
-		return $dbr->selectFieldValues(
+		$result = $dbr->selectFieldValues(
 			'nl_publishers',
 			'nlp_publisher_id',
 			array( 'nlp_newsletter_id' => $id ),
 			__METHOD__
 		);
+		$this->lb->reuseConnection( $dbr );
+
+		return $result;
 	}
 
 	/**
@@ -172,12 +189,15 @@ class NewsletterDb {
 	public function getSubscribersFromID( $id ) {
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
-		return $dbr->selectFieldValues(
+		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
 			'nls_subscriber_id',
 			array( 'nls_newsletter_id' => $id ),
 			__METHOD__
 		);
+		$this->lb->reuseConnection( $dbr );
+
+		return $result;
 	}
 
 	/**
@@ -194,6 +214,7 @@ class NewsletterDb {
 			array( 'nl_main_page_id' => $id ),
 			__METHOD__
 		);
+		$this->lb->reuseConnection( $dbr );
 
 		return $this->getNewsletterFromRow( $res->current() );
 	}
@@ -214,6 +235,7 @@ class NewsletterDb {
 			array(),
 			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=nlp_newsletter_id' ) )
 		);
+		$this->lb->reuseConnection( $dbr );
 
 		return $this->getNewslettersFromResult( $res );
 	}
@@ -230,6 +252,7 @@ class NewsletterDb {
 			array(),
 			__METHOD__
 		);
+		$this->lb->reuseConnection( $dbr );
 
 		return $this->getNewslettersFromResult( $res );
 	}
@@ -289,8 +312,11 @@ class NewsletterDb {
 			'nli_publisher_id' => $publisherId,
 		);
 		try {
-			return $dbw->insert( 'nl_issues', $rowData, __METHOD__ );
+			$success = $dbw->insert( 'nl_issues', $rowData, __METHOD__ );
+			$this->lb->reuseConnection( $dbw );
+			return $success;
 		} catch ( DBQueryError $ex ) {
+			$this->lb->reuseConnection( $dbw );
 			return false;
 		}
 	}
