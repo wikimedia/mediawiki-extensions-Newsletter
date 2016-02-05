@@ -1,9 +1,22 @@
-/**
- * Used on Special:Newsletters. Event handler for link clicks on 'action' field.
+/*!
+ * Used on Special:Newsletters.
  */
 ( function ( mw, $ ) {
 	'use strict';
 
+	/**
+	 * Choosing an option on the dropdown will submit the form without actually clicking
+	 * the button. The button is hidden for users on ext.newsletter.newsletters.styles
+	 * which is loaded on load time (instead of runtime unlike this module) to prevent FOUCs.
+	 */
+	OO.ui.infuse( 'mw-newsletter-filter-options' ).on( 'change', function () {
+		$( '#mw-newsletter-filter-form' ).submit();
+	} );
+
+	/**
+	 * Event handler for clicks on 'action' field link. Allows subscribing and unsubscribing
+	 * with a single click. The user is notified once the API request is done.
+	 */
 	function doAPIRequest( action, nlId ) {
 		var api = new mw.Api();
 

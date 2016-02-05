@@ -40,6 +40,8 @@ class SpecialNewsletters extends SpecialPage {
 			$this->getFormFields(),
 			$this->getContext()
 		);
+		$filterTableForm->setId( 'mw-newsletter-filter-form' );
+		$filterTableForm->setSubmitId( 'mw-newsletter-filter-submit' );
 		$filterTableForm->setMethod( 'get' );
 		$filterTableForm->setSubmitProgressive();
 		$filterTableForm->setSubmitTextMsg( 'newsletter-list-go-button' );
@@ -68,6 +70,7 @@ class SpecialNewsletters extends SpecialPage {
 	private function getFormFields() {
 		return array(
 			'filter' => array(
+				'id' => 'mw-newsletter-filter-options',
 				'type' => 'select',
 				'name' => 'filter',
 				'label-message' => 'newsletter-list-table',
