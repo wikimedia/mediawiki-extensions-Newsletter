@@ -6,6 +6,9 @@
  */
 class NewsletterDb {
 
+	/**
+	 * @var LoadBalancer
+	 */
 	private $lb;
 
 	public function __construct( LoadBalancer $lb ) {
