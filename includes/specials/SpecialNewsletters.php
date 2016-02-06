@@ -45,7 +45,6 @@ class SpecialNewsletters extends SpecialPage {
 		$filterTableForm->setMethod( 'get' );
 		$filterTableForm->setSubmitProgressive();
 		$filterTableForm->setSubmitTextMsg( 'newsletter-list-go-button' );
-		$filterTableForm->setWrapperLegendMsg( 'newsletter-list-section' );
 
 		$pager = new NewsletterTablePager();
 		$pager->setUserOption( $this->option );
