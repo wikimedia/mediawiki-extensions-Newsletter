@@ -11,6 +11,13 @@
 	display: none;
 }
 
+/**
+ * The default dropdown is rather wide so we'll make it a bit small to make it look nicer.
+ */
+#mw-newsletter-filter-options {
+	width: 40%;
+}
+
 /* Styling for "Subscribe/Unsubscribe" links */
 .newsletter-subscribed,
 .newsletter-subscribed:link, .newsletter-subscribed:visited {

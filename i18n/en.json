@@ -122,7 +122,6 @@
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|has announced}} a new issue of $3.",
 	"notification-body-newsletter-announce": "$1",
 	"newsletter-list-table": "Filter by: ",
-	"newsletter-list-section":  "Search for newsletters",
 	"newsletter-list-option-all": "All newsletters",
 	"newsletter-list-option-subscribed": "Newsletters I am subscribed to",
 	"newsletter-list-option-unsubscribed": "Newsletters I am not subscribed to",
