@@ -87,5 +87,6 @@
 	"newsletter-delete-confirm-details": "Esta ação é irreversível e os dados não podem ser restaurados depois de eliminados.",
 	"newsletter-delete-confirm-cancel": "Cancelar",
 	"newsletter-delete-confirm-delete": "Eliminar",
-	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunciou}} uma nova edição de $3."
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunciou}} uma nova edição de $3.",
+	"newsletter-list-table": "Filtrar por:"
 }

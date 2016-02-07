@@ -86,6 +86,6 @@
 	"apihelp-newslettersubscribe-example-1": "id 1 でニュースレターを購読する。",
 	"apihelp-newslettersubscribe-example-2": "id 2 でニュースレターから退会する。",
 	"apihelp-newslettermanage-description": "ニュースレターを管理。",
-	"newsletter-list-section": "ニュースレターを検索する",
+	"newsletter-list-table": "絞り込み条件:",
 	"newsletter-list-option-all": "すべてのニュースレター"
 }

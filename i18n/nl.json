@@ -45,7 +45,7 @@
 	"apihelp-newslettersubscribe-param-do": "Uit te voeren handeling. Moet <kbd>subscribe</kbd> of <kbd>unsubscribe</kbd> zijn.",
 	"apihelp-newslettersubscribe-example-1": "Abonneren op de nieuwsbrief met ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Uitschrijven voor de nieuwsbrief met ID 2.",
-	"newsletter-list-table": "Tabel filteren op:",
+	"newsletter-list-table": "Filteren op:",
 	"newsletter-list-option-all": "Alle nieuwsbrieven",
 	"newsletter-list-option-subscribed": "Nieuwsbrieven waarop ik ben geabonneerd",
 	"newsletter-list-option-unsubscribed": "Nieuwsbrieven waarop ik nog niet ben geabonneerd",

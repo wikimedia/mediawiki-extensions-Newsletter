@@ -107,7 +107,6 @@
 	"action-newsletter-manage": "xestionar boletinos",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunció}} un nuevu númberu de $3.",
 	"newsletter-list-table": "Filtriar la tabla por:",
-	"newsletter-list-section": "Buscar boletinos",
 	"newsletter-list-option-all": "Tolos boletinos",
 	"newsletter-list-option-subscribed": "Boletinos a los que toi soscritu",
 	"newsletter-list-option-unsubscribed": "Boletinos a los que nun toi soscritu",

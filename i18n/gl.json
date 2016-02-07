@@ -122,7 +122,6 @@
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
 	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
 	"newsletter-list-table": "Filtrar por:",
-	"newsletter-list-section": "Buscar boletíns de novas",
 	"newsletter-list-option-all": "Todos os boletíns",
 	"newsletter-list-option-subscribed": "Boletíns ós que estou subscrito",
 	"newsletter-list-option-unsubscribed": "Boletín de novas Non estou subscrito a",
