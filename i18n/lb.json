@@ -57,7 +57,7 @@
 	"apihelp-newslettersubscribe-description": "Abonnéieren oder ofmelle vun enger Newsletter.",
 	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
 	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",
-	"newsletter-list-table": "Tabell filteren no:",
+	"newsletter-list-table": "Filteren no:",
 	"newsletter-list-option-all": "Alle Newsletteren",
 	"newsletter-list-option-subscribed": "Newsletteren op déi ech abonnéiert sinn",
 	"newsletter-list-go-button": "Lass"
