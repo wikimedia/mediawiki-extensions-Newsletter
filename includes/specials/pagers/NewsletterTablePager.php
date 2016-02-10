@@ -89,7 +89,7 @@ class NewsletterTablePager extends TablePager {
 			case 'nl_desc':
 				return $wgContLang->truncate( htmlspecialchars( $value ), 644 );
 			case 'subscriber_count':
-				return HTML::element(
+				return Html::element(
 					'span',
 					array( 'id' => "nl-count-$id" ),
 					$this->mCurrentRow->subscribers
