@@ -54,9 +54,7 @@
 		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
-		"SpecialNewsletterManage": "includes/specials/SpecialNewsletterManage.php",
 		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
-		"NewsletterManageTablePager": "includes/specials/pagers/NewsletterManageTablePager.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
 		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
@@ -102,12 +100,6 @@
 		"ext.newsletter.newsletters.styles": {
 			"position": "top",
 			"styles": "ext.newsletter.newsletters.styles.css"
-		},
-		"ext.newsletter.manage": {
-			"scripts": "ext.newsletter.manage.js",
-			"dependencies": [
-				"mediawiki.api"
-			]
 		}
 	},
 	"ResourceFileModulePaths": {

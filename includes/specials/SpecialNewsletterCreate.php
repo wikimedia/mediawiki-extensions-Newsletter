@@ -122,6 +122,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	}
 
 	public function onSuccess() {
+		// @todo Link to corresponding Special:Newsletter page
 		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 	}
 

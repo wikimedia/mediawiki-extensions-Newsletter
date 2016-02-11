@@ -17,9 +17,9 @@ class NewsletterLinksGenerator {
 		$pages = array(
 			'list' => 'Newsletters',
 			'create' => 'NewsletterCreate',
-			'manage' => 'NewsletterManage',
 		);
 
+		// @todo Don't show create link if the user doesn't have appropriate permissions
 		$links = array();
 		foreach ( $pages as $txt => $title ) {
 			// 'newsletter-subtitlelinks-list'
