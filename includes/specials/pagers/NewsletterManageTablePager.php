@@ -74,7 +74,7 @@ class NewsletterManageTablePager extends TablePager {
 				return htmlspecialchars( User::newFromId( $value )->getName() );
 
 			case 'permissions' :
-				return HTML::element(
+				return Html::element(
 						'input',
 						array(
 							'type' => 'checkbox',
@@ -86,7 +86,7 @@ class NewsletterManageTablePager extends TablePager {
 
 			case 'action':
 				if ( $isPublisher || $this->getUser()->isAllowed( 'newsletter-manage' ) ) {
-					return HTML::element(
+					return Html::element(
 						'input',
 						array(
 							'type' => 'button',
