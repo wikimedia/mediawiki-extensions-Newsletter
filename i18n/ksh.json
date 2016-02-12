@@ -40,7 +40,7 @@
 	"newsletter-none-found": "Et sinn-er kein Rondschrihve doh. mer kann e neu Rondschrihve aanlähje övver di Sigg [[Special:CreateNewsletter]]. ",
 	"echo-category-title-newsletter": "Rondschrihve",
 	"echo-pref-tooltip-newsletter": "Lohß mesch wesse, wann eneu Ußjahb aanjkondesch weed för e Rondschrihve, wadd_esch em Abonnemang han.",
-	"newsletter-notification-title": "{{GENDER:[[User:$3|$3]]|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$3|$3]] hädd_en neu Ußjahb aanjeköndesch. <!--  https://translatewiki.net/wiki/Thread:Support/About_MediaWiki:Newsletter-notification-title/en -->",
+	"newsletter-notification-title": "{{GENDER:$4|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$3|$3]] hädd_en [[$2|neuje Ußjahb]] vum Rondschrihve „$1“ aanjeköndesch.",
 	"newsletter-notification-flyout": "{{GENDER:$3|Dä|Dat|Dä Metmaacher|De|Dat}} $3 hädd_en neu Ußjahb aanjeköndesch",
 	"newsletter-notification-link-text-new-issue": "Donn de neuje Ußjahb belohre",
 	"newsletter-email-subject": "En neuje Ußjahv vum $1 es aanjeköndesch woode.",
@@ -60,7 +60,6 @@
 	"right-newsletter-delete": "Rondschrihve fottschmiiße",
 	"action-newsletter-delete": "Rondschrihve fottzeschmiiße",
 	"action-newsletter-manage": "Rondschrihve ze verwallde",
-	"newsletter-list-section": "Noh Rondschrihve söhke",
 	"newsletter-list-option-all": "Alle Rondschrihve",
 	"newsletter-list-option-unsubscribed": "Rondschrihve, woh esch keij Abbonnemang vun han",
 	"newsletter-list-go-button": "Lohß jonn!"
