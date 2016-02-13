@@ -36,7 +36,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'type' => 'text',
 				'required' => true,
 				'label-message' => 'newsletter-name',
-				'maxlength' => 50
+				'maxlength' => 120
 			),
 			'description' => array(
 				'type' => 'textarea',
@@ -47,7 +47,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			),
 			'mainpage' => array(
 				'type' => 'title',
-				'exists' => true,
 				'required' => true,
 				'label-message' => 'newsletter-title',
 			),
@@ -57,17 +56,47 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	/**
 	 * Do input validation, error handling and create a new newletter.
 	 *
-	 * @param array $data The data entered by user in the form
-	 * @return bool|array true on success, array on error
+	 * @param array $input The data entered by user in the form
+	 * @throws ThrottledError
+	 * @return Status
 	 */
-	public function onSubmit( array $data ) {
+	public function onSubmit( array $input ) {
 		global $wgContLang;
 
-		$mainTitle = Title::newFromText( $data['mainpage'] );
-		if ( !$mainTitle ) {
-			// HTMLTitleTextField should do validation but we can't be sure about
-			// it so let's check again here - otherwise this may throw fatals below
-			return array( 'newsletter-create-mainpage-error' );
+		$data = array(
+			'Name' => trim( $input['name'] ),
+			'Description' => trim( $input['description'] ),
+			'MainPage' => Title::newFromText( $input['mainpage'] ),
+		);
+
+		$validator = new NewsletterValidator( $data );
+		$validation = $validator->validate();
+		if ( !$validation->isGood() ) {
+			// Invalid input was entered
+			return $validation;
+		}
+
+		$mainPageId = $data['MainPage']->getArticleID();
+
+		$dbr = wfGetDB( DB_SLAVE );
+		$rows = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_name', 'nl_main_page_id' ),
+			$dbr->makeList(
+				array(
+					'nl_name' => $data['Name'],
+					'nl_main_page_id' => $mainPageId,
+				 ),
+				 LIST_OR
+			)
+		);
+		// Check whether another existing newsletter has the same name or main page
+		foreach( $rows as $row ) {
+			if ( $row->nl_name === $data['Name'] ) {
+				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
+			} elseif ( (int)$row->nl_main_page_id === $mainPageId ) {
+				return Status::newFatal( 'newsletter-mainpage-in-use' );
+			}
 		}
 
 		$user = $this->getUser();
@@ -77,55 +106,25 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
-		$articleId = $mainTitle->getArticleId();
-
-		if ( isset( $data['name'] ) &&
-			isset( $data['description'] ) &&
-			( $articleId !== 0 ) &&
-			isset( $data['mainpage'] )
-		) {
-			if ( strlen ( $data['description'] ) < 30 ) {
-				return array( 'newsletter-create-short-description-error' );
-			}
-
-			$db = NewsletterDb::newFromGlobalState();
-
+		$ndb = NewsletterDb::newFromGlobalState();
+		$newsletterCreated = $ndb->addNewsletter(
+			$data['Name'],
 			// nl_newsletters.nl_desc is a blob but put some limit
-			// here which is less than max size for blobs
-			$description = $wgContLang->truncate( trim( $data['description'] ), 600000 );
+			// here which is less than the max size for blobs
+			$wgContLang->truncate( $data['Description'], 600000 ),
+			$mainPageId
+		);
 
-			$newsletterAdded = $db->addNewsletter(
-				trim( $data['name'] ),
-				$description,
-				$articleId
-			);
+		if ( $newsletterCreated ) {
+			$newsletter = $ndb->getNewsletterForPageId( $mainPageId );
+			$this->onPostCreation( $newsletter->getId(), $user->getId() );
 
-			if ( !$newsletterAdded ) {
-				// @todo FIXME: This shouldn't be thrown for main page key collisions
-				return array( 'newsletter-exist-error' );
-			}
-
-			$newsletter = $db->getNewsletterForPageId( $articleId );
-
-			$this->autoSubscribe( $newsletter->getId(), $user->getId() );
-
-			return true;
+			return Status::newGood();
 		}
 
-		// Could not insert - newsletter by this name already exists
-		return array( 'newsletter-exist-error' );
-
+		// Couldn't insert to the DB..
+		return Status::newFatal( 'newsletter-create-error' );
 	}
-
-	protected function getDisplayFormat() {
-		return 'ooui';
-	}
-
-	public function onSuccess() {
-		// @todo Link to corresponding Special:Newsletter page
-		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
-	}
-
 
 	/**
 	 * Automatically subscribe and add creator as publisher of the newsletter
@@ -133,10 +132,18 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @param int $newsletterId Id of the newsletter
 	 * @param int $userID User Id of the publisher
 	 */
-	private function autoSubscribe( $newsletterId, $userID ) {
+	private function onPostCreation( $newsletterId, $userID ) {
 		$db = NewsletterDb::newFromGlobalState();
 		$db->addPublisher( $userID, $newsletterId );
 		$db->addSubscription( $userID, $newsletterId );
 	}
 
+	public function onSuccess() {
+		// @todo Link to corresponding Special:Newsletter page
+		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+	}
+
+	protected function getDisplayFormat() {
+		return 'ooui';
+	}
 }
