@@ -8,10 +8,11 @@
 class SpecialNewsletter extends SpecialPage {
 
 	/** Subpage actions */
+	const NEWSLETTER_ANNOUNCE = 'announce';
+	const NEWSLETTER_DELETE = 'delete';
+	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
-	const NEWSLETTER_DELETE = 'delete';
-	const NEWSLETTER_ANNOUNCE = 'announce';
 
 	/**
 	 * @var Newsletter|null
@@ -60,6 +61,9 @@ class SpecialNewsletter extends SpecialPage {
 				case self::NEWSLETTER_ANNOUNCE:
 					$this->doAnnounceExecute();
 					break;
+				case self::NEWSLETTER_MANAGE:
+				    $this->doManageExecute();
+				    break;
 				case self::NEWSLETTER_DELETE:
 					$this->doDeleteExecute();
 					break;
@@ -93,6 +97,16 @@ class SpecialNewsletter extends SpecialPage {
 		$form->setSubmitCallback( $submit );
 
 		return $form;
+	}
+
+	/**
+	 * We need the escaped newsletter name several times so
+	 * extract the method here.
+	 *
+	 * @return string
+	 */
+	protected function getEscapedName() {
+		return htmlspecialchars( $this->newsletter->getName() );
 	}
 
 	/**
@@ -192,7 +206,7 @@ class SpecialNewsletter extends SpecialPage {
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
 					'icon' => 'settings',
-					'href' => SpecialPage::getTitleFor( 'NewsletterManage' )->getFullURL()
+					'href' =>  $this->getPageTitle( $id . '/' . self::NEWSLETTER_MANAGE )->getFullURL()
 				)
 			);
 		}
@@ -282,7 +296,7 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->isSubscribed( $this->getUser() ) ) {
 			// User is subscribed so show the unsubscribe form
 			$txt = $this->msg( 'newsletter-subscribe-text' )
-				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse();
+				->rawParams( $this->getEscapedName() )->parse();
 			$button = array(
 				'unsubscribe' => array(
 					'type' => 'submit',
@@ -295,7 +309,7 @@ class SpecialNewsletter extends SpecialPage {
 		} else {
 			// Show the subscribe form if the user is not subscribed currently
 			$txt = $this->msg( 'newsletter-subscribe-text' )
-				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse();
+				->rawParams( $this->getEscapedName() )->parse();
 			$button = array(
 				'subscribe' => array(
 					'type' => 'submit',
@@ -312,6 +326,38 @@ class SpecialNewsletter extends SpecialPage {
 		$form->suppressDefaultSubmit();
 		$form->show();
 		$this->getOutput()->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
+	}
+
+	/**
+	 * Submit callback for subscribe form.
+	 * @throws Exception
+	 * @return Status
+	 */
+	public function submitSubscribeForm() {
+		$request = $this->getRequest();
+		$user = $this->getUser();
+
+		if ( $request->getCheck( 'subscribe' ) ) {
+			$status = $this->newsletter->subscribe( $user );
+			$action = 'subscribe';
+		} elseif ( $request->getCheck( 'unsubscribe' ) ) {
+			$status = $this->newsletter->unsubscribe( $user );
+			$action = 'unsubscribe';
+		} else {
+			throw new Exception( 'POST data corrupted or required parameter missing from request' );
+		}
+
+		if ( $status->isGood() ) {
+			// @todo We could probably do this in a better way
+			// Add the success message if the action was successful
+			// Messages used: 'newsletter-subscribe-success', 'newsletter-unsubscribe-success'
+			$this->getOutput()->addHTML(
+				$this->msg( "newsletter-$action-success" )
+					->rawParams( $this->getEscapedName() )->parse()
+			);
+		}
+
+		return $status;
 	}
 
 	/**
@@ -343,7 +389,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		$out->setPageTitle(
 			$this->msg( 'newsletter-announce' )
-				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
+				->rawParams( $this->getEscapedName() )
 		);
 
 		$fields = array(
@@ -376,7 +422,7 @@ class SpecialNewsletter extends SpecialPage {
 			// Success!
 			$out->addHTML(
 				$this->msg( 'newsletter-announce-success' )
-					->rawParams( htmlspecialchars( $this->newsletter->getName() ) )
+					->rawParams( $this->getEscapedName() )
 					->numParams( $this->newsletter->getSubscriberCount() )
 					->parseAsBlock()
 			);
@@ -454,38 +500,6 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * Submit callback for subscribe form.
-	 * @throws Exception
-	 * @return Status
-	 */
-	public function submitSubscribeForm() {
-		$request = $this->getRequest();
-		$user = $this->getUser();
-
-		if ( $request->getCheck( 'subscribe' ) ) {
-			$status = $this->newsletter->subscribe( $user );
-			$action = 'subscribe';
-		} elseif ( $request->getCheck( 'unsubscribe' ) ) {
-			$status = $this->newsletter->unsubscribe( $user );
-			$action = 'unsubscribe';
-		} else {
-			throw new Exception( 'POST data corrupted or required parameter missing from request' );
-		}
-
-		if ( $status->isGood() ) {
-			// @todo We could probably do this in a better way
-			// Add the success message if the action was successful
-			// Messages used: 'newsletter-subscribe-success', 'newsletter-unsubscribe-success'
-			$this->getOutput()->addHTML(
-				$this->msg( "newsletter-$action-success" )
-					->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse()
-			);
-		}
-
-		return $status;
-	}
-
-	/**
 	 * Build the delete form for Special:Newsletter/$id/delete
 	 * Only newsletter publishers have access to this form currently.
 	 */
@@ -511,7 +525,7 @@ class SpecialNewsletter extends SpecialPage {
 		$form = $this->getHTMLForm( array(), array( $this, 'submitDeleteForm' ) );
 		$form->addHeaderText(
 			$this->msg( 'newsletter-delete-text' )
-				->rawParams( htmlspecialchars( $this->newsletter->getName() ) )->parse()
+				->rawParams( $this->getEscapedName() )->parse()
 		);
 		$form->setId( 'newsletter-delete-form' );
 		$form->setSubmitID( 'newsletter-delete-button' );
@@ -535,6 +549,151 @@ class SpecialNewsletter extends SpecialPage {
 		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $id );
 
 		return true;
+	}
+
+    /**
+	 * Build the manage form for Special:Newsletter/$id/manage. This does
+	 * permissions and read-only checks too.
+	 *
+	 * @throws UserBlockedError
+	 * @throws PermissionsError
+	 */
+	protected function doManageExecute() {
+		$user = $this->getUser();
+		$out = $this->getOutput();
+
+		$this->checkReadOnly();
+
+		if ( $user->isBlocked() ) {
+			throw new UserBlockedError( $user->getBlock() );
+		}
+
+		if ( !$this->newsletter->canManage( $user ) ) {
+			throw new PermissionsError( 'newsletter-manage' );
+		}
+
+		$out->setPageTitle(
+			$this->msg( 'newsletter-manage' )
+				->rawParams( $this->getEscapedName() )
+		);
+
+		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
+		$publishersNames = array();
+		foreach ( $publishers as $publisher ) {
+			$publishersNames[] = $publisher->getName();
+		}
+
+		$fields['Publishers'] = array(
+			'type' => 'textarea',
+			'label-message' => 'newsletter-manage-publishers',
+			'rows' => 10,
+			'default' => implode( "\n", $publishersNames ),
+		);
+		$fields['Confirm'] = array(
+			'type' => 'hidden',
+			'default' => false,
+		);
+		if ( $this->getRequest()->wasPosted() ) {
+			// @todo Make this work properly for double submissions
+			$fields['Confirm']['default'] = true;
+		}
+		$form = $this->getHTMLForm(
+			$fields,
+			array( $this, 'submitManageForm' )
+		);
+		$form->addHeaderText(
+			$this->msg( 'newsletter-manage-text' )
+				->rawParams( $this->getEscapedName() )->parse()
+		);
+		$form->setId( 'newsletter-manage-form' );
+		$form->setSubmitID( 'newsletter-manage-button' );
+		$form->setSubmitTextMsg( 'newsletter-managenewsletter-button' );
+		$form->show();
+	}
+
+	/**
+	 * Submit callback for the manage form.
+	 *
+	 * @todo Move most of this code out of SpecialNewsletter class
+	 * @param array $data
+	 *
+	 * @return Status|bool true on success, Status fatal otherwise
+	 */
+    public function submitManageForm( array $data ) {
+		$confirmed = (bool)$data['Confirm'];
+		$lines = explode( "\n", $data['Publishers'] );
+		// Strip whitespace, then remove blank lines and duplicates
+		$lines = array_unique( array_filter( array_map( 'trim', $lines ) ) );
+
+		// Ask for confirmation before removing all the publishers
+		if ( !$confirmed && count( $lines ) === 0 ) {
+			return Status::newFatal( 'newsletter-manage-no-publishers' );
+		}
+
+		/** @var User[] $newPublishers */
+		$newPublishers = array();
+		foreach ( $lines as $publisherName ) {
+			$user = User::newFromName( $publisherName );
+			if ( !$user || !$user->getId() ) {
+				// Input contains an invalid username
+				return Status::newFatal( 'newsletter-manage-invalid-publisher', $publisherName );
+			}
+			$newPublishers[] = $user;
+		}
+
+		$oldPublishersIds = $this->newsletter->getPublishers();
+		$newPublishersIds = self::getIdsFromUsers( $newPublishers );
+
+		// Confirm whether the current user (if already a publisher)
+		// wants to be removed from the publishers group
+		$user = $this->getUser();
+		if ( !$confirmed
+			&& $this->newsletter->isPublisher( $user )
+			&& !in_array( $user->getId(), $newPublishersIds )
+		) {
+			return Status::newFatal( 'newsletter-manage-remove-self-publisher' );
+		}
+
+		// Do the actual modifications now
+		$added = array_diff( $newPublishersIds, $oldPublishersIds );
+		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
+		$ndb = NewsletterDb::newFromGlobalState();
+		$newsletterId = $this->newsletter->getId();
+		// @todo Do this in a batch..
+		foreach ( $added as $auId ) {
+			$ndb->addPublisher( $auId, $newsletterId );
+		}
+		foreach ( $removed as $ruId ) {
+			$ndb->removePublisher( $ruId, $newsletterId );
+		}
+
+		// Now report to the user
+		$out = $this->getOutput();
+		if ( $added || $removed ) {
+			$out->addWikiMsg( 'newsletter-manage-publishers-success' );
+		} else {
+			// Submitted without any changes to the existing publishers
+			$out->addWikiMsg( 'newsletter-manage-publishers-nochanges' );
+		}
+		$out->addReturnTo( $this->getPageTitle( $newsletterId ) );
+
+		return true;
+    }
+
+	/**
+	 * Helper function for submitManageForm() to get user IDs from an array
+	 * of User objects because we need to do comparison. This is not related
+	 * to this class at all. :-/
+	 *
+	 * @param User[] $users
+	 * @return int[]
+	 */
+    private static function getIdsFromUsers( $users ) {
+		$ids = array();
+		foreach ( $users as $user ) {
+			$ids[] = $user->getId();
+		}
+		return $ids;
 	}
 
 	/**
