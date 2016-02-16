@@ -30,7 +30,6 @@
 	},
 	"SpecialPages": {
 		"NewsletterCreate": "SpecialNewsletterCreate",
-		"NewsletterManage": "SpecialNewsletterManage",
 		"Newsletters": "SpecialNewsletters",
 		"Newsletter": "SpecialNewsletter"
 	},
