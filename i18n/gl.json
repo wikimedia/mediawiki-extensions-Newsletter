@@ -45,6 +45,7 @@
 	"newsletter-announce-invalid-page": "Por favor, indique un título válido para a páxina do número.",
 	"newsletter-announce-nonexistent-page": "Non existe a páxina do número indicado. Por favor, escriba unha páxina existente.",
 	"newsletter-announce-failure": "Non se puido anunciar un novo número. Inténteo de novo.",
+	"newsletter-managenewsletter-button": "Enviar",
 	"newsletter-delete": "Eliminar boletín",
 	"newsletter-delete-text": "Esta interface pode usarse para eliminar o boletín \"$1\". Confirme que quere facer isto. <strong>Esta acción non se pode desfacer.</strong>",
 	"newsletter-deletenewsletter-button": "Eliminar este boletín",

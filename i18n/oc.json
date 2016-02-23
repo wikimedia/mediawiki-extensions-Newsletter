@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jfblanc"
+			"Jfblanc",
+			"Cedric31"
 		]
 	},
-	"newsletter-list-table": "Filtrar per:"
+	"newsletter-list-table": "Filtrar per :"
 }
