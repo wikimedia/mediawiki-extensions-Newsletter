@@ -69,15 +69,77 @@ class SpecialNewsletter extends SpecialPage {
 					break;
 				default:
 					$this->doViewExecute();
+					$action = null;
 					break;
 			}
+
+			$out->addSubtitle( $this->getNavigationLinks( $action ) );
 
 		} else {
 			// Just show an error message if we couldn't find a newsletter
 			$out->showErrorPage( 'newsletter-notfound', 'newsletter-not-found-id' );
 		}
 
-		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
+	}
+
+	/**
+	 * Get the navigation links shown in the subtitle
+	 *
+	 * @param string|null $current subpage currently being shown, null if default "view" page
+	 */
+	protected function getNavigationLinks( $current ) {
+		$listLink = Linker::linkKnown(
+			SpecialPage::getTitleFor( 'Newsletters' ),
+			$this->msg( 'backlinksubtitle',
+				$this->msg( 'newsletter-subtitlelinks-list' )->text()
+			)->escaped()
+		);
+		if ( $current === null ) {
+			// We've the fancy buttons on the default "view" page so don't
+			// add redundant navigation links and fast return here
+			return $listLink;
+		}
+
+		// Build the links taking the current user's access levels into account
+		$user = $this->getUser();
+		$actions = array();
+		if ( $user->isLoggedIn() ) {
+			$actions[] = $this->newsletter->isSubscribed( $user )
+				? self::NEWSLETTER_UNSUBSCRIBE
+				: self::NEWSLETTER_SUBSCRIBE;
+		}
+		if ( $this->newsletter->isPublisher( $user ) ) {
+			$actions[] = self::NEWSLETTER_ANNOUNCE;
+		}
+		if ( $this->newsletter->canManage( $user ) ) {
+			$actions[] = self::NEWSLETTER_MANAGE;
+		}
+		if ( $this->newsletter->canDelete( $user ) ) {
+			$actions[] = self::NEWSLETTER_DELETE;
+		}
+
+		$links = array();
+		foreach ( $actions as $action ) {
+			$title = $this->getPageTitle( $this->newsletter->getId() . '/' . $action );
+			// Messages used here: 'newsletter-subtitlelinks-announce',
+			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
+			// 'newsletter-subtitlelinks-manage', 'newsletter-subtitlelinks-delete'
+			$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
+			if ( $current === $action ) {
+				$links[] = Linker::makeSelfLinkObj( $title, $msg );
+			} else {
+				$links[] = Linker::linkKnown( $title, $msg );
+			}
+		}
+
+		$newsletterLinks = Linker::linkKnown(
+			$this->getPageTitle( $this->newsletter->getId() ),
+			$this->getEscapedName()
+		) . ' ' . $this->msg( 'parentheses' )
+			->rawParams( $this->getLanguage()->pipeList( $links ) )
+			->escaped();
+
+		return $this->getLanguage()->pipeList( array( $listLink, $newsletterLinks ) );
 	}
 
 	/**

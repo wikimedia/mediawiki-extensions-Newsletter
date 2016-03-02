@@ -21,7 +21,15 @@ class SpecialNewsletters extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
-		$out->setSubtitle( NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() ) );
+		$user = $this->getUser();
+
+		if ( $user->isAllowed( 'newsletter-create' ) ) {
+			$createLink = Linker::linkKnown(
+				SpecialPage::getTitleFor( 'NewsletterCreate' ),
+				$this->msg( 'newsletter-subtitlelinks-create' )->escaped()
+			);
+			$out->setSubtitle( $createLink );
+		}
 
 		$this->option = $this->getRequest()->getVal( 'filter', 'all' );
 		$filtered = $this->option === 'subscribed' || $this->option === 'unsubscribed';
@@ -31,7 +39,7 @@ class SpecialNewsletters extends SpecialPage {
 		}
 
 		$formHtml = '';
-		if ( $this->getUser()->isLoggedIn() ) {
+		if ( $user->isLoggedIn() ) {
 			// Filter form and resource modules needed for logged-in users only
 			$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
 			$out->addModules( 'ext.newsletter.newsletters' );

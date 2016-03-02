@@ -16,7 +16,10 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$this->requireLogin();
 		parent::execute( $par );
 		$this->getOutput()->setSubtitle(
-			NewsletterLinksGenerator::getSubtitleLinks( $this->getContext() )
+			Linker::linkKnown(
+				SpecialPage::getTitleFor( 'Newsletters' ),
+				$this->msg( 'newsletter-subtitlelinks-list' )->escaped()
+			)
 		);
 	}
 

@@ -50,7 +50,6 @@
 		"NewsletterDb": "includes/NewsletterDb.php",
 		"NewsletterHooks": "Newsletter.hooks.php",
 		"NewsletterValidator": "includes/NewsletterValidator.php",
-		"NewsletterLinksGenerator": "includes/specials/NewsletterLinksGenerator.php",
 		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
