@@ -146,6 +146,10 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
