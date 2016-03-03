@@ -21,7 +21,7 @@
 	"newslettercreate": "Name of [[Special:CreateNewsletter]]. This is used as the header on this page and shown in links to the page.",
 	"newslettercreate-text": "Introductory message shown on top of Special:CreateNewsletter.",
 	"newsletter-create-submit": "Label of submit button on [[Special:CreateNewsletter]]",
-	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter",
+	"newsletter-create-confirmation": "Confirmation message displayed after creation of a newsletter. $1 - ID of the newsletter to be used for linking to Special:Newsletter.",
 	"newsletter-create-mainpage-error": "Error message shown on [[Special:CreateNewsletter]] if the page entered on main page field does not exist.",
 	"newsletter-mainpage-non-existent": "Error message shown if the newsletter main page doesn't exist.",
 	"newsletter-mainpage-in-use": "Error message shown if the newsletter's main page is already in use by another newsletter.",
