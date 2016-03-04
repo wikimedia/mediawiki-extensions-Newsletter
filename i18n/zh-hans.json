@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226"
+			"Liuxinyu970226",
+			"Liang860908"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",
@@ -22,6 +23,11 @@
 	"newsletter-create-short-description-error": "描述太短（少于30个字符）。请重试。",
 	"newsletter-subtitlelinks-list": "新闻报列表",
 	"newsletter-subtitlelinks-create": "创建一个新的新闻报",
+	"newsletter-subtitlelinks-unsubscribe": "取消订阅",
+	"newsletter-subtitlelinks-subscribe": "订阅",
+	"newsletter-subtitlelinks-announce": "通告",
+	"newsletter-subtitlelinks-manage": "管理",
+	"newsletter-subtitlelinks-delete": "删除",
 	"newsletters": "新闻报",
 	"newsletter-subscribe-loginrequired": "请登录以订阅[[Special:Newsletters|新闻报]]。",
 	"newsletter-notfound": "找不到新闻报",

@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Rafael.minuesa",
-			"Yllelder"
+			"Yllelder",
+			"Idontknow"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -24,6 +25,11 @@
 	"newsletter-create-short-description-error": "La descripción es demasiado corta (menos de 30 caracteres). Inténtalo de nuevo.",
 	"newsletter-subtitlelinks-list": "Lista de boletines",
 	"newsletter-subtitlelinks-create": "Crear un boletín nuevo",
+	"newsletter-subtitlelinks-unsubscribe": "desuscribirse",
+	"newsletter-subtitlelinks-subscribe": "suscribirse",
+	"newsletter-subtitlelinks-announce": "anunciar",
+	"newsletter-subtitlelinks-manage": "gestionar",
+	"newsletter-subtitlelinks-delete": "eliminar",
 	"newsletters": "Boletines",
 	"newsletter-subscribe-loginrequired": "Inicia sesión para suscribirte a [[Special:Newsletters|boletines]].",
 	"newsletter-notfound": "Boletín no encontrado",
@@ -88,7 +94,7 @@
 	"newsletter-list-search-none-found": "Ningún boletín coincide con tu consulta.",
 	"echo-category-title-newsletter": "Boletines",
 	"echo-pref-tooltip-newsletter": "Notificarme cuando cualquiera de los boletines a los que me he suscrito anuncia una edición nueva.",
-	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|ha anunciado}} una [[$2|edición nueva]] de \"$1\".",
+	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|ha anunciado}} una [[$2|edición nueva]] del boletín \"$1\".",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ha anunciado}} una edición nueva de $1.",
 	"newsletter-notification-link-text-new-issue": "Ver edición nueva",
 	"newsletter-notification-link-text-view-newsletter": "Ver boletín",
