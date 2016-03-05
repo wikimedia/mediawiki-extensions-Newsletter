@@ -1,18 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Aftabuzzaman"
+			"Aftabuzzaman",
+			"Bodhisattwa"
 		]
 	},
 	"newsletter-extension-desc": "বিবরণ",
 	"newsletter-desc": "বিবরণ",
-	"newsletter-publisher-username": "ব্যবহারকারী নাম",
-	"newsletter-invalid-username-error": "অগ্রহণযোগ্য ব্যবহারকারী নাম",
+	"newsletter-subtitlelinks-delete": "অপসারণ",
 	"newsletter-subscribe-button-label": "হ্যাঁ",
 	"newsletter-unsubscribe-button-label": "না",
-	"newsletter-header-description": "বিবরণ",
-	"newsletter-manage-header-publisher": "প্রকাশক",
-	"newsletter-manage-header-permissions": "অনুমতি",
-	"newsletter-manage-header-action": "কার্য",
-	"newsletter-publisher-radiobutton-label": "প্রকাশক"
+	"newsletter-header-description": "বিবরণ"
 }

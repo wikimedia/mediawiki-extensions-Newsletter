@@ -5,11 +5,14 @@
 			"Hugo.arg"
 		]
 	},
+	"newsletter-subtitlelinks-subscribe": "prenumeruoti",
+	"newsletter-subtitlelinks-announce": "pranešti",
+	"newsletter-subtitlelinks-manage": "valdyti",
+	"newsletter-subtitlelinks-delete": "trinti",
 	"newsletter-subscribe-loginrequired": "Prašome prisijungti jei norite užsisakyti [[Specialus:Naujienlaiškiai|naujienlaiškius]].",
 	"newsletter-notfound": "Naujienlaiškis nerastas:",
 	"newsletter-not-found-id": "Naujienlaiškis su šiuo ID neegzistuoja.",
 	"newsletter-view": "Peržiūrėti naujienlaiškio detales",
-	"newsletter-user-subscribed": "Jūs esate užsiprenumeravęs šį naujienlaiškį.",
 	"newsletter-view-name": "Naujienlaiškio pavadinimas:",
 	"newsletter-view-mainpage": "Pagrindinis puslapis:",
 	"newsletter-view-description": "Aprašymas:",

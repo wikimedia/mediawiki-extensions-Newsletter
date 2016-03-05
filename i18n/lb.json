@@ -13,6 +13,8 @@
 	"newsletter-create-confirmation": "Eng nei Newsletter gouf gemaacht.",
 	"newsletter-subtitlelinks-list": "Lëscht vun Newsletteren",
 	"newsletter-subtitlelinks-create": "Eng nei Newsletter uleeën",
+	"newsletter-subtitlelinks-manage": "Newsletter geréieren",
+	"newsletter-subtitlelinks-delete": "läschen",
 	"newsletter-notfound": "Newsletter net fonnt",
 	"newsletter-not-found-id": "Eng Newsletter mat dëser Nummer (ID) gëtt et net.",
 	"newsletter-view": "Detailer vun der Newsletter weisen",
