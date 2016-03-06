@@ -4,7 +4,8 @@
 			"Revi",
 			"Hwangjy9",
 			"고솜",
-			"Macofe"
+			"Macofe",
+			"HDNua"
 		]
 	},
 	"newsletter-extension-desc": "뉴스레터를 만들고 배포할 수 있도록 함",
@@ -14,6 +15,11 @@
 	"newslettercreate": "뉴스레터 만들기",
 	"newsletter-create-submit": "뉴스레터 만들기",
 	"newsletter-create-confirmation": "새 뉴스레터가 만들어졌습니다.",
+	"newsletter-subtitlelinks-unsubscribe": "구독 해지",
+	"newsletter-subtitlelinks-subscribe": "구독",
+	"newsletter-subtitlelinks-announce": "알림",
+	"newsletter-subtitlelinks-manage": "관리",
+	"newsletter-subtitlelinks-delete": "삭제",
 	"newsletter-view-name": "뉴스레터 제목:",
 	"newsletter-view-mainpage": "대문:",
 	"newsletter-view-description": "설명:",

@@ -2,20 +2,21 @@
 	"@metadata": {
 		"authors": [
 			"WikiPhoenix",
-			"Fader"
+			"Fader",
+			"Rockyfelle"
 		]
 	},
-	"newslettermanage": "Hantera nyhetsbrev",
 	"newsletter-name": "Nyhetsbrevets namn",
 	"newsletter-desc": "Beskrivning",
-	"newsletter-publisher-username": "Användarnamn",
-	"newsletter-invalid-username-error": "Ogiltigt användarnamn",
 	"newslettercreate": "Skapa nyhetsbrev",
 	"newsletter-create-submit": "Skapa nyhetsbrev",
 	"newsletter-create-short-description-error": "Beskrivningen är för kort (mindre än tecken). Försök igen.",
 	"newsletter-subtitlelinks-list": "Lista över nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Skapa ett nytt nyhetsbrev",
-	"newsletter-subtitlelinks-manage": "Hantera nyhetsbrev",
+	"newsletter-subtitlelinks-unsubscribe": "av-prenumerera",
+	"newsletter-subtitlelinks-subscribe": "prenumerare",
+	"newsletter-subtitlelinks-manage": "Hantera",
+	"newsletter-subtitlelinks-delete": "ta bort",
 	"newsletters": "Nyhetsbrev",
 	"newsletter-subscribe-loginrequired": "Logga in för att prenumerera på [[Special:Newsletters|nyhetsbrev]].",
 	"newsletter-notfound": "Nyhetsbrevet hittades inte",
@@ -42,8 +43,6 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|har meddelat}} ett nytt problem på $1.",
 	"newsletter-notification-link-text-view-newsletter": "Visa nyhetsbrev",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|har meddelat}} ett nytt fel för $1.",
-	"newsletter-manage-header-publisher": "Utgivare",
-	"newsletter-dropdown-default-message": "Var god välj en",
 	"right-newsletter-create": "Skapa nyhetsbrev",
 	"action-newsletter-create": "skapa nyhetsbrev",
 	"right-newsletter-delete": "Radera nyhetsbrev",
