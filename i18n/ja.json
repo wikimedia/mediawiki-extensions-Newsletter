@@ -3,7 +3,8 @@
 		"authors": [
 			"Sujiniku",
 			"Otokoume",
-			"2nd-player"
+			"2nd-player",
+			"Ridmevo"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -17,6 +18,8 @@
 	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",
 	"newsletter-subtitlelinks-list": "ニュースレターの一覧",
 	"newsletter-subtitlelinks-create": "新たなニュースレターの作成",
+	"newsletter-subtitlelinks-unsubscribe": "購読解除",
+	"newsletter-subtitlelinks-subscribe": "購読",
 	"newsletter-subtitlelinks-announce": "アナウンス",
 	"newsletter-subtitlelinks-manage": "管理",
 	"newsletter-subtitlelinks-delete": "削除",

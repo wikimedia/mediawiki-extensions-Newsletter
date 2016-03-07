@@ -7,6 +7,8 @@
 		]
 	},
 	"newsletter-desc": "الوصف",
+	"newsletter-subtitlelinks-unsubscribe": "ألغ الاشتراك",
+	"newsletter-subtitlelinks-subscribe": "اشترك",
 	"newsletter-subtitlelinks-announce": "إعلان",
 	"newsletter-subtitlelinks-manage": "إدارة",
 	"newsletter-subtitlelinks-delete": "احذف",
