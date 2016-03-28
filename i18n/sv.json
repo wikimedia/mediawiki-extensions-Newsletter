@@ -6,8 +6,12 @@
 			"Rockyfelle"
 		]
 	},
+	"newsletter-extension-desc": "Låter användare publicera och prenumerera på nyhetsbrev",
 	"newsletter-name": "Nyhetsbrevets namn",
 	"newsletter-desc": "Beskrivning",
+	"newsletter-title": "Rubriken för huvudsidan",
+	"newsletter-exist-error": "Ett nyhetsbrev med namnet \"$1\" finns redan. Prova ett annat namn.",
+	"newsletter-create-error": "Ett fel uppstod när ett nytt nyhetsbrev skulle skapas. Försök igen.",
 	"newslettercreate": "Skapa nyhetsbrev",
 	"newsletter-create-submit": "Skapa nyhetsbrev",
 	"newsletter-create-short-description-error": "Beskrivningen är för kort (mindre än tecken). Försök igen.",
@@ -31,9 +35,12 @@
 	"newsletter-unsubscribe-button": "Sluta prenumerera",
 	"newsletter-subscribe-button": "Prenumerera",
 	"newsletter-announce-nopermission": "Du är inte utgivare för detta nyhetsbrev.",
+	"newsletter-manage": "Hantera nyhetsbrevet \"$1\"",
+	"newsletter-managenewsletter-button": "Skicka",
 	"newsletter-delete": "Radera nyhetsbrev",
 	"newsletter-deletenewsletter-button": "Radera denna nyhetsbrev",
 	"newsletter-do-subscribe": "Prenumerera på detta nyhetsbrev",
+	"newsletter-subscribe-ip-notallowed": "Logga in för att prenumerera på ett nyhetsbrev.",
 	"newsletter-subscribe-button-label": "Ja",
 	"newsletter-unsubscribe-button-label": "Nej",
 	"newsletter-subscribing": "Prenumererar...",
@@ -43,6 +50,11 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|har meddelat}} ett nytt problem på $1.",
 	"newsletter-notification-link-text-view-newsletter": "Visa nyhetsbrev",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|har meddelat}} ett nytt fel för $1.",
+	"newsletter-header-description": "Beskrivning",
+	"newsletter-header-subscriber_count": "Antal prenumeranter",
+	"newsletter-delete-confirmation": "Är du säker på att du vill ta bort detta nyhetsbrev?",
+	"newsletter-delete-confirm-cancel": "Avbryt",
+	"newsletter-delete-confirm-delete": "Radera",
 	"right-newsletter-create": "Skapa nyhetsbrev",
 	"action-newsletter-create": "skapa nyhetsbrev",
 	"right-newsletter-delete": "Radera nyhetsbrev",
@@ -52,5 +64,6 @@
 	"newsletter-list-table": "Filtrera efter:",
 	"newsletter-list-option-all": "Alla nyhetsbrev",
 	"newsletter-list-option-subscribed": "Nyhetsbrev jag prenumererar på",
-	"newsletter-list-option-unsubscribed": "Nyhetsbrev jag inte prenumererar på"
+	"newsletter-list-option-unsubscribed": "Nyhetsbrev jag inte prenumererar på",
+	"newsletter-list-go-button": "Gå"
 }
