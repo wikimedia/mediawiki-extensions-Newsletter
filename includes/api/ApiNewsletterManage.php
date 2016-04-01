@@ -34,9 +34,9 @@ class ApiNewsletterManage extends ApiBase {
 		$success = false;
 		$action = $params['do'];
 		if ( $action === 'addpublisher' ) {
-			$success = $ndb->addPublisher( $publisher->getId(), $params['id'] );
+			$success = $ndb->addPublisher( $newsletter, $publisher );
 		} elseif ( $action === 'removepublisher' ) {
-			$success = $ndb->removePublisher( $publisher->getId(), $params['id'] );
+			$success = $ndb->removePublisher( $newsletter, $publisher );
 		}
 
 		if ( !$success ) {

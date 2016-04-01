@@ -531,11 +531,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		// Everything seems okay. Let's try to do it for real now.
 		$db = NewsletterDb::newFromGlobalState();
-		$success = $db->addNewsletterIssue(
-			$this->newsletter->getId(),
-			$title->getArticleId(),
-			$this->getUser()->getId()
-		);
+		$success = $db->addNewsletterIssue( $this->newsletter, $title, $this->getUser() );
 
 		if ( !$success ) {
 			// DB insert failed. :( so don't create an Echo event and stop from here
@@ -606,14 +602,14 @@ class SpecialNewsletter extends SpecialPage {
 	 * @return bool
 	 */
 	public function submitDeleteForm() {
-		$id = $this->newsletter->getId();
-		NewsletterDb::newFromGlobalState()->deleteNewsletter( $id );
-		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $id );
+		NewsletterDb::newFromGlobalState()->deleteNewsletter( $this->newsletter );
+		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
 
 		return true;
 	}
 
-        /**
+	/**
+	 * Implement logging for newsletter actions
 	 * Build the manage form for Special:Newsletter/$id/manage. This does
 	 * permissions and read-only checks too.
 	 *
@@ -797,9 +793,10 @@ class SpecialNewsletter extends SpecialPage {
 		$added = array_diff( $newPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
 
+		$ndb = NewsletterDb::newFromGlobalState();
 		// @todo Do this in a batch..
 		foreach ( $added as $auId ) {
-			$ndb->addPublisher( $auId, $newsletterId );
+			$ndb->addPublisher( $this->newsletter, User::newFromId( $auId ) );
 		}
 
 		if ( $added ) {
@@ -817,7 +814,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		foreach ( $removed as $ruId ) {
-			$ndb->removePublisher( $ruId, $newsletterId );
+			$ndb->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
 		}
 
 		// Now report to the user
@@ -831,7 +828,7 @@ class SpecialNewsletter extends SpecialPage {
 		$out->addReturnTo( $this->getPageTitle( $newsletterId ) );
 
 		return true;
-    }
+	}
 
 	/**
 	 * Helper function for submitManageForm() to get user IDs from an array
@@ -841,7 +838,7 @@ class SpecialNewsletter extends SpecialPage {
 	 * @param User[] $users
 	 * @return int[]
 	 */
-    private static function getIdsFromUsers( $users ) {
+	private static function getIdsFromUsers( $users ) {
 		$ids = array();
 		foreach ( $users as $user ) {
 			$ids[] = $user->getId();

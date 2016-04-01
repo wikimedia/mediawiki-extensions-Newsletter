@@ -137,5 +137,12 @@
 	"newsletter-list-go-button": "Go",
 	"newsletter-notification-link-text-new-publisher": "Manage newsletter",
 	"newsletter-notification-new-publisher-title": "You have been added as a publisher of $1 newsletter.",
-	"newsletter-notification-new-publisher-flyout": "You are now a publisher of $1 newsletter."
+	"newsletter-notification-new-publisher-flyout": "You are now a publisher of $1 newsletter.",
+	"log-name-newsletter": "Newsletter log",
+	"log-description-newsletter": "This is a log of changes made to newsletters.",
+	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|added}} {{GENDER:$6|$3}} as a publisher on newsletter $4",
+	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|removed}} {{GENDER:$6|$3}} as a publisher on newsletter $4",
+	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|created}} newsletter $4",
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|deleted}} newsletter $4",
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|published}} a new issue of newsletter $4"
 }

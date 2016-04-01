@@ -22,18 +22,15 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $userId
-	 * @param int $newsletterId
+	 * @param Newsletter $newsletter
+	 * @param User $user
 	 *
 	 * @return bool success of the action
 	 */
-	public function addSubscription( $userId, $newsletterId ) {
-		Assert::parameterType( 'integer', $userId, '$userId' );
-		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
-
+	public function addSubscription( Newsletter $newsletter, User $user ) {
 		$rowData = array(
-			'nls_newsletter_id' => $newsletterId,
-			'nls_subscriber_id' => $userId,
+			'nls_newsletter_id' => $newsletter->getId(),
+			'nls_subscriber_id' => $user->getId(),
 		);
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
@@ -45,18 +42,15 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $userId
-	 * @param int $newsletterId
+	 * @param Newsletter $newsletter
+	 * @param User $user
 	 *
 	 * @return bool success of the action
 	 */
-	public function removeSubscription( $userId, $newsletterId ) {
-		Assert::parameterType( 'integer', $userId, '$userId' );
-		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
-
+	public function removeSubscription( Newsletter $newsletter, User $user ) {
 		$rowData = array(
-			'nls_newsletter_id' => $newsletterId,
-			'nls_subscriber_id' => $userId,
+			'nls_newsletter_id' => $newsletter->getId(),
+			'nls_subscriber_id' => $user->getId(),
 		);
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
@@ -68,23 +62,32 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $userId
-	 * @param int $newsletterId
+	 * @param Newsletter $newsletter
+	 * @param User $user
 	 *
 	 * @return bool success of the action
 	 */
-	public function addPublisher( $userId, $newsletterId ) {
-		Assert::parameterType( 'integer', $userId, '$userId' );
-		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
-
+	public function addPublisher( Newsletter $newsletter, User $user ) {
 		$rowData = array(
-			'nlp_newsletter_id' => (int)$newsletterId,
-			'nlp_publisher_id' => (int)$userId,
+			'nlp_newsletter_id' => $newsletter->getId(),
+			'nlp_publisher_id' => $user->getId(),
 		);
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
 		$success = (bool)$dbw->affectedRows();
+
+		if ( $success ) {
+			$log = new ManualLogEntry( 'newsletter', 'publisher-added' );
+			$log->setPerformer( RequestContext::getMain()->getUser() );
+			$log->setTarget( $user->getUserPage() );
+			$log->setParameters( [
+				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
+			] );
+			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
+			$log->insert( $dbw );
+		}
+
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -92,44 +95,47 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $userId
-	 * @param int $newsletterId
+	 * @param Newsletter $newsletter
+	 * @param User $user
 	 *
 	 * @return bool success of the action
 	 */
-	public function removePublisher( $userId, $newsletterId ) {
-		Assert::parameterType( 'integer', $userId, '$userId' );
-		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
-
+	public function removePublisher( Newsletter $newsletter, User $user ) {
 		$rowData = array(
-			'nlp_newsletter_id' => (int)$newsletterId,
-			'nlp_publisher_id' => (int)$userId,
+			'nlp_newsletter_id' => $newsletter->getId(),
+			'nlp_publisher_id' => $user->getId(),
 		);
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
+
+		if ( $success ) {
+			$log = new ManualLogEntry( 'newsletter', 'publisher-removed' );
+			$log->setPerformer( RequestContext::getMain()->getUser() );
+			$log->setTarget( $user->getUserPage() );
+			$log->setParameters( [
+				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
+			] );
+			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
+			$log->insert( $dbw );
+		}
+
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
 
 	/**
-	 * @param string $name
-	 * @param string $description
-	 * @param int $pageId
+	 * @param Newsletter $newsletter
 	 *
 	 * @return bool success of the action
 	 */
-	public function addNewsletter( $name, $description, $pageId ) {
-		Assert::parameterType( 'string', $name, '$name' );
-		Assert::parameterType( 'string', $description, '$description' );
-		Assert::parameterType( 'integer', $pageId, '$pageId' );
-
+	public function addNewsletter( Newsletter $newsletter ) {
 		$rowData = array(
-			'nl_name' => $name,
-			'nl_desc' => $description,
-			'nl_main_page_id' => $pageId,
+			'nl_name' => $newsletter->getName(),
+			'nl_desc' => $newsletter->getDescription(),
+			'nl_main_page_id' => $newsletter->getPageId(),
 		);
 
 
@@ -139,6 +145,21 @@ class NewsletterDb {
 		} catch ( DBQueryError $ex ) {
 			$success = false;
 		}
+
+		if ( $success ) {
+			$newsletterId = $dbw->insertId();
+			$newsletter->setId( $newsletterId );
+
+			$log = new ManualLogEntry( 'newsletter', 'newsletter-added' );
+			$log->setPerformer( RequestContext::getMain()->getUser() );
+			$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletterId ) );
+			$log->setParameters( [
+				'4:newsletter-link:nl_id' => "$newsletterId:{$newsletter->getName()}"
+			] );
+			$log->setRelations( [ 'nl_id' => $newsletterId ] );
+			$log->insert( $dbw );
+		}
+
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -235,19 +256,31 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $id
+	 * @param Newsletter $newsletter
+	 *
+	 * @return bool success of the action
+	 *
+	 * @todo make this more reliable and scalable
 	 */
-	public function deleteNewsletter( $id ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-
+	public function deleteNewsletter( Newsletter $newsletter ) {
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
-		$dbw->update(
-			'nl_newsletters',
-			array( 'nl_active' => 0 ),
-			array( 'nl_id' => $id ),
-			__METHOD__
-		);
+		$id = $newsletter->getId();
+		$dbw->startAtomic( __METHOD__ );
+		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
+		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
+		$dbw->endAtomic( __METHOD__ );
+
+		$log = new ManualLogEntry( 'newsletter', 'newsletter-removed' );
+		$log->setPerformer( RequestContext::getMain()->getUser() );
+		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
+		$log->setParameters( [ '4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}" ] );
+		$log->setRelations( [ 'nl_id' => $id ] );
+		$log->insert( $dbw );
+
+		$this->lb->reuseConnection( $dbw );
 	}
 
 	/**
@@ -450,43 +483,52 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param int $newsletterId
-	 * @param int $pageId
-	 * @param int $publisherId
+	 * @param Newsletter $newsletter
+	 * @param Title $title
+	 * @param User $publisher
 	 *
 	 * @todo this should probably be done in a transaction (even though conflicts are unlikely)
 	 *
 	 * @return bool
 	 */
-	public function addNewsletterIssue( $newsletterId, $pageId, $publisherId ) {
-		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
-		Assert::parameterType( 'integer', $pageId, '$pageId' );
-		Assert::parameterType( 'integer', $publisherId, '$publisherId' );
-
+	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
 		$lastIssueId = $dbw->selectRowCount(
 			'nl_issues',
 			array( 'nli_issue_id' ),
-			array( 'nli_newsletter_id' => $newsletterId ),
+			array( 'nli_newsletter_id' => $newsletter->getId() ),
 			__METHOD__
 		);
 		// @todo should probably AUTO INCREMENT here
 		$rowData = array(
 			'nli_issue_id' => $lastIssueId + 1,
-			'nli_page_id' => $pageId,
-			'nli_newsletter_id' => $newsletterId,
-			'nli_publisher_id' => $publisherId,
+			'nli_page_id' => $title->getArticleID(),
+			'nli_newsletter_id' => $newsletter->getId(),
+			'nli_publisher_id' => $publisher->getId(),
 		);
 		try {
 			$success = $dbw->insert( 'nl_issues', $rowData, __METHOD__ );
-			$this->lb->reuseConnection( $dbw );
-			return $success;
 		} catch ( DBQueryError $ex ) {
-			$this->lb->reuseConnection( $dbw );
-			return false;
+			$success = false;
 		}
+
+		if ( $success ) {
+			$log = new ManualLogEntry( 'newsletter', 'issue-added' );
+			$log->setPerformer( $publisher );
+			$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() ) );
+			$log->setParameters( [
+				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}",
+				'5::nli_issue_id' => $dbw->insertId()
+			] );
+			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
+			$log->insert( $dbw );
+		}
+
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
 	}
 
 }

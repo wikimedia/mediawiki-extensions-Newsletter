@@ -141,5 +141,12 @@
 	"newsletter-list-go-button": "Label of the submit button of the HTML form in [[Special:Newsletters]]\n{{Identical|Go}}",
 	"newsletter-notification-link-text-new-publisher": "Label of the primary link of the newsletter-notification-new-publisher-flyout, which on clicking navigates the user to manage page of a newsletter.",
 	"newsletter-notification-new-publisher-title": "Header text for a notification when a new publisher is added for a newsletter. Parameters:\n* $1 is the name of the newsletter.",
-	"newsletter-notification-new-publisher-flyout": "Echo notification flyout message when a new publisher is added for a newsletter. \n* $1 is the name of the newsletter"
+	"newsletter-notification-new-publisher-flyout": "Echo notification flyout message when a new publisher is added for a newsletter. \n* $1 is the name of the newsletter",
+	"log-name-newsletter": "{{log-name|newsletter}}",
+	"log-description-newsletter": "{{log-description|newsletter}}",
+	"logentry-newsletter-publisher-added": "{{logentry}}\nAdditional parameters:\n* $4 - the newsletter affected by the action",
+	"logentry-newsletter-publisher-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
+	"logentry-newsletter-newsletter-added": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
+	"logentry-newsletter-newsletter-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
+	"logentry-newsletter-issue-added": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action"
 }

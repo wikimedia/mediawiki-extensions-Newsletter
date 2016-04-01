@@ -29,18 +29,25 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 	public function testAddSubscriber() {
 		$mockWriteDb = $this->getMockIDatabase();
+		$user = User::newFromName( 'Test User' );
+		$user->addToDatabase();
+
 		$mockWriteDb->expects( $this->once() )
 			->method( 'insert' )
 			->with(
 				'nl_subscriptions',
-				array( 'nls_subscriber_id' => 1, 'nls_newsletter_id' => 2 )
+				array( 'nls_subscriber_id' => $user->getId(), 'nls_newsletter_id' => 1 )
 			);
 		$mockWriteDb->expects( $this->once() )
 			->method( 'affectedRows' )
 			->will( $this->returnValue( 1 ) );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
-		$result = $table->addSubscription( 1, 2 );
+
+		$mainPage = Title::newFromText( "Test content" );
+		$newsletter = new Newsletter( 1, 'Test name', 'This is a test description. This is a more test description',
+			$mainPage->getArticleID() );
+		$result = $table->addSubscription( $newsletter, $user );
 
 		$this->assertEquals( true, $result );
 	}

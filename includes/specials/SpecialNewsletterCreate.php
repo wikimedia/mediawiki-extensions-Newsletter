@@ -115,16 +115,16 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		}
 
 		$ndb = NewsletterDb::newFromGlobalState();
-		$newsletterCreated = $ndb->addNewsletter(
+		$this->newsletter = new Newsletter( 0,
 			$data['Name'],
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
 			$wgContLang->truncate( $data['Description'], 600000 ),
 			$mainPageId
 		);
+		$newsletterCreated = $ndb->addNewsletter( $this->newsletter );
 
 		if ( $newsletterCreated ) {
-			$this->newsletter = $ndb->getNewsletterForPageId( $mainPageId );
 			$this->onPostCreation( $user );
 
 			return Status::newGood();
@@ -143,7 +143,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	private function onPostCreation( User $user ) {
 		$db = NewsletterDb::newFromGlobalState();
 		$this->newsletter->subscribe( $user );
-		$db->addPublisher( $user->getId(), $this->newsletter->getId() );
+		$db->addPublisher( $this->newsletter, $user );
 	}
 
 	public function onSuccess() {

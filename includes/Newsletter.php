@@ -69,6 +69,13 @@ class Newsletter {
 	}
 
 	/**
+	 * @param int $id
+	 */
+	public function setId( $id ) {
+		$this->id = $id;
+	}
+
+	/**
 	 * @return string
 	 */
 	public function getName() {
@@ -172,7 +179,7 @@ class Newsletter {
 
 		$ndb = NewsletterDb::newFromGlobalState();
 
-		if ( $ndb->addSubscription( $user->getId(), $this->id ) ) {
+		if ( $ndb->addSubscription( $this, $user ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-subscribe-fail', $this->name );
@@ -189,7 +196,7 @@ class Newsletter {
 	public function unsubscribe( User $user ) {
 		$ndb = NewsletterDb::newFromGlobalState();
 
-		if ( $ndb->removeSubscription( $user->getId(), $this->id ) ) {
+		if ( $ndb->removeSubscription( $this, $user ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-unsubscribe-fail', $this->name );
