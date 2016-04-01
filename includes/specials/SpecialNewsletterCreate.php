@@ -8,6 +8,11 @@
  */
 class SpecialNewsletterCreate extends FormSpecialPage {
 
+	/**
+	 * @var Newsletter
+	 */
+	protected $newsletter;
+
 	public function __construct() {
 		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
 	}
@@ -119,8 +124,8 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		);
 
 		if ( $newsletterCreated ) {
-			$newsletter = $ndb->getNewsletterForPageId( $mainPageId );
-			$this->onPostCreation( $newsletter->getId(), $user->getId() );
+			$this->newsletter = $ndb->getNewsletterForPageId( $mainPageId );
+			$this->onPostCreation( $user );
 
 			return Status::newGood();
 		}
@@ -130,20 +135,19 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	}
 
 	/**
-	 * Automatically subscribe and add creator as publisher of the newsletter
+	 * Subscribe and add the creator to the publisher's list of the
+	 * newly created newsletter.
 	 *
-	 * @param int $newsletterId Id of the newsletter
-	 * @param int $userID User Id of the publisher
+	 * @param User $user User object of the creator
 	 */
-	private function onPostCreation( $newsletterId, $userID ) {
+	private function onPostCreation( User $user ) {
 		$db = NewsletterDb::newFromGlobalState();
-		$db->addPublisher( $userID, $newsletterId );
-		$db->addSubscription( $userID, $newsletterId );
+		$this->newsletter->subscribe( $user );
+		$db->addPublisher( $user->getId(), $this->newsletter->getId() );
 	}
 
 	public function onSuccess() {
-		// @todo Link to corresponding Special:Newsletter page
-		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation' );
+		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getId() );
 	}
 
 	public function doesWrites() {
