@@ -31,7 +31,6 @@
 	"newsletter-view-publishers": "{{PLURAL:$1|Utgivare:}}",
 	"newsletter-view-subscriber-count": "Antal prenumeranter:",
 	"newsletter-delete-button": "Radera",
-	"newsletter-manage-button": "Hantera",
 	"newsletter-unsubscribe-button": "Sluta prenumerera",
 	"newsletter-subscribe-button": "Prenumerera",
 	"newsletter-announce-nopermission": "Du är inte utgivare för detta nyhetsbrev.",
