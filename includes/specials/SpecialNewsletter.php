@@ -204,7 +204,7 @@ class SpecialNewsletter extends SpecialPage {
 				'label-message' => 'newsletter-view-description',
 				'default' => $this->newsletter->getDescription(),
 				'rows' => 6,
-				'readonly' => true,
+				'readonly' => !$this->newsletter->canManage( $user ),
 			),
 			'publishers' => array(
 				'type' => 'info',
