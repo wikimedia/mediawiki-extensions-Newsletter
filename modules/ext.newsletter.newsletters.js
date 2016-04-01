@@ -28,21 +28,36 @@
 	}
 
 	function updateLinkAttribs( $link, action ) {
-		$link
-			.text( mw.msg( 'newsletter-' + action + '-button' ) )
-			.removeClass( 'newsletter-' + action + 'd' );
+		var inverseAction;
+
+		if ( action === 'subscribe' ) {
+			inverseAction = 'unsubscribe';
+		} else if ( action === 'unsubscribe' ) {
+			inverseAction = 'subscribe';
+		} else {
+			throw new Error( mw.format(
+				'updateLinkAttribs(): `action` must be "subscribe" or "unsubscribe" (got: "$1")',
+				action
+			) );
+		}
 
 		// Invert action name because this is how the class is named.
-		var invertAction = action === 'subscribe' ? 'unsubscribed' : 'subscribed';
-		$link.addClass( 'newsletter-' + invertAction );
+		$link
+			.text( mw.msg( 'newsletter-' + action + '-button' ) )
+			.removeClass( 'newsletter-' + action + 'd' )
+			.addClass( 'newsletter-' + inverseAction + 'd' );
 	}
 
 	$( function () {
-		$( 'a.newsletter-subscription' ).click( function ( event ) {
-			var promise,
-				$link = $( this ),
+		$( '.newsletter-subscription' ).click( function ( event ) {
+			var $link = $( this ),
 				newsletterId = $link.data( 'newsletter-id' ),
-				$subscriberCount = $( 'span#nl-count-' + newsletterId );
+				$subscriberCount, promise;
+
+			if ( /\D/.test( newsletterId ) ) {
+				throw new Error( '"data-newsletter-id" attribute must be numeric' );
+			}
+			$subscriberCount = $( '#nl-count-' + newsletterId );
 
 			// Avoid double clicks while in progress .newsletter-link-disabled also helps with this
 			if ( $link.data( 'nlDisabled' ) ) {
