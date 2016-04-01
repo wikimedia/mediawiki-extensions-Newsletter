@@ -15,7 +15,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase{
 	}
 
 	public function testSpecialPageDoesNotFatal() {
-		$user = new TestUser( 'BlooBlaa' );
+		$user = new TestUser( __METHOD__, __METHOD__, 'foo@bar.com', [ 'autoconfirmed' ] );
 		$this->executeSpecialPage( '', null, null, $user->getUser() );
 		$this->assertTrue( true );
 	}
