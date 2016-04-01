@@ -31,7 +31,7 @@ class ApiNewsletterManage extends ApiBase {
 
 		$ndb = NewsletterDb::newFromGlobalState();
 
-		$success =false;
+		$success = false;
 		$action = $params['do'];
 		if ( $action === 'addpublisher' ) {
 			$success = $ndb->addPublisher( $publisher->getId(), $params['id'] );

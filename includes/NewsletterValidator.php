@@ -11,7 +11,12 @@ class NewsletterValidator {
 		'MainPage',
 	);
 
-	public function __construct( $fields ) {
+	/**
+	 * Constructor.
+	 *
+	 * @param array $fields
+	 */
+	public function __construct( array $fields ) {
 		$this->data = $fields;
 	}
 
@@ -22,8 +27,8 @@ class NewsletterValidator {
 	 */
 	public function validate() {
 		// Check whether required fields are not empty
-		foreach( self::$requiredData as $field ) {
-			if ( trim( $this->data[ $field ] ) === '' ) {
+		foreach ( self::$requiredData as $field ) {
+			if ( !isset( $this->data[ $field ] ) || trim( $this->data[ $field ] ) === '' ) {
 				return Status::newFatal( 'newsletter-input-required' );
 			}
 		}
@@ -36,7 +41,7 @@ class NewsletterValidator {
 			return Status::newFatal( 'newsletter-invalid-name' );
 		}
 
-		if ( strlen ( $this->data['Description'] ) < 30 ) {
+		if ( strlen( $this->data['Description'] ) < 30 ) {
 			// Should this limit be lowered?
 			return Status::newFatal( 'newsletter-create-short-description-error' );
 		}
@@ -53,8 +58,6 @@ class NewsletterValidator {
 		if ( !$mainTitle->exists() ) {
 			return Status::newFatal( 'newsletter-mainpage-non-existent' );
 		}
-
-
 
 		return Status::newGood();
 	}

@@ -12,7 +12,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 * @param Message $message
 	 * @param User $user
 	 */
-	protected function processParam( $event, $param, $message, $user ) {
+	protected function processParam( EchoEvent $event, $param, Message $message, User $user ) {
 		if ( $param === 'newsletter' ) {
 			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
 		} else {
@@ -29,7 +29,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 *
 	 * @return array including target URL
 	 */
-	protected function getLinkParams( $event, $user, $destination ) {
+	protected function getLinkParams( EchoEvent $event, User $user, $destination ) {
 		$target = null;
 		$query = array();
 		switch ( $destination ) {
@@ -41,7 +41,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 				$target = SpecialPage::getTitleFor( 'Newsletter', $event->getExtraParam( 'newsletter-id' ) );
 				break;
 			default:
-				return parent::getLinkParams( $event, $user, $destination );
+				throw new Exception( __METHOD__ . ': $destination must be "new-issue" or "newsletter" (got: ' . $destination . ')' );
 		}
 
 		return array( $target, $query );

@@ -210,6 +210,9 @@ class Newsletter {
 	/**
 	 * Check whether the user is allowed to manage the newsletter.
 	 *
+	 * The user is allowed to manage a newsletter if the user is a publisher of
+	 * the newsletter, or if the user has the newsletter-manage right.
+	 *
 	 * @param User $user
 	 *
 	 * @return bool

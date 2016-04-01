@@ -99,7 +99,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			)
 		);
 		// Check whether another existing newsletter has the same name or main page
-		foreach( $rows as $row ) {
+		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {
 				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
 			} elseif ( (int)$row->nl_main_page_id === $mainPageId ) {

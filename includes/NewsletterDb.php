@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Assert\Assert;
+
 /**
  * @license GNU GPL v2+
  * @author Addshore
@@ -26,6 +28,9 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function addSubscription( $userId, $newsletterId ) {
+		Assert::parameterType( 'integer', $userId, '$userId' );
+		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
+
 		$rowData = array(
 			'nls_newsletter_id' => $newsletterId,
 			'nls_subscriber_id' => $userId,
@@ -46,6 +51,9 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function removeSubscription( $userId, $newsletterId ) {
+		Assert::parameterType( 'integer', $userId, '$userId' );
+		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
+
 		$rowData = array(
 			'nls_newsletter_id' => $newsletterId,
 			'nls_subscriber_id' => $userId,
@@ -66,6 +74,9 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function addPublisher( $userId, $newsletterId ) {
+		Assert::parameterType( 'integer', $userId, '$userId' );
+		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
+
 		$rowData = array(
 			'nlp_newsletter_id' => (int)$newsletterId,
 			'nlp_publisher_id' => (int)$userId,
@@ -87,6 +98,9 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function removePublisher( $userId, $newsletterId ) {
+		Assert::parameterType( 'integer', $userId, '$userId' );
+		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
+
 		$rowData = array(
 			'nlp_newsletter_id' => (int)$newsletterId,
 			'nlp_publisher_id' => (int)$userId,
@@ -108,6 +122,10 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function addNewsletter( $name, $description, $pageId ) {
+		Assert::parameterType( 'string', $name, '$name' );
+		Assert::parameterType( 'string', $description, '$description' );
+		Assert::parameterType( 'integer', $pageId, '$pageId' );
+
 		$rowData = array(
 			'nl_name' => $name,
 			'nl_desc' => $description,
@@ -132,6 +150,8 @@ class NewsletterDb {
 	 * @todo make this more reliable and scalable
 	 */
 	public function deleteNewsletter( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
@@ -148,6 +168,8 @@ class NewsletterDb {
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public function getNewsletter( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_newsletters',
@@ -171,6 +193,8 @@ class NewsletterDb {
 	 * @return string[]
 	 */
 	public function getPublishersFromID( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
 		$result = $dbr->selectFieldValues(
@@ -190,6 +214,8 @@ class NewsletterDb {
 	 * @return string[]
 	 */
 	public function getSubscribersFromID( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
 		$result = $dbr->selectFieldValues(
@@ -209,6 +235,8 @@ class NewsletterDb {
 	 * @return Newsletter
 	 */
 	public function getNewsletterForPageId( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
 		$res = $dbr->select(
@@ -298,6 +326,10 @@ class NewsletterDb {
 	 * @return bool
 	 */
 	public function addNewsletterIssue( $newsletterId, $pageId, $publisherId ) {
+		Assert::parameterType( 'integer', $newsletterId, '$newsletterId' );
+		Assert::parameterType( 'integer', $pageId, '$pageId' );
+		Assert::parameterType( 'integer', $publisherId, '$publisherId' );
+
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
