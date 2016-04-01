@@ -266,7 +266,7 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
+					'label' => $this->msg( 'newsletter-collaborators-button' )->escaped(),
 					'icon' => 'settings',
 					'href' =>  $this->getPageTitle( $id . '/' . self::NEWSLETTER_MANAGE )->getFullURL()
 				)
@@ -668,7 +668,7 @@ class SpecialNewsletter extends SpecialPage {
 				->rawParams( $this->getEscapedName() )->parse()
 		);
 		$form->setId( 'newsletter-manage-form' );
-		$form->setSubmitID( 'newsletter-manage-button' );
+		$form->setSubmitID( 'newsletter-collaborators-button' );
 		$form->setSubmitTextMsg( 'newsletter-managenewsletter-button' );
 		$form->show();
 	}
