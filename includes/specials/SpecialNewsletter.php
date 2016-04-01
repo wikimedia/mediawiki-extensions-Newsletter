@@ -725,6 +725,21 @@ class SpecialNewsletter extends SpecialPage {
 		foreach ( $added as $auId ) {
 			$ndb->addPublisher( $auId, $newsletterId );
 		}
+
+		if ( $added ) {
+			EchoEvent::create(
+				array(
+					'type' => 'newsletter-newpublisher',
+					'extra' => array(
+						'newsletter-name' => $this->newsletter->getName(),
+						'new-publishers-id' => $added,
+						'newsletter-id' => $newsletterId
+					),
+					'agent' => $user
+				)
+			);
+		}
+
 		foreach ( $removed as $ruId ) {
 			$ndb->removePublisher( $ruId, $newsletterId );
 		}

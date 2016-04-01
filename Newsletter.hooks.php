@@ -45,6 +45,23 @@ class NewsletterHooks {
 			'email-body-batch-params' =>  array( 'newsletter', 'agent', 'name' ),
 		);
 
+		$notifications['newsletter-newpublisher'] = array(
+			'category' => 'newsletter',
+			'primary-link' => array(
+				'message' => 'newsletter-notification-link-text-new-publisher',
+				'destination' => 'newsletter'
+			),
+			'user-locators' => array(
+				array( 'EchoUserLocator::locateFromEventExtra', array( 'new-publishers-id' ) )
+			),
+			'presentation-model' => 'EchoNewsletterPublisherPresentationModel',
+			'formatter-class' => 'EchoNewsletterFormatter',
+			'title-message' => 'newsletter-notification-new-publisher-title',
+			'title-params' => array( 'newsletter-name', 'agent' ),
+			'flyout-message' => 'newsletter-notification-new-publisher-flyout',
+			'flyout-params' => array( 'newsletter-name', 'agent' ),
+		);
+
 		return true;
 	}
 

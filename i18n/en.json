@@ -125,10 +125,14 @@
 	"apihelp-newslettermanage-example-1": "Add a publisher with a user id of 3 to newsletter with id 1.",
 	"apihelp-newslettermanage-example-2": "Remove publisher with a user id of 5 from newsletter with id 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|has announced}} a new issue of $3.",
+	"notification-header-newsletter-newpublisher": "You have been added as a publisher of $1 newsletter.",
 	"notification-body-newsletter-announce": "$1",
 	"newsletter-list-table": "Filter by: ",
 	"newsletter-list-option-all": "All newsletters",
 	"newsletter-list-option-subscribed": "Newsletters I am subscribed to",
 	"newsletter-list-option-unsubscribed": "Newsletters I am not subscribed to",
-	"newsletter-list-go-button": "Go"
+	"newsletter-list-go-button": "Go",
+	"newsletter-notification-link-text-new-publisher": "Manage newsletter",
+	"newsletter-notification-new-publisher-title": "You have been added as a publisher of $1 newsletter.",
+	"newsletter-notification-new-publisher-flyout": "You are now a publisher of $1 newsletter."
 }
