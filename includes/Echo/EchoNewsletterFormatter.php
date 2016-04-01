@@ -15,7 +15,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	protected function processParam( EchoEvent $event, $param, Message $message, User $user ) {
 		if ( $param === 'newsletter' ) {
 			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
-		} elseif( $param === 'newsletter-name' ){
+		} elseif ( $param === 'newsletter-name' ){
 
 			// @todo Standardize 'newsletter-name' for clarity
 			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
