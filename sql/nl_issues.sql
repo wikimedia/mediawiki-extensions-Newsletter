@@ -7,5 +7,5 @@ CREATE TABLE /*_*/nl_issues(
 	nli_newsletter_id int,
 	nli_publisher_id int NOT NULL,
 	-- Composite primary key
-	PRIMARY KEY (nli_issue_id, nli_newsletter_id)
+	PRIMARY KEY (nli_newsletter_id, nli_issue_id)
 )/*$wgDBTableOptions*/;
