@@ -177,9 +177,9 @@ class Newsletter {
 			return Status::newFatal( 'newsletter-subscribe-ip-notallowed' );
 		}
 
-		$ndb = NewsletterStore::getDefaultInstance();
+		$store = NewsletterStore::getDefaultInstance();
 
-		if ( $ndb->addSubscription( $this, $user ) ) {
+		if ( $store->addSubscription( $this, $user ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-subscribe-fail', $this->name );
@@ -194,9 +194,9 @@ class Newsletter {
 	 * @return Status
 	 */
 	public function unsubscribe( User $user ) {
-		$ndb = NewsletterStore::getDefaultInstance();
+		$store = NewsletterStore::getDefaultInstance();
 
-		if ( $ndb->removeSubscription( $this, $user ) ) {
+		if ( $store->removeSubscription( $this, $user ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-unsubscribe-fail', $this->name );

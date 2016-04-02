@@ -29,14 +29,14 @@ class ApiNewsletterManage extends ApiBase {
 			$this->dieUsage( 'Publisher is not a registered user.', 'invalidpublisher' );
 		}
 
-		$ndb = NewsletterStore::getDefaultInstance();
+		$store = NewsletterStore::getDefaultInstance();
 
 		$success = false;
 		$action = $params['do'];
 		if ( $action === 'addpublisher' ) {
-			$success = $ndb->addPublisher( $newsletter, $publisher );
+			$success = $store->addPublisher( $newsletter, $publisher );
 		} elseif ( $action === 'removepublisher' ) {
-			$success = $ndb->removePublisher( $newsletter, $publisher );
+			$success = $store->removePublisher( $newsletter, $publisher );
 		}
 
 		if ( !$success ) {

@@ -114,7 +114,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
-		$ndb = NewsletterStore::getDefaultInstance();
+		$store = NewsletterStore::getDefaultInstance();
 		$this->newsletter = new Newsletter( 0,
 			$data['Name'],
 			// nl_newsletters.nl_desc is a blob but put some limit
@@ -122,7 +122,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			$wgContLang->truncate( $data['Description'], 600000 ),
 			$mainPageId
 		);
-		$newsletterCreated = $ndb->addNewsletter( $this->newsletter );
+		$newsletterCreated = $store->addNewsletter( $this->newsletter );
 
 		if ( $newsletterCreated ) {
 			$this->onPostCreation( $user );
@@ -141,9 +141,8 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @param User $user User object of the creator
 	 */
 	private function onPostCreation( User $user ) {
-		$db = NewsletterStore::getDefaultInstance();
 		$this->newsletter->subscribe( $user );
-		$db->addPublisher( $this->newsletter, $user );
+		NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, $user );
 	}
 
 	public function onSuccess() {

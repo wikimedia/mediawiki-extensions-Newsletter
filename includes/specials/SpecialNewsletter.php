@@ -530,8 +530,8 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		// Everything seems okay. Let's try to do it for real now.
-		$db = NewsletterStore::getDefaultInstance();
-		$success = $db->addNewsletterIssue( $this->newsletter, $title, $this->getUser() );
+		$store = NewsletterStore::getDefaultInstance();
+		$success = $store->addNewsletterIssue( $this->newsletter, $title, $this->getUser() );
 
 		if ( !$success ) {
 			// DB insert failed. :( so don't create an Echo event and stop from here
@@ -728,31 +728,31 @@ class SpecialNewsletter extends SpecialPage {
 
 		$mainPageId = $mainPage->getArticleID();
 
-		$ndb = NewsletterStore::getDefaultInstance();
+		$store = NewsletterStore::getDefaultInstance();
 		$newsletterId = $this->newsletter->getId();
 
 		if ( $name != $oldName ) {
-			$rows = $ndb->newsletterExistsWithName( $name );
+			$rows = $store->newsletterExistsWithName( $name );
 			foreach ( $rows as $row ) {
 				if ( $row->nl_name === $name ) {
 					return Status::newFatal( 'newsletter-exist-error', $name );
 				}
 			}
-			$ndb->updateName( $newsletterId, $name );
+			$store->updateName( $newsletterId, $name );
 			$modified = true;
 		}
 		if ( $description != $oldDescription ) {
-			$ndb->updateDescription( $newsletterId, $description );
+			$store->updateDescription( $newsletterId, $description );
 			$modified = true;
 		}
 		if ( $oldMainPage != $mainPageId ) {
-			$rows = $ndb->newsletterExistsForMainPage( $mainPageId );
+			$rows = $store->newsletterExistsForMainPage( $mainPageId );
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $mainPageId  ) {
 					return Status::newFatal( 'newsletter-mainpage-in-use' );
 				}
 			}
-			$ndb->updateMainPage( $newsletterId, $mainPageId );
+			$store->updateMainPage( $newsletterId, $mainPageId );
 			$modified = true;
 		}
 
@@ -793,10 +793,9 @@ class SpecialNewsletter extends SpecialPage {
 		$added = array_diff( $newPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
 
-		$ndb = NewsletterStore::getDefaultInstance();
 		// @todo Do this in a batch..
 		foreach ( $added as $auId ) {
-			$ndb->addPublisher( $this->newsletter, User::newFromId( $auId ) );
+			$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
 		}
 
 		if ( $added ) {
@@ -814,7 +813,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		foreach ( $removed as $ruId ) {
-			$ndb->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
+			$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
 		}
 
 		// Now report to the user
