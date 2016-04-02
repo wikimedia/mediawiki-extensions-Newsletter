@@ -85,6 +85,7 @@ class NewsletterHooks {
 		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/sql/nl_issues.sql' );
 		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql' );
 		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql' );
+		$updater->addExtensionField( 'nl_newsletters', 'nl_active', __DIR__ . '/sql/nl_newsletters-add-active.sql' );
 
 		return true;
 	}

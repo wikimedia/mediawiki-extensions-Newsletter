@@ -5,7 +5,9 @@ CREATE TABLE /*_*/nl_newsletters(
 	nl_id int unsigned NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nl_name varchar(64) NOT NULL,
 	nl_desc blob,
-	nl_main_page_id int unsigned NOT NULL UNIQUE
+	nl_main_page_id int unsigned NOT NULL UNIQUE,
+	nl_active boolean NOT NULL DEFAULT 1
 )/*$wgDBTableOptions*/;
 
 CREATE UNIQUE INDEX /*i*/nl_name ON /*_*/nl_newsletters (nl_name);
+CREATE INDEX /*i*/nl_active ON /*_*/nl_newsletters (nl_active);
