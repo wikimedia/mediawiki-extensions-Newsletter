@@ -287,7 +287,7 @@ class NewsletterDb {
 	/**
 	 * @param int $id
 	 *
-	 * @return string[]
+	 * @return int[]
 	 */
 	public function getSubscribersFromID( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
@@ -302,7 +302,7 @@ class NewsletterDb {
 		);
 		$this->lb->reuseConnection( $dbr );
 
-		return $result;
+		return array_map( 'intval', $result );
 	}
 
 	/**
