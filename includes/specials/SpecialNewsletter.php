@@ -200,7 +200,7 @@ class SpecialNewsletter extends SpecialPage {
 				'raw' => true,
 			),
 			'description' => array(
-				'type' => 'textarea',
+				'type' => 'info',
 				'label-message' => 'newsletter-view-description',
 				'default' => $this->newsletter->getDescription(),
 				'rows' => 6,
