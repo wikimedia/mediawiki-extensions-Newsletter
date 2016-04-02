@@ -57,7 +57,7 @@ class Newsletter {
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public static function newFromID( $id ) {
-		return NewsletterDb::newFromGlobalState()
+		return NewsletterStore::newFromGlobalState()
 			->getNewsletter( $id );
 	}
 
@@ -148,7 +148,7 @@ class Newsletter {
 	private function loadPublishers() {
 		if ( $this->publishers === null ) {
 			// Not queried yet so let's do it now
-			$this->publishers = NewsletterDb::newFromGlobalState()
+			$this->publishers = NewsletterStore::newFromGlobalState()
 				->getPublishersFromID( $this->id );
 		}
 	}
@@ -159,7 +159,7 @@ class Newsletter {
 	private function loadSubscribers() {
 		if ( $this->subscribers === null ) {
 			// Not queried yet so let's do it now
-			$this->subscribers = NewsletterDb::newFromGlobalState()
+			$this->subscribers = NewsletterStore::newFromGlobalState()
 				->getSubscribersFromID( $this->id );
 		}
 	}
@@ -177,7 +177,7 @@ class Newsletter {
 			return Status::newFatal( 'newsletter-subscribe-ip-notallowed' );
 		}
 
-		$ndb = NewsletterDb::newFromGlobalState();
+		$ndb = NewsletterStore::newFromGlobalState();
 
 		if ( $ndb->addSubscription( $this, $user ) ) {
 			return Status::newGood();
@@ -194,7 +194,7 @@ class Newsletter {
 	 * @return Status
 	 */
 	public function unsubscribe( User $user ) {
-		$ndb = NewsletterDb::newFromGlobalState();
+		$ndb = NewsletterStore::newFromGlobalState();
 
 		if ( $ndb->removeSubscription( $this, $user ) ) {
 			return Status::newGood();

@@ -54,9 +54,11 @@
 	"AutoloadClasses": {
 		"Newsletter": "includes/Newsletter.php",
 		"NewsletterDb": "includes/NewsletterDb.php",
+		"NewsletterStore": "includes/NewsletterStore.php",
 		"NewsletterHooks": "Newsletter.hooks.php",
 		"NewsletterValidator": "includes/NewsletterValidator.php",
 		"NewsletterLogFormatter": "includes/logging/NewsletterLogFormatter.php",
+		"NewsletterLogger": "includes/logging/NewsletterLogger.php",
 		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
 		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
 		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",

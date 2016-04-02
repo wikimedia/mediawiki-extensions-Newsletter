@@ -9,7 +9,7 @@ class EchoNewsletterUserLocator {
 	 */
 	public static function locateNewsletterSubscribedUsers( EchoEvent $event ) {
 		$extra = $event->getExtra();
-		$ids = NewsletterDb::newFromGlobalState()
+		$ids = NewsletterStore::newFromGlobalState()
 			->getSubscribersFromID( $extra['newsletter-id'] );
 
 		return UserArray::newFromIDs( $ids );

@@ -17,10 +17,6 @@ class NewsletterDb {
 		$this->lb = $lb;
 	}
 
-	public static function newFromGlobalState() {
-		return new self( wfGetLB() );
-	}
-
 	/**
 	 * @param Newsletter $newsletter
 	 * @param User $user
@@ -77,17 +73,6 @@ class NewsletterDb {
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
 		$success = (bool)$dbw->affectedRows();
 
-		if ( $success ) {
-			$log = new ManualLogEntry( 'newsletter', 'publisher-added' );
-			$log->setPerformer( RequestContext::getMain()->getUser() );
-			$log->setTarget( $user->getUserPage() );
-			$log->setParameters( [
-				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
-			] );
-			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-			$log->insert( $dbw );
-		}
-
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -110,17 +95,6 @@ class NewsletterDb {
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
 
-		if ( $success ) {
-			$log = new ManualLogEntry( 'newsletter', 'publisher-removed' );
-			$log->setPerformer( RequestContext::getMain()->getUser() );
-			$log->setTarget( $user->getUserPage() );
-			$log->setParameters( [
-				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
-			] );
-			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-			$log->insert( $dbw );
-		}
-
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -129,7 +103,7 @@ class NewsletterDb {
 	/**
 	 * @param Newsletter $newsletter
 	 *
-	 * @return bool success of the action
+	 * @return bool|int the id of the newsletter added, false on failure
 	 */
 	public function addNewsletter( Newsletter $newsletter ) {
 		$rowData = array(
@@ -137,7 +111,6 @@ class NewsletterDb {
 			'nl_desc' => $newsletter->getDescription(),
 			'nl_main_page_id' => $newsletter->getPageId(),
 		);
-
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
@@ -147,17 +120,7 @@ class NewsletterDb {
 		}
 
 		if ( $success ) {
-			$newsletterId = $dbw->insertId();
-			$newsletter->setId( $newsletterId );
-
-			$log = new ManualLogEntry( 'newsletter', 'newsletter-added' );
-			$log->setPerformer( RequestContext::getMain()->getUser() );
-			$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletterId ) );
-			$log->setParameters( [
-				'4:newsletter-link:nl_id' => "$newsletterId:{$newsletter->getName()}"
-			] );
-			$log->setRelations( [ 'nl_id' => $newsletterId ] );
-			$log->insert( $dbw );
+			$success = $dbw->insertId();
 		}
 
 		$this->lb->reuseConnection( $dbw );
@@ -273,14 +236,9 @@ class NewsletterDb {
 		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
 		$dbw->endAtomic( __METHOD__ );
 
-		$log = new ManualLogEntry( 'newsletter', 'newsletter-removed' );
-		$log->setPerformer( RequestContext::getMain()->getUser() );
-		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
-		$log->setParameters( [ '4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}" ] );
-		$log->setRelations( [ 'nl_id' => $id ] );
-		$log->insert( $dbw );
-
 		$this->lb->reuseConnection( $dbw );
+
+		return true;
 	}
 
 	/**
@@ -489,7 +447,7 @@ class NewsletterDb {
 	 *
 	 * @todo this should probably be done in a transaction (even though conflicts are unlikely)
 	 *
-	 * @return bool
+	 * @return bool|int the id of the issue added, false on failure
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
@@ -515,15 +473,7 @@ class NewsletterDb {
 		}
 
 		if ( $success ) {
-			$log = new ManualLogEntry( 'newsletter', 'issue-added' );
-			$log->setPerformer( $publisher );
-			$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() ) );
-			$log->setParameters( [
-				'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}",
-				'5::nli_issue_id' => $dbw->insertId()
-			] );
-			$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-			$log->insert( $dbw );
+			$success = $lastIssueId + 1;
 		}
 
 		$this->lb->reuseConnection( $dbw );
