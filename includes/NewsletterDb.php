@@ -450,27 +450,32 @@ class NewsletterDb {
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
-		$lastIssueId = $dbw->selectRowCount(
+		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
-			array( 'nli_issue_id' ),
+			'MAX(nli_issue_id)',
 			array( 'nli_newsletter_id' => $newsletter->getId() ),
-			__METHOD__
+			__METHOD__,
+			array( 'FOR UPDATE' )
 		);
-		// @todo should probably AUTO INCREMENT here
-		$rowData = array(
-			'nli_issue_id' => $lastIssueId + 1,
-			'nli_page_id' => $title->getArticleID(),
-			'nli_newsletter_id' => $newsletter->getId(),
-			'nli_publisher_id' => $publisher->getId(),
-		);
+		$nextIssueId = $lastIssueId + 1;
+
 		try {
-			$success = $dbw->insert( 'nl_issues', $rowData, __METHOD__ );
+			$success = $dbw->insert(
+				'nl_issues',
+				array(
+					'nli_issue_id' => $nextIssueId,
+					'nli_page_id' => $title->getArticleID(),
+					'nli_newsletter_id' => $newsletter->getId(),
+					'nli_publisher_id' => $publisher->getId(),
+				),
+				__METHOD__
+			);
 		} catch ( DBQueryError $ex ) {
 			$success = false;
 		}
 
 		if ( $success ) {
-			$success = $lastIssueId + 1;
+			$success = $nextIssueId;
 		}
 
 		$this->lb->reuseConnection( $dbw );
