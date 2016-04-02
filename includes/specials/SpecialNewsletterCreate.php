@@ -114,7 +114,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
-		$ndb = NewsletterStore::newFromGlobalState();
+		$ndb = NewsletterStore::getDefaultInstance();
 		$this->newsletter = new Newsletter( 0,
 			$data['Name'],
 			// nl_newsletters.nl_desc is a blob but put some limit
@@ -141,7 +141,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @param User $user User object of the creator
 	 */
 	private function onPostCreation( User $user ) {
-		$db = NewsletterStore::newFromGlobalState();
+		$db = NewsletterStore::getDefaultInstance();
 		$this->newsletter->subscribe( $user );
 		$db->addPublisher( $this->newsletter, $user );
 	}

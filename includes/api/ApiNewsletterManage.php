@@ -29,7 +29,7 @@ class ApiNewsletterManage extends ApiBase {
 			$this->dieUsage( 'Publisher is not a registered user.', 'invalidpublisher' );
 		}
 
-		$ndb = NewsletterStore::newFromGlobalState();
+		$ndb = NewsletterStore::getDefaultInstance();
 
 		$success = false;
 		$action = $params['do'];

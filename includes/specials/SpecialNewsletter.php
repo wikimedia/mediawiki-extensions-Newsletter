@@ -530,7 +530,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		// Everything seems okay. Let's try to do it for real now.
-		$db = NewsletterStore::newFromGlobalState();
+		$db = NewsletterStore::getDefaultInstance();
 		$success = $db->addNewsletterIssue( $this->newsletter, $title, $this->getUser() );
 
 		if ( !$success ) {
@@ -602,7 +602,7 @@ class SpecialNewsletter extends SpecialPage {
 	 * @return bool
 	 */
 	public function submitDeleteForm() {
-		NewsletterStore::newFromGlobalState()->deleteNewsletter( $this->newsletter );
+		NewsletterStore::getDefaultInstance()->deleteNewsletter( $this->newsletter );
 		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
 
 		return true;
@@ -728,7 +728,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		$mainPageId = $mainPage->getArticleID();
 
-		$ndb = NewsletterStore::newFromGlobalState();
+		$ndb = NewsletterStore::getDefaultInstance();
 		$newsletterId = $this->newsletter->getId();
 
 		if ( $name != $oldName ) {
@@ -793,7 +793,7 @@ class SpecialNewsletter extends SpecialPage {
 		$added = array_diff( $newPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
 
-		$ndb = NewsletterStore::newFromGlobalState();
+		$ndb = NewsletterStore::getDefaultInstance();
 		// @todo Do this in a batch..
 		foreach ( $added as $auId ) {
 			$ndb->addPublisher( $this->newsletter, User::newFromId( $auId ) );

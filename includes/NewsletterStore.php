@@ -18,16 +18,24 @@ class NewsletterStore {
 	 */
 	private $logger;
 
+	/**
+	 * @var static
+	 */
+	private static $instance;
+
 	public function __construct( NewsletterDb $db, NewsletterLogger $logger ) {
 		$this->db = $db;
 		$this->logger = $logger;
 	}
 
-	public static function newFromGlobalState() {
-		return new self(
-			new NewsletterDb( wfGetLB() ),
-			new NewsletterLogger()
-		);
+	public static function getDefaultInstance(){
+		if ( !self::$instance ) {
+			self::$instance = new self(
+				new NewsletterDb( wfGetLB() ),
+				new NewsletterLogger()
+			);
+		}
+		return self::$instance;
 	}
 
 	/**
