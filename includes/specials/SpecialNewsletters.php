@@ -21,6 +21,7 @@ class SpecialNewsletters extends SpecialPage {
 		$this->setHeaders();
 
 		$out = $this->getOutput();
+		$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
 		$user = $this->getUser();
 
 		if ( $user->isAllowed( 'newsletter-create' ) ) {

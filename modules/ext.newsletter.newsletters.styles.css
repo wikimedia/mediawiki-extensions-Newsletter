@@ -45,3 +45,13 @@
 	pointer-events: none;
 	cursor: default;
 }
+
+.mw-special-Newsletters .mw-datatable, .mw-special-Newsletters .mw-datatable td, .mw-special-Newsletters .mw-datatable th {
+	border: none;
+}
+
+.mw-special-Newsletters .mw-datatable, .mw-special-Newsletters .mw-datatable tr {
+	border: solid #AAAAAA;
+	border-width: 0 0 1px 0;
+	text-align: center;
+}
