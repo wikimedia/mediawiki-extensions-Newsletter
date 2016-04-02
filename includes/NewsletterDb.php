@@ -236,20 +236,18 @@ class NewsletterDb {
 
 	/**
 	 * @param int $id
-	 *
-	 * @todo make this more reliable and scalable
 	 */
 	public function deleteNewsletter( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
-		$dbw->startAtomic( __METHOD__ );
-		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
-		$dbw->endAtomic( __METHOD__ );
-		$this->lb->reuseConnection( $dbw );
+
+		$dbw->update(
+			'nl_newsletters',
+			array( 'nl_active' => 0 ),
+			array( 'nl_id' => $id ),
+			__METHOD__
+		);
 	}
 
 	/**
@@ -264,7 +262,7 @@ class NewsletterDb {
 		$res = $dbr->select(
 			'nl_newsletters',
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_id' => $id ),
+			array( 'nl_id' => $id, 'nl_active' => 1 ),
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -332,7 +330,7 @@ class NewsletterDb {
 		$res = $dbr->select(
 			'nl_newsletters',
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_main_page_id' => $id ),
+			array( 'nl_main_page_id' => $id, 'nl_active' => 1 ),
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -351,7 +349,7 @@ class NewsletterDb {
 		$res = $dbr->select(
 			array( 'nl_publishers', 'nl_newsletters' ),
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nlp_publisher_id' => $user->getId() ),
+			array( 'nlp_publisher_id' => $user->getId(), 'nl_active' => 1 ),
 			__METHOD__,
 			array(),
 			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=nlp_newsletter_id' ) )
@@ -370,7 +368,7 @@ class NewsletterDb {
 		$res = $dbr->select(
 			array( 'nl_newsletters' ),
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array(),
+			array( 'nl_active' => 1 ),
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );

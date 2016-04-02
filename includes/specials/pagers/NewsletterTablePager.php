@@ -56,14 +56,13 @@ class NewsletterTablePager extends TablePager {
 			'options' => array( 'DISTINCT nl_id' ),
 		);
 
+		$info['conds'] = array( 'nl_active = 1' );
 		if ( $this->option == 'subscribed' ) {
-			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
+			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
 				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
 		} elseif ( $this->option == 'unsubscribed' ) {
-			$info['conds'] = array( $this->mDb->addQuotes( $userId ) .
+			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
 				' NOT IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
-		} else {
-			$info['conds'] = null;
 		}
 
 		if ( $this->getUser()->isLoggedIn() ) {
