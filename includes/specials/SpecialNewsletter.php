@@ -650,17 +650,20 @@ class SpecialNewsletter extends SpecialPage {
 			'type' => 'text',
 			'label-message' => 'newsletter-manage-name',
 			'default' => $this->newsletter->getName(),
+			'required' => true,
 		);
 		$fields['MainPage'] = array(
 			'type' => 'title',
 			'label-message' => 'newsletter-manage-title',
 			'default' =>  $mainTitle->getPrefixedText(),
+			'required' => true,
 		);
 		$fields['Description'] = array(
 			'type' => 'textarea',
 			'label-message' => 'newsletter-manage-description',
 			'rows' => 6,
 			'default' => $this->newsletter->getDescription(),
+			'required' => true,
 		);
 		$fields['Publishers'] = array(
 			'type' => 'textarea',
