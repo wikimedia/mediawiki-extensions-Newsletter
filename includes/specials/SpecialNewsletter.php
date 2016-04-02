@@ -62,8 +62,8 @@ class SpecialNewsletter extends SpecialPage {
 					$this->doAnnounceExecute();
 					break;
 				case self::NEWSLETTER_MANAGE:
-				    $this->doManageExecute();
-				    break;
+					$this->doManageExecute();
+					break;
 				case self::NEWSLETTER_DELETE:
 					$this->doDeleteExecute();
 					break;
@@ -204,7 +204,7 @@ class SpecialNewsletter extends SpecialPage {
 				'label-message' => 'newsletter-view-description',
 				'default' => $this->newsletter->getDescription(),
 				'rows' => 6,
-				'readonly' => !$this->newsletter->canManage( $user ),
+				'readonly' => true,
 			),
 			'publishers' => array(
 				'type' => 'info',
@@ -266,7 +266,7 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $this->msg( 'newsletter-collaborators-button' )->escaped(),
+					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
 					'icon' => 'settings',
 					'href' =>  $this->getPageTitle( $id . '/' . self::NEWSLETTER_MANAGE )->getFullURL()
 				)
@@ -613,7 +613,7 @@ class SpecialNewsletter extends SpecialPage {
 		return true;
 	}
 
-    /**
+        /**
 	 * Build the manage form for Special:Newsletter/$id/manage. This does
 	 * permissions and read-only checks too.
 	 *
@@ -641,10 +641,27 @@ class SpecialNewsletter extends SpecialPage {
 
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$publishersNames = array();
+		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 		foreach ( $publishers as $publisher ) {
 			$publishersNames[] = $publisher->getName();
 		}
 
+		$fields['Name'] = array(
+			'type' => 'text',
+			'label-message' => 'newsletter-manage-name',
+			'default' => $this->newsletter->getName(),
+		);
+		$fields['MainPage'] = array(
+			'type' => 'title',
+			'label-message' => 'newsletter-manage-title',
+			'default' =>  $mainTitle->getPrefixedText(),
+		);
+		$fields['Description'] = array(
+			'type' => 'textarea',
+			'label-message' => 'newsletter-manage-description',
+			'rows' => 6,
+			'default' => $this->newsletter->getDescription(),
+		);
 		$fields['Publishers'] = array(
 			'type' => 'textarea',
 			'label-message' => 'newsletter-manage-publishers',
@@ -668,7 +685,7 @@ class SpecialNewsletter extends SpecialPage {
 				->rawParams( $this->getEscapedName() )->parse()
 		);
 		$form->setId( 'newsletter-manage-form' );
-		$form->setSubmitID( 'newsletter-collaborators-button' );
+		$form->setSubmitID( 'newsletter-manage-button' );
 		$form->setSubmitTextMsg( 'newsletter-managenewsletter-button' );
 		$form->show();
 	}
@@ -681,8 +698,65 @@ class SpecialNewsletter extends SpecialPage {
 	 *
 	 * @return Status|bool true on success, Status fatal otherwise
 	 */
-    public function submitManageForm( array $data ) {
+	public function submitManageForm( array $data ) {
 		$confirmed = (bool)$data['Confirm'];
+		$modified = false;
+
+		$oldName = $this->newsletter->getName();
+		$oldDescription = $this->newsletter->getDescription();
+		$oldMainPage = $this->newsletter->getPageId();
+
+		$name = trim( $data['Name'] );
+		$description = trim( $data['Description'] );
+		$mainPage = Title::newFromText( $data['MainPage'] );
+
+		if ( !$mainPage ) {
+			return Status::newFatal( 'newsletter-create-mainpage-error' );
+		}
+
+		$formData = array(
+			'Name' => $name,
+			'Description' => $description,
+			'MainPage' => $mainPage,
+		);
+
+		$validator = new NewsletterValidator( $formData );
+		$validation = $validator->validate();
+		if ( !$validation->isGood() ) {
+			// Invalid input was entered
+			return $validation;
+		}
+
+		$mainPageId = $mainPage->getArticleID();
+
+		$ndb = NewsletterDb::newFromGlobalState();
+		$newsletterId = $this->newsletter->getId();
+
+		if ( $name != $oldName ) {
+			$rows = $ndb->newsletterExistsWithName( $name );
+			foreach ( $rows as $row ) {
+				if ( $row->nl_name === $name ) {
+					return Status::newFatal( 'newsletter-exist-error', $name );
+				}
+			}
+			$ndb->updateName( $newsletterId, $name );
+			$modified = true;
+		}
+		if ( $description != $oldDescription ) {
+			$ndb->updateDescription( $newsletterId, $description );
+			$modified = true;
+		}
+		if ( $oldMainPage != $mainPageId ) {
+			$rows = $ndb->newsletterExistsForMainPage( $mainPageId );
+			foreach ( $rows as $row ) {
+				if ( (int)$row->nl_main_page_id === $mainPageId  ) {
+					return Status::newFatal( 'newsletter-mainpage-in-use' );
+				}
+			}
+			$ndb->updateMainPage( $newsletterId, $mainPageId );
+			$modified = true;
+		}
+
 		$lines = explode( "\n", $data['Publishers'] );
 		// Strip whitespace, then remove blank lines and duplicates
 		$lines = array_unique( array_filter( array_map( 'trim', $lines ) ) );
@@ -719,8 +793,7 @@ class SpecialNewsletter extends SpecialPage {
 		// Do the actual modifications now
 		$added = array_diff( $newPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
-		$ndb = NewsletterDb::newFromGlobalState();
-		$newsletterId = $this->newsletter->getId();
+
 		// @todo Do this in a batch..
 		foreach ( $added as $auId ) {
 			$ndb->addPublisher( $auId, $newsletterId );
@@ -746,11 +819,11 @@ class SpecialNewsletter extends SpecialPage {
 
 		// Now report to the user
 		$out = $this->getOutput();
-		if ( $added || $removed ) {
-			$out->addWikiMsg( 'newsletter-manage-publishers-success' );
+		if ( $added || $removed || $modified ) {
+			$out->addWikiMsg( 'newsletter-manage-newsletter-success' );
 		} else {
 			// Submitted without any changes to the existing publishers
-			$out->addWikiMsg( 'newsletter-manage-publishers-nochanges' );
+			$out->addWikiMsg( 'newsletter-manage-newsletter-nochanges' );
 		}
 		$out->addReturnTo( $this->getPageTitle( $newsletterId ) );
 

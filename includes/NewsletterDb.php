@@ -146,6 +146,96 @@ class NewsletterDb {
 
 	/**
 	 * @param int $id
+	 * @param string $description
+	 *
+	 * @return bool success of the action
+	 */
+	public function updateDescription( $id, $description ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+		Assert::parameterType( 'string', $description, '$description' );
+
+		$rowData = array(
+			'nl_desc' => $description,
+		);
+
+		$conds = array(
+			'nl_id' => $id,
+		);
+
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		try {
+			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+
+		} catch ( DBQueryError $ex ) {
+			$success = false;
+		}
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
+	}
+
+	/**
+	 * @param int $id
+	 * @param string $name
+	 *
+	 * @return bool success of the action
+	 */
+	public function updateName( $id, $name ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+		Assert::parameterType( 'string', $name, '$name' );
+
+		$rowData = array(
+			'nl_name' => $name,
+		);
+
+		$conds = array(
+			'nl_id' => $id,
+		);
+
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		try {
+			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+
+		} catch ( DBQueryError $ex ) {
+			$success = false;
+		}
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
+	}
+
+	/**
+	 * @param int $id
+	 * @param int $pageId
+	 *
+	 * @return bool success of the action
+	 */
+	public function updateMainPage( $id, $pageId ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+		Assert::parameterType( 'integer', $pageId, '$pageId' );
+
+		$rowData = array(
+			'nl_main_page_id' => $pageId,
+		);
+
+		$conds = array(
+			'nl_id' => $id,
+		);
+
+		$dbw = $this->lb->getConnection( DB_MASTER );
+		try {
+			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+
+		} catch ( DBQueryError $ex ) {
+			$success = false;
+		}
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
+	}
+
+	/**
+	 * @param int $id
 	 *
 	 * @todo make this more reliable and scalable
 	 */
@@ -286,6 +376,51 @@ class NewsletterDb {
 		$this->lb->reuseConnection( $dbr );
 
 		return $this->getNewslettersFromResult( $res );
+	}
+
+
+	/**
+	 * Fetch all newsletter names
+	 *
+	 * @param string $name
+	 * @return bool|ResultWrapper
+	 * @throws DBUnexpectedError
+	 * @throws MWException
+	 */
+	public function newsletterExistsWithName( $name ) {
+		Assert::parameterType( 'string', $name, '$name' );
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$res = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_name' ),
+			array( 'nl_name' => $name )
+		);
+
+		$this->lb->reuseConnection( $dbr );
+		return $res;
+	}
+
+	/**
+	 * Fetch all newsletter Main Pages
+	 *
+	 * @param int $mainPageId
+	 * @return bool|ResultWrapper
+	 * @throws DBUnexpectedError
+	 * @throws MWException
+	 */
+	public function newsletterExistsForMainPage( $mainPageId ) {
+		Assert::parameterType( 'integer', $mainPageId , '$mainPageId' );
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$res = $dbr->select(
+			'nl_newsletters',
+			array( 'nl_main_page_id' ),
+			array( 'nl_main_page_id' => $mainPageId )
+		);
+
+		$this->lb->reuseConnection( $dbr );
+		return $res;
 	}
 
 	/**
