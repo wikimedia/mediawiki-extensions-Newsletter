@@ -222,19 +222,16 @@ class NewsletterDb {
 	 * @param Newsletter $newsletter
 	 *
 	 * @return bool success of the action
-	 *
-	 * @todo make this more reliable and scalable
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ) {
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
-		$id = $newsletter->getId();
-		$dbw->startAtomic( __METHOD__ );
-		$dbw->delete( 'nl_newsletters', array( 'nl_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_issues', array( 'nli_newsletter_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_publishers', array( 'nlp_newsletter_id' => $id ), __METHOD__ );
-		$dbw->delete( 'nl_subscriptions', array( 'nls_newsletter_id' => $id ), __METHOD__ );
-		$dbw->endAtomic( __METHOD__ );
+		$dbw->update(
+			'nl_newsletters',
+			array( 'nl_active' => 0 ),
+			array( 'nl_id' => $newsletter->getId() ),
+			__METHOD__
+		);
 
 		$this->lb->reuseConnection( $dbw );
 
