@@ -10,7 +10,7 @@
 	"newsletter-title": "Titel vun der Haaptsäit",
 	"newsletter-exist-error": "Et gëtt schonn eng Newsletter mam Numm \"$1\". Probéiert w.e.g. nach eng Kéier mat engem aneren Numm.",
 	"newsletter-create-submit": "Newsletter uleeën",
-	"newsletter-create-confirmation": "Eng nei Newsletter gouf gemaacht.",
+	"newsletter-create-confirmation": "Eng [[Special:Newsletter/$1|nei Newsletter]] gouf gemaacht.",
 	"newsletter-subtitlelinks-list": "Lëscht vun Newsletteren",
 	"newsletter-subtitlelinks-create": "Eng nei Newsletter uleeën",
 	"newsletter-subtitlelinks-unsubscribe": "ofbestellen",
@@ -19,7 +19,7 @@
 	"newsletter-subtitlelinks-manage": "Mataarbechter",
 	"newsletter-subtitlelinks-delete": "läschen",
 	"newsletter-notfound": "Newsletter net fonnt",
-	"newsletter-not-found-id": "Eng Newsletter mat dëser Nummer (ID) gëtt et net.",
+	"newsletter-not-found-id": "Eng Newsletter mat dëser Nummer (ID) gëtt et net. Eng [[Special:Newsletters|Lëscht vun den Newsletteren]] ass disponibel.",
 	"newsletter-view": "Detailer vun der Newsletter weisen",
 	"newsletter-view-name": "Numm vun der Newsletter:",
 	"newsletter-view-mainpage": "Haaptsäit:",
@@ -61,5 +61,6 @@
 	"newsletter-list-table": "Filteren no:",
 	"newsletter-list-option-all": "Alle Newsletteren",
 	"newsletter-list-option-subscribed": "Newsletteren op déi ech abonnéiert sinn",
-	"newsletter-list-go-button": "Lass"
+	"newsletter-list-go-button": "Lass",
+	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren"
 }

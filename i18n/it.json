@@ -14,7 +14,7 @@
 	"newsletter-create-error": "Si è verificato un errore durante la creazione di una nuova newsletter. Riprova.",
 	"newslettercreate": "Crea newsletter",
 	"newsletter-create-submit": "Crea newsletter",
-	"newsletter-create-confirmation": "Una nuova newsletter è stata creata con successo.",
+	"newsletter-create-confirmation": "Una [[Special:Newsletter/$1|nuova newsletter]] è stata creata.",
 	"newsletter-mainpage-non-existent": "La pagina principale della newsletter non esiste. Inserisci una pagina esistente valida.",
 	"newsletter-mainpage-in-use": "Una newsletter esistente ha la stessa pagina principale. Inserisci un altro titolo.",
 	"newsletter-create-short-description-error": "La descrizione è troppo breve (meno di 30 caratteri). Riprova.",
@@ -22,11 +22,11 @@
 	"newsletter-subtitlelinks-create": "Crea una nuova newsletter",
 	"newsletter-subtitlelinks-unsubscribe": "cancella iscrizione",
 	"newsletter-subtitlelinks-subscribe": "iscriviti",
-	"newsletter-subtitlelinks-manage": "gestisci",
+	"newsletter-subtitlelinks-manage": "collaboratori",
 	"newsletter-subtitlelinks-delete": "cancella",
 	"newsletters": "Newsletter",
 	"newsletter-notfound": "Newsletter non trovata",
-	"newsletter-not-found-id": "Una newsletter con questo ID non esiste.",
+	"newsletter-not-found-id": "Una newsletter con questo ID non esiste. Un [[Special:Newsletters|elenco delle newsletter esistenti]] è disponibile.",
 	"newsletter-view": "Vedi dettagli newsletter",
 	"newsletter-view-name": "Nome newsletter:",
 	"newsletter-view-mainpage": "Pagina principale:",
@@ -57,5 +57,6 @@
 	"newsletter-list-option-all": "Tutte le newsletter",
 	"newsletter-list-option-subscribed": "Newsletter a cui sono iscritto",
 	"newsletter-list-option-unsubscribed": "Newsletter a cui non sono iscritto",
-	"newsletter-list-go-button": "Vai"
+	"newsletter-list-go-button": "Vai",
+	"newsletter-notification-link-text-new-publisher": "Gestisci newsletter"
 }

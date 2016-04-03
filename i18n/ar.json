@@ -3,7 +3,8 @@
 		"authors": [
 			"Hiba Alshawi",
 			"Meno25",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Maroen1990"
 		]
 	},
 	"newsletter-desc": "الوصف",
@@ -13,5 +14,8 @@
 	"newsletter-subtitlelinks-manage": "إدارة",
 	"newsletter-subtitlelinks-delete": "احذف",
 	"newsletter-view-description": "الوصف:",
+	"newsletter-manage-name": "اسم الرسالة الإخبارية:",
+	"newsletter-manage-title": "عنوان الصفحة الرئيسية",
+	"newsletter-manage-description": "الوصف:",
 	"newsletter-header-description": "الوصف"
 }

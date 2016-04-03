@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Giorgos456"
+			"Giorgos456",
+			"Geraki"
 		]
 	},
-	"notification-header-newsletter-announce": "$1 {{GENDER:$2|έχει ανακοινώσει}} μια νέα έκδοση των $3."
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|έχει ανακοινώσει}} μια νέα έκδοση των $3.",
+	"notification-header-newsletter-newpublisher": "Έχετε προστεθεί ως εκδότης του ενημερωτικού δελτίου $1."
 }
