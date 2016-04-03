@@ -34,7 +34,7 @@ class NewsletterTablePager extends TablePager {
 
 			if ( $this->getUser()->isLoggedIn() ) {
 				// Only logged-in users can (un)subscribe
-				$this->fieldNames['action'] = $this->msg( 'newsletter-header-action' )->escaped();
+				$this->fieldNames['action'] = null;
 			}
 		}
 
