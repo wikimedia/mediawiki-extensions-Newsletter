@@ -9,7 +9,7 @@
 	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
 	"newsletter-name": "Name of newsletter",
 	"newsletter-desc": "Description",
-	"newsletter-title": "Title of Main Page",
+	"newsletter-title": "Wiki page to be linked as Main page",
 	"newsletter-exist-error": "A newsletter with the name \"$1\" already exists. Please try again with another name.",
 	"newsletter-create-error": "An error occured while trying to create a new newsletter. Please try again.",
 	"newsletter-input-required": "Required input was not entered. Please try again.",

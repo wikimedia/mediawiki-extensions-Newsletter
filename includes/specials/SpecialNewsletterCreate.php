@@ -46,17 +46,17 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'label-message' => 'newsletter-name',
 				'maxlength' => 120
 			),
+			'mainpage' => array(
+				'type' => 'title',
+				'required' => true,
+				'label-message' => 'newsletter-title',
+			),
 			'description' => array(
 				'type' => 'textarea',
 				'required' => true,
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
 				'maxlength' => 600000,
-			),
-			'mainpage' => array(
-				'type' => 'title',
-				'required' => true,
-				'label-message' => 'newsletter-title',
 			),
 		);
 	}
