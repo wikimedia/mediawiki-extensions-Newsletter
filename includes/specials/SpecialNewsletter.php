@@ -549,7 +549,6 @@ class SpecialNewsletter extends SpecialPage {
 					'notifyAgent' => true,
 				),
 				'agent' => $this->getUser(),
-				'name' => $this->getUser()->getName()
 			)
 		);
 

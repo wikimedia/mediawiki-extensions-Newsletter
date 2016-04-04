@@ -12,12 +12,8 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 * @param Message $message
 	 * @param User $user
 	 */
-	protected function processParam( EchoEvent $event, $param, Message $message, User $user ) {
-		if ( $param === 'newsletter' ) {
-			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
-		} elseif ( $param === 'newsletter-name' ){
-
-			// @todo Standardize 'newsletter-name' for clarity
+	protected function processParam( $event, $param, $message, $user ) {
+		if ( $param === 'newsletter-name' ){
 			$this->processParamEscaped( $message, $event->getExtraParam( 'newsletter-name' ) );
 		} else {
 			parent::processParam( $event, $param, $message, $user );
@@ -33,7 +29,7 @@ class EchoNewsletterFormatter extends EchoBasicFormatter {
 	 *
 	 * @return array including target URL
 	 */
-	protected function getLinkParams( EchoEvent $event, User $user, $destination ) {
+	protected function getLinkParams( $event, $user, $destination ) {
 		$target = null;
 		$query = array();
 		switch ( $destination ) {

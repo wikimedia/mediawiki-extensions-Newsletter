@@ -35,14 +35,14 @@ class NewsletterHooks {
 			'presentation-model' => 'EchoNewsletterPresentationModel',
 			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
-			'title-params' => array( 'newsletter', 'title', 'agent', 'name' ),
+			'title-params' => array( 'newsletter-name', 'title', 'agent', 'user' ),
 			'flyout-message' => 'newsletter-notification-flyout',
-			'flyout-params' => array( 'newsletter', 'agent', 'name' ),
+			'flyout-params' => array( 'newsletter-name', 'agent', 'user' ),
 			'payload' => array( 'summary' ),
 			'email-subject-message' => 'newsletter-email-subject',
-			'email-subject-params' => array( 'newsletter' ),
+			'email-subject-params' => array( 'newsletter-name' ),
 			'email-body-batch-message' => 'newsletter-email-batch-body',
-			'email-body-batch-params' =>  array( 'newsletter', 'agent', 'name' ),
+			'email-body-batch-params' =>  array( 'newsletter-name', 'agent', 'user' ),
 		);
 
 		$notifications['newsletter-newpublisher'] = array(
