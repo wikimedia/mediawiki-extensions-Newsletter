@@ -16,7 +16,7 @@
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des infolettres",
 	"newsletter-name": "Nom de l’infolettre",
 	"newsletter-desc": "Description",
-	"newsletter-title": "Titre de la page principale",
+	"newsletter-title": "Page Wiki à être liée comme page principale",
 	"newsletter-exist-error": "Un bulletin d'information portant le nom \"$1\" existe déja. Veuillez réessayer avec un autre nom s'il vous plait.",
 	"newsletter-create-error": "Une erreur s'est produite en essayant créer un nouveau bulletin d'information. Merci d'essayer à nouveau.",
 	"newsletter-input-required": "Les données attendues n'ont pas été entrées. Merci d'essayer à nouveau.",
@@ -39,7 +39,7 @@
 	"newsletters": "Infolettres",
 	"newsletter-subscribe-loginrequired": "Veuillez vous connecter pour vous abonner aux [[Special:Newsletters|infolettres]].",
 	"newsletter-notfound": "Infolettre non trouvée",
-	"newsletter-not-found-id": "Aucune infolettre avec cet identifiant n’existe.",
+	"newsletter-not-found-id": "Il n’existe pas d’infolettre avec cet identifiant. Une [[Special:Newsletters|liste des infolettres existantes]] est disponible.",
 	"newsletter-view": "Voir les propriétés de l’infolettre",
 	"newsletter-view-name": "Nom de l’infolettre :",
 	"newsletter-view-mainpage": "Page principale :",
@@ -144,5 +144,10 @@
 	"newsletter-notification-new-publisher-title": "Vous avez été ajouté en tant qu'éditeur du bulletin d'information de $1.",
 	"newsletter-notification-new-publisher-flyout": "Vous êtes maintenant un éditeur du bulletin d'information de $1.",
 	"log-name-newsletter": "Journal du bulletin d’informations",
-	"log-description-newsletter": "Ceci est un journal des modifications apportées aux bulletins d’informations."
+	"log-description-newsletter": "Ceci est un journal des modifications apportées aux bulletins d’informations.",
+	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|a ajouté}} {{GENDER:$6|$3}} comme éditeur de l’infolettre $4",
+	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|a enlevé}} {{GENDER:$6|$3}} des éditeurs de l’infolettre $4",
+	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|a créé}} l’infolettre $4",
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|a supprimé}} l’infolettre $4",
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|a publié}} un nouveau numéro de l’infolettre $4"
 }
