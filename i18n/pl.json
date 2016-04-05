@@ -16,13 +16,19 @@
 	"newsletter-manage-button": "Zarządzaj",
 	"newsletter-unsubscribe-button": "Zrezygnuj z subskrypcji",
 	"newsletter-subscribe-button": "Subskrybuj",
+	"newsletter-manage-name": "Nazwa newslettera:",
+	"newsletter-manage-title": "Tytuł strony głównej",
+	"newsletter-manage-description": "Opis:",
 	"newsletter-managenewsletter-button": "Wyślij",
+	"newsletter-manage-newsletter-success": "Newsletter został zmieniony.",
 	"newsletter-subscribe-error": "Podczas próby zapisania się na newsletter wystąpił błąd.",
 	"newsletter-unsubscribe-error": "Podczas próby wypisania się z newslettera wystąpił błąd.",
 	"newsletter-subscribe-button-label": "Tak",
 	"newsletter-unsubscribe-button-label": "Nie",
 	"newsletter-notification-link-text-view-newsletter": "Pokaż newsletter",
+	"newsletter-header-name": "Nazwa",
 	"newsletter-header-description": "Opis",
+	"newsletter-header-subscriber_count": "Subskrybenci",
 	"newsletter-delete-confirmation": "Czy na pewno chcesz usunąć ten newsletter?",
 	"newsletter-delete-confirm-cancel": "Anuluj",
 	"newsletter-delete-confirm-delete": "Usuń",
@@ -31,5 +37,7 @@
 	"action-newsletter-delete": "usuń newslettery",
 	"apihelp-newslettermanage-description": "Zarządzaj newsletterem.",
 	"newsletter-list-table": "Posortuj tabele według:",
-	"newsletter-list-go-button": "Dalej"
+	"newsletter-list-go-button": "Dalej",
+	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|utworzył|utworzyła}} newsletter $4",
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|usunął|usunęła}} newsletter $4"
 }

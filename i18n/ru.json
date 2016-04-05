@@ -3,12 +3,15 @@
 		"authors": [
 			"Ghiutun",
 			"INS Pirat",
-			"Metastasis"
+			"Metastasis",
+			"Гизатуллина"
 		]
 	},
 	"newsletter-desc": "Описание",
+	"newsletter-title": "Баш биттә бәйләнештә булыу өсөн, вики-бит",
 	"newsletter-delete-button": "Удалить",
 	"newsletter-subscribe-button": "Подписаться",
 	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",
-	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка."
+	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка.",
+	"newsletter-header-name": "Атама"
 }
