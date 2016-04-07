@@ -134,7 +134,7 @@
 	"apihelp-newslettermanage-example-1": "Ajouter un éditeur d’id utilisateur 3 au bulletin d’informations d’id 1.",
 	"apihelp-newslettermanage-example-2": "Supprimer l’éditeur d’id utilisateur 5 du bulletin d’informations d’id 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|a annoncé}} un nouveau numéro de $3.",
-	"notification-header-newsletter-newpublisher": "Vous avez été ajouté en tant qu'éditeur du bulletin d'information de $1.",
+	"notification-header-newsletter-newpublisher": "Vous avez été ajouté en tant qu’éditeur du bulletin d'information de $1.",
 	"newsletter-list-table": "Filtrer par :",
 	"newsletter-list-option-all": "Tous les bulletins d’information",
 	"newsletter-list-option-subscribed": "Les bulletins auxquels je suis abonné",
@@ -145,9 +145,9 @@
 	"newsletter-notification-new-publisher-flyout": "Vous êtes maintenant un éditeur du bulletin d'information de $1.",
 	"log-name-newsletter": "Journal du bulletin d’informations",
 	"log-description-newsletter": "Ceci est un journal des modifications apportées aux bulletins d’informations.",
-	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|a ajouté}} {{GENDER:$6|$3}} comme éditeur de l’infolettre $4",
-	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|a enlevé}} {{GENDER:$6|$3}} des éditeurs de l’infolettre $4",
-	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|a créé}} l’infolettre $4",
-	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|a supprimé}} l’infolettre $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|a publié}} un nouveau numéro de l’infolettre $4"
+	"logentry-newsletter-publisher-added": "{{GENDER:$2|$1}} a ajouté $3 comme édit{{GENDER:$6|eur|rice}} du bulletin d’information $4",
+	"logentry-newsletter-publisher-removed": "{{GENDER:$2|$1}} a enlevé {{GENDER:$6|$3}} des éditeurs du bulletin d’information $4",
+	"logentry-newsletter-newsletter-added": "{{GENDER:$2|$1}} a créé le bulletin d’information $4",
+	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
+	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4"
 }
