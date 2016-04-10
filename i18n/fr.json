@@ -134,7 +134,7 @@
 	"apihelp-newslettermanage-example-1": "Ajouter un éditeur d’id utilisateur 3 au bulletin d’informations d’id 1.",
 	"apihelp-newslettermanage-example-2": "Supprimer l’éditeur d’id utilisateur 5 du bulletin d’informations d’id 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|a annoncé}} un nouveau numéro de $3.",
-	"notification-header-newsletter-newpublisher": "Vous avez été ajouté en tant qu’éditeur du bulletin d'information de $1.",
+	"notification-header-newsletter-newpublisher": "Vous avez été ajouté en tant qu’éditeur de l'infolettre $1.",
 	"newsletter-list-table": "Filtrer par :",
 	"newsletter-list-option-all": "Tous les bulletins d’information",
 	"newsletter-list-option-subscribed": "Les bulletins auxquels je suis abonné",

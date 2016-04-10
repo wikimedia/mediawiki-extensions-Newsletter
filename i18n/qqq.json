@@ -8,7 +8,8 @@
 			"Glaisher",
 			"Orlodrim",
 			"Umherirrender",
-			"Verdy p"
+			"Verdy p",
+			"Amire80"
 		]
 	},
 	"newsletter-extension-desc": "Description of the extension",
@@ -141,7 +142,7 @@
 	"newsletter-list-go-button": "Label of the submit button of the HTML form in [[Special:Newsletters]]\n{{Identical|Go}}",
 	"newsletter-notification-link-text-new-publisher": "Label of the primary link of the newsletter-notification-new-publisher-flyout, which on clicking navigates the user to manage page of a newsletter.",
 	"newsletter-notification-new-publisher-title": "Header text for a notification when a new publisher is added for a newsletter. Parameters:\n* $1 is the name of the newsletter.",
-	"newsletter-notification-new-publisher-flyout": "Echo notification flyout message when a new publisher is added for a newsletter. \n* $1 is the name of the newsletter\n\n* There should be a parameter $2 containing the user name, so that GENDER can be used on translating \"publisher\" as <code><nowiki>{{GENDER:$2|male publisher|female publisher|neutral publisher}}</nowiki></code>, and possibly change the correct translation of \"You are\".",
+	"newsletter-notification-new-publisher-flyout": "Echo notification flyout message when a new publisher is added for a newsletter. \n* $1 is the name of the newsletter",
 	"log-name-newsletter": "{{log-name|newsletter}}",
 	"log-description-newsletter": "{{log-description|newsletter}}",
 	"logentry-newsletter-publisher-added": "{{logentry}}\nAdditional parameters:\n* $4 - the newsletter affected by the action",
