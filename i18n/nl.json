@@ -32,6 +32,8 @@
 	"newsletter-subscribing": "Aan het abonneren...",
 	"newsletter-unsubscribing": "Aan het afmelden...",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
+	"newsletter-header-name": "Naam",
+	"newsletter-header-subscriber_count": "Abonnees",
 	"newsletter-delete-confirm-cancel": "Annuleren",
 	"newsletter-delete-confirm-delete": "Verwijderen",
 	"right-newsletter-create": "Nieuwsbrieven aanmaken",

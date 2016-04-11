@@ -53,6 +53,7 @@
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|huet}} eng nei Ausgab vum $1 annoncéiert.",
 	"newsletter-header-name": "Numm",
 	"newsletter-header-description": "Beschreiwung",
+	"newsletter-header-subscriber_count": "Abonnenten",
 	"newsletter-delete-confirmation": "Sidd Dir sécher datt Dir dës Newsletter läsche wëllt?",
 	"newsletter-delete-confirm-details": "Denkt drun datt dës Aktioun net réckgängeg gemaach gi kann an datt d'Donnéeën net kënne restauréiert gi wa si geläscht goufen.",
 	"newsletter-delete-confirm-cancel": "Ofbriechen",
@@ -65,5 +66,6 @@
 	"newsletter-list-option-all": "Alle Newsletteren",
 	"newsletter-list-option-subscribed": "Newsletteren op déi ech abonnéiert sinn",
 	"newsletter-list-go-button": "Lass",
-	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren"
+	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren",
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|huet}} d'Newsletter $4 geläscht"
 }
