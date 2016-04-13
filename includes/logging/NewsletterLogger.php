@@ -15,7 +15,7 @@ class NewsletterLogger {
 			'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
 		] );
 		$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-		$log->insert();
+		$log->publish( $log->insert() );
 	}
 
 	public function logPublisherRemoved( Newsletter $newsletter, User $user ) {
@@ -26,7 +26,7 @@ class NewsletterLogger {
 			'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}"
 		] );
 		$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-		$log->insert();
+		$log->publish( $log->insert() );
 	}
 
 	public function logNewsletterAdded( Newsletter $newsletter ) {
@@ -38,7 +38,7 @@ class NewsletterLogger {
 			'4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}"
 		] );
 		$log->setRelations( [ 'nl_id' => $id ] );
-		$log->insert();
+		$log->publish( $log->insert() );
 	}
 
 	public function logNewsletterDeleted( Newsletter $newsletter ) {
@@ -48,7 +48,7 @@ class NewsletterLogger {
 		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
 		$log->setParameters( [ '4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}" ] );
 		$log->setRelations( [ 'nl_id' => $id ] );
-		$log->insert();
+		$log->publish( $log->insert() );
 	}
 
 	public function logNewIssue( User $publisher, Newsletter $newsletter, $issueId ) {
@@ -60,7 +60,7 @@ class NewsletterLogger {
 			'5::nli_issue_id' => $issueId
 		] );
 		$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
-		$log->insert();
+		$log->publish( $log->insert() );
 	}
 
 }
