@@ -606,16 +606,23 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * @todo make sure that the newsletter was actually deleted before outputting the result!
+	 * Submit callback for delete form
 	 *
 	 * @param array $data
-	 * @return bool
+	 * @return Status|bool true on success, Status fatal on failure
 	 */
 	public function submitDeleteForm( array $data ) {
-		NewsletterStore::getDefaultInstance()->deleteNewsletter( $this->newsletter, $data['Reason'] );
-		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
-
-		return true;
+		$success = NewsletterStore::getDefaultInstance()
+			->deleteNewsletter( $this->newsletter, $data['Reason'] );
+		if ( $success ) {
+			$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
+			return true;
+		} else {
+			// Show error message and allow resubmitting in case of failure
+			return Status::newFatal(
+				$this->msg( 'newsletter-delete-failure' )->rawParams( $this->getEscapedName() )
+			);
+		}
 	}
 
 	/**

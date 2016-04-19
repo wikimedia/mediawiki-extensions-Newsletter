@@ -77,6 +77,7 @@
 	"newsletter-delete-reason": "Label of text field on Special:Newsletter/<id>/delete",
 	"newsletter-deletenewsletter-button": "Label for button shown on Special:Newsletter/<id>/delete. Deletes the newsletter when clicked on.",
 	"newsletter-delete-success": "Success message shown on Special:Newsletter/<id>/delete when the newsletter has been deleted.\n\nParameters:\n* $1 - Newsletter ID",
+	"newsletter-delete-failure": "Error message shown on Special:Newsletter/<id>/delete when the newsletter deletion fails.\n\nParameters:\n* $1 - Newsletter name",
 	"newsletter-subscribe": "Header message shown on Special:Newsletter/<id>/subscribe.\n\nSee also:\n* {{msg-mw|newsletter-delete}}\n*{{msg-mw|newsletter-view}}",
 	"newsletter-subscribe-text": "Introductory message shown on Special:Newsletter/<id>/subscribe if the current user is not subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
 	"newsletter-do-subscribe": "Label for button shown on Special:Newsletter/<id>/subscribe. Adds the user as a subscriber to the newsletter when clicked on.",
