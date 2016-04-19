@@ -45,13 +45,15 @@ class NewsletterTablePager extends TablePager {
 		//TODO we could probably just retrieve all subscribers IDs as a string here.
 
 		$userId = $this->getUser()->getId();
+		$tblSubscriptions = $this->mDb->tableName( 'nl_subscriptions' );
+
 		$info = array(
 			'tables' => array( 'nl_newsletters' ),
 			'fields' => array(
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				'subscribers' => '( SELECT COUNT(*) FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )',
+				'subscribers' => "( SELECT COUNT(*) FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )",
 			),
 			'options' => array( 'DISTINCT nl_id' ),
 		);
@@ -59,15 +61,15 @@ class NewsletterTablePager extends TablePager {
 		$info['conds'] = array( 'nl_active = 1' );
 		if ( $this->option == 'subscribed' ) {
 			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
-				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
+				" IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )" );
 		} elseif ( $this->option == 'unsubscribed' ) {
 			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
-				' NOT IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )' );
+				" NOT IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )" );
 		}
 
 		if ( $this->getUser()->isLoggedIn() ) {
 			$info['fields']['current_user_subscribed'] = $this->mDb->addQuotes( $userId ) .
-				' IN (SELECT nls_subscriber_id FROM nl_subscriptions WHERE nls_newsletter_id = nl_id )';
+				" IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )";
 		}
 
 		return $info;
