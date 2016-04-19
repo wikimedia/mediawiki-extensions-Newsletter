@@ -132,13 +132,14 @@ class NewsletterStore {
 
 	/**
 	 * @param Newsletter $newsletter
+	 * @param string $reason
 	 *
 	 * @return bool success of the action
 	 */
-	public function deleteNewsletter( Newsletter $newsletter ) {
+	public function deleteNewsletter( Newsletter $newsletter, $reason ) {
 		$success = $this->db->deleteNewsletter( $newsletter );
 		if ( $success ) {
-			$this->logger->logNewsletterDeleted( $newsletter );
+			$this->logger->logNewsletterDeleted( $newsletter, $reason );
 		}
 		return $success;
 	}

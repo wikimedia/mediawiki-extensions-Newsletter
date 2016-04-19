@@ -68,6 +68,7 @@
 	"newsletter-manage-newsletter-nochanges": "No changes were made to the existing newsletter.",
 	"newsletter-delete": "Delete newsletter",
 	"newsletter-delete-text": "This interface can be used to delete the \"$1\" newsletter. Please confirm that you intend to do this. <strong>This action cannot be undone.</strong>",
+	"newsletter-delete-reason": "Reason",
 	"newsletter-deletenewsletter-button": "Delete this newsletter",
 	"newsletter-delete-success": "Newsletter #$1 has been deleted.",
 	"newsletter-subscribe": "Newsletter subscription management",

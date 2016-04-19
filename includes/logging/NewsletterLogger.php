@@ -41,12 +41,13 @@ class NewsletterLogger {
 		$log->publish( $log->insert() );
 	}
 
-	public function logNewsletterDeleted( Newsletter $newsletter ) {
+	public function logNewsletterDeleted( Newsletter $newsletter, $reason ) {
 		$id = $newsletter->getId();
 		$log = new ManualLogEntry( 'newsletter', 'newsletter-removed' );
 		$log->setPerformer( RequestContext::getMain()->getUser() );
 		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
 		$log->setParameters( [ '4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}" ] );
+		$log->setComment( $reason );
 		$log->setRelations( [ 'nl_id' => $id ] );
 		$log->publish( $log->insert() );
 	}

@@ -579,8 +579,17 @@ class SpecialNewsletter extends SpecialPage {
 		$out->setPageTitle( $this->msg( 'newsletter-delete' ) );
 		$out->addModules( 'ext.newsletter.delete' ); // Adds confirmation dialog box
 
-		// @todo add reason field when logging is implemented
-		$form = $this->getHTMLForm( array(), array( $this, 'submitDeleteForm' ) );
+		$form = $this->getHTMLForm(
+			array(
+				'Reason' => array(
+					'type' => 'text',
+					'maxlength' => '255',
+					'autofocus' => true,
+					'label-message' => 'newsletter-delete-reason',
+				),
+			),
+			array( $this, 'submitDeleteForm' )
+		);
 		$form->addHeaderText(
 			$this->msg( 'newsletter-delete-text' )
 				->rawParams( $this->getEscapedName() )->parse()
@@ -599,10 +608,11 @@ class SpecialNewsletter extends SpecialPage {
 	/**
 	 * @todo make sure that the newsletter was actually deleted before outputting the result!
 	 *
+	 * @param array $data
 	 * @return bool
 	 */
-	public function submitDeleteForm() {
-		NewsletterStore::getDefaultInstance()->deleteNewsletter( $this->newsletter );
+	public function submitDeleteForm( array $data ) {
+		NewsletterStore::getDefaultInstance()->deleteNewsletter( $this->newsletter, $data['Reason'] );
 		$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
 
 		return true;
