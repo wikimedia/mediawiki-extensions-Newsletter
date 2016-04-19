@@ -48,6 +48,15 @@
 	"LogActionsHandlers": {
 		"newsletter/*": "NewsletterLogFormatter"
 	},
+	"ActionFilteredLogs": {
+		"newsletter": {
+			"issue-added": [ "issue-added" ],
+			"newsletter-added": [ "newsletter-added" ],
+			"newsletter-removed": [ "newsletter-removed" ],
+			"publisher-added": [ "publisher-added" ],
+			"publisher-removed": [ "publisher-removed" ]
+		}
+	},
 	"ExtensionMessagesFiles": {
 		"NewsletterAlias": "Newsletter.alias.php"
 	},
