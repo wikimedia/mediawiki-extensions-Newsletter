@@ -1,21 +1,14 @@
 <?php
 
-class EchoNewsletterPublisherPresentationModel extends EchoEventPresentationModel{
+class EchoNewsletterPublisherPresentationModel extends BaseNewsletterPresentationModel {
 
 	public function getIconType() {
 		return 'site';
 	}
 
-	public function canRender() {
-		// @todo Make this true for existing newsletters only
-		return (bool)SpecialPage::getTitleFor( 'Newsletter',
-			$this->event->getExtraParam( 'newsletter-id' ) . '/' . SpecialNewsletter::NEWSLETTER_MANAGE );
-	}
-
 	public function getPrimaryLink() {
-		$subUrl = $this->event->getExtraParam( 'newsletter-id' );
 		return array(
-			'url' => SpecialPage::getTitleFor( 'Newsletter', $subUrl )->getFullUrl(),
+			'url' => $this->getSpecialNewsletterUrl(),
 			'label' => $this->msg( 'newsletter-notification-link-text-new-publisher' )->text()
 		);
 	}

@@ -65,9 +65,10 @@
 		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
-		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
+		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
+		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
 		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php"
 	},
 	"DefaultUserOptions": {
