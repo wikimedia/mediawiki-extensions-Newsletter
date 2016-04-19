@@ -76,8 +76,19 @@ class SpecialNewsletter extends SpecialPage {
 			$out->addSubtitle( $this->getNavigationLinks( $action ) );
 
 		} else {
-			// Just show an error message if we couldn't find a newsletter
+			// Show an error message (with delete log entry) if we couldn't find a newsletter
 			$out->showErrorPage( 'newsletter-notfound', 'newsletter-not-found-id' );
+			$num = LogEventsList::showLogExtract(
+				$out,
+				'newsletter',
+				$this->getPageTitle( (int)$id ),
+				'',
+				array(
+					'showIfEmpty' => false,
+					'conds' => array( 'log_action' => 'newsletter-removed' ),
+					'msgKey' => 'newsletter-deleted-log'
+				)
+			);
 		}
 
 	}

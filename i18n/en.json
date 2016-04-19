@@ -136,6 +136,7 @@
 	"newsletter-list-option-subscribed": "Newsletters I am subscribed to",
 	"newsletter-list-option-unsubscribed": "Newsletters I am not subscribed to",
 	"newsletter-list-go-button": "Go",
+	"newsletter-deleted-log": "The deletion log for this newsletter is provided below.",
 	"newsletter-notification-link-text-new-publisher": "Manage newsletter",
 	"newsletter-notification-new-publisher-title": "You have been added as a publisher of $1 newsletter.",
 	"newsletter-notification-new-publisher-flyout": "You are now a publisher of $1 newsletter.",
