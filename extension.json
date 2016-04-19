@@ -26,6 +26,9 @@
 	"RateLimits": {
 		"newsletter": {
 			"user": [ 3, 3600 ]
+		},
+		"newsletter-announce": {
+			"user": [ 2, 1800 ]
 		}
 	},
 	"SpecialPages": {

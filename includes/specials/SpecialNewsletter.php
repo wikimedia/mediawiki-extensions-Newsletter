@@ -529,9 +529,15 @@ class SpecialNewsletter extends SpecialPage {
 			throw new Exception( 'Echo extension is not installed.' );
 		}
 
+		$user = $this->getUser();
+		if ( $user->pingLimiter( 'newsletter-announce' ) ) {
+			// Prevent people from spamming
+			throw new ThrottledError;
+		}
+
 		// Everything seems okay. Let's try to do it for real now.
 		$store = NewsletterStore::getDefaultInstance();
-		$success = $store->addNewsletterIssue( $this->newsletter, $title, $this->getUser() );
+		$success = $store->addNewsletterIssue( $this->newsletter, $title, $user );
 
 		if ( !$success ) {
 			// DB insert failed. :( so don't create an Echo event and stop from here
@@ -548,7 +554,7 @@ class SpecialNewsletter extends SpecialPage {
 					'section-text' => trim( $data['summary'] ),
 					'notifyAgent' => true,
 				),
-				'agent' => $this->getUser(),
+				'agent' => $user,
 			)
 		);
 
