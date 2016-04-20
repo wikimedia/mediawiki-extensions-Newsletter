@@ -6,5 +6,6 @@
 		]
 	},
 	"newsletter-create-submit": "Luo uutiskirje",
-	"newsletter-delete-button": "Poista"
+	"newsletter-delete-button": "Poista",
+	"newsletter-delete-reason": "Syy"
 }

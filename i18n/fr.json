@@ -75,6 +75,7 @@
 	"newsletter-manage-newsletter-nochanges": "Aucune modification n’a été faite au bulletin d’informations existant.",
 	"newsletter-delete": "Supprimer l’infolettre",
 	"newsletter-delete-text": "Cette page permet de supprimer l’infolettre « $1 ». Veuillez confirmer que vous souhaitez effectuer la suppression. <strong>Cette action ne peut pas être annulée.</strong>",
+	"newsletter-delete-reason": "Motif",
 	"newsletter-deletenewsletter-button": "Supprimer cette infolettre",
 	"newsletter-delete-success": "L’infolettre #$1 a été supprimée.",
 	"newsletter-subscribe": "Gestion de l’abonnement à l’infolettre",

@@ -23,6 +23,7 @@
 	"newsletter-announce-issuetitle": "Paginatitel van uitgave",
 	"newsletter-announce-summary": "Samenvatting van deze uitgave",
 	"newsletter-delete": "Nieuwsbrief verwijderen",
+	"newsletter-delete-reason": "Reden",
 	"newsletter-deletenewsletter-button": "Nieuwsbrief verwijderen",
 	"newsletter-do-subscribe": "Op deze nieuwsbrief abonneren",
 	"newsletter-subscribe-fail": "Het was niet mogelijk te abonneren op de nieuwsbrief \"$1\" omdat u al bent geabonneerd op deze nieuwsbrief.",

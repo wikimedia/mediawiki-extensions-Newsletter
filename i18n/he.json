@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eraab",
-			"Amire80"
+			"Amire80",
+			"Guycn2"
 		]
 	},
 	"newsletter-extension-desc": "מאפשרת למשתמשים לפרסם ידיעונים ולעשות להם מינוי",
@@ -67,6 +68,7 @@
 	"newsletter-manage-newsletter-nochanges": "לא נעשו שינויים לידיעון הקיים.",
 	"newsletter-delete": "מחיקת ידיעון",
 	"newsletter-delete-text": "ניתן להשתמש בממשק הזה כדי למחוק את הידיעון \"$1\". נא לאשר שזאת באמת הכוונה שלך. <strong>אי־אפשר לבטל את הפעולה הזאת.</strong>",
+	"newsletter-delete-reason": "סיבה",
 	"newsletter-deletenewsletter-button": "מחיקת הידיעון הזה",
 	"newsletter-delete-success": "הידיעון #$1 נמחק.",
 	"newsletter-subscribe": "ניהול מינוי לידיעון",

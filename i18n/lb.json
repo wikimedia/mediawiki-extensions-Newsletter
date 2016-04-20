@@ -34,6 +34,7 @@
 	"newsletter-manage-title": "Titel vun der Hauptsäit",
 	"newsletter-manage-description": "Beschreiwung:",
 	"newsletter-delete": "Newsletter läschen",
+	"newsletter-delete-reason": "Grond",
 	"newsletter-deletenewsletter-button": "Dës Newsletter läschen",
 	"newsletter-delete-success": "Newsletter $1 gouf geläscht.",
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",

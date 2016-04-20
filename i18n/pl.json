@@ -21,6 +21,7 @@
 	"newsletter-manage-description": "Opis:",
 	"newsletter-managenewsletter-button": "Wyślij",
 	"newsletter-manage-newsletter-success": "Newsletter został zmieniony.",
+	"newsletter-delete-reason": "Powód",
 	"newsletter-subscribe-error": "Podczas próby zapisania się na newsletter wystąpił błąd.",
 	"newsletter-unsubscribe-error": "Podczas próby wypisania się z newslettera wystąpił błąd.",
 	"newsletter-subscribe-button-label": "Tak",

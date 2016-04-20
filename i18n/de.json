@@ -67,6 +67,7 @@
 	"newsletter-manage-newsletter-nochanges": "Am vorhandenen Newsletter wurden keine Änderungen durchgeführt.",
 	"newsletter-delete": "Newsletter löschen",
 	"newsletter-delete-text": "Diese Oberfläche kann genutzt werden, um den Newsletter „$1“ zu löschen. Bitte bestätige, dass du beabsichtigst, dies zu tun. <strong>Diese Aktion kann nicht rückgängig gemacht werden.</strong>",
+	"newsletter-delete-reason": "Grund",
 	"newsletter-deletenewsletter-button": "Diesen Newsletter löschen",
 	"newsletter-delete-success": "Newsletter $1 wurde gelöscht.",
 	"newsletter-subscribe": "Newsletter-Abonnement-Verwaltung",
