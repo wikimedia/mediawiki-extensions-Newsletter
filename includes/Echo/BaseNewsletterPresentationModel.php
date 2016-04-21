@@ -15,6 +15,6 @@ abstract class BaseNewsletterPresentationModel extends EchoEventPresentationMode
 	}
 
 	protected function getSpecialNewsletterUrl(){
-		return SpecialPage::getTitleFor( 'Newsletter', $this->getNewsletterId() )->getFullUrl();
+		return SpecialPage::getTitleFor( 'Newsletter', $this->getNewsletterId() )->getFullURL();
 	}
 }

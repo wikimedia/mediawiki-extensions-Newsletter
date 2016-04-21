@@ -16,7 +16,7 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 
 	public function getPrimaryLink() {
 		return array(
-			'url' => $this->event->getTitle()->getFullUrl(),
+			'url' => $this->event->getTitle()->getFullURL(),
 			'label' => $this->msg( 'newsletter-notification-link-text-new-issue' )
 		);
 	}
