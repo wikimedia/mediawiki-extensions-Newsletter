@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"जनक राज भट्ट"
+			"जनक राज भट्ट",
+			"Sfic"
 		]
 	},
-	"newsletter-manage-header-permissions": "उपयोगकर्ता अनुमतियाँ"
+	"newsletter-delete-reason": "कारण"
 }

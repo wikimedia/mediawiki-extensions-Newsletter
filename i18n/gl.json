@@ -69,6 +69,7 @@
 	"newsletter-manage-newsletter-nochanges": "No se fixeron cambios ó boletín existente.",
 	"newsletter-delete": "Eliminar boletín",
 	"newsletter-delete-text": "Esta interface pode usarse para eliminar o boletín \"$1\". Confirme que quere facer isto. <strong>Esta acción non se pode desfacer.</strong>",
+	"newsletter-delete-reason": "Motivo",
 	"newsletter-deletenewsletter-button": "Eliminar este boletín",
 	"newsletter-delete-success": "O boletín #$1 foi eliminado.",
 	"newsletter-subscribe": "Xestión de subscripcións a boletíns",

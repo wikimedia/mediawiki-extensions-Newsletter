@@ -67,6 +67,7 @@
 	"newsletter-manage-newsletter-nochanges": "没有对现有新闻报做出更改。",
 	"newsletter-delete": "删除新闻报",
 	"newsletter-delete-text": "此界面可被用于删除“$1”新闻报。请确认您要这样做。<strong>此操作不能被撤销。</strong>",
+	"newsletter-delete-reason": "原因",
 	"newsletter-deletenewsletter-button": "删除此新闻报",
 	"newsletter-delete-success": "新闻报#$1已被删除。",
 	"newsletter-subscribe": "新闻报订阅管理",

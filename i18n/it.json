@@ -68,6 +68,7 @@
 	"newsletter-manage-newsletter-nochanges": "Non è stata apportata alcuna modifica alle newsletter esistenti.",
 	"newsletter-delete": "Cancella newsletter",
 	"newsletter-delete-text": "Questa interfaccia può essere utilizzata per cancellare la newsletter \"$1\". Conferma che hai intenzione di fare questo. <strong>Questa azione non può essere annullata.</strong>",
+	"newsletter-delete-reason": "Motivo",
 	"newsletter-deletenewsletter-button": "Cancella questa newsletter",
 	"newsletter-delete-success": "La newsletter $1 è stata cancellata.",
 	"newsletter-subscribe": "Gestione iscrizione newsletter",
