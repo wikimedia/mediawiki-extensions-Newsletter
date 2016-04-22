@@ -2,9 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"Guilhermemau"
+			"Guilhermemau",
+			"Luk3"
 		]
 	},
 	"newsletter-view-no-publishers": "Não editores.",
-	"newsletter-manage-header-publisher": "Publicadores"
+	"newsletter-delete-reason": "Razão"
 }
