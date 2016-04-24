@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Nike",
-			"Pyscowicz"
+			"Pyscowicz",
+			"Silvonen"
 		]
 	},
 	"newsletter-create-submit": "Luo uutiskirje",
 	"newsletter-delete-button": "Poista",
-	"newsletter-delete-reason": "Syy"
+	"newsletter-delete-reason": "Syy",
+	"newsletter-header-name": "Nimi"
 }

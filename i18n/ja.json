@@ -4,7 +4,8 @@
 			"Sujiniku",
 			"Otokoume",
 			"2nd-player",
-			"Ridmevo"
+			"Ridmevo",
+			"Thibaut120094"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -43,6 +44,7 @@
 	"newsletter-manage-remove-self-publisher": "ニュースレターの購読を解除しますか?",
 	"newsletter-delete": "ニュースレターを削除",
 	"newsletter-delete-text": "このインターフェースで、ニュースレター「$1」を削除することができます。あなたがこれを行おうとしてることを確認してください。<strong>この操作は取消しできません。</strong>",
+	"newsletter-delete-reason": "理由",
 	"newsletter-deletenewsletter-button": "このニュースレターを削除",
 	"newsletter-delete-success": "ニュースレター #$1 は削除されています。",
 	"newsletter-subscribe": "ニュースレター加入の管理",
