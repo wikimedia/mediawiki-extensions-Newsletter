@@ -14,9 +14,11 @@ class EchoNewsletterPublisherPresentationModel extends BaseNewsletterPresentatio
 	}
 
 	public function getHeaderMessage() {
-		$msg = parent::getHeaderMessage();
-
-		// Add the newsletter name
-		return $msg->params( $this->event->getExtraParam( 'newsletter-name' ) );
+		list( $agentFormattedName, $agentGenderName ) = $this->getAgentForOutput();
+		$msg = $this->msg( 'notification-header-newsletter-newpublisher' );
+		$msg->params( $this->getNewsletterName() );
+		$msg->params( $this->getViewingUserForGender() );
+		$msg->params( $agentGenderName );
+		return $msg;
 	}
 }
