@@ -232,10 +232,11 @@ class NewsletterDb {
 			array( 'nl_id' => $newsletter->getId() ),
 			__METHOD__
 		);
+		$success = (bool)$dbw->affectedRows();
 
 		$this->lb->reuseConnection( $dbw );
 
-		return true;
+		return $success;
 	}
 
 	/**
