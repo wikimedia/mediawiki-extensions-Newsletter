@@ -24,6 +24,7 @@
 	"newsletter-unsubscribe-button": "Nutraukti prenumeratą",
 	"newsletter-subscribe-button": "Prenumeruoti",
 	"newsletter-delete": "Ištrinti naujienlaiškį",
+	"newsletter-delete-reason": "Priežastis",
 	"newsletter-deletenewsletter-button": "Ištrinti šį naujienlaiškį",
 	"newsletter-delete-success": "Naujienlaiškis #$1 buvo pašalintas.",
 	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",

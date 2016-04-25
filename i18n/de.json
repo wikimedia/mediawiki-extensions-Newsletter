@@ -70,6 +70,7 @@
 	"newsletter-delete-reason": "Grund",
 	"newsletter-deletenewsletter-button": "Diesen Newsletter löschen",
 	"newsletter-delete-success": "Newsletter $1 wurde gelöscht.",
+	"newsletter-delete-failure": "Der Newsletter „$1“ konnte nicht gelöscht werden. Bitte erneut versuchen.",
 	"newsletter-subscribe": "Newsletter-Abonnement-Verwaltung",
 	"newsletter-subscribe-text": "Diese Oberfläche erlaubt dir, den Newsletter „$1“ zu abonnieren. Falls du den Newsletter abonnierst, erhältst du Benachrichtigungen, wenn neue Artikel dieses Newsletters angekündigt werden.",
 	"newsletter-do-subscribe": "Diesen Newsletter abonnieren",
