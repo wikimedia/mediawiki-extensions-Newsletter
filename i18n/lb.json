@@ -37,6 +37,7 @@
 	"newsletter-delete-reason": "Grond",
 	"newsletter-deletenewsletter-button": "Dës Newsletter läschen",
 	"newsletter-delete-success": "Newsletter $1 gouf geläscht.",
+	"newsletter-delete-failure": "D'Newsletter \"$1\" konnt net geläscht ginn. Probéiert et w. e. g. nach eng Kéier.",
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",
 	"newsletter-subscribe-fail": "D'Newsletter \"$1\" konnt net abonnéiert ginn, well Dir se schonn abonnéiert hutt.",
 	"newsletter-subscribe-error": "Feeler  beim Abonnéiere vun der Newsletter.",

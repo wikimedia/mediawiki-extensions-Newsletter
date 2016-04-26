@@ -73,6 +73,7 @@
 	"newsletter-email-batch-body": "$2 が$1の新しい議題を{{GENDER:$3|アナウンスしています}}。",
 	"newsletter-header-name": "名前",
 	"newsletter-header-description": "説明",
+	"newsletter-delete-confirm-cancel": "取り消し",
 	"newsletter-delete-confirm-delete": "削除",
 	"right-newsletter-create": "ニュースレターを作成する",
 	"action-newsletter-create": "ニュースレターを作成する",

@@ -72,6 +72,7 @@
 	"newsletter-delete-reason": "Motivo",
 	"newsletter-deletenewsletter-button": "Eliminar este boletín",
 	"newsletter-delete-success": "O boletín #$1 foi eliminado.",
+	"newsletter-delete-failure": "O boletín \"$1\" non se puido eliminar. Por favor, inténteo de novo.",
 	"newsletter-subscribe": "Xestión de subscripcións a boletíns",
 	"newsletter-subscribe-text": "Esta interface permítelle subscribirse ó boletín \"$1\". Se se subscribe, recibirá notificacións cando se anuncien novas edicións deste boletín.",
 	"newsletter-do-subscribe": "Subscribir a este boletín",
