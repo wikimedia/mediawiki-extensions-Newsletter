@@ -71,6 +71,7 @@
 	"newsletter-delete-reason": "סיבה",
 	"newsletter-deletenewsletter-button": "מחיקת הידיעון הזה",
 	"newsletter-delete-success": "הידיעון #$1 נמחק.",
+	"newsletter-delete-failure": "לא היה אפשר למחוק את הידיעון \"$1\". נא לנסות שוב.",
 	"newsletter-subscribe": "ניהול מינוי לידיעון",
 	"newsletter-subscribe-text": "הממשק הזה מאפשר לך לעשות מינוי לידיעון \"$1\". אם תעשה מינוי, תקבל הודעה על גיליונות חדשים.",
 	"newsletter-do-subscribe": "מינוי לידיעון",
