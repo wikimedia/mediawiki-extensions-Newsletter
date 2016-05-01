@@ -126,12 +126,13 @@
 	"apihelp-newslettermanage-example-1": "Fügt einen Herausgeber mit der Benutzerkennung 3 zu dem Newsletter mit der Kennung 1 hinzu.",
 	"apihelp-newslettermanage-example-2": "Entfernt den Herausgeber mit der Benutzerkennung 5 von dem Newsletter mit der Kennung 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|hat}} eine neue Ausgabe von $3 angekündigt.",
-	"notification-header-newsletter-newpublisher": "Du wurdest als Herausgeber des Newsletters „$1“ hinzugefügt.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Du}} wurdest als {{GENDER:$3|Herausgeber|Herausgeberin}} des Newsletters „$1“ hinzugefügt.",
 	"newsletter-list-table": "Sortieren nach:",
 	"newsletter-list-option-all": "Alle Newsletter",
 	"newsletter-list-option-subscribed": "Newsletter, die ich abonniert habe",
 	"newsletter-list-option-unsubscribed": "Newsletter, die ich nicht abonniert habe",
 	"newsletter-list-go-button": "Los",
+	"newsletter-deleted-log": "Das Lösch-Logbuch für diesen Newsletter wird unten angezeigt.",
 	"newsletter-notification-link-text-new-publisher": "Newsletter verwalten",
 	"newsletter-notification-new-publisher-title": "Du wurdest als Herausgeber des Newsletters „$1“ hinzugefügt.",
 	"newsletter-notification-new-publisher-flyout": "Du bist jetzt ein Herausgeber des Newsletters „$1“.",
@@ -141,5 +142,11 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|entfernte}} $3 als {{GENDER:$6|Herausgeber|Herausgeberin}} des Newsletters $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|erstellte}} den Newsletter $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|löschte}} den Newsletter $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|veröffentlichte}} eine neue Ausgabe des Newsletters $4"
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|veröffentlichte}} eine neue Ausgabe des Newsletters $4",
+	"log-action-filter-newsletter": "Typänderung des Newsletters:",
+	"log-action-filter-newsletter-publisher-added": "Hinzufügung von Herausgebern",
+	"log-action-filter-newsletter-publisher-removed": "Entfernung von Herausgebern",
+	"log-action-filter-newsletter-newsletter-added": "Erstellung von Newslettern",
+	"log-action-filter-newsletter-newsletter-removed": "Löschung von Newslettern",
+	"log-action-filter-newsletter-issue-added": "Ankündigungen von neuen Ausgaben"
 }

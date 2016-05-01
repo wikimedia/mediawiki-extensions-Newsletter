@@ -20,6 +20,10 @@
 	"newsletter-view-description": "څرگندونه:",
 	"newsletter-announce-button": "خبرول",
 	"newsletter-announce-submit": "خبرول",
+	"newsletter-manage-name": "د خبرليک نوم:",
+	"newsletter-manage-title": "د لومړي مخ سرليک",
+	"newsletter-manage-description": "څرگندونه:",
+	"newsletter-delete-reason": "سبب",
 	"newsletter-subscribe-button-label": "هو",
 	"newsletter-unsubscribe-button-label": "نه",
 	"echo-category-title-newsletter": "خبرليکونه",
@@ -34,5 +38,6 @@
 	"action-newsletter-delete": "خبرليکونه ړنگول",
 	"action-newsletter-manage": "خبرليکونه مهارول",
 	"newsletter-list-option-all": "ټول خبرليکونه",
-	"newsletter-list-go-button": "ورځه"
+	"newsletter-list-go-button": "ورځه",
+	"log-action-filter-newsletter-newsletter-added": "خبرليک جوړېدنه"
 }

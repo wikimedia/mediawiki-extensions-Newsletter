@@ -65,6 +65,7 @@
 	"action-newsletter-manage": "hantera nyhetsbrev",
 	"apihelp-newslettersubscribe-example-1": "Prenumerera på nyhetsbrevet med ID 1.",
 	"apihelp-newslettermanage-description": "Hantera ett nyhetsbrev.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Du}} har {{GENDER:$3|lagts till}} som en utgivare för nyhetsbrevet \"$1\".",
 	"newsletter-list-table": "Filtrera efter:",
 	"newsletter-list-option-all": "Alla nyhetsbrev",
 	"newsletter-list-option-subscribed": "Nyhetsbrev jag prenumererar på",

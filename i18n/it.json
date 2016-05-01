@@ -129,12 +129,13 @@
 	"apihelp-newslettermanage-example-1": "Aggiungi editore con ID utente 3 dalla newsletter con ID 1.",
 	"apihelp-newslettermanage-example-2": "Rimuovi editore con ID utente 5 dalla newsletter con ID 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|ha annunciato}} una nuova edizione di $3.",
-	"notification-header-newsletter-newpublisher": "Sei stato aggiunto come editore della newsletter $1.",
+	"notification-header-newsletter-newpublisher": "Sei {{GENDER:$2|stato aggiunto|stata aggiunta}} {{GENDER:$3|come}} {{GENDER:$2|editore|editrice}} della newsletter \"$1\".",
 	"newsletter-list-table": "Filtra per:",
 	"newsletter-list-option-all": "Tutte le newsletter",
 	"newsletter-list-option-subscribed": "Newsletter a cui sono iscritto",
 	"newsletter-list-option-unsubscribed": "Newsletter a cui non sono iscritto",
 	"newsletter-list-go-button": "Vai",
+	"newsletter-deleted-log": "Il registro delle cancellazioni per la newsletter è disponibile qui sotto.",
 	"newsletter-notification-link-text-new-publisher": "Gestisci newsletter",
 	"newsletter-notification-new-publisher-title": "Sei stato aggiunto come editore della newsletter $1.",
 	"newsletter-notification-new-publisher-flyout": "Ora sei un editore per la newsletter $1.",
@@ -144,5 +145,11 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|ha rimosso}} {{GENDER:$6|$3}} come editore della newsletter $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|ha creato}} la newsletter $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|ha cancellato}} la newsletter $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|ha pubblicato}} una nuova edizione della newsletter $4."
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|ha pubblicato}} una nuova edizione della newsletter $4.",
+	"log-action-filter-newsletter": "Tipo di modifica newsletter:",
+	"log-action-filter-newsletter-publisher-added": "Aggiunta editore",
+	"log-action-filter-newsletter-publisher-removed": "Rimozione editore",
+	"log-action-filter-newsletter-newsletter-added": "Creazione newsletter",
+	"log-action-filter-newsletter-newsletter-removed": "Cancellazione newsletter",
+	"log-action-filter-newsletter-issue-added": "Annunci nuova edizione"
 }

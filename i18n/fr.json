@@ -136,12 +136,13 @@
 	"apihelp-newslettermanage-example-1": "Ajouter un éditeur d’id utilisateur 3 au bulletin d’informations d’id 1.",
 	"apihelp-newslettermanage-example-2": "Supprimer l’éditeur d’id utilisateur 5 du bulletin d’informations d’id 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|a annoncé}} un nouveau numéro de $3.",
-	"notification-header-newsletter-newpublisher": "Vous avez été ajouté en tant qu’éditeur de l'infolettre $1.",
+	"notification-header-newsletter-newpublisher": "Vous avez été ajouté{{GENDER:$2||e|(e)}}{{GENDER:$3|}} en tant qu’édit{{GENDER:$3|eur|rice|eur (ou éditrice)}} de l’infolettre $1.",
 	"newsletter-list-table": "Filtrer par :",
 	"newsletter-list-option-all": "Tous les bulletins d’information",
 	"newsletter-list-option-subscribed": "Les bulletins auxquels je suis abonné",
 	"newsletter-list-option-unsubscribed": "Les bulletins auxquels je ne suis pas abonné",
 	"newsletter-list-go-button": "Aller",
+	"newsletter-deleted-log": "Le journal de suppressions de cette infolettre est fourni ci-dessous.",
 	"newsletter-notification-link-text-new-publisher": "Gérer les bulletins d’information",
 	"newsletter-notification-new-publisher-title": "Vous avez été ajouté en tant qu'éditeur du bulletin d'information de $1.",
 	"newsletter-notification-new-publisher-flyout": "Vous êtes maintenant un éditeur du bulletin d'information de $1.",
@@ -151,5 +152,8 @@
 	"logentry-newsletter-publisher-removed": "{{GENDER:$2|$1}} a enlevé {{GENDER:$6|$3}} des éditeurs du bulletin d’information $4",
 	"logentry-newsletter-newsletter-added": "{{GENDER:$2|$1}} a créé le bulletin d’information $4",
 	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
-	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4"
+	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4",
+	"log-action-filter-newsletter": "Type de modification d'infolettre",
+	"log-action-filter-newsletter-newsletter-added": "Création d'une infolettre",
+	"log-action-filter-newsletter-issue-added": "Annonces d'un nouveau numéro"
 }

@@ -130,7 +130,7 @@
 	"apihelp-newslettermanage-example-1": "Añadir un editor con identificador 3 al boletín con identificador 1.",
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 del boletín con identificador 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|ha anunciado}} una edición nueva de $3.",
-	"notification-header-newsletter-newpublisher": "Te han agregado como editor del boletín $1.",
+	"notification-header-newsletter-newpublisher": "Te han {{GENDER:$3|agregado}} como {{GENDER:$2|editor|editora}} del boletín $1.",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-list-option-all": "Todos los boletines",
 	"newsletter-list-option-subscribed": "Boletines a los que estoy suscrito",
@@ -145,5 +145,9 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|eliminó}} a $3 como {{GENDER:$6|editor|editora}} del boletín $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|creó}} el boletín $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminó}} el boletín $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicó}} una edición nueva del boletín $4."
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicó}} una edición nueva del boletín $4.",
+	"log-action-filter-newsletter": "Tipo de cambio en boletín:",
+	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
+	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
+	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín"
 }

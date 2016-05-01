@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Bikarhêner"
+			"Bikarhêner",
+			"George Animal"
 		]
 	},
 	"newsletter-view-mainpage": "Destpêkː",
 	"newsletter-view-description": "Danasînː",
-	"newsletter-delete-button": "Jê bibe"
+	"newsletter-delete-button": "Jê bibe",
+	"newsletter-delete-reason": "Sedem"
 }

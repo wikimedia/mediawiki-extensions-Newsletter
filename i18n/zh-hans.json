@@ -128,12 +128,13 @@
 	"apihelp-newslettermanage-example-1": "将用户ID为3的用户作为发布者添加到ID为1的新闻报。",
 	"apihelp-newslettermanage-example-2": "从ID为2的新闻报中移除用户ID为5的发布者。",
 	"notification-header-newsletter-announce": "$1{{GENDER:$2|发布}}了$3的新一期。",
-	"notification-header-newsletter-newpublisher": "您已被添加为$1新闻报的发布者。",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|您}}已被{{GENDER:$3|添加}}为“$1”新闻报的发布者。",
 	"newsletter-list-table": "过滤方式：",
 	"newsletter-list-option-all": "所有新闻报",
 	"newsletter-list-option-subscribed": "我订阅的新闻报",
 	"newsletter-list-option-unsubscribed": "我未订阅的新闻报",
 	"newsletter-list-go-button": "提交",
+	"newsletter-deleted-log": "该新闻报的删除日志已在下方提供。",
 	"newsletter-notification-link-text-new-publisher": "管理新闻报",
 	"newsletter-notification-new-publisher-title": "您已被添加为$1新闻报的发布者。",
 	"newsletter-notification-new-publisher-flyout": "您现在是$1新闻报的发布者。",
@@ -143,5 +144,11 @@
 	"logentry-newsletter-publisher-removed": "$1已将{{GENDER:$6|$3}}从新闻报$4的发布者中{{GENDER:$2|移除}}",
 	"logentry-newsletter-newsletter-added": "$1{{GENDER:$2|创建}}了新闻报$4",
 	"logentry-newsletter-newsletter-removed": "$1{{GENDER:$2|删除}}了新闻报$4",
-	"logentry-newsletter-issue-added": "$1{{GENDER:$2|发布}}了新闻报$4的新一期"
+	"logentry-newsletter-issue-added": "$1{{GENDER:$2|发布}}了新闻报$4的新一期",
+	"log-action-filter-newsletter": "新闻报更改类型：",
+	"log-action-filter-newsletter-publisher-added": "发布者添加",
+	"log-action-filter-newsletter-publisher-removed": "发布者移除",
+	"log-action-filter-newsletter-newsletter-added": "新闻报创建",
+	"log-action-filter-newsletter-newsletter-removed": "新闻报删除",
+	"log-action-filter-newsletter-issue-added": "新一期发行公告"
 }
