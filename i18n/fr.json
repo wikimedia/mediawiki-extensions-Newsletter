@@ -154,6 +154,9 @@
 	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
 	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4",
 	"log-action-filter-newsletter": "Type de modification d'infolettre",
+	"log-action-filter-newsletter-publisher-added": "Ajout de l’éditeur",
+	"log-action-filter-newsletter-publisher-removed": "Suppression de l’éditeur",
 	"log-action-filter-newsletter-newsletter-added": "Création d'une infolettre",
+	"log-action-filter-newsletter-newsletter-removed": "Suppression du bulletin d’information",
 	"log-action-filter-newsletter-issue-added": "Annonces d'un nouveau numéro"
 }

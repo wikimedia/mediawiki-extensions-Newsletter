@@ -149,5 +149,6 @@
 	"log-action-filter-newsletter": "Tipo de cambio en boletín:",
 	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
 	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
-	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín"
+	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín",
+	"log-action-filter-newsletter-issue-added": "Anuncios de ediciones nuevas"
 }

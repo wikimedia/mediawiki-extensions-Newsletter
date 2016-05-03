@@ -130,12 +130,13 @@
 	"apihelp-newslettermanage-example-1": "Engadir un editor con identificador 3 ó boletín con identificador 1.",
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
 	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
-	"notification-header-newsletter-newpublisher": "Foi engadido como editor do boletín $1.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$3|Engadírono|Engadírona}} como {{GENDER:$2|editor|editora}} do boletín \"$1\".",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-list-option-all": "Todos os boletíns",
 	"newsletter-list-option-subscribed": "Boletíns ós que estou subscrito",
 	"newsletter-list-option-unsubscribed": "Boletín de novas Non estou subscrito a",
 	"newsletter-list-go-button": "Ir",
+	"newsletter-deleted-log": "O rexistro de borrado deste boletín proporciónase abaixo.",
 	"newsletter-notification-link-text-new-publisher": "Xestionar boletín",
 	"newsletter-notification-new-publisher-title": "Engadíronte como editor do boletín $1.",
 	"newsletter-notification-new-publisher-flyout": "Agora es un editor do boletín $1.",
@@ -145,5 +146,11 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|eliminou}} a $3 como {{GENDER:$6|editor|editora}} do boletín $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|creou}} o boletín $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminou}} o boletín $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicou}} unha edición nova do boletín $4."
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicou}} unha edición nova do boletín $4.",
+	"log-action-filter-newsletter": "Tipo de cambio en boletín:",
+	"log-action-filter-newsletter-publisher-added": "Engadido de editor",
+	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
+	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
+	"log-action-filter-newsletter-newsletter-removed": "Borrado de boletín",
+	"log-action-filter-newsletter-issue-added": "Anuncios dun novo número"
 }
