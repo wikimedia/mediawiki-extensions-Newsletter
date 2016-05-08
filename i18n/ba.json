@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Айсар"
+			"Айсар",
+			"Ләйсән"
 		]
 	},
-	"newsletter-subtitlelinks-delete": "Юйырға"
+	"newsletter-subtitlelinks-delete": "Юйырға",
+	"newsletter-header-name": "Исем"
 }
