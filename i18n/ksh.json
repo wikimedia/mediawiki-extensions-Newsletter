@@ -54,5 +54,6 @@
 	"action-newsletter-manage": "Rondschrihve ze verwallde",
 	"newsletter-list-option-all": "Alle Rondschrihve",
 	"newsletter-list-option-unsubscribed": "Rondschrihve, woh esch keij Abbonnemang vun han",
-	"newsletter-list-go-button": "Lohß jonn!"
+	"newsletter-list-go-button": "Lohß jonn!",
+	"log-action-filter-newsletter-newsletter-added": "Rondschrihve aanlähje"
 }
