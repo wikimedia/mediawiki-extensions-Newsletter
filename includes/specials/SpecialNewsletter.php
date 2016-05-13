@@ -240,6 +240,30 @@ class SpecialNewsletter extends SpecialPage {
 			$fields['publishers']['default'] = $this->msg( 'newsletter-view-no-publishers' )->escaped();
 		}
 
+		// Show the 10 most recent issues if there have been announcements
+		$logs = '';
+		$logCount = LogEventsList::showLogExtract(
+			$logs, // by reference
+			'newsletter',
+			$this->getPageTitle( $this->newsletter->getId() ),
+			'',
+			array(
+				'lim' => 10,
+				'showIfEmpty' => false,
+				'conds' => array( 'log_action' => 'issue-added' ),
+				'extraUrlParams' => array( 'subtype' => 'issue-added' ),
+			)
+		);
+
+		if ( $logCount !== 0 ) {
+			$fields['issues'] = array(
+				'type' => 'info',
+				'raw' => true,
+				'default' => $logs,
+				'label' => $this->msg( 'newsletter-view-issues-log' )->numParams( $logCount )->escaped(),
+			);
+		}
+
 		$form = $this->getHTMLForm(
 			$fields,
 			function() {

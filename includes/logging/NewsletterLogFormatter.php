@@ -22,6 +22,10 @@ class NewsletterLogFormatter extends LogFormatter {
 			$params[6] = $user->getName();
 		}
 
+		if ( $this->entry->getSubtype() === 'issue-added' && isset( $params[5] ) ) {
+			$params[5] = Message::rawParam( $this->makePageLink( Title::newFromText( $params[5] ) ) );
+		}
+
 		ksort($params);
 		$this->parsedParameters = $params;
 		return $params;

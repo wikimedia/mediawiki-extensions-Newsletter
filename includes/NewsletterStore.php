@@ -231,7 +231,7 @@ class NewsletterStore {
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher, $summary ) {
 		$success = $this->db->addNewsletterIssue( $newsletter, $title, $publisher );
 		if ( $success ) {
-			$this->logger->logNewIssue( $publisher, $newsletter, $success, $summary );
+			$this->logger->logNewIssue( $publisher, $newsletter, $title, $success, $summary );
 		}
 		return (bool)$success;
 	}
