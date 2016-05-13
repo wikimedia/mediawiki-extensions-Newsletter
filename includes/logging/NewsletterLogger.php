@@ -52,7 +52,7 @@ class NewsletterLogger {
 		$log->publish( $log->insert() );
 	}
 
-	public function logNewIssue( User $publisher, Newsletter $newsletter, $issueId ) {
+	public function logNewIssue( User $publisher, Newsletter $newsletter, $issueId, $comment ) {
 		$log = new ManualLogEntry( 'newsletter', 'issue-added' );
 		$log->setPerformer( $publisher );
 		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() ) );
@@ -60,6 +60,7 @@ class NewsletterLogger {
 			'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}",
 			'5::nli_issue_id' => $issueId
 		] );
+		$log->setComment( $comment );
 		$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
 		$log->publish( $log->insert() );
 	}

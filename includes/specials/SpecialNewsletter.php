@@ -546,9 +546,11 @@ class SpecialNewsletter extends SpecialPage {
 			throw new ThrottledError;
 		}
 
+		$summary = trim( $data['summary'] );
+
 		// Everything seems okay. Let's try to do it for real now.
 		$store = NewsletterStore::getDefaultInstance();
-		$success = $store->addNewsletterIssue( $this->newsletter, $title, $user );
+		$success = $store->addNewsletterIssue( $this->newsletter, $title, $user, $summary );
 
 		if ( !$success ) {
 			// DB insert failed. :( so don't create an Echo event and stop from here
@@ -562,7 +564,7 @@ class SpecialNewsletter extends SpecialPage {
 				'extra' => array(
 					'newsletter-name' => $this->newsletter->getName(),
 					'newsletter-id' => $this->newsletter->getId(),
-					'section-text' => trim( $data['summary'] ),
+					'section-text' => $summary,
 					'notifyAgent' => true,
 				),
 				'agent' => $user,

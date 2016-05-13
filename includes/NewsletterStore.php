@@ -224,13 +224,14 @@ class NewsletterStore {
 	 * @param Newsletter $newsletter
 	 * @param Title $title
 	 * @param User $publisher
+	 * @param string $summary
 	 *
 	 * @return bool
 	 */
-	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
+	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher, $summary ) {
 		$success = $this->db->addNewsletterIssue( $newsletter, $title, $publisher );
 		if ( $success ) {
-			$this->logger->logNewIssue( $publisher, $newsletter, $success );
+			$this->logger->logNewIssue( $publisher, $newsletter, $success, $summary );
 		}
 		return (bool)$success;
 	}
