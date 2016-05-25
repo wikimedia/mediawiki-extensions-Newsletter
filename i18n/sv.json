@@ -76,5 +76,6 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|tog bort}} {{GENDER:$6|$3}} som utgivare av nyhetsbrevet $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|skapade}} nyhetsbrevet $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|raderade}} nyhetsbrevet $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicerade}} en ny utgåva av nyhetsbrevet $4"
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicerade}} en ny utgåva av nyhetsbrevet $4",
+	"log-action-filter-newsletter": "Typ av åtgärd:"
 }

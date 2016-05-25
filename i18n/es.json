@@ -146,7 +146,7 @@
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|creó}} el boletín $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminó}} el boletín $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicó}} una edición nueva del boletín $4.",
-	"log-action-filter-newsletter": "Tipo de cambio en boletín:",
+	"log-action-filter-newsletter": "Tipo de acción:",
 	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
 	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
 	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín",

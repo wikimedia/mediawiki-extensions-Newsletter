@@ -146,7 +146,7 @@
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|ha creato}} la newsletter $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|ha cancellato}} la newsletter $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|ha pubblicato}} una nuova edizione della newsletter $4.",
-	"log-action-filter-newsletter": "Tipo di modifica newsletter:",
+	"log-action-filter-newsletter": "Tipo di azione:",
 	"log-action-filter-newsletter-publisher-added": "Aggiunta editore",
 	"log-action-filter-newsletter-publisher-removed": "Rimozione editore",
 	"log-action-filter-newsletter-newsletter-added": "Creazione newsletter",

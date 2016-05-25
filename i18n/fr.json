@@ -10,7 +10,8 @@
 			"Mattho69",
 			"Grind24",
 			"Lbayle",
-			"Verdy p"
+			"Verdy p",
+			"Yasten"
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des infolettres",
@@ -153,7 +154,7 @@
 	"logentry-newsletter-newsletter-added": "{{GENDER:$2|$1}} a créé le bulletin d’information $4",
 	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
 	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4",
-	"log-action-filter-newsletter": "Type de modification d'infolettre",
+	"log-action-filter-newsletter": "Type d'action",
 	"log-action-filter-newsletter-publisher-added": "Ajout de l’éditeur",
 	"log-action-filter-newsletter-publisher-removed": "Suppression de l’éditeur",
 	"log-action-filter-newsletter-newsletter-added": "Création d'une infolettre",

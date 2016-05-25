@@ -145,7 +145,7 @@
 	"logentry-newsletter-newsletter-added": "$1{{GENDER:$2|创建}}了新闻报$4",
 	"logentry-newsletter-newsletter-removed": "$1{{GENDER:$2|删除}}了新闻报$4",
 	"logentry-newsletter-issue-added": "$1{{GENDER:$2|发布}}了新闻报$4的新一期",
-	"log-action-filter-newsletter": "新闻报更改类型：",
+	"log-action-filter-newsletter": "操作类型：",
 	"log-action-filter-newsletter-publisher-added": "发布者添加",
 	"log-action-filter-newsletter-publisher-removed": "发布者移除",
 	"log-action-filter-newsletter-newsletter-added": "新闻报创建",

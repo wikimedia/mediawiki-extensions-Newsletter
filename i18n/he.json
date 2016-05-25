@@ -146,7 +146,7 @@
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|יצר|יצרה}} את הידיעון $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|מחק|מחקה}} את הידיעון $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|פרסם|פרסמה}} גילילון חדש של הידיעון $4",
-	"log-action-filter-newsletter": "סוג שינוי הידיעון:",
+	"log-action-filter-newsletter": "סוג הפעולה:",
 	"log-action-filter-newsletter-publisher-added": "הוספת מפרסם",
 	"log-action-filter-newsletter-publisher-removed": "הסרת מפרסם",
 	"log-action-filter-newsletter-newsletter-added": "יצירת ידיעון",
