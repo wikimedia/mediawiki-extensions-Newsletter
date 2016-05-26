@@ -21,6 +21,7 @@
 	"newsletter-subtitlelinks-delete": "fottschmiiße",
 	"newsletters": "Rondschrihve",
 	"newsletter-view-no-publishers": "Kein Erußjävver.",
+	"newsletter-view-issues-log": "{{PLURAL:$1|Aanköndejong|Aanköndejonge}} för Rondschrihve ier Usjahbe:",
 	"newsletter-announce-button": "Aanköndijje",
 	"newsletter-announce-nopermission": "Do rangs dat Rondschrihve nidd eruß.",
 	"newsletter-announce-submit": "Aanköndijje",
@@ -55,6 +56,7 @@
 	"newsletter-list-option-all": "Alle Rondschrihve",
 	"newsletter-list-option-unsubscribed": "Rondschrihve, woh esch keij Abbonnemang vun han",
 	"newsletter-list-go-button": "Lohß jonn!",
+	"logentry-newsletter-issue-added": "{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} $1 hädd en neuje Usjahb vum Rondschrihve $4 bei $6 aanjköndesch.\n<!-- https://phabricator.wikimedia.org/T136271 -->",
 	"log-action-filter-newsletter": "Zoot vum dä Akßjuhn:",
 	"log-action-filter-newsletter-newsletter-added": "Rondschrihve aanlähje"
 }

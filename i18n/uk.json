@@ -6,7 +6,8 @@
 			"Ата",
 			"Lxlalexlxl",
 			"Macofe",
-			"Piramidion"
+			"Piramidion",
+			"Максим Підліснюк"
 		]
 	},
 	"newsletter-extension-desc": "Дозволяє користувачам публікувати і підписуватися на розсилки новин",
@@ -43,6 +44,7 @@
 	"newsletter-view-publishers": "{{PLURAL:$1|Власник:|Власники:}}",
 	"newsletter-view-subscriber-count": "Кількість підписників:",
 	"newsletter-view-no-publishers": "Немає власників.",
+	"newsletter-view-issues-log": "{{PLURAL:$1|Оголошення}} про випуск інформаційного листа:",
 	"newsletter-delete-button": "Вилучити",
 	"newsletter-manage-button": "Керувати",
 	"newsletter-unsubscribe-button": "Відписатися",
@@ -71,8 +73,10 @@
 	"newsletter-manage-newsletter-nochanges": "Не було внесено жодних змін до поточної розсилки новин.",
 	"newsletter-delete": "Вилучити розсилку новин",
 	"newsletter-delete-text": "Цей інтерфейс може використовуватися для вилучення розсилки новин «$1». Будь ласка, підтвердіть, що Ви маєте намір це зробити. <strong>Цю дію не можна скасувати.</strong>",
+	"newsletter-delete-reason": "Причина",
 	"newsletter-deletenewsletter-button": "Вилучити цю розсилку новин",
 	"newsletter-delete-success": "Розсилку новин #$1 вилучено.",
+	"newsletter-delete-failure": "Інформаційний лист «$1» не може бути вилучений. Будь ласка, спробуйте знову.",
 	"newsletter-subscribe": "Управління підписками на розсилки новин",
 	"newsletter-subscribe-text": "Цей інтерфейс дозволяє Вам підписатися на розсилку новин «$1». Якщо Ви підпишетеся, то будете отримувати сповіщення, коли з'являтимуться нові випуски цієї розсилки новин.",
 	"newsletter-do-subscribe": "Підписатися на цю розсилку новин",
@@ -130,12 +134,13 @@
 	"apihelp-newslettermanage-example-1": "Додати власника з ідентифікатором користувача 3 до розсилки новин з ідентифікатором 1.",
 	"apihelp-newslettermanage-example-2": "Вилучити власника з ідентифікатором користувача 5 із розсилки новин з ідентифікатором 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|оголосив|оголосила}} про новий випуск розсилки $3.",
-	"notification-header-newsletter-newpublisher": "Вас було додано як власника розсилки новин $1.",
+	"notification-header-newsletter-newpublisher": "Вас було додано до людей, що можуть публікувати інформаційний лист «$1».",
 	"newsletter-list-table": "Фільтрувати за:",
 	"newsletter-list-option-all": "Всі розсилки новин",
 	"newsletter-list-option-subscribed": "Розсилки новин, на які я підписаний",
 	"newsletter-list-option-unsubscribed": "Розсилки новин, на які я не підписаний",
 	"newsletter-list-go-button": "Перейти",
+	"newsletter-deleted-log": "Журнал вилучень для цього інформаційного листа наведено нижче.",
 	"newsletter-notification-link-text-new-publisher": "Керувати розсилкою новин",
 	"newsletter-notification-new-publisher-title": "Вас було додано як власника розсилки новин $1.",
 	"newsletter-notification-new-publisher-flyout": "Тепер Ви — власник розсилки новин $1.",
@@ -145,5 +150,11 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|вилучив|вилучила}} {{GENDER:$6|$3}} зі списку власників розсилки новин $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|створив|створила}} розсилку новин $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|вилучив|вилучила}} розсилку новин $4",
-	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|опублікував|опублікувала}} новий випуск розсилки новин $4"
+	"logentry-newsletter-issue-added": "$1 о $6 {{GENDER:$2|опублікував|опублікувала}} новий випуск інформаційного листа $4",
+	"log-action-filter-newsletter": "Тип дії:",
+	"log-action-filter-newsletter-publisher-added": "Доповнення списку осіб, що можуть публікувати",
+	"log-action-filter-newsletter-publisher-removed": "Вилучення зі списку осіб, що можуть публікувати",
+	"log-action-filter-newsletter-newsletter-added": "Створення інформаційного листа",
+	"log-action-filter-newsletter-newsletter-removed": "Вилучення інформаційного листа",
+	"log-action-filter-newsletter-issue-added": "Оголошення про новий випуск інформаційного листа"
 }

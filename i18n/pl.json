@@ -40,5 +40,6 @@
 	"newsletter-list-table": "Posortuj tabele według:",
 	"newsletter-list-go-button": "Dalej",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|utworzył|utworzyła}} newsletter $4",
-	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|usunął|usunęła}} newsletter $4"
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|usunął|usunęła}} newsletter $4",
+	"log-action-filter-newsletter": "Rodzaj działania:"
 }

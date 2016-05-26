@@ -69,5 +69,6 @@
 	"newsletter-list-option-subscribed": "Newsletteren op déi ech abonnéiert sinn",
 	"newsletter-list-go-button": "Lass",
 	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren",
-	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|huet}} d'Newsletter $4 geläscht"
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|huet}} d'Newsletter $4 geläscht",
+	"log-action-filter-newsletter": "Typ vun Aktioun:"
 }
