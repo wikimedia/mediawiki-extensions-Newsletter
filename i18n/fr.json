@@ -11,7 +11,8 @@
 			"Grind24",
 			"Lbayle",
 			"Verdy p",
-			"Yasten"
+			"Yasten",
+			"Trial"
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des infolettres",
@@ -48,6 +49,7 @@
 	"newsletter-view-publishers": "{{PLURAL:$1|Éditeur :|Éditeurs :}}",
 	"newsletter-view-subscriber-count": "Nombre d’abonnés :",
 	"newsletter-view-no-publishers": "Aucun éditeur.",
+	"newsletter-view-issues-log": "Bulletin d'information : {{PLURAL:$1|annonce|annonces}}",
 	"newsletter-delete-button": "Supprimer",
 	"newsletter-manage-button": "Gérer",
 	"newsletter-unsubscribe-button": "Se désabonner",
@@ -153,8 +155,8 @@
 	"logentry-newsletter-publisher-removed": "{{GENDER:$2|$1}} a enlevé {{GENDER:$6|$3}} des éditeurs du bulletin d’information $4",
 	"logentry-newsletter-newsletter-added": "{{GENDER:$2|$1}} a créé le bulletin d’information $4",
 	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
-	"logentry-newsletter-issue-added": "{{GENDER:$2|$1}} a publié un nouveau numéro du bulletin d’information $4",
-	"log-action-filter-newsletter": "Type d'action",
+	"logentry-newsletter-issue-added": "$1 a publié un nouveau numéro du bulletin d’information $4 le $6",
+	"log-action-filter-newsletter": "Type d'action :",
 	"log-action-filter-newsletter-publisher-added": "Ajout de l’éditeur",
 	"log-action-filter-newsletter-publisher-removed": "Suppression de l’éditeur",
 	"log-action-filter-newsletter-newsletter-added": "Création d'une infolettre",

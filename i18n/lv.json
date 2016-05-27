@@ -5,9 +5,8 @@
 		]
 	},
 	"newsletter-extension-desc": "Apraksts",
-	"newsletter-publisher-username": "Lietotājvārds",
 	"newsletter-subscribe-button-label": "Jā",
 	"newsletter-unsubscribe-button-label": "Nē",
 	"newsletter-header-description": "Apraksts",
-	"newsletter-header-frequency": "Biežums"
+	"log-action-filter-newsletter": "Darbības veids:"
 }
