@@ -134,7 +134,7 @@
 	"apihelp-newslettermanage-example-1": "Додати власника з ідентифікатором користувача 3 до розсилки новин з ідентифікатором 1.",
 	"apihelp-newslettermanage-example-2": "Вилучити власника з ідентифікатором користувача 5 із розсилки новин з ідентифікатором 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|оголосив|оголосила}} про новий випуск розсилки $3.",
-	"notification-header-newsletter-newpublisher": "Вас було додано до людей, що можуть публікувати інформаційний лист «$1».",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Вас}} було {{GENDER:$3|додано}} до людей, що можуть публікувати інформаційний лист «$1».",
 	"newsletter-list-table": "Фільтрувати за:",
 	"newsletter-list-option-all": "Всі розсилки новин",
 	"newsletter-list-option-subscribed": "Розсилки новин, на які я підписаний",

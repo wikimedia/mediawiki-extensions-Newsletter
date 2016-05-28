@@ -56,7 +56,7 @@
 	"newsletter-list-option-all": "Alle Rondschrihve",
 	"newsletter-list-option-unsubscribed": "Rondschrihve, woh esch keij Abbonnemang vun han",
 	"newsletter-list-go-button": "Lohß jonn!",
-	"logentry-newsletter-issue-added": "{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} $1 hädd en neuje Usjahb vum Rondschrihve $4 för de Sigg $6 aanjeköndesch.",
+	"logentry-newsletter-issue-added": "{{GENDER:$2|Dä|Dat|Dä Metmaacher|De|Dat}} $1 hädd en neuje Usjahb vum Rondschrihve $4 för op dä Sigg $6 aanjeköndesch.",
 	"log-action-filter-newsletter": "Zoot vum dä Akßjuhn:",
 	"log-action-filter-newsletter-newsletter-added": "Rondschrihve aanlähje"
 }
