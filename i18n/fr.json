@@ -155,7 +155,7 @@
 	"logentry-newsletter-publisher-removed": "{{GENDER:$2|$1}} a enlevé {{GENDER:$6|$3}} des éditeurs du bulletin d’information $4",
 	"logentry-newsletter-newsletter-added": "{{GENDER:$2|$1}} a créé le bulletin d’information $4",
 	"logentry-newsletter-newsletter-removed": "{{GENDER:$2|$1}} a supprimé le bulletin d’information $4",
-	"logentry-newsletter-issue-added": "$1 a publié un nouveau numéro du bulletin d’information $4 le $6",
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2||}}a publié un nouveau numéro du bulletin d’information $4 le $6",
 	"log-action-filter-newsletter": "Type d'action :",
 	"log-action-filter-newsletter-publisher-added": "Ajout de l’éditeur",
 	"log-action-filter-newsletter-publisher-removed": "Suppression de l’éditeur",
