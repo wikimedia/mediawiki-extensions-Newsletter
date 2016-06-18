@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hindustanilanguage"
+			"Hindustanilanguage",
+			"امین اکبر"
 		]
 	},
-	"log-action-filter-newsletter": "Type of action:"
+	"log-action-filter-newsletter": "عمل کی قسم:"
 }
