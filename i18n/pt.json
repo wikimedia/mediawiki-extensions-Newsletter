@@ -89,5 +89,6 @@
 	"newsletter-notification-new-publisher-flyout": "É agora editor do boletim informativo $1.",
 	"log-name-newsletter": "Registo de boletins informativos",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|criou}} o boletim $4",
-	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminou}} o boletim $4"
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminou}} o boletim $4",
+	"log-action-filter-newsletter": "Tipo de ação:"
 }
