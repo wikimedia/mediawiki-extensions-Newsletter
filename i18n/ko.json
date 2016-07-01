@@ -5,7 +5,9 @@
 			"Hwangjy9",
 			"고솜",
 			"Macofe",
-			"HDNua"
+			"HDNua",
+			"Ykhwong",
+			"아라"
 		]
 	},
 	"newsletter-extension-desc": "뉴스레터를 만들고 배포할 수 있도록 함",
@@ -29,6 +31,9 @@
 	"newsletter-manage-button": "관리",
 	"newsletter-unsubscribe-button": "구독 해지",
 	"newsletter-subscribe-button": "구독",
+	"newsletter-announce-issuetitle": "이슈의 문서 제목",
+	"newsletter-announce-invalid-page": "이슈 문서에 대한 올바른 제목을 입력하세요.",
+	"newsletter-announce-nonexistent-page": "주어진 이슈 문서가 존재하지 않습니다. 존재하는 문서를 입력해주세요.",
 	"newsletter-delete": "뉴스레터 삭제",
 	"newsletter-deletenewsletter-button": "뉴스레터 삭제",
 	"newsletter-delete-success": "뉴스레터 #$1 이(가) 삭제되었습니다.",
@@ -37,10 +42,9 @@
 	"newsletter-unsubscribe-button-label": "아니오",
 	"newsletter-notification-link-text-new-issue": "새 제호 보기",
 	"newsletter-notification-link-text-view-newsletter": "뉴스레터 보이기",
-	"newsletter-header-name": "뉴스레터 이름",
+	"newsletter-header-name": "이름",
 	"newsletter-header-description": "설명",
-	"newsletter-header-action": "구독되었습니까?",
-	"newsletter-header-subscriber_count": "구독자 수",
+	"newsletter-header-subscriber_count": "구독자",
 	"right-newsletter-create": "뉴스레터 만들기",
 	"action-newsletter-create": "뉴스레터 만들기",
 	"newsletter-list-option-all": "모든 뉴스레터",
