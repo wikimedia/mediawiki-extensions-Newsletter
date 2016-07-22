@@ -36,7 +36,7 @@
 	"newsletter-announce-nonexistent-page": "주어진 이슈 문서가 존재하지 않습니다. 존재하는 문서를 입력해주세요.",
 	"newsletter-delete": "뉴스레터 삭제",
 	"newsletter-deletenewsletter-button": "뉴스레터 삭제",
-	"newsletter-delete-success": "뉴스레터 #$1 이(가) 삭제되었습니다.",
+	"newsletter-delete-success": "뉴스레터 #$1이(가) 삭제되었습니다.",
 	"newsletter-subscribe": "뉴스레터 구독 관리",
 	"newsletter-subscribe-button-label": "예",
 	"newsletter-unsubscribe-button-label": "아니오",
