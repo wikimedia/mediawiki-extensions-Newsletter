@@ -41,10 +41,11 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	protected function getFormFields() {
 		return array(
 			'name' => array(
+				'name' => 'newsletter',
 				'type' => 'text',
 				'required' => true,
 				'label-message' => 'newsletter-name',
-				'maxlength' => 120
+				'maxlength' => 120,
 			),
 			'mainpage' => array(
 				'type' => 'title',

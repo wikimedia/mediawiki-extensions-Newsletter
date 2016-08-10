@@ -128,4 +128,15 @@ class NewsletterHooks {
 
 		return true;
 	}
+
+	public static function onCustomEditor( Article $article, User $user ) {
+		if ( !$article->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
+			return true;
+		}
+
+		$editPage = new NewsletterEditPage( $article->getContext() );
+		$editPage->edit();
+
+		return false;
+	}
 }
