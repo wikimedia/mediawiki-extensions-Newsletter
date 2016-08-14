@@ -145,6 +145,16 @@ class NewsletterStore {
 	}
 
 	/**
+	 * Roll back a newsletter addition silently due to a failure in creating a
+	 * content model for it
+	 *
+	 * @param Newsletter $newsletter
+	 */
+	public function rollBackNewsletterAddition( Newsletter $newsletter ) {
+		$this->db->deleteNewsletter( $newsletter );
+	}
+
+	/**
 	 * @param int $id
 	 *
 	 * @return Newsletter|null null if no newsletter exists with the provided id
@@ -153,6 +163,13 @@ class NewsletterStore {
 		return $this->db->getNewsletter( $id );
 	}
 
+	/**
+	 * @param string $name
+	 * @return Newsletter|null
+	 */
+	public function getNewsletterFromName( $name ) {
+		return $this->db->getNewsletterFromName( $name );
+	}
 
 	/**
 	 * @param int $id

@@ -17,7 +17,7 @@
 	"newslettercreate": "Create newsletter",
 	"newslettercreate-text": "This page allows you to create a new newsletter. You will be added as a publisher and subscribed to the newsletter on its creation. All fields are required.",
 	"newsletter-create-submit": "Create newsletter",
-	"newsletter-create-confirmation": "A [[Special:Newsletter/$1|new newsletter]] has been created.",
+	"newsletter-create-confirmation": "A [[Newsletter:$1|new newsletter]] has been created.",
 	"newsletter-create-mainpage-error": "Invalid newsletter main page entered. Please try again.",
 	"newsletter-mainpage-non-existent": "The newsletter main page does not exist. Please enter a valid existing page.",
 	"newsletter-mainpage-in-use": "An existing newsletter has the same main page. Please enter another title.",

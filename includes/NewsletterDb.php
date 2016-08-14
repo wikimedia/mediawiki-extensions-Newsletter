@@ -263,6 +263,25 @@ class NewsletterDb {
 		return $this->getNewsletterFromRow( $res->current() );
 	}
 
+	/**
+	 * Fetch the newsletter matching the given name from the DB
+	 *
+	 * @param string $name
+	 * @return Newsletter|null
+	 */
+	public function getNewsletterFromName( $name ) {
+		Assert::parameterType( 'string', $name, '$name' );
+
+		$dbr = $this->lb->getConnectionRef( DB_SLAVE );
+		$res = $dbr->selectRow(
+			'nl_newsletters',
+			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
+			array( 'nl_name' => $name, 'nl_active' => 1 ),
+			__METHOD__
+		);
+
+		return $res ? $this->getNewsletterFromRow( $res ) : null;
+	}
 
 	/**
 	 * @param int $id

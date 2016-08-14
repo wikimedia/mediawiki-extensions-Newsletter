@@ -63,6 +63,9 @@
 	"ExtensionMessagesFiles": {
 		"NewsletterAlias": "Newsletter.alias.php"
 	},
+	"ContentHandlers": {
+		"NewsletterContent": "NewsletterContentHandler"
+	},
 	"AutoloadClasses": {
 		"Newsletter": "includes/Newsletter.php",
 		"NewsletterDb": "includes/NewsletterDb.php",
@@ -78,6 +81,9 @@
 		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
 		"ApiNewsletterManage": "includes/api/ApiNewsletterManage.php",
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
+		"NewsletterContent": "includes/content/NewsletterContent.php",
+		"NewsletterContentHandler": "includes/content/NewsletterContentHandler.php",
+		"NewsletterDeletionUpdate": "includes/content/NewsletterDeletionUpdate.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
 		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
@@ -145,6 +151,9 @@
 		"UserMergeAccountFields": [
 			"NewsletterHooks::onUserMergeAccountFields"
 		],
+		"AlternateEdit": [
+			"NewsletterHooks::onAlternateEdit"
+		],
 		"CustomEditor": [
 			"NewsletterHooks::onCustomEditor"
 		]
@@ -154,7 +163,8 @@
 			"id": 5500,
 			"constant": "NS_NEWSLETTER",
 			"name": "Newsletter",
-			"protection": "newsletter-create"
+			"protection": "newsletter-create",
+			"defaultcontentmodel": "NewsletterContent"
 		},
 		{
 			"id": 5501,
