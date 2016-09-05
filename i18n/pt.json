@@ -3,15 +3,16 @@
 		"authors": [
 			"Macofe",
 			"Vitorvicentevalente",
-			"Imperadeiro90"
+			"Imperadeiro90",
+			"Fúlvio"
 		]
 	},
 	"newsletter-extension-desc": "Permite que os utilizadores publiquem e subscrevam boletins informativos",
 	"newsletter-name": "Nome do boletim informativo",
 	"newsletter-desc": "Descrição",
-	"newsletter-title": "Título da Página Principal",
-	"newsletter-exist-error": "Já existe um boletim informativo com este nome. Por favor, tente outro.",
-	"newslettercreate": "Criar boletins informativos",
+	"newsletter-title": "Página wiki a ser associada à Página principal",
+	"newsletter-exist-error": "Já existe um boletim informativo intitulado \"$1\". Por favor, tente outro nome.",
+	"newslettercreate": "Criar boletim informativo",
 	"newsletter-create-submit": "Criar boletins informativos",
 	"newsletter-create-confirmation": "Foi criado um [[Special:Newsletter/$1|novo boletim informativo]] com sucesso.",
 	"newsletter-create-mainpage-error": "Foram inseridos caracteres inválidos na página principal do boletim. Por favor, tente novamente",
@@ -82,7 +83,7 @@
 	"newsletter-delete-confirm-cancel": "Cancelar",
 	"newsletter-delete-confirm-delete": "Eliminar",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunciou}} uma nova edição de $3.",
-	"notification-header-newsletter-newpublisher": "Foi adicionado como editor do boletim informativo $1.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Foi}} {{GENDER:$3|adicionado como editor|adicionada como editora}} do boletim informativo \"$1\".",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-notification-link-text-new-publisher": "Gerir boletim informativo",
 	"newsletter-notification-new-publisher-title": "Foi adicionado como editor do boletim informativo $1.",
