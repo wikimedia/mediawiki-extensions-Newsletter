@@ -5,8 +5,13 @@
 
 class NewsletterValidator {
 
-	private static $requiredData = array(
+	private static $requiredDataOnCreate = array(
 		'Name',
+		'Description',
+		'MainPage',
+	);
+
+	private static $requiredDataOnEdit = array(
 		'Description',
 		'MainPage',
 	);
@@ -23,24 +28,27 @@ class NewsletterValidator {
 	/**
 	 * Check whether all input have proper values
 	 *
+	 * @param $new bool
 	 * @return Status fatal if invalid, good otherwise
 	 */
-	public function validate() {
+	public function validate( $new ) {
+		$requiredFields = $new ? self::$requiredDataOnCreate : self::$requiredDataOnEdit;
 		// Check whether required fields are not empty
-		foreach ( self::$requiredData as $field ) {
+		foreach (  $requiredFields as $field ) {
 			if ( !isset( $this->data[ $field ] ) || trim( $this->data[ $field ] ) === '' ) {
 				return Status::newFatal( 'newsletter-input-required' );
 			}
 		}
 
-		// Prevents random nonsensical characters in newsletter names
-		// and also adds a length limit
-		// (uses Title's rules now - maybe use our own?)
-		$name = Title::makeTitleSafe( NS_MAIN, $this->data['Name'] );
-		if ( !$name ) {
-			return Status::newFatal( 'newsletter-invalid-name' );
+		if ( $new ) {
+			// Prevents random nonsensical characters in newsletter names
+			// and also adds a length limit
+			// (uses Title's rules now - maybe use our own?)
+			$name = Title::makeTitleSafe( NS_MAIN, $this->data['Name'] );
+			if ( !$name ) {
+				return Status::newFatal( 'newsletter-invalid-name' );
+			}
 		}
-
 		if ( strlen( $this->data['Description'] ) < 30 ) {
 			// Should this limit be lowered?
 			return Status::newFatal( 'newsletter-create-short-description-error' );

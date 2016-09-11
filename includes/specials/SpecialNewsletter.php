@@ -8,9 +8,9 @@
 class SpecialNewsletter extends SpecialPage {
 
 	/** Subpage actions */
+	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_ANNOUNCE = 'announce';
 	const NEWSLETTER_DELETE = 'delete';
-	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 
@@ -60,9 +60,6 @@ class SpecialNewsletter extends SpecialPage {
 					break;
 				case self::NEWSLETTER_ANNOUNCE:
 					$this->doAnnounceExecute();
-					break;
-				case self::NEWSLETTER_MANAGE:
-					$this->doManageExecute();
 					break;
 				case self::NEWSLETTER_DELETE:
 					$this->doDeleteExecute();
@@ -122,11 +119,11 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->isPublisher( $user ) ) {
 			$actions[] = self::NEWSLETTER_ANNOUNCE;
 		}
-		if ( $this->newsletter->canManage( $user ) ) {
-			$actions[] = self::NEWSLETTER_MANAGE;
-		}
 		if ( $this->newsletter->canDelete( $user ) ) {
 			$actions[] = self::NEWSLETTER_DELETE;
+		}
+		if ( $this->newsletter->canManage( $user ) ) {
+			$actions[] = self::NEWSLETTER_MANAGE;
 		}
 
 		$links = array();
@@ -136,15 +133,22 @@ class SpecialNewsletter extends SpecialPage {
 			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
 			// 'newsletter-subtitlelinks-manage', 'newsletter-subtitlelinks-delete'
 			$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
+			$link = Linker::linkKnown( $title, $msg );
+			if ( $action == self::NEWSLETTER_MANAGE ) {
+				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
+				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
+				$link = Linker::linkKnown( $title, $msg, [], $query =['action'=>'edit'] );
+			}
 			if ( $current === $action ) {
 				$links[] = Linker::makeSelfLinkObj( $title, $msg );
 			} else {
-				$links[] = Linker::linkKnown( $title, $msg );
+
+				$links[] = $link;
 			}
 		}
 
 		$newsletterLinks = Linker::linkKnown(
-			$this->getPageTitle( $this->newsletter->getId() ),
+			Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ),
 			$this->getEscapedName()
 		) . ' ' . $this->msg( 'parentheses' )
 			->rawParams( $this->getLanguage()->pipeList( $links ) )
@@ -303,7 +307,7 @@ class SpecialNewsletter extends SpecialPage {
 				array(
 					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
 					'icon' => 'settings',
-					'href' =>  $this->getPageTitle( $id . '/' . self::NEWSLETTER_MANAGE )->getFullURL()
+					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
 				)
 			);
 		}
@@ -665,243 +669,6 @@ class SpecialNewsletter extends SpecialPage {
 				$this->msg( 'newsletter-delete-failure' )->rawParams( $this->getEscapedName() )
 			);
 		}
-	}
-
-	/**
-	 * Implement logging for newsletter actions
-	 * Build the manage form for Special:Newsletter/$id/manage. This does
-	 * permissions and read-only checks too.
-	 *
-	 * @throws UserBlockedError
-	 * @throws PermissionsError
-	 */
-	protected function doManageExecute() {
-		$user = $this->getUser();
-		$out = $this->getOutput();
-
-		$this->checkReadOnly();
-
-		if ( $user->isBlocked() ) {
-			throw new UserBlockedError( $user->getBlock() );
-		}
-
-		if ( !$this->newsletter->canManage( $user ) ) {
-			throw new PermissionsError( 'newsletter-manage' );
-		}
-
-		$out->setPageTitle(
-			$this->msg( 'newsletter-manage' )
-				->rawParams( $this->getEscapedName() )
-		);
-
-		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
-		$publishersNames = array();
-		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
-		foreach ( $publishers as $publisher ) {
-			$publishersNames[] = $publisher->getName();
-		}
-
-		$fields['Name'] = array(
-			'type' => 'text',
-			'label-message' => 'newsletter-manage-name',
-			'default' => $this->newsletter->getName(),
-			'required' => true,
-		);
-		$fields['MainPage'] = array(
-			'type' => 'title',
-			'label-message' => 'newsletter-manage-title',
-			'default' =>  $mainTitle->getPrefixedText(),
-			'required' => true,
-		);
-		$fields['Description'] = array(
-			'type' => 'textarea',
-			'label-message' => 'newsletter-manage-description',
-			'rows' => 6,
-			'default' => $this->newsletter->getDescription(),
-			'required' => true,
-		);
-		$fields['Publishers'] = array(
-			'type' => 'textarea',
-			'label-message' => 'newsletter-manage-publishers',
-			'rows' => 10,
-			'default' => implode( "\n", $publishersNames ),
-		);
-		$fields['Confirm'] = array(
-			'type' => 'hidden',
-			'default' => false,
-		);
-		if ( $this->getRequest()->wasPosted() ) {
-			// @todo Make this work properly for double submissions
-			$fields['Confirm']['default'] = true;
-		}
-		$form = $this->getHTMLForm(
-			$fields,
-			array( $this, 'submitManageForm' )
-		);
-		$form->addHeaderText(
-			$this->msg( 'newsletter-manage-text' )
-				->rawParams( $this->getEscapedName() )->parse()
-		);
-		$form->setId( 'newsletter-manage-form' );
-		$form->setSubmitID( 'newsletter-manage-button' );
-		$form->setSubmitTextMsg( 'newsletter-managenewsletter-button' );
-		$form->show();
-	}
-
-	/**
-	 * Submit callback for the manage form.
-	 *
-	 * @todo Move most of this code out of SpecialNewsletter class
-	 * @param array $data
-	 *
-	 * @return Status|bool true on success, Status fatal otherwise
-	 */
-	public function submitManageForm( array $data ) {
-		$confirmed = (bool)$data['Confirm'];
-		$modified = false;
-
-		$oldName = $this->newsletter->getName();
-		$oldDescription = $this->newsletter->getDescription();
-		$oldMainPage = $this->newsletter->getPageId();
-
-		$name = trim( $data['Name'] );
-		$description = trim( $data['Description'] );
-		$mainPage = Title::newFromText( $data['MainPage'] );
-
-		if ( !$mainPage ) {
-			return Status::newFatal( 'newsletter-create-mainpage-error' );
-		}
-
-		$formData = array(
-			'Name' => $name,
-			'Description' => $description,
-			'MainPage' => $mainPage,
-		);
-
-		$validator = new NewsletterValidator( $formData );
-		$validation = $validator->validate();
-		if ( !$validation->isGood() ) {
-			// Invalid input was entered
-			return $validation;
-		}
-
-		$mainPageId = $mainPage->getArticleID();
-
-		$store = NewsletterStore::getDefaultInstance();
-		$newsletterId = $this->newsletter->getId();
-
-		if ( $name != $oldName ) {
-			$rows = $store->newsletterExistsWithName( $name );
-			foreach ( $rows as $row ) {
-				if ( $row->nl_name === $name ) {
-					return Status::newFatal( 'newsletter-exist-error', $name );
-				}
-			}
-			$store->updateName( $newsletterId, $name );
-			$modified = true;
-		}
-		if ( $description != $oldDescription ) {
-			$store->updateDescription( $newsletterId, $description );
-			$modified = true;
-		}
-		if ( $oldMainPage != $mainPageId ) {
-			$rows = $store->newsletterExistsForMainPage( $mainPageId );
-			foreach ( $rows as $row ) {
-				if ( (int)$row->nl_main_page_id === $mainPageId  ) {
-					return Status::newFatal( 'newsletter-mainpage-in-use' );
-				}
-			}
-			$store->updateMainPage( $newsletterId, $mainPageId );
-			$modified = true;
-		}
-
-		$lines = explode( "\n", $data['Publishers'] );
-		// Strip whitespace, then remove blank lines and duplicates
-		$lines = array_unique( array_filter( array_map( 'trim', $lines ) ) );
-
-		// Ask for confirmation before removing all the publishers
-		if ( !$confirmed && count( $lines ) === 0 ) {
-			return Status::newFatal( 'newsletter-manage-no-publishers' );
-		}
-
-		/** @var User[] $newPublishers */
-		$newPublishers = array();
-		foreach ( $lines as $publisherName ) {
-			$user = User::newFromName( $publisherName );
-			if ( !$user || !$user->getId() ) {
-				// Input contains an invalid username
-				return Status::newFatal( 'newsletter-manage-invalid-publisher', $publisherName );
-			}
-			$newPublishers[] = $user;
-		}
-
-		$oldPublishersIds = $this->newsletter->getPublishers();
-		$newPublishersIds = self::getIdsFromUsers( $newPublishers );
-
-		// Confirm whether the current user (if already a publisher)
-		// wants to be removed from the publishers group
-		$user = $this->getUser();
-		if ( !$confirmed
-			&& $this->newsletter->isPublisher( $user )
-			&& !in_array( $user->getId(), $newPublishersIds )
-		) {
-			return Status::newFatal( 'newsletter-manage-remove-self-publisher' );
-		}
-
-		// Do the actual modifications now
-		$added = array_diff( $newPublishersIds, $oldPublishersIds );
-		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
-
-		// @todo Do this in a batch..
-		foreach ( $added as $auId ) {
-			$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
-		}
-
-		if ( $added ) {
-			EchoEvent::create(
-				array(
-					'type' => 'newsletter-newpublisher',
-					'extra' => array(
-						'newsletter-name' => $this->newsletter->getName(),
-						'new-publishers-id' => $added,
-						'newsletter-id' => $newsletterId
-					),
-					'agent' => $user
-				)
-			);
-		}
-
-		foreach ( $removed as $ruId ) {
-			$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
-		}
-
-		// Now report to the user
-		$out = $this->getOutput();
-		if ( $added || $removed || $modified ) {
-			$out->addWikiMsg( 'newsletter-manage-newsletter-success' );
-		} else {
-			// Submitted without any changes to the existing publishers
-			$out->addWikiMsg( 'newsletter-manage-newsletter-nochanges' );
-		}
-		$out->addReturnTo( $this->getPageTitle( $newsletterId ) );
-
-		return true;
-	}
-
-	/**
-	 * Helper function for submitManageForm() to get user IDs from an array
-	 * of User objects because we need to do comparison. This is not related
-	 * to this class at all. :-/
-	 *
-	 * @param User[] $users
-	 * @return int[]
-	 */
-	private static function getIdsFromUsers( $users ) {
-		$ids = array();
-		foreach ( $users as $user ) {
-			$ids[] = $user->getId();
-		}
-		return $ids;
 	}
 
 	/**
