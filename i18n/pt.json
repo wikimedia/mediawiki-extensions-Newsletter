@@ -4,14 +4,15 @@
 			"Macofe",
 			"Vitorvicentevalente",
 			"Imperadeiro90",
-			"Fúlvio"
+			"Fúlvio",
+			"Mansil"
 		]
 	},
 	"newsletter-extension-desc": "Permite que os utilizadores publiquem e subscrevam boletins informativos",
 	"newsletter-name": "Nome do boletim informativo",
 	"newsletter-desc": "Descrição",
-	"newsletter-title": "Página wiki a ser associada à Página principal",
-	"newsletter-exist-error": "Já existe um boletim informativo intitulado \"$1\". Por favor, tente outro nome.",
+	"newsletter-title": "Página wiki para ser associada à página Principal",
+	"newsletter-exist-error": "Já existe um boletim informativo nomeado de \"$1\". Por favor, tente novamente com outro nome.",
 	"newslettercreate": "Criar boletim informativo",
 	"newsletter-create-submit": "Criar boletins informativos",
 	"newsletter-create-confirmation": "Foi criado um [[Special:Newsletter/$1|novo boletim informativo]] com sucesso.",
