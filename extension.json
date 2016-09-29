@@ -66,6 +66,7 @@
 	"AutoloadClasses": {
 		"Newsletter": "includes/Newsletter.php",
 		"NewsletterDb": "includes/NewsletterDb.php",
+		"NewsletterEditPage": "includes/NewsletterEditPage.php",
 		"NewsletterStore": "includes/NewsletterStore.php",
 		"NewsletterHooks": "Newsletter.hooks.php",
 		"NewsletterValidator": "includes/NewsletterValidator.php",
@@ -143,7 +144,23 @@
 		],
 		"UserMergeAccountFields": [
 			"NewsletterHooks::onUserMergeAccountFields"
+		],
+		"CustomEditor": [
+			"NewsletterHooks::onCustomEditor"
 		]
 	},
+	"namespaces": [
+		{
+			"id": 5500,
+			"constant": "NS_NEWSLETTER",
+			"name": "Newsletter",
+			"protection": "newsletter-create"
+		},
+		{
+			"id": 5501,
+			"constant": "NS_NEWSLETTER_TALK",
+			"name": "Newsletter_talk"
+		}
+	],
 	"manifest_version": 1
 }
