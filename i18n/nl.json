@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Sjoerddebruin",
-			"Siebrand"
+			"Siebrand",
+			"SPQRobin"
 		]
 	},
 	"newslettercreate": "Nieuwsbrief aanmaken",
@@ -30,10 +31,13 @@
 	"newsletter-subscribe-ip-notallowed": "Meld u aan om te abonneren op een nieuwsbrief.",
 	"newsletter-do-unsubscribe": "Uitschrijven voor deze nieuwsbrief",
 	"newsletter-unsubscribe-fail": "Het was niet mogelijk uit te schrijven van de nieuwsbrief \"$1\" omdat u niet bent geabonneerd op deze nieuwsbrief.",
+	"newsletter-subscribe-button-label": "Ja",
+	"newsletter-unsubscribe-button-label": "Nee",
 	"newsletter-subscribing": "Aan het abonneren...",
 	"newsletter-unsubscribing": "Aan het afmelden...",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
 	"newsletter-header-name": "Naam",
+	"newsletter-header-description": "Beschrijving",
 	"newsletter-header-subscriber_count": "Abonnees",
 	"newsletter-delete-confirm-cancel": "Annuleren",
 	"newsletter-delete-confirm-delete": "Verwijderen",
