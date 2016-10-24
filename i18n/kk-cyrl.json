@@ -14,7 +14,7 @@
 	"newslettercreate": "Жаңалықхат бастау",
 	"newslettercreate-text": "Бұл бет жаңа жаңалықхат бастауға мүмкіндік береді. Сіз оның бастауымен жаңалықхатқа жазылушы және таратушы ретінде қосыласыз. Барлық жолақтар міндетті.",
 	"newsletter-create-submit": "Жаңалықхат бастау",
-	"newsletter-create-confirmation": "[[Special:Newsletter/$1|Жаңа жаңалықхаты]] бастадыңыз.",
+	"newsletter-create-confirmation": "[[Newsletter:$1|Жаңа жаңалықхаты]] бастадыңыз.",
 	"newsletter-create-mainpage-error": "Жарамсыз жаңалықхат басты беті енгізілген. Қайта байқап көріңіз.",
 	"newsletter-mainpage-non-existent": "Жаңалықхат басты беті жоқ. Жарамды бар бетті еңгізіңіз.",
 	"newsletter-mainpage-in-use": "Бұрыннан бар жаңалықхат бірдей басты беті бар. Басқа атау енгізіңіз.",

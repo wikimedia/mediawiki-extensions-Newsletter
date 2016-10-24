@@ -17,7 +17,7 @@
 	"newslettercreate": "Crea newsletter",
 	"newslettercreate-text": "Questa pagina ti permette di creare una nuova newsletter. Sarai aggiunto come editore e sarai iscritto alla newsletter durante la creazione. Tutti i campi sono obbligatori.",
 	"newsletter-create-submit": "Crea newsletter",
-	"newsletter-create-confirmation": "Una [[Special:Newsletter/$1|nuova newsletter]] è stata creata.",
+	"newsletter-create-confirmation": "Una [[Newsletter:$1|nuova newsletter]] è stata creata.",
 	"newsletter-create-mainpage-error": "Inserita una pagina principale della newsletter non valida. Riprova.",
 	"newsletter-mainpage-non-existent": "La pagina principale della newsletter non esiste. Inserisci una pagina esistente valida.",
 	"newsletter-mainpage-in-use": "Una newsletter esistente ha la stessa pagina principale. Inserisci un altro titolo.",

@@ -15,7 +15,7 @@
 	"newsletter-exist-error": "既に「$1」と同じの名前のニュースレターが存在しています。別の名前で試してください。",
 	"newslettercreate": "ニュースレターを作成する",
 	"newsletter-create-submit": "ニュースレターの作成",
-	"newsletter-create-confirmation": "[[Special:Newsletter/$1|ニュースレター]]を作成しました。",
+	"newsletter-create-confirmation": "[[Newsletter:$1|ニュースレター]]を作成しました。",
 	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",
 	"newsletter-subtitlelinks-list": "ニュースレターの一覧",
 	"newsletter-subtitlelinks-create": "新たなニュースレターの作成",

@@ -18,7 +18,7 @@
 	"newslettercreate": "Crear boletín de novas",
 	"newslettercreate-text": "Esta páxina permítelle crear un boletín novo. Será engadido como editor e será subscrito ó boletín na súa creación. Son necesarios todos os campos.",
 	"newsletter-create-submit": "Crear boletín de novas",
-	"newsletter-create-confirmation": "Creouse un [[Special:Newsletter/$1|novo boletín]].",
+	"newsletter-create-confirmation": "Creouse un [[Newsletter:$1|novo boletín]].",
 	"newsletter-create-mainpage-error": "Non é válida a páxina principal do boletín. Probe de novo.",
 	"newsletter-mainpage-non-existent": "Non existe a páxina principal do boletín. Por favor, indique unha páxina existente válida.",
 	"newsletter-mainpage-in-use": "Un boletín existente ten a mesma páxina principal. Por favor, indique outro título.",

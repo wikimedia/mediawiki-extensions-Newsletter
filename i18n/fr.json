@@ -26,7 +26,7 @@
 	"newslettercreate": "Créer le bulletin d’information",
 	"newslettercreate-text": "La page vous permet de créer un nouveau bulletin d’information. Vous y serez ajouté comme éditeur et y serez abonné à sa création. Tous les champs sont obligatoires.",
 	"newsletter-create-submit": "Créer l’infolettre",
-	"newsletter-create-confirmation": "Un [[Special:Newsletter/$1|nouveau bulletin d'information]] a été créé avec succès.",
+	"newsletter-create-confirmation": "Un [[Newsletter:$1|nouveau bulletin d'information]] a été créé avec succès.",
 	"newsletter-create-mainpage-error": "Page principale du bulletin d’information entrée non valide. Veuillez réessayer.",
 	"newsletter-mainpage-non-existent": "La page principale du bulletin d'information n'existe pas. Veuillez saisir une page existante valide.",
 	"newsletter-mainpage-in-use": "Un bulletin d'information existant a la même page principale. Veuillez entrer un autre titre.",

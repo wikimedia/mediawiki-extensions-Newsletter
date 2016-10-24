@@ -16,7 +16,7 @@
 	"newsletter-exist-error": "Já existe um boletim informativo nomeado de \"$1\". Por favor, tente novamente com outro nome.",
 	"newslettercreate": "Criar boletim informativo",
 	"newsletter-create-submit": "Criar boletins informativos",
-	"newsletter-create-confirmation": "Foi criado um [[Special:Newsletter/$1|novo boletim informativo]] com sucesso.",
+	"newsletter-create-confirmation": "Foi criado um [[Newsletter:$1|novo boletim informativo]] com sucesso.",
 	"newsletter-create-mainpage-error": "Foram inseridos caracteres inválidos na página principal do boletim. Por favor, tente novamente",
 	"newsletter-create-short-description-error": "A descrição é muito curta (menos de 30 caracteres). Por favor, tente novamente.",
 	"newsletter-subtitlelinks-list": "Lista de boletins informativos",

@@ -13,7 +13,7 @@
 	"newslettercreate": "Crear boletinos",
 	"newslettercreate-text": "Esta páxina te permite crear un boletín nuevu. Va añadísete como editor y va suscribísete al boletín al crealu. Tolos campos son obligatorios.",
 	"newsletter-create-submit": "Crear boletín",
-	"newsletter-create-confirmation": "Creóse un [[Special:Newsletter/$1|boletín nuevu]].",
+	"newsletter-create-confirmation": "Creóse un [[Newsletter:$1|boletín nuevu]].",
 	"newsletter-create-mainpage-error": "Dióse una páxina principal del boletín inválida. Vuelve a intentalo.",
 	"newsletter-subtitlelinks-list": "Llista de boletinos",
 	"newsletter-subtitlelinks-create": "Crear un boletín nuevu",

@@ -16,7 +16,7 @@
 	"newslettercreate": "Направи билтен",
 	"newslettercreate-text": "Страницава ви овозможува да направите нов билте. Ќе бидете заведени како издавач и претплатени на билтенот со неговото создавање. Сите полиња се задолжителни.",
 	"newsletter-create-submit": "Направи билтен",
-	"newsletter-create-confirmation": "Создаден е [[Special:Newsletter/$1|нов билтен]].",
+	"newsletter-create-confirmation": "Создаден е [[Newsletter:$1|нов билтен]].",
 	"newsletter-create-mainpage-error": "Внесена е неважечка слика за главната страница на билтенот. Обидете се повторно",
 	"newsletter-mainpage-non-existent": "Главната страница на билтенот не постои. Внесете важечка постоечка страница.",
 	"newsletter-mainpage-in-use": "Постоечкиот билтен ја има истата главна страница. Внесете друг наслов.",

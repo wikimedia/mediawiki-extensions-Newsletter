@@ -12,7 +12,7 @@
 	"newsletter-create-error": "En feil oppsto under forsøk på å lage et nytt nyhetsbrev. Prøv igjen.",
 	"newslettercreate": "Opprett nyhetsbrev",
 	"newsletter-create-submit": "Opprett nyhetsbrev",
-	"newsletter-create-confirmation": "Et [[Special:Newsletter/$1|nytt nyhetsbrev]] har blitt opprettet.",
+	"newsletter-create-confirmation": "Et [[Newsletter:$1|nytt nyhetsbrev]] har blitt opprettet.",
 	"newsletter-create-short-description-error": "Beskrivelsen er for kort (mindre enn 30 tegn). Prøv igjen.",
 	"newsletter-subtitlelinks-list": "Liste over nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Opprett et nytt nyhetsbrev",
