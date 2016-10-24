@@ -2,20 +2,11 @@
 
 class NewsletterEditPage {
 
-	/** @var IContextSource */
 	protected $context;
 
-	/** @var User */
-	protected $user;
+	protected $readOnly = false;
 
-	/** @var Title */
-	protected $title;
-
-	/** @var OutputPage */
-	protected $out;
-
-	/** @var bool */
-	protected $isNew;
+	protected $newsletter;
 
 	public function __construct( IContextSource $context ) {
 		$this->context = $context;
@@ -29,7 +20,7 @@ class NewsletterEditPage {
 			throw new ReadOnlyError;
 		}
 
-		$this->isNew = !$this->title->exists();
+		$this->createNew = !$this->title->exists();
 
 		$permErrors = $this->getPermissionErrors();
 		if ( count( $permErrors ) ) {
@@ -37,33 +28,23 @@ class NewsletterEditPage {
 			return;
 		}
 
-		$this->out->setPageTitle( $this->getHeaderMsg() );
-		$this->out->setRobotPolicy( 'noindex,nofollow' );
-		if ( !$this->isNew ) {
-			$this->out->addBacklinkSubtitle( $this->title );
-		}
+		$this->out->setPageTitle( $this->context->msg( 'newslettercreate', $this->title->getPrefixedText() )->text() );
 		$this->getForm()->show();
 
-		// TODO This implementation requires the following features added
-		// readonly
+		// TODO more things here
 		// block
 		// ratelimit
 		// check existing
-		// permissions
+		// add subtitle link
 		// intro
 		// form
-	}
-
-	protected function getHeaderMsg() {
-		$key = $this->isNew ? 'newslettercreate-header' : 'newsletteredit-header';
-		return $this->context->msg( $key, $this->title->getPrefixedText() )->text();
 	}
 
 	protected function getPermissionErrors() {
 		$rigor = 'secure';
 		$permErrors = $this->title->getUserPermissionsErrors( 'edit', $this->user, $rigor );
 
-		if ( $this->isNew ) {
+		if ( $this->createNew ) {
 			$permErrors = array_merge(
 				$permErrors,
 				wfArrayDiff2(
@@ -82,36 +63,17 @@ class NewsletterEditPage {
 			$this->getFormFields(),
 			$this->context
 		);
+		$form->setSubmitCallback( [ $this, 'attemptSave' ] );
 		$form->setAction( $this->title->getLocalURL( 'action=edit' ) );
-		$form->showCancel();
-		$form->setCancelTarget( $this->title );
-
+		$form->addHeaderText( $this->context->msg( 'newslettercreate-text' )->parseAsBlock() );
 		// Retain query parameters (uselang etc)
 		$params = array_diff_key(
-			$this->context->getRequest()->getQueryValues(),
-			array( 'title' => null )
-		);
+			$this->context->getRequest()->getQueryValues(), [ 'title' => null ] );
 		$form->addHiddenField( 'redirectparams', wfArrayToCgi( $params ) );
-
-		if ( $this->isNew ) {
-			$this->setupCreateForm( $form );
-		} else {
-			$this->setupEditForm( $form );
-		}
-		// @todo $form->addPostText( save/copyright warnings etc. );
-
-		return $form;
-	}
-
-	protected function setupCreateForm( HTMLForm $form ) {
-		$form->addHeaderText( $this->context->msg( 'newslettercreate-text' )->parseAsBlock() );
-		$form->setSubmitCallback( array( $this, 'attemptCreate' ) );
 		$form->setSubmitTextMsg( 'newsletter-create-submit' );
-	}
 
-	protected function setupEditForm( HTMLForm $form ) {
-		$form->addHeaderText( $this->context->msg( 'newslettercreate-text' )->parseAsBlock() );
-		$form->setSubmitCallback( array( $this, 'attemptEdit' ) );
+		// @todo $form->addPostText( save/copyright warnings etc. );
+		return $form;
 	}
 
 	/**
@@ -138,7 +100,6 @@ class NewsletterEditPage {
 				'rows' => 15,
 				'maxlength' => 600000,
 			),
-			// @todo Add summary field
 		);
 	}
 
@@ -149,10 +110,9 @@ class NewsletterEditPage {
 	 * @throws ThrottledError
 	 * @return Status
 	 */
-	public function attemptCreate( array $input ) {
+	public function attemptSave( array $input ) {
 		global $wgContLang;
 
-		// @todo Implement edit conflict check
 		$data = array(
 			'Name' => trim( $input['name'] ),
 			'Description' => trim( $input['description'] ),
@@ -176,8 +136,8 @@ class NewsletterEditPage {
 				array(
 					'nl_name' => $data['Name'],
 					'nl_main_page_id' => $mainPageId,
-				 ),
-				 LIST_OR
+				),
+				LIST_OR
 			)
 		);
 		// Check whether another existing newsletter has the same name or main page
@@ -204,14 +164,26 @@ class NewsletterEditPage {
 			$mainPageId
 		);
 		$newsletterCreated = $store->addNewsletter( $this->newsletter );
-
 		if ( $newsletterCreated ) {
-			$this->newsletter->subscribe( $this->user );
-			NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, $this->user );
-
-			$this->out->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getId() );
-
-			return Status::newGood();
+			$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
+			$editSummaryMsg = $this->context->msg( 'newsletter-create-editsummary' );
+			$result = NewsletterContentHandler::edit(
+				$title,
+				$data['Description'],
+				$input['mainpage'],
+				array( $this->user->getName() ),
+				$editSummaryMsg->inContentLanguage()->plain(),
+				$this->context
+			);
+			if ( $result->isGood() ) {
+				$this->newsletter->subscribe( $this->user );
+				NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, $this->user );
+				$this->out->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getName() );
+				return Status::newGood();
+			} else {
+				// The content creation was unsuccessful, lets rollback the newsletter from db
+				$store->rollBackNewsletterAddition( $this->newsletter );
+			}
 		}
 
 		// Couldn't insert to the DB..

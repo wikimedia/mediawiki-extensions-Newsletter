@@ -62,6 +62,16 @@ class Newsletter {
 	}
 
 	/**
+	 * Fetch a new newsletter instance from given name
+	 *
+	 * @param string $name
+	 * @return Newsletter|null
+	 */
+	public static function newFromName( $name ) {
+		return NewsletterStore::getDefaultInstance()->getNewsletterFromName( $name );
+	}
+
+	/**
 	 * @return int|null
 	 */
 	public function getId() {

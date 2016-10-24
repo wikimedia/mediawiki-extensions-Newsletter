@@ -129,14 +129,50 @@ class NewsletterHooks {
 		return true;
 	}
 
+	/**
+	 * @param EditPage $editPage
+	 * @return bool
+	 */
+	public static function onAlternateEdit( EditPage $editPage ) {
+		$out = $editPage->getContext()->getOutput();
+		$title = $editPage->getTitle();
+
+		if ( $title->inNamespace( NS_NEWSLETTER ) ) {
+			if ( $title->hasContentModel( 'NewsletterContent' ) ) {
+				$newsletter = Newsletter::newFromName( $title->getText() );
+				if ( $newsletter ) {
+					$title = SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() . '/' . 'manage' );
+					$out->redirect( $title->getFullURL() );
+				}
+			}
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * @param Article $article
+	 * @param User $user
+	 * @return bool
+	 * @throws ReadOnlyError
+	 */
 	public static function onCustomEditor( Article $article, User $user ) {
+		$out = $article->getContext()->getOutput();
 		if ( !$article->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
 
+		$newsletter = Newsletter::newFromName( $article->getTitle()->getText() );
+		if ( $newsletter ) {
+			// A newsletter exists in that title, lets redirect to manage page
+			$title = SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() . '/' .
+				'manage' );
+			$out->redirect( $title->getFullURL() );
+		}
+
 		$editPage = new NewsletterEditPage( $article->getContext() );
 		$editPage->edit();
-
 		return false;
 	}
 }
