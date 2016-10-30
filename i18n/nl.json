@@ -3,10 +3,12 @@
 		"authors": [
 			"Sjoerddebruin",
 			"Siebrand",
-			"SPQRobin"
+			"SPQRobin",
+			"Hex"
 		]
 	},
 	"newslettercreate": "Nieuwsbrief aanmaken",
+	"newsletter-create-confirmation": "Een [[Newsletter:$1|nieuwe nieuwsbrief]] is aangemaakt.",
 	"newsletter-notfound": "Nieuwsbrief niet gevonden",
 	"newsletter-view": "Nieuwsbriefgegevens weergeven",
 	"newsletter-view-name": "Naam van nieuwsbrief:",
