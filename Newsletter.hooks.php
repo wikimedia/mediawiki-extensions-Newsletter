@@ -166,9 +166,10 @@ class NewsletterHooks {
 		$newsletter = Newsletter::newFromName( $article->getTitle()->getText() );
 		if ( $newsletter ) {
 			// A newsletter exists in that title, lets redirect to manage page
-			$title = SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() . '/' .
-				'manage' );
-			$out->redirect( $title->getFullURL() );
+			$editPage = new NewsletterEditPage( $article->getContext(), $newsletter, $user );
+			$editPage->edit();
+
+			return false;
 		}
 
 		$editPage = new NewsletterEditPage( $article->getContext() );

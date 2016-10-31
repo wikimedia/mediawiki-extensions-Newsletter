@@ -67,6 +67,7 @@
 	"newsletter-manage-remove-self-publisher": "Are you sure that you want to remove yourself from the publishers?",
 	"newsletter-manage-newsletter-success": "The newsletter have been modified.",
 	"newsletter-manage-newsletter-nochanges": "No changes were made to the existing newsletter.",
+	"newsletter-manage-summary": "Summary of the change:",
 	"newsletter-delete": "Delete newsletter",
 	"newsletter-delete-text": "This interface can be used to delete the \"$1\" newsletter. Please confirm that you intend to do this. <strong>This action cannot be undone.</strong>",
 	"newsletter-delete-reason": "Reason",

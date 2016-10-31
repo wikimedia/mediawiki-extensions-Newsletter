@@ -79,9 +79,10 @@ class NewsletterTablePager extends TablePager {
 		global $wgContLang;
 
 		$id = $this->mCurrentRow->nl_id;
+		$newsletter = Newsletter::newFromID( (int)$id );
 		switch ( $field ) {
 			case 'nl_name':
-				$title = SpecialPage::getTitleFor( 'Newsletter', $id );
+				$title = Title::makeTitleSafe( NS_NEWSLETTER, $newsletter->getName() );
 				if ( $title ) {
 					return Linker::linkKnown( $title, htmlspecialchars( $value ) );
 				} else {

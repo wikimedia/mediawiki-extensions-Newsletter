@@ -50,6 +50,7 @@ class NewsletterContent extends JsonContent {
 	 */
 	public function isValid() {
 		$this->decode();
+
 		if ( !is_string( $this->description ) || !is_string( $this->mainPage ) || !is_array( $this->publishers ) ) {
 			return false;
 		}
@@ -72,6 +73,7 @@ class NewsletterContent extends JsonContent {
 		}
 		$jsonParse = $this->getData();
 		$data = $jsonParse->isGood() ? $jsonParse->getValue() : null;
+
 		if ( $data ) {
 			$this->description = isset( $data->description ) ? $data->description : null;
 			$this->mainPage = isset( $data->mainpage ) ? $data->mainpage : null;
@@ -166,10 +168,10 @@ class NewsletterContent extends JsonContent {
 					'default' => $options->getUserLangObj()->formatNum( $this->newsletter->getSubscriberCount() ),
 				),
 			);
-			if ( count( $this->publishers ) > 1 ) {
+			if ( count( $this->getPublishersFromJSONData( $this->publishers ) ) > 1 ) {
 				// Have this here to avoid calling unneeded functions
-				$this->doLinkCacheQuery( $this->publishers );
-				$fields['publishers']['default'] = $this->buildUserList( $this->publishers );
+				$this->doLinkCacheQuery( $this->getPublishersFromJSONData( $this->publishers ) );
+				$fields['publishers']['default'] = $this->buildUserList( $this->getPublishersFromJSONData( $this->publishers ) );
 				$fields['publishers']['raw'] = true;
 			} else {
 				// Show a message if there are no publishers instead of nothing
@@ -259,8 +261,7 @@ class NewsletterContent extends JsonContent {
 				array(
 					'label' => $wgOut->msg( 'newsletter-manage-button' )->escaped(),
 					'icon' => 'settings',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_MANAGE )->getFullURL()
+					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
 
 				)
 			);
@@ -361,12 +362,21 @@ class NewsletterContent extends JsonContent {
 			$links = array();
 			foreach ( $actions as $action ) {
 				$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' . $action );
+
 				// Messages used here: 'newsletter-subtitlelinks-announce',
 				// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
-				// 'newsletter-subtitlelinks-manage'
 				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->escaped();
-				$links[] = Linker::linkKnown( $title, $msg );
+				$link = Linker::linkKnown( $title, $msg );
+
+				if ( $action == self::NEWSLETTER_MANAGE ) {
+					$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
+					$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->escaped();
+					$link = Linker::linkKnown( $title, $msg, [], $query =['action'=>'edit'] );
+				}
+				$links[] = $link;
 			}
+
+
 
 			$newsletterLinks = Linker::makeSelfLinkObj(
 				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()

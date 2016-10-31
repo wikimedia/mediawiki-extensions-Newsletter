@@ -29,7 +29,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 		$this->checkFormat( $format );
 		$content = new NewsletterContent( $text );
 		if ( !$content->isValid() ) {
-			throw new MWContentSerializationException( 'The delivery list content is invalid.' );
+			throw new MWContentSerializationException( 'The Newsletter content is invalid.' );
 		}
 		return $content;
 	}

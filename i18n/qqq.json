@@ -74,6 +74,7 @@
 	"newsletter-manage-remove-self-publisher": "Confirmation message shown on Special:Newsletter's manage form if the user removes themselves from the publishers' list.",
 	"newsletter-manage-newsletter-success": "Success message shown on Special:Newsletter's manage form when the publishers have been modfied.",
 	"newsletter-manage-newsletter-nochanges": "Message shown on Special:Newsletter if no changes were made to the existing publishers' list.",
+	"newsletter-manage-summary": "Edit summary for updating fields in Special:Newsletter's manage form",
 	"newsletter-delete": "Header message shown on Special:Newsletter/<id>/delete.\n\nSee also:\n* {{msg-mw|newsletter-view}}\n*{{msg-mw|newsletter-subscribe}}",
 	"newsletter-delete-text": "Introductory message shown on Special:Newsletter/<id>/delete.\n\nParameters:\n* $1 - Name of the newsletter for the specified id.",
 	"newsletter-delete-reason": "Label of text field on Special:Newsletter/<id>/delete\n{{Identical|Reason}}",
