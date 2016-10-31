@@ -83,6 +83,7 @@
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
 		"NewsletterContent": "includes/content/NewsletterContent.php",
 		"NewsletterContentHandler": "includes/content/NewsletterContentHandler.php",
+		"NewsletterDiffEngine": "includes/content/NewsletterDiffEngine.php",
 		"NewsletterDeletionUpdate": "includes/content/NewsletterDeletionUpdate.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
