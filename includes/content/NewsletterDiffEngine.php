@@ -1,0 +1,64 @@
+<?php
+
+class NewsletterDiffEngine extends DifferenceEngine {
+	public function generateContentDiffBody( Content $old, Content $new ) {
+		if ( !( $old instanceof NewsletterContent )
+			|| !( $new instanceof NewsletterContent ) ) {
+			throw new Exception( 'Cannot diff content types other than NewsletterContent' );
+		}
+
+		$output = '';
+
+		$descDiff = $this->generateTextDiffBody(
+			$old->getDescription(), $new->getDescription()
+		);
+
+		if ( $descDiff ) {
+			if ( trim( $descDiff ) !== '' ) {
+				$output .= Html::openElement( 'tr' );
+				$output .= Html::openElement( 'td',
+					[ 'colspan' => 4, 'id' => 'mw-newsletter-diffdescheader' ] );
+				$output .= Html::element( 'h4', [],
+					$this->msg( 'newsletter-diff-descheader' )->text() );
+				$output .= Html::closeElement( 'td' );
+				$output .= Html::closeElement( 'tr' );
+				$output .= $descDiff;
+			}
+		}
+
+		$mainPageDiff = $this->generateTextDiffBody(
+			$old->getMainPage(), $new->getMainPage()
+		);
+
+		if ( $mainPageDiff ) {
+			if( trim( $mainPageDiff ) !== '' ) {
+				$output .= Html::openElement( 'tr' );
+				$output .= Html::openElement( 'td',
+					[ 'colspan' => 4, 'id' => 'mw-newsletter-diffmainpageheader' ] );
+				$output .= Html::element( 'h4', [],
+					$this->msg( 'newsletter-diff-mainpageheader' )->text() );
+				$output .= Html::closeElement( 'td' );
+				$output .= Html::closeElement( 'tr' );
+				$output .= $mainPageDiff;
+			}
+		}
+
+		$publishersDiff = $this->generateTextDiffBody(
+			implode( $old->getPublishers(), "\n" ),
+			implode( $new->getPublishers(), "\n" )
+		);
+
+		if ( trim( $publishersDiff ) !== '' ) {
+			$output .= Html::openElement( 'tr' );
+			$output .= Html::openElement( 'td',
+				[ 'colspan' => 4, 'id' => 'mw-massmessage-diffpublishersheader' ] );
+			$output .= Html::element( 'h4', [],
+				$this->msg( 'massmessage-diff-publishersheader' )->text() );
+			$output .= Html::closeElement( 'td' );
+			$output .= Html::closeElement( 'tr' );
+			$output .= $publishersDiff;
+		}
+
+		return $output;
+	}
+}
