@@ -67,6 +67,7 @@
 	"newsletter-manage-remove-self-publisher": "האם ברצונך באמת להסיר את עצמך מהמפרסמים?",
 	"newsletter-manage-newsletter-success": "הידיעון שוּנה.",
 	"newsletter-manage-newsletter-nochanges": "לא נעשו שינויים לידיעון הקיים.",
+	"newsletter-manage-summary": "תקציר השינוי:",
 	"newsletter-delete": "מחיקת ידיעון",
 	"newsletter-delete-text": "ניתן להשתמש בממשק הזה כדי למחוק את הידיעון \"$1\". נא לאשר שזאת באמת הכוונה שלך. <strong>אי־אפשר לבטל את הפעולה הזאת.</strong>",
 	"newsletter-delete-reason": "סיבה",

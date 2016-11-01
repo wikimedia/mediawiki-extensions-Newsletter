@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Zygimantus",
-			"Hugo.arg"
+			"Hugo.arg",
+			"Eitvys200"
 		]
 	},
+	"newsletter-create-confirmation": "[[Newsletter:$1|Naujas naujienlaiškis]] buvo sukurtas.",
 	"newsletter-subtitlelinks-unsubscribe": "nutraukti prenumeratą",
 	"newsletter-subtitlelinks-subscribe": "prenumeruoti",
 	"newsletter-subtitlelinks-announce": "pranešti",
@@ -23,6 +25,7 @@
 	"newsletter-manage-button": "Tvarkyti",
 	"newsletter-unsubscribe-button": "Nutraukti prenumeratą",
 	"newsletter-subscribe-button": "Prenumeruoti",
+	"newsletter-manage-summary": "Pakeitimo santrauka:",
 	"newsletter-delete": "Ištrinti naujienlaiškį",
 	"newsletter-delete-reason": "Priežastis",
 	"newsletter-deletenewsletter-button": "Ištrinti šį naujienlaiškį",

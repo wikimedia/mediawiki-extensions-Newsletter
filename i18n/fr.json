@@ -76,6 +76,7 @@
 	"newsletter-manage-remove-self-publisher": "Êtes-vous sûr de vouloir vous retirer personnellement des éditeurs?",
 	"newsletter-manage-newsletter-success": "Le bulletin d’informations a été modifié.",
 	"newsletter-manage-newsletter-nochanges": "Aucune modification n’a été faite au bulletin d’informations existant.",
+	"newsletter-manage-summary": "Résumé des modifications :",
 	"newsletter-delete": "Supprimer l’infolettre",
 	"newsletter-delete-text": "Cette page permet de supprimer l’infolettre « $1 ». Veuillez confirmer que vous souhaitez effectuer la suppression. <strong>Cette action ne peut pas être annulée.</strong>",
 	"newsletter-delete-reason": "Motif",

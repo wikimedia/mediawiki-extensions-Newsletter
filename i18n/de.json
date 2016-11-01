@@ -66,6 +66,7 @@
 	"newsletter-manage-remove-self-publisher": "Bist du sicher, dass du dich selbst von den Herausgebern entfernen möchtest?",
 	"newsletter-manage-newsletter-success": "Der Newsletter wurde verändert.",
 	"newsletter-manage-newsletter-nochanges": "Am vorhandenen Newsletter wurden keine Änderungen durchgeführt.",
+	"newsletter-manage-summary": "Zusammenfassung der Änderung:",
 	"newsletter-delete": "Newsletter löschen",
 	"newsletter-delete-text": "Diese Oberfläche kann genutzt werden, um den Newsletter „$1“ zu löschen. Bitte bestätige, dass du beabsichtigst, dies zu tun. <strong>Diese Aktion kann nicht rückgängig gemacht werden.</strong>",
 	"newsletter-delete-reason": "Grund",
