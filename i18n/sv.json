@@ -14,6 +14,7 @@
 	"newsletter-create-error": "Ett fel uppstod när ett nytt nyhetsbrev skulle skapas. Försök igen.",
 	"newslettercreate": "Skapa nyhetsbrev",
 	"newsletter-create-submit": "Skapa nyhetsbrev",
+	"newsletter-create-confirmation": "Ett [[Newsletter:$1|nytt nyhetsbrev]] har skapats.",
 	"newsletter-create-short-description-error": "Beskrivningen är för kort (mindre än tecken). Försök igen.",
 	"newsletter-subtitlelinks-list": "Lista över nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Skapa ett nytt nyhetsbrev",

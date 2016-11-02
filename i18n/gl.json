@@ -68,6 +68,7 @@
 	"newsletter-manage-remove-self-publisher": "Esta seguro de que quere eliminase dos editores?",
 	"newsletter-manage-newsletter-success": "Modificouse o boletín.",
 	"newsletter-manage-newsletter-nochanges": "No se fixeron cambios ó boletín existente.",
+	"newsletter-manage-summary": "Resumo do cambioː",
 	"newsletter-delete": "Eliminar boletín",
 	"newsletter-delete-text": "Esta interface pode usarse para eliminar o boletín \"$1\". Confirme que quere facer isto. <strong>Esta acción non se pode desfacer.</strong>",
 	"newsletter-delete-reason": "Motivo",
