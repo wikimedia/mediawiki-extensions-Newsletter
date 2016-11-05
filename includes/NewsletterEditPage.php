@@ -8,13 +8,12 @@ class NewsletterEditPage {
 
 	protected $newsletter;
 
-	public function __construct( IContextSource $context, Newsletter $newsletter = null, User $user = null) {
+	public function __construct( IContextSource $context, Newsletter $newsletter = null) {
 		$this->context = $context;
 		$this->user = $context->getUser();
 		$this->title = $context->getTitle();
 		$this->out = $context->getOutput();
 		$this->newsletter = $newsletter;
-		$this->user = $user;
 	}
 
 	public function edit() {
@@ -48,14 +47,6 @@ class NewsletterEditPage {
 			$this->out->setPageTitle( $this->context->msg( 'newslettercreate', $this->title->getPrefixedText() )->text() );
 			$this->getForm()->show();
 		}
-
-		// TODO more things here
-		// block
-		// ratelimit
-		// check existing
-		// add subtitle link
-		// intro
-		// form
 	}
 
 	protected function getPermissionErrors() {

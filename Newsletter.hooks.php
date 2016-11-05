@@ -158,7 +158,6 @@ class NewsletterHooks {
 	 * @throws ReadOnlyError
 	 */
 	public static function onCustomEditor( Article $article, User $user ) {
-		$out = $article->getContext()->getOutput();
 		if ( !$article->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -166,9 +165,8 @@ class NewsletterHooks {
 		$newsletter = Newsletter::newFromName( $article->getTitle()->getText() );
 		if ( $newsletter ) {
 			// A newsletter exists in that title, lets redirect to manage page
-			$editPage = new NewsletterEditPage( $article->getContext(), $newsletter, $user );
+			$editPage = new NewsletterEditPage( $article->getContext(), $newsletter );
 			$editPage->edit();
-
 			return false;
 		}
 
