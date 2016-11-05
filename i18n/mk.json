@@ -66,6 +66,7 @@
 	"newsletter-manage-remove-self-publisher": "Дали сигурно сакате да се отстраните себеси од издавачоте?",
 	"newsletter-manage-newsletter-success": "Билтенот е изменет.",
 	"newsletter-manage-newsletter-nochanges": "Не се направени измени во постоечкиот билтен.",
+	"newsletter-manage-summary": "Краток опис на промената:",
 	"newsletter-delete": "Избриши билтен",
 	"newsletter-delete-text": "Посредников ви овозможува бришење на билтенот „$1“. Потврдете дали навистина сакате да го избришете. <strong>Ова дејство е неповратно.</strong>",
 	"newsletter-delete-reason": "Причина",
