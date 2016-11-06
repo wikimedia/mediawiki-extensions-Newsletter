@@ -126,9 +126,23 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$newsletterCreated = $store->addNewsletter( $this->newsletter );
 
 		if ( $newsletterCreated ) {
-			$this->onPostCreation( $user );
-
-			return Status::newGood();
+			$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
+			$editSummaryMsg = $this->msg( 'newsletter-create-editsummary' );
+			$result = NewsletterContentHandler::edit(
+				$title,
+				$data['Description'],
+				$input['mainpage'],
+				array( $user->getName() ),
+				$editSummaryMsg->inContentLanguage()->plain(),
+				$this->getContext()
+			);
+			if ( $result->isGood() ) {
+				$this->onPostCreation( $user );
+				return Status::newGood();
+			} else {
+				// The content creation was unsuccessful, lets rollback the newsletter from db
+				$store->rollBackNewsletterAddition( $this->newsletter );
+			}
 		}
 
 		// Couldn't insert to the DB..
@@ -147,7 +161,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	}
 
 	public function onSuccess() {
-		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getId() );
+		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getName() );
 	}
 
 	public function doesWrites() {
