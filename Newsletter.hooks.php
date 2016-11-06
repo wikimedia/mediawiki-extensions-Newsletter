@@ -174,4 +174,38 @@ class NewsletterHooks {
 		$editPage->edit();
 		return false;
 	}
+
+	/**
+	 * @param WikiPage $wikiPage
+	 * @param User $user
+	 * @param string $reason
+	 * @param string $error
+	 * @param Status $status
+	 * @param $suppress
+	 * @return bool
+	 * @throws PermissionsError
+	 */
+	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status, $suppress) {
+		global $wgOut;
+		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
+			return true;
+		}
+		$newsletter = Newsletter::newFromName( $wikiPage->getTitle()->getText() );
+		if ( $newsletter ) {
+			if ( !$newsletter->canDelete( $user ) ) {
+				throw new PermissionsError( 'newsletter-delete' );
+			}
+			$success = NewsletterStore::getDefaultInstance()
+				->deleteNewsletter( $newsletter, $reason );
+			if ( $success ) {
+				return $status->newGood();
+			} else {
+				// Show error message and allow resubmitting in case of failure
+				return $status->newFatal(
+					$wgOut->msg( 'newsletter-delete-failure' )->rawParams( $newsletter->getName() )
+				);
+			}
+		}
+		return true;
+	}
 }

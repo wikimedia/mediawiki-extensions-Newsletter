@@ -157,6 +157,9 @@
 		],
 		"CustomEditor": [
 			"NewsletterHooks::onCustomEditor"
+		],
+		"ArticleDelete": [
+			"NewsletterHooks::onArticleDelete"
 		]
 	},
 	"namespaces": [
