@@ -3,7 +3,8 @@
 	"version": "1.2.0",
 	"author": [
 		"Siebrand Mazeland",
-		"Tina Johnson"
+		"Tina Johnson",
+		"Tony Thomas"
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:Newsletter",
 	"descriptionmsg": "newsletter-extension-desc",
