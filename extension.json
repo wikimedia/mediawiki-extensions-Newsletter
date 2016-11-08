@@ -147,6 +147,9 @@
 		],
 		"ArticleDelete": [
 			"NewsletterHooks::onArticleDelete"
+		],
+		"UndeleteForm::undelete": [
+			"NewsletterHooks::onUndeleteForm"
 		]
 	},
 	"namespaces": [

@@ -205,4 +205,29 @@ class NewsletterHooks {
 		}
 		return false;
 	}
+
+	/**
+	 * @param PageArchive $archive
+	 * @param Title $title
+	 * @return bool
+	 */
+	public static function onUndeleteForm( PageArchive &$archive, Title $title ) {
+		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
+			return true;
+		}
+		$user = RequestContext::getMain()->getUser();
+		$newsletterName = $title->getText();
+		$newsletter = Newsletter::newFromName( $newsletterName, false );
+		if ( $newsletter ) {
+			if ( !$newsletter->canRestore( $user ) ) {
+				throw new PermissionsError( 'newsletter-restore' );
+			}
+			$success = NewsletterStore::getDefaultInstance()->restoreNewsletter( $newsletterName );
+			if ( $success ) {
+				return true;
+			}
+		}
+		// Show error message and allow resubmitting in case of failure
+		return Status::newFatal( 'newsletter-restore-failure', $newsletterName );
+	}
 }

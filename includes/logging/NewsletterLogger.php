@@ -52,6 +52,16 @@ class NewsletterLogger {
 		$log->publish( $log->insert() );
 	}
 
+	public function logNewsletterRestored( Newsletter $newsletter ) {
+		$id = $newsletter->getId();
+		$log = new ManualLogEntry( 'newsletter', 'newsletter-restored' );
+		$log->setPerformer( RequestContext::getMain()->getUser() );
+		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
+		$log->setParameters( [ '4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}" ] );
+		$log->setRelations( [ 'nl_id' => $id ] );
+		$log->publish( $log->insert() );
+	}
+
 	public function logNewIssue( User $publisher, Newsletter $newsletter, Title $issueTitle, $issueId, $comment ) {
 		$log = new ManualLogEntry( 'newsletter', 'issue-added' );
 		$log->setPerformer( $publisher );

@@ -240,6 +240,29 @@ class NewsletterDb {
 	}
 
 	/**
+	 * Set an inactive newsletter to active again
+	 *
+	 * @param string $newsletterName
+	 *
+	 * @return bool success of the action
+	 */
+	public function restoreNewsletter( $newsletterName ) {
+		$dbw = $this->lb->getConnection( DB_MASTER );
+
+		$dbw->update(
+			'nl_newsletters',
+			array( 'nl_active' => 1 ),
+			array( 'nl_name' => $newsletterName ),
+			__METHOD__
+		);
+		$success = (bool)$dbw->affectedRows();
+
+		$this->lb->reuseConnection( $dbw );
+
+		return $success;
+	}
+
+	/**
 	 * @param int $id
 	 *
 	 * @return Newsletter|null null if no newsletter exists with the provided id
@@ -269,14 +292,14 @@ class NewsletterDb {
 	 * @param string $name
 	 * @return Newsletter|null
 	 */
-	public function getNewsletterFromName( $name ) {
+	public function getNewsletterFromName( $name, $active = true ) {
 		Assert::parameterType( 'string', $name, '$name' );
 
 		$dbr = $this->lb->getConnectionRef( DB_SLAVE );
 		$res = $dbr->selectRow(
 			'nl_newsletters',
 			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_name' => $name, 'nl_active' => 1 ),
+			array( 'nl_name' => $name, 'nl_active' => $active ),
 			__METHOD__
 		);
 

@@ -145,6 +145,21 @@ class NewsletterStore {
 	}
 
 	/**
+	 * Restore a newsletter from the delete logs
+	 *
+	 * @param string $newsletterName
+	 *
+	 * @return bool success of the action
+	 */
+	public function restoreNewsletter( $newsletterName ) {
+		$success = $this->db->restoreNewsletter( $newsletterName );
+		if ( $success ) {
+			$this->logger->logNewsletterRestored( $this->db->getNewsletterFromName( $newsletterName ) );
+		}
+		return $success;
+	}
+
+	/**
 	 * Roll back a newsletter addition silently due to a failure in creating a
 	 * content model for it
 	 *
@@ -167,8 +182,8 @@ class NewsletterStore {
 	 * @param string $name
 	 * @return Newsletter|null
 	 */
-	public function getNewsletterFromName( $name ) {
-		return $this->db->getNewsletterFromName( $name );
+	public function getNewsletterFromName( $name, $active = true ) {
+		return $this->db->getNewsletterFromName( $name, $active );
 	}
 
 	/**

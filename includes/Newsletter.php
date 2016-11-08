@@ -67,8 +67,8 @@ class Newsletter {
 	 * @param string $name
 	 * @return Newsletter|null
 	 */
-	public static function newFromName( $name ) {
-		return NewsletterStore::getDefaultInstance()->getNewsletterFromName( $name );
+	public static function newFromName( $name, $active = true ) {
+		return NewsletterStore::getDefaultInstance()->getNewsletterFromName( $name, $active );
 	}
 
 	/**
@@ -236,5 +236,16 @@ class Newsletter {
 	 */
 	public function canManage( User $user ) {
 		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-manage' );
+	}
+
+	/**
+	 * Check whether the user is allowed to restore the newsletter.
+	 *
+	 * @param User $user
+	 *
+	 * @return bool
+	 */
+	public function canRestore( User $user ) {
+		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-restore' );
 	}
 }
