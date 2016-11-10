@@ -186,7 +186,6 @@ class NewsletterHooks {
 	 * @throws PermissionsError
 	 */
 	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status, $suppress) {
-		global $wgOut;
 		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -198,14 +197,14 @@ class NewsletterHooks {
 			$success = NewsletterStore::getDefaultInstance()
 				->deleteNewsletter( $newsletter, $reason );
 			if ( $success ) {
-				return $status->newGood();
+				$status->setOK( $success );
+				return true;
 			} else {
 				// Show error message and allow resubmitting in case of failure
-				return $status->newFatal(
-					$wgOut->msg( 'newsletter-delete-failure' )->rawParams( $newsletter->getName() )
-				);
+				$status->error( 'newsletter-delete-failure', $newsletter->getName() );
+				return false;
 			}
 		}
-		return true;
+		return false;
 	}
 }
