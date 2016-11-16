@@ -3,11 +3,13 @@
 		"authors": [
 			"Nike",
 			"Pyscowicz",
-			"Silvonen"
+			"Silvonen",
+			"Valtlait"
 		]
 	},
 	"newsletter-create-submit": "Luo uutiskirje",
 	"newsletter-delete-button": "Poista",
+	"newsletter-manage-summary": "Muutoksen yhteenveto:",
 	"newsletter-delete-reason": "Syy",
 	"newsletter-header-name": "Nimi"
 }
