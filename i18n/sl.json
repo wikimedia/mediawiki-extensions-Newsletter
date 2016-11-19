@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eleassar"
+			"Eleassar",
+			"Janezdrilc"
 		]
 	},
 	"newsletter-view-mainpage": "Glavna stran:",
-	"newsletter-manage-title": "Naslov glavne strani"
+	"newsletter-view-description": "Opis:",
+	"newsletter-manage-title": "Naslov glavne strani",
+	"newsletter-manage-description": "Opis:"
 }
