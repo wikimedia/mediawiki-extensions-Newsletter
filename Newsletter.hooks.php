@@ -33,7 +33,6 @@ class NewsletterHooks {
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			),
 			'presentation-model' => 'EchoNewsletterPresentationModel',
-			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-title',
 			'title-params' => array( 'newsletter-name', 'title', 'agent', 'user' ),
 			'flyout-message' => 'newsletter-notification-flyout',
@@ -55,7 +54,6 @@ class NewsletterHooks {
 				array( 'EchoUserLocator::locateFromEventExtra', array( 'new-publishers-id' ) )
 			),
 			'presentation-model' => 'EchoNewsletterPublisherPresentationModel',
-			'formatter-class' => 'EchoNewsletterFormatter',
 			'title-message' => 'newsletter-notification-new-publisher-title',
 			'title-params' => array( 'newsletter-name', 'agent' ),
 			'flyout-message' => 'newsletter-notification-new-publisher-flyout',

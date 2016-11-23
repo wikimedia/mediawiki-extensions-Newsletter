@@ -87,7 +87,6 @@
 		"NewsletterDiffEngine": "includes/content/NewsletterDiffEngine.php",
 		"NewsletterDeletionUpdate": "includes/content/NewsletterDeletionUpdate.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
-		"EchoNewsletterFormatter": "includes/Echo/EchoNewsletterFormatter.php",
 		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
 		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
 		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php"
