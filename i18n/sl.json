@@ -8,5 +8,7 @@
 	"newsletter-view-mainpage": "Glavna stran:",
 	"newsletter-view-description": "Opis:",
 	"newsletter-manage-title": "Naslov glavne strani",
-	"newsletter-manage-description": "Opis:"
+	"newsletter-manage-description": "Opis:",
+	"echo-category-title-newsletter": "Novosti",
+	"echo-pref-tooltip-newsletter": "Obvesti me o vseh obvestilih, ki jih imam naročene, kadar se pojavi nova zadeva."
 }
