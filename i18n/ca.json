@@ -3,7 +3,8 @@
 		"authors": [
 			"Macofe",
 			"Jaumeortola",
-			"QuimGil"
+			"QuimGil",
+			"Fitoschido"
 		]
 	},
 	"newsletter-extension-desc": "Descripció",
@@ -32,7 +33,7 @@
 	"newsletter-announce-submit": "Anuncia",
 	"newsletter-announce-issuetitle": "Títol de la publicació",
 	"newsletter-announce-summary": "Resum d'aquesta publicació",
-	"newsletter-announce-success": "Una nova publicació de \"$1\" ha estat anunciada a $2 {{PLURAL:$2|subscriptor|subscriptors}}.",
+	"newsletter-announce-success": "Una nova publicació de «$1» ha estat anunciada a $2 {{PLURAL:$2|subscriptor|subscriptors}}.",
 	"newsletter-announce-invalid-page": "Entra un títol vàlid per a aquesta publicació.",
 	"newsletter-manage": "Gestiona \"$1\"",
 	"newsletter-manage-name": "Nom del butlletí:",
@@ -60,7 +61,7 @@
 	"newsletter-subscribed-newsletters-field-label": "Butlletins subscrits",
 	"echo-category-title-newsletter": "Butlletins",
 	"echo-pref-tooltip-newsletter": "Notifiqueu-me quan qualsevol dels butlletins als quals m'he subscrit  anuncia una nova publicació.",
-	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|ha anunciat}} una [[$2|nova publicació]] de \"$1\".",
+	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|ha anunciat}} una [[$2|publicació nova]] de «$1».",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ha anunciat}} una nova publicació de $1.",
 	"newsletter-notification-link-text-new-issue": "Vegeu la nova publicació",
 	"newsletter-notification-link-text-view-newsletter": "Vegeu el butlletí",

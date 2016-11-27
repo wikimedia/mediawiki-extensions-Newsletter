@@ -4,7 +4,8 @@
 			"Macofe",
 			"Rafael.minuesa",
 			"Yllelder",
-			"Idontknow"
+			"Idontknow",
+			"Fitoschido"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -52,7 +53,7 @@
 	"newsletter-announce-submit": "Anunciar",
 	"newsletter-announce-issuetitle": "Título de página de la edición",
 	"newsletter-announce-summary": "Resumen de esta edición",
-	"newsletter-announce-success": "Una nueva edición de \"$1\" se ha anunciado a $2 {{PLURAL:$2|suscriptor|suscriptores}}.",
+	"newsletter-announce-success": "$2 {{PLURAL:$2|suscriptor|suscriptores}} han recibido el anuncio de una edición nueva de «$1».",
 	"newsletter-announce-invalid-page": "Escribe un título válido para la página de la edición.",
 	"newsletter-announce-nonexistent-page": "No existe la página de edición proporcionada. Escribe una página existente.",
 	"newsletter-announce-failure": "No se pudo anunciar una edición nueva. Inténtalo de nuevo.",
