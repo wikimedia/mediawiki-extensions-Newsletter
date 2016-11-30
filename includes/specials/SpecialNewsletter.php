@@ -527,7 +527,7 @@ class SpecialNewsletter extends SpecialPage {
 					->numParams( $this->newsletter->getSubscriberCount() )
 					->parseAsBlock()
 			);
-			$out->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
+			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
 		}
 	}
 
