@@ -17,7 +17,7 @@
 	"newslettercreate": "יצירת ידיעון",
 	"newslettercreate-text": "הד הזה מאפשר לך ליצור ידיעון חדש. תתווסף בתור מפרסם ומנוי לידיעון בעת היצירה. כל השדות נדרשים.",
 	"newsletter-create-submit": "צור ניוזלטר",
-	"newsletter-create-confirmation": "[[Newsletter:$1|ידיעון חדש]] נוצר.",
+	"newsletter-create-confirmation": "ידיעון חדש נוצר: [[Newsletter:$1|$1]]",
 	"newsletter-create-mainpage-error": "הוזן דף ראשי בלתי־תקין לידיעון. נא לנסות שוב.",
 	"newsletter-mainpage-non-existent": "הדף הראשי של הידיעון אינו קיים. נא להזין דף ראשי תקין.",
 	"newsletter-mainpage-in-use": "לידיעון קיים יש אותו דף. נא להזין כותרת אחרת.",

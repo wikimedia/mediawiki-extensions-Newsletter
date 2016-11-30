@@ -10,7 +10,7 @@
 	"newsletter-title": "Wikisäit, déi als Haaptsäit verlinkt gi soll",
 	"newsletter-exist-error": "Et gëtt schonn eng Newsletter mam Numm \"$1\". Probéiert w.e.g. nach eng Kéier mat engem aneren Numm.",
 	"newsletter-create-submit": "Newsletter uleeën",
-	"newsletter-create-confirmation": "Eng [[Newsletter:$1|nei Newsletter]] gouf gemaach.",
+	"newsletter-create-confirmation": "Eng nei Newsletter: [[Newsletter:$1|$1]] gouf gemaach.",
 	"newsletter-subtitlelinks-list": "Lëscht vun Newsletteren",
 	"newsletter-subtitlelinks-create": "Eng nei Newsletter uleeën",
 	"newsletter-subtitlelinks-unsubscribe": "ofbestellen",

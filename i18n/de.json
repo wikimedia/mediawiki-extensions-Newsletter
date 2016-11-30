@@ -16,7 +16,7 @@
 	"newslettercreate": "Newsletter erstellen",
 	"newslettercreate-text": "Diese Seite erlaubt dir, einen neuen Newsletter zu erstellen. Du wirst bei seiner Erstellung als Herausgeber und Abonnent hinzugefügt. Alle Felder sind erforderlich.",
 	"newsletter-create-submit": "Newsletter erstellen",
-	"newsletter-create-confirmation": "Es wurde ein [[Newsletter:$1|neuer Newsletter]] erstellt.",
+	"newsletter-create-confirmation": "Der neue Newsletter „[[Newsletter:$1|$1]]“ wurde erstellt.",
 	"newsletter-create-mainpage-error": "Ungültige Newsletter-Hauptseite eingegeben. Bitte erneut versuchen.",
 	"newsletter-mainpage-non-existent": "Die Hauptseite des Newsletters ist nicht vorhanden. Bitte gib eine vorhandene Seite ein, die gültig ist.",
 	"newsletter-mainpage-in-use": "Ein vorhandener Newsletter hat die gleiche Hauptseite. Bitte gib einen anderen Titel ein.",
