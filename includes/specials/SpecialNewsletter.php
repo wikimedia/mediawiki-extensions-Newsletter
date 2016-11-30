@@ -647,7 +647,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( !$form->show() ) {
 			// After submission, no point in showing the return to link if the newsletter was just deleted
-			$out->addReturnTo( $this->getPageTitle( $this->newsletter->getId() ) );
+			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
 		}
 	}
 
