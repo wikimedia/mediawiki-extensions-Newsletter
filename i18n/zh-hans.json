@@ -16,7 +16,7 @@
 	"newslettercreate": "创建新闻报",
 	"newslettercreate-text": "此页面允许您创建一个新的新闻报。您将被添加为发布者，并在它创建之时订阅新闻报。所有字段均为必填项。",
 	"newsletter-create-submit": "创建新闻报",
-	"newsletter-create-confirmation": "一个[[Newsletter:$1|新的新闻报]]已被创建。",
+	"newsletter-create-confirmation": "一个新的新闻报：[[Newsletter:$1|$1]]已被创建。",
 	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
 	"newsletter-mainpage-non-existent": "新闻报首页不存在。请输入一个有效的现有页面。",
 	"newsletter-mainpage-in-use": "现有新闻报有相同的首页。请输入另一个标题。",

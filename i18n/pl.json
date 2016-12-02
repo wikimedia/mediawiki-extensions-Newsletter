@@ -18,7 +18,7 @@
 	"newslettercreate": "Stwórz newsletter",
 	"newslettercreate-text": "Ta strona umożliwia Ci stworzenie nowego newslettera. Po utworzeniu zostaniesz dodany jako publikujący oraz subskrybujący ten newsletter. Wszystkie pola są wymagane.",
 	"newsletter-create-submit": "Stwórz newsletter",
-	"newsletter-create-confirmation": "Stworzono [[Newsletter:$1|nowy newsletter]].",
+	"newsletter-create-confirmation": "Nowy newsletter: utworzono [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "Wprowadzono nieprawidłową stronę główną newslettera. Spróbuj jeszcze raz.",
 	"newsletter-mainpage-non-existent": "Strona główna newslettera nie istnieje. Proszę wprowadzić poprawną, istniejącą nazwę strony.",
 	"newsletter-mainpage-in-use": "Istniejący już newsletter ma taką samą stronę główną. Wprowadź inny tytuł.",
