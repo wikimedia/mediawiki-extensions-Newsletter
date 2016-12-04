@@ -72,7 +72,7 @@
 	"newsletter-delete-text": "This interface can be used to delete the \"$1\" newsletter. Please confirm that you intend to do this. <strong>This action cannot be undone.</strong>",
 	"newsletter-delete-reason": "Reason",
 	"newsletter-deletenewsletter-button": "Delete this newsletter",
-	"newsletter-delete-success": "Newsletter #$1 has been deleted.",
+	"newsletter-delete-success": "Newsletter \"$1\" has been deleted.",
 	"newsletter-delete-failure": "\"$1\" newsletter could not be deleted. Please try again.",
 	"newsletter-subscribe": "Newsletter subscription management",
 	"newsletter-subscribe-text": "This interface allows you to subscribe to \"$1\" newsletter. If you subscribe, you will receive notifications when new issues of this newsletter are announced.",

@@ -661,7 +661,7 @@ class SpecialNewsletter extends SpecialPage {
 		$success = NewsletterStore::getDefaultInstance()
 			->deleteNewsletter( $this->newsletter, $data['Reason'] );
 		if ( $success ) {
-			$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getId() );
+			$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getName() );
 			return true;
 		} else {
 			// Show error message and allow resubmitting in case of failure
