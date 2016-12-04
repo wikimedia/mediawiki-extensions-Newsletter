@@ -79,7 +79,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		);
 
 		$validator = new NewsletterValidator( $data );
-		$validation = $validator->validate();
+		$validation = $validator->validate( true );
 		if ( !$validation->isGood() ) {
 			// Invalid input was entered
 			return $validation;
