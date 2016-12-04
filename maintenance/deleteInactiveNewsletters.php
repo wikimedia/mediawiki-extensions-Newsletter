@@ -14,6 +14,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 		$this->addDescription(
 			"Deletes all inactive newsletters\nThese newsletters will no longer be restorable" );
 		$this->addOption( 'delete', 'Performs the deletion' );
+		$this->requireExtension( 'Newsletter' );
 	}
 
 	public function execute() {
