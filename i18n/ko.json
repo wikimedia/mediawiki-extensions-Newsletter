@@ -17,7 +17,7 @@
 	"newsletter-title": "대문 이름",
 	"newslettercreate": "뉴스레터 만들기",
 	"newsletter-create-submit": "뉴스레터 만들기",
-	"newsletter-create-confirmation": "[[Newsletter:$1|새로운 뉴스레터]]가 생성되었습니다.",
+	"newsletter-create-confirmation": "새로운 뉴스레터: [[Newsletter:$1|$1]]이(가) 생성되었습니다.",
 	"newsletter-subtitlelinks-unsubscribe": "구독 해지",
 	"newsletter-subtitlelinks-subscribe": "구독",
 	"newsletter-subtitlelinks-announce": "알림",
