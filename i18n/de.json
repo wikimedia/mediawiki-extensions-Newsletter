@@ -71,7 +71,7 @@
 	"newsletter-delete-text": "Diese Oberfläche kann genutzt werden, um den Newsletter „$1“ zu löschen. Bitte bestätige, dass du beabsichtigst, dies zu tun. <strong>Diese Aktion kann nicht rückgängig gemacht werden.</strong>",
 	"newsletter-delete-reason": "Grund",
 	"newsletter-deletenewsletter-button": "Diesen Newsletter löschen",
-	"newsletter-delete-success": "Newsletter $1 wurde gelöscht.",
+	"newsletter-delete-success": "Der Newsletter „$1“ wurde gelöscht.",
 	"newsletter-delete-failure": "Der Newsletter „$1“ konnte nicht gelöscht werden. Bitte erneut versuchen.",
 	"newsletter-subscribe": "Newsletter-Abonnement-Verwaltung",
 	"newsletter-subscribe-text": "Diese Oberfläche erlaubt dir, den Newsletter „$1“ zu abonnieren. Falls du den Newsletter abonnierst, erhältst du Benachrichtigungen, wenn neue Artikel dieses Newsletters angekündigt werden.",

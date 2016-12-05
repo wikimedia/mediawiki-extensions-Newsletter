@@ -81,7 +81,7 @@
 	"newsletter-delete-text": "Cette page permet de supprimer l’infolettre « $1 ». Veuillez confirmer que vous souhaitez effectuer la suppression. <strong>Cette action ne peut pas être annulée.</strong>",
 	"newsletter-delete-reason": "Motif",
 	"newsletter-deletenewsletter-button": "Supprimer cette infolettre",
-	"newsletter-delete-success": "L’infolettre #$1 a été supprimée.",
+	"newsletter-delete-success": "Le bulletin d’information « $1 » a été supprimé.",
 	"newsletter-delete-failure": "L'infolette \"$1\" n'a pas pu être supprimée. Merci d'essayer à nouveau.",
 	"newsletter-subscribe": "Gestion de l’abonnement à l’infolettre",
 	"newsletter-subscribe-text": "Cette page vous permet de vous abonner à l’infolettre « $1 ». Si vous vous abonnez, les nouveaux numéros vous seront annoncés par une notification.",

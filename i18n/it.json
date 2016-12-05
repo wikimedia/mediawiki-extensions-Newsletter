@@ -71,7 +71,7 @@
 	"newsletter-delete-text": "Questa interfaccia può essere utilizzata per cancellare la newsletter \"$1\". Conferma che hai intenzione di fare questo. <strong>Questa azione non può essere annullata.</strong>",
 	"newsletter-delete-reason": "Motivo",
 	"newsletter-deletenewsletter-button": "Cancella questa newsletter",
-	"newsletter-delete-success": "La newsletter $1 è stata cancellata.",
+	"newsletter-delete-success": "La newsletter \"$1\" è stata cancellata.",
 	"newsletter-delete-failure": "La newsletter \"$1\" non può essere cancellata. Riprova.",
 	"newsletter-subscribe": "Gestione iscrizione newsletter",
 	"newsletter-subscribe-text": "Questa interfaccia ti permette di iscriverti alla newsletter \"$1\". Se ti iscrivi, riceverai le notifiche quando le nuove edizioni di questa newsletter saranno annunciate.",

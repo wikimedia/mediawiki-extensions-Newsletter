@@ -71,7 +71,7 @@
 	"newsletter-delete-text": "此界面可被用于删除“$1”新闻报。请确认您要这样做。<strong>此操作不能被撤销。</strong>",
 	"newsletter-delete-reason": "原因",
 	"newsletter-deletenewsletter-button": "删除此新闻报",
-	"newsletter-delete-success": "新闻报#$1已被删除。",
+	"newsletter-delete-success": "新闻报“$1”已被删除。",
 	"newsletter-delete-failure": "“$1”新闻报不能被删除。请重试。",
 	"newsletter-subscribe": "新闻报订阅管理",
 	"newsletter-subscribe-text": "此界面允许您订阅“$1”新闻报。如果您订阅，您将在此新闻报宣布发行新一期时接收到通知。",

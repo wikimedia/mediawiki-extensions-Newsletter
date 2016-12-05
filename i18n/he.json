@@ -72,7 +72,7 @@
 	"newsletter-delete-text": "ניתן להשתמש בממשק הזה כדי למחוק את הידיעון \"$1\". נא לאשר שזאת באמת הכוונה שלך. <strong>אי־אפשר לבטל את הפעולה הזאת.</strong>",
 	"newsletter-delete-reason": "סיבה",
 	"newsletter-deletenewsletter-button": "מחיקת הידיעון הזה",
-	"newsletter-delete-success": "הידיעון #$1 נמחק.",
+	"newsletter-delete-success": "הידיעון \"$1\" נמחק.",
 	"newsletter-delete-failure": "לא היה אפשר למחוק את הידיעון \"$1\". נא לנסות שוב.",
 	"newsletter-subscribe": "ניהול מינוי לידיעון",
 	"newsletter-subscribe-text": "הממשק הזה מאפשר לך לעשות מינוי לידיעון \"$1\". אם תעשה מינוי, תקבל הודעה על גיליונות חדשים.",
