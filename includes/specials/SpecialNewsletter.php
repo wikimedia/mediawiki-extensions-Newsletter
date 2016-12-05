@@ -10,7 +10,6 @@ class SpecialNewsletter extends SpecialPage {
 	/** Subpage actions */
 	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_ANNOUNCE = 'announce';
-	const NEWSLETTER_DELETE = 'delete';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 
@@ -60,9 +59,6 @@ class SpecialNewsletter extends SpecialPage {
 					break;
 				case self::NEWSLETTER_ANNOUNCE:
 					$this->doAnnounceExecute();
-					break;
-				case self::NEWSLETTER_DELETE:
-					$this->doDeleteExecute();
 					break;
 				default:
 					$this->doViewExecute();
@@ -119,9 +115,6 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->isPublisher( $user ) ) {
 			$actions[] = self::NEWSLETTER_ANNOUNCE;
 		}
-		if ( $this->newsletter->canDelete( $user ) ) {
-			$actions[] = self::NEWSLETTER_DELETE;
-		}
 		if ( $this->newsletter->canManage( $user ) ) {
 			$actions[] = self::NEWSLETTER_MANAGE;
 		}
@@ -131,7 +124,7 @@ class SpecialNewsletter extends SpecialPage {
 			$title = $this->getPageTitle( $this->newsletter->getId() . '/' . $action );
 			// Messages used here: 'newsletter-subtitlelinks-announce',
 			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
-			// 'newsletter-subtitlelinks-manage', 'newsletter-subtitlelinks-delete'
+			// 'newsletter-subtitlelinks-manage'
 			$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
 			$link = Linker::linkKnown( $title, $msg );
 			if ( $action == self::NEWSLETTER_MANAGE ) {
@@ -280,7 +273,7 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * Build a group of buttons: Delete, Manage, Subscribe|Unsubscribe
+	 * Build a group of buttons: Manage, Subscribe|Unsubscribe
 	 * Buttons will be showed to the user only if they are relevant to the current user.
 	 *
 	 * @return string HTML for the button group
@@ -290,17 +283,6 @@ class SpecialNewsletter extends SpecialPage {
 		$id = $this->newsletter->getId();
 		$buttons = array();
 		$this->getOutput()->enableOOUI();
-
-		if ( $this->newsletter->canDelete( $user ) ) {
-			// This is visible to publishers and users with 'newsletter-delete' right
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $this->msg( 'newsletter-delete-button' )->escaped(),
-					'icon' => 'remove',
-					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_DELETE )->getFullURL()
-				)
-			);
-		}
 
 		if ( $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
@@ -601,74 +583,6 @@ class SpecialNewsletter extends SpecialPage {
 
 		// Yay!
 		return true;
-	}
-
-	/**
-	 * Build the delete form for Special:Newsletter/$id/delete
-	 * Only newsletter publishers have access to this form currently.
-	 */
-	protected function doDeleteExecute() {
-		$user = $this->getUser();
-		$out = $this->getOutput();
-
-		$this->checkReadOnly();
-
-		if ( $user->isBlocked() ) {
-			// Blocked users shouldn't be deleting newsletters..
-			throw new UserBlockedError( $user->getBlock() );
-		}
-
-		if ( !$this->newsletter->canDelete( $user ) ) {
-			throw new PermissionsError( 'newsletter-delete' );
-		}
-
-		$out->setPageTitle( $this->msg( 'newsletter-delete' ) );
-		$out->addModules( 'ext.newsletter.delete' ); // Adds confirmation dialog box
-
-		$form = $this->getHTMLForm(
-			array(
-				'Reason' => array(
-					'type' => 'text',
-					'maxlength' => '255',
-					'autofocus' => true,
-					'label-message' => 'newsletter-delete-reason',
-				),
-			),
-			array( $this, 'submitDeleteForm' )
-		);
-		$form->addHeaderText(
-			$this->msg( 'newsletter-delete-text' )
-				->rawParams( $this->getEscapedName() )->parse()
-		);
-		$form->setId( 'newsletter-delete-form' );
-		$form->setSubmitID( 'newsletter-delete-button' );
-		$form->setSubmitTextMsg( 'newsletter-deletenewsletter-button' );
-		$form->setSubmitDestructive();
-
-		if ( !$form->show() ) {
-			// After submission, no point in showing the return to link if the newsletter was just deleted
-			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
-		}
-	}
-
-	/**
-	 * Submit callback for delete form
-	 *
-	 * @param array $data
-	 * @return Status|bool true on success, Status fatal on failure
-	 */
-	public function submitDeleteForm( array $data ) {
-		$success = NewsletterStore::getDefaultInstance()
-			->deleteNewsletter( $this->newsletter, $data['Reason'] );
-		if ( $success ) {
-			$this->getOutput()->addWikiMsg( 'newsletter-delete-success', $this->newsletter->getName() );
-			return true;
-		} else {
-			// Show error message and allow resubmitting in case of failure
-			return Status::newFatal(
-				$this->msg( 'newsletter-delete-failure' )->rawParams( $this->getEscapedName() )
-			);
-		}
 	}
 
 	/**

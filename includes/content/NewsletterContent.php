@@ -7,7 +7,6 @@
 class NewsletterContent extends JsonContent {
 	/** Subpage actions */
 	const NEWSLETTER_ANNOUNCE = 'announce';
-	const NEWSLETTER_DELETE = 'delete';
 	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
@@ -243,7 +242,7 @@ class NewsletterContent extends JsonContent {
 	}
 
 	/**
-	 * Build a group of buttons: Delete, Manage, Subscribe|Unsubscribe
+	 * Build a group of buttons: Manage, Subscribe|Unsubscribe
 	 * Buttons will be showed to the user only if they are relevant to the current user.
 	 *
 	 * @return string HTML for the button group
