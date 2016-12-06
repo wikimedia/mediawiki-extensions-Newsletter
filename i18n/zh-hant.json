@@ -4,7 +4,8 @@
 			"Liuxinyu970226",
 			"Cwlin0416",
 			"MoonYaksha",
-			"LNDDYL"
+			"LNDDYL",
+			"Alexsh"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱報紙的功能",
@@ -12,8 +13,8 @@
 	"newsletter-desc": "描述",
 	"newsletter-title": "首頁標題",
 	"newsletter-exist-error": "使用相同名稱的報紙已存在，請使用其他名稱",
-	"newslettercreate": "建立報紙",
-	"newsletter-create-confirmation": "很好！您剛建立了一份新的報紙。",
+	"newslettercreate": "建立電子報",
+	"newsletter-create-confirmation": "已建立一份[[Newsletter:$|新的電子報]]。",
 	"newsletters": "報紙",
 	"newsletter-view-mainpage": "首頁：",
 	"newsletter-view-description": "描述：",
