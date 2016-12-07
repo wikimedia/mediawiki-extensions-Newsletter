@@ -225,7 +225,7 @@ class SpecialNewsletter extends SpecialPage {
 				'type' => 'info',
 				'label' => $this->msg( 'newsletter-view-publishers' )
 					->numParams( count( $publishers ) )
-					->parse(),
+					->text(),
 			),
 			'subscribe' => array(
 				'type' => 'info',
@@ -264,7 +264,7 @@ class SpecialNewsletter extends SpecialPage {
 				'type' => 'info',
 				'raw' => true,
 				'default' => $logs,
-				'label' => $this->msg( 'newsletter-view-issues-log' )->numParams( $logCount )->escaped(),
+				'label' => $this->msg( 'newsletter-view-issues-log' )->numParams( $logCount )->text(),
 			);
 		}
 
