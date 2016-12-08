@@ -159,7 +159,7 @@ class NewsletterContent extends JsonContent {
 					'label' => wfMessage( 'newsletter-view-publishers' )->inLanguage(
 						$options->getUserLangObj() )
 						->numParams( count( $this->publishers ) )
-						->parse(),
+						->text(),
 				),
 				'subscribers' => array(
 					'type' => 'info',
@@ -199,7 +199,7 @@ class NewsletterContent extends JsonContent {
 					'default' => $logs,
 					'label' => wfMessage( 'newsletter-view-issues-log' )
 						->inLanguage( $options->getUserLangObj() )
-						->numParams( $logCount )->escaped(),
+						->numParams( $logCount )->text(),
 				);
 			}
 			$form = $this->getHTMLForm(
