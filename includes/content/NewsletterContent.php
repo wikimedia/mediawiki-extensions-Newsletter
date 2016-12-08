@@ -4,6 +4,8 @@
  * @author tonythomas
  */
 
+use MediaWiki\MediaWikiServices;
+
 class NewsletterContent extends JsonContent {
 	/** Subpage actions */
 	const NEWSLETTER_ANNOUNCE = 'announce';
@@ -144,7 +146,7 @@ class NewsletterContent extends JsonContent {
 				'mainpage' => array(
 					'type' => 'info',
 					'label-message' => 'newsletter-view-mainpage',
-					'default' => Linker::link( $mainTitle ),
+					'default' => MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $mainTitle ),
 					'raw' => true,
 				),
 				'description' => array(
@@ -339,11 +341,12 @@ class NewsletterContent extends JsonContent {
 
 	protected function getNavigationLinks( ParserOptions $options ) {
 		global $wgOut;
-		$listLink = Linker::linkKnown(
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$listLink = $linkRenderer->makeKnownLink(
 			SpecialPage::getTitleFor( 'Newsletters' ),
 			wfMessage( 'backlinksubtitle',
 				wfMessage( 'newsletter-subtitlelinks-list' )->text()
-			)->escaped()
+			)->text()
 		);
 
 		$user = $options->getUser();
@@ -364,13 +367,13 @@ class NewsletterContent extends JsonContent {
 
 				// Messages used here: 'newsletter-subtitlelinks-announce',
 				// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
-				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->escaped();
-				$link = Linker::linkKnown( $title, $msg );
+				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
+				$link = $linkRenderer->makeKnownLink( $title, $msg );
 
 				if ( $action == self::NEWSLETTER_MANAGE ) {
 					$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
-					$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->escaped();
-					$link = Linker::linkKnown( $title, $msg, [], $query =['action'=>'edit'] );
+					$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
+					$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
 				}
 				$links[] = $link;
 			}

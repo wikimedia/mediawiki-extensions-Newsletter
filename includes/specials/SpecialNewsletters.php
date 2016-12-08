@@ -25,9 +25,9 @@ class SpecialNewsletters extends SpecialPage {
 		$user = $this->getUser();
 
 		if ( $user->isAllowed( 'newsletter-create' ) ) {
-			$createLink = Linker::linkKnown(
+			$createLink = $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'NewsletterCreate' ),
-				$this->msg( 'newsletter-subtitlelinks-create' )->escaped()
+				$this->msg( 'newsletter-subtitlelinks-create' )->text()
 			);
 			$out->setSubtitle( $createLink );
 		}

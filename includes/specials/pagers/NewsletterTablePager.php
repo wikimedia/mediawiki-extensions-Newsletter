@@ -5,6 +5,9 @@
  * @author Tina Johnson
  * @todo Optimize queries here
  */
+
+use MediaWiki\MediaWikiServices;
+
 class NewsletterTablePager extends TablePager {
 
 	/**
@@ -78,13 +81,14 @@ class NewsletterTablePager extends TablePager {
 	public function formatValue( $field, $value ) {
 		global $wgContLang;
 
+		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$id = $this->mCurrentRow->nl_id;
 		$newsletter = Newsletter::newFromID( (int)$id );
 		switch ( $field ) {
 			case 'nl_name':
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $newsletter->getName() );
 				if ( $title ) {
-					return Linker::linkKnown( $title, htmlspecialchars( $value ) );
+					return $linkRenderer->makeKnownLink( $title, $value );
 				} else {
 					return htmlspecialchars( $value );
 				}
@@ -101,8 +105,8 @@ class NewsletterTablePager extends TablePager {
 					$title = SpecialPage::getTitleFor(
 						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE
 					);
-					$link = Linker::linkKnown( $title,
-						$this->msg( 'newsletter-unsubscribe-button' )->escaped(),
+					$link = $linkRenderer->makeKnownLink( $title,
+						$this->msg( 'newsletter-unsubscribe-button' )->text(),
 						array(
 							'class' => 'newsletter-subscription newsletter-subscribed',
 							'data-newsletter-id' => $id
@@ -112,9 +116,9 @@ class NewsletterTablePager extends TablePager {
 					$title = SpecialPage::getTitleFor(
 						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_SUBSCRIBE
 					);
-					$link = Linker::linkKnown(
+					$link = $linkRenderer->makeKnownLink(
 						$title,
-						$this->msg( 'newsletter-subscribe-button' )->escaped(),
+						$this->msg( 'newsletter-subscribe-button' )->text(),
 						array(
 							'class' => 'newsletter-subscription newsletter-unsubscribed',
 							'data-newsletter-id' => $id

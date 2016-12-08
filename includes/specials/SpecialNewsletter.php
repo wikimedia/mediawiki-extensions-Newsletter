@@ -92,11 +92,12 @@ class SpecialNewsletter extends SpecialPage {
 	 * @param string|null $current subpage currently being shown, null if default "view" page
 	 */
 	protected function getNavigationLinks( $current ) {
-		$listLink = Linker::linkKnown(
+		$linkRenderer = $this->getLinkRenderer();
+		$listLink = $linkRenderer->makeKnownLink(
 			SpecialPage::getTitleFor( 'Newsletters' ),
 			$this->msg( 'backlinksubtitle',
 				$this->msg( 'newsletter-subtitlelinks-list' )->text()
-			)->escaped()
+			)->text()
 		);
 		if ( $current === null ) {
 			// We've the fancy buttons on the default "view" page so don't
@@ -125,12 +126,12 @@ class SpecialNewsletter extends SpecialPage {
 			// Messages used here: 'newsletter-subtitlelinks-announce',
 			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
 			// 'newsletter-subtitlelinks-manage'
-			$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
-			$link = Linker::linkKnown( $title, $msg );
+			$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->text();
+			$link = $linkRenderer->makeKnownLink( $title, $msg );
 			if ( $action == self::NEWSLETTER_MANAGE ) {
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
-				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->escaped();
-				$link = Linker::linkKnown( $title, $msg, [], $query =['action'=>'edit'] );
+				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->text();
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
 			}
 			if ( $current === $action ) {
 				$links[] = Linker::makeSelfLinkObj( $title, $msg );
@@ -140,12 +141,12 @@ class SpecialNewsletter extends SpecialPage {
 			}
 		}
 
-		$newsletterLinks = Linker::linkKnown(
+		$newsletterLinks = $linkRenderer->makeKnownLink(
 			Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ),
-			$this->getEscapedName()
+			$this->getName()
 		) . ' ' . $this->msg( 'parentheses' )
 			->rawParams( $this->getLanguage()->pipeList( $links ) )
-			->escaped();
+			->text();
 
 		return $this->getLanguage()->pipeList( array( $listLink, $newsletterLinks ) );
 	}
@@ -204,7 +205,7 @@ class SpecialNewsletter extends SpecialPage {
 			'mainpage' => array(
 				'type' => 'info',
 				'label-message' => 'newsletter-view-mainpage',
-				'default' => Linker::link( $mainTitle, htmlspecialchars( $mainTitle->getPrefixedText() ) ),
+				'default' => $this->getLinkRenderer()->makeLink( $mainTitle, $mainTitle->getPrefixedText() ),
 				'raw' => true,
 			),
 			'description' => array(
