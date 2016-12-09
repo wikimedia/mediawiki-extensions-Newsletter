@@ -34,7 +34,6 @@
 	"newsletter-notfound": "Newsletter not found",
 	"newsletter-not-found-id": "A newsletter with this ID does not exist. A [[Special:Newsletters|list of existing newsletters]] is available.",
 	"newsletter-view": "View newsletter details",
-	"newsletter-view-name": "Newsletter name:",
 	"newsletter-view-mainpage": "Main page:",
 	"newsletter-view-description": "Description:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Publisher:|Publishers:}}",

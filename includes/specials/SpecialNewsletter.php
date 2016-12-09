@@ -197,11 +197,6 @@ class SpecialNewsletter extends SpecialPage {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 		$fields = array(
-			'name' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-name',
-				'default' => $this->newsletter->getName(),
-			),
 			'mainpage' => array(
 				'type' => 'info',
 				'label-message' => 'newsletter-view-mainpage',

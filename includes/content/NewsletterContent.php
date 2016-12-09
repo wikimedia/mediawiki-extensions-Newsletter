@@ -141,11 +141,6 @@ class NewsletterContent extends JsonContent {
 			$mainTitle = Title::newFromText( $this->mainPage );
 
 			$fields = array(
-				'name' => array(
-					'type' => 'info',
-					'label-message' => 'newsletter-view-name',
-					'default' => $this->newsletter->getName(),
-				),
 				'mainpage' => array(
 					'type' => 'info',
 					'label-message' => 'newsletter-view-mainpage',
