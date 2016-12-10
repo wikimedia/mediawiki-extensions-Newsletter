@@ -125,6 +125,9 @@ class NewsletterContent extends JsonContent {
 
 	protected function fillParserOutput( Title $title, $revId, ParserOptions $options, $generateHtml, ParserOutput &$output ) {
 		if ( $generateHtml ) {
+			//Make sure things are decoded at this point
+			$this->decode();
+
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
 			$user = $options->getUser();
 
