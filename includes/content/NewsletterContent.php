@@ -97,23 +97,21 @@ class NewsletterContent extends JsonContent {
 
 	/**
 	 * @param array $publishersList
-	 * @return Status|UserArrayFromResult
+	 * @return bool|UserArrayFromResult
 	 */
 	protected function getPublishersFromJSONData( $publishersList ) {
-		// Ask for confirmation before removing all the publishers
 		if ( count( $publishersList ) === 0 ) {
-			return Status::newFatal( 'newsletter-manage-no-publishers' );
+			return false;
 		}
 
+		/** @var User[] $publishers */
 		$publishers = [];
-		/** @var User[] $newPublishers */
+
 		foreach ( $publishersList as $publisherName ) {
 			$user = User::newFromName( $publisherName );
-			if ( !$user || !$user->getId() ) {
-				// Input contains an invalid username
-				return Status::newFatal( 'newsletter-manage-invalid-publisher', $publisherName );
+			if ( $user && $user->getId() ) {
+				$publishers[] = $user->getId();
 			}
-			$publishers[] = $user->getId();
 		}
 
 		return UserArray::newFromIDs( $publishers );
@@ -167,10 +165,11 @@ class NewsletterContent extends JsonContent {
 					'default' => $options->getUserLangObj()->formatNum( $this->newsletter->getSubscriberCount() ),
 				),
 			);
-			if ( count( $this->getPublishersFromJSONData( $this->publishers ) ) > 1 ) {
+			$publishersArray = $this->getPublishersFromJSONData( $this->publishers );
+			if ( $publishersArray && count( $publishersArray ) > 0 ) {
 				// Have this here to avoid calling unneeded functions
-				$this->doLinkCacheQuery( $this->getPublishersFromJSONData( $this->publishers ) );
-				$fields['publishers']['default'] = $this->buildUserList( $this->getPublishersFromJSONData( $this->publishers ) );
+				$this->doLinkCacheQuery( $publishersArray );
+				$fields['publishers']['default'] = $this->buildUserList( $publishersArray );
 				$fields['publishers']['raw'] = true;
 			} else {
 				// Show a message if there are no publishers instead of nothing
