@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Eleassar",
-			"Janezdrilc"
+			"Janezdrilc",
+			"NegativeTwelveDollars"
 		]
 	},
+	"newsletter-create-editsummary": "Ustvari novo novico",
 	"newsletter-view-mainpage": "Glavna stran:",
 	"newsletter-view-description": "Opis:",
 	"newsletter-manage-title": "Naslov glavne strani",
