@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Liuxinyu970226",
-			"Liang860908"
+			"Liang860908",
+			"飞舞回堂前"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",
@@ -66,7 +67,7 @@
 	"newsletter-manage-newsletter-nochanges": "没有对现有新闻报做出更改。",
 	"newsletter-manage-summary": "更改的摘要：",
 	"newsletter-delete": "删除新闻报",
-	"newsletter-delete-failure": "“$1”新闻报不能被删除。请重试。",
+	"newsletter-delete-failure": "“$1”新闻报不能删除。请重试。",
 	"newsletter-subscribe": "新闻报订阅管理",
 	"newsletter-subscribe-text": "此界面允许您订阅“$1”新闻报。如果您订阅，您将在此新闻报宣布发行新一期时接收到通知。",
 	"newsletter-do-subscribe": "订阅此新闻报",
