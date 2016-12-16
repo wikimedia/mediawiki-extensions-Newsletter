@@ -4,12 +4,13 @@
 			"Ghiutun",
 			"INS Pirat",
 			"Metastasis",
-			"Гизатуллина"
+			"Гизатуллина",
+			"Kareyac"
 		]
 	},
 	"newsletter-desc": "Описание",
 	"newsletter-title": "Баш биттә бәйләнештә булыу өсөн, вики-бит",
-	"newsletter-delete-button": "Удалить",
+	"newsletter-create-editsummary": "Создать новый Информационный бюллетень",
 	"newsletter-subscribe-button": "Подписаться",
 	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",
 	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка.",

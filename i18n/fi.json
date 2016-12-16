@@ -8,8 +8,7 @@
 		]
 	},
 	"newsletter-create-submit": "Luo uutiskirje",
-	"newsletter-delete-button": "Poista",
+	"newsletter-create-editsummary": "Luo uusi uutiskirje",
 	"newsletter-manage-summary": "Muutoksen yhteenveto:",
-	"newsletter-delete-reason": "Syy",
 	"newsletter-header-name": "Nimi"
 }
