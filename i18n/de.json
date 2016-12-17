@@ -134,11 +134,13 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|entfernte}} $3 als {{GENDER:$6|Herausgeber|Herausgeberin}} des Newsletters $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|erstellte}} den Newsletter $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|löschte}} den Newsletter $4",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|stellte}} den Newsletter $4 wieder her",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|veröffentlichte}} eine neue Ausgabe des Newsletters $4 bei $6",
 	"log-action-filter-newsletter": "Typ der Aktion:",
 	"log-action-filter-newsletter-publisher-added": "Hinzufügung von Herausgebern",
 	"log-action-filter-newsletter-publisher-removed": "Entfernung von Herausgebern",
 	"log-action-filter-newsletter-newsletter-added": "Erstellung von Newslettern",
 	"log-action-filter-newsletter-newsletter-removed": "Löschung von Newslettern",
-	"log-action-filter-newsletter-issue-added": "Ankündigungen von neuen Ausgaben"
+	"log-action-filter-newsletter-issue-added": "Ankündigungen von neuen Ausgaben",
+	"newsletter-restore-failure": "Der Newsletter „$1“ konnte nicht wiederhergestellt werden. Bitte erneut versuchen."
 }

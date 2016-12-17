@@ -137,11 +137,13 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|הסיר|הסירה}} את {{GENDER:$6|$3}} מהמפרסמים של הידיעון $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|יצר|יצרה}} את הידיעון $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|מחק|מחקה}} את הידיעון $4",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|שחזר|שחזרה}} את הידיעון $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|פרסם|פרסמה}} גיליון חדש של הידיעון $4 ב{{GRAMMAR:תחילית|$6}}",
 	"log-action-filter-newsletter": "סוג הפעולה:",
 	"log-action-filter-newsletter-publisher-added": "הוספת מפרסם",
 	"log-action-filter-newsletter-publisher-removed": "הסרת מפרסם",
 	"log-action-filter-newsletter-newsletter-added": "יצירת ידיעון",
 	"log-action-filter-newsletter-newsletter-removed": "מחיקת ידיעון",
-	"log-action-filter-newsletter-issue-added": "הודעות על גיליונות חדשים"
+	"log-action-filter-newsletter-issue-added": "הודעות על גיליונות חדשים",
+	"newsletter-restore-failure": "לא ניתן היה לשחזר את הידיעון \"$1\". נא לנסות שוב."
 }
