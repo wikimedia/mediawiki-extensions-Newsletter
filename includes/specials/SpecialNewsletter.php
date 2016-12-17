@@ -61,9 +61,9 @@ class SpecialNewsletter extends SpecialPage {
 					$this->doAnnounceExecute();
 					break;
 				default:
-					$this->doViewExecute();
-					$action = null;
-					break;
+					$this->getOutput()->redirect(
+						Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getFullURL() );
+					return;
 			}
 
 			$out->addSubtitle( $this->getNavigationLinks( $action ) );
@@ -181,94 +181,6 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * Build the main form for Special:Newsletter/$id. This is shown
-	 * by default when visiting Special:Newsletter/$id
-	 */
-	protected function doViewExecute() {
-		$user = $this->getUser();
-		$this->getOutput()->setPageTitle( $this->msg( 'newsletter-view' ) );
-
-		if ( $user->isLoggedIn() ) {
-			// buttons are only shown for logged-in users
-			 $html = $this->getNewsletterActionButtons();
-			 $this->getOutput()->addHTML( $html );
-		}
-
-		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
-		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
-		$fields = array(
-			'mainpage' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-mainpage',
-				'default' => $this->getLinkRenderer()->makeLink( $mainTitle, $mainTitle->getPrefixedText() ),
-				'raw' => true,
-			),
-			'description' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-description',
-				'default' => $this->newsletter->getDescription(),
-				'rows' => 6,
-				'readonly' => true,
-			),
-			'publishers' => array(
-				'type' => 'info',
-				'label' => $this->msg( 'newsletter-view-publishers' )
-					->numParams( count( $publishers ) )
-					->text(),
-			),
-			'subscribe' => array(
-				'type' => 'info',
-				'label-message' => 'newsletter-view-subscriber-count',
-				'default' => $this->getLanguage()->formatNum( $this->newsletter->getSubscriberCount() ),
-			),
-		);
-
-		if ( count( $publishers ) > 0 ) {
-			// Have this here to avoid calling unneeded functions
-			$this->doLinkCacheQuery( $publishers );
-			$fields['publishers']['default'] = $this->buildUserList( $publishers );
-			$fields['publishers']['raw'] = true;
-		} else {
-			// Show a message if there are no publishers instead of nothing
-			$fields['publishers']['default'] = $this->msg( 'newsletter-view-no-publishers' )->escaped();
-		}
-
-		// Show the 10 most recent issues if there have been announcements
-		$logs = '';
-		$logCount = LogEventsList::showLogExtract(
-			$logs, // by reference
-			'newsletter',
-			$this->getPageTitle( $this->newsletter->getId() ),
-			'',
-			array(
-				'lim' => 10,
-				'showIfEmpty' => false,
-				'conds' => array( 'log_action' => 'issue-added' ),
-				'extraUrlParams' => array( 'subtype' => 'issue-added' ),
-			)
-		);
-
-		if ( $logCount !== 0 ) {
-			$fields['issues'] = array(
-				'type' => 'info',
-				'raw' => true,
-				'default' => $logs,
-				'label' => $this->msg( 'newsletter-view-issues-log' )->numParams( $logCount )->text(),
-			);
-		}
-
-		$form = $this->getHTMLForm(
-			$fields,
-			function() {
-				return false;
-			} // nothing to submit - the buttons on this page are just links
-		);
-
-		$form->suppressDefaultSubmit();
-		$form->show();
-	}
-
-	/**
 	 * Build a group of buttons: Manage, Subscribe|Unsubscribe
 	 * Buttons will be showed to the user only if they are relevant to the current user.
 	 *
@@ -320,45 +232,6 @@ class SpecialNewsletter extends SpecialPage {
 
 		$widget = new OOUI\ButtonGroupWidget( array( 'items' =>  $buttons ) );
 		return $widget->toString();
-	}
-
-	/**
-	 * Batch query to determine whether user pages and user talk pages exist
-	 * or not and add them to LinkCache
-	 *
-	 * @param Iterator $users
-	 *
-	 * @return string
-	 */
-	private function doLinkCacheQuery( Iterator $users ) {
-		$batch = new LinkBatch();
-		foreach ( $users as $user ) {
-			$batch->addObj( $user->getUserPage() );
-			$batch->addObj( $user->getTalkPage() );
-		}
-
-		$batch->execute();
-	}
-
-	/**
-	 * Get a list of users with user-related links next to each username
-	 *
-	 * @param Iterator $users
-	 *
-	 * @return string
-	 */
-	private function buildUserList( Iterator $users ) {
-		$str = '';
-		foreach ( $users as $user ) {
-			$str .= Html::rawElement(
-				'li',
-				array(),
-				Linker::userLink( $user->getId(), $user->getName() ) .
-				Linker::userToolLinks( $user->getId(), $user->getName() )
-			);
-		}
-
-		return Html::rawElement( 'ul', array(), $str );
 	}
 
 	/**

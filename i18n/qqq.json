@@ -40,7 +40,6 @@
 	"newsletter-subscribe-loginrequired": "Error message shown on the login form for non-logged in users if they try to visit Special:Newsletter/<id>/subscribe.",
 	"newsletter-notfound": "Header of Special:Newsletter/<id> if no newsletter by that id exists.\n\nSee also:\n* {{msg-mw|newsletter-not-found-id}}",
 	"newsletter-not-found-id": "Error message shown on Special:Newsletter/<id> if no newsletter by that id exists.\n\nSee also:\n* {{msg-mw|newsletter-notfound}}",
-	"newsletter-view": "Header message shown on Special:Newsletter/<id> if a newsletter by the specified id exists.\n\nSee also:\n* {{msg-mw|newsletter-delete}}",
 	"newsletter-view-mainpage": "Label for the newsletter's main page field. Shown on Special:Newsletter/<id>\n{{Identical|Main page}}",
 	"newsletter-view-description": "Label for newsletter description field. Shown on Special:Newsletter/<id>\n{{Identical|Description}}",
 	"newsletter-view-publishers": "Label for newsletter's publisher(s) field. Shown on Special:Newsletter/<id>.\n\nParameters:\n* $1 - Number of publishers for the newsletter, for use with PLURAL.",
