@@ -129,12 +129,7 @@ class NewsletterContent extends JsonContent {
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
 			$user = $options->getUser();
 
-			$newsletterActionButtons = '';
-
-			if ( $user->isLoggedIn() ) {
-				// buttons are only shown for logged-in users
-				$newsletterActionButtons = $this->getNewsletterActionButtons( $options );
-			}
+			$newsletterActionButtons = $this->getNewsletterActionButtons( $options );
 
 			$mainTitle = Title::newFromText( $this->mainPage );
 
@@ -211,12 +206,8 @@ class NewsletterContent extends JsonContent {
 			$form->suppressDefaultSubmit();
 			$form->prepareForm();
 
-			if ( $options->getUser()->isLoggedIn() ) {
-				$output->setText( $this->getNavigationLinks( $options ) . $newsletterActionButtons .
-					"<br><br>" . $form->getBody() );
-			} else {
-				$output->setText( $this->getNavigationLinks( $options ) . $form->getBody() );
-			}
+			$output->setText( $this->getNavigationLinks( $options ) . $newsletterActionButtons .
+				"<br><br>" . $form->getBody() );
 			return $output;
 		}
 	}
@@ -249,42 +240,13 @@ class NewsletterContent extends JsonContent {
 	protected function getNewsletterActionButtons( ParserOptions &$options ) {
 		global $wgOut;
 
-		$user = $options->getUser();
+		// We are building the 'Subscribe' action button for anonymous users as well
+		$user = $options->getUser() ? : null;
 		$id = $this->newsletter->getId();
 		$buttons = array();
 		$wgOut->enableOOUI();
 
-		if ( $this->newsletter->canManage( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $wgOut->msg( 'newsletter-manage-button' )->escaped(),
-					'icon' => 'settings',
-					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
-
-				)
-			);
-		}
-		if ( $this->newsletter->isPublisher( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $wgOut->msg( 'newsletter-announce-button' )->escaped(),
-					'icon' => 'comment',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_ANNOUNCE )->getFullURL()
-				)
-			);
-		}
-		if ( $this->newsletter->isSubscribed( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->escaped(),
-					'flags' => array( 'destructive' ),
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
-
-				)
-			);
-		} else {
+		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
 					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->escaped(),
@@ -294,7 +256,38 @@ class NewsletterContent extends JsonContent {
 
 				)
 			);
+		} else if ( $this->newsletter->isSubscribed( $user ) ){
+			$buttons[] = new OOUI\ButtonWidget(
+				array(
+					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->escaped(),
+					'flags' => array( 'destructive' ),
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
+
+				)
+			);
 		}
+		if ( $user && $this->newsletter->canManage( $user ) ) {
+			$buttons[] = new OOUI\ButtonWidget(
+				array(
+					'label' => $wgOut->msg( 'newsletter-manage-button' )->escaped(),
+					'icon' => 'settings',
+					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
+
+				)
+			);
+		}
+		if ( $user && $this->newsletter->isPublisher( $user ) ) {
+			$buttons[] = new OOUI\ButtonWidget(
+				array(
+					'label' => $wgOut->msg( 'newsletter-announce-button' )->escaped(),
+					'icon' => 'comment',
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+						self::NEWSLETTER_ANNOUNCE )->getFullURL()
+				)
+			);
+		}
+
 		$widget = new OOUI\ButtonGroupWidget( array( 'items' =>  $buttons ) );
 		return $widget->toString();
 	}
@@ -346,45 +339,41 @@ class NewsletterContent extends JsonContent {
 			)->text()
 		);
 
-		$user = $options->getUser();
+		$user = $options->getUser() ? : null;
 		$actions = array();
-		if ( $user->isLoggedIn() ) {
-			$actions[] = $this->newsletter->isSubscribed( $user ) ? self::NEWSLETTER_UNSUBSCRIBE : self::NEWSLETTER_SUBSCRIBE;
 
+		if ( !$user || !$this->newsletter->isSubscribed( $user ) ) {
+			$actions[] = self::NEWSLETTER_SUBSCRIBE;
+		} else if ( $this->newsletter->isSubscribed( $user ) ) {
+			$actions[] = self::NEWSLETTER_UNSUBSCRIBE;
+		}
+		if ( $user && $user->isLoggedIn() ) {
 			if ( $this->newsletter->isPublisher( $user ) ) {
 				$actions[] = self::NEWSLETTER_ANNOUNCE;
 			}
 			if ( $this->newsletter->canManage( $user ) ) {
 				$actions[] = self::NEWSLETTER_MANAGE;
 			}
-
-			$links = array();
-			foreach ( $actions as $action ) {
-				$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' . $action );
-
-				// Messages used here: 'newsletter-subtitlelinks-announce',
-				// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
-				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg );
-
-				if ( $action == self::NEWSLETTER_MANAGE ) {
-					$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
-					$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-					$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
-				}
-				$links[] = $link;
-			}
-
-
-
-			$newsletterLinks = Linker::makeSelfLinkObj(
-				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
-			) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
-		} else {
-			$newsletterLinks = Linker::makeSelfLinkObj(
-				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
-			);
 		}
+		$links = array();
+		foreach ( $actions as $action ) {
+			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' . $action );
+
+			// Messages used here: 'newsletter-subtitlelinks-announce',
+			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
+			$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
+			$link = $linkRenderer->makeKnownLink( $title, $msg );
+
+			if ( $action == self::NEWSLETTER_MANAGE ) {
+				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
+				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
+			}
+			$links[] = $link;
+		}
+		$newsletterLinks = Linker::makeSelfLinkObj(
+			SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
+		) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
 
 		return $wgOut->setSubtitle( $options->getUserLangObj()->pipeList( array( $listLink, $newsletterLinks ) ) );
 	}
