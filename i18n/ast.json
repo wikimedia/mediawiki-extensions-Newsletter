@@ -31,7 +31,6 @@
 	"newsletter-subscribe-loginrequired": "Anicia sesión pa suscribite a [[Special:Newsletters|boletinos]].",
 	"newsletter-notfound": "Nun s'alcontró'l boletín",
 	"newsletter-not-found-id": "Nun esiste un boletín con esti ID. Tenemos una [[Special:Newsletters|llista de boletinos esistentes]].",
-	"newsletter-view": "Ver detalles del boletín",
 	"newsletter-view-mainpage": "Páxina principal:",
 	"newsletter-view-description": "Descripción:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",

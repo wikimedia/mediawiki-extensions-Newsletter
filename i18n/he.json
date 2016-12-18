@@ -33,7 +33,6 @@
 	"newsletter-subscribe-loginrequired": "נא להיכנס לחשבון כדי לעשות מינוי ל[[Special:Newsletters|ידיעונים]].",
 	"newsletter-notfound": "הידיעון לא נמצא",
 	"newsletter-not-found-id": "ידיעון עם המזהה הזה אינו קיים. זמינה [[Special:Newsletters|רשימת ידיעונים קיימים]].",
-	"newsletter-view": "הצגת פרטי ידיעון",
 	"newsletter-view-mainpage": "דף ראשי:",
 	"newsletter-view-description": "תיאור:",
 	"newsletter-view-publishers": "{{PLURAL:$1|מפרסם:|מפרסמים:}}",

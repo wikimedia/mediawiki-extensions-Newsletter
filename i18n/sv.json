@@ -70,6 +70,8 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|tog bort}} {{GENDER:$6|$3}} som utgivare av nyhetsbrevet $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|skapade}} nyhetsbrevet $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|raderade}} nyhetsbrevet $4",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|återställde}} nyhetsbrevet $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicerade}} en ny utgåva av nyhetsbrevet $4 på $6",
-	"log-action-filter-newsletter": "Typ av åtgärd:"
+	"log-action-filter-newsletter": "Typ av åtgärd:",
+	"newsletter-restore-failure": "Nyhetsbrevet \"$1\" kunde inte återställas. var god försök igen senare."
 }

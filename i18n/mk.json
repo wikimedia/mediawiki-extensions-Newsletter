@@ -32,7 +32,6 @@
 	"newsletter-subscribe-loginrequired": "Најавете се на или пријавете се за [[Special:Newsletters|билтените]].",
 	"newsletter-notfound": "Билтенот не е пронајден",
 	"newsletter-not-found-id": "Не постои билтен со таква назнака. Има  [[Special:Newsletters|список на постоечки билтени]].",
-	"newsletter-view": "Преглед на подробности за билтенот",
 	"newsletter-view-mainpage": "Главна страница:",
 	"newsletter-view-description": "Опис:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Издавач:|Издавачи:}}",

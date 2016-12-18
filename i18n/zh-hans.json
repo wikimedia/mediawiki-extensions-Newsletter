@@ -33,7 +33,6 @@
 	"newsletter-subscribe-loginrequired": "请登录以订阅[[Special:Newsletters|新闻报]]。",
 	"newsletter-notfound": "找不到新闻报",
 	"newsletter-not-found-id": "此ID的新闻报不存在。这里有[[Special:Newsletters|现有的新闻报列表]]。",
-	"newsletter-view": "查看新闻报详细信息",
 	"newsletter-view-mainpage": "首页：",
 	"newsletter-view-description": "描述：",
 	"newsletter-view-publishers": "{{PLURAL:$1|发布者：}}",
