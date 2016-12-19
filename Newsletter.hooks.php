@@ -230,4 +230,22 @@ class NewsletterHooks {
 		// Show error message and allow resubmitting in case of failure
 		return Status::newFatal( 'newsletter-restore-failure', $newsletterName );
 	}
+
+		/**
+		 * @param Title $title
+		 * @param Title $newtitle
+		 * @param User $user
+		 * @return bool
+		 */
+		public static function onTitleMove( Title $title, Title $newtitle, User $user ) {
+			if ( $newtitle->inNamespace( NS_NEWSLETTER ) ) {
+				$newsletter = Newsletter::newFromName( $title->getText() );
+				if ( $newsletter ) {
+					NewsletterStore::getDefaultInstance()->updateName( $newsletter->getId(), $newtitle->getText() );
+				} else {
+					throw new MWException( 'Cannot find newsletter with name \"' + $title->getText() + '\"' );
+				}
+			}
+			return true;
+		}
 }

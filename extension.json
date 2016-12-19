@@ -150,6 +150,9 @@
 		],
 		"UndeleteForm::undelete": [
 			"NewsletterHooks::onUndeleteForm"
+		],
+		"TitleMove": [
+			"NewsletterHooks::onTitleMove"
 		]
 	},
 	"namespaces": [
