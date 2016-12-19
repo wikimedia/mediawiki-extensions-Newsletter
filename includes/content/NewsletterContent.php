@@ -123,14 +123,14 @@ class NewsletterContent extends JsonContent {
 
 	protected function fillParserOutput( Title $title, $revId, ParserOptions $options, $generateHtml, ParserOutput &$output ) {
 		if ( $generateHtml ) {
+			$this->newsletter = Newsletter::newFromName( $title->getText() );
+			if ( !$this->newsletter ) {
+				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
+			}
 			//Make sure things are decoded at this point
 			$this->decode();
 
-			$this->newsletter = Newsletter::newFromName( $title->getText() );
-			$user = $options->getUser();
-
 			$newsletterActionButtons = $this->getNewsletterActionButtons( $options );
-
 			$mainTitle = Title::newFromText( $this->mainPage );
 
 			$fields = array(
