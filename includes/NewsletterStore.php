@@ -249,7 +249,7 @@ class NewsletterStore {
 	 * @throws MWException
 	 */
 	public function newsletterExistsForMainPage( $mainPageId ) {
-		return $this->db->newsletterExistsWithName( $mainPageId );
+		return $this->db->newsletterExistsForMainPage( $mainPageId );
 	}
 
 	/**
