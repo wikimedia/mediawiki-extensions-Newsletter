@@ -51,9 +51,9 @@ class NewsletterDiffEngine extends DifferenceEngine {
 		if ( trim( $publishersDiff ) !== '' ) {
 			$output .= Html::openElement( 'tr' );
 			$output .= Html::openElement( 'td',
-				[ 'colspan' => 4, 'id' => 'mw-massmessage-diffpublishersheader' ] );
+				[ 'colspan' => 4, 'id' => 'mw-newsletter-diffpublishersheader' ] );
 			$output .= Html::element( 'h4', [],
-				$this->msg( 'massmessage-diff-publishersheader' )->text() );
+				$this->msg( 'newsletter-diff-publishersheader' )->text() );
 			$output .= Html::closeElement( 'td' );
 			$output .= Html::closeElement( 'tr' );
 			$output .= $publishersDiff;
