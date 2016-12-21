@@ -208,11 +208,12 @@ class NewsletterEditPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name', 'nl_main_page_id' ),
+			array( 'nl_name', 'nl_main_page_id', 'nl_active' ),
 			$dbr->makeList(
 				array(
 					'nl_name' => $data['Name'],
 					'nl_main_page_id' => $mainPageId,
+					'nl_active' => 1
 				),
 				LIST_OR
 			)
@@ -221,7 +222,7 @@ class NewsletterEditPage {
 		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {
 				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
-			} elseif ( (int)$row->nl_main_page_id === $mainPageId ) {
+			} elseif ( (int)$row->nl_main_page_id === $mainPageId  && (int)$row->nl_active === 1 ) {
 				return Status::newFatal( 'newsletter-mainpage-in-use' );
 			}
 		}
@@ -315,7 +316,7 @@ class NewsletterEditPage {
 		if ( $oldMainPage != $mainPageId ) {
 			$rows = $store->newsletterExistsForMainPage( $mainPageId );
 			foreach ( $rows as $row ) {
-				if ( (int)$row->nl_main_page_id === $mainPageId  ) {
+				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
 					return Status::newFatal( 'newsletter-mainpage-in-use' );
 				}
 			}

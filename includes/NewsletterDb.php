@@ -444,7 +444,7 @@ class NewsletterDb {
 
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_main_page_id' ),
+			array( 'nl_main_page_id', 'nl_active' ),
 			array( 'nl_main_page_id' => $mainPageId )
 		);
 

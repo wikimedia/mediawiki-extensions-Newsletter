@@ -84,6 +84,8 @@ class NewsletterHooks {
 		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql' );
 		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql' );
 		$updater->addExtensionField( 'nl_newsletters', 'nl_active', __DIR__ . '/sql/nl_newsletters-add-active.sql' );
+		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_main_page_id', __DIR__ . '/sql/nl_main_page_id-drop-index.sql' );
+		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active', __DIR__ . '/sql/nl_newsletters-add-unique.sql' );
 
 		return true;
 	}
@@ -222,7 +224,15 @@ class NewsletterHooks {
 			if ( !$newsletter->canRestore( $user ) ) {
 				throw new PermissionsError( 'newsletter-restore' );
 			}
-			$success = NewsletterStore::getDefaultInstance()->restoreNewsletter( $newsletterName );
+			$store = NewsletterStore::getDefaultInstance();
+			$rows = $store->newsletterExistsForMainPage( $newsletter->getPageId() );
+
+			foreach ( $rows as $row ) {
+				if ( (int)$row->nl_main_page_id === $newsletter->getPageId() && (int)$row->nl_active === 1 ) {
+					throw new ErrorPageError( 'newsletter-mainpage-in-use','newsletter-mainpage-in-use' );
+				}
+			}
+			$success = $store->restoreNewsletter( $newsletterName );
 			if ( $success ) {
 				return true;
 			}

@@ -30,6 +30,7 @@
 	"newsletter-create-mainpage-error": "Error message shown on [[Special:CreateNewsletter]] if the page entered on main page field does not exist.",
 	"newsletter-mainpage-non-existent": "Error message shown if the newsletter main page doesn't exist.",
 	"newsletter-mainpage-in-use": "Error message shown if the newsletter's main page is already in use by another newsletter.",
+	"newsletter-mainpage-in-use-title": "Title for \"newsletter-mainpage-in-use\"",
 	"newsletter-create-short-description-error": "Error message shown on [[Special:CreateNewsletter]] if the text entered in the description field is too short.",
 	"newsletter-subtitlelinks-list": "Label for link to [[Special:Newsletters]] shown under the header on Newsletter special pages.\n\nSee also:\n* {{msg-mw|newsletter-subtitlelinks-create}}",
 	"newsletter-subtitlelinks-create": "Label for link to [[Special:CreateNewsletter]] shown under the header on Newsletter special pages.\n\nSee also:\n* {{msg-mw|newsletter-subtitlelinks-list}}",

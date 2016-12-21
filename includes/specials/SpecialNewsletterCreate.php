@@ -90,11 +90,12 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name', 'nl_main_page_id' ),
+			array( 'nl_name', 'nl_main_page_id', 'nl_active' ),
 			$dbr->makeList(
 				array(
 					'nl_name' => $data['Name'],
 					'nl_main_page_id' => $mainPageId,
+					'nl_active' => 1
 				 ),
 				 LIST_OR
 			)
@@ -103,7 +104,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {
 				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
-			} elseif ( (int)$row->nl_main_page_id === $mainPageId ) {
+			} elseif ( (int)$row->nl_main_page_id === $mainPageId  && (int)$row->nl_active === 1 ) {
 				return Status::newFatal( 'newsletter-mainpage-in-use' );
 			}
 		}
