@@ -12,6 +12,7 @@ class SpecialNewsletter extends SpecialPage {
 	const NEWSLETTER_ANNOUNCE = 'announce';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
+	const NEWSLETTER_SUBSCRIBERS = 'subscribers';
 
 	/**
 	 * @var Newsletter|null
@@ -59,6 +60,9 @@ class SpecialNewsletter extends SpecialPage {
 					break;
 				case self::NEWSLETTER_ANNOUNCE:
 					$this->doAnnounceExecute();
+					break;
+				case self::NEWSLETTER_SUBSCRIBERS:
+					$this->doSubscribersExecute();
 					break;
 				default:
 					$this->getOutput()->redirect(
@@ -118,6 +122,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 		if ( $this->newsletter->canManage( $user ) ) {
 			$actions[] = self::NEWSLETTER_MANAGE;
+			$actions[] = self::NEWSLETTER_SUBSCRIBERS;
 		}
 
 		$links = array();
@@ -453,7 +458,48 @@ class SpecialNewsletter extends SpecialPage {
 		// Yay!
 		return true;
 	}
+	/**
+	 * Build the form for displaying the subscribers to a newsletter. This includes
+	 * a permission check, and then lists them all in a textarea.
+	 */
+	protected function doSubscribersExecute() {
+		$user = $this->getUser();
+		$out = $this->getOutput();
 
+		if ( !$this->newsletter->canManage( $user ) ) {
+			$out->showPermissionsErrorPage(
+				array( array( 'newsletter-subscribers-nopermission' ) )
+			);
+			return;
+		}
+
+		$out->setPageTitle( $this->msg( 'newsletter-subscribers' )->text() );
+		$subscribers = UserArray::newFromIDs( $this->newsletter->getSubscribers() );
+		$subscribersNames = array();
+		foreach ( $subscribers as $subscriber ) {
+			$subscribersNames[] = $subscriber->getName();
+		}
+
+		$fields = array(
+			'subscribers' => array(
+				'type' => 'textarea',
+				'raw' => true,
+				'disabled' => true,
+				'rows' => 10,
+				'default' => implode( "\n", $subscribersNames )
+			),
+		);
+
+		$form = $this->getHTMLForm(
+				$fields,
+				function() {
+					return false;
+				}
+			);
+		$form->suppressDefaultSubmit();
+		$form->show();
+
+	}
 	/**
 	 * Don't list this page in Special:SpecialPages as we just redirect to
 	 * Special:Newsletters if no ID was provided.
