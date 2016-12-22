@@ -5,7 +5,8 @@
 			"Rafael.minuesa",
 			"Yllelder",
 			"Idontknow",
-			"Fitoschido"
+			"Fitoschido",
+			"Dgstranz"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -20,7 +21,7 @@
 	"newslettercreate-text": "Esta página te permite crear un boletín nuevo. Se te añadirá como un editor y se te suscribirá al boletín en su creación. Todos los campos son obligatorios.",
 	"newsletter-create-submit": "Crear boletín",
 	"newsletter-create-editsummary": "Crear un boletín nuevo",
-	"newsletter-create-confirmation": "Se ha creado un [[Newsletter:$1|boletín nuevo]].",
+	"newsletter-create-confirmation": "Se ha creado un boletín nuevo: [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "No es válida la página principal del boletín. Inténtalo de nuevo.",
 	"newsletter-mainpage-non-existent": "No existe la página principal del boletín. Escribe una página existente válida.",
 	"newsletter-mainpage-in-use": "Un boletín existente tiene la misma página principal. Escribe otro título.",
@@ -35,7 +36,6 @@
 	"newsletter-subscribe-loginrequired": "Inicia sesión para suscribirte a [[Special:Newsletters|boletines]].",
 	"newsletter-notfound": "Boletín no encontrado",
 	"newsletter-not-found-id": "No existe un boletín con este identificador. Se dispone de una [[Special:Newsletters|lista de boletines existentes]].",
-	"newsletter-view": "Ver detalles del boletín",
 	"newsletter-view-mainpage": "Página principal:",
 	"newsletter-view-description": "Descripción:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
@@ -139,11 +139,13 @@
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|eliminó}} a $3 como {{GENDER:$6|editor|editora}} del boletín $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|creó}} el boletín $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|eliminó}} el boletín $4",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|restauró}} el boletín $4",
 	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|publicó}} una edición nueva del boletín $4 en $6.",
 	"log-action-filter-newsletter": "Tipo de acción:",
 	"log-action-filter-newsletter-publisher-added": "Adición de editor",
 	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
 	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
 	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín",
-	"log-action-filter-newsletter-issue-added": "Anuncios de ediciones nuevas"
+	"log-action-filter-newsletter-issue-added": "Anuncios de ediciones nuevas",
+	"newsletter-restore-failure": "El boletín \"$1\" no se pudo restaurar. Inténtalo de nuevo."
 }
