@@ -21,6 +21,7 @@
 	"newsletter-create-mainpage-error": "Внесена е неважечка слика за главната страница на билтенот. Обидете се повторно",
 	"newsletter-mainpage-non-existent": "Главната страница на билтенот не постои. Внесете важечка постоечка страница.",
 	"newsletter-mainpage-in-use": "Постоечкиот билтен ја има истата главна страница. Внесете друг наслов.",
+	"newsletter-mainpage-in-use-title": "Веќе постои билтен со истата главна страница.",
 	"newsletter-create-short-description-error": "Описот е прекраток. Внесете повеќе знаци (барем 30).",
 	"newsletter-subtitlelinks-list": "Список на билтени",
 	"newsletter-subtitlelinks-create": "Направете нов билтен",
@@ -143,5 +144,8 @@
 	"log-action-filter-newsletter-newsletter-added": "Создавање на билтен",
 	"log-action-filter-newsletter-newsletter-removed": "Бришење на билтен",
 	"log-action-filter-newsletter-issue-added": "Објави за нов број",
-	"newsletter-restore-failure": "Не можев да го повратам билтенот „$1“. Обидете се повторно."
+	"newsletter-restore-failure": "Не можев да го повратам билтенот „$1“. Обидете се повторно.",
+	"newsletter-diff-descheader": "Промени во описот:",
+	"newsletter-diff-mainpageheader": "Промени во Главната страница:",
+	"newsletter-diff-publishersheader": "Промени во издавачите:"
 }

@@ -22,6 +22,7 @@
 	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
 	"newsletter-mainpage-non-existent": "新闻报首页不存在。请输入一个有效的现有页面。",
 	"newsletter-mainpage-in-use": "现有新闻报有相同的首页。请输入另一个标题。",
+	"newsletter-mainpage-in-use-title": "现有新闻报已拥有相同的首页。",
 	"newsletter-create-short-description-error": "描述太短（少于30个字符）。请重试。",
 	"newsletter-subtitlelinks-list": "新闻报列表",
 	"newsletter-subtitlelinks-create": "创建一个新的新闻报",
@@ -144,5 +145,8 @@
 	"log-action-filter-newsletter-newsletter-added": "新闻报创建",
 	"log-action-filter-newsletter-newsletter-removed": "新闻报删除",
 	"log-action-filter-newsletter-issue-added": "新一期发行公告",
-	"newsletter-restore-failure": "“$1”新闻报不能恢复。请重试。"
+	"newsletter-restore-failure": "“$1”新闻报不能恢复。请重试。",
+	"newsletter-diff-descheader": "描述中的更改：",
+	"newsletter-diff-mainpageheader": "首页中的更改：",
+	"newsletter-diff-publishersheader": "发布者的更改："
 }

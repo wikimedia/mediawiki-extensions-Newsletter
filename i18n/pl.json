@@ -26,6 +26,7 @@
 	"newsletter-create-short-description-error": "Opis jest zbyt krótki (mniej niż 30 znaków). Spróbuj ponownie.",
 	"newsletter-subtitlelinks-list": "Lista newsletterów",
 	"newsletter-subtitlelinks-create": "Utwórz nowy newsletter",
+	"newsletter-notfound": "Nie znaleziono newslettera",
 	"newsletter-view-mainpage": "Strona główna:",
 	"newsletter-view-description": "Opis:",
 	"newsletter-view-no-publishers": "Brak wydawców.",
@@ -41,6 +42,7 @@
 	"newsletter-unsubscribe-error": "Podczas próby wypisania się z newslettera wystąpił błąd.",
 	"newsletter-subscribe-button-label": "Tak",
 	"newsletter-unsubscribe-button-label": "Nie",
+	"echo-category-title-newsletter": "Newslettery",
 	"newsletter-notification-link-text-view-newsletter": "Pokaż newsletter",
 	"newsletter-header-name": "Nazwa",
 	"newsletter-header-description": "Opis",
@@ -53,5 +55,7 @@
 	"newsletter-list-go-button": "Dalej",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|utworzył|utworzyła}} newsletter $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|usunął|usunęła}} newsletter $4",
-	"log-action-filter-newsletter": "Rodzaj działania:"
+	"log-action-filter-newsletter": "Rodzaj działania:",
+	"newsletter-diff-descheader": "Zmiany w opisie:",
+	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:"
 }
