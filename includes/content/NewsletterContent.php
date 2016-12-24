@@ -12,6 +12,7 @@ class NewsletterContent extends JsonContent {
 	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
+	const NEWSLETTER_SUBSCRIBERS = 'subscribers';
 
 	/**
 	 * @var string|null
@@ -276,6 +277,15 @@ class NewsletterContent extends JsonContent {
 
 				)
 			);
+			$buttons[] = new OOUI\ButtonWidget(
+				array(
+					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->escaped(),
+					'icon' => 'info',
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
+
+				)
+			);
 		}
 		if ( $user && $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
@@ -353,6 +363,7 @@ class NewsletterContent extends JsonContent {
 			}
 			if ( $this->newsletter->canManage( $user ) ) {
 				$actions[] = self::NEWSLETTER_MANAGE;
+				$actions[] = self::NEWSLETTER_SUBSCRIBERS;
 			}
 		}
 		$links = array();
