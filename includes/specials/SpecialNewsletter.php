@@ -484,21 +484,64 @@ class SpecialNewsletter extends SpecialPage {
 			'subscribers' => array(
 				'type' => 'textarea',
 				'raw' => true,
-				'disabled' => true,
 				'rows' => 10,
 				'default' => implode( "\n", $subscribersNames )
 			),
 		);
 
 		$form = $this->getHTMLForm(
-				$fields,
-				function() {
-					return false;
-				}
-			);
-		$form->suppressDefaultSubmit();
-		$form->show();
+			$fields,
+			array( $this, 'submitSubscribersForm' )
+		);
+		if ( $form->show() ) {
+			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
+		}
 
+	}
+	/**
+	 * Submit callback for the subscribers form (validate, edit subscribers table).
+	 * This assumes that permissions check etc has been done already.
+	 *
+	 * @param array $data
+	 *
+	 * @return Status|bool true on success, Status fatal otherwise
+	 */
+	public function submitSubscribersForm( array $data ) {
+		$subscriberNames = explode( "\n", $data['subscribers'] );
+		// Strip whitespace, then remove blank lines and duplicates
+		$subscriberNames = array_unique( array_filter( array_map( 'trim', $subscriberNames ) ) );
+
+		$oldSubscribersIds = $this->newsletter->getSubscribers();
+		$newSubscribersIds = array();
+		foreach ( $subscriberNames as $subscriberName ) {
+			$user = User::newFromName( $subscriberName );
+
+			if ( !$user || !$user->getId() ) {
+				// Input contains an invalid username
+				return Status::newFatal( 'newsletter-subscribers-invalid', $subscriberName );
+			}
+
+			$newSubscribersIds[] = $user->getId();
+
+		}
+
+		// Do the actual modifications now
+		$added = array_diff( $newSubscribersIds, $oldSubscribersIds );
+		$removed = array_diff( $oldSubscribersIds, $newSubscribersIds );
+
+		$store = NewsletterStore::getDefaultInstance();
+		$store->addSubscription( $this->newsletter, $added );
+		$store->removeSubscription( $this->newsletter, $removed );
+
+		$out = $this->getOutput();
+		// Now report to the user
+		if ( $added || $removed ) {
+			$out->addWikiMsg( 'newsletter-edit-subscribers-success' );
+		} else {
+			// Submitted without any changes to the existing subscribers
+			$out->addWikiMsg( 'newsletter-edit-subscribers-nochanges' );
+		}
+		return true;
 	}
 	/**
 	 * Don't list this page in Special:SpecialPages as we just redirect to
