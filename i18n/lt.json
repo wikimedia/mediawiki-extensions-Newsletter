@@ -12,6 +12,7 @@
 	"newsletter-subtitlelinks-subscribe": "prenumeruoti",
 	"newsletter-subtitlelinks-announce": "pranešti",
 	"newsletter-subtitlelinks-manage": "valdyti",
+	"newsletter-subtitlelinks-subscribers": "žiūrėti prenumeratorius",
 	"newsletter-subscribe-loginrequired": "Prašome prisijungti jei norite užsisakyti [[Specialus:Naujienlaiškiai|naujienlaiškius]].",
 	"newsletter-notfound": "Naujienlaiškis nerastas:",
 	"newsletter-not-found-id": "Naujienlaiškis su šiuo ID neegzistuoja.",
@@ -22,6 +23,7 @@
 	"newsletter-manage-button": "Tvarkyti",
 	"newsletter-unsubscribe-button": "Nutraukti prenumeratą",
 	"newsletter-subscribe-button": "Prenumeruoti",
+	"newsletter-subscribers-button": "Žiūrėti prenumeratorius",
 	"newsletter-manage-summary": "Pakeitimo santrauka:",
 	"newsletter-delete": "Ištrinti naujienlaiškį",
 	"newsletter-subscribe": "Naujienlaiškio prenumeratos valdymas",
@@ -30,6 +32,7 @@
 	"newsletter-do-unsubscribe": "Atsisakyti naujienlaiškio",
 	"newsletter-subscribing": "Prenumeruojama...",
 	"newsletter-unsubscribing": "Nebeprenumeruojama...",
+	"newsletter-subscribers": "Naujienlaiškio prenumeratoriai",
 	"newsletter-notification-link-text-view-newsletter": "Žiūrėti naujienlaiškį",
 	"right-newsletter-create": "Sukurti naujienlaiškius",
 	"action-newsletter-create": "sukurti naujienlaiškius",
@@ -39,5 +42,7 @@
 	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2.",
 	"newsletter-list-table": "Košti lentelę pagal:",
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|atkūrė}} naujienlaiškį $4",
-	"newsletter-restore-failure": "„$1“ naujienlaiškis negali būti atkurtas. Prašome bandyti dar kartą."
+	"newsletter-restore-failure": "„$1“ naujienlaiškis negali būti atkurtas. Prašome bandyti dar kartą.",
+	"newsletter-diff-descheader": "Pakeitimai aprašyme:",
+	"newsletter-diff-mainpageheader": "Pakeitimai Pagrindiniame Puslapyje:"
 }
