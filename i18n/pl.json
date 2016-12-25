@@ -42,6 +42,7 @@
 	"newsletter-unsubscribe-error": "Podczas próby wypisania się z newslettera wystąpił błąd.",
 	"newsletter-subscribe-button-label": "Tak",
 	"newsletter-unsubscribe-button-label": "Nie",
+	"newsletter-subscribers": "Subskrybenci newslettera",
 	"echo-category-title-newsletter": "Newslettery",
 	"newsletter-notification-link-text-view-newsletter": "Pokaż newsletter",
 	"newsletter-header-name": "Nazwa",

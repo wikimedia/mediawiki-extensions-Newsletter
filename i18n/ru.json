@@ -11,9 +11,12 @@
 	"newsletter-desc": "Описание",
 	"newsletter-title": "Баш биттә бәйләнештә булыу өсөн, вики-бит",
 	"newsletter-create-editsummary": "Создать новый Информационный бюллетень",
+	"newsletter-subtitlelinks-subscribers": "просмотреть подписчиков",
 	"newsletter-subscribe-button": "Подписаться",
+	"newsletter-subscribers-button": "Просмотреть подписчиков",
 	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",
 	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка.",
+	"newsletter-subscribers-nopermission": "Вы не имеете разрешения для просмотра подписчиков этой рассылки",
 	"newsletter-header-name": "Атама",
 	"logentry-newsletter-newsletter-restored": "$1 {{gender: с$2|восстановил}} бюллетень $4",
 	"newsletter-restore-failure": "\"$1\" бюллетень не мог быть восстановлен. Пожалуйста, попробуйте снова."

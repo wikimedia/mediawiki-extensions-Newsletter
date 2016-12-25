@@ -3,7 +3,8 @@
 		"authors": [
 			"Eraab",
 			"Amire80",
-			"Guycn2"
+			"Guycn2",
+			"תומר ט"
 		]
 	},
 	"newsletter-extension-desc": "מאפשרת למשתמשים לפרסם ידיעונים ולעשות להם מינוי",
@@ -30,6 +31,7 @@
 	"newsletter-subtitlelinks-subscribe": "מינוי",
 	"newsletter-subtitlelinks-announce": "הודעה",
 	"newsletter-subtitlelinks-manage": "ניהול",
+	"newsletter-subtitlelinks-subscribers": "צפייה במנויים",
 	"newsletters": "ידיעונים",
 	"newsletter-subscribe-loginrequired": "נא להיכנס לחשבון כדי לעשות מינוי ל[[Special:Newsletters|ידיעונים]].",
 	"newsletter-notfound": "הידיעון לא נמצא",
@@ -43,6 +45,7 @@
 	"newsletter-manage-button": "ניהול",
 	"newsletter-unsubscribe-button": "ביטול מינוי",
 	"newsletter-subscribe-button": "מינוי",
+	"newsletter-subscribers-button": "צפייה במנויים",
 	"newsletter-announce-button": "הודעה",
 	"newsletter-announce-nopermission": "אינך מפרסם של הידיעון",
 	"newsletter-announce": "הודעה של גיליון חדש של \"$1\"",
@@ -88,6 +91,8 @@
 	"newsletter-unsubscribe-button-label": "לא",
 	"newsletter-subscribing": "עשיית מינוי...",
 	"newsletter-unsubscribing": "ביטול מינוי...",
+	"newsletter-subscribers": "מנויי העלון",
+	"newsletter-subscribers-nopermission": "אין לך הרשאה מתאימה לצפייה במנויי העלון",
 	"newsletter-available-newsletters-field-label": "ידיעונים זמינים",
 	"newsletter-subscribed-newsletters-field-label": "ידיעונים עם מינוי",
 	"newsletter-none-found": "אין ידיעונים. אפשר ליצור ידיעון חדש דרך [[Special:CreateNewsletter]].",

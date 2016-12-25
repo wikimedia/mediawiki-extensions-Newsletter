@@ -1,12 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robin van der Vliet"
+			"Robin van der Vliet",
+			"Rafaneta"
 		]
 	},
 	"newsletter-subtitlelinks-unsubscribe": "malaboni",
-	"newsletter-subtitlelinks-delete": "forigi",
+	"newsletter-subtitlelinks-subscribers": "rigardi abonantojn",
+	"newsletter-subscribers-button": "Rigardi abonantojn",
 	"newsletter-manage-description": "Priskribo:",
+	"newsletter-subscribers": "Abonantoj de la bulteno",
+	"newsletter-subscribers-nopermission": "Vi ne rajtas vidi la abonantojn de ĉi tiu bulteno.",
 	"newsletter-header-name": "Nomo",
-	"newsletter-delete-confirm-cancel": "Nuligi"
+	"right-newsletter-manage": "Aldoni aŭ forigi eldonantojn kaj vidi la abonantojn de bultenoj"
 }
