@@ -189,7 +189,7 @@ class Newsletter {
 
 		$store = NewsletterStore::getDefaultInstance();
 
-		if ( $store->addSubscription( $this, $user ) ) {
+		if ( $store->addSubscription( $this, array( $user->getId() ) ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-subscribe-fail', $this->name );
@@ -206,7 +206,7 @@ class Newsletter {
 	public function unsubscribe( User $user ) {
 		$store = NewsletterStore::getDefaultInstance();
 
-		if ( $store->removeSubscription( $this, $user ) ) {
+		if ( $store->removeSubscription( $this, array( $user->getId() ) ) ) {
 			return Status::newGood();
 		} else {
 			return Status::newFatal( 'newsletter-unsubscribe-fail', $this->name );

@@ -19,16 +19,18 @@ class NewsletterDb {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function addSubscription( Newsletter $newsletter, User $user ) {
-		$rowData = array(
-			'nls_newsletter_id' => $newsletter->getId(),
-			'nls_subscriber_id' => $user->getId(),
-		);
-
+	public function addSubscription( Newsletter $newsletter, $userIds ) {
+		$rowData = array();
+		foreach ( $userIds as $userId ) {
+			$rowData[] = array(
+				'nls_newsletter_id' => $newsletter->getId(),
+				'nls_subscriber_id' => $userId
+			);
+		}
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
 		$success = (bool)$dbw->affectedRows();
@@ -39,14 +41,14 @@ class NewsletterDb {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function removeSubscription( Newsletter $newsletter, User $user ) {
+	public function removeSubscription( Newsletter $newsletter, $userIds ) {
 		$rowData = array(
 			'nls_newsletter_id' => $newsletter->getId(),
-			'nls_subscriber_id' => $user->getId(),
+			'nls_subscriber_id' => $userIds
 		);
 
 		$dbw = $this->lb->getConnection( DB_MASTER );

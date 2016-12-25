@@ -40,22 +40,22 @@ class NewsletterStore {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function addSubscription( Newsletter $newsletter, User $user ) {
-		return $this->db->addSubscription( $newsletter, $user );
+	public function addSubscription( Newsletter $newsletter, $userIds ) {
+		return $this->db->addSubscription( $newsletter, $userIds );
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function removeSubscription( Newsletter $newsletter, User $user ) {
-		return $this->db->removeSubscription( $newsletter, $user );
+	public function removeSubscription( Newsletter $newsletter, $userIds ) {
+		return $this->db->removeSubscription( $newsletter, $userIds );
 	}
 
 	/**
