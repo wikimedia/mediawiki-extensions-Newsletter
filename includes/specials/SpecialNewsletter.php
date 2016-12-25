@@ -531,8 +531,9 @@ class SpecialNewsletter extends SpecialPage {
 
 		$store = NewsletterStore::getDefaultInstance();
 		$store->addSubscription( $this->newsletter, $added );
-		$store->removeSubscription( $this->newsletter, $removed );
-
+		if ( $removed ) {
+			$store->removeSubscription( $this->newsletter, $removed );
+		}
 		$out = $this->getOutput();
 		// Now report to the user
 		if ( $added || $removed ) {
