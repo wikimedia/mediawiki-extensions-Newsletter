@@ -186,60 +186,6 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * Build a group of buttons: Manage, Subscribe|Unsubscribe
-	 * Buttons will be showed to the user only if they are relevant to the current user.
-	 *
-	 * @return string HTML for the button group
-	 */
-	protected function getNewsletterActionButtons() {
-		$user = $this->getUser();
-		$id = $this->newsletter->getId();
-		$buttons = array();
-		$this->getOutput()->enableOOUI();
-
-		if ( $this->newsletter->canManage( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $this->msg( 'newsletter-manage-button' )->escaped(),
-					'icon' => 'settings',
-					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
-				)
-			);
-		}
-
-		if ( $this->newsletter->isPublisher( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $this->msg( 'newsletter-announce-button' )->escaped(),
-					'icon' => 'comment',
-					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_ANNOUNCE )->getFullURL()
-				)
-			);
-		}
-
-		if ( $this->newsletter->isSubscribed( $user ) ) {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $this->msg( 'newsletter-unsubscribe-button' )->escaped(),
-					'flags' => array( 'destructive' ),
-					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
-				)
-			);
-		} else {
-			$buttons[] = new OOUI\ButtonWidget(
-				array(
-					'label' => $this->msg( 'newsletter-subscribe-button' )->escaped(),
-					'flags' => array( 'constructive' ),
-					'href' => $this->getPageTitle( $id . '/' . self::NEWSLETTER_SUBSCRIBE )->getFullURL()
-				)
-			);
-		}
-
-		$widget = new OOUI\ButtonGroupWidget( array( 'items' =>  $buttons ) );
-		return $widget->toString();
-	}
-
-	/**
 	 * Build the (un)subscribe form for Special:Newsletter/$id/(un)subscribe
 	 * The actual form showed will be switched depending on whether the current
 	 * user is subscribed or not.
