@@ -229,7 +229,7 @@ class NewsletterHooks {
 
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $newsletter->getPageId() && (int)$row->nl_active === 1 ) {
-					throw new ErrorPageError( 'newsletter-mainpage-in-use','newsletter-mainpage-in-use' );
+					throw new ErrorPageError( 'newsletter-mainpage-in-use','newsletter-mainpage-in-use-title' );
 				}
 			}
 			$success = $store->restoreNewsletter( $newsletterName );
@@ -237,8 +237,12 @@ class NewsletterHooks {
 				return true;
 			}
 		}
-		// Show error message and allow resubmitting in case of failure
-		return Status::newFatal( 'newsletter-restore-failure', $newsletterName );
+		// Throw error message
+		throw new ErrorPageError(
+			'newsletter-restore-failure-title',
+			wfMessage( 'newsletter-restore-failure', $newsletterName )
+		);
+		return true;
 	}
 
 		/**
@@ -253,7 +257,7 @@ class NewsletterHooks {
 				if ( $newsletter ) {
 					NewsletterStore::getDefaultInstance()->updateName( $newsletter->getId(), $newtitle->getText() );
 				} else {
-					throw new MWException( 'Cannot find newsletter with name \"' + $title->getText() + '\"' );
+					throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
 				}
 			}
 			return true;

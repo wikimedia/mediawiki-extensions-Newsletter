@@ -155,6 +155,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "Newsletter deletion",
 	"log-action-filter-newsletter-issue-added": "New issue announcements",
 	"newsletter-restore-failure": "\"$1\" newsletter could not be restored. Please try again.",
+	"newsletter-restore-failure-title": "Newsletter could not be restored.",
 	"newsletter-diff-descheader": "Changes in the description:",
 	"newsletter-diff-mainpageheader": "Changes in Main Page:",
 	"newsletter-diff-publishersheader": "Changes in publishers:"
