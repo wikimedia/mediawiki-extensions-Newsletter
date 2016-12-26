@@ -1,11 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"Leeheonjin"
+			"Leeheonjin",
+			"Emem.calist"
 		]
 	},
+	"newsletter-subtitlelinks-subscribers": "Ipakita ang mga Nananangkilik",
 	"newsletter-announce-button": "Ipahayag",
 	"newsletter-announce-submit": "Ipahayag",
+	"newsletter-subscribers-nopermission": "Wala kang karapatang baguhin ang mga Mananangkilik nitong 'newsletter'",
 	"newsletter-notification-link-text-view-newsletter": "Tingnan ang pahayagang palihan (''newsletter'')",
 	"right-newsletter-create": "Lumikha ng mga pahayagang palihan (''newsletter'')",
 	"action-newsletter-create": "lumikha ng mga pahayagang palihan (''newsletter'')",

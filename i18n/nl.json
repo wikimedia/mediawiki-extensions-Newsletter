@@ -4,19 +4,17 @@
 			"Sjoerddebruin",
 			"Siebrand",
 			"SPQRobin",
-			"Hex"
+			"Hex",
+			"Mainframe98"
 		]
 	},
 	"newslettercreate": "Nieuwsbrief aanmaken",
 	"newsletter-create-confirmation": "Een [[Newsletter:$1|nieuwe nieuwsbrief]] is aangemaakt.",
 	"newsletter-notfound": "Nieuwsbrief niet gevonden",
-	"newsletter-view": "Nieuwsbriefgegevens weergeven",
-	"newsletter-view-name": "Naam van nieuwsbrief:",
 	"newsletter-view-mainpage": "Hoofdpagina:",
 	"newsletter-view-description": "Beschrijving:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Uitgever:|Uitgevers:}}",
 	"newsletter-view-subscriber-count": "Aantal abonnees:",
-	"newsletter-delete-button": "Verwijderen",
 	"newsletter-manage-button": "Beheren",
 	"newsletter-unsubscribe-button": "Uitschrijven",
 	"newsletter-subscribe-button": "Abonneren",
@@ -26,8 +24,6 @@
 	"newsletter-announce-issuetitle": "Paginatitel van uitgave",
 	"newsletter-announce-summary": "Samenvatting van deze uitgave",
 	"newsletter-delete": "Nieuwsbrief verwijderen",
-	"newsletter-delete-reason": "Reden",
-	"newsletter-deletenewsletter-button": "Nieuwsbrief verwijderen",
 	"newsletter-do-subscribe": "Op deze nieuwsbrief abonneren",
 	"newsletter-subscribe-fail": "Het was niet mogelijk te abonneren op de nieuwsbrief \"$1\" omdat u al bent geabonneerd op deze nieuwsbrief.",
 	"newsletter-subscribe-ip-notallowed": "Meld u aan om te abonneren op een nieuwsbrief.",
@@ -37,12 +33,11 @@
 	"newsletter-unsubscribe-button-label": "Nee",
 	"newsletter-subscribing": "Aan het abonneren...",
 	"newsletter-unsubscribing": "Aan het afmelden...",
+	"newsletter-subscribers-invalid": "\"$1\" is geen geldige gebruiker. Zorg ervoor dat de gebruikersnaam bestaat en probeer opnieuw.",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
 	"newsletter-header-name": "Naam",
 	"newsletter-header-description": "Beschrijving",
 	"newsletter-header-subscriber_count": "Abonnees",
-	"newsletter-delete-confirm-cancel": "Annuleren",
-	"newsletter-delete-confirm-delete": "Verwijderen",
 	"right-newsletter-create": "Nieuwsbrieven aanmaken",
 	"action-newsletter-create": "nieuwsbrieven aanmaken",
 	"right-newsletter-delete": "Nieuwsbrieven verwijderen",
@@ -57,5 +52,6 @@
 	"newsletter-list-option-all": "Alle nieuwsbrieven",
 	"newsletter-list-option-subscribed": "Nieuwsbrieven waarop ik ben geabonneerd",
 	"newsletter-list-option-unsubscribed": "Nieuwsbrieven waarop ik nog niet ben geabonneerd",
-	"newsletter-list-go-button": "OK"
+	"newsletter-list-go-button": "OK",
+	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:"
 }
