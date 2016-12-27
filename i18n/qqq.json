@@ -162,6 +162,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "{{doc-log-action-filter-action|newsletter|newsletter-removed}}",
 	"log-action-filter-newsletter-issue-added": "{{doc-log-action-filter-action|newsletter|issue-added}}",
 	"newsletter-restore-failure": "Error message shown on title=Special:Undelete&target=Newsletter:<name>&action=submit when the newsletter restoration fails.\n\nParameters:\n* $1 - Newsletter name",
+	"newsletter-restore-failure-title": "Title for \"newsletter-restore-failure\"",
 	"newsletter-diff-descheader": "Header for the diff of the description between two revisions",
 	"newsletter-diff-mainpageheader": "Header for the diff of Main Page between two revisions",
 	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions"
