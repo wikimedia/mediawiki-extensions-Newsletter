@@ -307,8 +307,6 @@ class NewsletterContent extends JsonContent {
 	 * or not and add them to LinkCache
 	 *
 	 * @param Iterator $users
-	 *
-	 * @return string
 	 */
 	private function doLinkCacheQuery( Iterator $users ) {
 		$batch = new LinkBatch();
