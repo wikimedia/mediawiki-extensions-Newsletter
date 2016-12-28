@@ -103,6 +103,8 @@
 	"echo-category-title-newsletter": "Newsletters",
 	"echo-pref-tooltip-newsletter": "Notify me when any of the newsletters to which I have subscribed to announces a new issue.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|has announced}} a [[$2|new issue]] of the newsletter \"$1\".",
+	"newsletter-notification-subscribed": "You have been subscribed to the \"$1\" newsletter by an administrator.",
+	"newsletter-notification-unsubscribed": "You have been unsubscribed from the \"$1\" newsletter by an administrator.",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|has announced}} a new issue of $1.",
 	"newsletter-notification-link-text-new-issue": "View new issue",
 	"newsletter-notification-link-text-view-newsletter": "View newsletter",

@@ -483,6 +483,35 @@ class SpecialNewsletter extends SpecialPage {
 		$out = $this->getOutput();
 		// Now report to the user
 		if ( $added || $removed ) {
+			if ( !class_exists( 'EchoEvent') ) {
+				throw new Exception( 'Echo extension is not installed.' );
+			}
+			if ( $added ) {
+				EchoEvent::create(
+					array(
+						'type' => 'newsletter-subscribed',
+						'extra' => array(
+							'newsletter-name' => $this->newsletter->getName(),
+							'new-subscribers-id' => $added,
+							'newsletter-id' => $this->newsletter->getId()
+						),
+						'agent' => $this->getUser()
+					)
+				);
+			}
+			if ( $removed ) {
+				EchoEvent::create(
+					array(
+						'type' => 'newsletter-unsubscribed',
+						'extra' => array(
+							'newsletter-name' => $this->newsletter->getName(),
+							'removed-subscribers-id' => $removed,
+							'newsletter-id' => $this->newsletter->getId()
+						),
+						'agent' => $this->getUser()
+					)
+				);
+			}
 			$out->addWikiMsg( 'newsletter-edit-subscribers-success' );
 		} else {
 			// Submitted without any changes to the existing subscribers

@@ -109,6 +109,8 @@
 	"newsletter-list-search-none-found": "Error message shown on [[Special:Newsletters]] if no newsletters found after user searches the table using filters",
 	"echo-category-title-newsletter": "Title of the notification category used by Newsletter extension.\n{{Related|Echo-category-title}}\n{{Identical|Newsletter}}",
 	"echo-pref-tooltip-newsletter": "Short description of the newsletter notification category.\n{{Related|Echo-pref-tooltip}}",
+	"newsletter-notification-subscribed": "Used as a Echo notification message when user is subscribed from newsletter by administrator.",
+	"newsletter-notification-unsubscribed": "Used as a Echo notification message when user is unsubscribed from newsletter by administrator.",
 	"newsletter-notification-title": "Header text for a notification when a new issue of a newsletter is announced. Parameters:\n* $1 is the name of the newsletter.\n* $2 is title of the issue page.\n* $3 is the username of the user who announced the new issue, not used for GENDER\n* $4 is the username of the user who announced the issue, used for GENDER",
 	"newsletter-notification-flyout": "Used as a Echo notification flyout message when a new issue of a newsletter is announced. \n* $1 is the name of the newsletter.\n* $2 is the username of the user who announced the new issue, not used for GENDER\n* $3 is the username of the user who announced the new issue, used for GENDER",
 	"newsletter-notification-link-text-new-issue": "Label of the primary link of the notification-newsletter-flyout, which on clicking navigates the user to the newly announced issue of a newsletter.",

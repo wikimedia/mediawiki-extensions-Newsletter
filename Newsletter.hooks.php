@@ -59,6 +59,32 @@ class NewsletterHooks {
 			'flyout-message' => 'newsletter-notification-new-publisher-flyout',
 			'flyout-params' => array( 'newsletter-name', 'agent' ),
 		);
+		$notifications['newsletter-subscribed'] = array(
+			'category' => 'newsletter',
+			'primary-link' => array(
+				'message' => 'newsletter-notification-subscribed',
+				'destination' => 'newsletter'
+			),
+			'user-locators' => array(
+				array( 'EchoUserLocator::locateFromEventExtra', array( 'new-subscribers-id' ) )
+			),
+			'presentation-model' => 'EchoNewsletterSubscribedPresentationModel',
+			'title-message' => 'newsletter-notification-subscribed',
+			'title-params' => array( 'newsletter-name'),
+		);
+		$notifications['newsletter-unsubscribed'] = array(
+			'category' => 'newsletter',
+			'primary-link' => array(
+				'message' => 'newsletter-notification-unsubscribed',
+				'destination' => 'newsletter'
+			),
+			'user-locators' => array(
+				array( 'EchoUserLocator::locateFromEventExtra', array( 'removed-subscribers-id' ) )
+			),
+			'presentation-model' => 'EchoNewsletterUnsubscribedPresentationModel',
+			'title-message' => 'newsletter-notification-unsubscribed',
+			'title-params' => array( 'newsletter-name'),
+		);
 
 		return true;
 	}

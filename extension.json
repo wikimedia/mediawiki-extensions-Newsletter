@@ -89,7 +89,10 @@
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
 		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
-		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php"
+		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php",
+		"EchoNewsletterUnsubscribedPresentationModel": "includes/Echo/EchoNewsletterUnsubscribedPresentationModel.php",
+		"EchoNewsletterSubscribedPresentationModel": "includes/Echo/EchoNewsletterSubscribedPresentationModel.php"
+
 	},
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-newsletter": true,
