@@ -24,7 +24,7 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 	public function getSecondaryLinks() {
 		return array(
 			array(
-				'url' => $this->getSpecialNewsletterUrl(),
+				'url' => $this->getNewsletterUrl(),
 				'label' => $this->msg( 'newsletter-notification-link-text-view-newsletter' )
 			),
 		);

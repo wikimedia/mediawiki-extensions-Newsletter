@@ -8,7 +8,7 @@ class EchoNewsletterPublisherPresentationModel extends BaseNewsletterPresentatio
 
 	public function getPrimaryLink() {
 		return array(
-			'url' => $this->getSpecialNewsletterUrl(),
+			'url' => $this->getNewsletterUrl(),
 			'label' => $this->msg( 'newsletter-notification-link-text-new-publisher' )->text()
 		);
 	}
