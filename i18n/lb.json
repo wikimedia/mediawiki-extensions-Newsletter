@@ -69,5 +69,8 @@
 	"newsletter-list-go-button": "Lass",
 	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|huet}} d'Newsletter $4 geläscht",
-	"log-action-filter-newsletter": "Typ vun Aktioun:"
+	"log-action-filter-newsletter": "Typ vun Aktioun:",
+	"newsletter-diff-descheader": "Ännerungen an der Beschreiwung:",
+	"newsletter-diff-mainpageheader": "Ännerungen op der Haaptsäit:",
+	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:"
 }
