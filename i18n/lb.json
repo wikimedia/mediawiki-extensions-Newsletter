@@ -70,6 +70,7 @@
 	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|huet}} d'Newsletter $4 geläscht",
 	"log-action-filter-newsletter": "Typ vun Aktioun:",
+	"newsletter-restore-failure-title": "Newsletter konnt net restauréiert ginn.",
 	"newsletter-diff-descheader": "Ännerungen an der Beschreiwung:",
 	"newsletter-diff-mainpageheader": "Ännerungen op der Haaptsäit:",
 	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:"

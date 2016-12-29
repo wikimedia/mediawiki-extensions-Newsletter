@@ -101,6 +101,7 @@
 	"echo-category-title-newsletter": "Newsletter",
 	"echo-pref-tooltip-newsletter": "Benachrichtige mich, wenn einer meiner abonnierten Newsletter eine neue Ausgabe ankündigt.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|hat}} eine [[$2|neue Ausgabe]] des Newsletters „$1“ angekündigt.",
+	"newsletter-notification-subscribed": "Du hast durch einen Administrator den Newsletter „$1“ abonniert.",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|hat}} eine neue Ausgabe von $1 angekündigt.",
 	"newsletter-notification-link-text-new-issue": "Neue Ausgabe ansehen",
 	"newsletter-notification-link-text-view-newsletter": "Newsletter ansehen",
@@ -152,6 +153,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "Löschung von Newslettern",
 	"log-action-filter-newsletter-issue-added": "Ankündigungen von neuen Ausgaben",
 	"newsletter-restore-failure": "Der Newsletter „$1“ konnte nicht wiederhergestellt werden. Bitte erneut versuchen.",
+	"newsletter-restore-failure-title": "Der Newsletter konnte nicht wiederhergestellt werden.",
 	"newsletter-diff-descheader": "Änderungen an der Beschreibung:",
 	"newsletter-diff-mainpageheader": "Änderungen an der Hauptseite:",
 	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:"

@@ -6,13 +6,14 @@
 			"Metastasis",
 			"Гизатуллина",
 			"Kareyac",
-			"Okras"
+			"Okras",
+			"Mailman"
 		]
 	},
 	"newsletter-desc": "Описание",
 	"newsletter-title": "Баш биттә бәйләнештә булыу өсөн, вики-бит",
 	"newsletter-create-editsummary": "Создать новый Информационный бюллетень",
-	"newsletter-subtitlelinks-subscribers": "просмотреть подписчиков",
+	"newsletter-subtitlelinks-subscribers": "просмотр подписчиков",
 	"newsletter-subscribe-button": "Подписаться",
 	"newsletter-subscribers-button": "Просмотреть подписчиков",
 	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",

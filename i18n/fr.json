@@ -162,6 +162,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "Suppression du bulletin d’information",
 	"log-action-filter-newsletter-issue-added": "Annonces d'un nouveau numéro",
 	"newsletter-restore-failure": "Le bulletin d’information « $1 » n’a pas pu être rétabli. Veuillez réessayer.",
+	"newsletter-restore-failure-title": "Le bulletin d’information n’a pas pu être récupéré.",
 	"newsletter-diff-descheader": "Changements dans la description :",
 	"newsletter-diff-mainpageheader": "Changements dans la page principale :",
 	"newsletter-diff-publishersheader": "Changements dans les éditeurs :"

@@ -153,6 +153,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "新闻报删除",
 	"log-action-filter-newsletter-issue-added": "新一期发行公告",
 	"newsletter-restore-failure": "“$1”新闻报不能恢复。请重试。",
+	"newsletter-restore-failure-title": "新闻报不能恢复。",
 	"newsletter-diff-descheader": "描述中的更改：",
 	"newsletter-diff-mainpageheader": "首页中的更改：",
 	"newsletter-diff-publishersheader": "发布者的更改："

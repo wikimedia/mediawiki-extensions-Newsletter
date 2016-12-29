@@ -157,6 +157,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "Вилучення інформаційного листа",
 	"log-action-filter-newsletter-issue-added": "Оголошення про новий випуск інформаційного листа",
 	"newsletter-restore-failure": "Розсилку новин «$1» не вдалося відновити. Будь ласка, спробуйте ще раз.",
+	"newsletter-restore-failure-title": "Розсилку новин неможливо відновити.",
 	"newsletter-diff-descheader": "Зміни в описі:",
 	"newsletter-diff-mainpageheader": "Зміни на Головній сторінці:",
 	"newsletter-diff-publishersheader": "Зміни у видавцях:"
