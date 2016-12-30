@@ -27,7 +27,9 @@ class NewsletterStore {
 		$this->db = $db;
 		$this->logger = $logger;
 	}
-
+	/**
+	 * @return NewsletterStore instance of NewsletterStore
+	 */
 	public static function getDefaultInstance(){
 		if ( !self::$instance ) {
 			self::$instance = new self(
@@ -198,7 +200,7 @@ class NewsletterStore {
 	/**
 	 * @param int $id
 	 *
-	 * @return string[]
+	 * @return int[]
 	 */
 	public function getSubscribersFromID( $id ) {
 		return $this->db->getSubscribersFromID( $id );
