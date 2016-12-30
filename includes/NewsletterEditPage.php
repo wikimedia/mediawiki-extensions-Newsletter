@@ -2,6 +2,8 @@
 
 class NewsletterEditPage {
 
+	protected $createNew;
+
 	protected $context;
 
 	protected $readOnly = false;
