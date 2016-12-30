@@ -78,6 +78,7 @@
 	"newsletter-manage-summary": "Edit summary for updating fields in Special:Newsletter's manage form",
 	"newsletter-delete": "Header message shown on Special:Newsletter/<id>/delete.\n\nSee also:\n* {{msg-mw|newsletter-view}}\n*{{msg-mw|newsletter-subscribe}}",
 	"newsletter-delete-failure": "Error message shown on Special:Newsletter/<id>/delete when the newsletter deletion fails.\n\nParameters:\n* $1 - Newsletter name",
+	"newsletter-delete-log": "Default message passed to the logentry as a comment when a newsletter is deleted in NewsletterDeletionUpdate\n\nParameters:\n* $1 - Newsletter name",
 	"newsletter-subscribe": "Header message shown on Special:Newsletter/<id>/subscribe.\n\nSee also:\n* {{msg-mw|newsletter-delete}}\n*{{msg-mw|newsletter-view}}",
 	"newsletter-subscribe-text": "Introductory message shown on Special:Newsletter/<id>/subscribe if the current user is not subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
 	"newsletter-do-subscribe": "Label for button shown on Special:Newsletter/<id>/subscribe. Adds the user as a subscriber to the newsletter when clicked on.",

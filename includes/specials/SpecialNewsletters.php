@@ -51,7 +51,7 @@ class SpecialNewsletters extends SpecialPage {
 				$this->getContext()
 			);
 			$filterForm->setId( 'mw-newsletter-filter-form' );
-			$filterForm->setSubmitId( 'mw-newsletter-filter-submit' );
+			$filterForm->setSubmitID( 'mw-newsletter-filter-submit' );
 			$filterForm->setMethod( 'get' );
 			// Note that submit button is hidden for users with JS enabled in
 			// as changing the dropdown menu's option updates the page for them

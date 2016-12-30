@@ -20,7 +20,7 @@ class NewsletterTablePager extends TablePager {
 	 */
 	private $option;
 
-	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
+	public function __construct( IContextSource $context = null, Database $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
 		}

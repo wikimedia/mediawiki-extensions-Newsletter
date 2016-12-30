@@ -71,6 +71,7 @@
 	"newsletter-manage-summary": "Summary of the change:",
 	"newsletter-delete": "Delete newsletter",
 	"newsletter-delete-failure": "\"$1\" newsletter could not be deleted. Please try again.",
+	"newsletter-delete-log": "Newsletter \"$1\" has been deleted.",
 	"newsletter-subscribe": "Newsletter subscription management",
 	"newsletter-subscribe-text": "This interface allows you to subscribe to \"$1\" newsletter. If you subscribe, you will receive notifications when new issues of this newsletter are announced.",
 	"newsletter-do-subscribe": "Subscribe to this newsletter",

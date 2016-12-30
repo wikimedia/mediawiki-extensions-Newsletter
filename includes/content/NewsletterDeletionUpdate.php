@@ -14,8 +14,10 @@ class NewsletterDeletionUpdate extends DataUpdate {
 	public function __construct( $newsletterName ) {
 		$this->newsletter = Newsletter::newFromName( $newsletterName );
 	}
+
 	public function doUpdate() {
+		$reason = wfMessage( 'newsletter-delete-log', $this->newsletter->getName() )->text();
 		$store = NewsletterStore::getDefaultInstance();
-		$store->deleteNewsletter( $this->newsletter );
+		$store->deleteNewsletter( $this->newsletter, $reason );
 	}
 }
