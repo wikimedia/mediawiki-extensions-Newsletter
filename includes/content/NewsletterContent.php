@@ -388,18 +388,6 @@ class NewsletterContent extends JsonContent {
 	}
 
 	/**
-	 * @param WikiPage $page
-	 * @param ParserOutput|null $parserOutput
-	 * @return LinksDeletionUpdate[]
-	 */
-	public function getDeletionUpdates( WikiPage $page, ParserOutput $parserOutput = null ) {
-		return array_merge(
-			parent::getDeletionUpdates( $page, $parserOutput ),
-			array( new NewsletterDeletionUpdate( $page->getTitle()->getText() ) )
-		);
-	}
-
-	/**
 	 * @return string
 	 */
 	public function getDescription() {
