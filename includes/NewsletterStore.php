@@ -139,11 +139,7 @@ class NewsletterStore {
 	 * @return bool success of the action
 	 */
 	public function deleteNewsletter( Newsletter $newsletter, $reason ) {
-		$success = $this->db->deleteNewsletter( $newsletter );
-		if ( $success ) {
-			$this->logger->logNewsletterDeleted( $newsletter, $reason );
-		}
-		return $success;
+		return $this->db->deleteNewsletter( $newsletter );
 	}
 
 	/**
@@ -154,11 +150,7 @@ class NewsletterStore {
 	 * @return bool success of the action
 	 */
 	public function restoreNewsletter( $newsletterName ) {
-		$success = $this->db->restoreNewsletter( $newsletterName );
-		if ( $success ) {
-			$this->logger->logNewsletterRestored( $this->db->getNewsletterFromName( $newsletterName ) );
-		}
-		return $success;
+		return $this->db->restoreNewsletter( $newsletterName );
 	}
 
 	/**
