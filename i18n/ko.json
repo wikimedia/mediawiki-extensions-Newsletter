@@ -37,11 +37,14 @@
 	"newsletter-announce-nonexistent-page": "주어진 이슈 문서가 존재하지 않습니다. 존재하는 문서를 입력해주세요.",
 	"newsletter-manage-summary": "변경 요약:",
 	"newsletter-delete": "뉴스레터 삭제",
+	"newsletter-delete-log": "\"$1\" 뉴스레터가 삭제되었습니다.",
 	"newsletter-subscribe": "뉴스레터 구독 관리",
 	"newsletter-subscribe-button-label": "예",
 	"newsletter-unsubscribe-button-label": "아니오",
 	"newsletter-subscribers": "뉴스레터 구독자",
-	"newsletter-subscribers-nopermission": "이 뉴스레터의 구독자를 볼 권한이 없습니다",
+	"newsletter-subscribers-nopermission": "이 뉴스레터의 구독자를 편집할 권한이 없습니다",
+	"newsletter-edit-subscribers-success": "뉴스레터의 구독자가 업데이트되었습니다.",
+	"newsletter-subscribers-invalid": "\"$1\"은(는) 유효한 사용자가 아닙니다. 사용자 이름이 존재하는지 확인한 다음 다시 시도하십시오.",
 	"newsletter-notification-link-text-new-issue": "새 제호 보기",
 	"newsletter-notification-link-text-view-newsletter": "뉴스레터 보이기",
 	"newsletter-header-name": "이름",
@@ -49,7 +52,8 @@
 	"newsletter-header-subscriber_count": "구독자",
 	"right-newsletter-create": "뉴스레터 만들기",
 	"action-newsletter-create": "뉴스레터 만들기",
-	"right-newsletter-manage": "뉴스레터의 게시자를 추가, 제거하고 구독자를 확인합니다",
+	"right-newsletter-manage": "뉴스레터의 게시자나 구독자를 추가하거나 제거합니다",
 	"newsletter-list-option-all": "모든 뉴스레터",
-	"newsletter-list-option-unsubscribed": "구독하지 않은 뉴스레터"
+	"newsletter-list-option-unsubscribed": "구독하지 않은 뉴스레터",
+	"newsletter-restore-failure-title": "뉴스레터를 복원할 수 없습니다."
 }

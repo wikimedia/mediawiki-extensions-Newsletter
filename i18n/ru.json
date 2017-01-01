@@ -19,6 +19,7 @@
 	"newsletter-subscribe-error": "При попытке подписаться на новостную рассылку возникла ошибка.",
 	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка.",
 	"newsletter-subscribers-nopermission": "Вы не имеете разрешения для редактирования подписчиков этой рассылки",
+	"newsletter-notification-subscribed": "Вы были подписаны на бюллетень \"$1\" администратором.",
 	"newsletter-header-name": "Атама",
 	"logentry-newsletter-newsletter-restored": "$1 {{gender: с$2|восстановил}} бюллетень $4",
 	"newsletter-restore-failure": "\"$1\" бюллетень не мог быть восстановлен. Пожалуйста, попробуйте снова."

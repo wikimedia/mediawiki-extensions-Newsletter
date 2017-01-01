@@ -111,6 +111,8 @@
 	"echo-category-title-newsletter": "Infolettres",
 	"echo-pref-tooltip-newsletter": "M’avertir quand l’une des infolettres auxquelles je suis abonné{{GENDER:||e}} annonce un nouveau numéro.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|a annoncé}} un [[$2|nouveau numéro]] du bulletin d’information « $1 ».",
+	"newsletter-notification-subscribed": "Vous avez été abonné au bulletin d’informations « $1 » par un administrateur.",
+	"newsletter-notification-unsubscribed": "Vous avez été désabonné du bulletin d’informations « $1 » par un administrateur.",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|a annoncé}} un nouveau numéro de $1.",
 	"newsletter-notification-link-text-new-issue": "Voir le nouveau numéro",
 	"newsletter-notification-link-text-view-newsletter": "Voir le bulletin d'information",

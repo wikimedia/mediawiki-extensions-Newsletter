@@ -106,6 +106,8 @@
 	"echo-category-title-newsletter": "Розсилки новин",
 	"echo-pref-tooltip-newsletter": "Сповістити мене, якщо будуть оголошені нові випуски будь-якої з розсилок новин, на які я підписаний.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|оголосив|оголосила}} [[$2|новий випуск]] розсилки «$1».",
+	"newsletter-notification-subscribed": "Адміністратор підписав Вас на розсилку новин «$1».",
+	"newsletter-notification-unsubscribed": "Адміністратор відписав Вас від розсилки новин «$1».",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|оголосив|оголосила}} про новий випуск розсилки $1.",
 	"newsletter-notification-link-text-new-issue": "Переглянути новий випуск",
 	"newsletter-notification-link-text-view-newsletter": "Переглянути розсилку новин",

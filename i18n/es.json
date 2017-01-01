@@ -6,7 +6,8 @@
 			"Yllelder",
 			"Idontknow",
 			"Fitoschido",
-			"Dgstranz"
+			"Dgstranz",
+			"Fortega"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -105,6 +106,8 @@
 	"echo-category-title-newsletter": "Boletines",
 	"echo-pref-tooltip-newsletter": "Notificarme cuando cualquiera de los boletines a los que me he suscrito anuncia una edición nueva.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|ha anunciado}} una [[$2|edición nueva]] del boletín \"$1\".",
+	"newsletter-notification-subscribed": "Un administrador te suscribió al boletín \"$1\".",
+	"newsletter-notification-unsubscribed": "Un administrador te desuscribió del boletín \"$1\".",
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ha anunciado}} una edición nueva de $1.",
 	"newsletter-notification-link-text-new-issue": "Ver edición nueva",
 	"newsletter-notification-link-text-view-newsletter": "Ver boletín",
@@ -156,6 +159,7 @@
 	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín",
 	"log-action-filter-newsletter-issue-added": "Anuncios de ediciones nuevas",
 	"newsletter-restore-failure": "El boletín \"$1\" no se pudo restaurar. Inténtalo de nuevo.",
+	"newsletter-restore-failure-title": "El boletín no ha podido recuperarse.",
 	"newsletter-diff-descheader": "Cambios en la descripción:",
 	"newsletter-diff-mainpageheader": "Cambios en la página principal:",
 	"newsletter-diff-publishersheader": "Cambios en los editores:"

@@ -14,7 +14,7 @@
 			"Divadsn"
 		]
 	},
-	"newsletter-extension-desc": "Description of the extension",
+	"newsletter-extension-desc": "{{desc|name=Newsletter|url=https://www.mediawiki.org/wiki/Extension:Newsletter}}",
 	"newsletter-name": "Label of the field which takes the name of newsletter as input in [[Special:CreateNewsletter]]",
 	"newsletter-desc": "Label of the field which takes a short description of newsletter as input in [[Special:CreateNewsletter]]\n{{Identical|Description}}",
 	"newsletter-title": "Label of the field which takes the title of Main Page of newsletter as input in [[Special:CreateNewsletter]]",
