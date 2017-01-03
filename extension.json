@@ -155,6 +155,9 @@
 		],
 		"TitleMove": [
 			"NewsletterHooks::onTitleMove"
+		],
+		"ContentModelCanBeUsedOn": [
+			"NewsletterHooks::onContentModelCanBeUsedOn"
 		]
 	},
 	"namespaces": [

@@ -271,21 +271,37 @@ class NewsletterHooks {
 		return true;
 	}
 
-		/**
-		 * @param Title $title
-		 * @param Title $newtitle
-		 * @param User $user
-		 * @return bool
-		 */
-		public static function onTitleMove( Title $title, Title $newtitle, User $user ) {
-			if ( $newtitle->inNamespace( NS_NEWSLETTER ) ) {
-				$newsletter = Newsletter::newFromName( $title->getText() );
-				if ( $newsletter ) {
-					NewsletterStore::getDefaultInstance()->updateName( $newsletter->getId(), $newtitle->getText() );
-				} else {
-					throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
-				}
+	/**
+	 * @param Title $title
+	 * @param Title $newtitle
+	 * @param User $user
+	 * @return bool
+	 * @throws MWException
+	 */
+	public static function onTitleMove( Title $title, Title $newtitle, User $user ) {
+		if ( $newtitle->inNamespace( NS_NEWSLETTER ) ) {
+			$newsletter = Newsletter::newFromName( $title->getText() );
+			if ( $newsletter ) {
+				NewsletterStore::getDefaultInstance()->updateName( $newsletter->getId(), $newtitle->getText() );
+			} else {
+				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
 			}
-			return true;
 		}
+		return true;
+	}
+
+	/**
+	 * @param string $contentModel ID of the content model in question
+	 * @param Title $title the Title in question.
+	 * @param $ok Output parameter, whether it is OK to use $contentModel on $title.
+	 * @return bool
+	 */
+	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ){
+		if ( $title->inNamespace( NS_NEWSLETTER ) && $contentModel != 'NewsletterContent' ) {
+			$ok = false;
+		} elseif ( !$title->inNamespace( NS_NEWSLETTER ) && $contentModel == 'NewsletterContent' ) {
+			$ok = false;
+		}
+		return true;
+	}
 }
