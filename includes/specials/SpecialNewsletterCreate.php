@@ -116,9 +116,11 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
+		$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
+
 		$store = NewsletterStore::getDefaultInstance();
 		$this->newsletter = new Newsletter( 0,
-			$data['Name'],
+			$title->getText(),
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
 			$wgContLang->truncate( $data['Description'], 600000 ),
@@ -127,7 +129,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$newsletterCreated = $store->addNewsletter( $this->newsletter );
 
 		if ( $newsletterCreated ) {
-			$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
 			$editSummaryMsg = $this->msg( 'newsletter-create-editsummary' );
 			$result = NewsletterContentHandler::edit(
 				$title,
