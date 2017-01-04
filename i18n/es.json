@@ -74,6 +74,7 @@
 	"newsletter-manage-summary": "Resumen del cambio:",
 	"newsletter-delete": "Eliminar boletín",
 	"newsletter-delete-failure": "El boletín \"$1\" no se pudo eliminar. Inténtalo de nuevo",
+	"newsletter-delete-log": "Se ha eliminado el boletín «$1».",
 	"newsletter-subscribe": "Gestión de suscripciones a boletines",
 	"newsletter-subscribe-text": "Esta interfaz te permite suscribirte al boletín \"$1\". Si te suscribes, recibirás notificaciones cuando se anuncien nuevas ediciones de este boletín.",
 	"newsletter-do-subscribe": "Suscribirse a este boletín",

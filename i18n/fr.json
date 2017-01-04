@@ -79,6 +79,7 @@
 	"newsletter-manage-summary": "Résumé des modifications :",
 	"newsletter-delete": "Supprimer l’infolettre",
 	"newsletter-delete-failure": "L'infolette \"$1\" n'a pas pu être supprimée. Merci d'essayer à nouveau.",
+	"newsletter-delete-log": "Le bulletin d’information « $1 » a été supprimé.",
 	"newsletter-subscribe": "Gestion de l’abonnement à l’infolettre",
 	"newsletter-subscribe-text": "Cette page vous permet de vous abonner à l’infolettre « $1 ». Si vous vous abonnez, les nouveaux numéros vous seront annoncés par une notification.",
 	"newsletter-do-subscribe": "S’abonner à cette infolettre",

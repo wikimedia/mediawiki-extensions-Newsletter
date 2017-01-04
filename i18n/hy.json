@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Աշոտ1997"
+			"Աշոտ1997",
+			"Kareyac"
 		]
 	},
-	"newsletter-view-mainpage": "Գլխավոր էջ։"
+	"newsletter-view-mainpage": "Գլխավոր էջ։",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|վերականգնեց}} տեղեկագիր $4"
 }

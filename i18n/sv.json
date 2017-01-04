@@ -38,6 +38,7 @@
 	"newsletter-manage-description": "Beskrivning:",
 	"newsletter-managenewsletter-button": "Skicka",
 	"newsletter-delete": "Radera nyhetsbrev",
+	"newsletter-delete-log": "Nyhetsbrevet \"$1\" har raderats.",
 	"newsletter-do-subscribe": "Prenumerera på detta nyhetsbrev",
 	"newsletter-subscribe-ip-notallowed": "Logga in för att prenumerera på ett nyhetsbrev.",
 	"newsletter-subscribe-button-label": "Ja",
