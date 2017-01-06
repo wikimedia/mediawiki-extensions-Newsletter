@@ -16,10 +16,8 @@
 		"newsletter-manage"
 	],
 	"GroupPermissions": {
-		"autoconfirmed": {
-			"newsletter-create": true
-		},
 		"sysop": {
+			"newsletter-create": true,
 			"newsletter-delete": true,
 			"newsletter-manage": true
 		}
