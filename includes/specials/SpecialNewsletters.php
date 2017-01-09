@@ -40,6 +40,7 @@ class SpecialNewsletters extends SpecialPage {
 		}
 
 		$formHtml = '';
+		$introMessage = 'newsletter-list-intro-not-logged-in';
 		if ( $user->isLoggedIn() ) {
 			// Filter form and resource modules needed for logged-in users only
 			$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
@@ -59,14 +60,18 @@ class SpecialNewsletters extends SpecialPage {
 			$filterForm->setSubmitTextMsg( 'newsletter-list-go-button' );
 			$filterForm->prepareForm();
 			$formHtml = $filterForm->getHTML( false );
+
+			$introMessage = 'newsletter-list-intro';
 		}
 
 		$pager = new NewsletterTablePager();
 		$pager->setUserOption( $this->option );
 		if ( $pager->getNumRows() ) {
+			$out->addWikiMsg( $introMessage );
 			$out->addHTML( $formHtml );
 			$out->addParserOutput( $pager->getFullOutput() );
 		} elseif ( $filtered ) {
+			$out->addWikiMsg( $introMessage );
 			$out->addHTML( $formHtml );
 			$out->addWikiMsg( 'newsletter-list-search-none-found' );
 		} else {
