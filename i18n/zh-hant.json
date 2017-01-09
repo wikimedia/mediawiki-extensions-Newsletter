@@ -14,7 +14,7 @@
 	"newsletter-title": "首頁標題",
 	"newsletter-exist-error": "使用相同名稱的報紙已存在，請使用其他名稱",
 	"newslettercreate": "建立電子報",
-	"newsletter-create-confirmation": "已建立一份[[Newsletter:$|新的電子報]]。",
+	"newsletter-create-confirmation": "已建立一份新的電子報：[[Newsletter:$1|$1]]。",
 	"newsletters": "報紙",
 	"newsletter-view-mainpage": "首頁：",
 	"newsletter-view-description": "描述：",

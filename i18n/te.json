@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ravichandra"
+			"Ravichandra",
+			"Veeven"
 		]
 	},
-	"newsletter-manage-header-permissions": "వాడుకరి అనుమతులు",
-	"newsletter-delete-confirm-cancel": "రద్దుచేయి",
-	"newsletter-delete-confirm-delete": "తొలగించు"
+	"newsletter-diff-descheader": "వివరణలో మార్పులు:",
+	"newsletter-diff-mainpageheader": "మొదటి పేజీలో మార్పులు:"
 }
