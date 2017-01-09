@@ -74,11 +74,17 @@
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'subscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) - 1 );
-						mw.notify( mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name ) );
+						mw.notify(
+							mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name ),
+							{ autoHide: false }
+						);
 					} )
 					.fail( function () {
 						updateLinkAttribs( $link, 'unsubscribe' );
-						mw.notify( mw.msg( 'newsletter-unsubscribe-error' ), { type: 'error' } );
+						mw.notify(
+							mw.msg( 'newsletter-unsubscribe-error' ),
+							{ type: 'error', autoHide: false }
+						);
 					} );
 			} else {
 				// Not subscribed currently.
@@ -87,11 +93,17 @@
 					.done( function ( data ) {
 						updateLinkAttribs( $link, 'unsubscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) + 1 );
-						mw.notify( mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name ) );
+						mw.notify(
+							mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name ),
+							{ autoHide: false }
+						);
 					} )
 					.fail( function () {
 						updateLinkAttribs( $link, 'subscribe' );
-						mw.notify( mw.msg( 'newsletter-subscribe-error' ), { type: 'error' } );
+						mw.notify(
+							mw.msg( 'newsletter-subscribe-error' ),
+							{ type: 'error', autoHide: false }
+						);
 					} );
 
 			}
