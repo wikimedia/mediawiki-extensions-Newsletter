@@ -33,7 +33,6 @@
 	"newsletter-subscribe-loginrequired": "Por favor, inicie a sesión para subscribirse ós [[Special:Newsletters|boletíns]].",
 	"newsletter-notfound": "Boletín non atopado",
 	"newsletter-not-found-id": "Non existe un boletín con este identificador. Hai dispoñible unha [[Special:Newsletters|lista de boletíns existentes]].",
-	"newsletter-view": "Ver detalles do boletín",
 	"newsletter-view-mainpage": "Páxina principal:",
 	"newsletter-view-description": "Descrición:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
@@ -143,5 +142,7 @@
 	"log-action-filter-newsletter-publisher-removed": "Eliminación de editor",
 	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
 	"log-action-filter-newsletter-newsletter-removed": "Borrado de boletín",
-	"log-action-filter-newsletter-issue-added": "Anuncios dun novo número"
+	"log-action-filter-newsletter-issue-added": "Anuncios dun novo número",
+	"newsletter-diff-descheader": "Cambios na descrición:",
+	"newsletter-diff-mainpageheader": "Cambios na Páxina Principal:"
 }
