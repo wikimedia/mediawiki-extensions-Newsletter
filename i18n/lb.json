@@ -40,6 +40,7 @@
 	"newsletter-subscribe-fail": "D'Newsletter \"$1\" konnt net abonnéiert ginn, well Dir se schonn abonnéiert hutt.",
 	"newsletter-subscribe-error": "Feeler  beim Abonnéiere vun der Newsletter.",
 	"newsletter-subscribe-ip-notallowed": "Loggt Iech w.e.g. a fir eng Newsletter z'abonnéieren.",
+	"newsletter-unsubscribe-success": "Dir sidd net méi op \"$1\" abonnéiert.",
 	"newsletter-unsubscribe-error": "Feeler beim Ofbestelle vun der Newsletter.",
 	"newsletter-subscribe-button-label": "Jo",
 	"newsletter-unsubscribe-button-label": "Neen",
