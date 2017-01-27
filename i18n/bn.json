@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Aftabuzzaman",
-			"Bodhisattwa"
+			"Bodhisattwa",
+			"Elias Ahmmad"
 		]
 	},
 	"newsletter-extension-desc": "বিবরণ",
 	"newsletter-desc": "বিবরণ",
 	"newsletter-create-confirmation": "একটি নতুন বার্তাপত্র: [[Newsletter:$1|$1]] তৈরি করা হয়েছে।",
+	"newsletter-delete-log": "বার্তাপত্র \"$1\" অপসারণ করা হয়েছে।",
 	"newsletter-subscribe-button-label": "হ্যাঁ",
 	"newsletter-unsubscribe-button-label": "না",
 	"newsletter-header-description": "বিবরণ"
