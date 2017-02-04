@@ -163,7 +163,10 @@
 			"id": 5500,
 			"constant": "NS_NEWSLETTER",
 			"name": "Newsletter",
-			"protection": "newsletter-create",
+			"protection": [
+				"newsletter-manage",
+				"newsletter-create"
+			],
 			"defaultcontentmodel": "NewsletterContent"
 		},
 		{
