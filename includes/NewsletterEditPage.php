@@ -100,10 +100,10 @@ class NewsletterEditPage {
 			'required' => true,
 		);
 		$fields['Publishers'] = array(
-			'type' => 'textarea',
+			'type' => 'usersmultiselect',
 			'label-message' => 'newsletter-manage-publishers',
-			'rows' => 10,
-			'default' => implode( "\n", $publishersNames ),
+			'default' => $publishersNames,
+			'exists' => true,
 		);
 		$fields['Summary'] = array(
 			'type' => 'text',
@@ -326,25 +326,14 @@ class NewsletterEditPage {
 			$modified = true;
 		}
 
-		$publisherNames = explode( "\n", $data['Publishers'] );
-		// Strip whitespace, then remove blank lines and duplicates
-		$publisherNames = array_unique( array_filter( array_map( 'trim', $publisherNames ) ) );
-
+		$publisherNames = $data['Publishers'];
 		// Ask for confirmation before removing all the publishers
 		if ( !$confirmed && count( $publisherNames ) === 0 ) {
 			return Status::newFatal( 'newsletter-manage-no-publishers' );
 		}
 
 		/** @var User[] $newPublishers */
-		$newPublishers = array();
-		foreach ( $publisherNames as $publisherName ) {
-			$user = User::newFromName( $publisherName );
-			if ( !$user || !$user->getId() ) {
-				// Input contains an invalid username
-				return Status::newFatal( 'newsletter-manage-invalid-publisher', $publisherName );
-			}
-			$newPublishers[] = $user;
-		}
+		$newPublishers = array_map( 'User::newFromName', $publisherNames );
 
 		$oldPublishersIds = $this->newsletter->getPublishers();
 		$newPublishersIds = self::getIdsFromUsers( $newPublishers );

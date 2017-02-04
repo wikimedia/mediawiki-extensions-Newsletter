@@ -71,7 +71,6 @@
 	"newsletter-manage-text": "Introductory message shown on Special:Newsletter's manage form. $1 - Name of the newsletter",
 	"newsletter-managenewsletter-button": "Label of submit button on Special:Newsletter's manage form\n{{Identical|Submit}}",
 	"newsletter-manage-no-publishers": "Confirmation message shown on Special:Newsletter's manage form if the user attempted to remove all the publishers.",
-	"newsletter-manage-invalid-publisher": "Error message shown on Special:Newsletter's manage form if an invalid user was entered in the input. $1 - Name of invalid user",
 	"newsletter-manage-remove-self-publisher": "Confirmation message shown on Special:Newsletter's manage form if the user removes themselves from the publishers' list.",
 	"newsletter-manage-newsletter-success": "Success message shown on Special:Newsletter's manage form when the publishers have been modfied.",
 	"newsletter-manage-newsletter-nochanges": "Message shown on Special:Newsletter if no changes were made to the existing publishers' list.",
