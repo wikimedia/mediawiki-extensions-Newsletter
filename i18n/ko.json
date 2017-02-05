@@ -35,6 +35,7 @@
 	"newsletter-announce-issuetitle": "이슈의 문서 제목",
 	"newsletter-announce-invalid-page": "이슈 문서에 대한 올바른 제목을 입력하세요.",
 	"newsletter-announce-nonexistent-page": "주어진 이슈 문서가 존재하지 않습니다. 존재하는 문서를 입력해주세요.",
+	"newsletter-manage-publishers": "게시자:",
 	"newsletter-manage-summary": "변경 요약:",
 	"newsletter-delete": "뉴스레터 삭제",
 	"newsletter-delete-log": "\"$1\" 뉴스레터가 삭제되었습니다.",
