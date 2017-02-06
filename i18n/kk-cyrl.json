@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Arystanbek"
+			"Arystanbek",
+			"Macofe"
 		]
 	},
 	"newsletter-name": "Жаңалық хаттар атауы",
@@ -25,19 +26,15 @@
 	"newsletter-subtitlelinks-subscribe": "жазылу",
 	"newsletter-subtitlelinks-announce": "жариялау",
 	"newsletter-subtitlelinks-manage": "басқару",
-	"newsletter-subtitlelinks-delete": "жою",
 	"newsletters": "Жаңалықхаттар",
 	"newsletter-subscribe-loginrequired": "[[Special:Newsletters|Жаңалықхатқа]] жазылу үшін кіріңіз.",
 	"newsletter-notfound": "Жаңалықхат табылмады",
 	"newsletter-not-found-id": "Бұл ID-мен жаңалықхат табылмады. [[Special:Newsletters|Бар жаңалықхаттар тізімі]].",
-	"newsletter-view": "Жаңалықхат егжей-тегжейін қарау",
-	"newsletter-view-name": "Жаңалықхат атауы:",
 	"newsletter-view-mainpage": "Басты бет:",
 	"newsletter-view-description": "Сипаттамасы:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Жариялаушы:|Жариялаушылар:}}",
 	"newsletter-view-subscriber-count": "Жазылушылар саны:",
 	"newsletter-view-no-publishers": "Жариялаушылар жоқ.",
-	"newsletter-delete-button": "Жою",
 	"newsletter-manage-button": "Басқару",
 	"newsletter-unsubscribe-button": "Жазылудан бас тарту",
 	"newsletter-subscribe-button": "Жазылу",
@@ -50,22 +47,17 @@
 	"newsletter-announce-nonexistent-page": "Көрсетілген шығарылым беті жоқ. Бұрыннан бар бетті енгізіңіз.",
 	"newsletter-announce-failure": "Жаңа шығарылым жарияланбады. Қайта байқап көріңіз.",
 	"newsletter-manage": "\"$1\" жаңалықхатын басқару",
-	"newsletter-manage-publishers": "Жариялаушылар (жаңа жол бойынша бөлінеді):",
+	"newsletter-manage-publishers": "Жариялаушылар:",
 	"newsletter-manage-name": "Жаңалықхат атауы:",
 	"newsletter-manage-title": "Басты бет атауы",
 	"newsletter-manage-description": "Сипаттамасы:",
 	"newsletter-manage-text": "Сіз төмендегі тізімді өзгерту арқылы \"$1\" үшін жариялаушыларды қоса және ала аласыз.",
 	"newsletter-managenewsletter-button": "Жөнелту",
 	"newsletter-manage-no-publishers": "Сіз шынымен бұл жаңалықхаттан барлық жариялаушыларды аластайсыз ба?",
-	"newsletter-manage-invalid-publisher": "\"$1\" дұрыс емес қатысушы. Бұл еңгізген дерегіңіз жарамды екеніне сенімді болыңыз және қайта байқап көріңіз.",
 	"newsletter-manage-remove-self-publisher": "Жариялаушылардан өзіңізды аластағыңыз келгеніне сенімдісіз бе?",
 	"newsletter-manage-newsletter-success": "Жаңалықхат өзгертілді.",
 	"newsletter-manage-newsletter-nochanges": "Бұрыннан бар жаңалықхатта жасалған өзгерістер жоқ.",
 	"newsletter-delete": "Жаңалықхаты өшіру",
-	"newsletter-delete-text": "Бұл интерфейс \"$1\" жаңалықхатын жоюға қолданылады. Бұны істеу ниетіңізды растаңыз. <strong>Бұл әрекет қайтарылмайды.</strong>",
-	"newsletter-delete-reason": "Себебі",
-	"newsletter-deletenewsletter-button": "Бұл жаңалықхаты жою",
-	"newsletter-delete-success": "#$1 жаңалықхаты жойылды.",
 	"newsletter-delete-failure": "\"$1\" жаңалықхаты жойылмады. Қайта байқап көріңіз.",
 	"newsletter-subscribe": "Жаңалықхат жазылу басқаруы",
 	"newsletter-subscribe-text": "Бұл интерфейс сізге \"$1\" жаңалықхатынна жазылуға мүмкіндік береді. Егер жазылсаңыз, бұл жаңалықхатында жаңа шығарылымдар жарияланғанда ескертпелер аласыз.",
@@ -99,6 +91,5 @@
 	"newsletter-email-batch-body": "$2 $1 дегенде жаңа шығарылым {{GENDER:$3|жариялады}}.",
 	"newsletter-header-name": "Аты",
 	"newsletter-header-description": "Сипаттамасы",
-	"newsletter-header-subscriber_count": "Жазылушылар",
-	"newsletter-delete-confirmation": "Сіз шыныменде бұл жаңалықхатты жоюды қалайсыз ба?"
+	"newsletter-header-subscriber_count": "Жазылушылар"
 }

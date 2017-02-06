@@ -4,7 +4,8 @@
 			"Eraab",
 			"Amire80",
 			"Guycn2",
-			"תומר ט"
+			"תומר ט",
+			"Macofe"
 		]
 	},
 	"newsletter-extension-desc": "מאפשרת למשתמשים לפרסם ידיעונים ולעשות להם מינוי",
@@ -57,14 +58,13 @@
 	"newsletter-announce-nonexistent-page": "דף הגיליון שסופר אינו קיים. נא להזין דף קיים.",
 	"newsletter-announce-failure": "לא היה אפשר להודיע על גיליון חדש. נא לנסות שוב.",
 	"newsletter-manage": "ניהול הידיעון \"$1\".",
-	"newsletter-manage-publishers": "מפרסמים (להפריד בירידת שורה):",
+	"newsletter-manage-publishers": "מפרסמים:",
 	"newsletter-manage-name": "שם הידיעון:",
 	"newsletter-manage-title": "כותרת הדף הראשי",
 	"newsletter-manage-description": "תיאור:",
 	"newsletter-manage-text": "אפשר לספר או להסיר מפרסמים של \"$1\" באמצעות עדכון הרשימה להלן.",
 	"newsletter-managenewsletter-button": "שליחה",
 	"newsletter-manage-no-publishers": "האם ברצונך באמת להסיר את כל המפרסמים מהידיעון הזה?",
-	"newsletter-manage-invalid-publisher": "\"$1\" הוא לא משתמש תקין. נא לוודא שהזנת קלט נכון ולנסות שוב.",
 	"newsletter-manage-remove-self-publisher": "האם ברצונך באמת להסיר את עצמך מהמפרסמים?",
 	"newsletter-manage-newsletter-success": "הידיעון שוּנה.",
 	"newsletter-manage-newsletter-nochanges": "לא נעשו שינויים לידיעון הקיים.",
