@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Mirzali"
+			"Mirzali",
+			"Gırd"
 		]
 	},
 	"newsletter-subscribe-button-label": "Eya",
 	"newsletter-unsubscribe-button-label": "Nê",
-	"newsletter-delete-confirm-cancel": "Bıtexelne"
+	"log-action-filter-newsletter": "Tipê kerdışi:"
 }
