@@ -35,6 +35,7 @@
 	"newsletter-subscribe-button": "Prenumerera",
 	"newsletter-announce-nopermission": "Du är inte utgivare för detta nyhetsbrev.",
 	"newsletter-manage": "Hantera nyhetsbrevet \"$1\"",
+	"newsletter-manage-publishers": "Utgivare:",
 	"newsletter-manage-description": "Beskrivning:",
 	"newsletter-managenewsletter-button": "Skicka",
 	"newsletter-delete": "Radera nyhetsbrev",

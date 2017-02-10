@@ -12,12 +12,11 @@
 	"newsletter-subtitlelinks-subscribe": "اشترك",
 	"newsletter-subtitlelinks-announce": "إعلان",
 	"newsletter-subtitlelinks-manage": "إدارة",
-	"newsletter-subtitlelinks-delete": "احذف",
 	"newsletter-view-description": "الوصف:",
+	"newsletter-manage-publishers": "الناشرون:",
 	"newsletter-manage-name": "اسم الرسالة الإخبارية:",
 	"newsletter-manage-title": "عنوان الصفحة الرئيسية",
 	"newsletter-manage-description": "الوصف:",
-	"newsletter-delete-reason": "السبب",
 	"newsletter-header-name": "الاسم",
 	"newsletter-header-description": "الوصف"
 }
