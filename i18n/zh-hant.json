@@ -5,7 +5,8 @@
 			"Cwlin0416",
 			"MoonYaksha",
 			"LNDDYL",
-			"Alexsh"
+			"Alexsh",
+			"烈羽"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱報紙的功能",
@@ -18,6 +19,7 @@
 	"newsletters": "報紙",
 	"newsletter-view-mainpage": "首頁：",
 	"newsletter-view-description": "描述：",
+	"newsletter-manage-publishers": "發佈者：",
 	"newsletter-manage-description": "描述",
 	"newsletter-managenewsletter-button": "送出",
 	"newsletter-manage-summary": "變更摘要：",
