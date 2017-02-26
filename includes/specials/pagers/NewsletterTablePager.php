@@ -93,7 +93,7 @@ class NewsletterTablePager extends TablePager {
 					return htmlspecialchars( $value );
 				}
 			case 'nl_desc':
-				return $wgContLang->truncate( htmlspecialchars( $value ), 644 );
+				return htmlspecialchars( $wgContLang->truncate( $value, 644 ) );
 			case 'subscriber_count':
 				return Html::element(
 					'span',
