@@ -217,14 +217,6 @@ class NewsletterStore {
 	}
 
 	/**
-	 * @return Newsletter[]
-	 */
-	public function getAllNewsletters() {
-		return $this->db->getAllNewsletters();
-	}
-
-
-	/**
 	 * Fetch all newsletter names
 	 *
 	 * @param string $name
