@@ -64,7 +64,7 @@
 	"newsletter-announce-nonexistent-page": "Error message shown on Special:Newsletter/id/announce if the issue page does not exist.",
 	"newsletter-announce-failure": "Error message shown on Special:Newsletter/id/announce if a new issue could not be announced.",
 	"newsletter-manage": "Header message shown on Special:Newsletter's manage page. $1 - Name of the newsletter",
-	"newsletter-manage-publishers": "Label of form field on Special:Newsletter's manage form.",
+	"newsletter-manage-publishers": "Label of form field on Special:Newsletter's manage form.\n{{Identical|Publisher}}",
 	"newsletter-manage-name": "Label of form field on Special:Newsletter's manage form.",
 	"newsletter-manage-title": "Label of form field on Special:Newsletter's manage form.",
 	"newsletter-manage-description": "Label of form field on Special:Newsletter's manage form.\n{{Identical|Description}}",
