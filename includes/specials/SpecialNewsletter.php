@@ -204,7 +204,7 @@ class SpecialNewsletter extends SpecialPage {
 				'unsubscribe' => array(
 					'type' => 'submit',
 					'name' => 'unsubscribe',
-					'default' => $this->msg( 'newsletter-do-unsubscribe' )->escaped(),
+					'default' => $this->msg( 'newsletter-do-unsubscribe' )->text(),
 					'id' => 'mw-newsletter-unsubscribe',
 					'flags' => array( 'primary', 'destructive' ),
 				)
@@ -217,7 +217,7 @@ class SpecialNewsletter extends SpecialPage {
 				'subscribe' => array(
 					'type' => 'submit',
 					'name' => 'subscribe',
-					'default' => $this->msg( 'newsletter-do-subscribe' )->escaped(),
+					'default' => $this->msg( 'newsletter-do-subscribe' )->text(),
 					'id' => 'mw-newsletter-subscribe',
 					'flags' => array( 'primary', 'constructive' ),
 				)
