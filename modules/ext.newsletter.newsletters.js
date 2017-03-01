@@ -51,11 +51,11 @@
 	$( function () {
 		$( '.newsletter-subscription' ).click( function ( event ) {
 			var $link = $( this ),
-				newsletterId = $link.data( 'newsletter-id' ),
+				newsletterId = $link.data( 'mw-newsletter-id' ),
 				$subscriberCount, promise;
 
 			if ( /\D/.test( newsletterId ) ) {
-				throw new Error( '"data-newsletter-id" attribute must be numeric' );
+				throw new Error( '"data-mw-newsletter-id" attribute must be numeric' );
 			}
 			$subscriberCount = $( '#nl-count-' + newsletterId );
 
