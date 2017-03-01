@@ -139,7 +139,7 @@ class SpecialNewsletter extends SpecialPage {
 				$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
 			}
 			if ( $current === $action ) {
-				$links[] = Linker::makeSelfLinkObj( $title, $msg );
+				$links[] = Linker::makeSelfLinkObj( $title, htmlspecialchars( $msg ) );
 			} else {
 
 				$links[] = $link;
