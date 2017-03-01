@@ -250,7 +250,7 @@ class NewsletterContent extends JsonContent {
 		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->escaped(),
+					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->text(),
 					'flags' => array( 'constructive' ),
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
@@ -260,7 +260,7 @@ class NewsletterContent extends JsonContent {
 		} else if ( $this->newsletter->isSubscribed( $user ) ){
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->escaped(),
+					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->text(),
 					'flags' => array( 'destructive' ),
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
@@ -271,7 +271,7 @@ class NewsletterContent extends JsonContent {
 		if ( $user && $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $wgOut->msg( 'newsletter-manage-button' )->escaped(),
+					'label' => $wgOut->msg( 'newsletter-manage-button' )->text(),
 					'icon' => 'settings',
 					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
 
@@ -279,7 +279,7 @@ class NewsletterContent extends JsonContent {
 			);
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->escaped(),
+					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
@@ -290,7 +290,7 @@ class NewsletterContent extends JsonContent {
 		if ( $user && $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				array(
-					'label' => $wgOut->msg( 'newsletter-announce-button' )->escaped(),
+					'label' => $wgOut->msg( 'newsletter-announce-button' )->text(),
 					'icon' => 'comment',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_ANNOUNCE )->getFullURL()
