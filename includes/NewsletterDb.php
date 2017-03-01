@@ -393,24 +393,6 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @return Newsletter[]
-	 */
-	public function getAllNewsletters() {
-		$dbr = $this->lb->getConnection( DB_SLAVE );
-
-		$res = $dbr->select(
-			array( 'nl_newsletters' ),
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_active' => 1 ),
-			__METHOD__
-		);
-		$this->lb->reuseConnection( $dbr );
-
-		return $this->getNewslettersFromResult( $res );
-	}
-
-
-	/**
 	 * Fetch all newsletter names
 	 *
 	 * @param string $name
