@@ -30,9 +30,9 @@ class NewsletterTablePager extends TablePager {
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = array(
-				'nl_name' => $this->msg( 'newsletter-header-name' )->escaped(),
-				'nl_desc' => $this->msg( 'newsletter-header-description' )->escaped(),
-				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->escaped(),
+				'nl_name' => $this->msg( 'newsletter-header-name' )->text(),
+				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
+				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
 			);
 
 			if ( $this->getUser()->isLoggedIn() ) {
