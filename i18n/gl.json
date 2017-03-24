@@ -132,6 +132,7 @@
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
 	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$3|Engadírono|Engadírona}} como {{GENDER:$2|editor|editora}} do boletín \"$1\".",
+	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Conéctese]] para subscribirse a un boletín e recibir avisos cando se anuncie un novo número.",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-list-option-all": "Todos os boletíns",
 	"newsletter-list-option-subscribed": "Boletíns ós que estou subscrito",
