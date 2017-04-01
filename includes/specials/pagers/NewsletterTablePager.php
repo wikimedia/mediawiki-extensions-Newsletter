@@ -109,7 +109,7 @@ class NewsletterTablePager extends TablePager {
 						$this->msg( 'newsletter-unsubscribe-button' )->text(),
 						array(
 							'class' => 'newsletter-subscription newsletter-subscribed',
-							'data-newsletter-id' => $id
+							'data-mw-newsletter-id' => $id
 						)
 					);
 				} else {
@@ -121,7 +121,7 @@ class NewsletterTablePager extends TablePager {
 						$this->msg( 'newsletter-subscribe-button' )->text(),
 						array(
 							'class' => 'newsletter-subscription newsletter-unsubscribed',
-							'data-newsletter-id' => $id
+							'data-mw-newsletter-id' => $id
 						)
 					);
 				}
