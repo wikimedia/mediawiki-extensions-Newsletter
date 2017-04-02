@@ -190,8 +190,6 @@ class NewsletterEditPage {
 	 * @return Status
 	 */
 	public function attemptSave( array $input ) {
-		global $wgContLang;
-
 		$data = [
 			'Name' => trim( $input['name'] ),
 			'Description' => trim( $input['description'] ),
@@ -240,12 +238,12 @@ class NewsletterEditPage {
 			$data['Name'],
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
-			$wgContLang->truncate( $data['Description'], 600000 ),
+			$data['Description'],
 			$mainPageId
 		);
 		$newsletterCreated = $store->addNewsletter( $this->newsletter );
 		if ( $newsletterCreated ) {
-			$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
+			$title = Title::makeTitleSafe( NS_NEWSLETTER, $data['Name'] );
 			$editSummaryMsg = $this->context->msg( 'newsletter-create-editsummary' );
 			$result = NewsletterContentHandler::edit(
 				$title,

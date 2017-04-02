@@ -187,7 +187,6 @@ class NewsletterHooks {
 		if ( !$article->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
-
 		$newsletter = Newsletter::newFromName( $article->getTitle()->getText() );
 		if ( $newsletter ) {
 			// A newsletter exists in that title, lets redirect to manage page
@@ -302,6 +301,53 @@ class NewsletterHooks {
 		} elseif ( !$title->inNamespace( NS_NEWSLETTER ) && $contentModel == 'NewsletterContent' ) {
 			$ok = false;
 		}
+		return true;
+	}
+
+	/**
+	 * @param RequestContext $context object implementing the IContextSource interface.
+	 * @param Content $content content of the edit box, as a Content object.
+	 * @param Status $status Status object to represent errors, etc.
+	 * @param $summary string Edit summary for page
+	 * @param User $user the User object representing the user whois performing the edit.
+	 * @param $minoredit bool whether the edit was marked as minor by the user.
+	 * @return bool
+	 */
+	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
+	                                                  Status $status, $summary, User $user, $minoredit ) {
+		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
+			return;
+		}
+		if ( !$context->getTitle()->hasContentModel( 'NewsletterContent' ) ||
+		     ( !$content instanceof NewsletterContent ) ) {
+			return;
+		}
+		$newsletter = Newsletter::newFromName( $context->getTitle()->getText() );
+
+		// Validate API Edit parameters
+		$formData = array(
+			'Name' => $context->getTitle()->getText(),
+			'Description' => $content->getDescription(),
+			'MainPage' => $content->getMainPage(),
+		);
+		$validator = new NewsletterValidator( $formData );
+		$validation = $validator->validate( !$newsletter );
+		if ( !$validation->isGood() ) {
+			// Invalid input was entered
+			return false;
+		}
+		$mainPageId = $content->getMainPage()->getArticleID();
+		$store = NewsletterStore::getDefaultInstance();
+		if ( !$newsletter || ( $newsletter && $newsletter->getPageId() !== $mainPageId ) ) {
+			$rows = $store->newsletterExistsForMainPage( $mainPageId );
+			foreach ( $rows as $row ) {
+				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
+					$status->newFatal( 'newsletter-mainpage-in-use' );
+					return false;
+				}
+			}
+		}
+
 		return true;
 	}
 }

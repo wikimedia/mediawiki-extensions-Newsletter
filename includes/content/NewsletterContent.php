@@ -20,7 +20,7 @@ class NewsletterContent extends JsonContent {
 	private $description;
 
 	/**
-	 * @var string|null
+	 * @var Title
 	 */
 	private $mainPage;
 
@@ -53,7 +53,8 @@ class NewsletterContent extends JsonContent {
 	public function isValid() {
 		$this->decode();
 
-		if ( !is_string( $this->description ) || !is_string( $this->mainPage ) || !is_array( $this->publishers ) ) {
+		if ( !is_string( $this->description ) || !( $this->mainPage instanceof Title ) ||
+		     !is_array( $this->publishers ) ) {
 			return false;
 		}
 
@@ -78,7 +79,8 @@ class NewsletterContent extends JsonContent {
 
 		if ( $data ) {
 			$this->description = isset( $data->description ) ? $data->description : null;
-			$this->mainPage = isset( $data->mainpage ) ? $data->mainpage : null;
+			$this->mainPage = !empty( $data->mainpage ) ? Title::newFromText( $data->mainpage ) :
+				Title::makeTitle( NS_SPECIAL, 'Badtitle' );
 			if ( isset( $data->publishers ) && is_array( $data->publishers ) ) {
 				$this->publishers = [];
 				foreach ( $data->publishers as $publisher ) {
@@ -89,7 +91,7 @@ class NewsletterContent extends JsonContent {
 					$this->publishers[] = $publisher;
 				}
 			} else {
-				$data->publishers = null;
+				$this->publishers = null;
 			}
 		}
 		$this->decoded = true;
@@ -125,14 +127,12 @@ class NewsletterContent extends JsonContent {
 	protected function fillParserOutput( Title $title, $revId, ParserOptions $options, $generateHtml, ParserOutput &$output ) {
 		if ( $generateHtml ) {
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
-			if ( !$this->newsletter ) {
-				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
-			}
-			// Make sure things are decoded at this point
+			//Make sure things are decoded at this point
 			$this->decode();
 
-			$newsletterActionButtons = $this->getNewsletterActionButtons( $options );
-			$mainTitle = Title::newFromText( $this->mainPage );
+			$newsletterActionButtons = !$this->newsletter ? '' : $this->getNewsletterActionButtons(
+				$options );
+			$mainTitle = $this->mainPage;
 
 			$fields = [
 				'mainpage' => [
@@ -158,7 +158,8 @@ class NewsletterContent extends JsonContent {
 				'subscribers' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-subscriber-count',
-					'default' => $options->getUserLangObj()->formatNum( $this->newsletter->getSubscriberCount() ),
+					'default' => !$this->newsletter ? 0 : $options->getUserLangObj()->formatNum(
+						$this->newsletter->getSubscriberCount() ),
 				],
 			];
 			$publishersArray = $this->getPublishersFromJSONData( $this->publishers );
@@ -173,29 +174,28 @@ class NewsletterContent extends JsonContent {
 					->inLanguage( $options->getUserLangObj() )
 					->escaped();
 			}
-			// Show the 10 most recent issues if there have been announcements
-			$logs = '';
-			$logCount = LogEventsList::showLogExtract(
-				$logs, // by reference
-				'newsletter',
-				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
-				'',
-				[
-					'lim' => 10,
-					'showIfEmpty' => false,
-					'conds' => [ 'log_action' => 'issue-added' ],
-					'extraUrlParams' => [ 'subtype' => 'issue-added' ],
-				]
-			);
-			if ( $logCount !== 0 ) {
-				$fields['issues'] = [
-					'type' => 'info',
-					'raw' => true,
-					'default' => $logs,
-					'label' => wfMessage( 'newsletter-view-issues-log' )
-						->inLanguage( $options->getUserLangObj() )
-						->numParams( $logCount )->text(),
-				];
+			if ( $this->newsletter ) {
+				// Show the 10 most recent issues if there have been announcements
+				$logs = '';
+				$logCount = LogEventsList::showLogExtract( $logs, // by reference
+					'newsletter',
+					SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), '', array(
+						'lim' => 10,
+						'showIfEmpty' => false,
+						'conds' => array( 'log_action' => 'issue-added' ),
+						'extraUrlParams' => array( 'subtype' => 'issue-added' ),
+					) );
+				if ( $logCount !== 0 ) {
+					$fields['issues'] = array(
+						'type' => 'info',
+						'raw' => true,
+						'default' => $logs,
+						'label' => wfMessage( 'newsletter-view-issues-log' )
+							->inLanguage( $options->getUserLangObj() )
+							->numParams( $logCount )
+							->text(),
+					);
+				}
 			}
 			$form = $this->getHTMLForm(
 				$fields,
@@ -207,9 +207,13 @@ class NewsletterContent extends JsonContent {
 			$form->suppressDefaultSubmit();
 			$form->prepareForm();
 
-			$output->setText( $this->getNavigationLinks( $options ) . $newsletterActionButtons .
-				"<br><br>" . $form->getBody() );
+			!$this->newsletter ? $output->setText( $form->getBody() ) : $output->setText(
+				$this->getNavigationLinks( $options ) . $newsletterActionButtons . "<br><br>" .
+				$form->getBody()
+			);
 			return $output;
+		} else {
+			$output->setText( '' );
 		}
 	}
 
@@ -253,7 +257,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->text(),
 					'flags' => [ 'constructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
+					                                                  self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 
 				]
 			);
@@ -263,7 +267,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->text(),
 					'flags' => [ 'destructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
+					                                                  self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 
 				]
 			);
@@ -282,7 +286,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
+					                                                  self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
 
 				]
 			);
@@ -293,7 +297,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-announce-button' )->text(),
 					'icon' => 'comment',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-						self::NEWSLETTER_ANNOUNCE )->getFullURL()
+					                                                  self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				]
 			);
 		}
@@ -381,8 +385,8 @@ class NewsletterContent extends JsonContent {
 			$links[] = $link;
 		}
 		$newsletterLinks = Linker::makeSelfLinkObj(
-			SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
-		) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
+				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
+			) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
 
 		return $wgOut->setSubtitle( $options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] ) );
 	}
@@ -396,7 +400,7 @@ class NewsletterContent extends JsonContent {
 	}
 
 	/**
-	 * @return string
+	 * @return Title
 	 */
 	public function getMainPage() {
 		$this->decode();
@@ -434,5 +438,28 @@ class NewsletterContent extends JsonContent {
 		);
 
 		return $truncatedtext;
+	}
+
+	/**
+	 * @param Title $title Title of the page that is being edited.
+	 * @param Content $old Content object representing the page's content before the edit.
+	 * @param bool $recursive bool indicating whether DataUpdates should trigger recursive
+	 * updates (relevant mostly for LinksUpdate).
+	 * @param ParserOutput $parserOutput ParserOutput representing the rendered version of the page after the edit.
+	 * @return DataUpdate[]
+	 *
+	 * @see Content::getSecondaryDataUpdates()
+	 */
+	public function getSecondaryDataUpdates( Title $title, Content $old = null, $recursive = true,
+	                                         ParserOutput $parserOutput = null
+	) {
+		global $wgUser;
+		// @todo This user object might not be the right one in some cases.
+		// but that should be pretty rare in the context of newsletters.
+		$mwUpdate = new	NewsletterDataUpdate( $this, $title, $wgUser );
+		return array_merge(
+			parent::getSecondaryDataUpdates( $title, $old, $recursive, $parserOutput ),
+			[ $mwUpdate ]
+		);
 	}
 }

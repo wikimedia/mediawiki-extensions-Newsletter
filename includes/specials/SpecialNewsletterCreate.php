@@ -70,8 +70,6 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function onSubmit( array $input ) {
-		global $wgContLang;
-
 		$data = [
 			'Name' => trim( $input['name'] ),
 			'Description' => trim( $input['description'] ),
@@ -91,14 +89,14 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$rows = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-			$dbr->makeList(
-				[
-					'nl_name' => $data['Name'],
-					'nl_main_page_id' => $mainPageId,
-					'nl_active' => 1
-				 ],
-				 LIST_OR
-			)
+			$dbr->makeList([
+				'nl_name' => $data['Name'],
+				$dbr->makeList(
+					[
+						'nl_main_page_id' => $mainPageId,
+						'nl_active' => 1
+					], LIST_AND )
+			], LIST_OR )
 		);
 		// Check whether another existing newsletter has the same name or main page
 		foreach ( $rows as $row ) {
@@ -116,14 +114,12 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
-		$title = Title::makeTitleSafe( NS_NEWSLETTER, trim( $data['Name'] ) );
+		$title = Title::makeTitleSafe( NS_NEWSLETTER, $data['Name'] );
 
 		$store = NewsletterStore::getDefaultInstance();
 		$this->newsletter = new Newsletter( 0,
 			$title->getText(),
-			// nl_newsletters.nl_desc is a blob but put some limit
-			// here which is less than the max size for blobs
-			$wgContLang->truncate( $data['Description'], 600000 ),
+			$data['Description'],
 			$mainPageId
 		);
 		$newsletterCreated = $store->addNewsletter( $this->newsletter );

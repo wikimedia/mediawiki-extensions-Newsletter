@@ -108,9 +108,12 @@ class NewsletterDb {
 	 * @return bool|int the id of the newsletter added, false on failure
 	 */
 	public function addNewsletter( Newsletter $newsletter ) {
+		global $wgContLang;
 		$rowData = [
 			'nl_name' => $newsletter->getName(),
-			'nl_desc' => $newsletter->getDescription(),
+			// nl_newsletters.nl_desc is a blob but put some limit
+			// here which is less than the max size for blobs
+			'nl_desc' => $wgContLang->truncate( $newsletter->getDescription(), 600000 ),
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
@@ -137,11 +140,15 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function updateDescription( $id, $description ) {
+		global $wgContLang;
+
 		Assert::parameterType( 'integer', $id, '$id' );
 		Assert::parameterType( 'string', $description, '$description' );
 
 		$rowData = [
-			'nl_desc' => $description,
+			// nl_newsletters.nl_desc is a blob but put some limit
+			// here which is less than the max size for blobs
+			'nl_desc' => $wgContLang->truncate( $description, 600000 ),
 		];
 
 		$conds = [

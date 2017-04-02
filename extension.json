@@ -82,6 +82,7 @@
 		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
 		"NewsletterContent": "includes/content/NewsletterContent.php",
 		"NewsletterContentHandler": "includes/content/NewsletterContentHandler.php",
+		"NewsletterDataUpdate": "includes/content/NewsletterDataUpdate.php",
 		"NewsletterDiffEngine": "includes/content/NewsletterDiffEngine.php",
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
@@ -156,6 +157,9 @@
 		],
 		"ContentModelCanBeUsedOn": [
 			"NewsletterHooks::onContentModelCanBeUsedOn"
+		],
+		"EditFilterMergedContent": [
+			"NewsletterHooks::onEditFilterMergedContent"
 		]
 	},
 	"namespaces": [
