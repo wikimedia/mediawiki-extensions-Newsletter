@@ -4,11 +4,32 @@
 			"Eduardo Addad de Oliveira",
 			"Guilhermemau",
 			"Luk3",
-			"Iagocds"
+			"Iagocds",
+			"Felipe L. Ewald"
 		]
 	},
+	"newsletter-desc": "Descrição",
+	"newsletter-subtitlelinks-list": "Lista de boletins informativos",
+	"newsletter-subtitlelinks-create": "Criar um novo boletim informativo",
+	"newsletter-subtitlelinks-unsubscribe": "Cancelar inscrição",
+	"newsletter-subtitlelinks-subscribe": "inscrever-se",
+	"newsletter-subtitlelinks-announce": "anunciar",
+	"newsletter-subtitlelinks-manage": "gerenciar",
+	"newsletter-subtitlelinks-subscribers": "ver inscrições",
+	"newsletters": "Boletins informativos",
+	"newsletter-subscribe-loginrequired": "Por favor, faça login para inscrever-se nos [[Special:Newsletters|boletins informativos]].",
+	"newsletter-notfound": "Boletim informativo não encontrado",
+	"newsletter-view-description": "Descrição:",
 	"newsletter-view-no-publishers": "Não editores.",
+	"newsletter-announce-issuetitle": "Título da página do problema",
+	"newsletter-manage-description": "Descrição:",
+	"newsletter-delete-failure": "O boletim $1 não pode ser excluído. Por favor, tente novamente.",
+	"newsletter-delete-log": "O boletim $1 foi excluído.",
+	"newsletter-subscribe": "Gestão de inscrições de boletins",
 	"newsletter-subscribers-nopermission": "Você não tem permissão para editar os subscritos neste canal de notícias",
 	"newsletter-edit-subscribers-nochanges": "Nenhuma mudança foram feitas para os subscritos do canal de notícias.",
-	"newsletter-subscribers-invalid": "\"$1\" não é um usuário válido. Por favor tenha certeza que o nome de usuário existe e tente novamente."
+	"newsletter-subscribers-invalid": "\"$1\" não é um usuário válido. Por favor tenha certeza que o nome de usuário existe e tente novamente.",
+	"newsletter-diff-descheader": "Alterações na descrição:",
+	"newsletter-diff-mainpageheader": "Alterações na Página Principal:",
+	"newsletter-diff-publishersheader": "Alterações nos editores:"
 }
