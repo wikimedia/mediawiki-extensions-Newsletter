@@ -9,6 +9,8 @@
 		]
 	},
 	"newsletter-desc": "Descrição",
+	"newsletter-mainpage-in-use": "Um boletim informativo existente tem a mesma página principal. Por favor, digite outro título.",
+	"newsletter-mainpage-in-use-title": "Um boletim informativo existente tem a mesma página principal.",
 	"newsletter-subtitlelinks-list": "Lista de boletins informativos",
 	"newsletter-subtitlelinks-create": "Criar um novo boletim informativo",
 	"newsletter-subtitlelinks-unsubscribe": "Cancelar inscrição",
