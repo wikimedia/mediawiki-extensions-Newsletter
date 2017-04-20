@@ -7,11 +7,11 @@ class EchoNewsletterSubscribedPresentationModel extends BaseNewsletterPresentati
 	}
 
 	public function getPrimaryLink() {
-		return array(
+		return [
 			'url' => $this->getNewsletterUrl(),
 			'label' => $this->msg( 'newsletter-notification-subscribed' )
 				->params( $this->getNewsletterName() )
-		);
+		];
 	}
 
 	public function getHeaderMessage() {

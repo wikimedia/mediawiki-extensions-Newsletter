@@ -29,7 +29,7 @@ class NewsletterLogFormatter extends LogFormatter {
 			$params[5] = Message::rawParam( $this->makePageLink( Title::newFromText( $params[5] ) ) );
 		}
 
-		ksort($params);
+		ksort( $params );
 		$this->parsedParameters = $params;
 		return $params;
 	}

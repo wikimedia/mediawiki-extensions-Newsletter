@@ -33,36 +33,36 @@ class ApiNewsletterSubscribe extends ApiBase {
 		}
 
 		$this->getResult()->addValue( null, $this->getModuleName(),
-			array(
+			[
 				'id' => $newsletter->getId(),
 				'name' => $newsletter->getName(),
-			)
+			]
 		);
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'id' => array(
+		return [
+			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'subscribe', 'unsubscribe' ),
+			],
+			'do' => [
+				ApiBase::PARAM_TYPE => [ 'subscribe', 'unsubscribe' ],
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=newslettersubscribe&id=1&do=subscribe'
 				=> 'apihelp-newslettersubscribe-example-1',
 			'action=newslettersubscribe&id=2&do=unsubscribe'
 				=> 'apihelp-newslettersubscribe-example-2',
-		);
+		];
 	}
 
 	public function isWriteMode() {

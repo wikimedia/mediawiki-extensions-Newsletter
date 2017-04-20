@@ -13,7 +13,7 @@
  */
 class ApiNewsletterTest extends ApiTestCase {
 
-	public function __construct( $name = null, array $data = array(), $dataName = '' ) {
+	public function __construct( $name = null, array $data = [], $dataName = '' ) {
 		parent::__construct( $name, $data, $dataName );
 
 		$this->tablesUsed[] = 'nl_newsletters';
@@ -27,11 +27,11 @@ class ApiNewsletterTest extends ApiTestCase {
 		$user = self::$users['sysop']->getUser();
 		$this->doLogin( 'sysop' );
 
-		$rowData = array(
+		$rowData = [
 			'nl_name' => 'MyNewsletter',
 			'nl_desc' => 'This is a newsletter',
 			'nl_main_page_id' => 1
-		);
+		];
 		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 	}
 
@@ -39,10 +39,10 @@ class ApiNewsletterTest extends ApiTestCase {
 		$dbr = wfGetDB( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_id' ),
-			array(
+			[ 'nl_id' ],
+			[
 				'nl_name' => 'MyNewsletter',
-			),
+			],
 			__METHOD__
 		);
 		$newsletterId = null;
@@ -55,20 +55,20 @@ class ApiNewsletterTest extends ApiTestCase {
 
 	public function testApiNewsletterForSubscribingNewsletter() {
 		$this->doApiRequestWithToken(
-			array(
+			[
 				'action' => 'newslettersubscribe',
 				'id' => $this->getNewsletterId(),
 				'do' => 'subscribe',
-			)
+			]
 		);
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
-			array( 'subscriber_id' ),
-			array(
+			[ 'subscriber_id' ],
+			[
 				'nls_newsletter_id' => $this->getNewsletterId(),
-			),
+			],
 			__METHOD__
 		);
 
@@ -77,28 +77,28 @@ class ApiNewsletterTest extends ApiTestCase {
 
 	public function testApiNewsletterForUnsubscribingNewsletter() {
 		$this->doApiRequestWithToken(
-			array(
+			[
 				'action' => 'newslettersubscribe',
 				'id' => $this->getNewsletterId(),
 				'do' => 'subscribe',
-			)
+			]
 		);
 
 		$this->doApiRequestWithToken(
-			array(
+			[
 				'action' => 'newslettersubscribe',
 				'id' => $this->getNewsletterId(),
 				'do' => 'unsubscribe',
-			)
+			]
 		);
 
 		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
-			array( 'subscriber_id' ),
-			array(
+			[ 'subscriber_id' ],
+			[
 				'nls_newsletter_id' => $this->getNewsletterId(),
-			),
+			],
 			__METHOD__
 		);
 

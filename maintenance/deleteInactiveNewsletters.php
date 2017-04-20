@@ -24,7 +24,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 			$count = $dbw->selectField(
 				'nl_newsletters',
 				'COUNT(*)',
-				array( 'nl_active' => 0 ),
+				[ 'nl_active' => 0 ],
 				__METHOD__
 			);
 			$this->output( "Found $count inactive newsletters to delete.\n" );
@@ -37,11 +37,11 @@ class DeleteInactiveNewsletters extends Maintenance {
 		$idsToDelete = $dbw->selectFieldValues(
 			'nl_newsletters',
 			'nl_id',
-			array( 'nl_active' => 0 ),
+			[ 'nl_active' => 0 ],
 			__METHOD__
 		);
 
-		if( !$idsToDelete ) {
+		if ( !$idsToDelete ) {
 			$this->output( "No newsletters found to be deleted" );
 			return;
 		}

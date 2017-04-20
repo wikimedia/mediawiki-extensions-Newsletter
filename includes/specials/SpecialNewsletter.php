@@ -80,11 +80,11 @@ class SpecialNewsletter extends SpecialPage {
 				'newsletter',
 				$this->getPageTitle( (int)$id ),
 				'',
-				array(
+				[
 					'showIfEmpty' => false,
-					'conds' => array( 'log_action' => 'newsletter-removed' ),
+					'conds' => [ 'log_action' => 'newsletter-removed' ],
 					'msgKey' => 'newsletter-deleted-log'
-				)
+				]
 			);
 		}
 
@@ -111,7 +111,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		// Build the links taking the current user's access levels into account
 		$user = $this->getUser();
-		$actions = array();
+		$actions = [];
 		if ( $user->isLoggedIn() ) {
 			$actions[] = $this->newsletter->isSubscribed( $user )
 				? self::NEWSLETTER_UNSUBSCRIBE
@@ -125,7 +125,7 @@ class SpecialNewsletter extends SpecialPage {
 			$actions[] = self::NEWSLETTER_SUBSCRIBERS;
 		}
 
-		$links = array();
+		$links = [];
 		foreach ( $actions as $action ) {
 			$title = $this->getPageTitle( $this->newsletter->getId() . '/' . $action );
 			// Messages used here: 'newsletter-subtitlelinks-announce',
@@ -136,7 +136,7 @@ class SpecialNewsletter extends SpecialPage {
 			if ( $action == self::NEWSLETTER_MANAGE ) {
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action'=>'edit' ] );
 			}
 			if ( $current === $action ) {
 				$links[] = Linker::makeSelfLinkObj( $title, htmlspecialchars( $msg ) );
@@ -153,7 +153,7 @@ class SpecialNewsletter extends SpecialPage {
 			->rawParams( $this->getLanguage()->pipeList( $links ) )
 			->text();
 
-		return $this->getLanguage()->pipeList( array( $listLink, $newsletterLinks ) );
+		return $this->getLanguage()->pipeList( [ $listLink, $newsletterLinks ] );
 	}
 
 	/**
@@ -200,31 +200,31 @@ class SpecialNewsletter extends SpecialPage {
 			// User is subscribed so show the unsubscribe form
 			$txt = $this->msg( 'newsletter-subscribe-text' )
 				->rawParams( $this->getEscapedName() )->parse();
-			$button = array(
-				'unsubscribe' => array(
+			$button = [
+				'unsubscribe' => [
 					'type' => 'submit',
 					'name' => 'unsubscribe',
 					'default' => $this->msg( 'newsletter-do-unsubscribe' )->text(),
 					'id' => 'mw-newsletter-unsubscribe',
-					'flags' => array( 'primary', 'destructive' ),
-				)
-			);
+					'flags' => [ 'primary', 'destructive' ],
+				]
+			];
 		} else {
 			// Show the subscribe form if the user is not subscribed currently
 			$txt = $this->msg( 'newsletter-subscribe-text' )
 				->rawParams( $this->getEscapedName() )->parse();
-			$button = array(
-				'subscribe' => array(
+			$button = [
+				'subscribe' => [
 					'type' => 'submit',
 					'name' => 'subscribe',
 					'default' => $this->msg( 'newsletter-do-subscribe' )->text(),
 					'id' => 'mw-newsletter-subscribe',
-					'flags' => array( 'primary', 'constructive' ),
-				)
-			);
+					'flags' => [ 'primary', 'constructive' ],
+				]
+			];
 		}
 
-		$form = $this->getHTMLForm( $button, array( $this, 'submitSubscribeForm' ) );
+		$form = $this->getHTMLForm( $button, [ $this, 'submitSubscribeForm' ] );
 		$form->addHeaderText( $txt );
 		$form->suppressDefaultSubmit();
 		$form->show();
@@ -285,7 +285,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( !$this->newsletter->isPublisher( $user ) ) {
 			$out->showPermissionsErrorPage(
-				array( array( 'newsletter-announce-nopermission' ) )
+				[ [ 'newsletter-announce-nopermission' ] ]
 			);
 			return;
 		}
@@ -295,28 +295,28 @@ class SpecialNewsletter extends SpecialPage {
 				->rawParams( $this->getEscapedName() )
 		);
 
-		$fields = array(
-			'issuepage' => array(
+		$fields = [
+			'issuepage' => [
 				'type' => 'title',
 				'name' => 'issuepage',
 				'creatable' => true,
 				'required' => true,
 				'label-message' => 'newsletter-announce-issuetitle',
 				'default' => '',
-			),
-			'summary' => array(
+			],
+			'summary' => [
 				// @todo add a help message explaining what this does
 				'type' => 'text',
 				'name' => 'summary',
 				'label-message' => 'newsletter-announce-summary',
 				'maxlength' => '160',
 				'autofocus' => true,
-			),
-		);
+			],
+		];
 
 		$form = $this->getHTMLForm(
 			$fields,
-			array( $this, 'submitAnnounceForm' )
+			[ $this, 'submitAnnounceForm' ]
 		);
 		$form->setSubmitTextMsg( 'newsletter-announce-submit' );
 
@@ -349,7 +349,6 @@ class SpecialNewsletter extends SpecialPage {
 		if ( !$title ) {
 			return Status::newFatal( 'newsletter-announce-invalid-page' );
 		}
-
 
 		if ( !$title->exists() ) {
 			return Status::newFatal( 'newsletter-announce-nonexistent-page' );
@@ -388,17 +387,17 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		EchoEvent::create(
-			array(
+			[
 				'type' => 'newsletter-announce',
 				'title' => $title,
-				'extra' => array(
+				'extra' => [
 					'newsletter-name' => $this->newsletter->getName(),
 					'newsletter-id' => $this->newsletter->getId(),
 					'section-text' => $summary,
 					'notifyAgent' => true,
-				),
+				],
 				'agent' => $user,
-			)
+			]
 		);
 
 		// Yay!
@@ -414,30 +413,30 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( !$this->newsletter->canManage( $user ) ) {
 			$out->showPermissionsErrorPage(
-				array( array( 'newsletter-subscribers-nopermission' ) )
+				[ [ 'newsletter-subscribers-nopermission' ] ]
 			);
 			return;
 		}
 
 		$out->setPageTitle( $this->msg( 'newsletter-subscribers' )->text() );
 		$subscribers = UserArray::newFromIDs( $this->newsletter->getSubscribers() );
-		$subscribersNames = array();
+		$subscribersNames = [];
 		foreach ( $subscribers as $subscriber ) {
 			$subscribersNames[] = $subscriber->getName();
 		}
 
-		$fields = array(
-			'subscribers' => array(
+		$fields = [
+			'subscribers' => [
 				'type' => 'textarea',
 				'raw' => true,
 				'rows' => 10,
 				'default' => implode( "\n", $subscribersNames )
-			),
-		);
+			],
+		];
 
 		$form = $this->getHTMLForm(
 			$fields,
-			array( $this, 'submitSubscribersForm' )
+			[ $this, 'submitSubscribersForm' ]
 		);
 		if ( $form->show() ) {
 			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
@@ -458,7 +457,7 @@ class SpecialNewsletter extends SpecialPage {
 		$subscriberNames = array_unique( array_filter( array_map( 'trim', $subscriberNames ) ) );
 
 		$oldSubscribersIds = $this->newsletter->getSubscribers();
-		$newSubscribersIds = array();
+		$newSubscribersIds = [];
 		foreach ( $subscriberNames as $subscriberName ) {
 			$user = User::newFromName( $subscriberName );
 
@@ -483,33 +482,33 @@ class SpecialNewsletter extends SpecialPage {
 		$out = $this->getOutput();
 		// Now report to the user
 		if ( $added || $removed ) {
-			if ( !class_exists( 'EchoEvent') ) {
+			if ( !class_exists( 'EchoEvent' ) ) {
 				throw new Exception( 'Echo extension is not installed.' );
 			}
 			if ( $added ) {
 				EchoEvent::create(
-					array(
+					[
 						'type' => 'newsletter-subscribed',
-						'extra' => array(
+						'extra' => [
 							'newsletter-name' => $this->newsletter->getName(),
 							'new-subscribers-id' => $added,
 							'newsletter-id' => $this->newsletter->getId()
-						),
+						],
 						'agent' => $this->getUser()
-					)
+					]
 				);
 			}
 			if ( $removed ) {
 				EchoEvent::create(
-					array(
+					[
 						'type' => 'newsletter-unsubscribed',
-						'extra' => array(
+						'extra' => [
 							'newsletter-name' => $this->newsletter->getName(),
 							'removed-subscribers-id' => $removed,
 							'newsletter-id' => $this->newsletter->getId()
-						),
+						],
 						'agent' => $this->getUser()
-					)
+					]
 				);
 			}
 			$out->addWikiMsg( 'newsletter-edit-subscribers-success' );

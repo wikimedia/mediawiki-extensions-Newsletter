@@ -79,7 +79,7 @@ class NewsletterContent extends JsonContent {
 		if ( $data ) {
 			$this->description = isset( $data->description ) ? $data->description : null;
 			$this->mainPage = isset( $data->mainpage ) ? $data->mainpage : null;
-			if ( isset( $data->publishers )  && is_array( $data->publishers ) ) {
+			if ( isset( $data->publishers ) && is_array( $data->publishers ) ) {
 				$this->publishers = [];
 				foreach ( $data->publishers as $publisher ) {
 					if ( !is_string( $publisher ) ) {
@@ -128,39 +128,39 @@ class NewsletterContent extends JsonContent {
 			if ( !$this->newsletter ) {
 				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
 			}
-			//Make sure things are decoded at this point
+			// Make sure things are decoded at this point
 			$this->decode();
 
 			$newsletterActionButtons = $this->getNewsletterActionButtons( $options );
 			$mainTitle = Title::newFromText( $this->mainPage );
 
-			$fields = array(
-				'mainpage' => array(
+			$fields = [
+				'mainpage' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-mainpage',
 					'default' => MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $mainTitle ),
 					'raw' => true,
-				),
-				'description' => array(
+				],
+				'description' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-description',
 					'default' => $this->description,
 					'rows' => 6,
 					'readonly' => true,
-				),
-				'publishers' => array(
+				],
+				'publishers' => [
 					'type' => 'info',
 					'label' => wfMessage( 'newsletter-view-publishers' )->inLanguage(
 						$options->getUserLangObj() )
 						->numParams( count( $this->publishers ) )
 						->text(),
-				),
-				'subscribers' => array(
+				],
+				'subscribers' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-subscriber-count',
 					'default' => $options->getUserLangObj()->formatNum( $this->newsletter->getSubscriberCount() ),
-				),
-			);
+				],
+			];
 			$publishersArray = $this->getPublishersFromJSONData( $this->publishers );
 			if ( $publishersArray && count( $publishersArray ) > 0 ) {
 				// Have this here to avoid calling unneeded functions
@@ -180,22 +180,22 @@ class NewsletterContent extends JsonContent {
 				'newsletter',
 				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
 				'',
-				array(
+				[
 					'lim' => 10,
 					'showIfEmpty' => false,
-					'conds' => array( 'log_action' => 'issue-added' ),
-					'extraUrlParams' => array( 'subtype' => 'issue-added' ),
-				)
+					'conds' => [ 'log_action' => 'issue-added' ],
+					'extraUrlParams' => [ 'subtype' => 'issue-added' ],
+				]
 			);
 			if ( $logCount !== 0 ) {
-				$fields['issues'] = array(
+				$fields['issues'] = [
 					'type' => 'info',
 					'raw' => true,
 					'default' => $logs,
 					'label' => wfMessage( 'newsletter-view-issues-log' )
 						->inLanguage( $options->getUserLangObj() )
 						->numParams( $logCount )->text(),
-				);
+				];
 			}
 			$form = $this->getHTMLForm(
 				$fields,
@@ -244,61 +244,61 @@ class NewsletterContent extends JsonContent {
 		// We are building the 'Subscribe' action button for anonymous users as well
 		$user = $options->getUser() ? : null;
 		$id = $this->newsletter->getId();
-		$buttons = array();
+		$buttons = [];
 		$wgOut->enableOOUI();
 
 		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
-				array(
+				[
 					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->text(),
-					'flags' => array( 'constructive' ),
+					'flags' => [ 'constructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 
-				)
+				]
 			);
-		} else if ( $this->newsletter->isSubscribed( $user ) ){
+		} elseif ( $this->newsletter->isSubscribed( $user ) ){
 			$buttons[] = new OOUI\ButtonWidget(
-				array(
+				[
 					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->text(),
-					'flags' => array( 'destructive' ),
+					'flags' => [ 'destructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 
-				)
+				]
 			);
 		}
 		if ( $user && $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
-				array(
+				[
 					'label' => $wgOut->msg( 'newsletter-manage-button' )->text(),
 					'icon' => 'settings',
 					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
 
-				)
+				]
 			);
 			$buttons[] = new OOUI\ButtonWidget(
-				array(
+				[
 					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
 
-				)
+				]
 			);
 		}
 		if ( $user && $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
-				array(
+				[
 					'label' => $wgOut->msg( 'newsletter-announce-button' )->text(),
 					'icon' => 'comment',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_ANNOUNCE )->getFullURL()
-				)
+				]
 			);
 		}
 
-		$widget = new OOUI\ButtonGroupWidget( array( 'items' =>  $buttons ) );
+		$widget = new OOUI\ButtonGroupWidget( [ 'items' =>  $buttons ] );
 		return $widget->toString();
 	}
 
@@ -329,12 +329,12 @@ class NewsletterContent extends JsonContent {
 		foreach ( $users as $user ) {
 			$str .= Html::rawElement(
 				'li',
-				array(),
+				[],
 				Linker::userLink( $user->getId(), $user->getName() ) .
 				Linker::userToolLinks( $user->getId(), $user->getName() )
 			);
 		}
-		return Html::rawElement( 'ul', array(), $str );
+		return Html::rawElement( 'ul', [], $str );
 	}
 
 	protected function getNavigationLinks( ParserOptions $options ) {
@@ -348,11 +348,11 @@ class NewsletterContent extends JsonContent {
 		);
 
 		$user = $options->getUser() ? : null;
-		$actions = array();
+		$actions = [];
 
 		if ( !$user || !$this->newsletter->isSubscribed( $user ) ) {
 			$actions[] = self::NEWSLETTER_SUBSCRIBE;
-		} else if ( $this->newsletter->isSubscribed( $user ) ) {
+		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
 			$actions[] = self::NEWSLETTER_UNSUBSCRIBE;
 		}
 		if ( $user && $user->isLoggedIn() ) {
@@ -364,7 +364,7 @@ class NewsletterContent extends JsonContent {
 				$actions[] = self::NEWSLETTER_SUBSCRIBERS;
 			}
 		}
-		$links = array();
+		$links = [];
 		foreach ( $actions as $action ) {
 			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' . $action );
 
@@ -376,7 +376,7 @@ class NewsletterContent extends JsonContent {
 			if ( $action == self::NEWSLETTER_MANAGE ) {
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg, [], ['action'=>'edit'] );
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action'=>'edit' ] );
 			}
 			$links[] = $link;
 		}
@@ -384,7 +384,7 @@ class NewsletterContent extends JsonContent {
 			SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
 		) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
 
-		return $wgOut->setSubtitle( $options->getUserLangObj()->pipeList( array( $listLink, $newsletterLinks ) ) );
+		return $wgOut->setSubtitle( $options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] ) );
 	}
 
 	/**
@@ -430,8 +430,7 @@ class NewsletterContent extends JsonContent {
 		global $wgContLang;
 
 		$truncatedtext = $wgContLang->truncate(
-			preg_replace( "/[\n\r]/", ' ',  $this->getDescription() )
-			, max( 0, $maxLength )
+			preg_replace( "/[\n\r]/", ' ',  $this->getDescription() ), max( 0, $maxLength )
 		);
 
 		return $truncatedtext;

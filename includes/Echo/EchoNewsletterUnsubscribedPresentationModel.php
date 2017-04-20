@@ -7,11 +7,11 @@ class EchoNewsletterUnsubscribedPresentationModel extends BaseNewsletterPresenta
 	}
 
 	public function getPrimaryLink() {
-		return array(
+		return [
 			'url' => $this->getNewsletterUrl(),
 			'label' => $this->msg( 'newsletter-notification-unsubscribed' )
 				->params( $this->getNewsletterName() )
-		);
+		];
 	}
 
 	public function getHeaderMessage() {

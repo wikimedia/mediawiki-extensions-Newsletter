@@ -5,16 +5,16 @@
 
 class NewsletterValidator {
 
-	private static $requiredDataOnCreate = array(
+	private static $requiredDataOnCreate = [
 		'Name',
 		'Description',
 		'MainPage',
-	);
+	];
 
-	private static $requiredDataOnEdit = array(
+	private static $requiredDataOnEdit = [
 		'Description',
 		'MainPage',
-	);
+	];
 
 	/**
 	 * Constructor.
@@ -34,7 +34,7 @@ class NewsletterValidator {
 	public function validate( $new ) {
 		$requiredFields = $new ? self::$requiredDataOnCreate : self::$requiredDataOnEdit;
 		// Check whether required fields are not empty
-		foreach (  $requiredFields as $field ) {
+		foreach ( $requiredFields as $field ) {
 			if ( !isset( $this->data[ $field ] ) || trim( $this->data[ $field ] ) === '' ) {
 				return Status::newFatal( 'newsletter-input-required' );
 			}

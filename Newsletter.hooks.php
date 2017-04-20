@@ -13,78 +13,78 @@ class NewsletterHooks {
 	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories ) {
-		$notificationCategories['newsletter'] = array(
+		$notificationCategories['newsletter'] = [
 			'priority' => 3,
 			'tooltip' => 'echo-pref-tooltip-newsletter',
-		);
+		];
 
-		$notifications['newsletter-announce'] = array(
+		$notifications['newsletter-announce'] = [
 			'category' => 'newsletter',
 			'section' => 'alert',
-			'primary-link' => array(
+			'primary-link' => [
 				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
-			),
-			'secondary-link' => array(
+			],
+			'secondary-link' => [
 				'message' => 'newsletter-notification-link-text-view-newsletter',
 				'destination' => 'newsletter'
-			),
-			'user-locators' => array(
+			],
+			'user-locators' => [
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
-			),
+			],
 			'presentation-model' => 'EchoNewsletterPresentationModel',
 			'title-message' => 'newsletter-notification-title',
-			'title-params' => array( 'newsletter-name', 'title', 'agent', 'user' ),
+			'title-params' => [ 'newsletter-name', 'title', 'agent', 'user' ],
 			'flyout-message' => 'newsletter-notification-flyout',
-			'flyout-params' => array( 'newsletter-name', 'agent', 'user' ),
-			'payload' => array( 'summary' ),
+			'flyout-params' => [ 'newsletter-name', 'agent', 'user' ],
+			'payload' => [ 'summary' ],
 			'email-subject-message' => 'newsletter-email-subject',
-			'email-subject-params' => array( 'newsletter-name' ),
+			'email-subject-params' => [ 'newsletter-name' ],
 			'email-body-batch-message' => 'newsletter-email-batch-body',
-			'email-body-batch-params' =>  array( 'newsletter-name', 'agent', 'user' ),
-		);
+			'email-body-batch-params' =>  [ 'newsletter-name', 'agent', 'user' ],
+		];
 
-		$notifications['newsletter-newpublisher'] = array(
+		$notifications['newsletter-newpublisher'] = [
 			'category' => 'newsletter',
-			'primary-link' => array(
+			'primary-link' => [
 				'message' => 'newsletter-notification-link-text-new-publisher',
 				'destination' => 'newsletter'
-			),
-			'user-locators' => array(
-				array( 'EchoUserLocator::locateFromEventExtra', array( 'new-publishers-id' ) )
-			),
+			],
+			'user-locators' => [
+				[ 'EchoUserLocator::locateFromEventExtra', [ 'new-publishers-id' ] ]
+			],
 			'presentation-model' => 'EchoNewsletterPublisherPresentationModel',
 			'title-message' => 'newsletter-notification-new-publisher-title',
-			'title-params' => array( 'newsletter-name', 'agent' ),
+			'title-params' => [ 'newsletter-name', 'agent' ],
 			'flyout-message' => 'newsletter-notification-new-publisher-flyout',
-			'flyout-params' => array( 'newsletter-name', 'agent' ),
-		);
-		$notifications['newsletter-subscribed'] = array(
+			'flyout-params' => [ 'newsletter-name', 'agent' ],
+		];
+		$notifications['newsletter-subscribed'] = [
 			'category' => 'newsletter',
-			'primary-link' => array(
+			'primary-link' => [
 				'message' => 'newsletter-notification-subscribed',
 				'destination' => 'newsletter'
-			),
-			'user-locators' => array(
-				array( 'EchoUserLocator::locateFromEventExtra', array( 'new-subscribers-id' ) )
-			),
+			],
+			'user-locators' => [
+				[ 'EchoUserLocator::locateFromEventExtra', [ 'new-subscribers-id' ] ]
+			],
 			'presentation-model' => 'EchoNewsletterSubscribedPresentationModel',
 			'title-message' => 'newsletter-notification-subscribed',
-			'title-params' => array( 'newsletter-name'),
-		);
-		$notifications['newsletter-unsubscribed'] = array(
+			'title-params' => [ 'newsletter-name' ],
+		];
+		$notifications['newsletter-unsubscribed'] = [
 			'category' => 'newsletter',
-			'primary-link' => array(
+			'primary-link' => [
 				'message' => 'newsletter-notification-unsubscribed',
 				'destination' => 'newsletter'
-			),
-			'user-locators' => array(
-				array( 'EchoUserLocator::locateFromEventExtra', array( 'removed-subscribers-id' ) )
-			),
+			],
+			'user-locators' => [
+				[ 'EchoUserLocator::locateFromEventExtra', [ 'removed-subscribers-id' ] ]
+			],
 			'presentation-model' => 'EchoNewsletterUnsubscribedPresentationModel',
 			'title-message' => 'newsletter-notification-unsubscribed',
-			'title-params' => array( 'newsletter-name'),
-		);
+			'title-params' => [ 'newsletter-name' ],
+		];
 
 		return true;
 	}
@@ -129,7 +129,7 @@ class NewsletterHooks {
 		/**
 		 * @var SplFileInfo $fileInfo
 		 */
-		$ourFiles = array();
+		$ourFiles = [];
 		foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
 			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
 				$ourFiles[] = $fileInfo->getPathname();
@@ -149,8 +149,8 @@ class NewsletterHooks {
 	 * @return bool
 	 */
 	public static function onUserMergeAccountFields( array &$updateFields ) {
-		$updateFields[] = array( 'nl_publishers', 'nlp_publisher_id' );
-		$updateFields[] = array( 'nl_subscriptions', 'nls_subscriber_id' );
+		$updateFields[] = [ 'nl_publishers', 'nlp_publisher_id' ];
+		$updateFields[] = [ 'nl_subscriptions', 'nls_subscriber_id' ];
 
 		return true;
 	}
@@ -211,7 +211,7 @@ class NewsletterHooks {
 	 * @return bool
 	 * @throws PermissionsError
 	 */
-	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status, $suppress) {
+	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status, $suppress ) {
 		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -255,7 +255,7 @@ class NewsletterHooks {
 
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $newsletter->getPageId() && (int)$row->nl_active === 1 ) {
-					throw new ErrorPageError( 'newsletter-mainpage-in-use','newsletter-mainpage-in-use-title' );
+					throw new ErrorPageError( 'newsletter-mainpage-in-use', 'newsletter-mainpage-in-use-title' );
 				}
 			}
 			$success = $store->restoreNewsletter( $newsletterName );
@@ -296,7 +296,7 @@ class NewsletterHooks {
 	 * @param $ok Output parameter, whether it is OK to use $contentModel on $title.
 	 * @return bool
 	 */
-	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ){
+	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ) {
 		if ( $title->inNamespace( NS_NEWSLETTER ) && $contentModel != 'NewsletterContent' ) {
 			$ok = false;
 		} elseif ( !$title->inNamespace( NS_NEWSLETTER ) && $contentModel == 'NewsletterContent' ) {

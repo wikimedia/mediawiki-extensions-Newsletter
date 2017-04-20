@@ -31,7 +31,7 @@ class NewsletterDiffEngine extends DifferenceEngine {
 		);
 
 		if ( $mainPageDiff ) {
-			if( trim( $mainPageDiff ) !== '' ) {
+			if ( trim( $mainPageDiff ) !== '' ) {
 				$output .= Html::openElement( 'tr' );
 				$output .= Html::openElement( 'td',
 					[ 'colspan' => 4, 'id' => 'mw-newsletter-diffmainpageheader' ] );

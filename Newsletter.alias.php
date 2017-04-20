@@ -6,11 +6,11 @@
  * @ingroup Extensions
  */
 
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases['en'] = array(
-	'NewsletterCreate' => array( 'CreateNewsletter' ),
-	'Newsletters' => array( 'Newsletters' ),
-	'Newsletter' => array( 'Newsletter' )
-);
+$specialPageAliases['en'] = [
+	'NewsletterCreate' => [ 'CreateNewsletter' ],
+	'Newsletters' => [ 'Newsletters' ],
+	'Newsletter' => [ 'Newsletter' ]
+];

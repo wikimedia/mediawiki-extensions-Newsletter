@@ -81,19 +81,19 @@ class SpecialNewsletters extends SpecialPage {
 	}
 
 	private function getFormFields() {
-		return array(
-			'filter' => array(
+		return [
+			'filter' => [
 				'id' => 'mw-newsletter-filter-options',
 				'type' => 'select',
 				'name' => 'filter',
 				'label-message' => 'newsletter-list-table',
-				'options' => array(
+				'options' => [
 					$this->msg( 'newsletter-list-option-all' )->escaped() => 'all',
 					$this->msg( 'newsletter-list-option-subscribed' )->escaped() => 'subscribed',
 					$this->msg( 'newsletter-list-option-unsubscribed' )->escaped() => 'unsubscribed'
-				),
+				],
 				'default' => $this->option,
-			),
-		);
+			],
+		];
 	}
 }

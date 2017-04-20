@@ -15,19 +15,19 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 	}
 
 	public function getPrimaryLink() {
-		return array(
+		return [
 			'url' => $this->event->getTitle()->getFullURL(),
 			'label' => $this->msg( 'newsletter-notification-link-text-new-issue' )
-		);
+		];
 	}
 
 	public function getSecondaryLinks() {
-		return array(
-			array(
+		return [
+			[
 				'url' => $this->getNewsletterUrl(),
 				'label' => $this->msg( 'newsletter-notification-link-text-view-newsletter' )
-			),
-		);
+			],
+		];
 	}
 
 	public function getHeaderMessage() {

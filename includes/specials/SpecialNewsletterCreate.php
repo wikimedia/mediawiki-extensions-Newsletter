@@ -39,27 +39,27 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		return array(
-			'name' => array(
+		return [
+			'name' => [
 				'name' => 'newsletter',
 				'type' => 'text',
 				'required' => true,
 				'label-message' => 'newsletter-name',
 				'maxlength' => 120,
-			),
-			'mainpage' => array(
+			],
+			'mainpage' => [
 				'type' => 'title',
 				'required' => true,
 				'label-message' => 'newsletter-title',
-			),
-			'description' => array(
+			],
+			'description' => [
 				'type' => 'textarea',
 				'required' => true,
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
 				'maxlength' => 600000,
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -72,11 +72,11 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	public function onSubmit( array $input ) {
 		global $wgContLang;
 
-		$data = array(
+		$data = [
 			'Name' => trim( $input['name'] ),
 			'Description' => trim( $input['description'] ),
 			'MainPage' => Title::newFromText( $input['mainpage'] ),
-		);
+		];
 
 		$validator = new NewsletterValidator( $data );
 		$validation = $validator->validate( true );
@@ -90,13 +90,13 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name', 'nl_main_page_id', 'nl_active' ),
+			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
 			$dbr->makeList(
-				array(
+				[
 					'nl_name' => $data['Name'],
 					'nl_main_page_id' => $mainPageId,
 					'nl_active' => 1
-				 ),
+				 ],
 				 LIST_OR
 			)
 		);
@@ -104,7 +104,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {
 				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
-			} elseif ( (int)$row->nl_main_page_id === $mainPageId  && (int)$row->nl_active === 1 ) {
+			} elseif ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
 				return Status::newFatal( 'newsletter-mainpage-in-use' );
 			}
 		}
@@ -134,7 +134,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				$title,
 				$data['Description'],
 				$input['mainpage'],
-				array( $user->getName() ),
+				[ $user->getName() ],
 				$editSummaryMsg->inContentLanguage()->plain(),
 				$this->getContext()
 			);

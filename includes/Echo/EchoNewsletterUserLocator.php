@@ -11,7 +11,7 @@ class EchoNewsletterUserLocator {
 		$extra = $event->getExtra();
 		$newsletter = Newsletter::newFromID( (int)$extra['newsletter-id'] );
 		if ( !$newsletter ) {
-			return array();
+			return [];
 		}
 
 		return UserArray::newFromIDs( $newsletter->getSubscribers() );

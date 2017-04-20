@@ -45,40 +45,40 @@ class ApiNewsletterManage extends ApiBase {
 
 		// Success
 		$this->getResult()->addValue( null, $this->getModuleName(),
-			array(
+			[
 				'id' => $newsletter->getId(),
 				'name' => $newsletter->getName(),
-			)
+			]
 		);
 	}
 
 	public function getAllowedParams() {
-		return array(
-			'id' => array(
+		return [
+			'id' => [
 				ApiBase::PARAM_TYPE => 'integer',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'do' => array(
-				ApiBase::PARAM_TYPE => array( 'addpublisher', 'removepublisher' ),
+			],
+			'do' => [
+				ApiBase::PARAM_TYPE => [ 'addpublisher', 'removepublisher' ],
 				ApiBase::PARAM_REQUIRED => true,
-			),
-			'publisher' => array(
+			],
+			'publisher' => [
 				ApiBase::PARAM_TYPE => 'string',
 				ApiBase::PARAM_REQUIRED => true,
-			),
-		);
+			],
+		];
 	}
 
 	/**
 	 * @see ApiBase::getExamplesMessages()
 	 */
 	protected function getExamplesMessages() {
-		return array(
+		return [
 			'action=newslettermanage&id=1&do=addpublisher&publisher=3'
 				=> 'apihelp-newslettermanage-example-1',
 			'action=newslettermanage&id=2&do=removepublisher&publisher=5'
 				=> 'apihelp-newslettermanage-example-2',
-		);
+		];
 	}
 
 	public function isWriteMode() {

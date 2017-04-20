@@ -29,11 +29,11 @@ class NewsletterTablePager extends TablePager {
 
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
-			$this->fieldNames = array(
+			$this->fieldNames = [
 				'nl_name' => $this->msg( 'newsletter-header-name' )->text(),
 				'nl_desc' => $this->msg( 'newsletter-header-description' )->text(),
 				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
-			);
+			];
 
 			if ( $this->getUser()->isLoggedIn() ) {
 				// Only logged-in users can (un)subscribe
@@ -45,23 +45,23 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function getQueryInfo() {
-		//TODO we could probably just retrieve all subscribers IDs as a string here.
+		// TODO we could probably just retrieve all subscribers IDs as a string here.
 
 		$userId = $this->getUser()->getId();
 		$tblSubscriptions = $this->mDb->tableName( 'nl_subscriptions' );
 
-		$info = array(
-			'tables' => array( 'nl_newsletters' ),
-			'fields' => array(
+		$info = [
+			'tables' => [ 'nl_newsletters' ],
+			'fields' => [
 				'nl_name',
 				'nl_desc',
 				'nl_id',
 				'subscribers' => "( SELECT COUNT(*) FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )",
-			),
-			'options' => array( 'DISTINCT nl_id' ),
-		);
+			],
+			'options' => [ 'DISTINCT nl_id' ],
+		];
 
-		$info['conds'] = array( 'nl_active = 1' );
+		$info['conds'] = [ 'nl_active = 1' ];
 		if ( $this->option == 'subscribed' ) {
 			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
 				" IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )" );
@@ -97,7 +97,7 @@ class NewsletterTablePager extends TablePager {
 			case 'subscriber_count':
 				return Html::element(
 					'span',
-					array( 'id' => "nl-count-$id" ),
+					[ 'id' => "nl-count-$id" ],
 					$this->mCurrentRow->subscribers
 				);
 			case 'action' :
@@ -107,10 +107,10 @@ class NewsletterTablePager extends TablePager {
 					);
 					$link = $linkRenderer->makeKnownLink( $title,
 						$this->msg( 'newsletter-unsubscribe-button' )->text(),
-						array(
+						[
 							'class' => 'newsletter-subscription newsletter-subscribed',
 							'data-mw-newsletter-id' => $id
-						)
+						]
 					);
 				} else {
 					$title = SpecialPage::getTitleFor(
@@ -119,10 +119,10 @@ class NewsletterTablePager extends TablePager {
 					$link = $linkRenderer->makeKnownLink(
 						$title,
 						$this->msg( 'newsletter-subscribe-button' )->text(),
-						array(
+						[
 							'class' => 'newsletter-subscription newsletter-unsubscribed',
 							'data-mw-newsletter-id' => $id
-						)
+						]
 					);
 				}
 

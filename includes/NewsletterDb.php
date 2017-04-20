@@ -24,15 +24,15 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function addSubscription( Newsletter $newsletter, $userIds ) {
-		$rowData = array();
+		$rowData = [];
 		foreach ( $userIds as $userId ) {
-			$rowData[] = array(
+			$rowData[] = [
 				'nls_newsletter_id' => $newsletter->getId(),
 				'nls_subscriber_id' => $userId
-			);
+			];
 		}
 		$dbw = $this->lb->getConnection( DB_MASTER );
-		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, array( 'IGNORE' ) );
+		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
 		$this->lb->reuseConnection( $dbw );
 
@@ -46,10 +46,10 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function removeSubscription( Newsletter $newsletter, $userIds ) {
-		$rowData = array(
+		$rowData = [
 			'nls_newsletter_id' => $newsletter->getId(),
 			'nls_subscriber_id' => $userIds
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
@@ -66,13 +66,13 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function addPublisher( Newsletter $newsletter, User $user ) {
-		$rowData = array(
+		$rowData = [
 			'nlp_newsletter_id' => $newsletter->getId(),
 			'nlp_publisher_id' => $user->getId(),
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
-		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, array( 'IGNORE' ) );
+		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
 
 		$this->lb->reuseConnection( $dbw );
@@ -88,10 +88,10 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function removePublisher( Newsletter $newsletter, User $user ) {
-		$rowData = array(
+		$rowData = [
 			'nlp_newsletter_id' => $newsletter->getId(),
 			'nlp_publisher_id' => $user->getId(),
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
@@ -108,11 +108,11 @@ class NewsletterDb {
 	 * @return bool|int the id of the newsletter added, false on failure
 	 */
 	public function addNewsletter( Newsletter $newsletter ) {
-		$rowData = array(
+		$rowData = [
 			'nl_name' => $newsletter->getName(),
 			'nl_desc' => $newsletter->getDescription(),
 			'nl_main_page_id' => $newsletter->getPageId(),
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
@@ -140,13 +140,13 @@ class NewsletterDb {
 		Assert::parameterType( 'integer', $id, '$id' );
 		Assert::parameterType( 'string', $description, '$description' );
 
-		$rowData = array(
+		$rowData = [
 			'nl_desc' => $description,
-		);
+		];
 
-		$conds = array(
+		$conds = [
 			'nl_id' => $id,
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
@@ -170,13 +170,13 @@ class NewsletterDb {
 		Assert::parameterType( 'integer', $id, '$id' );
 		Assert::parameterType( 'string', $name, '$name' );
 
-		$rowData = array(
+		$rowData = [
 			'nl_name' => $name,
-		);
+		];
 
-		$conds = array(
+		$conds = [
 			'nl_id' => $id,
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
@@ -200,13 +200,13 @@ class NewsletterDb {
 		Assert::parameterType( 'integer', $id, '$id' );
 		Assert::parameterType( 'integer', $pageId, '$pageId' );
 
-		$rowData = array(
+		$rowData = [
 			'nl_main_page_id' => $pageId,
-		);
+		];
 
-		$conds = array(
+		$conds = [
 			'nl_id' => $id,
-		);
+		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		try {
@@ -230,8 +230,8 @@ class NewsletterDb {
 
 		$dbw->update(
 			'nl_newsletters',
-			array( 'nl_active' => 0 ),
-			array( 'nl_id' => $newsletter->getId() ),
+			[ 'nl_active' => 0 ],
+			[ 'nl_id' => $newsletter->getId() ],
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
@@ -253,8 +253,8 @@ class NewsletterDb {
 
 		$dbw->update(
 			'nl_newsletters',
-			array( 'nl_active' => 1 ),
-			array( 'nl_name' => $newsletterName ),
+			[ 'nl_active' => 1 ],
+			[ 'nl_name' => $newsletterName ],
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
@@ -275,8 +275,8 @@ class NewsletterDb {
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_id' => $id, 'nl_active' => 1 ),
+			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
+			[ 'nl_id' => $id, 'nl_active' => 1 ],
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -300,8 +300,8 @@ class NewsletterDb {
 		$dbr = $this->lb->getConnectionRef( DB_SLAVE );
 		$res = $dbr->selectRow(
 			'nl_newsletters',
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_name' => $name, 'nl_active' => $active ),
+			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
+			[ 'nl_name' => $name, 'nl_active' => $active ],
 			__METHOD__
 		);
 
@@ -321,7 +321,7 @@ class NewsletterDb {
 		$result = $dbr->selectFieldValues(
 			'nl_publishers',
 			'nlp_publisher_id',
-			array( 'nlp_newsletter_id' => $id ),
+			[ 'nlp_newsletter_id' => $id ],
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -342,7 +342,7 @@ class NewsletterDb {
 		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
 			'nls_subscriber_id',
-			array( 'nls_newsletter_id' => $id ),
+			[ 'nls_newsletter_id' => $id ],
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -362,8 +362,8 @@ class NewsletterDb {
 
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nl_main_page_id' => $id, 'nl_active' => 1 ),
+			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
+			[ 'nl_main_page_id' => $id, 'nl_active' => 1 ],
 			__METHOD__
 		);
 		$this->lb->reuseConnection( $dbr );
@@ -380,12 +380,12 @@ class NewsletterDb {
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
 		$res = $dbr->select(
-			array( 'nl_publishers', 'nl_newsletters' ),
-			array( 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ),
-			array( 'nlp_publisher_id' => $user->getId(), 'nl_active' => 1 ),
+			[ 'nl_publishers', 'nl_newsletters' ],
+			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
+			[ 'nlp_publisher_id' => $user->getId(), 'nl_active' => 1 ],
 			__METHOD__,
-			array(),
-			array( 'nl_newsletters' => array( 'LEFT JOIN', 'nl_id=nlp_newsletter_id' ) )
+			[],
+			[ 'nl_newsletters' => [ 'LEFT JOIN', 'nl_id=nlp_newsletter_id' ] ]
 		);
 		$this->lb->reuseConnection( $dbr );
 
@@ -406,8 +406,8 @@ class NewsletterDb {
 
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name' ),
-			array( 'nl_name' => $name )
+			[ 'nl_name' ],
+			[ 'nl_name' => $name ]
 		);
 
 		$this->lb->reuseConnection( $dbr );
@@ -423,13 +423,13 @@ class NewsletterDb {
 	 * @throws MWException
 	 */
 	public function newsletterExistsForMainPage( $mainPageId ) {
-		Assert::parameterType( 'integer', $mainPageId , '$mainPageId' );
+		Assert::parameterType( 'integer', $mainPageId, '$mainPageId' );
 		$dbr = $this->lb->getConnection( DB_SLAVE );
 
 		$res = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_main_page_id', 'nl_active' ),
-			array( 'nl_main_page_id' => $mainPageId )
+			[ 'nl_main_page_id', 'nl_active' ],
+			[ 'nl_main_page_id' => $mainPageId ]
 		);
 
 		$this->lb->reuseConnection( $dbr );
@@ -442,7 +442,7 @@ class NewsletterDb {
 	 * @return Newsletter[]
 	 */
 	private function getNewslettersFromResult( ResultWrapper $result ) {
-		$newsletters = array();
+		$newsletters = [];
 		foreach ( $result as $row ) {
 			$newsletters[] = $this->getNewsletterFromRow( $row );
 		}
@@ -480,21 +480,21 @@ class NewsletterDb {
 		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
 			'MAX(nli_issue_id)',
-			array( 'nli_newsletter_id' => $newsletter->getId() ),
+			[ 'nli_newsletter_id' => $newsletter->getId() ],
 			__METHOD__,
-			array( 'FOR UPDATE' )
+			[ 'FOR UPDATE' ]
 		);
 		$nextIssueId = $lastIssueId + 1;
 
 		try {
 			$success = $dbw->insert(
 				'nl_issues',
-				array(
+				[
 					'nli_issue_id' => $nextIssueId,
 					'nli_page_id' => $title->getArticleID(),
 					'nli_newsletter_id' => $newsletter->getId(),
 					'nli_publisher_id' => $publisher->getId(),
-				),
+				],
 				__METHOD__
 			);
 		} catch ( DBQueryError $ex ) {

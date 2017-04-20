@@ -10,7 +10,7 @@ class NewsletterEditPage {
 
 	protected $newsletter;
 
-	public function __construct( IContextSource $context, Newsletter $newsletter = null) {
+	public function __construct( IContextSource $context, Newsletter $newsletter = null ) {
 		$this->context = $context;
 		$this->user = $context->getUser();
 		$this->title = $context->getTitle();
@@ -80,40 +80,40 @@ class NewsletterEditPage {
 
 	protected function getManageForm() {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
-		$publishersNames = array();
+		$publishersNames = [];
 
 		$mainTitle = Title::newFromID( $this->newsletter->getPageId() );
 		foreach ( $publishers as $publisher ) {
 			$publishersNames[] = $publisher->getName();
 		}
-		$fields['MainPage'] = array(
+		$fields['MainPage'] = [
 			'type' => 'title',
 			'label-message' => 'newsletter-manage-title',
 			'default' =>  $mainTitle->getPrefixedText(),
 			'required' => true,
-		);
-		$fields['Description'] = array(
+		];
+		$fields['Description'] = [
 			'type' => 'textarea',
 			'label-message' => 'newsletter-manage-description',
 			'rows' => 6,
 			'default' => $this->newsletter->getDescription(),
 			'required' => true,
-		);
-		$fields['Publishers'] = array(
+		];
+		$fields['Publishers'] = [
 			'type' => 'usersmultiselect',
 			'label-message' => 'newsletter-manage-publishers',
 			'default' => $publishersNames,
 			'exists' => true,
-		);
-		$fields['Summary'] = array(
+		];
+		$fields['Summary'] = [
 			'type' => 'text',
 			'label-message' => 'newsletter-manage-summary',
 			'required' => false,
-		);
-		$fields['Confirm'] = array(
+		];
+		$fields['Confirm'] = [
 			'type' => 'hidden',
 			'default' => false,
-		);
+		];
 		if ( $this->context->getRequest()->wasPosted() ) {
 			// @todo Make this work properly for double submissions
 			$fields['Confirm']['default'] = true;
@@ -159,27 +159,27 @@ class NewsletterEditPage {
 	 * @return array
 	 */
 	protected function getFormFields() {
-		return array(
-			'name' => array(
+		return [
+			'name' => [
 				'type' => 'text',
 				'required' => true,
 				'label-message' => 'newsletter-name',
 				'maxlength' => 120,
 				'default' => $this->title->getText(),
-			),
-			'mainpage' => array(
+			],
+			'mainpage' => [
 				'type' => 'title',
 				'required' => true,
 				'label-message' => 'newsletter-title',
-			),
-			'description' => array(
+			],
+			'description' => [
 				'type' => 'textarea',
 				'required' => true,
 				'label-message' => 'newsletter-desc',
 				'rows' => 15,
 				'maxlength' => 600000,
-			),
-		);
+			],
+		];
 	}
 
 	/**
@@ -192,11 +192,11 @@ class NewsletterEditPage {
 	public function attemptSave( array $input ) {
 		global $wgContLang;
 
-		$data = array(
+		$data = [
 			'Name' => trim( $input['name'] ),
 			'Description' => trim( $input['description'] ),
 			'MainPage' => Title::newFromText( $input['mainpage'] ),
-		);
+		];
 
 		$validator = new NewsletterValidator( $data );
 		$validation = $validator->validate( true );
@@ -210,13 +210,13 @@ class NewsletterEditPage {
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
 			'nl_newsletters',
-			array( 'nl_name', 'nl_main_page_id', 'nl_active' ),
+			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
 			$dbr->makeList(
-				array(
+				[
 					'nl_name' => $data['Name'],
 					'nl_main_page_id' => $mainPageId,
 					'nl_active' => 1
-				),
+				],
 				LIST_OR
 			)
 		);
@@ -224,7 +224,7 @@ class NewsletterEditPage {
 		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {
 				return Status::newFatal( 'newsletter-exist-error', $data['Name'] );
-			} elseif ( (int)$row->nl_main_page_id === $mainPageId  && (int)$row->nl_active === 1 ) {
+			} elseif ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
 				return Status::newFatal( 'newsletter-mainpage-in-use' );
 			}
 		}
@@ -251,7 +251,7 @@ class NewsletterEditPage {
 				$title,
 				$data['Description'],
 				$input['mainpage'],
-				array( $this->user->getName() ),
+				[ $this->user->getName() ],
 				$editSummaryMsg->inContentLanguage()->plain(),
 				$this->context
 			);
@@ -292,10 +292,10 @@ class NewsletterEditPage {
 			return Status::newFatal( 'newsletter-create-mainpage-error' );
 		}
 
-		$formData = array(
+		$formData = [
 			'Description' => $description,
 			'MainPage' => $mainPage,
-		);
+		];
 
 		$validator = new NewsletterValidator( $formData );
 		$validation = $validator->validate( false );
@@ -359,15 +359,15 @@ class NewsletterEditPage {
 
 		if ( $added ) {
 			EchoEvent::create(
-				array(
+				[
 					'type' => 'newsletter-newpublisher',
-					'extra' => array(
+					'extra' => [
 						'newsletter-name' => $this->newsletter->getName(),
 						'new-publishers-id' => $added,
 						'newsletter-id' => $newsletterId
-					),
+					],
 					'agent' => $user
-				)
+				]
 			);
 		}
 
@@ -408,7 +408,7 @@ class NewsletterEditPage {
 	 * @return int[]
 	 */
 	private static function getIdsFromUsers( $users ) {
-		$ids = array();
+		$ids = [];
 		foreach ( $users as $user ) {
 			$ids[] = $user->getId();
 		}

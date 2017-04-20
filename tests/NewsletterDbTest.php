@@ -36,7 +36,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 			->method( 'insert' )
 			->with(
 				'nl_subscriptions',
-				array( array( 'nls_subscriber_id' => $user->getId(), 'nls_newsletter_id' => 1 ) )
+				[ [ 'nls_subscriber_id' => $user->getId(), 'nls_newsletter_id' => 1 ] ]
 			);
 		$mockWriteDb->expects( $this->once() )
 			->method( 'affectedRows' )
@@ -47,7 +47,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		$mainPage = Title::newFromText( "Test content" );
 		$newsletter = new Newsletter( 1, 'Test name', 'This is a test description. This is a more test description',
 			$mainPage->getArticleID() );
-		$result = $table->addSubscription( $newsletter, array( $user->getId() ) );
+		$result = $table->addSubscription( $newsletter, [ $user->getId() ] );
 
 		$this->assertEquals( true, $result );
 	}

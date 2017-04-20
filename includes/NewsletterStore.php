@@ -30,7 +30,7 @@ class NewsletterStore {
 	/**
 	 * @return NewsletterStore instance of NewsletterStore
 	 */
-	public static function getDefaultInstance(){
+	public static function getDefaultInstance() {
 		if ( !self::$instance ) {
 			self::$instance = new self(
 				new NewsletterDb( wfGetLB() ),
