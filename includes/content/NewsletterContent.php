@@ -124,10 +124,11 @@ class NewsletterContent extends JsonContent {
 		// No-op: We have already redirected.
 	}
 
-	protected function fillParserOutput( Title $title, $revId, ParserOptions $options, $generateHtml, ParserOutput &$output ) {
+	protected function fillParserOutput( Title $title, $revId, ParserOptions $options,
+	                                     $generateHtml, ParserOutput &$output ) {
 		if ( $generateHtml ) {
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
-			//Make sure things are decoded at this point
+			// Make sure things are decoded at this point
 			$this->decode();
 
 			$newsletterActionButtons = !$this->newsletter ? '' : $this->getNewsletterActionButtons(
@@ -179,14 +180,16 @@ class NewsletterContent extends JsonContent {
 				$logs = '';
 				$logCount = LogEventsList::showLogExtract( $logs, // by reference
 					'newsletter',
-					SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), '', array(
+					SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), '',
+					[
 						'lim' => 10,
 						'showIfEmpty' => false,
-						'conds' => array( 'log_action' => 'issue-added' ),
-						'extraUrlParams' => array( 'subtype' => 'issue-added' ),
-					) );
+						'conds' => [ 'log_action' => 'issue-added' ],
+						'extraUrlParams' => [ 'subtype' => 'issue-added' ],
+					]
+				);
 				if ( $logCount !== 0 ) {
-					$fields['issues'] = array(
+					$fields['issues'] = [
 						'type' => 'info',
 						'raw' => true,
 						'default' => $logs,
@@ -194,7 +197,7 @@ class NewsletterContent extends JsonContent {
 							->inLanguage( $options->getUserLangObj() )
 							->numParams( $logCount )
 							->text(),
-					);
+					];
 				}
 			}
 			$form = $this->getHTMLForm(
@@ -370,7 +373,8 @@ class NewsletterContent extends JsonContent {
 		}
 		$links = [];
 		foreach ( $actions as $action ) {
-			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' . $action );
+			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' .
+			                                                 $action );
 
 			// Messages used here: 'newsletter-subtitlelinks-announce',
 			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
@@ -385,10 +389,15 @@ class NewsletterContent extends JsonContent {
 			$links[] = $link;
 		}
 		$newsletterLinks = Linker::makeSelfLinkObj(
-				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), $this->getEscapedName()
-			) . ' ' . wfMessage( 'parentheses' )->rawParams( $options->getUserLangObj()->pipeList( $links ) )->escaped();
+				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
+				$this->getEscapedName()
+			) . ' ' . wfMessage( 'parentheses' )->rawParams(
+				$options->getUserLangObj()->pipeList( $links )
+			)->escaped();
 
-		return $wgOut->setSubtitle( $options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] ) );
+		return $wgOut->setSubtitle(
+			$options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] )
+		);
 	}
 
 	/**
@@ -445,7 +454,8 @@ class NewsletterContent extends JsonContent {
 	 * @param Content $old Content object representing the page's content before the edit.
 	 * @param bool $recursive bool indicating whether DataUpdates should trigger recursive
 	 * updates (relevant mostly for LinksUpdate).
-	 * @param ParserOutput $parserOutput ParserOutput representing the rendered version of the page after the edit.
+	 * @param ParserOutput $parserOutput ParserOutput representing the rendered version of
+	 * the page after the edit.
 	 * @return DataUpdate[]
 	 *
 	 * @see Content::getSecondaryDataUpdates()

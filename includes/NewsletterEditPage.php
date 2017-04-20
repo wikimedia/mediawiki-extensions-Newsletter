@@ -51,7 +51,9 @@ class NewsletterEditPage {
 				return;
 			}
 
-			$this->out->setPageTitle( $this->context->msg( 'newslettercreate', $this->title->getPrefixedText() )->text() );
+			$this->out->setPageTitle(
+				$this->context->msg( 'newslettercreate', $this->title->getPrefixedText() )->text()
+			);
 			$this->getForm()->show();
 		}
 	}

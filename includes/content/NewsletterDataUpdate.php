@@ -42,7 +42,7 @@ class NewsletterDataUpdate extends DataUpdate {
 			$rows = $dbr->select(
 				'nl_newsletters',
 				[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-				$dbr->makeList([
+				$dbr->makeList( [
 					'nl_name' => $this->name,
 					$dbr->makeList(
 						[
@@ -89,16 +89,17 @@ class NewsletterDataUpdate extends DataUpdate {
 
 		$updatedMainPageId = $this->content->getMainPage()->getArticleID();
 		if ( $updatedMainPageId != $newsletter->getPageId() ) {
-			$store->updateMainPage($newsletterId, $updatedMainPageId );
+			$store->updateMainPage( $newsletterId, $updatedMainPageId );
 		}
 
 		$updatedPublishers = array_map( 'User::newFromName', $this->content->getPublishers() );
 		$oldPublishersIds = $newsletter->getPublishers();
-		$updatedPublishersIds = array();
+		$updatedPublishersIds = [];
 
 		foreach ( $updatedPublishers as $user ) {
-			if ( $user instanceof User )
+			if ( $user instanceof User ) {
 				$updatedPublishersIds[] = $user->getId();
+			}
 		}
 
 		// Do the actual modifications now
@@ -112,15 +113,15 @@ class NewsletterDataUpdate extends DataUpdate {
 
 		if ( $added ) {
 			EchoEvent::create(
-				array(
+				[
 					'type' => 'newsletter-newpublisher',
-					'extra' => array(
+					'extra' => [
 						'newsletter-name' => $newsletter->getName(),
 						'new-publishers-id' => $added,
 						'newsletter-id' => $newsletterId
-					),
+					],
 					'agent' => $this->user
-				)
+				]
 			);
 		}
 		foreach ( $removed as $ruId ) {

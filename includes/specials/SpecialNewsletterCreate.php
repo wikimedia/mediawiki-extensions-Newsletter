@@ -89,7 +89,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$rows = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-			$dbr->makeList([
+			$dbr->makeList( [
 				'nl_name' => $data['Name'],
 				$dbr->makeList(
 					[

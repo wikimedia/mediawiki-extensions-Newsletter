@@ -228,7 +228,9 @@ class SpecialNewsletter extends SpecialPage {
 		$form->addHeaderText( $txt );
 		$form->suppressDefaultSubmit();
 		$form->show();
-		$this->getOutput()->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
+		$this->getOutput()->addReturnTo( Title::makeTitleSafe(
+			NS_NEWSLETTER, $this->newsletter->getName() )
+		);
 	}
 
 	/**

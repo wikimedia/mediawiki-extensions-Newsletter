@@ -109,9 +109,12 @@ class NewsletterHooks {
 		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/sql/nl_issues.sql' );
 		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql' );
 		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql' );
-		$updater->addExtensionField( 'nl_newsletters', 'nl_active', __DIR__ . '/sql/nl_newsletters-add-active.sql' );
-		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_main_page_id', __DIR__ . '/sql/nl_main_page_id-drop-index.sql' );
-		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active', __DIR__ . '/sql/nl_newsletters-add-unique.sql' );
+		$updater->addExtensionField( 'nl_newsletters', 'nl_active',
+			__DIR__ . '/sql/nl_newsletters-add-active.sql' );
+		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_main_page_id',
+			__DIR__ . '/sql/nl_main_page_id-drop-index.sql' );
+		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active',
+			__DIR__ . '/sql/nl_newsletters-add-unique.sql' );
 
 		return true;
 	}
@@ -210,7 +213,8 @@ class NewsletterHooks {
 	 * @return bool
 	 * @throws PermissionsError
 	 */
-	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status, $suppress ) {
+	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status,
+	                                        $suppress ) {
 		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -315,7 +319,8 @@ class NewsletterHooks {
 	 * @throws ThrottledError
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
-	                                                  Status $status, $summary, User $user, $minoredit ) {
+	                                                  Status $status, $summary, User $user,
+	                                                  $minoredit ) {
 		global $wgUser;
 		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return;
@@ -332,11 +337,11 @@ class NewsletterHooks {
 		$newsletter = Newsletter::newFromName( $context->getTitle()->getText() );
 
 		// Validate API Edit parameters
-		$formData = array(
+		$formData = [
 			'Name' => $context->getTitle()->getText(),
 			'Description' => $content->getDescription(),
 			'MainPage' => $content->getMainPage(),
-		);
+		];
 		$validator = new NewsletterValidator( $formData );
 		$validation = $validator->validate( !$newsletter );
 		if ( !$validation->isGood() ) {
