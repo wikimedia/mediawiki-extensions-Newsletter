@@ -2,10 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"KorkmazO",
-			"HakanIST"
+			"HakanIST",
+			"Vito Genovese"
 		]
 	},
 	"newslettercreate": "Bülten oluştur",
+	"newsletter-view-mainpage": "Anasayfa:",
 	"newsletter-view-no-publishers": "Yayımcı yok.",
 	"newsletter-announce-button": "Duyur",
 	"newsletter-announce-nopermission": "Bu bülten için yayımcı değilsiniz.",
@@ -18,8 +20,6 @@
 	"newsletter-subscribing": "Üye oluyor...",
 	"newsletter-unsubscribing": "Üyelikten ayrılıyor...",
 	"newsletter-list-search-none-found": "Talebinizle eşleşen bülten yok.",
-	"newsletter-manage-header-publisher": "Yayıncılar",
-	"newsletter-dropdown-default-message": "Lütfen birini seçin",
 	"right-newsletter-create": "Bülten oluştur",
 	"action-newsletter-create": "bülten oluştur",
 	"right-newsletter-delete": "Bültenleri sil",
@@ -27,7 +27,6 @@
 	"right-newsletter-manage": "Bültenlerden yayımcı sil veya ekle",
 	"action-newsletter-manage": "bültenleri yönet",
 	"newsletter-list-table": "Table filitre kriteri:",
-	"newsletter-list-section": "Bültenleri ara",
 	"newsletter-list-option-all": "Tüm bültenler",
 	"newsletter-list-option-subscribed": "Üyesi olduğum bültenler",
 	"newsletter-list-option-unsubscribed": "Üyesi olmadığım bültenler",
