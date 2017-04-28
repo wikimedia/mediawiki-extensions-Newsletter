@@ -59,6 +59,7 @@
 	"newsletter-unsubscribing": "Aan het afmelden...",
 	"newsletter-subscribers-invalid": "\"$1\" is geen geldige gebruiker. Zorg ervoor dat de gebruikersnaam bestaat en probeer opnieuw.",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
+	"echo-category-title-newsletter": "Nieuwsbrieven",
 	"newsletter-header-name": "Naam",
 	"newsletter-header-description": "Beschrijving",
 	"newsletter-header-subscriber_count": "Abonnees",
@@ -77,5 +78,13 @@
 	"newsletter-list-option-subscribed": "Nieuwsbrieven waarop ik ben geabonneerd",
 	"newsletter-list-option-unsubscribed": "Nieuwsbrieven waarop ik nog niet ben geabonneerd",
 	"newsletter-list-go-button": "OK",
+	"log-name-newsletter": "Nieuwsbrieven logboek",
+	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|voegde}} {{GENDER:$6|$3}} als uitgever van nieuwsbrief $4 toe",
+	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|verwijderde}} {{GENDER:$6|$3}} als uitgever van nieuwsbrief $4",
+	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|maakte}} nieuwsbrief $4 aan",
+	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|verwijderde}} nieuwsbrief $4",
+	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|herstelde}} nieuwsbrief $4",
+	"newsletter-restore-failure": "Nieuwsbrief \"$1\" kon niet worden hersteld. Probeer het opnieuw.",
+	"newsletter-restore-failure-title": "Nieuwsbrief kon niet worden hersteld.",
 	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:"
 }
