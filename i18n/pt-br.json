@@ -31,6 +31,9 @@
 	"newsletter-subscribers-nopermission": "Você não tem permissão para editar os subscritos neste canal de notícias",
 	"newsletter-edit-subscribers-nochanges": "Nenhuma mudança foram feitas para os subscritos do canal de notícias.",
 	"newsletter-subscribers-invalid": "\"$1\" não é um usuário válido. Por favor tenha certeza que o nome de usuário existe e tente novamente.",
+	"newsletter-header-name": "Nome",
+	"newsletter-header-description": "Descrição",
+	"log-action-filter-newsletter": "Tipo de ação:",
 	"newsletter-diff-descheader": "Alterações na descrição:",
 	"newsletter-diff-mainpageheader": "Alterações na Página Principal:",
 	"newsletter-diff-publishersheader": "Alterações nos editores:"
