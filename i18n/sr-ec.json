@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Сербијана"
+			"Сербијана",
+			"Obsuser"
 		]
 	},
+	"newsletters": "Билтени",
 	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
-	"newsletter-delete-button": "Обриши"
+	"echo-category-title-newsletter": "Билтени"
 }
