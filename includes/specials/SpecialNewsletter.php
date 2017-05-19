@@ -198,7 +198,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		if ( $this->newsletter->isSubscribed( $this->getUser() ) ) {
 			// User is subscribed so show the unsubscribe form
-			$txt = $this->msg( 'newsletter-subscribe-text' )
+			$txt = $this->msg( 'newsletter-unsubscribe-text' )
 				->rawParams( $this->getEscapedName() )->parse();
 			$button = [
 				'unsubscribe' => [
