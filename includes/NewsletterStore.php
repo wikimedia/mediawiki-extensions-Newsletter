@@ -199,35 +199,6 @@ class NewsletterStore {
 	}
 
 	/**
-	 * @param int $id
-	 *
-	 * @return Newsletter
-	 */
-	public function getNewsletterForPageId( $id ) {
-		return $this->db->getNewsletterForPageId( $id );
-	}
-
-	/**
-	 * @param User $user
-	 *
-	 * @return Newsletter[]
-	 */
-	public function getNewslettersUserIsPublisherOf( User $user ) {
-		return $this->db->getNewslettersUserIsPublisherOf( $user );
-	}
-
-	/**
-	 * Fetch all newsletter names
-	 *
-	 * @param string $name
-	 * @return bool|ResultWrapper
-	 * @throws MWException
-	 */
-	public function newsletterExistsWithName( $name ) {
-		return $this->db->newsletterExistsWithName( $name );
-	}
-
-	/**
 	 * Fetch all newsletter Main Pages
 	 *
 	 * @param int $mainPageId
