@@ -211,19 +211,18 @@ class NewsletterEditPage {
 		}
 
 		$mainPageId = $data['MainPage']->getArticleID();
-
 		$dbr = wfGetDB( DB_SLAVE );
 		$rows = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-			$dbr->makeList(
-				[
-					'nl_name' => $data['Name'],
-					'nl_main_page_id' => $mainPageId,
-					'nl_active' => 1
-				],
-				LIST_OR
-			)
+			$dbr->makeList( [
+				'nl_name' => $data['Name'],
+				$dbr->makeList(
+					[
+						'nl_main_page_id' => $mainPageId,
+						'nl_active' => 1
+					], LIST_AND )
+			], LIST_OR )
 		);
 		// Check whether another existing newsletter has the same name or main page
 		foreach ( $rows as $row ) {
