@@ -312,6 +312,7 @@ class NewsletterHooks {
 	 * @param User $user the User object representing the user whois performing the edit.
 	 * @param $minoredit bool whether the edit was marked as minor by the user.
 	 * @return bool
+	 * @throws ThrottledError
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
 	                                                  Status $status, $summary, User $user, $minoredit ) {

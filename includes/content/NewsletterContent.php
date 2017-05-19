@@ -447,7 +447,6 @@ class NewsletterContent extends JsonContent {
 	 * updates (relevant mostly for LinksUpdate).
 	 * @param ParserOutput $parserOutput ParserOutput representing the rendered version of the page after the edit.
 	 * @return DataUpdate[]
-	 * @throws ThrottledError
 	 *
 	 * @see Content::getSecondaryDataUpdates()
 	 */
