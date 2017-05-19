@@ -63,11 +63,6 @@ class NewsletterDataUpdate extends DataUpdate {
 					return;
 				}
 			}
-			if ( $this->user->pingLimiter( 'newsletter' ) ) {
-				// Default user access level for creating a newsletter is quite low
-				// so add a throttle here to prevent abuse (eg. mass vandalism spree)
-				throw new ThrottledError;
-			}
 			$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->name );
 			$newsletter = new Newsletter( 0,
 				$title->getText(),
@@ -78,10 +73,11 @@ class NewsletterDataUpdate extends DataUpdate {
 			if ( $newsletterCreated ) {
 				$newsletter->subscribe( $this->user );
 				$store->addPublisher( $newsletter, $this->user );
-				return Status::newGood();
+				return;
 			} else {
 				// Couldn't insert to the DB..
-				return Status::newFatal( 'newsletter-create-error' );
+				$logger->warning( 'newsletter-create-error' );
+				return;
 			}
 		}
 

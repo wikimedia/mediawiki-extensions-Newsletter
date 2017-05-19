@@ -315,12 +315,18 @@ class NewsletterHooks {
 	 */
 	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
 	                                                  Status $status, $summary, User $user, $minoredit ) {
+		global $wgUser;
 		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return;
 		}
 		if ( !$context->getTitle()->hasContentModel( 'NewsletterContent' ) ||
 		     ( !$content instanceof NewsletterContent ) ) {
 			return;
+		}
+		if ( $wgUser->pingLimiter( 'newsletter' ) ) {
+			// Default user access level for creating a newsletter is quite low
+			// so add a throttle here to prevent abuse (eg. mass vandalism spree)
+			throw new ThrottledError;
 		}
 		$newsletter = Newsletter::newFromName( $context->getTitle()->getText() );
 
