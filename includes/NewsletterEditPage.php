@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * @license GNU GPL v2+
+ * @author tonythomas
+ */
+
 class NewsletterEditPage {
 
 	protected $createNew;
