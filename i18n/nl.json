@@ -78,7 +78,7 @@
 	"newsletter-list-option-subscribed": "Nieuwsbrieven waarop ik ben geabonneerd",
 	"newsletter-list-option-unsubscribed": "Nieuwsbrieven waarop ik nog niet ben geabonneerd",
 	"newsletter-list-go-button": "OK",
-	"log-name-newsletter": "Nieuwsbrieven logboek",
+	"log-name-newsletter": "Nieuwsbrievenlogboek",
 	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|voegde}} {{GENDER:$6|$3}} als uitgever van nieuwsbrief $4 toe",
 	"logentry-newsletter-publisher-removed": "$1 {{GENDER:$2|verwijderde}} {{GENDER:$6|$3}} als uitgever van nieuwsbrief $4",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|maakte}} nieuwsbrief $4 aan",
