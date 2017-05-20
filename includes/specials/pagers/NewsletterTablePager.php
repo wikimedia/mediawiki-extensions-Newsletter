@@ -20,6 +20,8 @@ class NewsletterTablePager extends TablePager {
 	 */
 	private $option;
 
+	protected $mode;
+
 	public function __construct( IContextSource $context = null, Database $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
@@ -44,35 +46,102 @@ class NewsletterTablePager extends TablePager {
 		return $this->fieldNames;
 	}
 
-	public function getQueryInfo() {
-		// TODO we could probably just retrieve all subscribers IDs as a string here.
+	private function getSubscribedQuery( $offset, $limit, $descending ) {
+		// XXX Hacky
+		$oldIndex = $this->mIndexField;
+		$this->mIndexField = 'nl_name';
+		$this->mode = 'subscribed';
+		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
+			$this->buildQueryInfo( $offset, $limit, $descending );
+		$subscribedPart = $this->mDb->selectSQLText(
+			$tables, $fields, $conds, $fname, $options, $join_conds
+		);
+		$this->mIndexField = $oldIndex;
+		return $subscribedPart;
+	}
 
+	private function getUnsubscribedQuery( $offset, $limit, $descending ) {
+		// XXX Hacky
+		$oldIndex = $this->mIndexField;
+		$this->mIndexField = 'nl_name';
+		$this->mode = 'unsubscribed';
+		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
+			$this->buildQueryInfo( $offset, $limit, $descending );
+		$unsubscribedPart = $this->mDb->selectSQLText(
+			$tables, $fields, $conds, $fname, $options, $join_conds
+		);
+		$this->mIndexField = $oldIndex;
+		return $unsubscribedPart;
+	}
+
+	public function reallyDoQuery( $offset, $limit, $descending ) {
+		$realOffset = substr( $offset, 1 );
+		if ( $this->option === 'subscribed' ) {
+			return $this->mDb->query(
+				$this->getSubscribedQuery(
+					$realOffset, $limit, $descending
+				),
+				__METHOD__
+			);
+		} elseif ( $this->option == 'all' && substr( $offset, 0, 1 ) !== 'U' ) {
+			$subscribedPart = $this->getSubscribedQuery( $realOffset, $limit, $descending );
+			$unsubscribedPart = $this->getUnsubscribedQuery( '', $limit, $descending );
+			$combinedResult = $this->mDb->unionQueries(
+				[ $subscribedPart, $unsubscribedPart ],
+				true
+			);
+			$combinedResult .= " ORDER BY nls_subscriber_id DESC LIMIT " . (int)
+				$limit . ";";
+			return $this->mDb->query( $combinedResult, __METHOD__ );
+		} else {
+			// unsubscribed, or we are out of subscribed results.
+			return $this->mDb->query(
+				$this->getUnsubscribedQuery(
+					$realOffset, $limit, $descending
+				), __METHOD__
+			);
+		}
+	}
+
+	public function getQueryInfo() {
 		$userId = $this->getUser()->getId();
 		$tblSubscriptions = $this->mDb->tableName( 'nl_subscriptions' );
 
 		$info = [
-			'tables' => [ 'nl_newsletters' ],
+			'tables' => [ 'nl_newsletters', 'nl_subscriptions' ],
 			'fields' => [
 				'nl_name',
 				'nl_desc',
 				'nl_id',
 				'subscribers' => "( SELECT COUNT(*) FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )",
+			    'nls_subscriber_id'
 			],
-			'options' => [ 'DISTINCT nl_id' ],
 		];
+		$info['conds'] = [ 'nl_active' => 1 ];
 
-		$info['conds'] = [ 'nl_active = 1' ];
-		if ( $this->option == 'subscribed' ) {
-			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
-				" IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )" );
-		} elseif ( $this->option == 'unsubscribed' ) {
-			$info['conds'][] = ( $this->mDb->addQuotes( $userId ) .
-				" NOT IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )" );
-		}
-
-		if ( $this->getUser()->isLoggedIn() ) {
-			$info['fields']['current_user_subscribed'] = $this->mDb->addQuotes( $userId ) .
-				" IN (SELECT nls_subscriber_id FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )";
+		if ( $this->mode == "unsubscribed" ) {
+			$info['fields']['sort'] = $this->mDb->buildConcat( [ '"U"', 'nl_name' ] );
+			$info['join_conds'] = [
+				'nl_subscriptions' => [
+					'LEFT OUTER JOIN',
+					[
+						'nl_id=nls_newsletter_id',
+						'nls_subscriber_id' => $userId
+					]
+				]
+			];
+			$info['conds']['nls_subscriber_id'] = null;
+		} elseif ( $this->mode == "subscribed" ) {
+			$info['fields']['sort'] = $this->mDb->buildConcat( [ '"S"', 'nl_name' ] );
+			$info['join_conds'] = [
+				'nl_subscriptions' => [
+					'INNER JOIN',
+					[
+						'nl_id=nls_newsletter_id',
+						'nls_subscriber_id' => $userId
+					]
+				]
+			];
 		}
 
 		return $info;
@@ -101,7 +170,7 @@ class NewsletterTablePager extends TablePager {
 					$this->mCurrentRow->subscribers
 				);
 			case 'action' :
-				if ( $this->mCurrentRow->current_user_subscribed ) {
+				if ( $this->mCurrentRow->nls_subscriber_id ) {
 					$title = SpecialPage::getTitleFor(
 						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE
 					);
@@ -155,9 +224,8 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function getDefaultSort() {
-		$this->mDefaultDirection = IndexPager::DIR_DESCENDING;
-		$sort = $this->getUser()->isLoggedIn() ? 'current_user_subscribed' : 'nl_name';
-		return $sort;
+		$this->mDefaultDirection = IndexPager::DIR_ASCENDING;
+		return 'sort';
 	}
 
 	public function isFieldSortable( $field ) {
