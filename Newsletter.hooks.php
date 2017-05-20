@@ -115,6 +115,8 @@ class NewsletterHooks {
 			__DIR__ . '/sql/nl_main_page_id-drop-index.sql' );
 		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active',
 			__DIR__ . '/sql/nl_newsletters-add-unique.sql' );
+		$updater->addExtensionField( 'nl_newsletters', 'nl_subscriber_count',
+			__DIR__ . '/sql/nl_newsletters-add-subscriber_count.sql' );
 
 		return true;
 	}

@@ -32,8 +32,20 @@ class NewsletterDb {
 			];
 		}
 		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->begin( __METHOD__ );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
+
+		if ( $success ) {
+			$dbw->update(
+				'nl_newsletters',
+				[ 'nl_subscriber_count=nl_subscriber_count+1' ],
+				[ 'nl_id' => $newsletter->getId() ],
+				__METHOD__
+			);
+		}
+
+		$dbw->commit();
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -52,8 +64,19 @@ class NewsletterDb {
 		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw->begin( __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
+		if ( $success ) {
+			$dbw->update(
+				'nl_newsletters',
+				[ 'nl_subscriber_count=nl_subscriber_count-1' ],
+				[ 'nl_id' => $newsletter->getId() ],
+				__METHOD__
+			);
+		}
+
+		$dbw->commit();
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;

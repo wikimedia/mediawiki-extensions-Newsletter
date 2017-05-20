@@ -1,0 +1,53 @@
+<?php
+$basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
+	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
+
+require_once $basePath . '/maintenance/Maintenance.php';
+
+class UpdateSubscribersCount extends Maintenance {
+	public function __construct() {
+		parent::__construct();
+		$this->addDescription(
+			"Regenerate nl_subscribers_count in nl_newsletters from nl_subscriptions table" );
+		$this->requireExtension( 'Newsletter' );
+	}
+
+	public function execute() {
+		$dbw = $this->getDB( DB_MASTER );
+		$offset = 0;
+		while ( true ) {
+			$res = $dbw->select( [ 'nl_newsletters', 'nl_subscriptions' ],
+				[ 'nl_id', 'subscriber_count' => 'COUNT(nls_subscriber_id)' ],
+				'nl_id > ' . $dbw->addQuotes( $offset ),
+				__METHOD__,
+				[ 'GROUP BY' => 'nl_id', 'LIMIT' => 50, 'ORDER BY' => 'nl_id' ],
+				[ 'nl_subscriptions' => [ 'LEFT JOIN', 'nls_newsletter_id=nl_id' ] ]
+			);
+
+			if ( $res->numRows() === 0 ) {
+				break;
+			}
+
+			foreach ( $res as $row ) {
+				$dbw->update(
+					'nl_newsletters',
+					[ 'nl_subscriber_count' => $row->subscriber_count ],
+					[ 'nl_id' => $row->nl_id ],
+					__METHOD__
+				);
+			}
+
+			$this->output( "Updated " . $res->numRows() . " rows \n" );
+
+			wfWaitForSlaves();
+
+			// We need to get the last element and add to offset.
+			$offset = $row->nl_id;
+		}
+
+		$this->output( "Done!\n" );
+	}
+}
+
+$maintClass = "updateSubscribersCount";
+require_once RUN_MAINTENANCE_IF_MAIN;
