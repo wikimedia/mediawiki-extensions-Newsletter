@@ -107,17 +107,7 @@ class NewsletterContent extends JsonContent {
 			return false;
 		}
 
-		/** @var User[] $publishers */
-		$publishers = [];
-
-		foreach ( $publishersList as $publisherName ) {
-			$user = User::newFromName( $publisherName );
-			if ( $user && $user->getId() ) {
-				$publishers[] = $user->getId();
-			}
-		}
-
-		return UserArray::newFromIDs( $publishers );
+		return UserArray::newFromNames( $publishersList );
 	}
 
 	public function onSuccess() {
