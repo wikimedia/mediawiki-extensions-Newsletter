@@ -22,6 +22,8 @@ class NewsletterTablePager extends TablePager {
 
 	protected $mode;
 
+	private $newslettersArray;
+
 	public function __construct( IContextSource $context = null, Database $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
@@ -103,6 +105,13 @@ class NewsletterTablePager extends TablePager {
 		}
 	}
 
+	public function preprocessResults( $result ) {
+		foreach ( $result as $res ) {
+			$this->newslettersArray[$res->nl_id] = Newsletter::newFromID( (int)$res->nl_id );
+		}
+		parent::preprocessResults( $result );
+	}
+
 	public function getQueryInfo() {
 		$userId = $this->getUser()->getId();
 		$tblSubscriptions = $this->mDb->tableName( 'nl_subscriptions' );
@@ -152,7 +161,7 @@ class NewsletterTablePager extends TablePager {
 
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$id = $this->mCurrentRow->nl_id;
-		$newsletter = Newsletter::newFromID( (int)$id );
+		$newsletter = $this->newslettersArray[(int)$id];
 		switch ( $field ) {
 			case 'nl_name':
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $newsletter->getName() );
