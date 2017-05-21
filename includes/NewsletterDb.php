@@ -39,7 +39,8 @@ class NewsletterDb {
 		if ( $success ) {
 			$dbw->update(
 				'nl_newsletters',
-				[ 'nl_subscriber_count=nl_subscriber_count+1' ],
+				// For index reasons, count is negative
+				[ 'nl_subscriber_count=nl_subscriber_count-1' ],
 				[ 'nl_id' => $newsletter->getId() ],
 				__METHOD__
 			);
@@ -70,7 +71,8 @@ class NewsletterDb {
 		if ( $success ) {
 			$dbw->update(
 				'nl_newsletters',
-				[ 'nl_subscriber_count=nl_subscriber_count-1' ],
+				// For index reasons, count is negative
+				[ 'nl_subscriber_count=nl_subscriber_count+1' ],
 				[ 'nl_id' => $newsletter->getId() ],
 				__METHOD__
 			);
