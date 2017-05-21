@@ -300,6 +300,7 @@ class SpecialNewsletter extends SpecialPage {
 		$fields = [
 			'issuepage' => [
 				'type' => 'title',
+				'exists' => true,
 				'name' => 'issuepage',
 				'creatable' => true,
 				'required' => true,

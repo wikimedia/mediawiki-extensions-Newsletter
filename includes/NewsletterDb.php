@@ -443,6 +443,7 @@ class NewsletterDb {
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
+		$dbw->begin( __METHOD__ );
 		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
 			'MAX(nli_issue_id)',
@@ -463,7 +464,9 @@ class NewsletterDb {
 				],
 				__METHOD__
 			);
+			$dbw->commit( __METHOD__ );
 		} catch ( DBQueryError $ex ) {
+			$dbw->rollback( __METHOD__ );
 			$success = false;
 		}
 
