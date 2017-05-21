@@ -40,7 +40,7 @@ class NewsletterEditPage {
 
 			$this->out->setPageTitle(
 				$this->context->msg( 'newsletter-manage' )
-					->rawParams( $this->getEscapedName() )
+					->params( $this->getName() )
 			);
 
 			$this->getManageForm()->show();
@@ -135,7 +135,7 @@ class NewsletterEditPage {
 		$form->setAction( $this->title->getLocalURL( 'action=submit' ) );
 		$form->addHeaderText(
 			$this->context->msg( 'newsletter-manage-text' )
-				->rawParams( $this->getEscapedName() )->parse()
+				->params( $this->getName() )->parse()
 		);
 		$form->setId( 'newsletter-manage-form' );
 		$form->setSubmitID( 'newsletter-manage-button' );
