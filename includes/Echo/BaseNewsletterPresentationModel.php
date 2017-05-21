@@ -15,6 +15,16 @@ abstract class BaseNewsletterPresentationModel extends EchoEventPresentationMode
 	}
 
 	protected function getNewsletterUrl() {
-		return Title::makeTitleSafe( NS_NEWSLETTER, $this->getNewsletterName() )->getFullURL();
+		$result = Title::makeTitleSafe(
+			NS_NEWSLETTER,
+			$this->getNewsletterName()
+		)->getFullURL();
+		if ( !$result ) {
+			throw new MWException( 'Cannot find newsletter with name \"' .
+				$this->getNewsletterName() .
+				'\"'
+			);
+		}
+		return $result;
 	}
 }
