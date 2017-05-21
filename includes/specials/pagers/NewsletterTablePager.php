@@ -3,12 +3,16 @@
 /**
  * @license GNU GPL v2+
  * @author Tina Johnson
- * @todo Optimize queries here
+ * @author Brian Wolff <bawolff+wn@gmail.com>
+ * @author Tony Thomas <01tonythomas@gmail.com>
  */
 
 use MediaWiki\MediaWikiServices;
 
 class NewsletterTablePager extends TablePager {
+
+	/** Added to offset for sorting reasons */
+	const EXTRAINT = 150000000;
 
 	/**
 	 * @var string[]
@@ -28,6 +32,9 @@ class NewsletterTablePager extends TablePager {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
 		}
+		// Because we mIndexField is not unique
+		// we need the last one.
+		$this->setIncludeOffset( true );
 		parent::__construct( $context );
 	}
 
@@ -48,13 +55,33 @@ class NewsletterTablePager extends TablePager {
 		return $this->fieldNames;
 	}
 
-	private function getSubscribedQuery( $offset, $limit, $descending ) {
+	/**
+	 * Get the query for newsletters for which the user is subscribed to.
+	 *
+	 * This is either run directly or as part as a union. its
+	 * done as part of a union to avoid expensive filesort.
+	 *
+	 * @param string $offset The indexpager offset (Number of subscribers)
+	 * @param int $limit The limit
+	 * @param boolean $descending Ascending or descending?
+	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
+	 */
+	private function getSubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
 		$oldIndex = $this->mIndexField;
-		$this->mIndexField = 'nl_name';
+		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'subscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
 			$this->buildQueryInfo( $offset, $limit, $descending );
+
+		if ( $secondaryOffset !== false ) {
+			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
+		}
+		if ( !$this->mDb->unionSupportsOrderAndLimit() ) {
+			// Sqlite is going to be inefficient
+			unset( $options['ORDER BY'] );
+			unset( $options['LIMIT'] );
+		}
 		$subscribedPart = $this->mDb->selectSQLText(
 			$tables, $fields, $conds, $fname, $options, $join_conds
 		);
@@ -62,13 +89,51 @@ class NewsletterTablePager extends TablePager {
 		return $subscribedPart;
 	}
 
-	private function getUnsubscribedQuery( $offset, $limit, $descending ) {
+	/**
+	 * Add paging conditions for tie-breaking
+	 *
+	 * @param $desc
+	 * @param $offset
+	 * @param $secondaryOffset
+	 * @return mixed
+	 */
+	private function getSecondaryOrderBy( $desc, $offset, $secondaryOffset ) {
+		$operator = $this->getOp( $desc );
+		return $this->mDb->makeList( [
+			'nl_subscriber_count ' . $operator  . $this->mDb->addQuotes( $offset ),
+			$this->mDb->makeList( [
+				'nl_subscriber_count' => $offset,
+				'nl_name' . ( $desc ? '>' : '<' ) . $this->mDb->addQuotes( $secondaryOffset )
+			], LIST_AND )
+		], LIST_OR );
+	}
+
+	/*
+	 * Get the query for newsletters for which the user is not subscribed to.
+	 *
+	 * This is either run directly or as part as a union. its
+	 * done as part of a union to avoid expensive filesort.
+	 *
+	 * @param string $offset The indexpager offset (Number of subscribers)
+	 * @param int $limit The limit
+	 * @param boolean $descending Ascending or descending?
+	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
+	 */
+	private function getUnsubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
 		$oldIndex = $this->mIndexField;
-		$this->mIndexField = 'nl_name';
+		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'unsubscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
 			$this->buildQueryInfo( $offset, $limit, $descending );
+		if ( $secondaryOffset !== false ) {
+			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
+		}
+		if ( !$this->mDb->unionSupportsOrderAndLimit() ) {
+			// Sqlite is going to be inefficient
+			unset( $options['ORDER BY'] );
+			unset( $options['LIMIT'] );
+		}
 		$unsubscribedPart = $this->mDb->selectSQLText(
 			$tables, $fields, $conds, $fname, $options, $join_conds
 		);
@@ -76,35 +141,90 @@ class NewsletterTablePager extends TablePager {
 		return $unsubscribedPart;
 	}
 
+	/**
+	 * Operator for paging.
+	 *
+	 * @param boolean $desc Descending vs Ascending.
+	 * @return string
+	 */
+	private function getOp( $desc ) {
+		if ( $desc ) {
+			return '>';
+		} else {
+			return '<';
+		}
+	}
+
+	/**
+	 * Hacky stuff with offset in order to actually use two separate queries unioned, sorted on
+	 * multiple fields, instead of one query like IndexPager expects.
+	 *
+	 * @param string $offset
+	 * @param int $limit
+	 * @param bool $descending
+	 * @return mixed
+	 */
 	public function reallyDoQuery( $offset, $limit, $descending ) {
-		$realOffset = substr( $offset, 1 );
-		if ( $this->option === 'subscribed' ) {
-			return $this->mDb->query(
-				$this->getSubscribedQuery(
-					$realOffset, $limit, $descending
-				),
-				__METHOD__
+		$pipePos = strpos( $offset, '|' );
+		if ( $pipePos !== false ) {
+			$realOffset = substr( $offset, 1, $pipePos - 1 ) - self::EXTRAINT;
+			$secondaryOffset = substr( $offset, $pipePos + 1 );
+		} elseif ( strlen( $offset ) >= 2 ) {
+			$realOffset = substr( $offset, 1 ) - self::EXTRAINT;
+			$secondaryOffset = false;
+		} else {
+			$realOffset = 0;
+			$secondaryOffset = false;
+		}
+		$offsetMode = $offset === '' ? '' : substr( $offset, 0, 1 );
+		if ( $this->option == 'all' && (
+				( $offsetMode === '' ) ||
+				( $offsetMode === 'U' && !$descending ) ||
+				( $offsetMode === 'S' && $descending )
+			) ) {
+			$subscribedPart = $this->getSubscribedQuery(
+				$descending ? $realOffset : 0,
+				$limit,
+				$descending,
+				$descending ? $secondaryOffset : false
 			);
-		} elseif ( $this->option == 'all' && substr( $offset, 0, 1 ) !== 'U' ) {
-			$subscribedPart = $this->getSubscribedQuery( $realOffset, $limit, $descending );
-			$unsubscribedPart = $this->getUnsubscribedQuery( '', $limit, $descending );
+			$unsubscribedPart = $this->getUnsubscribedQuery(
+				$descending ? 0 : $realOffset,
+				$limit,
+				$descending,
+				$descending ? false : $secondaryOffset
+			);
 			$combinedResult = $this->mDb->unionQueries(
 				[ $subscribedPart, $unsubscribedPart ],
 				true
 			);
-			$combinedResult .= " ORDER BY nls_subscriber_id DESC LIMIT " . (int)
-				$limit . ";";
+			// For some reason, this is the opposite of what
+			// you would expect.
+			$dir = $descending ? 'ASC' : 'DESC';
+			$combinedResult .= " ORDER BY sort $dir LIMIT "
+			                   . (int)$limit;
 			return $this->mDb->query( $combinedResult, __METHOD__ );
+		} elseif ( $this->option === 'subscribed' || $offsetMode === 'S' ) {
+			return $this->mDb->query(
+				$this->getSubscribedQuery(
+					$realOffset, $limit, $descending, $secondaryOffset
+				),
+				__METHOD__
+			);
+
 		} else {
 			// unsubscribed, or we are out of subscribed results.
 			return $this->mDb->query(
 				$this->getUnsubscribedQuery(
-					$realOffset, $limit, $descending
+					$realOffset, $limit, $descending, $secondaryOffset
 				), __METHOD__
 			);
 		}
 	}
 
+	/**
+	 * @param \Wikimedia\Rdbms\ResultWrapper $result
+	 */
 	public function preprocessResults( $result ) {
 		foreach ( $result as $res ) {
 			$this->newslettersArray[$res->nl_id] = Newsletter::newFromID( (int)$res->nl_id );
@@ -112,24 +232,27 @@ class NewsletterTablePager extends TablePager {
 		parent::preprocessResults( $result );
 	}
 
+	/**
+	 * @return array
+	 */
 	public function getQueryInfo() {
 		$userId = $this->getUser()->getId();
-		$tblSubscriptions = $this->mDb->tableName( 'nl_subscriptions' );
-
 		$info = [
 			'tables' => [ 'nl_newsletters', 'nl_subscriptions' ],
 			'fields' => [
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				'subscribers' => "( SELECT COUNT(*) FROM $tblSubscriptions WHERE nls_newsletter_id = nl_id )",
-			    'nls_subscriber_id'
+				"nl_subscriber_count",
+				'nls_subscriber_id'
 			],
 		];
 		$info['conds'] = [ 'nl_active' => 1 ];
 
 		if ( $this->mode == "unsubscribed" ) {
-			$info['fields']['sort'] = $this->mDb->buildConcat( [ '"U"', 'nl_name' ] );
+			$info['fields']['sort'] = $this->mDb->buildConcat(
+				[ '"U"', 'nl_subscriber_count+' . self::EXTRAINT, '"|"',  'nl_name' ]
+			);
 			$info['join_conds'] = [
 				'nl_subscriptions' => [
 					'LEFT OUTER JOIN',
@@ -141,7 +264,9 @@ class NewsletterTablePager extends TablePager {
 			];
 			$info['conds']['nls_subscriber_id'] = null;
 		} elseif ( $this->mode == "subscribed" ) {
-			$info['fields']['sort'] = $this->mDb->buildConcat( [ '"S"', 'nl_name' ] );
+			$info['fields']['sort'] = $this->mDb->buildConcat(
+				[ '"S"', 'nl_subscriber_count+' . self::EXTRAINT, '"|"',  'nl_name' ]
+			);
 			$info['join_conds'] = [
 				'nl_subscriptions' => [
 					'INNER JOIN',
@@ -176,7 +301,7 @@ class NewsletterTablePager extends TablePager {
 				return Html::element(
 					'span',
 					[ 'id' => "nl-count-$id" ],
-					$this->mCurrentRow->subscribers
+					$wgContLang->formatNum( -(int)$this->mCurrentRow->nl_subscriber_count )
 				);
 			case 'action' :
 				if ( $this->mCurrentRow->nls_subscriber_id ) {
@@ -233,7 +358,6 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function getDefaultSort() {
-		$this->mDefaultDirection = IndexPager::DIR_ASCENDING;
 		return 'sort';
 	}
 
