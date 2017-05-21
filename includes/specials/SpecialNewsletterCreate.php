@@ -48,6 +48,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				'maxlength' => 120,
 			],
 			'mainpage' => [
+				'exists' => true,
 				'type' => 'title',
 				'required' => true,
 				'label-message' => 'newsletter-title',
