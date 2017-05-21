@@ -127,6 +127,8 @@
 	"action-newsletter-delete": "supprimer les bulletins d’information",
 	"right-newsletter-manage": "Ajouter ou supprimer des éditeurs ou des abonnés aux   bulletins d’information",
 	"action-newsletter-manage": "gérer les bulletins d’information",
+	"right-newsletter-restore": "Restituer un bulletin d'information.",
+	"action-newsletter-restore": "restituer un bulletin d'information",
 	"apihelp-newslettersubscribe-description": "Vous abonner ou vous désabonner d'une newsletter.",
 	"apihelp-newslettersubscribe-param-id": "ID du bulletin d’information pour lequel l’abonnement devrait être modifié.",
 	"apihelp-newslettersubscribe-param-do": "Action à effectuer. Devrait être <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",

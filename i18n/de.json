@@ -117,6 +117,8 @@
 	"action-newsletter-delete": "Newsletter zu löschen",
 	"right-newsletter-manage": "Herausgeber oder Abonnenten von Newslettern hinzufügen oder entfernen",
 	"action-newsletter-manage": "Newsletter zu verwalten",
+	"right-newsletter-restore": "Einen Newsletter wiederherstellen",
+	"action-newsletter-restore": "einen Newsletter wiederherzustellen",
 	"apihelp-newslettersubscribe-description": "Abonniert einen Newsletter oder bestellt ihn ab.",
 	"apihelp-newslettersubscribe-param-id": "Kennung des Newsletters, für den das Abonnement geändert werden soll.",
 	"apihelp-newslettersubscribe-param-do": "Auszuführende Aktion. Sollte entweder <kbd>subscribe</kbd> oder <kbd>unsubscribe</kbd> sein.",
