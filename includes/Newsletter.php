@@ -117,9 +117,8 @@ class Newsletter {
 	/**
 	 * @return int
 	 */
-	public function getSubscriberCount() {
-		$this->loadSubscribers();
-		return count( $this->subscribers );
+	public function getSubscribersCount() {
+		return NewsletterStore::getDefaultInstance()->getNewsletterSubscribersCount( $this->id );
 	}
 
 	/**

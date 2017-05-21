@@ -362,6 +362,29 @@ class NewsletterDb {
 	}
 
 	/**
+	 * @param $id
+	 * @return array
+	 */
+	public function getNewsletterSubscribersCount( $id ) {
+		Assert::parameterType( 'integer', $id, '$id' );
+
+		$dbr = $this->lb->getConnection( DB_SLAVE );
+
+		$result = $dbr->selectField(
+			'nl_newsletters',
+			'nl_subscriber_count',
+			[ 'nl_id' => $id ],
+			__METHOD__
+		);
+
+		$this->lb->reuseConnection( $dbr );
+
+		// We store nl_subscriber_count as negative numbers so that sorting should work on one
+		// direction
+		return -(int)$result;
+	}
+
+	/**
 	 * @param int $id
 	 *
 	 * @return int[]
@@ -402,20 +425,6 @@ class NewsletterDb {
 
 		$this->lb->reuseConnection( $dbr );
 		return $res;
-	}
-
-	/**
-	 * @param ResultWrapper $result
-	 *
-	 * @return Newsletter[]
-	 */
-	private function getNewslettersFromResult( ResultWrapper $result ) {
-		$newsletters = [];
-		foreach ( $result as $row ) {
-			$newsletters[] = $this->getNewsletterFromRow( $row );
-		}
-
-		return $newsletters;
 	}
 
 	/**
