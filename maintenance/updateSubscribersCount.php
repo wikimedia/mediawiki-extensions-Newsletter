@@ -31,7 +31,8 @@ class UpdateSubscribersCount extends Maintenance {
 			foreach ( $res as $row ) {
 				$dbw->update(
 					'nl_newsletters',
-					[ 'nl_subscriber_count' => $row->subscriber_count ],
+					// This column is negative for index reasons.
+					[ 'nl_subscriber_count' => -$row->subscriber_count ],
 					[ 'nl_id' => $row->nl_id ],
 					__METHOD__
 				);
