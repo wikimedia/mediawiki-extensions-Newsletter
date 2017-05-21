@@ -13,13 +13,15 @@
 	"AvailableRights": [
 		"newsletter-create",
 		"newsletter-delete",
-		"newsletter-manage"
+		"newsletter-manage",
+		"newsletter-restore"
 	],
 	"GroupPermissions": {
 		"sysop": {
 			"newsletter-create": true,
 			"newsletter-delete": true,
-			"newsletter-manage": true
+			"newsletter-manage": true,
+			"newsletter-restore": true
 		}
 	},
 	"RateLimits": {

@@ -126,6 +126,8 @@
 	"action-newsletter-delete": "{{doc-action|newsletter-delete}}",
 	"right-newsletter-manage": "{{doc-right|newsletter-manage}}",
 	"action-newsletter-manage": "{{doc-action|newsletter-manage}}",
+	"right-newsletter-restore": "{{doc-right|newsletter-restore}}",
+	"action-newsletter-restore": "{{doc-action|newsletter-restore}}",
 	"apihelp-newslettersubscribe-description": "{{doc-apihelp-description|newslettersubscribe}}",
 	"apihelp-newslettersubscribe-param-id": "{{doc-apihelp-param|newslettersubscribe|id}}",
 	"apihelp-newslettersubscribe-param-do": "{{doc-apihelp-param|newslettersubscribe|do}}",

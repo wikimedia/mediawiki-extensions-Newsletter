@@ -119,6 +119,8 @@
 	"action-newsletter-delete": "delete newsletters",
 	"right-newsletter-manage": "Add or remove publishers or subscribers from newsletters",
 	"action-newsletter-manage": "manage newsletters",
+	"right-newsletter-restore": "Restore a newsletter",
+	"action-newsletter-restore": "retore a newsletter",
 	"apihelp-newslettersubscribe-description": "Subscribe to or unsubscribe from a newsletter.",
 	"apihelp-newslettersubscribe-param-id": "ID of the newsletter for which the subscription should be changed.",
 	"apihelp-newslettersubscribe-param-do": "Action to do. Should be either <kbd>subscribe</kbd> or <kbd>unsubscribe</kbd>.",
