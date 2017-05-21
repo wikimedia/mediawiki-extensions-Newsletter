@@ -150,7 +150,7 @@ class NewsletterContent extends JsonContent {
 					'type' => 'info',
 					'label-message' => 'newsletter-view-subscriber-count',
 					'default' => !$this->newsletter ? 0 : $options->getUserLangObj()->formatNum(
-						$this->newsletter->getSubscriberCount() ),
+						$this->newsletter->getSubscribersCount() ),
 				],
 			];
 			$publishersArray = $this->getPublishersFromJSONData( $this->publishers );
