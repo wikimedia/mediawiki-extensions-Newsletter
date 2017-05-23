@@ -68,6 +68,7 @@
 	"right-newsletter-delete": "Nieuwsbrieven verwijderen",
 	"action-newsletter-delete": "nieuwsbrieven verwijderen",
 	"action-newsletter-manage": "nieuwsbrieven beheren",
+	"right-newsletter-restore": "Een nieuwsbrief terugplaatsen",
 	"apihelp-newslettersubscribe-description": "Abonneren op of uitschrijven voor een nieuwsbrief.",
 	"apihelp-newslettersubscribe-param-id": "Het ID van de nieuwsbrief waarvoor het abonnement moet worden gewijzigd.",
 	"apihelp-newslettersubscribe-param-do": "Uit te voeren handeling. Moet <kbd>subscribe</kbd> of <kbd>unsubscribe</kbd> zijn.",

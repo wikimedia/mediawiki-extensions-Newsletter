@@ -117,6 +117,8 @@
 	"action-newsletter-delete": "бришење на билтени",
 	"right-newsletter-manage": "Додавање или отстранување на издавачи или претплатници од билтени",
 	"action-newsletter-manage": "ракоодење со билтени",
+	"right-newsletter-restore": "Повраток на билтени",
+	"action-newsletter-restore": "повраток на билтени",
 	"apihelp-newslettersubscribe-description": "Претплата на или отпис од билтен.",
 	"apihelp-newslettersubscribe-param-id": "Назнака на билтенот чија претплата ја менувате.",
 	"apihelp-newslettersubscribe-param-do": "Дејство за извршување. Треба да биде или <kbd>subscribe</kbd> или <kbd>unsubscribe</kbd>.",

@@ -118,6 +118,8 @@
 	"action-newsletter-delete": "删除新闻报",
 	"right-newsletter-manage": "从新闻报中添加或移除发布者或订阅者",
 	"action-newsletter-manage": "管理新闻报",
+	"right-newsletter-restore": "恢复一份新闻报",
+	"action-newsletter-restore": "恢复一份新闻报",
 	"apihelp-newslettersubscribe-description": "订阅或退订一则新闻报。",
 	"apihelp-newslettersubscribe-param-id": "应更改订阅选项的新闻报的ID。",
 	"apihelp-newslettersubscribe-param-do": "要进行的操作。应为<kbd>subscribe</kbd>或<kbd>unsubscribe</kbd>二者之一。",
