@@ -43,7 +43,16 @@ class NewsletterEditPage {
 					->params( $this->newsletter->getName() )
 			);
 
-			$this->getManageForm()->show();
+			// We are not supporting editing a previous diff at this moment
+			if ( $this->context->getRequest()->getVal( 'oldid' ) ) {
+				throw new BadRequestError( 'newsletter-oldrev-update-error-title',
+					'newsletter-oldrev-update-error-body'
+				);
+			}
+
+			$revId = $this->context->getRequest()->getVal( 'undoafter', null );
+			$undoId = $this->context->getRequest()->getVal( 'undo', null );
+			$this->getManageForm( $revId, $undoId )->show();
 		} else {
 			$permErrors = $this->getPermissionErrors();
 			if ( count( $permErrors ) ) {
@@ -85,7 +94,14 @@ class NewsletterEditPage {
 		return htmlspecialchars( $this->newsletter->getName() );
 	}
 
-	protected function getManageForm() {
+	/**
+	 * Create the manage form. If this is on an undo revision action, $revId would be set, and we
+	 * manually load in form data from the reverted revision.
+	 *
+	 * @param integer $revId
+	 * @return HTMLForm
+	 */
+	protected function getManageForm( $revId, $undoId ) {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$publishersNames = [];
 
@@ -93,10 +109,11 @@ class NewsletterEditPage {
 		foreach ( $publishers as $publisher ) {
 			$publishersNames[] = $publisher->getName();
 		}
+
 		$fields['MainPage'] = [
 			'type' => 'title',
 			'label-message' => 'newsletter-manage-title',
-			'default' =>  $mainTitle->getPrefixedText(),
+			'default' => $mainTitle->getPrefixedText(),
 			'required' => true,
 		];
 		$fields['Description'] = [
@@ -109,8 +126,8 @@ class NewsletterEditPage {
 		$fields['Publishers'] = [
 			'type' => 'usersmultiselect',
 			'label-message' => 'newsletter-manage-publishers',
-			'default' => $publishersNames,
 			'exists' => true,
+			'default' => $publishersNames,
 		];
 		$fields['Summary'] = [
 			'type' => 'text',
@@ -121,6 +138,30 @@ class NewsletterEditPage {
 			'type' => 'hidden',
 			'default' => false,
 		];
+		if ( $revId && $undoId ) {
+			$oldRevision = Revision::newFromId( $revId );
+			$undoRevision = Revision::newFromId( $undoId );
+			if ( $undoRevision->isCurrent()
+				&& $undoRevision->getContentModel() == 'NewsletterContent'
+				&& $undoRevision->getContent() !== null
+			) {
+				$fields['MainPage']['default'] =
+					$oldRevision->getContent()->getMainPage()->getPrefixedText();
+				$fields['Description']['default'] = $oldRevision->getContent()->getDescription();
+				$fields['Publishers']['default'] = $oldRevision->getContent()->getPublishers();
+				$fields['Summary']['default'] =
+					$this->context->msg( 'undo-summary' )
+						->params( $undoRevision->getId(), $undoRevision->getUserText() )
+						->inContentLanguage()
+						->text();
+			} else {
+				throw new BadRequestError(
+					'newsletter-oldrev-update-error-title',
+					'newsletter-oldrev-update-error-body'
+				);
+			}
+		}
+
 		if ( $this->context->getRequest()->wasPosted() ) {
 			// @todo Make this work properly for double submissions
 			$fields['Confirm']['default'] = true;
@@ -345,8 +386,7 @@ class NewsletterEditPage {
 		// Confirm whether the current user (if already a publisher)
 		// wants to be removed from the publishers group
 		$user = $this->user;
-		if ( !$confirmed
-			&& $this->newsletter->isPublisher( $user )
+		if ( !$confirmed && $this->newsletter->isPublisher( $user )
 			&& !in_array( $user->getId(), $newPublishersIds )
 		) {
 			return Status::newFatal( 'newsletter-manage-remove-self-publisher' );

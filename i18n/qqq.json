@@ -20,6 +20,8 @@
 	"newsletter-title": "Label of the field which takes the title of Main Page of newsletter as input in [[Special:CreateNewsletter]]",
 	"newsletter-exist-error": "Error message to be displayed in [[Special:CreateNewsletter]] when trying to create a newsletter with same name as an existing newsletter. $1- Name of newsletter",
 	"newsletter-create-error": "Error message shown on [[Special:CreateNewsletter]] if newsletter creation failed.",
+	"newsletter-oldrev-update-error-title": "Page title for error page shown on editing a previous revision",
+	"newsletter-oldrev-update-error-body": "Error description body for error page shown on editing a previous revision",
 	"newsletter-input-required": "Error message shown on [[Special:CreateNewsletter]] if required input is missing..",
 	"newsletter-invalid-name": "Error message shown on [[Special:CreateNewsletter]] if the newsletter name is invalid.",
 	"newslettercreate": "Name of [[Special:CreateNewsletter]]. This is used as the header on this page and shown in links to the page.",
