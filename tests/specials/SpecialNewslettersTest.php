@@ -15,8 +15,6 @@ class SpecialNewslettersTest extends SpecialPageTestBase{
 	}
 
 	public function testSpecialPageDoesNotFatal() {
-		$this->markTestSkipped( 'Unit tests do not support SELF JOIN on temporary unit test 
-		tables' );
 		$user = new TestUser( 'BlooBlaa' );
 		$req = new FauxRequest( [ 'filter' => 'subscribed' ] );
 		$this->executeSpecialPage( '', $req, null, $user->getUser() );
