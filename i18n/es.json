@@ -122,6 +122,8 @@
 	"action-newsletter-delete": "eliminar boletines",
 	"right-newsletter-manage": "Agregar o quitar editores o suscriptores de boletines",
 	"action-newsletter-manage": "gestionar boletines",
+	"right-newsletter-restore": "Restaurar un boletín",
+	"action-newsletter-restore": "restaurar un boletín",
 	"apihelp-newslettersubscribe-description": "Suscribirse a o desuscribirse de un boletín.",
 	"apihelp-newslettersubscribe-param-id": "Identificador del boletín para el que cambiar la suscripción.",
 	"apihelp-newslettersubscribe-param-do": "Acción que realizar. O bien <kbd>subscribe</kbd> o bien <kbd>unsubscribe</kbd>.",

@@ -118,6 +118,8 @@
 	"action-newsletter-delete": "radera nyhetsbrev",
 	"right-newsletter-manage": "Lägg till eller ta bort utgivare eller prenumerationer från nyhetsbrev",
 	"action-newsletter-manage": "hantera nyhetsbrev",
+	"right-newsletter-restore": "Återställ ett nyhetsbrev",
+	"action-newsletter-restore": "återställ ett nyhetsbrev",
 	"apihelp-newslettersubscribe-description": "Prenumerera eller avprenumerera från ett nyhetsbrev.",
 	"apihelp-newslettersubscribe-param-id": "ID för nyhetsbrevet som prenumerationen bör ändras.",
 	"apihelp-newslettersubscribe-param-do": "Handling att utföra. Bör antingen vara <kbd>subscribe</kbd> eller <kbd>unsubscribe</kbd>.",
