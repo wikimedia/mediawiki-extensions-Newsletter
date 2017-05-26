@@ -65,6 +65,7 @@
 	"right-newsletter-delete": "Newslettere läschen",
 	"right-newsletter-manage": "Publizisten oder Abonnente vun Newsletteren derbäisetzen oder ewechhuelen",
 	"right-newsletter-restore": "Eng Newsletter restauréieren",
+	"action-newsletter-restore": "eng Newsletter restauréieren",
 	"apihelp-newslettersubscribe-description": "Abonnéieren oder ofmelle vun enger Newsletter.",
 	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
 	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",

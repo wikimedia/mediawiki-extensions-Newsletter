@@ -120,6 +120,8 @@
 	"action-newsletter-delete": "למחוק ידיעונים",
 	"right-newsletter-manage": "הוספה או הסרה של מפרסמים או מנויים של ידיעונים",
 	"action-newsletter-manage": "לנהל ידיעונים",
+	"right-newsletter-restore": "שחזור ידיעון",
+	"action-newsletter-restore": "לשחזר ידיעון",
 	"apihelp-newslettersubscribe-description": "עשייה או ביטול של מינוי לידיעון.",
 	"apihelp-newslettersubscribe-param-id": "מזהה הידיעון שצריך לשנות את המינוי עליו.",
 	"apihelp-newslettersubscribe-param-do": "איזו פעולה לבצע. צריך להיות <kbd>subscribe</kbd> או <kbd>unsubscribe</kbd>.",

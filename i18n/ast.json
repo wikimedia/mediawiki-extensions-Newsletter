@@ -117,6 +117,8 @@
 	"action-newsletter-delete": "desaniciar boletinos",
 	"right-newsletter-manage": "Amestar o quitar editores o suscriptores de boletinos",
 	"action-newsletter-manage": "alministrar boletinos",
+	"right-newsletter-restore": "Restaurar un boletín",
+	"action-newsletter-restore": "restaurar un boletín",
 	"apihelp-newslettersubscribe-description": "Suscribise o dase de baxa d'un boletín.",
 	"apihelp-newslettersubscribe-param-id": "Identificador del boletín pal que camudar la suscripción.",
 	"apihelp-newslettersubscribe-param-do": "Aición a facer. Tien de ser <kbd>suscribise</kbd> o <kbd>dase de baxa</kbd>.",
