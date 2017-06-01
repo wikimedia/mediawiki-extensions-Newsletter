@@ -142,7 +142,7 @@
 	"apihelp-newslettermanage-example-2": "Supprimer l’éditeur d’id utilisateur 5 du bulletin d’informations d’id 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|a annoncé}} un nouveau numéro de $3.",
 	"notification-header-newsletter-newpublisher": "Vous avez été ajouté{{GENDER:$2||e|(e)}}{{GENDER:$3|}} en tant qu’édit{{GENDER:$3|eur|rice|eur (ou éditrice)}} de l’infolettre $1.",
-	"newsletter-list-intro": "Voici une liste d'infolettres disponibles sur ce wiki. Abonnez-vous à une infolettre pour recevoir une notification lorsqu'un nouveau numéro est annoncé. Vous recevrez des notifications via le web ou par e-mail, en fonction de vos [[Special:Preferences#mw-prefsection-echo|préférences]].",
+	"newsletter-list-intro": "Voici une liste d’infolettres disponibles sur ce wiki. Abonnez-vous à une infolettre pour recevoir une notification lorsqu’un nouveau numéro est annoncé. Vous recevrez des notifications via le web ou par courriel, en fonction de vos [[Special:Preferences#mw-prefsection-echo|préférences]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Connectez-vous]] pour vous abonner à une infolettre et recevoir des notifications lorsqu'un nouveau numéro est annoncé.",
 	"newsletter-list-table": "Filtrer par :",
 	"newsletter-list-option-all": "Tous les bulletins d’information",
