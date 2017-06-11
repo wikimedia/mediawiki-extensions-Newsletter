@@ -75,15 +75,14 @@
 						updateLinkAttribs( $link, 'subscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) - 1 );
 						mw.notify(
-							mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name ),
-							{ autoHide: false }
+							mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name )
 						);
 					} )
 					.fail( function () {
 						updateLinkAttribs( $link, 'unsubscribe' );
 						mw.notify(
 							mw.msg( 'newsletter-unsubscribe-error' ),
-							{ type: 'error', autoHide: false }
+							{ type: 'error' }
 						);
 					} );
 			} else {
@@ -94,15 +93,14 @@
 						updateLinkAttribs( $link, 'unsubscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) + 1 );
 						mw.notify(
-							mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name ),
-							{ autoHide: false }
+							mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name )
 						);
 					} )
 					.fail( function () {
 						updateLinkAttribs( $link, 'subscribe' );
 						mw.notify(
 							mw.msg( 'newsletter-subscribe-error' ),
-							{ type: 'error', autoHide: false }
+							{ type: 'error' }
 						);
 					} );
 
