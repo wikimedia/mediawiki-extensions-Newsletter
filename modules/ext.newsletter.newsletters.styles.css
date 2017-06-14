@@ -7,6 +7,7 @@
  * submits the form for them. The associated JS code is located at ext.newsletter.newsletters
  * module. This is done here instead of that module to prevent FOUCs.
  */
+/* stylelint-disable-next-line selector-no-id */
 .client-js #mw-newsletter-filter-submit {
 	display: none;
 }
@@ -14,29 +15,34 @@
 /**
  * The default dropdown is rather wide so we'll make it a bit small to make it look nicer.
  */
+/* stylelint-disable-next-line selector-no-id */
 #mw-newsletter-filter-options {
 	width: 40%;
 }
 
 /* Styling for "Subscribe/Unsubscribe" links */
 .newsletter-subscribed,
-.newsletter-subscribed:link, .newsletter-subscribed:visited {
-	color: #13385A;
+.newsletter-subscribed:link,
+.newsletter-subscribed:visited {
+	color: #13385a;
 	font-weight: bold;
 }
 
-.newsletter-subscribed:hover, .newsletter-subscribed:active {
+.newsletter-subscribed:hover,
+.newsletter-subscribed:active {
 	color: #0c1f30;
 	text-decoration: none;
 }
 
 .newsletter-unsubscribed,
-.newsletter-unsubscribed:link, .newsletter-unsubscribed:visited {
+.newsletter-unsubscribed:link,
+.newsletter-unsubscribed:visited {
 	color: #245e8f;
 	font-weight: bold;
 }
 
-.newsletter-unsubscribed:hover, .newsletter-unsubscribed:active {
+.newsletter-unsubscribed:hover,
+.newsletter-unsubscribed:active {
 	color: #173d5d;
 	text-decoration: none;
 }
@@ -46,14 +52,18 @@
 	cursor: default;
 }
 
-.mw-special-Newsletters .mw-datatable, .mw-special-Newsletters .mw-datatable td, .mw-special-Newsletters .mw-datatable th {
-	border: none;
+.mw-special-Newsletters .mw-datatable,
+.mw-special-Newsletters .mw-datatable td,
+.mw-special-Newsletters .mw-datatable th {
+	border: 0;
 }
 
-.mw-special-Newsletters .mw-datatable, .mw-special-Newsletters .mw-datatable tr {
-	border: solid #AAAAAA;
+.mw-special-Newsletters .mw-datatable,
+.mw-special-Newsletters .mw-datatable tr {
+	border: solid #aaa;
 	border-width: 0 0 1px 0;
 }
-.mw-special-Newsletters .mw-datatable td:nth-child(3), .mw-special-Newsletters .mw-datatable td:nth-child(4) {
+.mw-special-Newsletters .mw-datatable td:nth-child( 3 ),
+.mw-special-Newsletters .mw-datatable td:nth-child( 4 ) {
 	text-align: center;
 }
