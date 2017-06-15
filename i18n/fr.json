@@ -135,6 +135,7 @@
 	"apihelp-newslettersubscribe-example-1": "S’abonner au bulletin d’information d’id 1.",
 	"apihelp-newslettersubscribe-example-2": "Se désabonner du bulletin d’information avec l’id 2.",
 	"apihelp-newslettermanage-description": "Gérer un bulletin d'information.",
+	"apihelp-newslettermanage-summary": "Gérer un bulletin d'information.",
 	"apihelp-newslettermanage-param-id": "ID du bulletin d’informations à gérer.",
 	"apihelp-newslettermanage-param-do": "Action à effectuer. Doit être <kbd>addpublisher</kbd> ou <kbd>removepublisher</kbd>.",
 	"apihelp-newslettermanage-param-publisher": "ID d’utilisateur de l’éditeur à gérer.",

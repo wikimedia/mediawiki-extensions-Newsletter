@@ -3,9 +3,10 @@
 		"authors": [
 			"Soundarya shetty s",
 			"Vishwanatha Badikana",
-			"BHARATHESHA ALASANDEMAJALU"
+			"BHARATHESHA ALASANDEMAJALU",
+			"Kiranpoojary"
 		]
 	},
 	"newsletter-create-mainpage-error": "ಪ್ರವೇಸೊ ಮಲ್ತಿನ ಸುದ್ದಿ ಪತ್ರೊದ ಮುಖ್ಯಪುಟೊ ಸರಿ ಇಜ್ಜಿ. ಕುಡೊರ ಪ್ರಯತ್ನೊ ಮಲ್ಪುಲೆ.",
-	"newsletter-delete-reason": "ಕಾರಣೊ"
+	"apihelp-newslettersubscribe-summary": "ಸುದ್ದಿಯೋಲೆಗ್ ಸದಸ್ಯೆರಾಲೆ ಅತ್ತಾಂಡ ಸದಸ್ಯತ್ವನ್ ಕೈದ್ ಮಲ್ಪುಲೆ."
 }

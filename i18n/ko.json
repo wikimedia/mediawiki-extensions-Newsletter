@@ -56,6 +56,8 @@
 	"right-newsletter-create": "뉴스레터 만들기",
 	"action-newsletter-create": "뉴스레터 만들기",
 	"right-newsletter-manage": "뉴스레터의 게시자나 구독자를 추가하거나 제거합니다",
+	"apihelp-newslettersubscribe-summary": "뉴스레터를 구독하거나 구독을 해지합니다.",
+	"apihelp-newslettermanage-summary": "뉴스레터를 관리합니다.",
 	"newsletter-list-intro": "이 위키에 등록된 뉴스레터의 목록입니다. 새로운 이슈가 공지될 때 알림을 받으려면 뉴스레터를 구독하십시오. [[Special:Preferences#mw-prefsection-echo|환경 설정]]에 의거하여 웹이나 이메일을 통해 알림을 받게 됩니다.",
 	"newsletter-list-option-all": "모든 뉴스레터",
 	"newsletter-list-option-unsubscribed": "구독하지 않은 뉴스레터",
