@@ -201,8 +201,7 @@ class NewsletterTablePager extends TablePager {
 			// For some reason, this is the opposite of what
 			// you would expect.
 			$dir = $descending ? 'ASC' : 'DESC';
-			$combinedResult .= " ORDER BY sort $dir LIMIT "
-			                   . (int)$limit;
+			$combinedResult .= " ORDER BY sort $dir LIMIT " . (int)$limit;
 			return $this->mDb->query( $combinedResult, __METHOD__ );
 		} elseif ( $this->option === 'subscribed' || $offsetMode === 'S' ) {
 			return $this->mDb->query(

@@ -15,6 +15,5 @@ class EchoNewsletterUserLocator {
 		}
 
 		return UserArray::newFromIDs( $newsletter->getSubscribers() );
-
 	}
 }

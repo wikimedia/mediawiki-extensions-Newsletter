@@ -54,7 +54,8 @@ class NewsletterContent extends JsonContent {
 		$this->decode();
 
 		if ( !is_string( $this->description ) || !( $this->mainPage instanceof Title ) ||
-		     !is_array( $this->publishers ) ) {
+			!is_array( $this->publishers )
+		) {
 			return false;
 		}
 
@@ -114,8 +115,13 @@ class NewsletterContent extends JsonContent {
 		// No-op: We have already redirected.
 	}
 
-	protected function fillParserOutput( Title $title, $revId, ParserOptions $options,
-	                                     $generateHtml, ParserOutput &$output ) {
+	protected function fillParserOutput(
+		Title $title,
+		$revId,
+		ParserOptions $options,
+		$generateHtml,
+		ParserOutput &$output
+	) {
 		if ( $generateHtml ) {
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
 			// Make sure things are decoded at this point
@@ -192,7 +198,7 @@ class NewsletterContent extends JsonContent {
 			}
 			$form = $this->getHTMLForm(
 				$fields,
-				function() {
+				function () {
 					return false;
 				} // nothing to submit - the buttons on this page are just links
 			);
@@ -250,17 +256,17 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->text(),
 					'flags' => [ 'constructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-					                                                  self::NEWSLETTER_SUBSCRIBE )->getFullURL()
+						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 
 				]
 			);
-		} elseif ( $this->newsletter->isSubscribed( $user ) ){
+		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->text(),
 					'flags' => [ 'destructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-					                                                  self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
+						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 
 				]
 			);
@@ -279,7 +285,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-					                                                  self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
+						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
 
 				]
 			);
@@ -290,7 +296,7 @@ class NewsletterContent extends JsonContent {
 					'label' => $wgOut->msg( 'newsletter-announce-button' )->text(),
 					'icon' => 'comment',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
-					                                                  self::NEWSLETTER_ANNOUNCE )->getFullURL()
+						self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				]
 			);
 		}
@@ -364,7 +370,7 @@ class NewsletterContent extends JsonContent {
 		$links = [];
 		foreach ( $actions as $action ) {
 			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' .
-			                                                 $action );
+				$action );
 
 			// Messages used here: 'newsletter-subtitlelinks-announce',
 			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
@@ -450,8 +456,11 @@ class NewsletterContent extends JsonContent {
 	 *
 	 * @see Content::getSecondaryDataUpdates()
 	 */
-	public function getSecondaryDataUpdates( Title $title, Content $old = null, $recursive = true,
-	                                         ParserOutput $parserOutput = null
+	public function getSecondaryDataUpdates(
+		Title $title,
+		Content $old = null,
+		$recursive = true,
+		ParserOutput $parserOutput = null
 	) {
 		global $wgUser;
 		// @todo This user object might not be the right one in some cases.

@@ -41,8 +41,13 @@ class NewsletterLogger {
 		$log->publish( $log->insert() );
 	}
 
-	public function logNewIssue( User $publisher, Newsletter $newsletter, Title $issueTitle,
-	                             $issueId, $comment ) {
+	public function logNewIssue(
+		User $publisher,
+		Newsletter $newsletter,
+		Title $issueTitle,
+		$issueId,
+		$comment
+	) {
 		$log = new ManualLogEntry( 'newsletter', 'issue-added' );
 		$log->setPerformer( $publisher );
 		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() ) );

@@ -58,7 +58,8 @@ class NewsletterDataUpdate extends DataUpdate {
 					$logger->warning( 'newsletter-exist-error', $this->name );
 					return;
 				} elseif ( (int)$row->nl_main_page_id === $this->content->getMainPage()->getArticleID()
-				           && (int)$row->nl_active === 1 ) {
+					&& (int)$row->nl_active === 1
+				) {
 					$logger->warning( 'newsletter-mainpage-in-use' );
 					return;
 				}

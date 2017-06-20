@@ -8,7 +8,7 @@
  *
  * @author Addshore
  */
-class SpecialNewslettersTest extends SpecialPageTestBase{
+class SpecialNewslettersTest extends SpecialPageTestBase {
 
 	protected function newSpecialPage() {
 		return new SpecialNewsletters();

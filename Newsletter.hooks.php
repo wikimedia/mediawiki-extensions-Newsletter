@@ -219,8 +219,14 @@ class NewsletterHooks {
 	 * @return bool
 	 * @throws PermissionsError
 	 */
-	public static function onArticleDelete( &$wikiPage, &$user, &$reason, &$error, Status &$status,
-	                                        $suppress ) {
+	public static function onArticleDelete(
+		&$wikiPage,
+		&$user,
+		&$reason,
+		&$error,
+		Status &$status,
+		$suppress
+	) {
 		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -324,15 +330,21 @@ class NewsletterHooks {
 	 * @return bool
 	 * @throws ThrottledError
 	 */
-	public static function onEditFilterMergedContent( IContextSource $context, Content $content,
-	                                                  Status $status, $summary, User $user,
-	                                                  $minoredit ) {
+	public static function onEditFilterMergedContent(
+		IContextSource $context,
+		Content $content,
+		Status $status,
+		$summary,
+		User $user,
+		$minoredit
+	) {
 		global $wgUser;
 		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return;
 		}
 		if ( !$context->getTitle()->hasContentModel( 'NewsletterContent' ) ||
-		     ( !$content instanceof NewsletterContent ) ) {
+			( !$content instanceof NewsletterContent )
+		) {
 			return;
 		}
 		if ( $wgUser->pingLimiter( 'newsletter' ) ) {

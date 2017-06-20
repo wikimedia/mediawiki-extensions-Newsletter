@@ -31,7 +31,6 @@ class SpecialNewsletter extends SpecialPage {
 	 * @param string|null $par subpage parameter
 	 */
 	public function execute( $par ) {
-
 		if ( $par == '' ) {
 			// If no subpage was specified - only [[Special:Newsletter]] - redirect to Special:Newsletters
 			$this->getOutput()->redirect(
@@ -87,7 +86,6 @@ class SpecialNewsletter extends SpecialPage {
 				]
 			);
 		}
-
 	}
 
 	/**
@@ -444,7 +442,6 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $form->show() ) {
 			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
 		}
-
 	}
 	/**
 	 * Submit callback for the subscribers form (validate, edit subscribers table).

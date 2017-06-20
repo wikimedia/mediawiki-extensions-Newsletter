@@ -103,7 +103,6 @@ class NewsletterDb {
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
-
 	}
 
 	/**
