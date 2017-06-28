@@ -130,6 +130,7 @@
 	"right-newsletter-restore": "Restituer un bulletin d'information.",
 	"action-newsletter-restore": "restituer un bulletin d'information",
 	"apihelp-newslettersubscribe-description": "Vous abonner ou vous désabonner d'une newsletter.",
+	"apihelp-newslettersubscribe-summary": "S'abonner ou se désabonner d'une lettre d'information.",
 	"apihelp-newslettersubscribe-param-id": "ID du bulletin d’information pour lequel l’abonnement devrait être modifié.",
 	"apihelp-newslettersubscribe-param-do": "Action à effectuer. Devrait être <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "S’abonner au bulletin d’information d’id 1.",
