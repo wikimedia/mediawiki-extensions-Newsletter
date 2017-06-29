@@ -13,6 +13,8 @@
 	"newsletter-title": "Wiki page to be linked as Main page",
 	"newsletter-exist-error": "A newsletter with the name \"$1\" already exists. Please try again with another name.",
 	"newsletter-create-error": "An error occured while trying to create a new newsletter. Please try again.",
+	"newsletter-oldrev-update-error-title": "Sorry. That operations is not permitted.",
+	"newsletter-oldrev-update-error-body": "Editing a previous revision is not supported by the Newsletter extension. Please update the latest revision instead",
 	"newsletter-input-required": "Required input was not entered. Please try again.",
 	"newsletter-invalid-name": "The name you entered for the newsletter is invalid. Please try again.",
 	"newslettercreate": "Create newsletter",
