@@ -362,7 +362,7 @@ class NewsletterDb {
 
 	/**
 	 * @param $id
-	 * @return array
+	 * @return int
 	 */
 	public function getNewsletterSubscribersCount( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
