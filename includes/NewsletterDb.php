@@ -1,6 +1,8 @@
 <?php
 
 use Wikimedia\Assert\Assert;
+use Wikimedia\Rdbms\DBQueryError;
+use Wikimedia\Rdbms\LoadBalancer;
 
 /**
  * @license GNU GPL v2+
