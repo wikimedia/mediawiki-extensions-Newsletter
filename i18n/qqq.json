@@ -11,7 +11,8 @@
 			"Verdy p",
 			"Amire80",
 			"Base",
-			"Divadsn"
+			"Divadsn",
+			"Addshore"
 		]
 	},
 	"newsletter-extension-desc": "{{desc|name=Newsletter|url=https://www.mediawiki.org/wiki/Extension:Newsletter}}",
@@ -175,5 +176,10 @@
 	"newsletter-restore-failure-title": "Title for \"newsletter-restore-failure\"",
 	"newsletter-diff-descheader": "Header for the diff of the description between two revisions",
 	"newsletter-diff-mainpageheader": "Header for the diff of Main Page between two revisions",
-	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions"
+	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions",
+	"newsletter-api-error-notfound": "Error message to be displayed in the API when a newsletter is not found.",
+	"newsletter-api-error-nopermissions": "Error message to be displayed in the API when the requesting user does not have the required permissions.",
+	"newsletter-api-error-invalidpublisher-registered": "Error message to be displayed in the API when a given publisher is not a registered account.",
+	"newsletter-api-error-managefailure": "Error message to be displayed in the API when the requested manage action has failed.",
+	"newsletter-api-error-subscribe-notloggedin": "Error message to be displayed in the API when a request is made to subscribe to a newsletter by an anonymous user.."
 }

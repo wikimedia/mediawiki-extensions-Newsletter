@@ -9,14 +9,14 @@ class ApiNewsletterSubscribe extends ApiBase {
 		$user = $this->getUser();
 
 		if ( !$user->isLoggedIn() ) {
-			$this->dieUsage( 'You must be logged-in to subscribe to newsletters', 'notloggedin' );
+			$this->dieWithError( 'newsletter-api-error-subscribe-notloggedin', 'notloggedin' );
 		}
 
 		$params = $this->extractRequestParams();
 		$newsletter = Newsletter::newFromID( $params['id'] );
 
 		if ( !$newsletter ) {
-			$this->dieUsage( 'Newsletter does not exist', 'notfound' );
+			$this->dieWithError( 'newsletter-api-error-notfound', 'notfound' );
 		}
 
 		switch ( $params['do'] ) {

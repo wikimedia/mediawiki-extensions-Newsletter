@@ -5,8 +5,6 @@
  *
  * @license GNU GPL v2+
  * @author Tina Johnson
- *
- * @todo Add i18n
  */
 class ApiNewsletterManage extends ApiBase {
 
@@ -17,16 +15,16 @@ class ApiNewsletterManage extends ApiBase {
 		$newsletter = Newsletter::newFromID( $params['id'] );
 
 		if ( !$newsletter ) {
-			$this->dieUsage( 'Newsletter does not exist', 'notfound' );
+			$this->dieWithError( 'newsletter-api-error-notfound', 'notfound' );
 		}
 
 		if ( !$newsletter->canManage( $user ) ) {
-			$this->dieUsage( 'You do not have permission to manage newsletters.', 'nopermissions' );
+			$this->dieWithError( 'newsletter-api-error-nopermissions', 'nopermissions' );
 		}
 
 		$publisher = User::newFromId( $params['publisher'] );
 		if ( !$publisher || $publisher->getId() === 0 ) {
-			$this->dieUsage( 'Publisher is not a registered user.', 'invalidpublisher' );
+			$this->dieWithError( 'newsletter-api-error-invalidpublisher-registered', 'invalidpublisher' );
 		}
 
 		$store = NewsletterStore::getDefaultInstance();
@@ -40,7 +38,10 @@ class ApiNewsletterManage extends ApiBase {
 		}
 
 		if ( !$success ) {
-			$this->dieUsage( "Manage action: $action failed. Please try again.", 'managefailure' );
+			$this->dieWithError(
+				new Message( 'newsletter-api-error-managefailure', [ $action ] ),
+					'managefailure'
+			);
 		}
 
 		// Success
