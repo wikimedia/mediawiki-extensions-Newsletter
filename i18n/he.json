@@ -14,6 +14,8 @@
 	"newsletter-title": "דף ויקי שיקושר בתור הדף הראשי",
 	"newsletter-exist-error": "ידיעון בשם \"$1\" כבר קיים. נא לנסות עם שם אחר.",
 	"newsletter-create-error": "אירעה שגיאה בעת ניסיון ליצור ידיעון חדש. נא לנסות שוב.",
+	"newsletter-oldrev-update-error-title": "סליחה. הפעולה הזאת אינה מורשית.",
+	"newsletter-oldrev-update-error-body": "עריכת גרסה קודמת אינה נתמכת בהרחבת הידיעונים. נא לעדכן את הגרסה האחרונה במקום זאת",
 	"newsletter-input-required": "לא הוכנס פלט נדרש. נא לנסות שוב.",
 	"newsletter-invalid-name": "השם שהזנת לידיעון אינו תקין. נא לנסות שוב.",
 	"newslettercreate": "יצירת ידיעון",

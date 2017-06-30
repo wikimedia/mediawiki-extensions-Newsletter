@@ -11,6 +11,8 @@
 	"newsletter-title": "Páxina wiki a enllazar como Páxina principal",
 	"newsletter-exist-error": "Yá esiste un boletín col nome «$1». Vuelve a tentalo con otru nome.",
 	"newsletter-create-error": "Asocedió un error al intentar crear un boletín nuevu. Téntalo nuevamente.",
+	"newsletter-oldrev-update-error-title": "Sentímoslo. Eses operaciones nun tán permitíes.",
+	"newsletter-oldrev-update-error-body": "La edición d'una revisión anterior nun tien encontu de la estensión Newsletter. Anueva meyor la última revisión.",
 	"newsletter-input-required": "Nun s'apurrió la entrada riquía. Téntalo nuevamente.",
 	"newsletter-invalid-name": "El nome proporcionáu pal boletín nun ye válidu. Téntalo nuevamente.",
 	"newslettercreate": "Crear boletinos",

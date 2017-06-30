@@ -15,6 +15,8 @@
 	"newsletter-name": "뉴스레터 이름",
 	"newsletter-desc": "설명",
 	"newsletter-title": "대문 이름",
+	"newsletter-oldrev-update-error-title": "죄송합니다. 이 작업은 허용되지 않습니다.",
+	"newsletter-oldrev-update-error-body": "뉴스레터 확장은 이전 판의 편집을 지원하지 않습니다. 대신에 최신 판을 업데이트해 주십시오",
 	"newslettercreate": "뉴스레터 만들기",
 	"newsletter-create-submit": "뉴스레터 만들기",
 	"newsletter-create-editsummary": "새 뉴스레터 만들기",

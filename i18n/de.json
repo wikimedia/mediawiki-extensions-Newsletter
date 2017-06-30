@@ -11,6 +11,8 @@
 	"newsletter-title": "Wikiseite, die als Hauptseite verlinkt werden soll.",
 	"newsletter-exist-error": "Ein Newsletter mit dem Namen „$1“ ist bereits vorhanden. Bitte versuche es mit einem anderen Namen erneut.",
 	"newsletter-create-error": "Beim Versuch, einen neuen Newsletter zu erstellen, ist ein Fehler aufgetreten. Bitte erneut versuchen.",
+	"newsletter-oldrev-update-error-title": "Leider ist diese Operation nicht erlaubt.",
+	"newsletter-oldrev-update-error-body": "Das Bearbeiten einer älteren Version wird von der Newsletter-Erweiterung nicht unterstützt. Bitte aktualisiere stattdessen auf die neueste Version.",
 	"newsletter-input-required": "Es fehlt eine erforderliche Eingabe. Bitte erneut versuchen.",
 	"newsletter-invalid-name": "Der eingegebene Name für den Newsletter ist ungültig. Bitte erneut versuchen.",
 	"newslettercreate": "Newsletter erstellen",

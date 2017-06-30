@@ -12,6 +12,7 @@
 	"newsletter-title": "Pagina wiki da collegare come pagina principale",
 	"newsletter-exist-error": "Una newsletter con il nome \"$1\" esiste già. Riprova con un altro nome.",
 	"newsletter-create-error": "Si è verificato un errore durante la creazione di una nuova newsletter. Riprova.",
+	"newsletter-oldrev-update-error-title": "Scusate. Questa operazione non è consentita.",
 	"newsletter-input-required": "Il dato richiesto non è stato inserito. Riprova.",
 	"newsletter-invalid-name": "Il nome inserito per la newsletter non è valido. Riprova.",
 	"newslettercreate": "Crea newsletter",
