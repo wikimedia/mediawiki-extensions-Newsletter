@@ -12,7 +12,7 @@
 	"newsletter-title": "Wikisida att länkas som huvudsidan",
 	"newsletter-exist-error": "Ett nyhetsbrev med namnet \"$1\" finns redan. Prova ett annat namn.",
 	"newsletter-create-error": "Ett fel uppstod när ett nytt nyhetsbrev skulle skapas. Försök igen.",
-	"newsletter-oldrev-update-error-title": "Tyvärr, den åtgärden är inte tillåten.",
+	"newsletter-oldrev-update-error-title": "Tyvärr, denna åtgärd är inte tillåten.",
 	"newsletter-oldrev-update-error-body": "Tillägget Newsletter har inte stöd för att redigera en tidigare version. Uppdatera den senaste versionen istället",
 	"newsletter-input-required": "Nödvändig inmatning har inte angivits. Försök igen.",
 	"newsletter-invalid-name": "Namnet du angav för nyhetsbrevet är ogiltigt. Försök igen.",
