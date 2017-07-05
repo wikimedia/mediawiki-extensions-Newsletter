@@ -128,7 +128,7 @@ class NewsletterEditPage {
 			'type' => 'usersmultiselect',
 			'label-message' => 'newsletter-manage-publishers',
 			'exists' => true,
-			'default' => $publishersNames,
+			'default' => implode( "\n", $publishersNames ),
 		];
 		$fields['Summary'] = [
 			'type' => 'text',
@@ -372,7 +372,7 @@ class NewsletterEditPage {
 			$modified = true;
 		}
 
-		$publisherNames = $data['Publishers'];
+		$publisherNames = explode( "\n", $data['Publishers'] );
 		// Ask for confirmation before removing all the publishers
 		if ( !$confirmed && count( $publisherNames ) === 0 ) {
 			return Status::newFatal( 'newsletter-manage-no-publishers' );
