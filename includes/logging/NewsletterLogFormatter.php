@@ -7,8 +7,6 @@
  * @author Tyler Romeo
  */
 
-use MediaWiki\MediaWikiServices;
-
 class NewsletterLogFormatter extends LogFormatter {
 	/**
 	 * Reformat the target as a user link if the target was a user
@@ -46,7 +44,7 @@ class NewsletterLogFormatter extends LogFormatter {
 		list( $id, $name ) = explode( ':', $value, 2 );
 		$title = SpecialPage::getTitleFor( 'Newsletter', $id );
 		if ( !$this->plaintext ) {
-			return Message::rawParam( MediaWikiServices::getInstance()->getLinkRenderer()->makeLink(
+			return Message::rawParam( $this->getLinkRenderer()->makeLink(
 				$title,
 				$name,
 				[]
