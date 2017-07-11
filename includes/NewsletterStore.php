@@ -191,7 +191,7 @@ class NewsletterStore {
 
 	/**
 	 * @param $id
-	 * @return array
+	 * @return int
 	 */
 	public function getNewsletterSubscribersCount( $id ) {
 		return $this->db->getNewsletterSubscribersCount( $id );
