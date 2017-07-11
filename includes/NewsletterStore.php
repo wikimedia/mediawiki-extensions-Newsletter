@@ -1,7 +1,5 @@
 <?php
 
-use Wikimedia\Assert\Assert;
-
 /**
  * @license GNU GPL v2+
  * @author Addshore
