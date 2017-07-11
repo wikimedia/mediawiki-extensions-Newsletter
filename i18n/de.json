@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Metalhead64",
-			"Macofe"
+			"Macofe",
+			"Osnard"
 		]
 	},
 	"newsletter-extension-desc": "Ermöglicht es Benutzern, Newsletter zu veröffentlichen und zu abonnieren",
@@ -163,5 +164,10 @@
 	"newsletter-restore-failure-title": "Der Newsletter konnte nicht wiederhergestellt werden.",
 	"newsletter-diff-descheader": "Änderungen an der Beschreibung:",
 	"newsletter-diff-mainpageheader": "Änderungen an der Hauptseite:",
-	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:"
+	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:",
+	"newsletter-api-error-notfound": "Der Newsletter ist nicht vorhanden",
+	"newsletter-api-error-nopermissions": "Du hast nicht die erforderliche Berechtigung, um Newsletter zu verwalten.",
+	"newsletter-api-error-invalidpublisher-registered": "Der Herausgeber ist kein angemeldeter Benutzer.",
+	"newsletter-api-error-managefailure": "Verwaltungsaktion: $1 fehlgeschlagen.",
+	"newsletter-api-error-subscribe-notloggedin": "Du musst angemeldet sein, um Newsletter abonnieren zu können."
 }

@@ -81,5 +81,6 @@
 	"newsletter-restore-failure-title": "Newsletter konnt net restauréiert ginn.",
 	"newsletter-diff-descheader": "Ännerungen an der Beschreiwung:",
 	"newsletter-diff-mainpageheader": "Ännerungen op der Haaptsäit:",
-	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:"
+	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:",
+	"newsletter-api-error-notfound": "Newsletter gëtt et net"
 }

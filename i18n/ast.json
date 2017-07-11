@@ -11,7 +11,7 @@
 	"newsletter-title": "Páxina wiki a enllazar como Páxina principal",
 	"newsletter-exist-error": "Yá esiste un boletín col nome «$1». Vuelve a tentalo con otru nome.",
 	"newsletter-create-error": "Asocedió un error al intentar crear un boletín nuevu. Téntalo nuevamente.",
-	"newsletter-oldrev-update-error-title": "Sentímoslo. Eses operaciones nun tán permitíes.",
+	"newsletter-oldrev-update-error-title": "Sentímoslo, esta operación nun ta permitida.",
 	"newsletter-oldrev-update-error-body": "La edición d'una revisión anterior nun tien encontu de la estensión Newsletter. Anueva meyor la última revisión.",
 	"newsletter-input-required": "Nun s'apurrió la entrada riquía. Téntalo nuevamente.",
 	"newsletter-invalid-name": "El nome proporcionáu pal boletín nun ye válidu. Téntalo nuevamente.",
@@ -165,5 +165,10 @@
 	"newsletter-restore-failure-title": "El boletín nun pudo restaurase.",
 	"newsletter-diff-descheader": "Cambios na descripción:",
 	"newsletter-diff-mainpageheader": "Cambios na páxina principal:",
-	"newsletter-diff-publishersheader": "Cambios nos editores:"
+	"newsletter-diff-publishersheader": "Cambios nos editores:",
+	"newsletter-api-error-notfound": "El boletín nun esiste",
+	"newsletter-api-error-nopermissions": "Nun tienes permisu p'alministrar boletinos.",
+	"newsletter-api-error-invalidpublisher-registered": "L'editor nun ye un usuariu rexistráu.",
+	"newsletter-api-error-managefailure": "Aición alministrativa: $1 falló.",
+	"newsletter-api-error-subscribe-notloggedin": "Tienes d'aniciar sesión pa suscribite a boletinos."
 }

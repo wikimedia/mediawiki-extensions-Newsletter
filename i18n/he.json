@@ -166,5 +166,10 @@
 	"newsletter-restore-failure-title": "לא היה אפשר לשחזר את הידיעון.",
 	"newsletter-diff-descheader": "שינויים בתיאור:",
 	"newsletter-diff-mainpageheader": "שינויים בדף הראשי:",
-	"newsletter-diff-publishersheader": "שינויים במפרסמים:"
+	"newsletter-diff-publishersheader": "שינויים במפרסמים:",
+	"newsletter-api-error-notfound": "הידיעון אינו קיים",
+	"newsletter-api-error-nopermissions": "אין לך הרשאה לנהל ידיעונים",
+	"newsletter-api-error-invalidpublisher-registered": "המפרסם אינו משתמש רשום.",
+	"newsletter-api-error-managefailure": "פעולת ניהול $1 נכשלה.",
+	"newsletter-api-error-subscribe-notloggedin": "חובה להיות בחשבון כדי לעשות מינוי לידיעונים."
 }

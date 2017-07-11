@@ -166,5 +166,10 @@
 	"newsletter-restore-failure-title": "新闻报不能恢复。",
 	"newsletter-diff-descheader": "描述中的更改：",
 	"newsletter-diff-mainpageheader": "首页中的更改：",
-	"newsletter-diff-publishersheader": "发布者的更改："
+	"newsletter-diff-publishersheader": "发布者的更改：",
+	"newsletter-api-error-notfound": "新闻报不存在",
+	"newsletter-api-error-nopermissions": "您没有权限管理新闻报。",
+	"newsletter-api-error-invalidpublisher-registered": "发布者不是注册用户。",
+	"newsletter-api-error-managefailure": "管理操作：$1失败。",
+	"newsletter-api-error-subscribe-notloggedin": "您必须登录才能订阅新闻报。"
 }

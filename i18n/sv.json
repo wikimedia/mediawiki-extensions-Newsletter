@@ -166,5 +166,10 @@
 	"newsletter-restore-failure-title": "Nyhetsbrevet kunde inte återställas.",
 	"newsletter-diff-descheader": "Ändringar i beskrivningen:",
 	"newsletter-diff-mainpageheader": "Ändringar i huvudsidan:",
-	"newsletter-diff-publishersheader": "Ändringar i utgivare:"
+	"newsletter-diff-publishersheader": "Ändringar i utgivare:",
+	"newsletter-api-error-notfound": "Nyhetsbrevet finns inte",
+	"newsletter-api-error-nopermissions": "Du har inte behörighet att hantera nyhetsbrev.",
+	"newsletter-api-error-invalidpublisher-registered": "Utgivaren är inte en registrerad användare.",
+	"newsletter-api-error-managefailure": "Hanteringsåtgärd: $1 misslyckades.",
+	"newsletter-api-error-subscribe-notloggedin": "Du måste vara inloggad för att prenumerera till nyhetsbrev."
 }
