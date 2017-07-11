@@ -206,10 +206,13 @@ class NewsletterContent extends JsonContent {
 			$form->suppressDefaultSubmit();
 			$form->prepareForm();
 
-			!$this->newsletter ? $output->setText( $form->getBody() ) : $output->setText(
-				$this->getNavigationLinks( $options ) . $newsletterActionButtons . "<br><br>" .
-				$form->getBody()
-			);
+			if ( !$this->newsletter ) {
+				$output->setText( $form->getBody() );
+			} else {
+				$this->setupNavigationLinks( $options );
+				$output->setText( $newsletterActionButtons . "<br><br>" . $form->getBody() );
+			}
+
 			return $output;
 		} else {
 			$output->setText( '' );
@@ -340,7 +343,7 @@ class NewsletterContent extends JsonContent {
 		return Html::rawElement( 'ul', [], $str );
 	}
 
-	protected function getNavigationLinks( ParserOptions $options ) {
+	private function setupNavigationLinks( ParserOptions $options ) {
 		global $wgOut;
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$listLink = $linkRenderer->makeKnownLink(
@@ -391,7 +394,7 @@ class NewsletterContent extends JsonContent {
 				$options->getUserLangObj()->pipeList( $links )
 			)->escaped();
 
-		return $wgOut->setSubtitle(
+		$wgOut->setSubtitle(
 			$options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] )
 		);
 	}
