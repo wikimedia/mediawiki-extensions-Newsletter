@@ -1,6 +1,6 @@
 {
 	"name": "Newsletter",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"author": [
 		"Siebrand Mazeland",
 		"Tina Johnson",
@@ -9,6 +9,9 @@
 	"url": "https://www.mediawiki.org/wiki/Extension:Newsletter",
 	"descriptionmsg": "newsletter-extension-desc",
 	"license-name": "GPL-2.0",
+	"requires": {
+		"MediaWiki": ">= 1.30.0"
+	},
 	"type": "other",
 	"AvailableRights": [
 		"newsletter-create",
@@ -92,7 +95,6 @@
 		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php",
 		"EchoNewsletterUnsubscribedPresentationModel": "includes/Echo/EchoNewsletterUnsubscribedPresentationModel.php",
 		"EchoNewsletterSubscribedPresentationModel": "includes/Echo/EchoNewsletterSubscribedPresentationModel.php"
-
 	},
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-newsletter": true,
