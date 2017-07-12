@@ -128,7 +128,7 @@ class NewsletterContent extends JsonContent {
 			$this->decode();
 
 			$newsletterActionButtons = !$this->newsletter ? '' : $this->getNewsletterActionButtons(
-				$options );
+				$options, $output );
 			$mainTitle = $this->mainPage;
 
 			$fields = [
@@ -244,19 +244,20 @@ class NewsletterContent extends JsonContent {
 	 *
 	 * @return string HTML for the button group
 	 */
-	protected function getNewsletterActionButtons( ParserOptions &$options ) {
-		global $wgOut;
-
+	protected function getNewsletterActionButtons( ParserOptions &$options, ParserOutput $output
+	) {
 		// We are building the 'Subscribe' action button for anonymous users as well
 		$user = $options->getUser() ? : null;
 		$id = $this->newsletter->getId();
 		$buttons = [];
-		$wgOut->enableOOUI();
+
+		OutputPage::setupOOUI();
+		$output->setEnableOOUI( true );
 
 		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
-					'label' => $wgOut->msg( 'newsletter-subscribe-button' )->text(),
+					'label' => wfMessage( 'newsletter-subscribe-button' )->text(),
 					'flags' => [ 'constructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
@@ -266,7 +267,7 @@ class NewsletterContent extends JsonContent {
 		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
-					'label' => $wgOut->msg( 'newsletter-unsubscribe-button' )->text(),
+					'label' => wfMessage( 'newsletter-unsubscribe-button' )->text(),
 					'flags' => [ 'destructive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
@@ -277,7 +278,7 @@ class NewsletterContent extends JsonContent {
 		if ( $user && $this->newsletter->canManage( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
-					'label' => $wgOut->msg( 'newsletter-manage-button' )->text(),
+					'label' => wfMessage( 'newsletter-manage-button' )->text(),
 					'icon' => 'settings',
 					'href' => Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() )->getEditURL(),
 
@@ -285,7 +286,7 @@ class NewsletterContent extends JsonContent {
 			);
 			$buttons[] = new OOUI\ButtonWidget(
 				[
-					'label' => $wgOut->msg( 'newsletter-subscribers-button' )->text(),
+					'label' => wfMessage( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
@@ -296,7 +297,7 @@ class NewsletterContent extends JsonContent {
 		if ( $user && $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
-					'label' => $wgOut->msg( 'newsletter-announce-button' )->text(),
+					'label' => wfMessage( 'newsletter-announce-button' )->text(),
 					'icon' => 'comment',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_ANNOUNCE )->getFullURL()
