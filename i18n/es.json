@@ -164,5 +164,9 @@
 	"newsletter-restore-failure-title": "El boletín no ha podido recuperarse.",
 	"newsletter-diff-descheader": "Cambios en la descripción:",
 	"newsletter-diff-mainpageheader": "Cambios en la página principal:",
-	"newsletter-diff-publishersheader": "Cambios en los editores:"
+	"newsletter-diff-publishersheader": "Cambios en los editores:",
+	"newsletter-api-error-notfound": "No existe el boletín",
+	"newsletter-api-error-nopermissions": "No tienes permiso para gestionar boletines.",
+	"newsletter-api-error-invalidpublisher-registered": "El editor no es un usuario registrado.",
+	"newsletter-api-error-subscribe-notloggedin": "Tienes que haber iniciado sesión para suscribirte a boletines."
 }

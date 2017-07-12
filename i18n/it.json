@@ -145,5 +145,7 @@
 	"log-action-filter-newsletter-publisher-removed": "Rimozione editore",
 	"log-action-filter-newsletter-newsletter-added": "Creazione newsletter",
 	"log-action-filter-newsletter-newsletter-removed": "Cancellazione newsletter",
-	"log-action-filter-newsletter-issue-added": "Annunci nuova edizione"
+	"log-action-filter-newsletter-issue-added": "Annunci nuova edizione",
+	"newsletter-api-error-notfound": "La newsletter non esiste",
+	"newsletter-api-error-nopermissions": "Non si dispone dei permessi necessari per gestire le newsletter."
 }

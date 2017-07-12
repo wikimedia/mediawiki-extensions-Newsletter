@@ -165,5 +165,10 @@
 	"newsletter-restore-failure-title": "Билтенот не може да се поврати.",
 	"newsletter-diff-descheader": "Промени во описот:",
 	"newsletter-diff-mainpageheader": "Промени во Главната страница:",
-	"newsletter-diff-publishersheader": "Промени во издавачите:"
+	"newsletter-diff-publishersheader": "Промени во издавачите:",
+	"newsletter-api-error-notfound": "Билтенот не постои",
+	"newsletter-api-error-nopermissions": "Немате дозвола за раководење со билтени.",
+	"newsletter-api-error-invalidpublisher-registered": "Издавачот не е регистриран корисник.",
+	"newsletter-api-error-managefailure": "Раководно дејство: $1 не успеа.",
+	"newsletter-api-error-subscribe-notloggedin": "Мора да сте најавени за да се претплаќате на билтени."
 }

@@ -82,5 +82,7 @@
 	"newsletter-diff-descheader": "Ännerungen an der Beschreiwung:",
 	"newsletter-diff-mainpageheader": "Ännerungen op der Haaptsäit:",
 	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:",
-	"newsletter-api-error-notfound": "Newsletter gëtt et net"
+	"newsletter-api-error-notfound": "Newsletter gëtt et net",
+	"newsletter-api-error-nopermissions": "Dir hutt net d'Recht fir Newsletteren ze geréieren.",
+	"newsletter-api-error-subscribe-notloggedin": "Dir musst ageloggt si fir Iech op Newsletteren z'abonnéieren."
 }
