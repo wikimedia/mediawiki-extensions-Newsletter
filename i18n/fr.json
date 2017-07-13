@@ -175,5 +175,10 @@
 	"newsletter-restore-failure-title": "Le bulletin d’information n’a pas pu être récupéré.",
 	"newsletter-diff-descheader": "Changements dans la description :",
 	"newsletter-diff-mainpageheader": "Changements dans la page principale :",
-	"newsletter-diff-publishersheader": "Changements dans les éditeurs :"
+	"newsletter-diff-publishersheader": "Changements dans les éditeurs :",
+	"newsletter-api-error-notfound": "Le bulletin d’information n’existe pas",
+	"newsletter-api-error-nopermissions": "Vous n’avez pas le droit de gérer les bulletins d’information.",
+	"newsletter-api-error-invalidpublisher-registered": "L’éditeur n’est pas un utilisateur enregistré.",
+	"newsletter-api-error-managefailure": "La gestion de l’action $1 a échoué.",
+	"newsletter-api-error-subscribe-notloggedin": "Vous devez être connecté pour vous abonner aux bulletins d’information."
 }

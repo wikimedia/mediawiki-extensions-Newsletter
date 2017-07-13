@@ -1,14 +1,14 @@
 {
 	"@metadata": {
 		"authors": [
-			"V.narsikar"
+			"V.narsikar",
+			"Rupalichinchure"
 		]
 	},
 	"newslettercreate": "वार्तापत्र तयार करा",
 	"newslettercreate-text": "हे पान आपणास नविन वार्तापत्र तयार करण्यास सक्षम करते. आपण त्याचे प्रकाशक म्हणून जोडल्या जाल व ते तयार केल्यावर(आपोआप) त्याचे वर्गणीदार व्हाल.त्यातील सर्व क्षेत्रे आवश्यक आहेत.",
 	"newsletter-view-mainpage": "मुख्य पान:",
 	"newsletter-view-no-publishers": "प्रकाशक नाहीत.",
-	"newsletter-delete-button": "वगळा",
 	"newsletter-manage-button": "व्यवस्थापन करा",
 	"newsletter-announce-button": "घोषणा करा",
 	"newsletter-announce-nopermission": "आपण या वार्तापत्राचे प्रकाशक नाहीत.",
@@ -27,8 +27,6 @@
 	"newsletter-notification-link-text-view-newsletter": "वार्तापत्र पाहा",
 	"newsletter-email-subject": "$1 चा नविन अंक घोषित करण्यात आला आहे.",
 	"newsletter-email-batch-body": "$2 ने $1 चा नविन अंक घोषित केला.",
-	"newsletter-delete-confirm-cancel": "रद्द करा",
-	"newsletter-delete-confirm-delete": "वगळा",
 	"right-newsletter-create": "वार्तापत्रे तयार करा",
 	"action-newsletter-create": "वार्तापत्रे तयार करा",
 	"right-newsletter-delete": "वार्तापत्रे वगळा",
@@ -44,5 +42,7 @@
 	"newsletter-list-go-button": "जा",
 	"newsletter-deleted-log": "या बातमीपत्राच्या वगळण्याच्या नोंदी खाली पुरविण्यात आल्या आहेत.",
 	"log-action-filter-newsletter-publisher-added": "प्रकाशकाची जोड",
-	"log-action-filter-newsletter-newsletter-added": "बातमीपत्र तयार करणे"
+	"log-action-filter-newsletter-newsletter-added": "बातमीपत्र तयार करणे",
+	"newsletter-api-error-notfound": "वृत्तपत्र अस्तित्वात नाही",
+	"newsletter-api-error-invalidpublisher-registered": "\nप्रकाशक नोंदणीकृत वापरकर्ता नाही"
 }
