@@ -22,7 +22,7 @@
 	"newsletter-exist-error": "Un bulletin d'information portant le nom \"$1\" existe déja. Veuillez réessayer avec un autre nom s'il vous plait.",
 	"newsletter-create-error": "Une erreur s'est produite en essayant créer un nouveau bulletin d'information. Merci d'essayer à nouveau.",
 	"newsletter-oldrev-update-error-title": "Désolé, cette opération n'est pas autorisée.",
-	"newsletter-oldrev-update-error-body": "Modifier une version précédente n'est pas supporté par l'extension Newsletter. Veuillez à la place, mettre à jour la dernière version.",
+	"newsletter-oldrev-update-error-body": "Modifier une version précédente n’est pas pris en charge par l’extension Newsletter. Veuillez à la place mettre à jour la dernière version.",
 	"newsletter-input-required": "Les données attendues n'ont pas été entrées. Merci d'essayer à nouveau.",
 	"newsletter-invalid-name": "Le nom entré pour le bulletin d'information est invalide. Réessayez s'il vous plait.",
 	"newslettercreate": "Créer le bulletin d’information",

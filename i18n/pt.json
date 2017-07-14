@@ -169,5 +169,10 @@
 	"newsletter-restore-failure-title": "Não foi possível restaurar o boletim.",
 	"newsletter-diff-descheader": "Alterações na descrição:",
 	"newsletter-diff-mainpageheader": "Alterações na página principal:",
-	"newsletter-diff-publishersheader": "Alterações nos editores:"
+	"newsletter-diff-publishersheader": "Alterações nos editores:",
+	"newsletter-api-error-notfound": "O boletim não existe",
+	"newsletter-api-error-nopermissions": "Não tem permissão para gerir boletins.",
+	"newsletter-api-error-invalidpublisher-registered": "O editor não é um utilizador registado.",
+	"newsletter-api-error-managefailure": "A operação de gestão $1 falhou.",
+	"newsletter-api-error-subscribe-notloggedin": "Para subscrever boletins tem que ter uma sessão iniciada."
 }
