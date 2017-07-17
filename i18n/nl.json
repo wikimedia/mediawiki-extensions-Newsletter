@@ -5,7 +5,8 @@
 			"Siebrand",
 			"SPQRobin",
 			"Hex",
-			"Mainframe98"
+			"Mainframe98",
+			"Festina90"
 		]
 	},
 	"newsletter-name": "Naam van de nieuwsbrief",
@@ -87,5 +88,10 @@
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|herstelde}} nieuwsbrief $4",
 	"newsletter-restore-failure": "Nieuwsbrief \"$1\" kon niet worden hersteld. Probeer het opnieuw.",
 	"newsletter-restore-failure-title": "Nieuwsbrief kon niet worden hersteld.",
-	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:"
+	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:",
+	"newsletter-api-error-notfound": "Nieuwsbrief bestaat niet",
+	"newsletter-api-error-nopermissions": "U hebt geen rechten om nieuwsbrieven te beheren.",
+	"newsletter-api-error-invalidpublisher-registered": "De uitgever is geen geregistreerde gebruiker.",
+	"newsletter-api-error-managefailure": "Beheer-actie: $1 is niet gelukt.",
+	"newsletter-api-error-subscribe-notloggedin": "U hoeft aangemeld te zijn om u aan te melden voor de nieuwsbrieven."
 }

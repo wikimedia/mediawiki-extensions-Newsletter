@@ -66,7 +66,7 @@
 	"newsletter-announce-invalid-page": "Veuillez saisir un titre valide pour la page du numéro.",
 	"newsletter-announce-nonexistent-page": "La page de numéro fournie n’existe pas. Veuillez entrer une page existante.",
 	"newsletter-announce-failure": "Un nouveau numéro ne peut pas être annoncé. Veuillez réessayer.",
-	"newsletter-manage": "Gérer le bulletin d’information de « $1 ».",
+	"newsletter-manage": "Gérer le bulletin d’information « $1 »",
 	"newsletter-manage-publishers": "Les éditeurs :",
 	"newsletter-manage-name": "Nom du bulletin d’information :",
 	"newsletter-manage-title": "Titre de la page principale",
