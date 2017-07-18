@@ -12,5 +12,9 @@
 	"newsletter-notification-link-text-view-newsletter": "Tingnan ang pahayagang palihan (''newsletter'')",
 	"right-newsletter-create": "Lumikha ng mga pahayagang palihan (''newsletter'')",
 	"action-newsletter-create": "lumikha ng mga pahayagang palihan (''newsletter'')",
-	"newsletter-list-go-button": "Pumunta"
+	"newsletter-list-go-button": "Pumunta",
+	"newsletter-api-error-notfound": "Mukhang Wala sa 'Criteria' ang iyong hinahanap",
+	"newsletter-api-error-nopermissions": "Hoy! Bawal yang iyong ginagawa .. Gusto mong makulong ??",
+	"newsletter-api-error-invalidpublisher-registered": "Mukhang hindi naka-rehistro ng maayos ang 'user' na nakasaad",
+	"newsletter-api-error-subscribe-notloggedin": "mag'Log-In' muna bago makagamit ng 'site' namin."
 }
