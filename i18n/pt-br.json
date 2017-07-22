@@ -49,6 +49,7 @@
 	"newsletter-delete-log": "O boletim $1 foi excluído.",
 	"newsletter-subscribe": "Gestão de inscrições de boletins",
 	"newsletter-subscribe-section": "Inscrever-se nos boletins informativos",
+	"newsletter-unsubscribe-section": "Cancelar inscrição nos boletins informativos",
 	"newsletter-subscribe-button-label": "Sim",
 	"newsletter-unsubscribe-button-label": "Não",
 	"newsletter-subscribing": "Inscrevendo-se...",
@@ -91,5 +92,7 @@
 	"newsletter-restore-failure": "O boletim $1 não pode ser recuperado. Por favor, tente novamente.",
 	"newsletter-diff-descheader": "Alterações na descrição:",
 	"newsletter-diff-mainpageheader": "Alterações na Página Principal:",
-	"newsletter-diff-publishersheader": "Alterações nos editores:"
+	"newsletter-diff-publishersheader": "Alterações nos editores:",
+	"newsletter-api-error-notfound": "O boletim informativo não existe",
+	"newsletter-api-error-managefailure": "Gerenciar ação: $1 falhou."
 }
