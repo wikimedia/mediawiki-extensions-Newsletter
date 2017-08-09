@@ -92,6 +92,7 @@ class SpecialNewsletter extends SpecialPage {
 	 * Get the navigation links shown in the subtitle
 	 *
 	 * @param string|null $current subpage currently being shown, null if default "view" page
+	 * @return string
 	 */
 	protected function getNavigationLinks( $current ) {
 		$linkRenderer = $this->getLinkRenderer();

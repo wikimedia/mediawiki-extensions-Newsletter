@@ -325,6 +325,7 @@ class NewsletterDb {
 	 * Fetch the newsletter matching the given name from the DB
 	 *
 	 * @param string $name
+	 * @param bool $active
 	 * @return Newsletter|null
 	 */
 	public function getNewsletterFromName( $name, $active = true ) {
@@ -363,7 +364,7 @@ class NewsletterDb {
 	}
 
 	/**
-	 * @param $id
+	 * @param int $id
 	 * @return int
 	 */
 	public function getNewsletterSubscribersCount( $id ) {

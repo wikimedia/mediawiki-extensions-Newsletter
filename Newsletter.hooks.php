@@ -8,8 +8,8 @@ class NewsletterHooks {
 	/**
 	 * Function to be called before EchoEvent
 	 *
-	 * @param array $notifications Echo notifications
-	 * @param array $notificationCategories Echo notification categories
+	 * @param array &$notifications Echo notifications
+	 * @param array &$notificationCategories Echo notification categories
 	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories ) {
@@ -92,7 +92,7 @@ class NewsletterHooks {
 	/**
 	 * Allows to add our own error message to LoginForm
 	 *
-	 * @param array $messages
+	 * @param array &$messages
 	 */
 	public static function onLoginFormValidErrorMessages( &$messages ) {
 		$messages[] = 'newsletter-subscribe-loginrequired'; // on Special:Newsletter/id/subscribe
@@ -128,7 +128,7 @@ class NewsletterHooks {
 	/**
 	 * Handler for UnitTestsList hook.
 	 * @see http://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
-	 * @param &$files Array of unit test files
+	 * @param array &$files Array of unit test files
 	 * @return bool true in all cases
 	 */
 	public static function onUnitTestsList( &$files ) {
@@ -154,7 +154,7 @@ class NewsletterHooks {
 	/**
 	 * Tables that Extension:UserMerge needs to update
 	 *
-	 * @param array $updateFields
+	 * @param array &$updateFields
 	 * @return bool
 	 */
 	public static function onUserMergeAccountFields( array &$updateFields ) {
@@ -210,12 +210,12 @@ class NewsletterHooks {
 	}
 
 	/**
-	 * @param WikiPage $wikiPage
-	 * @param User $user
-	 * @param string $reason
-	 * @param string $error
-	 * @param Status $status
-	 * @param $suppress
+	 * @param WikiPage &$wikiPage
+	 * @param User &$user
+	 * @param string &$reason
+	 * @param string &$error
+	 * @param Status &$status
+	 * @param bool $suppress
 	 * @return bool
 	 * @throws PermissionsError
 	 */
@@ -250,7 +250,7 @@ class NewsletterHooks {
 	}
 
 	/**
-	 * @param PageArchive $archive
+	 * @param PageArchive &$archive
 	 * @param Title $title
 	 * @return bool
 	 */
@@ -308,7 +308,7 @@ class NewsletterHooks {
 	/**
 	 * @param string $contentModel ID of the content model in question
 	 * @param Title $title the Title in question.
-	 * @param $ok Output parameter, whether it is OK to use $contentModel on $title.
+	 * @param bool &$ok Output parameter, whether it is OK to use $contentModel on $title.
 	 * @return bool
 	 */
 	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ) {
@@ -324,9 +324,9 @@ class NewsletterHooks {
 	 * @param RequestContext $context object implementing the IContextSource interface.
 	 * @param Content $content content of the edit box, as a Content object.
 	 * @param Status $status Status object to represent errors, etc.
-	 * @param $summary string Edit summary for page
+	 * @param string $summary Edit summary for page
 	 * @param User $user the User object representing the user whois performing the edit.
-	 * @param $minoredit bool whether the edit was marked as minor by the user.
+	 * @param bool $minoredit whether the edit was marked as minor by the user.
 	 * @return bool
 	 * @throws ThrottledError
 	 */

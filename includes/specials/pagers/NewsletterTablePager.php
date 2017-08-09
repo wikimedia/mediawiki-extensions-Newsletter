@@ -63,7 +63,7 @@ class NewsletterTablePager extends TablePager {
 	 *
 	 * @param string $offset The indexpager offset (Number of subscribers)
 	 * @param int $limit The limit
-	 * @param boolean $descending Ascending or descending?
+	 * @param bool $descending Ascending or descending?
 	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
 	 */
 	private function getSubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
@@ -92,9 +92,9 @@ class NewsletterTablePager extends TablePager {
 	/**
 	 * Add paging conditions for tie-breaking
 	 *
-	 * @param $desc
-	 * @param $offset
-	 * @param $secondaryOffset
+	 * @param string $desc
+	 * @param int $offset
+	 * @param int $secondaryOffset
 	 * @return mixed
 	 */
 	private function getSecondaryOrderBy( $desc, $offset, $secondaryOffset ) {
@@ -116,7 +116,7 @@ class NewsletterTablePager extends TablePager {
 	 *
 	 * @param string $offset The indexpager offset (Number of subscribers)
 	 * @param int $limit The limit
-	 * @param boolean $descending Ascending or descending?
+	 * @param bool $descending Ascending or descending?
 	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
 	 */
 	private function getUnsubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
@@ -144,7 +144,7 @@ class NewsletterTablePager extends TablePager {
 	/**
 	 * Operator for paging.
 	 *
-	 * @param boolean $desc Descending vs Ascending.
+	 * @param bool $desc Descending vs Ascending.
 	 * @return string
 	 */
 	private function getOp( $desc ) {
@@ -332,7 +332,9 @@ class NewsletterTablePager extends TablePager {
 		}
 	}
 
-	/*
+	/**
+	 * @param string $field
+	 * @param mixed $value
 	 * @return array
 	 */
 	public function getCellAttrs( $field, $value ) {

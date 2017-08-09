@@ -65,6 +65,7 @@ class Newsletter {
 	 * Fetch a new newsletter instance from given name
 	 *
 	 * @param string $name
+	 * @param bool $active
 	 * @return Newsletter|null
 	 */
 	public static function newFromName( $name, $active = true ) {

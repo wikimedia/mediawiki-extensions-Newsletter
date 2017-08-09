@@ -98,7 +98,8 @@ class NewsletterEditPage {
 	 * Create the manage form. If this is on an undo revision action, $revId would be set, and we
 	 * manually load in form data from the reverted revision.
 	 *
-	 * @param integer $revId
+	 * @param int $revId
+	 * @param int $undoId
 	 * @return HTMLForm
 	 */
 	protected function getManageForm( $revId, $undoId ) {

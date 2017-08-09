@@ -70,6 +70,7 @@ class NewsletterContent extends JsonContent {
 
 	/**
 	 * Decode the JSON encoded args
+	 * @return bool
 	 */
 	protected function decode() {
 		if ( $this->decoded ) {
@@ -242,6 +243,8 @@ class NewsletterContent extends JsonContent {
 	 * Build a group of buttons: Manage, Subscribe|Unsubscribe
 	 * Buttons will be showed to the user only if they are relevant to the current user.
 	 *
+	 * @param ParserOptions &$options
+	 * @param ParserOutput $output
 	 * @return string HTML for the button group
 	 */
 	protected function getNewsletterActionButtons( ParserOptions &$options, ParserOutput $output

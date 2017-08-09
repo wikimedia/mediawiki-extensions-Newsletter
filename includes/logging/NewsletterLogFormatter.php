@@ -10,6 +10,7 @@
 class NewsletterLogFormatter extends LogFormatter {
 	/**
 	 * Reformat the target as a user link if the target was a user
+	 * @return array
 	 */
 	public function getMessageParameters() {
 		if ( isset( $this->parsedParameters ) ) {
@@ -35,6 +36,9 @@ class NewsletterLogFormatter extends LogFormatter {
 	/**
 	 * Format an additional parameter type "newsletter-link", whose value is a
 	 * newsletter ID and name separated by a colon, into a link
+	 * @param string $type
+	 * @param string $value
+	 * @return string
 	 */
 	public function formatParameterValue( $type, $value ) {
 		if ( $type !== 'newsletter-link' ) {

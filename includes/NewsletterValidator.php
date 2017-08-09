@@ -28,7 +28,7 @@ class NewsletterValidator {
 	/**
 	 * Check whether all input have proper values
 	 *
-	 * @param $new bool
+	 * @param bool $new
 	 * @return Status fatal if invalid, good otherwise
 	 */
 	public function validate( $new ) {
