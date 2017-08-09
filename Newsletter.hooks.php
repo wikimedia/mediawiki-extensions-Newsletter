@@ -112,7 +112,7 @@ class NewsletterHooks {
 		$updater->addExtensionField( 'nl_newsletters', 'nl_active',
 			__DIR__ . '/sql/nl_newsletters-add-active.sql' );
 		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_main_page_id',
-			__DIR__ . '/sql/nl_main_page_id-drop-index.sql' );
+			__DIR__ . '/sql/nl_newsletters-drop-nl_main_page_id.sql' );
 		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active',
 			__DIR__ . '/sql/nl_newsletters-add-unique.sql' );
 		$updater->addExtensionField( 'nl_newsletters', 'nl_subscriber_count',
