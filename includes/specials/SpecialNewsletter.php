@@ -135,7 +135,7 @@ class SpecialNewsletter extends SpecialPage {
 			if ( $action == self::NEWSLETTER_MANAGE ) {
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action'=>'edit' ] );
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action' => 'edit' ] );
 			}
 			if ( $current === $action ) {
 				$links[] = Linker::makeSelfLinkObj( $title, htmlspecialchars( $msg ) );

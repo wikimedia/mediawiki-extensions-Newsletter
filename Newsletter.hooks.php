@@ -41,7 +41,7 @@ class NewsletterHooks {
 			'email-subject-message' => 'newsletter-email-subject',
 			'email-subject-params' => [ 'newsletter-name' ],
 			'email-body-batch-message' => 'newsletter-email-batch-body',
-			'email-body-batch-params' =>  [ 'newsletter-name', 'agent', 'user' ],
+			'email-body-batch-params' => [ 'newsletter-name', 'agent', 'user' ],
 		];
 
 		$notifications['newsletter-newpublisher'] = [

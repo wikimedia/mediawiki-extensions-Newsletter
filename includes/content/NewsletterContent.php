@@ -308,7 +308,7 @@ class NewsletterContent extends JsonContent {
 			);
 		}
 
-		$widget = new OOUI\ButtonGroupWidget( [ 'items' =>  $buttons ] );
+		$widget = new OOUI\ButtonGroupWidget( [ 'items' => $buttons ] );
 		return $widget->toString();
 	}
 
@@ -387,7 +387,7 @@ class NewsletterContent extends JsonContent {
 			if ( $action == self::NEWSLETTER_MANAGE ) {
 				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action'=>'edit' ] );
+				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action' => 'edit' ] );
 			}
 			$links[] = $link;
 		}
