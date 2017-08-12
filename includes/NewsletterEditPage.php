@@ -43,16 +43,10 @@ class NewsletterEditPage {
 					->params( $this->newsletter->getName() )
 			);
 
-			// We are not supporting editing a previous diff at this moment
-			if ( $this->context->getRequest()->getVal( 'oldid' ) ) {
-				throw new BadRequestError( 'newsletter-oldrev-update-error-title',
-					'newsletter-oldrev-update-error-body'
-				);
-			}
-
 			$revId = $this->context->getRequest()->getVal( 'undoafter', null );
 			$undoId = $this->context->getRequest()->getVal( 'undo', null );
-			$this->getManageForm( $revId, $undoId )->show();
+			$oldId = $this->context->getRequest()->getVal( 'oldid', null );
+			$this->getManageForm( $revId, $undoId, $oldId )->show();
 		} else {
 			$permErrors = $this->getPermissionErrors();
 			if ( count( $permErrors ) ) {
@@ -100,9 +94,10 @@ class NewsletterEditPage {
 	 *
 	 * @param int $revId
 	 * @param int $undoId
+	 * @param int $oldId
 	 * @return HTMLForm
 	 */
-	protected function getManageForm( $revId, $undoId ) {
+	protected function getManageForm( $revId, $undoId, $oldId ) {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
 		$publishersNames = [];
 
@@ -139,27 +134,45 @@ class NewsletterEditPage {
 			'type' => 'hidden',
 			'default' => false,
 		];
-		if ( $revId && $undoId ) {
-			$oldRevision = Revision::newFromId( $revId );
-			$undoRevision = Revision::newFromId( $undoId );
-			if ( $undoRevision->isCurrent()
-				&& $undoRevision->getContentModel() == 'NewsletterContent'
-				&& $undoRevision->getContent() !== null
-			) {
+
+		// Ensure action is not editing the current revision
+		if ( ( $revId && $undoId ) || $oldId ) {
+			// Editing a previous revision
+			if ( $oldId ) {
+				$oldRevision = Revision::newFromId( $oldId );
+				if ( $oldRevision->getContentModel() === 'NewsletterContent'
+					&& $oldRevision->getContent() !== null ) {
+					$fields['Summary']['default'] = '';
+				}
+			} elseif /* Undoing the latest revision */ ( $revId && $undoId ) {
+				$oldRevision = Revision::newFromId( $revId );
+				$undoRevision = Revision::newFromId( $undoId );
+				if ( $undoRevision->isCurrent()
+					&& $undoRevision->getContentModel() === 'NewsletterContent'
+					&& $undoRevision->getContent() !== null
+				) {
+					$fields['Summary']['default'] =
+						$this->context->msg( 'undo-summary' )
+							->params( $undoRevision->getId(), $undoRevision->getUserText() )
+							->inContentLanguage()
+							->text();
+				} else /* User attempts to undo prior revision */ {
+					throw new BadRequestError(
+						'newsletter-oldrev-undo-error-title',
+						'newsletter-oldrev-undo-error-body'
+					);
+				}
+			}
+
+			// Default fields are the same, regardless of action
+			if ( $oldRevision->getContentModel() === 'NewsletterContent'
+				&& $oldRevision->getContent() !== null ) {
 				$fields['MainPage']['default'] =
 					$oldRevision->getContent()->getMainPage()->getPrefixedText();
 				$fields['Description']['default'] = $oldRevision->getContent()->getDescription();
-				$fields['Publishers']['default'] = $oldRevision->getContent()->getPublishers();
-				$fields['Summary']['default'] =
-					$this->context->msg( 'undo-summary' )
-						->params( $undoRevision->getId(), $undoRevision->getUserText() )
-						->inContentLanguage()
-						->text();
-			} else {
-				throw new BadRequestError(
-					'newsletter-oldrev-update-error-title',
-					'newsletter-oldrev-update-error-body'
-				);
+				// HTMLUsersMultiselectField expects a string, so we implode here
+				$publisherNames = $oldRevision->getContent()->getPublishers();
+				$fields['Publishers']['default'] = implode( "\n", $publishersNames );
 			}
 		}
 
