@@ -180,6 +180,5 @@
 	"newsletter-api-error-notfound": "Error message to be displayed in the API when a newsletter is not found.",
 	"newsletter-api-error-nopermissions": "Error message to be displayed in the API when the requesting user does not have the required permissions.",
 	"newsletter-api-error-invalidpublisher-registered": "Error message to be displayed in the API when a given publisher is not a registered account.",
-	"newsletter-api-error-managefailure": "Error message to be displayed in the API when the requested manage action has failed.",
 	"newsletter-api-error-subscribe-notloggedin": "Error message to be displayed in the API when a request is made to subscribe to a newsletter by an anonymous user.."
 }
