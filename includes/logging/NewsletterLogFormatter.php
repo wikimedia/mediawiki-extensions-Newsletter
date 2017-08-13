@@ -20,8 +20,10 @@ class NewsletterLogFormatter extends LogFormatter {
 		$params = parent::getMessageParameters();
 		if ( $this->entry->getTarget()->inNamespace( NS_USER ) ) {
 			$user = User::newFromName( $this->entry->getTarget()->getText() );
-			$params[2] = Message::rawParam( $this->makeUserLink( $user ) );
-			$params[6] = $user->getName();
+			if ( $user ) {
+				$params[2] = Message::rawParam( $this->makeUserLink( $user ) );
+				$params[6] = $user->getName();
+			}
 		}
 
 		if ( $this->entry->getSubtype() === 'issue-added' && isset( $params[5] ) ) {
