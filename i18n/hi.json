@@ -2,8 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"जनक राज भट्ट",
-			"Sfic"
+			"Sfic",
+			"Sachinkatiyar"
 		]
 	},
-	"newsletter-delete-reason": "कारण"
+	"newsletter-oldrev-undo-error-body": "पिछले संशोधन को पूर्ववत करना समाचारपत्र विस्तार द्वारा समर्थित नहीं है। कृपया इसके बजाय नवीनतम संशोधन को पूर्ववत करें।"
 }

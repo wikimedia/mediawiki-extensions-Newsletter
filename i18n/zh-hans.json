@@ -12,8 +12,8 @@
 	"newsletter-title": "要链接为首页的Wiki页面",
 	"newsletter-exist-error": "名叫“$1”的新闻报已存在。请使用另一个名称再次尝试。",
 	"newsletter-create-error": "尝试创建新的新闻报时出错。请重试。",
-	"newsletter-oldrev-update-error-title": "对不起，不允许该操作。",
-	"newsletter-oldrev-update-error-body": "新闻报扩展不支持编辑上一修订版本。请更新最新的修订版本",
+	"newsletter-oldrev-undo-error-title": "对不起，不允许该操作。",
+	"newsletter-oldrev-undo-error-body": "新闻报扩展不支持撤销上一修订版本。请撤销最新的修订版本。",
 	"newsletter-input-required": "未输入所需内容。请重试。",
 	"newsletter-invalid-name": "您为新闻报输入的名称无效。请重试。",
 	"newslettercreate": "创建新闻报",
@@ -170,6 +170,5 @@
 	"newsletter-api-error-notfound": "新闻报不存在",
 	"newsletter-api-error-nopermissions": "您没有权限管理新闻报。",
 	"newsletter-api-error-invalidpublisher-registered": "发布者不是注册用户。",
-	"newsletter-api-error-managefailure": "管理操作：$1失败。",
 	"newsletter-api-error-subscribe-notloggedin": "您必须登录才能订阅新闻报。"
 }
