@@ -12,6 +12,7 @@
 	"newsletter-name": "Naam van de nieuwsbrief",
 	"newsletter-desc": "Beschrijving",
 	"newsletter-exist-error": "Een nieuwsbrief met de naam \"$1\" bestaat al. Probeer het opnieuw met een andere naam.",
+	"newsletter-oldrev-undo-error-body": "Het ongedaan maken van een revisie wordt niet ondersteund door de Nieuwsbrief extensie. Gelieve in plaats daarvan de laatste revisie ongedaan te maken.",
 	"newsletter-input-required": "Vereiste invoer ontbreekt. Probeer het opnieuw.",
 	"newsletter-invalid-name": "De opgegeven nieuwsbriefnaam is ongeldig. Probeer het opnieuw.",
 	"newslettercreate": "Nieuwsbrief aanmaken",
@@ -92,6 +93,5 @@
 	"newsletter-api-error-notfound": "Nieuwsbrief bestaat niet",
 	"newsletter-api-error-nopermissions": "U hebt geen rechten om nieuwsbrieven te beheren.",
 	"newsletter-api-error-invalidpublisher-registered": "De uitgever is geen geregistreerde gebruiker.",
-	"newsletter-api-error-managefailure": "Beheer-actie: $1 is niet gelukt.",
 	"newsletter-api-error-subscribe-notloggedin": "U hoeft aangemeld te zijn om u aan te melden voor de nieuwsbrieven."
 }
