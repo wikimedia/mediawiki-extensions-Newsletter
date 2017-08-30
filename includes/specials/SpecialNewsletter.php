@@ -328,7 +328,7 @@ class SpecialNewsletter extends SpecialPage {
 			$out->addHTML(
 				$this->msg( 'newsletter-announce-success' )
 					->rawParams( $this->getEscapedName() )
-					->numParams( $this->newsletter->getSubscriberCount() )
+					->numParams( $this->newsletter->getSubscribersCount() )
 					->parseAsBlock()
 			);
 			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
