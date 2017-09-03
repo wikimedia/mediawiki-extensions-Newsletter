@@ -5,7 +5,8 @@
 			"Macofe",
 			"Devwebtel",
 			"Woytecr",
-			"InternerowyGołąb"
+			"InternerowyGołąb",
+			"Rzuwig"
 		]
 	},
 	"newsletter-extension-desc": "Umożliwia użytkownikom publikowanie i subskrybowanie newsletterów",
@@ -29,16 +30,21 @@
 	"newsletter-subtitlelinks-create": "Utwórz nowy newsletter",
 	"newsletter-subtitlelinks-unsubscribe": "wypisz się",
 	"newsletter-subtitlelinks-subscribe": "zapisz się",
+	"newsletter-subtitlelinks-announce": "anons",
 	"newsletter-subtitlelinks-manage": "zarządzaj",
 	"newsletter-subtitlelinks-subscribers": "zobacz subskrybentów",
 	"newsletters": "Newslettery",
 	"newsletter-notfound": "Nie znaleziono newslettera",
 	"newsletter-view-mainpage": "Strona główna:",
 	"newsletter-view-description": "Opis:",
+	"newsletter-view-subscriber-count": "Liczba subskrybentów:",
 	"newsletter-view-no-publishers": "Brak wydawców.",
 	"newsletter-manage-button": "Zarządzaj",
 	"newsletter-unsubscribe-button": "Zrezygnuj z subskrypcji",
 	"newsletter-subscribe-button": "Subskrybuj",
+	"newsletter-subscribers-button": "Zobacz subskrybentów",
+	"newsletter-announce-button": "Anons",
+	"newsletter-announce-submit": "Wyślij",
 	"newsletter-manage-publishers": "Wydawcy:",
 	"newsletter-manage-name": "Nazwa newslettera:",
 	"newsletter-manage-title": "Tytuł strony głównej",
@@ -74,6 +80,5 @@
 	"newsletter-api-error-notfound": "Newsletter nie istnieje",
 	"newsletter-api-error-nopermissions": "Nie masz uprawnień do zarządzania newsletterami.",
 	"newsletter-api-error-invalidpublisher-registered": "Publikator nie jest zarejestrowanym użytkownikiem.",
-	"newsletter-api-error-managefailure": "Zarządzaj akcją: $1 nie powiodła się",
 	"newsletter-api-error-subscribe-notloggedin": "Musisz być zalogowany, by subskrybować newslettery."
 }
