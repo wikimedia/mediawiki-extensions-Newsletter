@@ -25,7 +25,8 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 		return [
 			[
 				'url' => $this->getNewsletterUrl(),
-				'label' => $this->msg( 'newsletter-notification-link-text-view-newsletter' )
+				'label' => $this->msg( 'newsletter-notification-link-text-view-newsletter' ),
+				'prioritized' => true,
 			],
 		];
 	}
