@@ -325,7 +325,7 @@ class NewsletterHooks {
 	 * @param Content $content content of the edit box, as a Content object.
 	 * @param Status $status Status object to represent errors, etc.
 	 * @param string $summary Edit summary for page
-	 * @param User $user the User object representing the user whois performing the edit.
+	 * @param User $user the User object representing the user who is performing the edit.
 	 * @param bool $minoredit whether the edit was marked as minor by the user.
 	 * @return bool
 	 * @throws ThrottledError
@@ -338,7 +338,6 @@ class NewsletterHooks {
 		User $user,
 		$minoredit
 	) {
-		global $wgUser;
 		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return;
 		}
@@ -347,7 +346,7 @@ class NewsletterHooks {
 		) {
 			return;
 		}
-		if ( $wgUser->pingLimiter( 'newsletter' ) ) {
+		if ( $user->pingLimiter( 'newsletter' ) ) {
 			// Default user access level for creating a newsletter is quite low
 			// so add a throttle here to prevent abuse (eg. mass vandalism spree)
 			throw new ThrottledError;
