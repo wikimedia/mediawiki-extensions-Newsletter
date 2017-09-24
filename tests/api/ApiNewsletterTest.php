@@ -36,7 +36,7 @@ class ApiNewsletterTest extends ApiTestCase {
 	}
 
 	protected function getNewsletterId() {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_id' ],
@@ -62,7 +62,7 @@ class ApiNewsletterTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			[ 'subscriber_id' ],
@@ -92,7 +92,7 @@ class ApiNewsletterTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			[ 'subscriber_id' ],

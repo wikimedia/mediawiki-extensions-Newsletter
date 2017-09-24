@@ -305,7 +305,7 @@ class NewsletterDb {
 	public function getNewsletter( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
@@ -331,7 +331,7 @@ class NewsletterDb {
 	public function getNewsletterFromName( $name, $active = true ) {
 		Assert::parameterType( 'string', $name, '$name' );
 
-		$dbr = $this->lb->getConnectionRef( DB_SLAVE );
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'nl_newsletters',
 			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
@@ -350,7 +350,7 @@ class NewsletterDb {
 	public function getPublishersFromID( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 
 		$result = $dbr->selectFieldValues(
 			'nl_publishers',
@@ -370,7 +370,7 @@ class NewsletterDb {
 	public function getNewsletterSubscribersCount( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 
 		$result = $dbr->selectField(
 			'nl_newsletters',
@@ -394,7 +394,7 @@ class NewsletterDb {
 	public function getSubscribersFromID( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 
 		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
@@ -417,7 +417,7 @@ class NewsletterDb {
 	 */
 	public function newsletterExistsForMainPage( $mainPageId ) {
 		Assert::parameterType( 'integer', $mainPageId, '$mainPageId' );
-		$dbr = $this->lb->getConnection( DB_SLAVE );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 
 		$res = $dbr->select(
 			'nl_newsletters',

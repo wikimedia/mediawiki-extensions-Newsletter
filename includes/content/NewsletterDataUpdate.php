@@ -38,7 +38,7 @@ class NewsletterDataUpdate extends DataUpdate {
 			// Possible API edit to create a new newsletter, and the newsletter is not in the
 			// database yet.
 			$this->name = $this->title->getText();
-			$dbr = wfGetDB( DB_SLAVE );
+			$dbr = wfGetDB( DB_REPLICA );
 			$rows = $dbr->select(
 				'nl_newsletters',
 				[ 'nl_name', 'nl_main_page_id', 'nl_active' ],

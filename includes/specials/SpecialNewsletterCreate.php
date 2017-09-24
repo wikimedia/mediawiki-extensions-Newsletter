@@ -86,7 +86,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 		$mainPageId = $data['MainPage']->getArticleID();
 
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 		$rows = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
