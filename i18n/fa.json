@@ -7,8 +7,16 @@
 		]
 	},
 	"newsletter-desc": "توضیح",
-	"newsletter-delete-reason": "دلیل",
+	"newsletter-subtitlelinks-manage": "مدیریت",
+	"newsletter-view-mainpage": "صفحهٔ اصلی:",
+	"newsletter-view-description": "شرح:",
+	"newsletter-unsubscribe-button": "لغو اشتراک",
+	"newsletter-subscribe-button": "اشتراک",
+	"newsletter-manage-description": "شرح:",
+	"newsletter-managenewsletter-button": "ارسال",
 	"newsletter-subscribe-button-label": "بله",
 	"newsletter-unsubscribe-button-label": "خیر",
-	"newsletter-header-description": "توضیح"
+	"newsletter-header-name": "نام",
+	"newsletter-header-description": "توضیح",
+	"newsletter-list-go-button": "برو"
 }
