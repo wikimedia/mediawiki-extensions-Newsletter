@@ -53,6 +53,22 @@
 }
 
 .mw-special-Newsletters .mw-datatable,
+.TablePager_col_nl_name,
+.TablePager_col_action {
+	width: 20%;
+}
+
+.mw-special-Newsletters .mw-datatable,
+.TablePager_col_nl_desc {
+	width: 40%;
+}
+
+.mw-special-Newsletters .mw-datatable,
+.TablePager_col_subscriber_count {
+	width: 5%;
+}
+
+.mw-special-Newsletters .mw-datatable,
 .mw-special-Newsletters .mw-datatable td,
 .mw-special-Newsletters .mw-datatable th {
 	border: 0;

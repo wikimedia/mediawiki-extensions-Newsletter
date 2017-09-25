@@ -339,22 +339,6 @@ class NewsletterTablePager extends TablePager {
 	 */
 	public function getCellAttrs( $field, $value ) {
 		$ret = parent::getCellAttrs( $field, $value );
-		// @todo use CSS, not inline HTML
-		switch ( $field ) {
-			case 'nl_name':
-				$ret['width'] = '20%';
-				break;
-			case 'nl_desc':
-				$ret['width'] = '40%';
-				break;
-			case 'subscriber_count':
-				$ret['width'] = '5%';
-				break;
-			case 'action':
-				$ret['width'] = '20%';
-				break;
-		}
-
 		return $ret;
 	}
 
