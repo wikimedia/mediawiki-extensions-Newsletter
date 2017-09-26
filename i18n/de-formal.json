@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kghbln"
+		]
+	},
+	"newsletter-exist-error": "Ein Newsletter mit dem Namen „$1“ ist bereits vorhanden. Bitte versuchen Sie es mit einem abweichenden Namen erneut.",
+	"newsletter-create-error": "Beim Versuch, einen neuen Newsletter zu erstellen, ist ein Fehler aufgetreten. Bitte versuchen Sie es es erneut.",
+	"newsletter-oldrev-undo-error-body": "Das Verwerfen einer älteren Version wird von der Erweiterung „Newsletter“ nicht unterstützt. Bitte verwerfen Sie stattdessen die neueste Version.",
+	"newsletter-announce-nopermission": "Sie sind kein Herausgeber dieses Newsletters.",
+	"newsletter-announce-failure": "Die neue Ausgabe konnte nicht veröffentlicht werden. Bitte versuchen Sie es erneut."
+}
