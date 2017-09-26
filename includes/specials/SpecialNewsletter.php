@@ -218,7 +218,7 @@ class SpecialNewsletter extends SpecialPage {
 					'name' => 'subscribe',
 					'default' => $this->msg( 'newsletter-do-subscribe' )->text(),
 					'id' => 'mw-newsletter-subscribe',
-					'flags' => [ 'primary', 'constructive' ],
+					'flags' => [ 'primary', 'progressive' ],
 				]
 			];
 		}

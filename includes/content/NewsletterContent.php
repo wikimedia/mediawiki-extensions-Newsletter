@@ -261,7 +261,7 @@ class NewsletterContent extends JsonContent {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-subscribe-button' )->text(),
-					'flags' => [ 'constructive' ],
+					'flags' => [ 'progressive' ],
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 
