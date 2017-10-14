@@ -433,8 +433,23 @@ class NewsletterEditPage {
 			);
 		}
 
-		foreach ( $removed as $ruId ) {
-			$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
+		// Check if people has been removed
+		if ( $removed ) {
+			foreach ( $removed as $ruId ) {
+				$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
+			}
+
+			EchoEvent::create(
+				[
+					'type' => 'newsletter-delpublisher',
+					'extra' => [
+						'newsletter-name' => $this->newsletter->getName(),
+						'del-publishers-id' => $removed,
+						'newsletter-id' => $newsletterId
+					],
+					'agent' => $user
+				]
+			);
 		}
 
 		// Now report to the user

@@ -90,7 +90,8 @@
 		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
 		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
 		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
-		"EchoNewsletterPublisherPresentationModel": "includes/Echo/EchoNewsletterPublisherPresentationModel.php",
+		"EchoNewsletterPublisherAddedPresentationModel": "includes/Echo/EchoNewsletterPublisherAddedPresentationModel.php",
+		"EchoNewsletterPublisherRemovedPresentationModel": "includes/Echo/EchoNewsletterPublisherRemovedPresentationModel.php",
 		"EchoNewsletterUnsubscribedPresentationModel": "includes/Echo/EchoNewsletterUnsubscribedPresentationModel.php",
 		"EchoNewsletterSubscribedPresentationModel": "includes/Echo/EchoNewsletterSubscribedPresentationModel.php"
 	},

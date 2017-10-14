@@ -1,6 +1,6 @@
 <?php
 
-class EchoNewsletterPublisherPresentationModel extends BaseNewsletterPresentationModel {
+class EchoNewsletterPublisherRemovedPresentationModel extends BaseNewsletterPresentationModel {
 
 	public function getIconType() {
 		return 'site';
@@ -9,13 +9,13 @@ class EchoNewsletterPublisherPresentationModel extends BaseNewsletterPresentatio
 	public function getPrimaryLink() {
 		return [
 			'url' => $this->getNewsletterUrl(),
-			'label' => $this->msg( 'newsletter-notification-link-text-new-publisher' )->text()
+			'label' => $this->msg( 'newsletter-notification-link-text-del-publisher' )->text()
 		];
 	}
 
 	public function getHeaderMessage() {
 		list( $agentFormattedName, $agentGenderName ) = $this->getAgentForOutput();
-		$msg = $this->msg( 'notification-header-newsletter-newpublisher' );
+		$msg = $this->msg( 'notification-header-newsletter-delpublisher' );
 		$msg->params( $this->getNewsletterName() );
 		$msg->params( $this->getViewingUserForGender() );
 		$msg->params( $agentGenderName );

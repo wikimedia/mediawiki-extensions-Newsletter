@@ -53,10 +53,25 @@ class NewsletterHooks {
 			'user-locators' => [
 				[ 'EchoUserLocator::locateFromEventExtra', [ 'new-publishers-id' ] ]
 			],
-			'presentation-model' => 'EchoNewsletterPublisherPresentationModel',
+			'presentation-model' => 'EchoNewsletterPublisherAddedPresentationModel',
 			'title-message' => 'newsletter-notification-new-publisher-title',
 			'title-params' => [ 'newsletter-name', 'agent' ],
 			'flyout-message' => 'newsletter-notification-new-publisher-flyout',
+			'flyout-params' => [ 'newsletter-name', 'agent' ],
+		];
+		$notifications['newsletter-delpublisher'] = [
+			'category' => 'newsletter',
+			'primary-link' => [
+				'message' => 'newsletter-notification-link-text-del-publisher',
+				'destination' => 'newsletter'
+			],
+			'user-locators' => [
+				[ 'EchoUserLocator::locateFromEventExtra', [ 'del-publishers-id' ] ]
+			],
+			'presentation-model' => 'EchoNewsletterPublisherRemovedPresentationModel',
+			'title-message' => 'newsletter-notification-del-publisher-title',
+			'title-params' => [ 'newsletter-name', 'agent' ],
+			'flyout-message' => 'newsletter-notification-del-publisher-flyout',
 			'flyout-params' => [ 'newsletter-name', 'agent' ],
 		];
 		$notifications['newsletter-subscribed'] = [
