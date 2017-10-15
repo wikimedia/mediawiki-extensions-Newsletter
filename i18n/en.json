@@ -11,7 +11,7 @@
 	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
 	"newsletter-name": "Name of newsletter",
 	"newsletter-desc": "Description",
-	"newsletter-title": "Wiki page to be linked as Main page",
+	"newsletter-title": "Wiki page with information about the newsletter",
 	"newsletter-exist-error": "A newsletter with the name \"$1\" already exists. Please try again with another name.",
 	"newsletter-create-error": "An error occured while trying to create a new newsletter. Please try again.",
 	"newsletter-oldrev-undo-error-title": "Sorry, this operation is not permitted.",
