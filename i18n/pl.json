@@ -12,7 +12,7 @@
 	"newsletter-extension-desc": "Umożliwia użytkownikom publikowanie i subskrybowanie newsletterów",
 	"newsletter-name": "Nazwa newslettera",
 	"newsletter-desc": "Opis",
-	"newsletter-title": "Strona wiki, której podać link jako link do strony głównej",
+	"newsletter-title": "Strona wiki z informacjami o newsletterze",
 	"newsletter-exist-error": "Newsletter o nazwie „$1” już istnieje. Spróbuj ponownie z inną nazwą.",
 	"newsletter-create-error": "Wystąpił błąd podczas próby utworzenia nowego newslettera. Spróbuj jeszcze raz.",
 	"newsletter-input-required": "Wymagane pola nie zostały wypełnione. Spróbuj jeszcze raz.",

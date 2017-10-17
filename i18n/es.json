@@ -13,7 +13,7 @@
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
 	"newsletter-name": "Nombre del boletín",
 	"newsletter-desc": "Descripción",
-	"newsletter-title": "Página wiki que se enlazará como la página principal",
+	"newsletter-title": "Página del wiki con información sobre el boletín",
 	"newsletter-exist-error": "Ya existe un boletín con el nombre \"$1\". Inténtalo de nuevo con otro nombre.",
 	"newsletter-create-error": "Ocurrió un error al intentar crear un boletín nuevo. Inténtalo de nuevo.",
 	"newsletter-input-required": "No se proporcionó la entrada requerida. Inténtalo de nuevo.",

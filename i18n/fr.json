@@ -18,7 +18,7 @@
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des bulletins d’information",
 	"newsletter-name": "Nom du bulletin d’information",
 	"newsletter-desc": "Description",
-	"newsletter-title": "Page Wiki à être liée comme page principale",
+	"newsletter-title": "Page Wiki avec des informations à propos du bulletin d'actualités",
 	"newsletter-exist-error": "Un bulletin d’information portant le nom « $1 » existe déjà. Veuillez réessayer avec un autre nom s’il vous plaît.",
 	"newsletter-create-error": "Une erreur s’est produite en essayant de créer un nouveau bulletin d’information. Merci d’essayer à nouveau.",
 	"newsletter-oldrev-undo-error-title": "Désolé, cette opération n’est pas autorisée.",
