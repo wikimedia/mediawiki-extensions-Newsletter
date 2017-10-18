@@ -9,11 +9,11 @@
 	"newsletter-extension-desc": "Låter användare publicera och prenumerera på nyhetsbrev",
 	"newsletter-name": "Nyhetsbrevets namn",
 	"newsletter-desc": "Beskrivning",
-	"newsletter-title": "Wikisida att länkas som huvudsidan",
+	"newsletter-title": "Wikisida med information om nyhetsbrevet",
 	"newsletter-exist-error": "Ett nyhetsbrev med namnet \"$1\" finns redan. Prova ett annat namn.",
 	"newsletter-create-error": "Ett fel uppstod när ett nytt nyhetsbrev skulle skapas. Försök igen.",
-	"newsletter-oldrev-update-error-title": "Tyvärr, denna åtgärd är inte tillåten.",
-	"newsletter-oldrev-update-error-body": "Tillägget Newsletter har inte stöd för att redigera en tidigare version. Uppdatera den senaste versionen istället",
+	"newsletter-oldrev-undo-error-title": "Tyvärr, denna åtgärd är inte tillåten.",
+	"newsletter-oldrev-undo-error-body": "Tillägget Newsletter har inte stöd för att redigera en tidigare version. Uppdatera den senaste versionen istället",
 	"newsletter-input-required": "Nödvändig inmatning har inte angivits. Försök igen.",
 	"newsletter-invalid-name": "Namnet du angav för nyhetsbrevet är ogiltigt. Försök igen.",
 	"newslettercreate": "Skapa nyhetsbrev",
@@ -170,6 +170,5 @@
 	"newsletter-api-error-notfound": "Nyhetsbrevet finns inte",
 	"newsletter-api-error-nopermissions": "Du har inte behörighet att hantera nyhetsbrev.",
 	"newsletter-api-error-invalidpublisher-registered": "Utgivaren är inte en registrerad användare.",
-	"newsletter-api-error-managefailure": "Hanteringsåtgärd: $1 misslyckades.",
 	"newsletter-api-error-subscribe-notloggedin": "Du måste vara inloggad för att prenumerera till nyhetsbrev."
 }
