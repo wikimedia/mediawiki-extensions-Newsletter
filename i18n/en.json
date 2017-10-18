@@ -68,7 +68,7 @@
 	"newsletter-managenewsletter-button": "Submit",
 	"newsletter-manage-no-publishers": "Are you sure that you want to remove all the publishers from this newsletter?",
 	"newsletter-manage-remove-self-publisher": "Are you sure that you want to remove yourself from the publishers?",
-	"newsletter-manage-newsletter-success": "The newsletter have been modified.",
+	"newsletter-manage-newsletter-success": "The newsletter has been modified.",
 	"newsletter-manage-newsletter-nochanges": "No changes were made to the existing newsletter.",
 	"newsletter-manage-summary": "Summary of the change:",
 	"newsletter-delete": "Delete newsletter",
