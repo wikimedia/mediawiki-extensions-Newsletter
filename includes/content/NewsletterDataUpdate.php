@@ -26,64 +26,80 @@ class NewsletterDataUpdate extends DataUpdate {
 		$this->title = $title;
 	}
 
+	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
+		$dbr = wfGetDB( DB_REPLICA );
+		return $dbr->selectRowCount(
+			'nl_newsletters',
+			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
+			$dbr->makeList( [
+				'nl_name' => $newNewsletterName,
+				$dbr->makeList(
+					[
+						'nl_main_page_id' => $this->content->getMainPage()->getArticleID(),
+						'nl_active' => 1
+					], LIST_AND )
+			], LIST_OR )
+		);
+	}
+
+	protected function createNewNewsletterWithData( NewsletterStore $store, $formData ) {
+		$newNewsletterName = $formData['Name'];
+		if ( $this->getNewslettersWithNewsletterMainPage( $newNewsletterName ) ) {
+			return false;
+		}
+
+		$validator = new NewsletterValidator( $formData );
+		$validation = $validator->validate( true );
+
+		if ( !$validation->isGood() ) {
+			// Invalid input was entered
+			return $validation;
+		}
+
+		$title = Title::makeTitleSafe( NS_NEWSLETTER, $newNewsletterName );
+		$newsletter = new Newsletter( 0,
+			$title->getText(),
+			$formData['Description'],
+			$formData['MainPage']->getArticleID()
+		);
+
+		$newsletterCreated = $store->addNewsletter( $newsletter );
+		if ( !$newsletterCreated ) {
+			return false;
+		}
+
+		$newsletter->subscribe( $this->user );
+		$store->addPublisher( $newsletter, $this->user );
+
+		return $newsletter;
+	}
+
 	function doUpdate() {
 		$logger = LoggerFactory::getInstance( 'newsletter' );
-
 		$store = NewsletterStore::getDefaultInstance();
 		// We might have a situation when the newsletter is not created yet. Hence, we should add
 		// that to the database, and exit.
 		$newsletter = Newsletter::newFromName( $this->title->getText() );
 
+		$formData = [
+			'Name' => $this->title->getText(),
+			'Description' => $this->content->getDescription(),
+			'MainPage' => $this->content->getMainPage()
+		];
+
 		if ( !$newsletter ) {
 			// Possible API edit to create a new newsletter, and the newsletter is not in the
 			// database yet.
-			$this->name = $this->title->getText();
-			$dbr = wfGetDB( DB_REPLICA );
-			$rows = $dbr->select(
-				'nl_newsletters',
-				[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-				$dbr->makeList( [
-					'nl_name' => $this->name,
-					$dbr->makeList(
-						[
-							'nl_main_page_id' => $this->content->getMainPage()->getArticleID(),
-							'nl_active' => 1
-						], LIST_AND )
-				], LIST_OR )
-			);
-
-			// Check whether another existing newsletter has the same name or main page
-			foreach ( $rows as $row ) {
-				if ( $row->nl_name === $this->name ) {
-					$logger->warning( 'newsletter-exist-error', $this->name );
-					return;
-				} elseif ( (int)$row->nl_main_page_id === $this->content->getMainPage()->getArticleID()
-					&& (int)$row->nl_active === 1
-				) {
-					$logger->warning( 'newsletter-mainpage-in-use' );
-					return;
-				}
-			}
-			$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->name );
-			$newsletter = new Newsletter( 0,
-				$title->getText(),
-				$this->content->getDescription(),
-				$this->content->getMainPage()->getArticleID()
-			);
-			$newsletterCreated = $store->addNewsletter( $newsletter );
-			if ( $newsletterCreated ) {
-				$newsletter->subscribe( $this->user );
-				$store->addPublisher( $newsletter, $this->user );
-				return;
-			} else {
+			$newsletter = $this->createNewNewsletterWithData( $store, $formData );
+			if ( !$newsletter ) {
 				// Couldn't insert to the DB..
 				$logger->warning( 'newsletter-create-error' );
 				return;
 			}
 		}
-
 		// This was a possible edit to an existing newsletter.
 		$newsletterId = $newsletter->getId();
+
 		if ( $this->content->getDescription() != $newsletter->getDescription() ) {
 			$store->updateDescription( $newsletterId, $this->content->getDescription() );
 		}
@@ -102,7 +118,6 @@ class NewsletterDataUpdate extends DataUpdate {
 				$updatedPublishersIds[] = $user->getId();
 			}
 		}
-
 		// Do the actual modifications now
 		$added = array_diff( $updatedPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $updatedPublishersIds );
@@ -113,20 +128,10 @@ class NewsletterDataUpdate extends DataUpdate {
 			foreach ( $added as $auId ) {
 				$store->addPublisher( $newsletter, User::newFromId( $auId ) );
 			}
-
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $newsletter, $added );
-
-			EchoEvent::create(
-				[
-					'type' => 'newsletter-newpublisher',
-					'extra' => [
-						'newsletter-name' => $newsletter->getName(),
-						'new-publishers-id' => $added,
-						'newsletter-id' => $newsletterId
-					],
-					'agent' => $this->user
-				]
+			$this->newsletter->notifyPublishers(
+				$added, $user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
 			);
 		}
 
@@ -135,17 +140,8 @@ class NewsletterDataUpdate extends DataUpdate {
 			foreach ( $removed as $ruId ) {
 				$store->removePublisher( $newsletter, User::newFromId( $ruId ) );
 			}
-
-			EchoEvent::create(
-				[
-					'type' => 'newsletter-delpublisher',
-					'extra' => [
-						'newsletter-name' => $this->newsletter->getName(),
-						'del-publishers-id' => $removed,
-						'newsletter-id' => $newsletterId
-					],
-					'agent' => $user
-				]
+			$this->newsletter->notifyPublishers(
+				$removed, $user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
 			);
 		}
 	}

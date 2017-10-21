@@ -8,6 +8,9 @@
  * @author Glaisher
  */
 class Newsletter {
+	const NEWSLETTER_PUBLISHERS_ADDED = 'added';
+	const NEWSLETTER_PUBLISHERS_REMOVED = 'removed';
+
 	/**
 	 * @var int
 	 */
@@ -247,5 +250,31 @@ class Newsletter {
 	 */
 	public function canRestore( User $user ) {
 		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-restore' );
+	}
+
+	/**
+	 * Notify new/removed publishers
+	 *
+	 * @param array $affectedUsers
+	 * @param User $agent the user initiating the the request
+	 * @param string $event select between added/removed
+	 */
+	public function notifyPublishers( array $affectedUsers, User $agent, $event ) {
+		$notification = [
+			'extra' => [
+				'newsletter-name' => $this->getName(),
+				'newsletter-id' => $this->getId()
+			],
+			'agent' => $agent
+		];
+
+		if ( $event === self::NEWSLETTER_PUBLISHERS_ADDED ) {
+			$notification['type'] = 'newsletter-newpublisher';
+			$notification['extra']['new-publishers-id'] = $affectedUsers;
+		} elseif ( $event === self::NEWSLETTER_PUBLISHERS_REMOVED ) {
+			$notification['type'] = 'newsletter-delpublisher';
+			$notification['extra']['del-publishers-id'] = $affectedUsers;
+		}
+		EchoEvent::create( $notification );
 	}
 }

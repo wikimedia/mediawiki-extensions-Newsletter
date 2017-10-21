@@ -96,6 +96,7 @@ class NewsletterEditPage {
 	 * @param int $undoId
 	 * @param int $oldId
 	 * @return HTMLForm
+	 * @throws BadRequestError Exception thrown on false revision id on revision undo, etc
 	 */
 	protected function getManageForm( $revId, $undoId, $oldId ) {
 		$publishers = UserArray::newFromIDs( $this->newsletter->getPublishers() );
@@ -416,20 +417,10 @@ class NewsletterEditPage {
 			foreach ( $added as $auId ) {
 				$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
 			}
-
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $this->newsletter, $added );
-
-			EchoEvent::create(
-				[
-					'type' => 'newsletter-newpublisher',
-					'extra' => [
-						'newsletter-name' => $this->newsletter->getName(),
-						'new-publishers-id' => $added,
-						'newsletter-id' => $newsletterId
-					],
-					'agent' => $user
-				]
+			$this->newsletter->notifyPublishers(
+				$added, $user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
 			);
 		}
 
@@ -438,17 +429,8 @@ class NewsletterEditPage {
 			foreach ( $removed as $ruId ) {
 				$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
 			}
-
-			EchoEvent::create(
-				[
-					'type' => 'newsletter-delpublisher',
-					'extra' => [
-						'newsletter-name' => $this->newsletter->getName(),
-						'del-publishers-id' => $removed,
-						'newsletter-id' => $newsletterId
-					],
-					'agent' => $user
-				]
+			$this->newsletter->notifyPublishers(
+				$removed, $user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
 			);
 		}
 
