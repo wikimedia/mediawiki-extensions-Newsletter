@@ -107,12 +107,16 @@ class NewsletterDataUpdate extends DataUpdate {
 		$added = array_diff( $updatedPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $updatedPublishersIds );
 
-		// @todo Do this in a batch..
-		foreach ( $added as $auId ) {
-			$store->addPublisher( $newsletter, User::newFromId( $auId ) );
-		}
-
+		// Check if people has been added
 		if ( $added ) {
+			// @todo Do this in a batch..
+			foreach ( $added as $auId ) {
+				$store->addPublisher( $newsletter, User::newFromId( $auId ) );
+			}
+
+			// Adds the new publishers to subscription list
+			$store->addSubscription( $newsletter, $added );
+
 			EchoEvent::create(
 				[
 					'type' => 'newsletter-newpublisher',
@@ -125,6 +129,7 @@ class NewsletterDataUpdate extends DataUpdate {
 				]
 			);
 		}
+
 		foreach ( $removed as $ruId ) {
 			$store->removePublisher( $newsletter, User::newFromId( $ruId ) );
 		}

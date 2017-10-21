@@ -410,12 +410,16 @@ class NewsletterEditPage {
 		$added = array_diff( $newPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
 
-		// @todo Do this in a batch..
-		foreach ( $added as $auId ) {
-			$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
-		}
-
+		// Check if people has been added
 		if ( $added ) {
+			// @todo Do this in a batch..
+			foreach ( $added as $auId ) {
+				$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
+			}
+
+			// Adds the new publishers to subscription list
+			$store->addSubscription( $this->newsletter, $added );
+
 			EchoEvent::create(
 				[
 					'type' => 'newsletter-newpublisher',
