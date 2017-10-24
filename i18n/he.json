@@ -11,11 +11,11 @@
 	"newsletter-extension-desc": "מאפשרת למשתמשים לפרסם ידיעונים ולעשות להם מינוי",
 	"newsletter-name": "שם הידיעון",
 	"newsletter-desc": "תיאור",
-	"newsletter-title": "דף ויקי שיקושר בתור הדף הראשי",
+	"newsletter-title": "דף ויקי עם מידע על הידיעון",
 	"newsletter-exist-error": "ידיעון בשם \"$1\" כבר קיים. נא לנסות עם שם אחר.",
 	"newsletter-create-error": "אירעה שגיאה בעת ניסיון ליצור ידיעון חדש. נא לנסות שוב.",
-	"newsletter-oldrev-update-error-title": "סליחה. הפעולה הזאת אינה מורשית.",
-	"newsletter-oldrev-update-error-body": "עריכת גרסה קודמת אינה נתמכת בהרחבת הידיעונים. נא לעדכן את הגרסה האחרונה במקום זאת",
+	"newsletter-oldrev-undo-error-title": "סליחה. הפעולה הזאת אינה מורשית.",
+	"newsletter-oldrev-undo-error-body": "עריכת גרסה קודמת אינה נתמכת בהרחבת הידיעונים. נא לעדכן את הגרסה האחרונה במקום זאת",
 	"newsletter-input-required": "לא הוכנס פלט נדרש. נא לנסות שוב.",
 	"newsletter-invalid-name": "השם שהזנת לידיעון אינו תקין. נא לנסות שוב.",
 	"newslettercreate": "יצירת ידיעון",
@@ -170,6 +170,5 @@
 	"newsletter-api-error-notfound": "הידיעון אינו קיים",
 	"newsletter-api-error-nopermissions": "אין לך הרשאה לנהל ידיעונים",
 	"newsletter-api-error-invalidpublisher-registered": "המפרסם אינו משתמש רשום.",
-	"newsletter-api-error-managefailure": "פעולת ניהול $1 נכשלה.",
 	"newsletter-api-error-subscribe-notloggedin": "חובה להיות בחשבון כדי לעשות מינוי לידיעונים."
 }

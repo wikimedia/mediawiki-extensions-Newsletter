@@ -11,7 +11,7 @@
 		]
 	},
 	"newsletter-desc": "Описание",
-	"newsletter-title": "Баш биттә бәйләнештә булыу өсөн, вики-бит",
+	"newsletter-title": "Страница Вики с информацией о новостной рассылке",
 	"newsletter-create-editsummary": "Создать новый Информационный бюллетень",
 	"newsletter-subtitlelinks-subscribers": "просмотр подписчиков",
 	"newsletter-subscribe-button": "Подписаться",
@@ -20,7 +20,7 @@
 	"newsletter-unsubscribe-error": "При попытке отписаться от рассылки новостей возникла ошибка.",
 	"newsletter-subscribers-nopermission": "Вы не имеете разрешения для редактирования подписчиков этой рассылки",
 	"newsletter-notification-subscribed": "Вы были подписаны на бюллетень \"$1\" администратором.",
-	"newsletter-header-name": "Атама",
+	"newsletter-header-name": "Название",
 	"logentry-newsletter-newsletter-restored": "$1 {{gender: с$2|восстановил}} бюллетень $4",
 	"newsletter-restore-failure": "\"$1\" бюллетень не мог быть восстановлен. Пожалуйста, попробуйте снова."
 }
