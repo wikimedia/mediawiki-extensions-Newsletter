@@ -10,10 +10,10 @@
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
 	"newsletter-name": "Nome do boletín de novas",
 	"newsletter-desc": "Descrición",
-	"newsletter-title": "Páxina wiki a ligar como páxina principal",
+	"newsletter-title": "Página wiki con información sobre o boletín",
 	"newsletter-exist-error": "Xa existe un boletín de novas co nome \"$1\". Por favor, inténteo de novo con outro nome",
 	"newsletter-create-error": "Ocurreu un erro ó intentar crear un boletín novo. Por favor, inténteo de novo.",
-	"newsletter-oldrev-update-error-title": "Sentímolo, esta operación non está permitida.",
+	"newsletter-oldrev-undo-error-title": "Sentímolo, esta operación non está permitida.",
 	"newsletter-input-required": "Non se proporcionou a entrada requirida. Por favor, inténteo de novo.",
 	"newsletter-invalid-name": "O nome proporcionado para o boletín non é válido. Por favor, inténteo de novo.",
 	"newslettercreate": "Crear boletín de novas",
@@ -169,6 +169,5 @@
 	"newsletter-api-error-notfound": "O boletín non existe",
 	"newsletter-api-error-nopermissions": "Non ten permisos para xestionar boletíns.",
 	"newsletter-api-error-invalidpublisher-registered": "O editor non é un usuario rexistrado.",
-	"newsletter-api-error-managefailure": "A xestión da acción $1 fallou.",
 	"newsletter-api-error-subscribe-notloggedin": "Debe estar conectado para subscribirse ós boletíns."
 }
