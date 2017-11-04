@@ -5,7 +5,8 @@
 			"Thomas Arrow",
 			"Glaisher",
 			"Divadsn",
-			"Addshore"
+			"Addshore",
+			"Tony Thomas"
 		]
 	},
 	"newsletter-extension-desc": "Enables users to publish and subscribe to newsletters",
@@ -139,6 +140,7 @@
 	"apihelp-newslettermanage-example-2": "Remove publisher with a user ID of 5 from newsletter with ID 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|has announced}} a new issue of $3.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$2|You}} have been {{GENDER:$3|added}} as a publisher of \"$1\" newsletter.",
+	"notification-header-newsletter-delpublisher": "{{GENDER:$2|You}} have been {{GENDER:$3|removed}} as a publisher of \"$1\" newsletter.",
 	"notification-body-newsletter-announce": "$1",
 	"newsletter-list-intro": "This is a list of newsletters registered to this wiki. Subscribe to a newsletter to receive a notification when a new issue is announced. You will receive notifications via web or email, according to your [[Special:Preferences#mw-prefsection-echo|preferences]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Log In]] to subscribe to a newsletter and receive notifications when a new issue is announced.",
@@ -151,6 +153,9 @@
 	"newsletter-notification-link-text-new-publisher": "Manage newsletter",
 	"newsletter-notification-new-publisher-title": "You have been added as a publisher of $1 newsletter.",
 	"newsletter-notification-new-publisher-flyout": "You are now a publisher of $1 newsletter.",
+	"newsletter-notification-link-text-del-publisher": "View newsletter",
+	"newsletter-notification-del-publisher-title": "You have been removed as a publisher of $1 newsletter.",
+	"newsletter-notification-del-publisher-flyout": "You are no longer a publisher of $1 newsletter.",
 	"log-name-newsletter": "Newsletter log",
 	"log-description-newsletter": "This is a log of changes made to newsletters.",
 	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|added}} {{GENDER:$6|$3}} as a publisher on newsletter $4",
