@@ -48,6 +48,25 @@ class NewsletterContent extends JsonContent {
 	}
 
 	/**
+	 * Validate username and make sure it exists
+	 *
+	 * @param $userName
+	 * @return bool
+	 */
+	private function validateUserName( $userName ) {
+		$user = User::newFromName( $userName );
+		if ( !$user ) {
+			return false;
+		}
+		// If this user never existed
+		if ( !$user->getId() ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function isValid() {
@@ -60,7 +79,7 @@ class NewsletterContent extends JsonContent {
 		}
 
 		foreach ( $this->publishers as $publisher ) {
-			if ( !User::newFromName( $publisher ) ) {
+			if ( !$this->validateUserName( $publisher ) ) {
 				return false;
 			}
 		}
