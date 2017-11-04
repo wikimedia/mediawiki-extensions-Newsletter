@@ -3,9 +3,14 @@
 		"authors": [
 			"Giorgos456",
 			"Geraki",
-			"Stam.nikos"
+			"Stam.nikos",
+			"KATRINE1992"
 		]
 	},
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|έχει ανακοινώσει}} μια νέα έκδοση των $3.",
-	"notification-header-newsletter-newpublisher": "Έχετε προστεθεί ως {{GENDER:$2|εκδότης|εκδότρια}} του ενημερωτικού δελτίου \"$1\"."
+	"notification-header-newsletter-newpublisher": "Έχετε προστεθεί ως {{GENDER:$2|εκδότης|εκδότρια}} του ενημερωτικού δελτίου \"$1\".",
+	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Εσύ }έχεις διαγραφεί  {{GENDER:$3|}} ως εκδότης επιστολής ενημέρωσης ''$1''.",
+	"newsletter-notification-link-text-del-publisher": "Δέστε την επιστολή ειδήσεων",
+	"newsletter-notification-del-publisher-title": "Έχετε διαγραφεί ως συντάκτης επιστολής ειδήσεων $1",
+	"newsletter-notification-del-publisher-flyout": "Δεν είστε πια εκδότης ειδήσεων επιστολής$1"
 }
