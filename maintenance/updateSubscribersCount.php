@@ -5,6 +5,7 @@ $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 require_once $basePath . '/maintenance/Maintenance.php';
 
 class UpdateSubscribersCount extends Maintenance {
+
 	public function __construct() {
 		parent::__construct();
 		$this->addDescription(
