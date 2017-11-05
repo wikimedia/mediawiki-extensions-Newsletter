@@ -64,6 +64,8 @@
 	"newsletter-list-intro": "이 위키에 등록된 뉴스레터의 목록입니다. 새로운 이슈가 공지될 때 알림을 받으려면 뉴스레터를 구독하십시오. [[Special:Preferences#mw-prefsection-echo|환경 설정]]에 의거하여 웹이나 이메일을 통해 알림을 받게 됩니다.",
 	"newsletter-list-option-all": "모든 뉴스레터",
 	"newsletter-list-option-unsubscribed": "구독하지 않은 뉴스레터",
+	"newsletter-notification-link-text-del-publisher": "뉴스레터 보기",
+	"newsletter-notification-del-publisher-flyout": "더 이상 $1 뉴스레터의 게시자가 아닙니다.",
 	"newsletter-restore-failure-title": "뉴스레터를 복원할 수 없습니다.",
 	"newsletter-api-error-notfound": "뉴스레터가 존재하지 않습니다",
 	"newsletter-api-error-nopermissions": "뉴스레터를 관리할 권한이 없습니다.",
