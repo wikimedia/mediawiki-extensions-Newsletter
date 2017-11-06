@@ -21,10 +21,15 @@ class NewsletterStore {
 	 */
 	private static $instance;
 
+	/**
+	 * @param NewsletterDb $db
+	 * @param NewsletterLogger $logger
+	 */
 	public function __construct( NewsletterDb $db, NewsletterLogger $logger ) {
 		$this->db = $db;
 		$this->logger = $logger;
 	}
+
 	/**
 	 * @return NewsletterStore instance of NewsletterStore
 	 */
