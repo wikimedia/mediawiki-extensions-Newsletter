@@ -20,7 +20,7 @@ class NewsletterHooks {
 
 		$notifications['newsletter-announce'] = [
 			'category' => 'newsletter',
-			'section' => 'alert',
+			'section' => 'message',
 			'primary-link' => [
 				'message' => 'newsletter-notification-link-text-new-issue',
 				'destination' => 'new-issue'
