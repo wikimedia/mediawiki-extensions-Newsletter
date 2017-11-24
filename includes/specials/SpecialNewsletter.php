@@ -427,6 +427,8 @@ class SpecialNewsletter extends SpecialPage {
 			$subscribersNames[] = $subscriber->getName();
 		}
 
+		natcasesort( $subscribersNames );
+
 		$fields = [
 			'subscribers' => [
 				'type' => 'textarea',
