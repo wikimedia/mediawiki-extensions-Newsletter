@@ -12,7 +12,8 @@
 			"Lbayle",
 			"Verdy p",
 			"Yasten",
-			"Trial"
+			"Trial",
+			"Pols12"
 		]
 	},
 	"newsletter-extension-desc": "Permet aux utilisateurs de publier et de s’abonner à des bulletins d’information",
@@ -82,13 +83,13 @@
 	"newsletter-delete-failure": "Le bulletin d’information « $1 » n’a pas pu être supprimé. Merci d’essayer à nouveau.",
 	"newsletter-delete-log": "Le bulletin d’information « $1 » a été supprimé.",
 	"newsletter-subscribe": "Gestion de l’abonnement au bulletin d’information",
-	"newsletter-subscribe-text": "Cette page vous permet de vous abonner au bulletin d’information « $1 ». Si vous vous abonnez, les nouveaux numéros vous seront annoncés par une notification.",
+	"newsletter-subscribe-text": "Cette page vous permet de vous abonner au bulletin d’information « $1 ». Si vous vous abonnez, les nouveaux numéros vous seront annoncés par une notification.",
 	"newsletter-do-subscribe": "S’abonner à ce bulletin d’information",
 	"newsletter-subscribe-success": "Vous vous êtes abonné{{GENDER:||e}} au bulletin d’information « $1 ».",
 	"newsletter-subscribe-fail": "Impossible de vous abonner au bulletin d’information « $1 » car vous l’êtes déjà.",
 	"newsletter-subscribe-error": "Erreur lors de l’abonnement au bulletin d’information.",
 	"newsletter-subscribe-ip-notallowed": "Veuillez vous connecter pour vous abonner à un bulletin d’information.",
-	"newsletter-unsubscribe-text": "Cette page vous permet de vous désabonner du bulletin d’information « $1 ». Si vous vous désabonnez, vous ne recevrez plus de notifications lors de la sortie de nouveaux numéros.",
+	"newsletter-unsubscribe-text": "Cette page vous permet de vous désabonner du bulletin d’information « $1 ». Si vous vous désabonnez, vous ne recevrez plus de notifications lors de la sortie de nouveaux numéros.",
 	"newsletter-do-unsubscribe": "Se désabonner de ce bulletin d’information",
 	"newsletter-unsubscribe-success": "Vous n’êtes plus abonné au bulletin d’information « $1 ».",
 	"newsletter-unsubscribe-fail": "Impossible de vous désabonner du bulletin d’information « $1 » car vous n’y êtes pas abonné.",
