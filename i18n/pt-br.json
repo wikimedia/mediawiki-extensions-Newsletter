@@ -14,8 +14,8 @@
 	"newsletter-title": "Página Wiki a ser vinculada como Página principal",
 	"newsletter-exist-error": "Um boletim informativo com o nome \"$1\" já existe. Tente novamente com outro nome.",
 	"newsletter-create-error": "Ocorreu um erro ao tentar criar um novo boletim informativo. Por favor, tente novamente.",
-	"newsletter-oldrev-update-error-title": "Desculpe, esta operação não está permitida.",
-	"newsletter-oldrev-update-error-body": "A edição de uma revisão anterior não é suportada pela extensão da Newsletter. Atualize a revisão mais recente em vez disso",
+	"newsletter-oldrev-undo-error-title": "Desculpe, esta operação não está permitida.",
+	"newsletter-oldrev-undo-error-body": "A edição de uma revisão anterior não é suportada pela extensão da Newsletter. Atualize a revisão mais recente em vez disso",
 	"newsletter-input-required": "A entrada necessária não foi inserida. Por favor, tente novamente.",
 	"newsletter-invalid-name": "O nome que você inseriu para o boletim informativo é inválido. Por favor, tente novamente.",
 	"newslettercreate": "Criar um novo boletim informativo",
@@ -172,6 +172,5 @@
 	"newsletter-api-error-notfound": "O boletim informativo não existe",
 	"newsletter-api-error-nopermissions": "Você não tem permissão para gerenciar boletins informativos.",
 	"newsletter-api-error-invalidpublisher-registered": "O editor não é um usuário cadastrado.",
-	"newsletter-api-error-managefailure": "Gerenciar ação: $1 falhou.",
 	"newsletter-api-error-subscribe-notloggedin": "Você deve estar logado para se inscrever nos boletins informativos."
 }

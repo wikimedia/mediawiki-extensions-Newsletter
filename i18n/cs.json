@@ -18,7 +18,6 @@
 	"newsletter-announce-nonexistent-page": "Poskytnutá stránka vydání neexistuje. Zadejte prosím existující stránku.",
 	"newsletter-announce-failure": "Nové vydání nemohlo být oznámeno. Prosím, zkuste to znovu.",
 	"newsletter-list-search-none-found": "Žádné zpravodaje neodpovídají vašemu dotazu.",
-	"newsletter-manage-header-publisher": "Vydavatelé",
 	"right-newsletter-create": "Vytváření zpravodajů",
 	"action-newsletter-create": "vytvářet zpravodaje",
 	"right-newsletter-delete": "Mazání zpravodajů",
@@ -26,7 +25,6 @@
 	"right-newsletter-manage": "Přidávání a odebírání vydavatelů ve zpravodajích",
 	"action-newsletter-manage": "spravovat zpravodaje",
 	"newsletter-list-table": "Filtr tabulky:",
-	"newsletter-list-section": "Hledat zpravodaje",
 	"newsletter-list-option-all": "Všechny zpravodaje",
 	"newsletter-list-option-subscribed": "Zpravodaje, jež odebírám",
 	"newsletter-list-option-unsubscribed": "Zpravodaje, jež neodebírám"

@@ -7,8 +7,8 @@
 		]
 	},
 	"newsletter-desc": "Deskribapena",
-	"newsletter-oldrev-update-error-title": "Eragiketa hau ez da onartzen, sentitzen dut.",
-	"newsletter-oldrev-update-error-body": "Aurreko berrikusketa bat aldatzea ezin da egin Newsletter estentsioaren bidez. Eguneratu azken berrikusketa, mesedez.",
+	"newsletter-oldrev-undo-error-title": "Eragiketa hau ez da onartzen, sentitzen dut.",
+	"newsletter-oldrev-undo-error-body": "Aurreko berrikusketa bat aldatzea ezin da egin Newsletter estentsioaren bidez. Eguneratu azken berrikusketa, mesedez.",
 	"newsletter-view-mainpage": "Orrialde nagusia:",
 	"newsletter-view-description": "Deskribapena:",
 	"newsletter-manage-button": "Kudeatu",
@@ -30,6 +30,5 @@
 	"newsletter-api-error-notfound": "Buletina ez da existitzen",
 	"newsletter-api-error-nopermissions": "Ez duzu buletinak kudeatzeko baimenik.",
 	"newsletter-api-error-invalidpublisher-registered": "Argitaletxea ez da erregistratutako erabiltzailea.",
-	"newsletter-api-error-managefailure": "Kudeaketa ekintza: $1-k oker egin du.",
 	"newsletter-api-error-subscribe-notloggedin": "Erregistratutako egon behar duzu buletinetara izenpetua izateko."
 }
