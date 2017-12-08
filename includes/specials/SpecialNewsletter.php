@@ -150,7 +150,7 @@ class SpecialNewsletter extends SpecialPage {
 			$this->getName()
 		) . ' ' . $this->msg( 'parentheses' )
 			->rawParams( $this->getLanguage()->pipeList( $links ) )
-			->text();
+			->parse();
 
 		return $this->getLanguage()->pipeList( [ $listLink, $newsletterLinks ] );
 	}
