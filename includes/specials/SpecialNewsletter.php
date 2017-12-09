@@ -175,16 +175,6 @@ class SpecialNewsletter extends SpecialPage {
 	}
 
 	/**
-	 * We need the escaped newsletter name several times so
-	 * extract the method here.
-	 *
-	 * @return string
-	 */
-	protected function getEscapedName() {
-		return htmlspecialchars( $this->newsletter->getName() );
-	}
-
-	/**
 	 * Build the (un)subscribe form for Special:Newsletter/$id/(un)subscribe
 	 * The actual form showed will be switched depending on whether the current
 	 * user is subscribed or not.
@@ -198,7 +188,7 @@ class SpecialNewsletter extends SpecialPage {
 		if ( $this->newsletter->isSubscribed( $this->getUser() ) ) {
 			// User is subscribed so show the unsubscribe form
 			$txt = $this->msg( 'newsletter-unsubscribe-text' )
-				->rawParams( $this->getEscapedName() )->parse();
+				->plaintextParams( $this->newsletter->getName() )->parse();
 			$button = [
 				'unsubscribe' => [
 					'type' => 'submit',
@@ -211,7 +201,7 @@ class SpecialNewsletter extends SpecialPage {
 		} else {
 			// Show the subscribe form if the user is not subscribed currently
 			$txt = $this->msg( 'newsletter-subscribe-text' )
-				->rawParams( $this->getEscapedName() )->parse();
+				->plaintextParams( $this->newsletter->getName() )->parse();
 			$button = [
 				'subscribe' => [
 					'type' => 'submit',
@@ -257,7 +247,7 @@ class SpecialNewsletter extends SpecialPage {
 			// Messages used: 'newsletter-subscribe-success', 'newsletter-unsubscribe-success'
 			$this->getOutput()->addHTML(
 				$this->msg( "newsletter-$action-success" )
-					->rawParams( $this->getEscapedName() )->parse()
+					->plaintextParams( $this->newsletter->getName() )->parse()
 			);
 		}
 
@@ -293,7 +283,7 @@ class SpecialNewsletter extends SpecialPage {
 
 		$out->setPageTitle(
 			$this->msg( 'newsletter-announce' )
-				->rawParams( $this->getEscapedName() )
+				->plaintextParams( $this->newsletter->getName() )
 		);
 
 		$fields = [
@@ -327,7 +317,7 @@ class SpecialNewsletter extends SpecialPage {
 			// Success!
 			$out->addHTML(
 				$this->msg( 'newsletter-announce-success' )
-					->rawParams( $this->getEscapedName() )
+					->plaintextParams( $this->newsletter->getName() )
 					->numParams( $this->newsletter->getSubscribersCount() )
 					->parseAsBlock()
 			);
