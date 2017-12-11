@@ -6,7 +6,8 @@
 			"SPQRobin",
 			"Hex",
 			"Mainframe98",
-			"Festina90"
+			"Festina90",
+			"Mar(c)"
 		]
 	},
 	"newsletter-extension-desc": "Bied gebruikers de mogelijkheid om nieuwbrieven te publiceren en om zich te abboneren op nieuwsbrieven",
@@ -16,7 +17,7 @@
 	"newsletter-exist-error": "Een nieuwsbrief met de naam \"$1\" bestaat al. Probeer het opnieuw met een andere naam.",
 	"newsletter-create-error": "Er trad een fout op tijdens het aanmaken van een nieuwe nieuwsbrief. Probeer het opnieuw.",
 	"newsletter-oldrev-undo-error-title": "Sorry, deze handeling is niet toegestaan",
-	"newsletter-oldrev-undo-error-body": "Het ongedaan maken van een revisie wordt niet ondersteund door de Nieuwsbrief extensie. Gelieve in plaats daarvan de laatste revisie ongedaan te maken.",
+	"newsletter-oldrev-undo-error-body": "Het ongedaan maken van een vorige revisie wordt niet ondersteund door de Newsletter extensie. Gelieve in plaats daarvan de laatste revisie ongedaan te maken.",
 	"newsletter-input-required": "Vereiste invoer ontbreekt. Probeer het opnieuw.",
 	"newsletter-invalid-name": "De opgegeven nieuwsbriefnaam is ongeldig. Probeer het opnieuw.",
 	"newslettercreate": "Nieuwsbrief aanmaken",
