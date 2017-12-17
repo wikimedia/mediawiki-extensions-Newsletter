@@ -6,7 +6,8 @@
 			"Imperadeiro90",
 			"Fúlvio",
 			"Mansil",
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"MokaAkashiyaPT"
 		]
 	},
 	"newsletter-extension-desc": "Permite que os utilizadores publiquem e subscrevam boletins informativos",
@@ -76,13 +77,13 @@
 	"newsletter-delete-failure": "Não foi possível eliminar o boletim \"$1\". Tente novamente, por favor.",
 	"newsletter-delete-log": "O boletim informativo \"$1\" foi eliminado.",
 	"newsletter-subscribe": "Gestão de subscrições de boletins",
-	"newsletter-subscribe-text": "Esta interface permite-lhe subscrever o boletim informativo \"$1\". Ao subscrevê-lo, irá receber notificações quando forem anunciadas novas edições do boletim.",
+	"newsletter-subscribe-text": "Esta página permite-lhe subscrever o boletim informativo \"$1\". Ao subscrevê-lo, irá receber notificações quando forem anunciadas novas edições do boletim.",
 	"newsletter-do-subscribe": "Subscrever este boletim",
 	"newsletter-subscribe-success": "Subscreveu o boletim informativo \"$1\".",
 	"newsletter-subscribe-fail": "Não foi possível subscrever o boletim \"$1\" porque já subscreve este boletim.",
 	"newsletter-subscribe-error": "Erro ao subscrever o boletim.",
 	"newsletter-subscribe-ip-notallowed": "Inicie sessão para subscrever um boletim informativo.",
-	"newsletter-unsubscribe-text": "Esta interface permite-lhe cancelar a subscrição do boletim informativo \"$1\". Se anular a subscrição, não receberá mais notificações quando forem anunciadas novas edições do boletim.",
+	"newsletter-unsubscribe-text": "Esta página permite-lhe cancelar a subscrição do boletim informativo \"$1\". Se anular a subscrição, não receberá mais notificações quando forem anunciadas novas edições do boletim.",
 	"newsletter-do-unsubscribe": "Cancelar subscrição deste boletim informativo",
 	"newsletter-unsubscribe-success": "Já não subscreve o boletim informativo \"$1\".",
 	"newsletter-unsubscribe-fail": "Não foi possível cancelar a subscrição do boletim \"$1\" porque não subscreve este boletim.",
