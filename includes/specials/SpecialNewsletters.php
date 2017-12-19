@@ -24,6 +24,8 @@ class SpecialNewsletters extends SpecialPage {
 		$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
 		$user = $this->getUser();
 
+		$this->addHelpLink( 'Help:Extension:Newsletter' );
+
 		if ( $user->isAllowed( 'newsletter-create' ) ) {
 			$createLink = $this->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'NewsletterCreate' ),

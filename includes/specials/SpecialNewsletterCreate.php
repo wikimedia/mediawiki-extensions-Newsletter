@@ -26,6 +26,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 				$this->msg( 'newsletter-subtitlelinks-list' )->text()
 			)
 		);
+		$this->addHelpLink( 'Help:Extension:Newsletter' );
 	}
 
 	/**

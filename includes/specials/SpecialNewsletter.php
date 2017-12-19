@@ -50,6 +50,8 @@ class SpecialNewsletter extends SpecialPage {
 		$out = $this->getOutput();
 		$this->newsletter = Newsletter::newFromID( (int)$id );
 
+		$this->addHelpLink( 'Help:Extension:Newsletter' );
+
 		if ( $this->newsletter ) {
 			// Newsletter exists for the given subpage id - let's check what they want to do
 			switch ( $action ) {
