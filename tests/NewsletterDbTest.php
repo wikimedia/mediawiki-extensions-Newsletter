@@ -27,12 +27,27 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		return $mock;
 	}
 
+	/**
+	 * @return Newsletter
+	 */
+	private function getTestNewsletter() {
+		$mainPage = Title::newFromText( 'Test content' );
+
+		return new Newsletter(
+			1,
+			'Test name',
+			'Test description',
+			$mainPage->getArticleID()
+		);
+	}
+
 	public function testAddSubscriber() {
 		$mockWriteDb = $this->getMockIDatabase();
 		$user = User::newFromName( 'Test User' );
 		$user->addToDatabase();
 
-		$mockWriteDb->expects( $this->once() )
+		$mockWriteDb
+			->expects( $this->once() )
 			->method( 'insert' )
 			->with(
 				'nl_subscriptions',
@@ -44,12 +59,32 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$mainPage = Title::newFromText( "Test content" );
-		$newsletter = new Newsletter( 1, 'Test name', 'This is a test description. This is a more test description',
-			$mainPage->getArticleID() );
-		$result = $table->addSubscription( $newsletter, [ $user->getId() ] );
+		$result = $table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 
 		$this->assertEquals( true, $result );
 	}
 
+	public function testAddPublisher() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$user = User::newFromName( 'Test User' );
+		$user->addToDatabase();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'insert' )
+			->with(
+				'nl_publishers',
+				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ]
+			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 1 ) );
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->addPublisher( $this->getTestNewsletter(), $user );
+
+		$this->assertTrue( $result );
+	}
 }
