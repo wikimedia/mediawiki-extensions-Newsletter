@@ -25,6 +25,22 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		$this->assertTrue( true );
 	}
 
+	public function testCreateNewsletterMinimumDescriptionValidation() {
+		$input = [
+			'name' => 'Test Newsletter',
+			'description' => 'Test description',
+			'mainpage' => Title::newFromText( 'TestPage' )->getBaseText()
+		];
+
+		// Mock the submission of this text
+		$res = $this->newSpecialPage()->onSubmit( $input );
+
+		// The description is too small
+		$this->assertEquals(
+			$res->getMessage()->getKey(), 'newsletter-create-short-description-error'
+		);
+	}
+
 	public function testCreateNewsletterMainPageExists() {
 		$input = [
 			'name' => 'Test Newsletter',
@@ -105,5 +121,4 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			$store->getNewsletter( $firstNewsletter->getID() + 1 )
 		);
 	}
-
 }
