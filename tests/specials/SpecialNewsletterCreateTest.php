@@ -41,4 +41,31 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			$store->getNewsletterFromName( 'Test Newsletter' )
 		);
 	}
+	public function testCreateNewsletterMainPageAlreadyUsed() {
+		// Create 1st newsletter with conflicting main page
+		$mainpage = Title::newFromText( 'UTPage' );
+		$firstNewsletterTitle = Title::makeTitleSafe( NS_NEWSLETTER, 'First Newsletter' );
+		$store = NewsletterStore::getDefaultInstance();
+		$firstNewsletter = new Newsletter( 0,
+			$firstNewsletterTitle->getText(),
+			'This newsletter uses the main page, preventing a second newsletter from using it',
+			$mainpage->getArticleID()
+		);
+		$newsletterCreated = $store->addNewsletter( $firstNewsletter );
+		$this->assertTrue( $newsletterCreated );
+
+		// Creation of 2nd newsletter with same main page has to fail
+		$input = [
+			'name' => 'Second Newsletter',
+			'description' => 'The main page of this newsletter is already in use',
+			'mainpage' => $mainpage->getBaseText()
+		];
+		$res = $this->newSpecialPage()->onSubmit( $input );
+		$this->assertEquals( $res->getMessage()->getKey(), 'newsletter-mainpage-in-use' );
+
+		// The newsletter was not created
+		$this->assertNull(
+			$store->getNewsletterFromName( 'Second Newsletter' )
+		);
+	}
 }
