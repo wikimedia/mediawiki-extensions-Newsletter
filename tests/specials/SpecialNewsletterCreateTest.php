@@ -19,4 +19,26 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', null, null, $user->getUser() );
 		$this->assertTrue( true );
 	}
+
+	public function testCreateNewsletterMainPageExists() {
+		$input = [
+			'name' => 'Test Newsletter',
+			'description' => 'This is a test newsletter that should return an error for a bad main page.',
+			'mainpage' => Title::newFromText( 'BdaMianPage' )->getBaseText()
+		];
+
+		// Mock submission of bad main page
+		$res = $this->newSpecialPage()->onSubmit( $input );
+
+		// The main page is nonexistent
+		$this->assertEquals(
+			$res->getMessage()->getKey(), 'newsletter-mainpage-non-existent'
+		);
+
+		// The newsletter was not created
+		$store = NewsletterStore::getDefaultInstance();
+		$this->assertNull(
+			$store->getNewsletterFromName( 'Test Newsletter' )
+		);
+	}
 }
