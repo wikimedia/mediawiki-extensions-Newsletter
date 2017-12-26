@@ -59,12 +59,55 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		$mockWriteDb->expects( $this->once() )
 			->method( 'affectedRows' )
 			->will( $this->returnValue( 1 ) );
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'update' )
+			->with(
+				'nl_newsletters',
+				// For index reasons, count is negative
+				[ 'nl_subscriber_count=nl_subscriber_count-1' ], [ 'nl_id' => 1 ]
+			);
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 
 		$this->assertEquals( true, $result );
+	}
+
+	/**
+	 * @covers NewsletterDb::removeSubscription
+	 */
+	public function testRemoveSubscriber() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$user = User::newFromName( 'Test User' );
+		$user->addToDatabase();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'delete' )
+			->with(
+				'nl_subscriptions',
+				[ 'nls_subscriber_id' => [ $user->getId() ], 'nls_newsletter_id' => 1 ]
+			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 1 ) );
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'update' )
+			->with(
+				'nl_newsletters',
+				// For index reasons, count is negative
+				[ 'nl_subscriber_count=nl_subscriber_count+1' ], [ 'nl_id' => 1 ]
+			);
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->removeSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
+
+		$this->assertTrue( $result );
 	}
 
 	/**
