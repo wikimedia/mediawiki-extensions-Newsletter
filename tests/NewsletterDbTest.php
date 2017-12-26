@@ -41,6 +41,9 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		);
 	}
 
+	/**
+	 * @covers NewsletterDb::addSubscription
+	 */
 	public function testAddSubscriber() {
 		$mockWriteDb = $this->getMockIDatabase();
 		$user = User::newFromName( 'Test User' );
@@ -64,6 +67,9 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		$this->assertEquals( true, $result );
 	}
 
+	/**
+	 * @covers NewsletterDb::addPublisher
+	 */
 	public function testAddPublisher() {
 		$mockWriteDb = $this->getMockIDatabase();
 		$user = User::newFromName( 'Test User' );
@@ -88,6 +94,9 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		$this->assertTrue( $result );
 	}
 
+	/**
+	 * @covers NewsletterDb::deleteNewsletter
+	 */
 	public function testDeleteNewsletter() {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
