@@ -193,4 +193,39 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 		$this->assertTrue( $result );
 	}
+
+	/**
+	 * @covers NewsletterDb::restoreNewsletter
+	 */
+	public function testRestoreNewsletter() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+
+		$mockWriteDb
+			->expects( $this->exactly( 2 ) )
+			->method( 'update' )
+			->withConsecutive(
+				[
+					'nl_newsletters',
+					[ 'nl_active' => 0 ], [ 'nl_id' => $newsletter->getId() ]
+				],
+				[
+					'nl_newsletters',
+					[ 'nl_active' => 1 ], [ 'nl_name' => $newsletter->getName() ]
+				]
+			);
+		$mockWriteDb
+			->expects( $this->exactly( 2 ) )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 1 ) );
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->deleteNewsletter( $newsletter );
+		$this->assertTrue( $result );
+
+		$result = $table->restoreNewsletter( $newsletter->getName() );
+		$this->assertTrue( $result );
+	}
+
 }
