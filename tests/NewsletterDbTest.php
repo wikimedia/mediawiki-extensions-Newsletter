@@ -95,6 +95,37 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers NewsletterDb::addNewsletter
+	 */
+	public function testAddNewsletter() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'insert' )
+			->with(
+				'nl_newsletters',
+				[
+					'nl_name' => $newsletter->getName(),
+					'nl_desc' => $newsletter->getDescription(),
+					'nl_main_page_id' => $newsletter->getPageId()
+				]
+			)
+			->will( $this->returnValue( true ) );
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'insertId' )
+			->will( $this->returnValue( 1 ) );
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->addNewsletter( $newsletter );
+
+		$this->assertEquals( 1, $result );
+	}
+
+	/**
 	 * @covers NewsletterDb::deleteNewsletter
 	 */
 	public function testDeleteNewsletter() {
