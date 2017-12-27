@@ -1,0 +1,10 @@
+/**
+ * Stylesheet used on Newsletter:*.
+ */
+
+.newsletter-headered-element .oo-ui-fieldLayout-header > label {
+	display: block;
+	margin-top: 0.5em;
+	font-weight: bold;
+	font-size: 1.2em;
+}
