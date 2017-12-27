@@ -7,7 +7,7 @@
  * @group medium
  * @group Database
  *
- * @covers ApiNewsletter
+ * @covers ApiNewsletterSubscribe
  *
  * @author Tina Johnson
  */
