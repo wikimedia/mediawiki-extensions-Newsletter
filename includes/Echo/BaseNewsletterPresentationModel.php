@@ -1,6 +1,7 @@
 <?php
 
 abstract class BaseNewsletterPresentationModel extends EchoEventPresentationModel {
+
 	public function canRender() {
 		$nl = Newsletter::newFromID( $this->getNewsletterId() );
 		return (bool)$nl;
@@ -27,4 +28,5 @@ abstract class BaseNewsletterPresentationModel extends EchoEventPresentationMode
 		}
 		return $result;
 	}
+
 }

@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @license GNU GPL v2+
  * @author tonythomas
  */
-
 class NewsletterContentHandler extends JsonContentHandler {
+
 	/**
 	 * @param string $modelId
 	 */
@@ -96,4 +97,5 @@ class NewsletterContentHandler extends JsonContentHandler {
 	protected function getDiffEngineClass() {
 		return 'NewsletterDiffEngine';
 	}
+
 }

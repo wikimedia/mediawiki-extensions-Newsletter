@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Special page to handle actions related to specific newsletters
  *

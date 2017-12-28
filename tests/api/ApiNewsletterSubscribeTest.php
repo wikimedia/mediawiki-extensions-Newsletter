@@ -1,8 +1,6 @@
 <?php
 
 /**
- * Unit test to test Api module - ApiNewsletter
- *
  * @group API
  * @group medium
  * @group Database
@@ -11,7 +9,7 @@
  *
  * @author Tina Johnson
  */
-class ApiNewsletterTest extends ApiTestCase {
+class ApiNewsletterSubscribeTest extends ApiTestCase {
 
 	public function __construct( $name = null, array $data = [], $dataName = '' ) {
 		parent::__construct( $name, $data, $dataName );

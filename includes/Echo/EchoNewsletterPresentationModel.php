@@ -42,4 +42,5 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 		return $this->msg( 'notification-body-newsletter-announce' )
 			->params( $this->event->getExtraParam( 'section-text' ) );
 	}
+
 }

@@ -81,6 +81,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 		$this->output( "Done!\n" );
 	}
+
 }
 
 $maintClass = "DeleteInactiveNewsletters";

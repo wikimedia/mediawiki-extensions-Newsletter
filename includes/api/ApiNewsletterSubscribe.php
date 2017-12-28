@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @license GNU GPL v2+
  * @author Glaisher
@@ -77,4 +78,5 @@ class ApiNewsletterSubscribe extends ApiBase {
 	public function mustBePosted() {
 		return true;
 	}
+
 }

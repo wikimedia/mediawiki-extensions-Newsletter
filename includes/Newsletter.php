@@ -8,6 +8,7 @@
  * @author Glaisher
  */
 class Newsletter {
+
 	const NEWSLETTER_PUBLISHERS_ADDED = 'added';
 	const NEWSLETTER_PUBLISHERS_REMOVED = 'removed';
 
@@ -277,4 +278,5 @@ class Newsletter {
 		}
 		EchoEvent::create( $notification );
 	}
+
 }

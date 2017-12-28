@@ -8,8 +8,8 @@ class NewsletterHooks {
 	/**
 	 * Function to be called before EchoEvent
 	 *
-	 * @param array &$notifications Echo notifications
-	 * @param array &$notificationCategories Echo notification categories
+	 * @param array[] &$notifications Echo notifications
+	 * @param array[] &$notificationCategories Echo notification categories
 	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories ) {
@@ -394,4 +394,5 @@ class NewsletterHooks {
 
 		return true;
 	}
+
 }

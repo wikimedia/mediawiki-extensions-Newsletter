@@ -1,4 +1,5 @@
 <?php
+
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
 
@@ -8,6 +9,7 @@ class UpdateSubscribersCount extends Maintenance {
 
 	public function __construct() {
 		parent::__construct();
+
 		$this->addDescription(
 			"Regenerate nl_subscribers_count in nl_newsletters from nl_subscriptions table" );
 		$this->requireExtension( 'Newsletter' );
@@ -49,6 +51,7 @@ class UpdateSubscribersCount extends Maintenance {
 
 		$this->output( "Done!\n" );
 	}
+
 }
 
 $maintClass = "updateSubscribersCount";

@@ -1,12 +1,13 @@
 <?php
+
+use MediaWiki\MediaWikiServices;
+
 /**
  * @license GNU GPL v2+
  * @author tonythomas
  */
-
-use MediaWiki\MediaWikiServices;
-
 class NewsletterContent extends JsonContent {
+
 	/** Subpage actions */
 	const NEWSLETTER_ANNOUNCE = 'announce';
 	const NEWSLETTER_MANAGE = 'manage';
@@ -497,4 +498,5 @@ class NewsletterContent extends JsonContent {
 			[ $mwUpdate ]
 		);
 	}
+
 }

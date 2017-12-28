@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Implements Special:Newsletter which lists all the newsletters on the wiki.
  * Logged-in users can also filter by subscribed/unsubscribed newsletters and
@@ -8,6 +9,7 @@
  * @author Tina Johnson
  */
 class SpecialNewsletters extends SpecialPage {
+
 	/**
 	 * @var string $option Filter option for the table - doesn't affect anons
 	 */
@@ -98,4 +100,5 @@ class SpecialNewsletters extends SpecialPage {
 			],
 		];
 	}
+
 }
