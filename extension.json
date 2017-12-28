@@ -121,6 +121,10 @@
 		"ext.newsletter.newsletters.styles": {
 			"position": "top",
 			"styles": "ext.newsletter.newsletters.styles.css"
+		},
+		"ext.newsletter.newsletter.styles": {
+			"position": "top",
+			"styles": "ext.newsletter.newsletter.styles.css"
 		}
 	},
 	"ResourceFileModulePaths": {

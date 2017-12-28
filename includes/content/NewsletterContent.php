@@ -142,6 +142,8 @@ class NewsletterContent extends JsonContent {
 		$generateHtml,
 		ParserOutput &$output
 	) {
+		$output->addModuleStyles( 'ext.newsletter.newsletter.styles' );
+
 		if ( $generateHtml ) {
 			$this->newsletter = Newsletter::newFromName( $title->getText() );
 			// Make sure things are decoded at this point
@@ -152,18 +154,20 @@ class NewsletterContent extends JsonContent {
 			$mainTitle = $this->mainPage;
 
 			$fields = [
-				'mainpage' => [
-					'type' => 'info',
-					'label-message' => 'newsletter-view-mainpage',
-					'default' => MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $mainTitle ),
-					'raw' => true,
-				],
 				'description' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-description',
 					'default' => $this->description,
+					'cssclass' => 'newsletter-headered-element',
 					'rows' => 6,
 					'readonly' => true,
+				],
+				'mainpage' => [
+					'type' => 'info',
+					'label-message' => 'newsletter-view-mainpage',
+					'default' => MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $mainTitle ),
+					'cssclass' => 'newsletter-headered-element',
+					'raw' => true,
 				],
 				'publishers' => [
 					'type' => 'info',
@@ -171,12 +175,14 @@ class NewsletterContent extends JsonContent {
 						$options->getUserLangObj() )
 						->numParams( count( $this->publishers ) )
 						->text(),
+					'cssclass' => 'newsletter-headered-element',
 				],
 				'subscribers' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-subscriber-count',
 					'default' => !$this->newsletter ? 0 : $options->getUserLangObj()->formatNum(
 						$this->newsletter->getSubscribersCount() ),
+					'cssclass' => 'newsletter-headered-element',
 				],
 			];
 			$publishersArray = $this->getPublishersFromJSONData( $this->publishers );
@@ -213,6 +219,7 @@ class NewsletterContent extends JsonContent {
 							->inLanguage( $options->getUserLangObj() )
 							->numParams( $logCount )
 							->text(),
+						'cssclass' => 'newsletter-headered-element',
 					];
 				}
 			}
@@ -376,49 +383,13 @@ class NewsletterContent extends JsonContent {
 			)->text()
 		);
 
-		$user = $options->getUser() ? : null;
-		$actions = [];
-
-		if ( !$user || !$this->newsletter->isSubscribed( $user ) ) {
-			$actions[] = self::NEWSLETTER_SUBSCRIBE;
-		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
-			$actions[] = self::NEWSLETTER_UNSUBSCRIBE;
-		}
-		if ( $user && $user->isLoggedIn() ) {
-			if ( $this->newsletter->isPublisher( $user ) ) {
-				$actions[] = self::NEWSLETTER_ANNOUNCE;
-			}
-			if ( $this->newsletter->canManage( $user ) ) {
-				$actions[] = self::NEWSLETTER_MANAGE;
-				$actions[] = self::NEWSLETTER_SUBSCRIBERS;
-			}
-		}
-		$links = [];
-		foreach ( $actions as $action ) {
-			$title = SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() . '/' .
-				$action );
-
-			// Messages used here: 'newsletter-subtitlelinks-announce',
-			// 'newsletter-subtitlelinks-subscribe', 'newsletter-subtitlelinks-unsubscribe'
-			$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-			$link = $linkRenderer->makeKnownLink( $title, $msg );
-
-			if ( $action == self::NEWSLETTER_MANAGE ) {
-				$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
-				$msg = wfMessage( 'newsletter-subtitlelinks-' . $action )->text();
-				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action' => 'edit' ] );
-			}
-			$links[] = $link;
-		}
-		$newsletterLinks = Linker::makeSelfLinkObj(
-				SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
-				$this->getEscapedName()
-			) . ' ' . wfMessage( 'parentheses' )->rawParams(
-				$options->getUserLangObj()->pipeList( $links )
-			)->escaped();
+		$newsletterLink = Linker::makeSelfLinkObj(
+			SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
+			$this->getEscapedName()
+		);
 
 		$wgOut->setSubtitle(
-			$options->getUserLangObj()->pipeList( [ $listLink, $newsletterLinks ] )
+			$options->getUserLangObj()->pipeList( [ $listLink, $newsletterLink ] )
 		);
 	}
 
