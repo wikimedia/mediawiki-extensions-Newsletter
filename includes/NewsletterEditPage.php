@@ -441,7 +441,7 @@ class NewsletterEditPage {
 		$editResult = NewsletterContentHandler::edit(
 			$title,
 			$description,
-			$mainPage->getText(),
+			$mainPage->getFullText(),
 			$publisherNames,
 			trim( $data['Summary'] ),
 			$this->context

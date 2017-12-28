@@ -27,7 +27,7 @@ class NewsletterDiffEngine extends DifferenceEngine {
 		}
 
 		$mainPageDiff = $this->generateTextDiffBody(
-			$old->getMainPage()->getText(), $new->getMainPage()->getText()
+			$old->getMainPage()->getFullText(), $new->getMainPage()->getFullText()
 		);
 
 		if ( $mainPageDiff ) {
