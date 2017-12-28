@@ -10,8 +10,6 @@ class NewsletterDataUpdate extends DataUpdate {
 	private $content; /** NewsletterContent */
 	private $user; /** @var User Triggering user */
 	private $title; /** @var Title */
-	protected $newsletter; /** @var Newsletter */
-	private $name; /** @var string */
 
 	/**
 	 * @param NewsletterContent $content
@@ -130,8 +128,8 @@ class NewsletterDataUpdate extends DataUpdate {
 			}
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $newsletter, $added );
-			$this->newsletter->notifyPublishers(
-				$added, $user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
+			$newsletter->notifyPublishers(
+				$added, $this->user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
 			);
 		}
 
@@ -140,8 +138,8 @@ class NewsletterDataUpdate extends DataUpdate {
 			foreach ( $removed as $ruId ) {
 				$store->removePublisher( $newsletter, User::newFromId( $ruId ) );
 			}
-			$this->newsletter->notifyPublishers(
-				$removed, $user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
+			$newsletter->notifyPublishers(
+				$removed, $this->user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
 			);
 		}
 	}
