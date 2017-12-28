@@ -65,28 +65,32 @@ class NewsletterStore {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function addPublisher( Newsletter $newsletter, User $user ) {
-		$success = $this->db->addPublisher( $newsletter, $user );
+	public function addPublisher( Newsletter $newsletter, $userIds ) {
+		$success = $this->db->addPublisher( $newsletter, $userIds );
 		if ( $success ) {
-			$this->logger->logPublisherAdded( $newsletter, $user );
+			foreach ( $userIds as $userId ) {
+				$this->logger->logPublisherAdded( $newsletter, User::newFromId( $userId ) );
+			}
 		}
 		return $success;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function removePublisher( Newsletter $newsletter, User $user ) {
-		$success = $this->db->removePublisher( $newsletter, $user );
+	public function removePublisher( Newsletter $newsletter, $userIds ) {
+		$success = $this->db->removePublisher( $newsletter, $userIds );
 		if ( $success ) {
-			$this->logger->logPublisherRemoved( $newsletter, $user );
+			foreach ( $userIds as $userId ) {
+				$this->logger->logPublisherRemoved( $newsletter, User::newFromId( $userId ) );
+			}
 		}
 		return $success;
 	}

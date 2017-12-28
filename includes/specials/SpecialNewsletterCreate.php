@@ -157,7 +157,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 */
 	private function onPostCreation( User $user ) {
 		$this->newsletter->subscribe( $user );
-		NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, $user );
+		NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, [ $user->getId() ] );
 	}
 
 	public function onSuccess() {
