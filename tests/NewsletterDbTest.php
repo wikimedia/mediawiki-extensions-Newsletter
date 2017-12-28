@@ -191,6 +191,29 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers NewsletterDb::updateDescription
+	 */
+	public function testUpdateDescription() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+		$newsletterId = $newsletter->getId();
+
+		$newDescription = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,'
+				. 'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'update' )
+			->with(
+				'nl_newsletters',
+				[ 'nl_desc' => $newDescription ], [ 'nl_id' => $newsletterId ]
+			);
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table->updateDescription( $newsletterId, $newDescription );
+	}
+
+	/**
 	 * @covers NewsletterDb::deleteNewsletter
 	 */
 	public function testDeleteNewsletter() {
