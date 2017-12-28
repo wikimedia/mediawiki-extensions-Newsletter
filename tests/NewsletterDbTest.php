@@ -138,6 +138,33 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers NewsletterDb::removePublisher
+	 */
+	public function testRemovePublisher() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$user = User::newFromName( 'Test User' );
+		$user->addtoDatabase();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'delete' )
+			->with(
+				'nl_publishers',
+				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ]
+			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 1 ) );
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->removePublisher( $this->getTestNewsletter(), $user );
+
+		$this->assertTrue( $result );
+	}
+
+	/**
 	 * @covers NewsletterDb::addNewsletter
 	 */
 	public function testAddNewsletter() {
