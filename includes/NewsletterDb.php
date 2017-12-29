@@ -88,15 +88,19 @@ class NewsletterDb {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function addPublisher( Newsletter $newsletter, User $user ) {
-		$rowData = [
-			'nlp_newsletter_id' => $newsletter->getId(),
-			'nlp_publisher_id' => $user->getId(),
-		];
+	public function addPublisher( Newsletter $newsletter, $userIds ) {
+		$newsletterId = $newsletter->getId();
+		$rowData = [];
+		foreach ( $userIds as $userId ) {
+			$rowData[] = [
+				'nlp_newsletter_id' => $newsletterId,
+				'nlp_publisher_id' => $userId
+			];
+		}
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
@@ -109,14 +113,14 @@ class NewsletterDb {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param User $user
+	 * @param array $userIds
 	 *
 	 * @return bool success of the action
 	 */
-	public function removePublisher( Newsletter $newsletter, User $user ) {
+	public function removePublisher( Newsletter $newsletter, $userIds ) {
 		$rowData = [
 			'nlp_newsletter_id' => $newsletter->getId(),
-			'nlp_publisher_id' => $user->getId(),
+			'nlp_publisher_id' => $userIds
 		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );

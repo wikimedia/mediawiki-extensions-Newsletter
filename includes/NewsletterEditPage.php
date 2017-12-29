@@ -317,7 +317,8 @@ class NewsletterEditPage {
 			);
 			if ( $result->isGood() ) {
 				$this->newsletter->subscribe( $this->user );
-				NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, $this->user );
+				$store = NewsletterStore::getDefaultInstance();
+				$store->addPublisher( $this->newsletter, [ $this->user->getId() ] );
 				$this->out->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getName() );
 				return Status::newGood();
 			} else {
@@ -413,10 +414,7 @@ class NewsletterEditPage {
 
 		// Check if people has been added
 		if ( $added ) {
-			// @todo Do this in a batch..
-			foreach ( $added as $auId ) {
-				$store->addPublisher( $this->newsletter, User::newFromId( $auId ) );
-			}
+			$store->addPublisher( $this->newsletter, $added );
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $this->newsletter, $added );
 			$this->newsletter->notifyPublishers(
@@ -424,11 +422,9 @@ class NewsletterEditPage {
 			);
 		}
 
-		// Check if people has been removed
+		// Check if people have been removed
 		if ( $removed ) {
-			foreach ( $removed as $ruId ) {
-				$store->removePublisher( $this->newsletter, User::newFromId( $ruId ) );
-			}
+			$store->removePublisher( $this->newsletter, $removed );
 			$this->newsletter->notifyPublishers(
 				$removed, $user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
 			);

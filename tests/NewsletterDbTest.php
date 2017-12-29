@@ -123,7 +123,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 			->method( 'insert' )
 			->with(
 				'nl_publishers',
-				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ]
+				[ [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ] ]
 			);
 		$mockWriteDb
 			->expects( $this->once() )
@@ -132,7 +132,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$result = $table->addPublisher( $this->getTestNewsletter(), $user );
+		$result = $table->addPublisher( $this->getTestNewsletter(), [ $user->getId() ] );
 
 		$this->assertTrue( $result );
 	}
@@ -150,7 +150,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 			->method( 'delete' )
 			->with(
 				'nl_publishers',
-				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ]
+				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => [ $user->getId() ] ]
 			);
 		$mockWriteDb
 			->expects( $this->once() )
@@ -159,7 +159,7 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$result = $table->removePublisher( $this->getTestNewsletter(), $user );
+		$result = $table->removePublisher( $this->getTestNewsletter(), [ $user->getId() ] );
 
 		$this->assertTrue( $result );
 	}

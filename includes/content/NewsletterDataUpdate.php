@@ -67,7 +67,7 @@ class NewsletterDataUpdate extends DataUpdate {
 		}
 
 		$newsletter->subscribe( $this->user );
-		$store->addPublisher( $newsletter, $this->user );
+		$store->addPublisher( $newsletter, [ $this->user->getId() ] );
 
 		return $newsletter;
 	}
@@ -120,24 +120,20 @@ class NewsletterDataUpdate extends DataUpdate {
 		$added = array_diff( $updatedPublishersIds, $oldPublishersIds );
 		$removed = array_diff( $oldPublishersIds, $updatedPublishersIds );
 
-		// Check if people has been added
+		// Check if people have been added
 		if ( $added ) {
-			// @todo Do this in a batch..
-			foreach ( $added as $auId ) {
-				$store->addPublisher( $newsletter, User::newFromId( $auId ) );
-			}
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $newsletter, $added );
+
+			$store->addPublisher( $newsletter, $added );
 			$newsletter->notifyPublishers(
 				$added, $this->user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
 			);
 		}
 
-		// Check if people has been removed
+		// Check if people have been removed
 		if ( $removed ) {
-			foreach ( $removed as $ruId ) {
-				$store->removePublisher( $newsletter, User::newFromId( $ruId ) );
-			}
+			$store->removePublisher( $newsletter, $removed );
 			$newsletter->notifyPublishers(
 				$removed, $this->user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
 			);
