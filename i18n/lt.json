@@ -3,7 +3,8 @@
 		"authors": [
 			"Zygimantus",
 			"Hugo.arg",
-			"Eitvys200"
+			"Eitvys200",
+			"Manvydasz"
 		]
 	},
 	"newsletter-create-editsummary": "Sukurti naują naujienlaiškį",
@@ -40,7 +41,7 @@
 	"apihelp-newslettersubscribe-description": "Užsisakyti ar atsisakyti naujienlaiškio.",
 	"apihelp-newslettersubscribe-example-1": "Užsiprenumeruokite naujienlaiškį su id 1.",
 	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2.",
-	"newsletter-list-table": "Košti lentelę pagal:",
+	"newsletter-list-table": "Filtruoti pagal:",
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|atkūrė}} naujienlaiškį $4",
 	"newsletter-restore-failure": "„$1“ naujienlaiškis negali būti atkurtas. Prašome bandyti dar kartą.",
 	"newsletter-diff-descheader": "Pakeitimai aprašyme:",
