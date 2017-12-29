@@ -241,6 +241,32 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers NewsletterDb::updateMainPage
+	 */
+	public function testUpdateMainPage() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+		$newsletterId = $newsletter->getId();
+
+		$mainpage = Title::newFromText( 'UTPage' );
+		$newMainPage = $mainpage->getArticleID();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'update' )
+			->will( $this->returnValue( true ) )
+			->with(
+				'nl_newsletters',
+				[ 'nl_main_page_id' => $newMainPage ], [ 'nl_id' => $newsletterId ]
+		);
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->updateMainPage( $newsletterId, $newMainPage );
+		$this->assertTrue( $result );
+	}
+
+	/**
 	 * @covers NewsletterDb::deleteNewsletter
 	 */
 	public function testDeleteNewsletter() {
