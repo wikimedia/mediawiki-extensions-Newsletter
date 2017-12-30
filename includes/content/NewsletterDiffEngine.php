@@ -1,6 +1,7 @@
 <?php
 
 class NewsletterDiffEngine extends DifferenceEngine {
+
 	public function generateContentDiffBody( Content $old, Content $new ) {
 		if ( !( $old instanceof NewsletterContent )
 			|| !( $new instanceof NewsletterContent ) ) {
@@ -61,4 +62,5 @@ class NewsletterDiffEngine extends DifferenceEngine {
 
 		return $output;
 	}
+
 }

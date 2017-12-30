@@ -171,4 +171,5 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}
+
 }

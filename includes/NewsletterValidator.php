@@ -1,8 +1,8 @@
 <?php
+
 /**
  * Handles validation for newsletters
  */
-
 class NewsletterValidator {
 
 	private static $requiredDataOnCreate = [
@@ -17,8 +17,6 @@ class NewsletterValidator {
 	];
 
 	/**
-	 * Constructor.
-	 *
 	 * @param array $fields
 	 */
 	public function __construct( array $fields ) {
@@ -69,4 +67,5 @@ class NewsletterValidator {
 
 		return Status::newGood();
 	}
+
 }

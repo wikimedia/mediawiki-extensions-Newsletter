@@ -1,14 +1,13 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @license GNU GPL v2+
  * @author Tina Johnson
  * @author Brian Wolff <bawolff+wn@gmail.com>
  * @author Tony Thomas <01tonythomas@gmail.com>
  */
-
-use MediaWiki\MediaWikiServices;
-
 class NewsletterTablePager extends TablePager {
 
 	/** Added to offset for sorting reasons */
@@ -62,7 +61,7 @@ class NewsletterTablePager extends TablePager {
 	 * done as part of a union to avoid expensive filesort.
 	 *
 	 * @param string $offset The indexpager offset (Number of subscribers)
-	 * @param int $limit The limit
+	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
 	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
 	 */
@@ -115,7 +114,7 @@ class NewsletterTablePager extends TablePager {
 	 * done as part of a union to avoid expensive filesort.
 	 *
 	 * @param string $offset The indexpager offset (Number of subscribers)
-	 * @param int $limit The limit
+	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
 	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
 	 */

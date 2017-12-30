@@ -1,6 +1,7 @@
 <?php
 
 class EchoNewsletterUserLocator {
+
 	/**
 	 * Locate all users subscribed to a newsletter.
 	 *
@@ -16,4 +17,5 @@ class EchoNewsletterUserLocator {
 
 		return UserArray::newFromIDs( $newsletter->getSubscribers() );
 	}
+
 }

@@ -21,4 +21,5 @@ class EchoNewsletterPublisherAddedPresentationModel extends BaseNewsletterPresen
 		$msg->params( $agentGenderName );
 		return $msg;
 	}
+
 }

@@ -20,4 +20,5 @@ class EchoNewsletterSubscribedPresentationModel extends BaseNewsletterPresentati
 		$msg->params( $this->getNewsletterName() );
 		return $msg;
 	}
+
 }

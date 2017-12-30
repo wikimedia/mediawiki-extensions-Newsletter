@@ -1,10 +1,11 @@
 <?php
+
+use MediaWiki\Logger\LoggerFactory;
+
 /**
  * @license GNU GPL v2+
  * @author tonythomas
  */
-use \MediaWiki\Logger\LoggerFactory;
-
 class NewsletterDataUpdate extends DataUpdate {
 
 	private $content; /** NewsletterContent */
@@ -139,4 +140,5 @@ class NewsletterDataUpdate extends DataUpdate {
 			);
 		}
 	}
+
 }

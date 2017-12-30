@@ -6,8 +6,8 @@
  * @license GNU GPL v2+
  * @author Tyler Romeo
  */
-
 class NewsletterLogFormatter extends LogFormatter {
+
 	/**
 	 * Reformat the target as a user link if the target was a user
 	 * @return array
@@ -59,4 +59,5 @@ class NewsletterLogFormatter extends LogFormatter {
 			return "[[{$title->getPrefixedText()}|$name]]";
 		}
 	}
+
 }

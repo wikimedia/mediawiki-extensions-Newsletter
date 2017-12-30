@@ -20,4 +20,5 @@ class EchoNewsletterUnsubscribedPresentationModel extends BaseNewsletterPresenta
 		$msg->params( $this->getNewsletterName() );
 		return $msg;
 	}
+
 }

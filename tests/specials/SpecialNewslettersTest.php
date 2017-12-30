@@ -20,4 +20,5 @@ class SpecialNewslettersTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', $req, null, $user->getUser() );
 		$this->assertTrue( true );
 	}
+
 }

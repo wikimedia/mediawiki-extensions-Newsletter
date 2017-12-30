@@ -46,6 +46,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			$store->getNewsletterFromName( 'Test Newsletter' )
 		);
 	}
+
 	public function testCreateNewsletterMainPageAlreadyUsed() {
 		// Create 1st newsletter with conflicting main page
 		$mainpage = Title::newFromText( 'UTPage' );
@@ -104,4 +105,5 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			$store->getNewsletter( $firstNewsletter->getID() + 1 )
 		);
 	}
+
 }
