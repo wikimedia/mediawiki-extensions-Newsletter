@@ -42,7 +42,7 @@
 	"newsletter-subscribe-loginrequired": "Inicie uma sessão para subscrever [[Special:Newsletters|boletins informativos]], por favor.",
 	"newsletter-notfound": "O boletim informativo não foi encontrado",
 	"newsletter-not-found-id": "Não existe nenhum boletim informativo com este identificador. Está disponível uma [[Special:Newsletters|lista dos boletins existentes]].",
-	"newsletter-view-mainpage": "Página principal:",
+	"newsletter-view-mainpage": "Página principal do boletim informativo:",
 	"newsletter-view-description": "Descrição:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Editor:|Editores:}}",
 	"newsletter-view-subscriber-count": "Número de subscritores:",

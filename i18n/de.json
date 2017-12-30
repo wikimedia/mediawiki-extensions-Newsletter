@@ -38,7 +38,7 @@
 	"newsletter-subscribe-loginrequired": "Bitte melde dich an, um [[Special:Newsletters|Newsletter]] zu abonnieren.",
 	"newsletter-notfound": "Newsletter nicht gefunden",
 	"newsletter-not-found-id": "Ein Newsletter mit dieser Kennung ist nicht vorhanden. Es ist eine [[Special:Newsletters|Liste mit verfügbaren Newslettern]] verfügbar.",
-	"newsletter-view-mainpage": "Hauptseite:",
+	"newsletter-view-mainpage": "Hauptseite des Newsletters:",
 	"newsletter-view-description": "Beschreibung:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Herausgeber:}}",
 	"newsletter-view-subscriber-count": "Anzahl der Abonnenten:",
