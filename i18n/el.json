@@ -7,6 +7,7 @@
 			"KATRINE1992"
 		]
 	},
+	"newsletter-view-mainpage": "Κεντρική σελίδα Ενημέρωσης:",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|έχει ανακοινώσει}} μια νέα έκδοση των $3.",
 	"notification-header-newsletter-newpublisher": "Έχετε προστεθεί ως {{GENDER:$2|εκδότης|εκδότρια}} του ενημερωτικού δελτίου \"$1\".",
 	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Εσύ }έχεις διαγραφεί  {{GENDER:$3|}} ως εκδότης επιστολής ενημέρωσης ''$1''.",

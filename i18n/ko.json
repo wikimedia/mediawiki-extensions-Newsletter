@@ -26,7 +26,7 @@
 	"newsletter-subtitlelinks-announce": "알림",
 	"newsletter-subtitlelinks-manage": "관리",
 	"newsletter-subtitlelinks-subscribers": "구독자 보기",
-	"newsletter-view-mainpage": "대문:",
+	"newsletter-view-mainpage": "뉴스레터 대문:",
 	"newsletter-view-description": "설명:",
 	"newsletter-view-publishers": "{{PLURAL:$1|발행자}}",
 	"newsletter-view-subscriber-count": "구독자 수:",
