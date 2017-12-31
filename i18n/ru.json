@@ -8,7 +8,8 @@
 			"Kareyac",
 			"Okras",
 			"Mailman",
-			"Kaganer"
+			"Kaganer",
+			"Edible Melon"
 		]
 	},
 	"newsletter-extension-desc": "Позволяет участникам делать новостные рассылки и подписываться на них",
@@ -42,7 +43,7 @@
 	"newsletter-subscribe-loginrequired": "Для подписки на [[Special:Newsletters|новостные рассылки]] нужно войти на сайт.",
 	"newsletter-notfound": "Рассылка не найдена",
 	"newsletter-not-found-id": "Не существует рассылки с таким ID. Посмотрите [[Special:Newsletters|список существующих рассылок]].",
-	"newsletter-view-mainpage": "Основная страница:",
+	"newsletter-view-mainpage": "Основная страница рассылки:",
 	"newsletter-view-description": "Описание:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Публикатор:|Публикаторы:}}",
 	"newsletter-view-subscriber-count": "Количество подписчиков:",

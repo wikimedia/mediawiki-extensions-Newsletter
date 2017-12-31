@@ -5,7 +5,8 @@
 			"Guilhermemau",
 			"Luk3",
 			"Iagocds",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Rukasuoribera"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuários publicar e assinar os boletins informativos",
@@ -34,7 +35,7 @@
 	"newsletter-subtitlelinks-subscribe": "inscrever-se",
 	"newsletter-subtitlelinks-announce": "anunciar",
 	"newsletter-subtitlelinks-manage": "administrar",
-	"newsletter-subtitlelinks-subscribers": "ver inscrições",
+	"newsletter-subtitlelinks-subscribers": "Editar Inscrições",
 	"newsletters": "Boletins informativos",
 	"newsletter-subscribe-loginrequired": "Por favor, faça login para inscrever-se nos [[Special:Newsletters|boletins informativos]].",
 	"newsletter-notfound": "Boletim informativo não encontrado",
