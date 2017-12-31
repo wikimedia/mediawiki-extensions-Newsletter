@@ -81,7 +81,7 @@ class NewsletterDataUpdate extends DataUpdate {
 		$newsletter = Newsletter::newFromName( $this->title->getText() );
 
 		$formData = [
-			'Name' => $this->title->getFullText(),
+			'Name' => $this->title->getText(),
 			'Description' => $this->content->getDescription(),
 			'MainPage' => $this->content->getMainPage()
 		];
