@@ -114,6 +114,70 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @covers NewsletterDb::getNewsletterSubscribersCount
+	 */
+	public function testGetSubscribersCount() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+		$firstUser = User::newFromName( 'TestUser1' );
+		$secondUser = User::newFromName( 'TestUser2' );
+		$firstUser->addToDatabase();
+		$secondUser->addToDatabase();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'insert' )
+			->with(
+				'nl_subscriptions',
+				[
+					[
+						'nls_subscriber_id' => $firstUser->getId(),
+						'nls_newsletter_id' => $newsletter->getId()
+					],
+					[
+						'nls_subscriber_id' => $secondUser->getId(),
+						'nls_newsletter_id' => $newsletter->getId()
+					]
+				]
+			);
+		$mockWriteDb->expects( $this->once() )
+			->method( 'affectedRows' )
+			->will( $this->returnValue( 2 ) );
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'update' )
+			->with(
+				'nl_newsletters',
+				// For index reasons, count is negative
+				[ 'nl_subscriber_count=nl_subscriber_count-2' ],
+				[ 'nl_id' => $newsletter->getId() ]
+			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'selectField' )
+			->with(
+				'nl_newsletters',
+				'nl_subscriber_count',
+				[ 'nl_id' => $newsletter->getId() ]
+			)->will(
+				// For index reasons, count is negative
+				$this->returnValue( -2 )
+			);
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		// Add two subscribers before checking subscribers count
+		$result = $table->addSubscription( $this->getTestNewsletter(), [
+			$firstUser->getId(),
+			$secondUser->getId()
+		] );
+		$this->assertTrue( $result );
+
+		$result = $table->getNewsletterSubscribersCount( $newsletter->getId() );
+		$this->assertEquals( 2, $result );
+	}
+
+	/**
 	 * @covers NewsletterDb::addPublisher
 	 */
 	public function testAddPublisher() {
