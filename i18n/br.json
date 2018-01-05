@@ -1,8 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fulup"
+			"Fulup",
+			"Dishual"
 		]
 	},
+	"newsletter-subtitlelinks-subscribers": "Kemmañ an heulierien",
+	"newsletter-view-mainpage": "Pajenn degemer ar c'helc'h lizher",
+	"newsletter-subscribers-button": "Kemmañ an heulierien",
 	"newsletter-manage-publishers": "Embannerien :"
 }
