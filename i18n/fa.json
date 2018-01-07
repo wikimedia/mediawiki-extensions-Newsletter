@@ -3,12 +3,13 @@
 		"authors": [
 			"Reza1615",
 			"GMozafarian",
-			"Ebraminio"
+			"Ebraminio",
+			"Ladsgroup"
 		]
 	},
 	"newsletter-desc": "توضیح",
 	"newsletter-subtitlelinks-manage": "مدیریت",
-	"newsletter-view-mainpage": "صفحهٔ اصلی:",
+	"newsletter-view-mainpage": "صفحهٔ اصلی خبرنامه:",
 	"newsletter-view-description": "شرح:",
 	"newsletter-unsubscribe-button": "لغو اشتراک",
 	"newsletter-subscribe-button": "اشتراک",

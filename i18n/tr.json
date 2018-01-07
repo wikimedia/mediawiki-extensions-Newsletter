@@ -3,12 +3,15 @@
 		"authors": [
 			"KorkmazO",
 			"HakanIST",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Hedda"
 		]
 	},
 	"newslettercreate": "Bülten oluştur",
-	"newsletter-view-mainpage": "Anasayfa:",
+	"newsletter-subtitlelinks-subscribers": "aboneleri düzenle",
+	"newsletter-view-mainpage": "Bülten anasayfası:",
 	"newsletter-view-no-publishers": "Yayımcı yok.",
+	"newsletter-subscribers-button": "Aboneleri düzenle",
 	"newsletter-announce-button": "Duyur",
 	"newsletter-announce-nopermission": "Bu bülten için yayımcı değilsiniz.",
 	"newsletter-announce-submit": "Duyur",
