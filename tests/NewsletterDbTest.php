@@ -24,6 +24,9 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 		$mock->expects( $this->any() )
 			->method( 'getConnection' )
 			->will( $this->returnValue( $db ) );
+		$mock->expects( $this->any() )
+			->method( 'getConnectionRef' )
+			->will( $this->returnValue( $db ) );
 		return $mock;
 	}
 
@@ -324,6 +327,36 @@ class NewsletterDbTest extends PHPUnit_Framework_TestCase {
 
 		$result = $table->restoreNewsletter( $newsletter->getName() );
 		$this->assertTrue( $result );
+	}
+
+	/**
+	 * @covers NewsletterDb::getNewsletterFromName
+	 */
+	public function testGetNewsletterFromName() {
+		$mockWriteDb = $this->getMockIDatabase();
+		$newsletter = $this->getTestNewsletter();
+
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'selectRow' )
+			->with(
+				'nl_newsletters',
+				[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
+				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 1 ]
+			)
+			->will( $this->returnValue(
+				(Object)[
+					'nl_id' => $newsletter->getId(),
+					'nl_name' => $newsletter->getName(),
+					'nl_desc' => $newsletter->getDescription(),
+					'nl_main_page_id' => $newsletter->getPageId(),
+				]
+			) );
+
+		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+
+		$result = $table->getNewsletterFromName( $newsletter->getName() );
+		$this->assertEquals( $newsletter, $result );
 	}
 
 }
