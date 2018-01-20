@@ -104,7 +104,7 @@
 	"newsletter-none-found": "Er bestaan geen nieuwbrieven. U kunt een nieuwe nieuwsbrief aanmaken via [[Special:CreateNewsletter]].",
 	"newsletter-list-search-none-found": "Er komen geen nieuwsbrieven overeen met uw zoekopdracht.",
 	"echo-category-title-newsletter": "Nieuwsbrieven",
-	"echo-pref-tooltip-newsletter": "Stuur mij een melding wanneer een van de nieuwsbrieven waarop ik ben geabboneerd een nieuwe uitgave aankondigd.",
+	"echo-pref-tooltip-newsletter": "Informeer mij wanneer een van de nieuwsbrieven waarop ik ben geabonneerd een nieuwe uitgave aankondigt.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|heeft}} een [[$2|nieuwe uitgave]] van de nieuwbrief \"$1\" uitgeven.",
 	"newsletter-notification-subscribed": "U bent door een administrator geabboneerd op de nieuwsbrief \"$1\".",
 	"newsletter-notification-unsubscribed": "U bent door een administrator afgemeld als abbonee van de nieuwsbrief \"$1\".",
