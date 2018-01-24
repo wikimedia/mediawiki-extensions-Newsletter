@@ -18,6 +18,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	}
 
 	public function execute( $par ) {
+		$this->addHelpLink( 'Help:Extension:Newsletter' );
 		$this->requireLogin();
 		parent::execute( $par );
 		$this->getOutput()->setSubtitle(
