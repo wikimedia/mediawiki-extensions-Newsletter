@@ -154,4 +154,32 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( $newsletter->getPublishers(), $expectedUsers );
 		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
 	}
+	public function testRemovePublisher() {
+		# Set up
+		$newsletter = $this->createNewsletter();
+		$firstUser = User::newFromName( 'UTSysop' );
+		$secondUser = User::newFromName( 'Second User' );
+		$secondUser->addToDatabase();
+		$publisherIds = [ $firstUser->getId(), $secondUser->getId() ];
+		NewsletterStore::getDefaultInstance()->addPublisher( $newsletter, $publisherIds );
+
+		# Modify the publishers
+		$newText = '{
+			"description": "' . self::DESCRIPTION . '",
+			"mainpage": "UTPage",
+			"publishers": [
+			]
+		}';
+		$this->doApiRequestWithToken(
+			[
+				'action' => 'edit',
+				'title' => "Newsletter:Test",
+				'text' => $newText,
+			]
+		);
+
+		# Check that users were correctly removed
+		$newsletter = Newsletter::newFromName( "Test" );
+		$this->assertEquals( $newsletter->getPublishers(), [] );
+	}
 }
