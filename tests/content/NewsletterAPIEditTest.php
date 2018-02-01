@@ -10,18 +10,21 @@ class NewsletterAPIEditTest extends ApiTestCase {
 	protected function setUp() {
 		parent::setUp();
 		$this->doLogin();
+		$this->tablesUsed = [ 'nl_newsletters', 'nl_publishers', 'nl_subscriptions' ];
 	}
+
+	const DESCRIPTION = "A description that is at least 30 characters long";
+
 	public function testCreation() {
-		$description = "A description that is at least 30 characters long";
 		$newsletterTitle = "Newsletter:Test";
 		$mainPage = "UTPage";
-		$text = "{
-			\"description\": \"$description\",
-			\"mainpage\": \"$mainPage\",
-			\"publishers\": [
-				\"UTSysop\"
+		$text = '{
+			"description": "' . self::DESCRIPTION . '",
+			"mainpage": "UTPage",
+			"publishers": [
+				"UTSysop"
 			]
-		}";
+		}';
 
 		# Create the newsletter
 		$this->doApiRequestWithToken(
@@ -38,8 +41,8 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertNotNull( $newsletter );
 
 		# Check description
-		$this->assertEquals( $newsletter->getDescription(), $description );
-		$this->assertEquals( $content->getDescription(), $description );
+		$this->assertEquals( $newsletter->getDescription(), self::DESCRIPTION );
+		$this->assertEquals( $content->getDescription(), self::DESCRIPTION );
 
 		# Check main page
 		$expectedPageId = Title::newFromText( $mainPage )->getArticleId();
@@ -52,19 +55,24 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
 	}
 
-	public function testUpdateDescription() {
-		# Set up by creating newsletter
-		$initialDescription = "A description that is at least 30 characters long";
-		$finalDescription = "A description that is still at least 30 characters long";
-		$mainPage = 'UTPage';
-		$mainPageId = Title::newFromText( $mainPage )->getArticleId();
-		$newsletter = new Newsletter( 0, 'Test', $initialDescription, $mainPageId );
+	private function createNewsletter() {
+		$mainPageId = Title::newFromText( "UTPage" )->getArticleId();
+		$newsletter = new Newsletter( 0, 'Test', self::DESCRIPTION, $mainPageId );
 		NewsletterStore::getDefaultInstance()->addNewsletter( $newsletter );
+
+		$newsletter = Newsletter::newFromName( "Test" );
+		$this->assertNotNull( $newsletter );
+		return $newsletter;
+	}
+
+	public function testUpdateDescription() {
+		$this->createNewsletter();
+		$newDescription = "A description that is still at least 30 characters long";
 
 		# Modify the description
 		$newText = "{
-			\"description\": \"$finalDescription\",
-			\"mainpage\": \"$mainPage\",
+			\"description\": \"$newDescription\",
+			\"mainpage\": \"UTPage\",
 			\"publishers\": [
 				\"UTSysop\"
 			]
@@ -79,30 +87,23 @@ class NewsletterAPIEditTest extends ApiTestCase {
 
 		# Check the description
 		$newsletter = Newsletter::newFromName( "Test" );
-		$this->assertEquals( $newsletter->getDescription(), $finalDescription );
+		$this->assertEquals( $newsletter->getDescription(), $newDescription );
 	}
 
 	public function testUpdateMainPage() {
-		# Set up by creating newsletter
-		$description = "A description that is at least 30 characters long";
-		$oldMainPage = 'UTPage';
-		$oldMainPageId = Title::newFromText( $oldMainPage )->getArticleId();
-		$newsletter = new Newsletter( 0, 'Test', $description, $oldMainPageId );
+		# Set up
+		$this->createNewsletter();
 		$newMainPage = "SecondPage";
 		$newMainPageId = $this->insertPage( $newMainPage )["id"];
-		NewsletterStore::getDefaultInstance()->addNewsletter( $newsletter );
-
-		$newsletter = Newsletter::newFromName( "Test" );
-		$this->assertNotNull( $newsletter );
 
 		# Modify the main page
-		$newText = "{
-			\"description\": \"$description\",
-			\"mainpage\": \"$newMainPage\",
-			\"publishers\": [
-				\"UTSysop\"
+		$newText = '{
+			"description":"' . self::DESCRIPTION . '",
+			"mainpage": "SecondPage",
+			"publishers": [
+				"UTSysop"
 			]
-		}";
+		}';
 		$this->doApiRequestWithToken(
 			[
 				'action' => 'edit',
@@ -114,5 +115,43 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		# Check the main page
 		$newsletter = Newsletter::newFromName( "Test" );
 		$this->assertEquals( $newsletter->getPageId(), $newMainPageId );
+	}
+
+	public function testAddPublisher() {
+		$newsletter = $this->createNewsletter();
+
+		# Newsletter should initially have no publishers and no subscribers
+		$this->assertEquals( $newsletter->getPublishers(), [] );
+		$this->assertEquals( $newsletter->getSubscribers(), [] );
+
+		$firstUser = User::newFromName( 'UTSysop' );
+		$secondUser = User::newFromName( 'Second User' );
+		$secondUser->addToDatabase();
+
+		# Modify the publishers
+		$newText = '{
+			"description": "' . self::DESCRIPTION . '",
+			"mainpage": "UTPage",
+			"publishers": [
+				"UTSysop",
+				"Second User"
+			]
+		}';
+		$this->doApiRequestWithToken(
+			[
+				'action' => 'edit',
+				'title' => "Newsletter:Test",
+				'text' => $newText,
+			]
+		);
+
+		# Check that user was correctly added
+		$expectedUsers = [
+			$firstUser->getId(),
+			$secondUser->getId()
+		];
+		$newsletter = Newsletter::newFromName( "Test" );
+		$this->assertEquals( $newsletter->getPublishers(), $expectedUsers );
+		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
 	}
 }
