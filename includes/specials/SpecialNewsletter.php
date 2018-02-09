@@ -360,7 +360,7 @@ class SpecialNewsletter extends SpecialPage {
 			return Status::newFatal( 'spamprotectionmatch', $reasonSpamMatch );
 		}
 
-		if ( !class_exists( 'EchoEvent' ) ) {
+		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
 			throw new Exception( 'Echo extension is not installed.' );
 		}
 
@@ -478,7 +478,7 @@ class SpecialNewsletter extends SpecialPage {
 		$out = $this->getOutput();
 		// Now report to the user
 		if ( $added || $removed ) {
-			if ( !class_exists( 'EchoEvent' ) ) {
+			if ( !ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
 				throw new Exception( 'Echo extension is not installed.' );
 			}
 			if ( $added ) {
