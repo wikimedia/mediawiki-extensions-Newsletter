@@ -5,7 +5,7 @@
  *
  * @author Addshore
  */
-class NewsletterDbTest extends PHPUnit_Framework_TestCase {
+class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 	/**
 	 * @return PHPUnit_Framework_MockObject_MockObject|IDatabase
