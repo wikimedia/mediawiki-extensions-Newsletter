@@ -2,11 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Сербијана",
-			"Obsuser"
+			"Obsuser",
+			"Acamicamacaraca"
 		]
 	},
 	"newsletters": "Билтени",
-	"newsletter-view-mainpage": "Главна страна:",
+	"newsletter-view-mainpage": "Главна страница:",
 	"newsletter-view-description": "Опис:",
 	"echo-category-title-newsletter": "Билтени"
 }
