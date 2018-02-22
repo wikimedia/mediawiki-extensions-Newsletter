@@ -3,11 +3,12 @@
 		"authors": [
 			"Сербијана",
 			"Obsuser",
-			"Acamicamacaraca"
+			"Acamicamacaraca",
+			"Milicevic01"
 		]
 	},
 	"newsletters": "Билтени",
-	"newsletter-view-mainpage": "Главна страница:",
+	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
 	"echo-category-title-newsletter": "Билтени"
 }

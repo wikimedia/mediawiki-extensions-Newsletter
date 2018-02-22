@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sveinn í Felli"
+		]
+	},
+	"newsletter-desc": "Lýsing",
+	"newsletter-subtitlelinks-unsubscribe": "segja upp áskrift",
+	"newsletter-subtitlelinks-subscribe": "Gerast áskrifandi",
+	"newsletter-subtitlelinks-announce": "tilkynna",
+	"newsletter-subtitlelinks-manage": "stjórna",
+	"newsletter-view-description": "Lýsing:",
+	"newsletter-manage-button": "Stjórna",
+	"newsletter-unsubscribe-button": "Segja upp áskrift",
+	"newsletter-subscribe-button": "Gerast áskrifandi",
+	"newsletter-announce-button": "Tilkynna",
+	"newsletter-announce-submit": "Tilkynna",
+	"newsletter-manage-description": "Lýsing:",
+	"newsletter-managenewsletter-button": "Senda",
+	"newsletter-subscribe-button-label": "Já",
+	"newsletter-unsubscribe-button-label": "Nei",
+	"newsletter-header-name": "Nafn",
+	"newsletter-header-description": "Lýsing",
+	"newsletter-header-subscriber_count": "Áskrifendur",
+	"newsletter-list-table": "Sía eftir:",
+	"newsletter-list-go-button": "Fara"
+}
