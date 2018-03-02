@@ -1,6 +1,6 @@
 {
 	"type": "mediawiki-extension",
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-or-later",
 	"require": {
 		"wikimedia/assert": ">=0.1 <0.3"
 	},
