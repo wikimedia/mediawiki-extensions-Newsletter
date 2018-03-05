@@ -11,5 +11,7 @@
 	"newsletter-create-editsummary": "Luo uusi uutiskirje",
 	"newsletter-manage-publishers": "Julkaisijat:",
 	"newsletter-manage-summary": "Muutoksen yhteenveto:",
+	"newsletter-subscribe-button-label": "Kyllä",
+	"newsletter-unsubscribe-button-label": "Ei",
 	"newsletter-header-name": "Nimi"
 }
