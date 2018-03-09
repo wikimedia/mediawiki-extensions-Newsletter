@@ -34,7 +34,7 @@ class NewsletterDb {
 			];
 		}
 		$dbw = $this->lb->getConnection( DB_MASTER );
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
 
@@ -48,7 +48,7 @@ class NewsletterDb {
 			);
 		}
 
-		$dbw->commit();
+		$dbw->endAtomic( __METHOD__ );
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -67,7 +67,7 @@ class NewsletterDb {
 		];
 
 		$dbw = $this->lb->getConnection( DB_MASTER );
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
 		if ( $success ) {
@@ -80,7 +80,7 @@ class NewsletterDb {
 			);
 		}
 
-		$dbw->commit();
+		$dbw->endAtomic( __METHOD__ );
 		$this->lb->reuseConnection( $dbw );
 
 		return $success;
@@ -452,15 +452,13 @@ class NewsletterDb {
 	 * @param Title $title
 	 * @param User $publisher
 	 *
-	 * @todo this should probably be done in a transaction (even though conflicts are unlikely)
-	 *
 	 * @return bool|int the id of the issue added, false on failure
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnection( DB_MASTER );
 
-		$dbw->begin( __METHOD__ );
+		$dbw->startAtomic( __METHOD__ );
 		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
 			'MAX(nli_issue_id)',
@@ -481,7 +479,7 @@ class NewsletterDb {
 				],
 				__METHOD__
 			);
-			$dbw->commit( __METHOD__ );
+			$dbw->endAtomic( __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			$dbw->rollback( __METHOD__ );
 			$success = false;
