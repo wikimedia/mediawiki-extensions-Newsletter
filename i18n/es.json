@@ -17,6 +17,7 @@
 	"newsletter-title": "Página del wiki con información sobre el boletín",
 	"newsletter-exist-error": "Ya existe un boletín con el nombre \"$1\". Inténtalo de nuevo con otro nombre.",
 	"newsletter-create-error": "Ocurrió un error al intentar crear un boletín nuevo. Inténtalo de nuevo.",
+	"newsletter-oldrev-undo-error-title": "No se permite llevar a cabo esta operación.",
 	"newsletter-input-required": "No se proporcionó la entrada requerida. Inténtalo de nuevo.",
 	"newsletter-invalid-name": "El nombre proporcionado para el boletín no es válido. Inténtalo de nuevo.",
 	"newslettercreate": "Crear boletín",
