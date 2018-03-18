@@ -14,7 +14,7 @@
 	"newsletter-desc": "Description",
 	"newsletter-title": "Wiki page with information about the newsletter",
 	"newsletter-exist-error": "A newsletter with the name \"$1\" already exists. Please try again with another name.",
-	"newsletter-create-error": "An error occured while trying to create a new newsletter. Please try again.",
+	"newsletter-create-error": "An error occurred while trying to create a new newsletter. Please try again.",
 	"newsletter-oldrev-undo-error-title": "Sorry, this operation is not permitted.",
 	"newsletter-oldrev-undo-error-body": "Undoing a previous revision is not supported by the Newsletter extension. Please undo the latest revision instead.",
 	"newsletter-input-required": "Required input was not entered. Please try again.",
