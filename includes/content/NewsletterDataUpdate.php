@@ -27,9 +27,10 @@ class NewsletterDataUpdate extends DataUpdate {
 
 	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
 		$dbr = wfGetDB( DB_REPLICA );
+
 		return $dbr->selectRowCount(
 			'nl_newsletters',
-			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
+			'*',
 			$dbr->makeList( [
 				'nl_name' => $newNewsletterName,
 				$dbr->makeList(
