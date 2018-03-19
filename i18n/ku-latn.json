@@ -2,9 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Bikarhêner",
-			"George Animal"
+			"George Animal",
+			"Ghybu"
 		]
 	},
 	"newsletter-view-mainpage": "Destpêkː",
-	"newsletter-view-description": "Danasînː"
+	"newsletter-view-description": "Danasînː",
+	"newsletter-subscribe-button-label": "Erê",
+	"newsletter-unsubscribe-button-label": "Na"
 }

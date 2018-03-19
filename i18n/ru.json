@@ -9,7 +9,8 @@
 			"Okras",
 			"Mailman",
 			"Kaganer",
-			"Edible Melon"
+			"Edible Melon",
+			"Patrick Star"
 		]
 	},
 	"newsletter-extension-desc": "Позволяет участникам делать новостные рассылки и подписываться на них",
@@ -38,7 +39,7 @@
 	"newsletter-subtitlelinks-subscribe": "подписаться",
 	"newsletter-subtitlelinks-announce": "анонс",
 	"newsletter-subtitlelinks-manage": "управление",
-	"newsletter-subtitlelinks-subscribers": "просмотр подписчиков",
+	"newsletter-subtitlelinks-subscribers": "править подписчиков",
 	"newsletters": "Новостные рассылки",
 	"newsletter-subscribe-loginrequired": "Для подписки на [[Special:Newsletters|новостные рассылки]] нужно войти на сайт.",
 	"newsletter-notfound": "Рассылка не найдена",
@@ -52,7 +53,7 @@
 	"newsletter-manage-button": "Управление",
 	"newsletter-unsubscribe-button": "Отписаться",
 	"newsletter-subscribe-button": "Подписаться",
-	"newsletter-subscribers-button": "Просмотреть подписчиков",
+	"newsletter-subscribers-button": "Править подписчиков",
 	"newsletter-announce-button": "Анонс",
 	"newsletter-announce-nopermission": "Вы не входите в число публикаторов этой рассылки.",
 	"newsletter-announce": "Объявить о новом выпуске рассылки «$1»",
