@@ -15,6 +15,7 @@
 	"newsletter-name": "뉴스레터 이름",
 	"newsletter-desc": "설명",
 	"newsletter-title": "뉴스레터에 관한 정보가 포함된 위키 문서",
+	"newsletter-create-error": "새로운 뉴스레터 만들기를 시도하는 동안 오류가 발생했습니다. 다시 시도해 주십시오.",
 	"newsletter-oldrev-undo-error-title": "죄송합니다. 이 작업은 허용되지 않습니다.",
 	"newsletter-oldrev-undo-error-body": "뉴스레터 확장은 이전 판의 편집을 지원하지 않습니다. 대신에 최신 판을 업데이트해 주십시오",
 	"newslettercreate": "뉴스레터 만들기",
