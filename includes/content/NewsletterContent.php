@@ -328,7 +328,7 @@ class NewsletterContent extends JsonContent {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-announce-button' )->text(),
-					'icon' => 'comment',
+					'icon' => 'speechBubble',
 					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
 						self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				]
