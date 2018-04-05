@@ -1,5 +1,9 @@
 <?php
 
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Rdbms\ResultWrapper;
+
 /**
  * @covers NewsletterDb
  *
@@ -11,14 +15,14 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	 * @return PHPUnit_Framework_MockObject_MockObject|IDatabase
 	 */
 	private function getMockIDatabase() {
-		return $this->getMock( 'IDatabase' );
+		return $this->getMock( IDatabase::class );
 	}
 
 	/**
 	 * @return PHPUnit_Framework_MockObject_MockObject|LoadBalancer
 	 */
 	private function getMockLoadBalancer( $db ) {
-		$mock = $this->getMockBuilder( 'LoadBalancer' )
+		$mock = $this->getMockBuilder( LoadBalancer::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$mock->expects( $this->any() )
@@ -400,7 +404,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
-		$mockResWrapper = $this->getMockBuilder( 'ResultWrapper' )
+		$mockResWrapper = $this->getMockBuilder( ResultWrapper::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$mockResWrapper->expects( $this->once() )

@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use Wikimedia\Rdbms\IDatabase;
 
 /**
  * @license GNU GPL v2+
@@ -27,7 +28,7 @@ class NewsletterTablePager extends TablePager {
 
 	private $newslettersArray;
 
-	public function __construct( IContextSource $context = null, Database $readDb = null ) {
+	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
 		}
@@ -221,7 +222,7 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	/**
-	 * @param \Wikimedia\Rdbms\ResultWrapper $result
+	 * @param \Wikimedia\Rdbms\IResultWrapper $result
 	 */
 	public function preprocessResults( $result ) {
 		foreach ( $result as $res ) {

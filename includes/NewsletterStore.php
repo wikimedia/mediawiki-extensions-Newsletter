@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\Rdbms\IResultWrapper;
+
 /**
  * @license GNU GPL v2+
  * @author Addshore
@@ -218,7 +220,7 @@ class NewsletterStore {
 	 * Fetch all newsletter Main Pages
 	 *
 	 * @param int $mainPageId
-	 * @return bool|ResultWrapper
+	 * @return bool|IResultWrapper
 	 * @throws MWException
 	 */
 	public function newsletterExistsForMainPage( $mainPageId ) {

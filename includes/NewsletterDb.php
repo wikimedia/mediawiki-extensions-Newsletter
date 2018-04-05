@@ -2,6 +2,8 @@
 
 use Wikimedia\Assert\Assert;
 use Wikimedia\Rdbms\DBQueryError;
+use Wikimedia\Rdbms\DBUnexpectedError;
+use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LoadBalancer;
 
 /**
@@ -415,7 +417,7 @@ class NewsletterDb {
 	 * Fetch all newsletter Main Pages
 	 *
 	 * @param int $mainPageId
-	 * @return bool|ResultWrapper
+	 * @return bool|IResultWrapper
 	 * @throws DBUnexpectedError
 	 * @throws MWException
 	 */
