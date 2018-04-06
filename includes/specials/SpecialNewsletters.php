@@ -21,7 +21,6 @@ class SpecialNewsletters extends SpecialPage {
 
 	public function execute( $par ) {
 		$this->setHeaders();
-		$this->addHelpLink( 'Help:Extension:Newsletter' );
 
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
