@@ -63,7 +63,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
-			[ 'subscriber_id' ],
+			[ 'nls_subscriber_id' ],
 			[
 				'nls_newsletter_id' => $this->getNewsletterId(),
 			],
@@ -93,7 +93,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		$dbr = wfGetDB( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
-			[ 'subscriber_id' ],
+			[ 'nls_subscriber_id' ],
 			[
 				'nls_newsletter_id' => $this->getNewsletterId(),
 			],
