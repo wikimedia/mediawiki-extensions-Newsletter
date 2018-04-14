@@ -5,7 +5,7 @@
  * Logged-in users can also filter by subscribed/unsubscribed newsletters and
  * also subscribe and unsubscribe from individual newsletters.
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Tina Johnson
  */
 class SpecialNewsletters extends SpecialPage {

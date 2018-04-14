@@ -3,7 +3,7 @@
 /**
  * Log formatter for Extension:Newsletter log messages
  *
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Tyler Romeo
  */
 class NewsletterLogFormatter extends LogFormatter {

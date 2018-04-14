@@ -4,7 +4,7 @@ use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Tina Johnson
  * @author Brian Wolff <bawolff+wn@gmail.com>
  * @author Tony Thomas <01tonythomas@gmail.com>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @license GNU GPL v2+
+ * @license GPL-2.0-or-later
  * @author Glaisher
  */
 class ApiNewsletterSubscribe extends ApiBase {
