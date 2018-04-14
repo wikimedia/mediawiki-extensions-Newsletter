@@ -15,7 +15,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	 * @return PHPUnit_Framework_MockObject_MockObject|IDatabase
 	 */
 	private function getMockIDatabase() {
-		return $this->getMock( IDatabase::class );
+		return $this->getMockBuilder( IDatabase::class )->getMock();
 	}
 
 	/**
