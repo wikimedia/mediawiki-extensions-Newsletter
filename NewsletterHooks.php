@@ -141,32 +141,6 @@ class NewsletterHooks {
 	}
 
 	/**
-	 * Handler for UnitTestsList hook.
-	 * @see http://www.mediawiki.org/wiki/Manual:Hooks/UnitTestsList
-	 * @param array &$files Array of unit test files
-	 * @return bool true in all cases
-	 */
-	public static function onUnitTestsList( &$files ) {
-		// @codeCoverageIgnoreStart
-		$directoryIterator = new RecursiveDirectoryIterator( __DIR__ . '/tests/' );
-
-		/**
-		 * @var SplFileInfo $fileInfo
-		 */
-		$ourFiles = [];
-		foreach ( new RecursiveIteratorIterator( $directoryIterator ) as $fileInfo ) {
-			if ( substr( $fileInfo->getFilename(), -8 ) === 'Test.php' ) {
-				$ourFiles[] = $fileInfo->getPathname();
-			}
-		}
-
-		$files = array_merge( $files, $ourFiles );
-
-		return true;
-		// @codeCoverageIgnoreEnd
-	}
-
-	/**
 	 * Tables that Extension:UserMerge needs to update
 	 *
 	 * @param array &$updateFields

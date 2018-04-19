@@ -135,9 +135,6 @@
 		"BeforeCreateEchoEvent": [
 			"NewsletterHooks::onBeforeCreateEchoEvent"
 		],
-		"UnitTestsList": [
-			"NewsletterHooks::onUnitTestsList"
-		],
 		"LoginFormValidErrorMessages": [
 			"NewsletterHooks::onLoginFormValidErrorMessages"
 		],
