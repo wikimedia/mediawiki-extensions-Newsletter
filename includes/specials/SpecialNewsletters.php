@@ -60,7 +60,6 @@ class SpecialNewsletters extends SpecialPage {
 			$filterForm->setMethod( 'get' );
 			// Note that submit button is hidden for users with JS enabled in
 			// as changing the dropdown menu's option updates the page for them
-			$filterForm->setSubmitProgressive();
 			$filterForm->setSubmitTextMsg( 'newsletter-list-go-button' );
 			$filterForm->prepareForm();
 			$formHtml = $filterForm->getHTML( false );
