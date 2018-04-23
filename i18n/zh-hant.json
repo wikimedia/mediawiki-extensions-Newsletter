@@ -39,5 +39,11 @@
 	"newsletter-notification-link-text-new-issue": "檢視新問題",
 	"newsletter-header-name": "名稱",
 	"newsletter-header-description": "描述",
-	"newsletter-header-subscriber_count": "訂閱者"
+	"newsletter-header-subscriber_count": "訂閱者",
+	"log-action-filter-newsletter": "操作類型：",
+	"log-action-filter-newsletter-publisher-added": "發行人新增",
+	"log-action-filter-newsletter-publisher-removed": "發行人移除",
+	"log-action-filter-newsletter-newsletter-added": "新聞報建立",
+	"log-action-filter-newsletter-newsletter-removed": "新聞報刪除",
+	"log-action-filter-newsletter-issue-added": "新問題公告"
 }
