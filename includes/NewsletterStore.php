@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**
@@ -38,7 +39,7 @@ class NewsletterStore {
 	public static function getDefaultInstance() {
 		if ( !self::$instance ) {
 			self::$instance = new self(
-				new NewsletterDb( wfGetLB() ),
+				new NewsletterDb( MediaWikiServices::getInstance()->getDBLoadBalancer() ),
 				new NewsletterLogger()
 			);
 		}
