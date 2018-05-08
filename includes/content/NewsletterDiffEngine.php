@@ -45,8 +45,8 @@ class NewsletterDiffEngine extends DifferenceEngine {
 		}
 
 		$publishersDiff = $this->generateTextDiffBody(
-			implode( $old->getPublishers(), "\n" ),
-			implode( $new->getPublishers(), "\n" )
+			implode( "\n", $old->getPublishers() ),
+			implode( "\n", $new->getPublishers() )
 		);
 
 		if ( trim( $publishersDiff ) !== '' ) {
