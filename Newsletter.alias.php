@@ -14,3 +14,10 @@ $specialPageAliases['en'] = [
 	'Newsletters' => [ 'Newsletters' ],
 	'Newsletter' => [ 'Newsletter' ]
 ];
+
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = [
+	'NewsletterCreate' => [ 'יצירת_ידיעון' ],
+	'Newsletters' => [ 'ידיעונים' ],
+	'Newsletter' => [ 'ידיעון' ]
+];
