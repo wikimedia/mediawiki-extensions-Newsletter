@@ -7,7 +7,8 @@
 			"LNDDYL",
 			"Alexsh",
 			"烈羽",
-			"Hello903hello"
+			"Hello903hello",
+			"Kly"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱報紙的功能",
@@ -18,7 +19,7 @@
 	"newslettercreate": "建立電子報",
 	"newsletter-create-confirmation": "已建立一份新的電子報：[[Newsletter:$1|$1]]。",
 	"newsletters": "報紙",
-	"newsletter-view-mainpage": "首頁：",
+	"newsletter-view-mainpage": "電子報首頁：",
 	"newsletter-view-description": "描述：",
 	"newsletter-manage-publishers": "發佈者：",
 	"newsletter-manage-description": "描述",
