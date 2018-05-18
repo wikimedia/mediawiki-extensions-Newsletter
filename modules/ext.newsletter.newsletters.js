@@ -16,6 +16,10 @@
 	/**
 	 * Event handler for clicks on 'action' field link. Allows subscribing and unsubscribing
 	 * with a single click. The user is notified once the API request is done.
+	 *
+	 * @param {string} doAction The action to execute (see newslettersubscribe api for possible options)
+	 * @param {int} nlId The newsletter id
+	 * @return {jQuery.Promise} See #post
 	 */
 	function doAPIRequest( doAction, nlId ) {
 		var api = new mw.Api();
@@ -23,7 +27,7 @@
 		return api.postWithToken( 'csrf', {
 			action: 'newslettersubscribe',
 			id: nlId,
-			do: doAction
+			'do': doAction
 		} );
 	}
 
