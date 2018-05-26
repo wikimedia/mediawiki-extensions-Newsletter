@@ -445,10 +445,10 @@ class NewsletterContent extends JsonContent {
 
 	/**
 	 * @param Title $title Title of the page that is being edited.
-	 * @param Content $old Content object representing the page's content before the edit.
+	 * @param Content|null $old Content object representing the page's content before the edit.
 	 * @param bool $recursive bool indicating whether DataUpdates should trigger recursive
 	 * updates (relevant mostly for LinksUpdate).
-	 * @param ParserOutput $parserOutput ParserOutput representing the rendered version of
+	 * @param ParserOutput|null $parserOutput ParserOutput representing the rendered version of
 	 * the page after the edit.
 	 * @return DataUpdate[]
 	 *

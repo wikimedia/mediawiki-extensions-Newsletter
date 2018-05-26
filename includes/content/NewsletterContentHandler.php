@@ -22,7 +22,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 
 	/**
 	 * @param string $text
-	 * @param string $format
+	 * @param string|null $format
 	 * @return NewsletterContent
 	 * @throws MWContentSerializationException
 	 */
