@@ -430,13 +430,13 @@ class NewsletterContent extends JsonContent {
 
 	/**
 	 * Override TextContent::getTextForSummary
-	 * @param int $maxLength
+	 * @param int $maxLength Maximum length, in characters (not bytes).
 	 * @return string
 	 */
 	public function getTextForSummary( $maxLength = 250 ) {
 		global $wgContLang;
 
-		$truncatedtext = $wgContLang->truncate(
+		$truncatedtext = $wgContLang->truncateForVisual(
 			preg_replace( "/[\n\r]/", ' ',  $this->getDescription() ), max( 0, $maxLength )
 		);
 

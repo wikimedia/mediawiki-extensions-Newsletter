@@ -145,7 +145,7 @@ class NewsletterDb {
 			'nl_name' => $newsletter->getName(),
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
-			'nl_desc' => $wgContLang->truncate( $newsletter->getDescription(), 600000 ),
+			'nl_desc' => $wgContLang->truncateForDatabase( $newsletter->getDescription(), 600000 ),
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
@@ -180,7 +180,7 @@ class NewsletterDb {
 		$rowData = [
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
-			'nl_desc' => $wgContLang->truncate( $description, 600000 ),
+			'nl_desc' => $wgContLang->truncateForDatabase( $description, 600000 ),
 		];
 
 		$conds = [
