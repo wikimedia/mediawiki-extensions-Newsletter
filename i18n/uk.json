@@ -7,7 +7,8 @@
 			"Lxlalexlxl",
 			"Macofe",
 			"Piramidion",
-			"Максим Підліснюк"
+			"Максим Підліснюк",
+			"Vlad5250"
 		]
 	},
 	"newsletter-extension-desc": "Дозволяє користувачам публікувати і підписуватися на розсилки новин",
@@ -124,7 +125,7 @@
 	"action-newsletter-delete": "вилучення розсилок новин",
 	"right-newsletter-manage": "додавання чи вилучення видавців або підписників розсилок новин",
 	"action-newsletter-manage": "керування розсилками новин",
-	"right-newsletter-restore": "відновлення розвилки новин",
+	"right-newsletter-restore": "відновлення розсилки новин",
 	"action-newsletter-restore": "відновлення розсилки новин",
 	"apihelp-newslettersubscribe-description": "Підписатися чи відписатися від розсилки новин.",
 	"apihelp-newslettersubscribe-summary": "Підпишіться або відпишіться від розсилки новин.",
