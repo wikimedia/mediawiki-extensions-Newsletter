@@ -410,7 +410,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockResWrapper->expects( $this->once() )
 			->method( 'current' )
 			->will( $this->returnValue(
-				(Object)[
+				(object)[
 					'nl_id' => $newsletter->getId(),
 					'nl_name' => $newsletter->getName(),
 					'nl_desc' => $newsletter->getDescription(),
@@ -450,7 +450,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 1 ]
 			)
 			->will( $this->returnValue(
-				(Object)[
+				(object)[
 					'nl_id' => $newsletter->getId(),
 					'nl_name' => $newsletter->getName(),
 					'nl_desc' => $newsletter->getDescription(),
