@@ -10,6 +10,7 @@ class NewsletterLogFormatter extends LogFormatter {
 
 	/**
 	 * Reformat the target as a user link if the target was a user
+	 * @suppress SecurityCheck-DoubleEscaped See T201565 for more information
 	 * @return array
 	 */
 	public function getMessageParameters() {
