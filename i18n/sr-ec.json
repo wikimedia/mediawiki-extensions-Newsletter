@@ -4,11 +4,13 @@
 			"Сербијана",
 			"Obsuser",
 			"Acamicamacaraca",
-			"Milicevic01"
+			"Milicevic01",
+			"BadDog"
 		]
 	},
 	"newsletters": "Билтени",
 	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
-	"echo-category-title-newsletter": "Билтени"
+	"echo-category-title-newsletter": "Билтени",
+	"log-action-filter-newsletter": "Тип радње:"
 }
