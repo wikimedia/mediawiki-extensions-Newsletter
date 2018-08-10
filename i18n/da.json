@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Joedalton",
-			"SimmeD"
+			"SimmeD",
+			"Saederup92"
 		]
 	},
 	"newsletter-extension-desc": "Gør det muligt for brugere at offentliggøre og abonnere på nyhedsbreve",
@@ -34,7 +35,7 @@
 	"newsletter-subscribe-loginrequired": "Log ind for at abonnere på [[Special:Newsletters|nyhedsbreve]].",
 	"newsletter-notfound": "Nyhedsbrev blev ikke fundet",
 	"newsletter-not-found-id": "Et nyhedsbrev med dette ID findes ikke. En [[Special:Newsletters|liste over eksisterende nyhedsbreve]] er tilgængelig.",
-	"newsletter-view-mainpage": "Hovedside:",
+	"newsletter-view-mainpage": "Hovedside for nyhedsbrev:",
 	"newsletter-view-description": "Beskrivelse:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Udgiver:|Udgivere:}}:",
 	"newsletter-view-subscriber-count": "Antal abonnenter:",
@@ -51,5 +52,10 @@
 	"newsletter-announce-summary": "Sammendrag af denne udgave",
 	"newsletter-announce-success": "En ny udgave af \"$1\" er blevet annonceret til $2 {{PLURAL:$2|abonnent|abonnenter}}.",
 	"newsletter-announce-invalid-page": "Indtast ind en gyldig titel for udgavens side.",
-	"newsletter-manage-newsletter-success": "Nyhedsbrevet er blevet ændret."
+	"newsletter-manage-description": "Beskrivelse:",
+	"newsletter-manage-newsletter-success": "Nyhedsbrevet er blevet ændret.",
+	"newsletter-subscribe-button-label": "Ja",
+	"newsletter-unsubscribe-button-label": "Nej",
+	"newsletter-header-name": "Navn",
+	"newsletter-header-description": "Beskrivelse"
 }
