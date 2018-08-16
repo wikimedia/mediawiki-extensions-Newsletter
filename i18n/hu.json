@@ -1,0 +1,39 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tacsipacsi"
+		]
+	},
+	"newsletter-extension-desc": "Lehetővé teszi a felhasználóknak hírlevelek készítését és az azokra való feliratkozást",
+	"newsletter-name": "Hírlevél neve",
+	"newsletter-desc": "Leírás",
+	"newsletter-title": "Wikilap információkkal a hírlevélről",
+	"newsletter-exist-error": "Már létezik „$1” nevű hírlevél. Próbáld újra más névvel.",
+	"newsletter-create-error": "Hiba történt az új hírlevél készítése közben. Próbáld újra.",
+	"newsletter-oldrev-undo-error-title": "Sajnáljuk, ez a művelet nem engedélyezett.",
+	"newslettercreate": "Hírlevél készítése",
+	"newsletter-create-submit": "Hírlevél létrehozása",
+	"newsletter-create-editsummary": "Új hírlevél létrehozása",
+	"newsletter-subtitlelinks-list": "Hírlevelek listája",
+	"newsletter-subtitlelinks-create": "Új hírlevél készítése",
+	"newsletter-subtitlelinks-unsubscribe": "leiratkozás",
+	"newsletter-subtitlelinks-subscribe": "feliratkozás",
+	"newsletter-subtitlelinks-manage": "kezelés",
+	"newsletter-subtitlelinks-subscribers": "feliratkozók szerkesztése",
+	"newsletters": "Hírlevelek",
+	"newsletter-subscribe-loginrequired": "Kérjük, jelentkezz be a [[Special:Newsletters|hírlevelekre]] való feliratkozáshoz.",
+	"newsletter-notfound": "A hírlevél nem létezik",
+	"newsletter-view-description": "Leírás:",
+	"newsletter-view-publishers": "{{PLURAL:$1|Közzétevő|Közzétevők}}:",
+	"newsletter-view-subscriber-count": "Feliratkozók száma:",
+	"newsletter-view-no-publishers": "Nincsenek közzétevők.",
+	"newsletter-manage-button": "Kezelés",
+	"newsletter-unsubscribe-button": "Leiratkozás",
+	"newsletter-subscribe-button": "Feliratkozás",
+	"newsletter-subscribers-button": "Feliratkozók szerkesztése",
+	"newsletter-manage": "„$1” hírlevél kezelése",
+	"newsletter-manage-publishers": "Közzétevők:",
+	"newsletter-manage-name": "Hírlevél neve:",
+	"newsletter-manage-description": "Leírás:",
+	"newsletter-managenewsletter-button": "Elküld"
+}
