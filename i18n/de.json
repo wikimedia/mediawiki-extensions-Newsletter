@@ -4,7 +4,8 @@
 			"Metalhead64",
 			"Macofe",
 			"Osnard",
-			"Kghbln"
+			"Kghbln",
+			"Tacsipacsi"
 		]
 	},
 	"newsletter-extension-desc": "Ermöglicht es Benutzern, Newsletter zu veröffentlichen und zu abonnieren",
@@ -137,7 +138,7 @@
 	"apihelp-newslettermanage-example-1": "Fügt einen Herausgeber mit der Benutzerkennung 3 zu dem Newsletter mit der Kennung 1 hinzu.",
 	"apihelp-newslettermanage-example-2": "Entfernt den Herausgeber mit der Benutzerkennung 5 von dem Newsletter mit der Kennung 2.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|hat}} eine neue Ausgabe von $3 veröffentlicht.",
-	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Du}} wurdest als {{GENDER:$3|Herausgeber|Herausgeberin}} des Newsletters „$1“ hinzugefügt.",
+	"notification-header-newsletter-newpublisher": "Du wurdest als {{GENDER:$2|Herausgeber|Herausgeberin}} des Newsletters „$1“ {{GENDER:$3|hinzugefügt}}.",
 	"notification-header-newsletter-delpublisher": "Du wurdest als {{GENDER:$2|Herausgeber|Herausgeberin}} des Newsletters „$1“ {{GENDER:$3|entfernt}}.",
 	"newsletter-list-intro": "Dies ist eine Liste von Newslettern, die auf diesem Wiki registriert sind. Abonniere einen Newsletter, um eine Benachrichtigung zu erhalten, wenn eine neue Ausgabe angekündigt wird. Du erhältst Benachrichtigungen über das Wiki oder per E-Mail, abhängig von deinen [[Special:Preferences#mw-prefsection-echo|Einstellungen]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Melde dich an]], um einen Newsletter zu abonnieren und Benachrichtigungen zu erhalten, wenn neue Ausgaben angekündigt werden.",
