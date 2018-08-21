@@ -87,9 +87,8 @@ class NewsletterContentHandler extends JsonContentHandler {
 		try {
 			$api = new ApiMain( $der, true );
 			$api->execute();
-		} catch ( UsageException $e ) {
-			return Status::newFatal( $context->msg( 'newsletter-ch-apierror',
-				$e->getCodeString() ) );
+		} catch ( ApiUsageException $e ) {
+			return Status::wrap( $e->getStatusValue() );
 		}
 		return Status::newGood();
 	}
