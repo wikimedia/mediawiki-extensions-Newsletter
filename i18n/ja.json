@@ -7,7 +7,8 @@
 			"Ridmevo",
 			"Thibaut120094",
 			"ネイ",
-			"Yusuke1109"
+			"Yusuke1109",
+			"Suyama"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -39,6 +40,7 @@
 	"newsletter-announce-button": "アナウンス",
 	"newsletter-announce-submit": "アナウンス",
 	"newsletter-announce-summary": "この議題の要約",
+	"newsletter-managenewsletter-button": "送信",
 	"newsletter-manage-remove-self-publisher": "ニュースレターの購読を解除しますか?",
 	"newsletter-delete": "ニュースレターを削除",
 	"newsletter-subscribe": "ニュースレター加入の管理",
@@ -58,6 +60,8 @@
 	"newsletter-unsubscribe-button-label": "いいえ",
 	"newsletter-subscribing": "参加中...",
 	"newsletter-unsubscribing": "退会中...",
+	"newsletter-available-newsletters-field-label": "利用可能なニュースレター",
+	"newsletter-subscribed-newsletters-field-label": "購読中のニュースレター",
 	"newsletter-none-found": "ニュースレターが存在しません。[[Special:CreateNewsletter]] で新しいニュースレターを作成することができます。",
 	"echo-category-title-newsletter": "ニュースレター",
 	"newsletter-notification-title": "[[User:$3|$3]] がニュースレター「$1」の[[$2|新しい議題]]を{{GENDER:$4|アナウンスしました}}。",
@@ -76,6 +80,9 @@
 	"apihelp-newslettersubscribe-example-1": "id 1 でニュースレターを購読する。",
 	"apihelp-newslettersubscribe-example-2": "id 2 でニュースレターから退会する。",
 	"apihelp-newslettermanage-description": "ニュースレターを管理。",
+	"apihelp-newslettermanage-summary": "ニュースレターを管理する。",
 	"newsletter-list-table": "絞り込み条件:",
-	"newsletter-list-option-all": "すべてのニュースレター"
+	"newsletter-list-option-all": "すべてのニュースレター",
+	"newsletter-notification-link-text-new-publisher": "ニュースレターを管理",
+	"newsletter-notification-link-text-del-publisher": "ニュースレターを表示"
 }
