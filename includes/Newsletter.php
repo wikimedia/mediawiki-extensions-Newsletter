@@ -257,7 +257,7 @@ class Newsletter {
 	 * Notify new/removed publishers
 	 *
 	 * @param array $affectedUsers
-	 * @param User $agent the user initiating the the request
+	 * @param User $agent the user initiating the request
 	 * @param string $event select between added/removed
 	 */
 	public function notifyPublishers( array $affectedUsers, User $agent, $event ) {
