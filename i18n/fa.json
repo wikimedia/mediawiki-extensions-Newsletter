@@ -90,6 +90,8 @@
 	"action-newsletter-manage": "مدیریت خبرنامه‌ها",
 	"right-newsletter-restore": "احیای یک خبرنامه",
 	"action-newsletter-restore": "احیای یک خبرنامه",
+	"apihelp-newslettersubscribe-description": "اشتراک یا لغو اشتراک به یک خبرنامه.",
+	"apihelp-newslettersubscribe-summary": "اشتراک یا لغو اشتراک به یک خبرنامه.",
 	"apihelp-newslettersubscribe-example-1": "اشتراک به خبرنامه با شناسه ۱.",
 	"apihelp-newslettersubscribe-example-2": "لغو اشتراک به خبرنامه با شناسه ۲",
 	"apihelp-newslettermanage-description": "مدیریت یک خبرنامه",
