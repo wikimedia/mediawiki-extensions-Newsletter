@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ninjastrikers"
+			"Ninjastrikers",
+			"Dr Lotus Black"
 		]
 	},
-	"newsletter-manage-header-permissions": "အသုံးပြုသူ အခွင့်အရေးများ",
-	"newsletter-delete-confirm-cancel": "မလုပ်တော့ပါ",
-	"newsletter-delete-confirm-delete": "ဖျက်ရန်"
+	"newsletter-subscribe-button-label": "လုပ်မည်",
+	"newsletter-unsubscribe-button-label": "မလုပ်ပါ"
 }
