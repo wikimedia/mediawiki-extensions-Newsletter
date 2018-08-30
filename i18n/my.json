@@ -5,6 +5,10 @@
 			"Dr Lotus Black"
 		]
 	},
+	"newsletter-desc": "ဖော်ပြချက်",
+	"newsletter-view-description": "ဖော်ပြချက်:",
+	"newsletter-manage-description": "ဖော်ပြချက်:",
 	"newsletter-subscribe-button-label": "လုပ်မည်",
-	"newsletter-unsubscribe-button-label": "မလုပ်ပါ"
+	"newsletter-unsubscribe-button-label": "မလုပ်ပါ",
+	"newsletter-header-description": "ဖော်ပြချက်"
 }
