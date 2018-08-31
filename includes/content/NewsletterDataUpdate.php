@@ -25,6 +25,11 @@ class NewsletterDataUpdate extends DataUpdate {
 		$this->title = $title;
 	}
 
+	/**
+	 * @suppress SecurityCheck-SQLInjection For IDatabase::makeList, see T201987
+	 * @param string $newNewsletterName
+	 * @return int
+	 */
 	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
 		$dbr = wfGetDB( DB_REPLICA );
 
