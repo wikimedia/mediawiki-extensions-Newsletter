@@ -49,7 +49,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 		$dbw->delete(
 			'nl_newsletters',
-			'nl_id = ' .$dbw->makeList( $idsToDelete, LIST_OR ),
+			'nl_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
 			__METHOD__
 		);
 		$count = $dbw->affectedRows();
@@ -57,7 +57,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 		$dbw->delete(
 			'nl_issues',
-			'nli_newsletter_id = ' .$dbw->makeList( $idsToDelete, LIST_OR ),
+			'nli_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
 			__METHOD__
 		);
 		$count = $dbw->affectedRows();
@@ -65,7 +65,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 		$dbw->delete(
 			'nl_publishers',
-			'nlp_newsletter_id = ' .$dbw->makeList( $idsToDelete, LIST_OR ),
+			'nlp_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
 			__METHOD__
 		);
 		$count = $dbw->affectedRows();
@@ -73,7 +73,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 		$dbw->delete(
 			'nl_subscriptions',
-			'nls_newsletter_id = ' .$dbw->makeList( $idsToDelete, LIST_OR ),
+			'nls_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
 			__METHOD__
 		);
 		$count = $dbw->affectedRows();

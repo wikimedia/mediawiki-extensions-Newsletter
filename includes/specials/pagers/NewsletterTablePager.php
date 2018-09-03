@@ -100,7 +100,7 @@ class NewsletterTablePager extends TablePager {
 	private function getSecondaryOrderBy( $desc, $offset, $secondaryOffset ) {
 		$operator = $this->getOp( $desc );
 		return $this->mDb->makeList( [
-			'nl_subscriber_count ' . $operator  . $this->mDb->addQuotes( $offset ),
+			'nl_subscriber_count ' . $operator . $this->mDb->addQuotes( $offset ),
 			$this->mDb->makeList( [
 				'nl_subscriber_count' => $offset,
 				'nl_name' . ( $desc ? '>' : '<' ) . $this->mDb->addQuotes( $secondaryOffset )

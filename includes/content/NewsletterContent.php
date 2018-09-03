@@ -289,7 +289,7 @@ class NewsletterContent extends JsonContent {
 				[
 					'label' => wfMessage( 'newsletter-subscribe-button' )->text(),
 					'flags' => [ 'progressive' ],
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' .
 						self::NEWSLETTER_SUBSCRIBE )->getFullURL()
 
 				]
@@ -299,7 +299,7 @@ class NewsletterContent extends JsonContent {
 				[
 					'label' => wfMessage( 'newsletter-unsubscribe-button' )->text(),
 					'flags' => [ 'destructive' ],
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' .
 						self::NEWSLETTER_UNSUBSCRIBE )->getFullURL()
 
 				]
@@ -318,7 +318,7 @@ class NewsletterContent extends JsonContent {
 				[
 					'label' => wfMessage( 'newsletter-subscribers-button' )->text(),
 					'icon' => 'info',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' .
 						self::NEWSLETTER_SUBSCRIBERS )->getFullURL()
 
 				]
@@ -329,7 +329,7 @@ class NewsletterContent extends JsonContent {
 				[
 					'label' => wfMessage( 'newsletter-announce-button' )->text(),
 					'icon' => 'speechBubble',
-					'href' => SpecialPage::getTitleFor( 'Newsletter', $id. '/' .
+					'href' => SpecialPage::getTitleFor( 'Newsletter', $id . '/' .
 						self::NEWSLETTER_ANNOUNCE )->getFullURL()
 				]
 			);
