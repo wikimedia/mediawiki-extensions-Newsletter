@@ -57,5 +57,6 @@
 	"newsletter-subscribe-button-label": "Ja",
 	"newsletter-unsubscribe-button-label": "Nej",
 	"newsletter-header-name": "Navn",
-	"newsletter-header-description": "Beskrivelse"
+	"newsletter-header-description": "Beskrivelse",
+	"newsletter-list-option-all": "Alle nyhedsbreve"
 }
