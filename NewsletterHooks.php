@@ -272,7 +272,6 @@ class NewsletterHooks {
 			'newsletter-restore-failure-title',
 			wfMessage( 'newsletter-restore-failure', $newsletterName )
 		);
-		return true;
 	}
 
 	/**
