@@ -5,12 +5,14 @@
 			"Obsuser",
 			"Acamicamacaraca",
 			"Milicevic01",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"newsletters": "Билтени",
 	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
 	"echo-category-title-newsletter": "Билтени",
+	"log-name-newsletter": "Дневник билтена",
 	"log-action-filter-newsletter": "Тип радње:"
 }

@@ -18,7 +18,7 @@
 	"newsletter-exist-error": "具有相同名稱「$1」的電子報已存在，請使用其它名稱。",
 	"newsletter-create-error": "在嘗試建立新的電子報時發生錯誤。請重試。",
 	"newsletter-oldrev-undo-error-title": "很抱歉，不允許此操作。",
-	"newsletter-oldrev-undo-error-body": "Newsletter 擴充功能不支援撤銷上一筆修訂。請改成撤銷最新修訂。",
+	"newsletter-oldrev-undo-error-body": "Newsletter 擴充功能不支援復原上一筆修訂。請改成復原最新修訂。",
 	"newsletter-input-required": "未輸入所需內容。請重試。",
 	"newsletter-invalid-name": "您所輸入的電子報名稱無效。請重試。",
 	"newslettercreate": "建立電子報",
