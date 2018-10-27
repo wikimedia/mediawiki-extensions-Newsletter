@@ -32,6 +32,7 @@ class NewsletterHooks {
 			'user-locators' => [
 				'EchoNewsletterUserLocator::locateNewsletterSubscribedUsers',
 			],
+			'canNotifyAgent' => true,
 			'presentation-model' => 'EchoNewsletterPresentationModel',
 			'title-message' => 'newsletter-notification-title',
 			'title-params' => [ 'newsletter-name', 'title', 'agent', 'user' ],

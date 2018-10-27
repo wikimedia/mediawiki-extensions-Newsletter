@@ -389,7 +389,6 @@ class SpecialNewsletter extends SpecialPage {
 					'newsletter-name' => $this->newsletter->getName(),
 					'newsletter-id' => $this->newsletter->getId(),
 					'section-text' => $summary,
-					'notifyAgent' => true,
 				],
 				'agent' => $user,
 			]
