@@ -19,7 +19,7 @@ class NewsletterDataUpdate extends DataUpdate {
 	 *
 	 * @todo User might be wrong if triggered from template edits etc.
 	 */
-	function __construct( NewsletterContent $content, Title $title, User $user ) {
+	public function __construct( NewsletterContent $content, Title $title, User $user ) {
 		$this->content = $content;
 		$this->user = $user;
 		$this->title = $title;
@@ -79,7 +79,7 @@ class NewsletterDataUpdate extends DataUpdate {
 		return $newsletter;
 	}
 
-	function doUpdate() {
+	public function doUpdate() {
 		$logger = LoggerFactory::getInstance( 'newsletter' );
 		$store = NewsletterStore::getDefaultInstance();
 		// We might have a situation when the newsletter is not created yet. Hence, we should add
