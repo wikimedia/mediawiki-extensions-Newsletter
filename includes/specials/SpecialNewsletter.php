@@ -296,6 +296,7 @@ class SpecialNewsletter extends SpecialPage {
 				'name' => 'issuepage',
 				'creatable' => true,
 				'required' => true,
+				'autofocus' => true,
 				'label-message' => 'newsletter-announce-issuetitle',
 				'default' => '',
 			],
@@ -305,7 +306,7 @@ class SpecialNewsletter extends SpecialPage {
 				'name' => 'summary',
 				'label-message' => 'newsletter-announce-summary',
 				'maxlength' => '160',
-				'autofocus' => true,
+				'required' => true,
 			],
 		];
 
