@@ -279,10 +279,18 @@ class NewsletterHooks {
 	 * @param Title $title
 	 * @param Title $newtitle
 	 * @param User $user
+	 * @param string $reason
+	 * @param Status $status
 	 * @return bool
 	 * @throws MWException
 	 */
-	public static function onTitleMove( Title $title, Title $newtitle, User $user ) {
+	public static function onTitleMove(
+		Title $title,
+		Title $newtitle,
+		User $user,
+		$reason,
+		Status $status
+	) {
 		if ( $newtitle->inNamespace( NS_NEWSLETTER ) ) {
 			$newsletter = Newsletter::newFromName( $title->getText() );
 			if ( $newsletter ) {
