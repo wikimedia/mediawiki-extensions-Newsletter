@@ -8,7 +8,8 @@
 			"Thibaut120094",
 			"ネイ",
 			"Yusuke1109",
-			"Suyama"
+			"Suyama",
+			"Shirayuki"
 		]
 	},
 	"newsletter-extension-desc": "ユーザーにニュースレターの署名または公開ができます",
@@ -84,5 +85,8 @@
 	"newsletter-list-table": "絞り込み条件:",
 	"newsletter-list-option-all": "すべてのニュースレター",
 	"newsletter-notification-link-text-new-publisher": "ニュースレターを管理",
-	"newsletter-notification-link-text-del-publisher": "ニュースレターを表示"
+	"newsletter-notification-link-text-del-publisher": "ニュースレターを表示",
+	"log-action-filter-newsletter": "操作の種類:",
+	"log-action-filter-newsletter-newsletter-added": "ニュースレターの作成",
+	"log-action-filter-newsletter-newsletter-removed": "ニュースレターの削除"
 }
