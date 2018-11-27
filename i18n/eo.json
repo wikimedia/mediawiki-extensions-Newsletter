@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Robin van der Vliet",
-			"Rafaneta"
+			"Rafaneta",
+			"Surfo"
 		]
 	},
+	"newsletter-create-error": "Okazis eraro en kreo de nova bulteno. Bonvolu reprovi.",
 	"newsletter-subtitlelinks-unsubscribe": "malaboni",
 	"newsletter-subtitlelinks-subscribers": "rigardi abonantojn",
 	"newsletter-subscribers-button": "Rigardi abonantojn",
