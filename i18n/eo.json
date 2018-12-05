@@ -3,10 +3,11 @@
 		"authors": [
 			"Robin van der Vliet",
 			"Rafaneta",
-			"Surfo"
+			"Surfo",
+			"YvesNevelsteen"
 		]
 	},
-	"newsletter-create-error": "Okazis eraro en kreo de nova bulteno. Bonvolu reprovi.",
+	"newsletter-create-error": "Okazis eraro provante krei novan bultenon. Bonvolu reprovi.",
 	"newsletter-subtitlelinks-unsubscribe": "malaboni",
 	"newsletter-subtitlelinks-subscribers": "rigardi abonantojn",
 	"newsletter-subscribers-button": "Rigardi abonantojn",
