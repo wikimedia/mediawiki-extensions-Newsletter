@@ -79,6 +79,7 @@
 	border: solid #aaa;
 	border-width: 0 0 1px 0;
 }
+
 .mw-special-Newsletters .mw-datatable td:nth-child( 3 ),
 .mw-special-Newsletters .mw-datatable td:nth-child( 4 ) {
 	text-align: center;

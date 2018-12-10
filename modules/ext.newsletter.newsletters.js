@@ -1,7 +1,7 @@
 /*!
  * Used on Special:Newsletters.
  */
-( function ( mw, $ ) {
+( function () {
 	'use strict';
 
 	/**
@@ -17,7 +17,8 @@
 	 * Event handler for clicks on 'action' field link. Allows subscribing and unsubscribing
 	 * with a single click. The user is notified once the API request is done.
 	 *
-	 * @param {string} doAction The action to execute (see newslettersubscribe api for possible options)
+	 * @param {string} doAction The action to execute (see newslettersubscribe api
+	 *  for possible options)
 	 * @param {int} nlId The newsletter id
 	 * @return {jQuery.Promise} See #post
 	 */
@@ -65,7 +66,8 @@
 
 			// Avoid double clicks while in progress .newsletter-link-disabled also helps with this
 			if ( $link.data( 'nlDisabled' ) ) {
-				// For older browsers which doesn't support pointer-events from .newsletter-link-disabled
+				// For older browsers which doesn't support
+				// pointer-events from .newsletter-link-disabled
 				return false;
 			}
 
@@ -117,4 +119,4 @@
 			event.preventDefault();
 		} );
 	} );
-}( mediaWiki, jQuery ) );
+}() );
