@@ -9,7 +9,7 @@
 	 * the button. The button is hidden for users on ext.newsletter.newsletters.styles
 	 * which is loaded on load time (instead of runtime unlike this module) to prevent FOUCs.
 	 */
-	OO.ui.infuse( 'mw-newsletter-filter-options' ).on( 'change', function () {
+	OO.ui.infuse( $( '#mw-newsletter-filter-options' ) ).on( 'change', function () {
 		$( '#mw-newsletter-filter-form' ).submit();
 	} );
 
