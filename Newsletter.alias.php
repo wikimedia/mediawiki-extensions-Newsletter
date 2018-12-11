@@ -10,7 +10,7 @@ $specialPageAliases = [];
 
 /** English */
 $specialPageAliases['en'] = [
-	'NewsletterCreate' => [ 'CreateNewsletter' ],
+	'NewsletterCreate' => [ 'RegisterNewsletter', 'CreateNewsletter' ],
 	'Newsletters' => [ 'Newsletters' ],
 	'Newsletter' => [ 'Newsletter' ]
 ];
