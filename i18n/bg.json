@@ -4,5 +4,7 @@
 			"StanProg"
 		]
 	},
-	"newsletter-manage-publishers": "Издатели:"
+	"newsletter-manage-publishers": "Издатели:",
+	"newsletter-subscribe-button-label": "Да",
+	"newsletter-unsubscribe-button-label": "Не"
 }
