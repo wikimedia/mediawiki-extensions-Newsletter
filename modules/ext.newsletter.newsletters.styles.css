@@ -7,7 +7,7 @@
  * submits the form for them. The associated JS code is located at ext.newsletter.newsletters
  * module. This is done here instead of that module to prevent FOUCs.
  */
-/* stylelint-disable-next-line selector-no-id */
+/* stylelint-disable-next-line selector-max-id */
 .client-js #mw-newsletter-filter-submit {
 	display: none;
 }
@@ -15,7 +15,7 @@
 /**
  * The default dropdown is rather wide so we'll make it a bit small to make it look nicer.
  */
-/* stylelint-disable-next-line selector-no-id */
+/* stylelint-disable-next-line selector-max-id */
 #mw-newsletter-filter-options {
 	width: 40%;
 }
