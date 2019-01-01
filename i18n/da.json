@@ -3,7 +3,8 @@
 		"authors": [
 			"Joedalton",
 			"SimmeD",
-			"Saederup92"
+			"Saederup92",
+			"Kranix"
 		]
 	},
 	"newsletter-extension-desc": "Gør det muligt for brugere at offentliggøre og abonnere på nyhedsbreve",
@@ -56,14 +57,20 @@
 	"newsletter-manage-description": "Beskrivelse:",
 	"newsletter-manage-newsletter-success": "Nyhedsbrevet er blevet ændret.",
 	"newsletter-delete": "Slet nyhedsbrev",
+	"newsletter-do-subscribe": "Abonnér på dette nyhedsbrev",
+	"newsletter-subscribe-success": "Du har abonneret på \"$1\".",
 	"newsletter-subscribe-button-label": "Ja",
 	"newsletter-unsubscribe-button-label": "Nej",
 	"newsletter-subscribing": "Abonnerer...",
 	"newsletter-unsubscribing": "Ophæver abonnement...",
+	"newsletter-available-newsletters-field-label": "Tilgængelige nyhedsbreve",
 	"echo-category-title-newsletter": "Nyhedsbreve",
+	"newsletter-notification-link-text-view-newsletter": "Vis nyhedsbrev",
 	"newsletter-header-name": "Navn",
 	"newsletter-header-description": "Beskrivelse",
 	"newsletter-header-subscriber_count": "Abonnenter",
+	"right-newsletter-create": "Opret nyhedsbreve",
+	"action-newsletter-create": "opret nyhedsbreve",
 	"right-newsletter-delete": "Slet nyhedsbreve",
 	"action-newsletter-delete": "slet nyhedsbreve",
 	"newsletter-list-option-all": "Alle nyhedsbreve"
