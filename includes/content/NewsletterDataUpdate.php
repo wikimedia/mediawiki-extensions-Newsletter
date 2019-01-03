@@ -8,9 +8,12 @@ use MediaWiki\Logger\LoggerFactory;
  */
 class NewsletterDataUpdate extends DataUpdate {
 
-	private $content; /** NewsletterContent */
-	private $user; /** @var User Triggering user */
-	private $title; /** @var Title */
+	/** @var NewsletterContent */
+	private $content;
+	/** @var User Triggering user */
+	private $user;
+	/** @var Title */
+	private $title;
 
 	/**
 	 * @param NewsletterContent $content

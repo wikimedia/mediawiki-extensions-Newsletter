@@ -20,7 +20,7 @@ class NewsletterStore {
 	private $logger;
 
 	/**
-	 * @var static
+	 * @var self
 	 */
 	private static $instance;
 
@@ -34,7 +34,7 @@ class NewsletterStore {
 	}
 
 	/**
-	 * @return NewsletterStore instance of NewsletterStore
+	 * @return self
 	 */
 	public static function getDefaultInstance() {
 		if ( !self::$instance ) {
