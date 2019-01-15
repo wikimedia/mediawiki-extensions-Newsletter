@@ -7,13 +7,26 @@
 
 class NewsletterEditPage {
 
+	/** @var bool */
 	protected $createNew;
 
+	/** @var IContextSource */
 	protected $context;
 
+	/** @var bool */
 	protected $readOnly = false;
 
+	/** @var Newsletter|null */
 	protected $newsletter;
+
+	/** @var User */
+	private $user;
+
+	/** @var Title */
+	private $title;
+
+	/** @var OutputPage */
+	private $out;
 
 	public function __construct( IContextSource $context, Newsletter $newsletter = null ) {
 		$this->context = $context;

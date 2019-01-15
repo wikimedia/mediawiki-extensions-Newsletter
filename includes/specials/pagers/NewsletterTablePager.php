@@ -24,8 +24,10 @@ class NewsletterTablePager extends TablePager {
 	 */
 	private $option;
 
+	/** @var string */
 	protected $mode;
 
+	/** @var Newsletter[] */
 	private $newslettersArray;
 
 	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {

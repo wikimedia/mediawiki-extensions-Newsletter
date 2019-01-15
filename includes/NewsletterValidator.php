@@ -5,12 +5,17 @@
  */
 class NewsletterValidator {
 
+	/** @var array */
+	private $data;
+
+	/** @var string[] */
 	private static $requiredDataOnCreate = [
 		'Name',
 		'Description',
 		'MainPage',
 	];
 
+	/** @var string[] */
 	private static $requiredDataOnEdit = [
 		'Description',
 		'MainPage',
