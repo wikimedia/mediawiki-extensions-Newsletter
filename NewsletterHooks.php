@@ -336,12 +336,12 @@ class NewsletterHooks {
 		$minoredit
 	) {
 		if ( !$context->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
-			return;
+			return true;
 		}
 		if ( !$context->getTitle()->hasContentModel( 'NewsletterContent' ) ||
 			( !$content instanceof NewsletterContent )
 		) {
-			return;
+			return true;
 		}
 		if ( $user->pingLimiter( 'newsletter' ) ) {
 			// Default user access level for creating a newsletter is quite low
