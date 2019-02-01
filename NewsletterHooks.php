@@ -10,7 +10,6 @@ class NewsletterHooks {
 	 *
 	 * @param array[] &$notifications Echo notifications
 	 * @param array[] &$notificationCategories Echo notification categories
-	 * @return bool
 	 */
 	public static function onBeforeCreateEchoEvent( &$notifications, &$notificationCategories ) {
 		$notificationCategories['newsletter'] = [
@@ -101,8 +100,6 @@ class NewsletterHooks {
 			'title-message' => 'newsletter-notification-unsubscribed',
 			'title-params' => [ 'newsletter-name' ],
 		];
-
-		return true;
 	}
 
 	/**
@@ -118,7 +115,6 @@ class NewsletterHooks {
 	 * Add tables to Database
 	 *
 	 * @param DatabaseUpdater $updater
-	 * @return bool
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
 		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/sql/nl_newsletters.sql' );
@@ -137,21 +133,16 @@ class NewsletterHooks {
 			__DIR__ . '/sql/nl_newsletter-drop-nl-active_name.sql' );
 		$updater->addExtensionIndex( 'nl_newsletters', 'nl_active_subscriber_name',
 			__DIR__ . '/sql/nl_newsletter-add-nl_active_subscriber_name.sql' );
-
-		return true;
 	}
 
 	/**
 	 * Tables that Extension:UserMerge needs to update
 	 *
 	 * @param array &$updateFields
-	 * @return bool
 	 */
 	public static function onUserMergeAccountFields( array &$updateFields ) {
 		$updateFields[] = [ 'nl_publishers', 'nlp_publisher_id' ];
 		$updateFields[] = [ 'nl_subscriptions', 'nls_subscriber_id' ];
-
-		return true;
 	}
 
 	/**
@@ -242,11 +233,12 @@ class NewsletterHooks {
 	/**
 	 * @param PageArchive &$archive
 	 * @param Title $title
-	 * @return bool
+	 * @throws ErrorPageError
+	 * @throws PermissionsError
 	 */
 	public static function onUndeleteForm( PageArchive &$archive, Title $title ) {
 		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
-			return true;
+			return;
 		}
 		$user = RequestContext::getMain()->getUser();
 		$newsletterName = $title->getText();
@@ -265,7 +257,7 @@ class NewsletterHooks {
 			}
 			$success = $store->restoreNewsletter( $newsletterName );
 			if ( $success ) {
-				return true;
+				return;
 			}
 		}
 		// Throw error message
@@ -281,7 +273,6 @@ class NewsletterHooks {
 	 * @param User $user
 	 * @param string $reason
 	 * @param Status $status
-	 * @return bool
 	 * @throws MWException
 	 */
 	public static function onTitleMove(
@@ -299,14 +290,12 @@ class NewsletterHooks {
 				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
 			}
 		}
-		return true;
 	}
 
 	/**
 	 * @param string $contentModel ID of the content model in question
 	 * @param Title $title the Title in question.
 	 * @param bool &$ok Output parameter, whether it is OK to use $contentModel on $title.
-	 * @return bool
 	 */
 	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ) {
 		if ( $title->inNamespace( NS_NEWSLETTER ) && $contentModel != 'NewsletterContent' ) {
@@ -314,11 +303,10 @@ class NewsletterHooks {
 		} elseif ( !$title->inNamespace( NS_NEWSLETTER ) && $contentModel == 'NewsletterContent' ) {
 			$ok = false;
 		}
-		return true;
 	}
 
 	/**
-	 * @param RequestContext $context object implementing the IContextSource interface.
+	 * @param IContextSource $context object implementing the IContextSource interface.
 	 * @param Content $content content of the edit box, as a Content object.
 	 * @param Status $status Status object to represent errors, etc.
 	 * @param string $summary Edit summary for page
