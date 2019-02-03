@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Bjankuloski06",
-			"Macofe"
+			"Macofe",
+			"Vlad5250"
 		]
 	},
 	"newsletter-extension-desc": "Овозможува корисниците да објавуваат и да се претплаќаат на билтени",
@@ -54,7 +55,7 @@
 	"newsletter-announce-summary": "Краток преглед на бројот",
 	"newsletter-announce-success": "Објавен е нов број на „$1“ на $2 {{PLURAL:$2|претплатник|претплатници}}.",
 	"newsletter-announce-invalid-page": "Внесете важечки наслов за страницата на бројот.",
-	"newsletter-announce-nonexistent-page": "Укажаната сраница на бројот не постои. Внесете постоечка страница.",
+	"newsletter-announce-nonexistent-page": "Укажаната страница на бројот не постои. Внесете постоечка страница.",
 	"newsletter-announce-failure": "Не можев да до објавам новиот број. Обидете се повторно.",
 	"newsletter-manage": "Раководење со билтенот „$1“",
 	"newsletter-manage-publishers": "Издавачи:",
