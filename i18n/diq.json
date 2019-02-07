@@ -5,8 +5,12 @@
 			"Gırd"
 		]
 	},
+	"newsletter-desc": "Şınasnayış",
+	"newsletter-view-description": "Şınasnayış:",
+	"newsletter-manage-description": "Şınasnayış:",
 	"newsletter-subscribe-button-label": "Eya",
 	"newsletter-unsubscribe-button-label": "Nê",
 	"newsletter-header-name": "Name",
+	"newsletter-header-description": "Şınasnayış",
 	"log-action-filter-newsletter": "Tipê fealiyeti:"
 }
