@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Jon Harald Søby",
-			"Macofe"
+			"Macofe",
+			"Kingu"
 		]
 	},
 	"newsletter-extension-desc": "Lar brukere publisere og abonnere på nyhetsbrev",
@@ -15,18 +16,18 @@
 	"newsletter-oldrev-undo-error-body": "Fjerning av en tidligere revisjon støttes ikke av utgivelsen for nyhetsbrev. Fjern den siste revisjonen i stedet.",
 	"newsletter-input-required": "Påkrevd innputt ble ikke skrevet inn. Prøv igjen.",
 	"newsletter-invalid-name": "Navnet du ga nyhetsbrevet er ugyldig. Prøv igjen.",
-	"newslettercreate": "Opprett nyhetsbrev",
+	"newslettercreate": "Registrer nyhetsbrev",
 	"newslettercreate-text": "Denne siden lar deg opprette et nytt nyhetsbrev. Du vil bli lagt til som utgiver og abonnent til nyhetsbrevet når det opprettes. Alle felt er påkrevd.",
-	"newsletter-create-submit": "Opprett nyhetsbrev",
-	"newsletter-create-editsummary": "Opprett et nytt nyhetsbrev",
-	"newsletter-create-confirmation": "Nytt nyhetsbrev: [[Newsletter:$1|$1]] har blitt opprettet.",
+	"newsletter-create-submit": "Registrer nyhetsbrev",
+	"newsletter-create-editsummary": "Registrer et nytt nyhetsbrev",
+	"newsletter-create-confirmation": "Nytt nyhetsbrev: [[Newsletter:$1|$1]] har blitt registrert.",
 	"newsletter-create-mainpage-error": "Ugyldig hovedside for nyhetsbrev ble angitt. Prøv igjen.",
 	"newsletter-mainpage-non-existent": "Hovedsiden til nyhetsbrevet finnes ikke. Skriv inn en gyldig eksisterende side.",
 	"newsletter-mainpage-in-use": "Et eksisterende nyhetsbrev har samme hovedside. Skriv inn en annen tittel.",
 	"newsletter-mainpage-in-use-title": "Et eksisterende nyhetsbrev har same hovedside.",
 	"newsletter-create-short-description-error": "Beskrivelsen er for kort (mindre enn 30 tegn). Prøv igjen.",
 	"newsletter-subtitlelinks-list": "Liste over nyhetsbrev",
-	"newsletter-subtitlelinks-create": "Opprett et nytt nyhetsbrev",
+	"newsletter-subtitlelinks-create": "Registrer et nytt nyhetsbrev",
 	"newsletter-subtitlelinks-unsubscribe": "avslutt abonnement",
 	"newsletter-subtitlelinks-subscribe": "abonner",
 	"newsletter-subtitlelinks-announce": "kunngjør",
@@ -113,7 +114,7 @@
 	"newsletter-header-name": "Navn",
 	"newsletter-header-description": "Beskrivelse",
 	"newsletter-header-subscriber_count": "Abonnenter",
-	"right-newsletter-create": "Opprette nyhetsbrev",
+	"right-newsletter-create": "Registrer nyhetsbrev",
 	"action-newsletter-create": "opprette nyhetsbrev",
 	"right-newsletter-delete": "Slette nyhetsbrev",
 	"action-newsletter-delete": "slette nyhetsbrev",
