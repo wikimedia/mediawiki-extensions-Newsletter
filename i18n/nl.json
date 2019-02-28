@@ -7,7 +7,8 @@
 			"Hex",
 			"Mainframe98",
 			"Festina90",
-			"Mar(c)"
+			"Mar(c)",
+			"Elroy"
 		]
 	},
 	"newsletter-extension-desc": "Bied gebruikers de mogelijkheid om nieuwbrieven te publiceren en om zich te abboneren op nieuwsbrieven",
@@ -15,12 +16,12 @@
 	"newsletter-desc": "Beschrijving",
 	"newsletter-title": "Wiki pagina met informatie over de nieuwsbrief",
 	"newsletter-exist-error": "Een nieuwsbrief met de naam \"$1\" bestaat al. Probeer het opnieuw met een andere naam.",
-	"newsletter-create-error": "Er trad een fout op tijdens het aanmaken van een nieuwe nieuwsbrief. Probeer het opnieuw.",
+	"newsletter-create-error": "Kan de nieuwe nieuwsbrief door een fout niet inschrijven. Probeer het opnieuw.",
 	"newsletter-oldrev-undo-error-title": "Sorry, deze handeling is niet toegestaan",
 	"newsletter-oldrev-undo-error-body": "Het ongedaan maken van een vorige revisie wordt niet ondersteund door de Newsletter extensie. Gelieve in plaats daarvan de laatste revisie ongedaan te maken.",
 	"newsletter-input-required": "Vereiste invoer ontbreekt. Probeer het opnieuw.",
 	"newsletter-invalid-name": "De opgegeven nieuwsbriefnaam is ongeldig. Probeer het opnieuw.",
-	"newslettercreate": "Nieuwsbrief aanmaken",
+	"newslettercreate": "Nieuwsbrief inschrijven",
 	"newslettercreate-text": "Op deze pagina kunt u nieuwe nieuwsbrieven aanmaken. U wordt toegevoegd als uitgever en geabonneerd op de nieuwsbrief nadat deze is aangemaakt. Alle velden zijn verplicht.",
 	"newsletter-create-submit": "Nieuwsbrief aanmaken",
 	"newsletter-create-editsummary": "Nieuwe nieuwsbrief aangemaakt",
@@ -117,7 +118,7 @@
 	"newsletter-header-description": "Beschrijving",
 	"newsletter-header-subscriber_count": "Abonnees",
 	"right-newsletter-create": "Nieuwsbrieven aanmaken",
-	"action-newsletter-create": "nieuwsbrieven aanmaken",
+	"action-newsletter-create": "nieuwsbrieven inschrijven",
 	"right-newsletter-delete": "Nieuwsbrieven verwijderen",
 	"action-newsletter-delete": "nieuwsbrieven verwijderen",
 	"right-newsletter-manage": "Uitgevers of abbonees van nieuwsbrieven toevoegen of verwijderen",
