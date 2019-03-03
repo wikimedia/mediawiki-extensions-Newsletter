@@ -54,5 +54,5 @@ class UpdateSubscribersCount extends Maintenance {
 
 }
 
-$maintClass = "updateSubscribersCount";
+$maintClass = UpdateSubscribersCount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;

@@ -84,5 +84,5 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 }
 
-$maintClass = "DeleteInactiveNewsletters";
+$maintClass = DeleteInactiveNewsletters::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
