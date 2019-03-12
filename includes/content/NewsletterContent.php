@@ -100,7 +100,7 @@ class NewsletterContent extends JsonContent {
 		$data = $jsonParse->isGood() ? $jsonParse->getValue() : null;
 
 		if ( $data ) {
-			$this->description = isset( $data->description ) ? $data->description : null;
+			$this->description = $data->description ?? null;
 			$this->mainPage = !empty( $data->mainpage ) ? Title::newFromText( $data->mainpage ) :
 				Title::makeTitle( NS_SPECIAL, 'Badtitle' );
 			if ( isset( $data->publishers ) && is_array( $data->publishers ) ) {
