@@ -100,7 +100,7 @@
 	"newsletter-subscribers-invalid": "\"$1\" är inte en giltig användare. Se till att användarnamnet finns och försök igen.",
 	"newsletter-available-newsletters-field-label": "Tillgängliga nyhetsbrev",
 	"newsletter-subscribed-newsletters-field-label": "Prenumererade nyhetsbrev",
-	"newsletter-none-found": "Inga nyhetsbrev finns. Du kan registrera ett nytt nyhetsbrev via [[Special:CreateNewsletter]].",
+	"newsletter-none-found": "Inga nyhetsbrev finns. Du kan registrera ett nytt nyhetsbrev via [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Inga nyhetsbrev matchar din fråga.",
 	"echo-category-title-newsletter": "Nyhetsbrev",
 	"echo-pref-tooltip-newsletter": "Meddela mig när några av nyhetsbreven jag prenumererar på tillkännager en ny utgåva.",
