@@ -45,7 +45,8 @@
 	},
 	"MessagesDirs": {
 		"Newsletter": [
-			"i18n"
+			"i18n",
+			"i18n/api"
 		]
 	},
 	"LogTypes": [
