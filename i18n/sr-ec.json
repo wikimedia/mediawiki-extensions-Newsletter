@@ -13,6 +13,12 @@
 	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
 	"echo-category-title-newsletter": "Билтени",
+	"right-newsletter-delete": "Брисање билтенâ",
+	"action-newsletter-delete": "избриши билтене",
+	"right-newsletter-manage": "Додавање или уклањање објављивачâ или претплатникâ са билтенâ",
+	"action-newsletter-manage": "управљај билтенима",
+	"right-newsletter-restore": "Враћање билтена",
+	"action-newsletter-restore": "врати билтен",
 	"log-name-newsletter": "Дневник билтена",
 	"log-action-filter-newsletter": "Тип радње:"
 }

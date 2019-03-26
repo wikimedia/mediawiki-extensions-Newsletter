@@ -4,5 +4,11 @@
 			"Zoranzoki21"
 		]
 	},
+	"right-newsletter-delete": "Brisanje biltena",
+	"action-newsletter-delete": "obriši biltene",
+	"right-newsletter-manage": "Dodavanje ili uklanjanje objavljivača ili pretplatnika sa biltena",
+	"action-newsletter-manage": "upravljaj biltenom",
+	"right-newsletter-restore": "Vraćanje biltena",
+	"action-newsletter-restore": "vrati bilten",
 	"log-name-newsletter": "Dnevnik biltena"
 }
