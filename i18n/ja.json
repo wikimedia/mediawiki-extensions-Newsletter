@@ -17,7 +17,7 @@
 	"newsletter-desc": "説明",
 	"newsletter-title": "ニュースレターに関する情報を含むウィキのページ",
 	"newsletter-exist-error": "既に「$1」と同じの名前のニュースレターが存在しています。別の名前で試してください。",
-	"newslettercreate": "ニュースレターを作成する",
+	"newslettercreate": "ニュースレターを登録",
 	"newsletter-create-submit": "ニュースレターの作成",
 	"newsletter-create-confirmation": "新しいニュースレター[[Newsletter:$1|$1]]が作成されました。",
 	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",
