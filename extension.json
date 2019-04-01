@@ -162,6 +162,9 @@
 		],
 		"EditFilterMergedContent": [
 			"NewsletterHooks::onEditFilterMergedContent"
+		],
+		"SkinTemplateNavigation": [
+			"NewsletterHooks::onSkinTemplateNavigation"
 		]
 	},
 	"namespaces": [

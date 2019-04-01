@@ -364,4 +364,17 @@ class NewsletterHooks {
 		return true;
 	}
 
+	/**
+	 * Hide the View Source tab in the Newsletter namespace for users who do not have any
+	 * view permission ('newsletter-*')
+	 *
+	 * @param SkinTemplate $skinTemplate The skin template on which the UI is built.
+	 * @param array &$links Navigation links.
+	 */
+	public static function onSkinTemplateNavigation( SkinTemplate $skinTemplate, array &$links ) {
+		if ( $skinTemplate->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
+			unset( $links['views']['viewsource'] );
+		}
+	}
+
 }
