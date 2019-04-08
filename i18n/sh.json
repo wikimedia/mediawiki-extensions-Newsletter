@@ -8,7 +8,7 @@
 	"newsletter-extension-desc": "Omogućava korisnicima da objave i da se pretplate na biltene",
 	"newsletter-name": "Naziv biltena",
 	"newsletter-desc": "Opis",
-	"newsletter-title": "Wikistranica za informacije o biltenu",
+	"newsletter-title": "Naslov glavne stranice",
 	"newsletter-exist-error": "Već postoji bilten nazvan \"$1\". Pokušajte s drugim imenom.",
 	"newsletter-view-mainpage": "Glavna stranica:"
 }
