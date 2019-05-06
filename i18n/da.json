@@ -73,5 +73,6 @@
 	"action-newsletter-create": "registrer nyhedsbreve",
 	"right-newsletter-delete": "Slet nyhedsbreve",
 	"action-newsletter-delete": "slet nyhedsbreve",
-	"newsletter-list-option-all": "Alle nyhedsbreve"
+	"newsletter-list-option-all": "Alle nyhedsbreve",
+	"newsletter-diff-descheader": "Ændringer i beskrivelsen:"
 }
