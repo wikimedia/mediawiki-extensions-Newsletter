@@ -120,33 +120,35 @@ class NewsletterEditPage {
 			$publishersNames[] = $publisher->getName();
 		}
 
-		$fields['MainPage'] = [
-			'type' => 'title',
-			'label-message' => 'newsletter-manage-title',
-			'default' => $mainTitle->getPrefixedText(),
-			'required' => true,
-		];
-		$fields['Description'] = [
-			'type' => 'textarea',
-			'label-message' => 'newsletter-manage-description',
-			'rows' => 6,
-			'default' => $this->newsletter->getDescription(),
-			'required' => true,
-		];
-		$fields['Publishers'] = [
-			'type' => 'usersmultiselect',
-			'label-message' => 'newsletter-manage-publishers',
-			'exists' => true,
-			'default' => implode( "\n", $publishersNames ),
-		];
-		$fields['Summary'] = [
-			'type' => 'text',
-			'label-message' => 'newsletter-manage-summary',
-			'required' => false,
-		];
-		$fields['Confirm'] = [
-			'type' => 'hidden',
-			'default' => false,
+		$fields = [
+			'MainPage' => [
+				'type' => 'title',
+				'label-message' => 'newsletter-manage-title',
+				'default' => $mainTitle->getPrefixedText(),
+				'required' => true,
+			],
+			'Description' => [
+				'type' => 'textarea',
+				'label-message' => 'newsletter-manage-description',
+				'rows' => 6,
+				'default' => $this->newsletter->getDescription(),
+				'required' => true,
+			],
+			'Publishers' => [
+				'type' => 'usersmultiselect',
+				'label-message' => 'newsletter-manage-publishers',
+				'exists' => true,
+				'default' => implode( "\n", $publishersNames ),
+			],
+			'Summary' => [
+				'type' => 'text',
+				'label-message' => 'newsletter-manage-summary',
+				'required' => false,
+			],
+			'Confirm' => [
+				'type' => 'hidden',
+				'default' => false,
+			],
 		];
 
 		// Ensure action is not editing the current revision
