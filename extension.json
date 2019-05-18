@@ -74,7 +74,7 @@
 		"NewsletterDb": "includes/NewsletterDb.php",
 		"NewsletterEditPage": "includes/NewsletterEditPage.php",
 		"NewsletterStore": "includes/NewsletterStore.php",
-		"NewsletterHooks": "NewsletterHooks.php",
+		"NewsletterHooks": "includes/NewsletterHooks.php",
 		"NewsletterValidator": "includes/NewsletterValidator.php",
 		"NewsletterLogFormatter": "includes/logging/NewsletterLogFormatter.php",
 		"NewsletterLogger": "includes/logging/NewsletterLogger.php",

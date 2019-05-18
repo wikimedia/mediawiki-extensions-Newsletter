@@ -117,22 +117,22 @@ class NewsletterHooks {
 	 * @param DatabaseUpdater $updater
 	 */
 	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/sql/nl_newsletters.sql' );
-		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/sql/nl_issues.sql' );
-		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/sql/nl_subscriptions.sql' );
-		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/sql/nl_publishers.sql' );
+		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/../sql/nl_newsletters.sql' );
+		$updater->addExtensionTable( 'nl_issues', __DIR__ . '/../sql/nl_issues.sql' );
+		$updater->addExtensionTable( 'nl_subscriptions', __DIR__ . '/../sql/nl_subscriptions.sql' );
+		$updater->addExtensionTable( 'nl_publishers', __DIR__ . '/../sql/nl_publishers.sql' );
 		$updater->addExtensionField( 'nl_newsletters', 'nl_active',
-			__DIR__ . '/sql/nl_newsletters-add-active.sql' );
+			__DIR__ . '/../sql/nl_newsletters-add-active.sql' );
 		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_main_page_id',
-			__DIR__ . '/sql/nl_newsletters-drop-nl_main_page_id.sql' );
+			__DIR__ . '/../sql/nl_newsletters-drop-nl_main_page_id.sql' );
 		$updater->addExtensionIndex( 'nl_newsletters', 'nl_main_page_active',
-			__DIR__ . '/sql/nl_newsletters-add-unique.sql' );
+			__DIR__ . '/../sql/nl_newsletters-add-unique.sql' );
 		$updater->addExtensionField( 'nl_newsletters', 'nl_subscriber_count',
-			__DIR__ . '/sql/nl_newsletters-add-subscriber_count.sql' );
+			__DIR__ . '/../sql/nl_newsletters-add-subscriber_count.sql' );
 		$updater->dropExtensionIndex( 'nl_newsletters', 'nl_active_name',
-			__DIR__ . '/sql/nl_newsletter-drop-nl-active_name.sql' );
+			__DIR__ . '/../sql/nl_newsletter-drop-nl-active_name.sql' );
 		$updater->addExtensionIndex( 'nl_newsletters', 'nl_active_subscriber_name',
-			__DIR__ . '/sql/nl_newsletter-add-nl_active_subscriber_name.sql' );
+			__DIR__ . '/../sql/nl_newsletter-add-nl_active_subscriber_name.sql' );
 	}
 
 	/**
