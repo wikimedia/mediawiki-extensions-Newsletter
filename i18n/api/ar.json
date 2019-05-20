@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "اشترك أو ألغِ الاشتراك في رسالة إخبارية.",
+	"apihelp-newslettersubscribe-summary": "اشترك أو ألغِ الاشتراك في رسالة إخبارية.",
+	"apihelp-newslettersubscribe-param-id": "معرف النشرة الإخبارية التي يجب تغيير الاشتراك فيها.",
+	"apihelp-newslettersubscribe-param-do": "عمل للقيام به، يجب أن تكون إما <kbd>subscribe</kbd> أو <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "اشترك في النشرة الإخبارية مع معرف 1.",
+	"apihelp-newslettersubscribe-example-2": "إلغاء الاشتراك من النشرة الإخبارية مع معرف 2.",
+	"apihelp-newslettermanage-description": "إدارة رسالة إخبارية.",
+	"apihelp-newslettermanage-summary": "إدارة رسالة إخبارية.",
+	"apihelp-newslettermanage-param-id": "معرف النشرة لإدارتها.",
+	"apihelp-newslettermanage-param-do": "عمل للقيام به، يجب أن يكون <kbd>addpublisher</kbd> أو <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "معرف مستخدم الناشر لإدارته.",
+	"apihelp-newslettermanage-example-1": "إضافة ناشر بمعرف مستخدم من 3 إلى رسالة إخبارية مع معرف 1.",
+	"apihelp-newslettermanage-example-2": "إزالة ناشر بمعرف مستخدم 5 من النشرة الإخبارية بمعرف 2.",
+	"newsletter-api-error-notfound": "النشرة غير موجودة",
+	"newsletter-api-error-nopermissions": "ليست لديك صلاحية إدارة الرسائل الإخبارية.",
+	"newsletter-api-error-invalidpublisher-registered": "الناشر ليس مستخدما مسجلا.",
+	"newsletter-api-error-subscribe-notloggedin": "يجب عليك تسجيل الدخول للاشتراك في نشرات إخبارية."
+}

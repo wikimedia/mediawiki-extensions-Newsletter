@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"Beta16"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Iscrizione o cancellazione iscrizione da una newsletter.",
+	"apihelp-newslettersubscribe-summary": "Iscrizione o cancellazione iscrizione da una newsletter.",
+	"apihelp-newslettersubscribe-param-id": "ID della newsletter per la quale la sottoscrizione deve essere cambiata.",
+	"apihelp-newslettersubscribe-param-do": "Azione da fare. Dovrebbe essere <kbd>subscribe</kbd> o <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Iscriviti alla newsletter con ID 1.",
+	"apihelp-newslettersubscribe-example-2": "Cancella iscrizione dalla newsletter con ID 2.",
+	"apihelp-newslettermanage-description": "Gestire una newsletter.",
+	"apihelp-newslettermanage-summary": "Gestire una newsletter.",
+	"apihelp-newslettermanage-param-id": "ID della newsletter da gestire.",
+	"apihelp-newslettermanage-param-do": "Azione da fare. Dovrebbe essere <kbd>addpublisher</kbd> o <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "ID utente dell'editore da gestire.",
+	"apihelp-newslettermanage-example-1": "Aggiungi editore con ID utente 3 dalla newsletter con ID 1.",
+	"apihelp-newslettermanage-example-2": "Rimuovi editore con ID utente 5 dalla newsletter con ID 2.",
+	"newsletter-api-error-notfound": "La newsletter non esiste",
+	"newsletter-api-error-nopermissions": "Non si dispone dei permessi necessari per gestire le newsletter.",
+	"newsletter-api-error-subscribe-notloggedin": "Devi aver effettuato l'accesso per iscriverti alle newsletters."
+}

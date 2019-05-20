@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Piramidion"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Підписатися чи відписатися від розсилки новин.",
+	"apihelp-newslettersubscribe-summary": "Підпишіться або відпишіться від розсилки новин.",
+	"apihelp-newslettersubscribe-param-id": "Ідентифікатор розсилки новин, підписка на яку має бути змінена.",
+	"apihelp-newslettersubscribe-param-do": "Дія, яку треба виконати. Має бути або <kbd>subscribe</kbd> або <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Підписатися на розсилку новин з ідентифікатором 1.",
+	"apihelp-newslettersubscribe-example-2": "Підписатися на розсилку новин з ідентифікатором 2.",
+	"apihelp-newslettermanage-description": "Керувати розсилкою новин.",
+	"apihelp-newslettermanage-summary": "Керувати розсилкою новин.",
+	"apihelp-newslettermanage-param-id": "Ідентифікатор розсилки новин, керування якою буде здійснюватись.",
+	"apihelp-newslettermanage-param-do": "Дія, яку треба виконати. Має бути або <kbd>addpublisher</kbd>, або <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "Користувацький ідентифікатор власника, керування яким здійснюватиметься.",
+	"apihelp-newslettermanage-example-1": "Додати власника з ідентифікатором користувача 3 до розсилки новин з ідентифікатором 1.",
+	"apihelp-newslettermanage-example-2": "Вилучити власника з ідентифікатором користувача 5 із розсилки новин з ідентифікатором 2.",
+	"newsletter-api-error-notfound": "Розсилка новин не існує",
+	"newsletter-api-error-nopermissions": "У Вас немає прав на керування розсилками новин.",
+	"newsletter-api-error-invalidpublisher-registered": "Власник не є зареєстрованим користувачем.",
+	"newsletter-api-error-subscribe-notloggedin": "Вам треба перебувати в системі, щоб підписуватися на розсилки новин."
+}

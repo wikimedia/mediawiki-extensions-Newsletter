@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mikel Ibaiba"
+		]
+	},
+	"newsletter-api-error-notfound": "Buletina ez da existitzen",
+	"newsletter-api-error-nopermissions": "Ez duzu buletinak kudeatzeko baimenik.",
+	"newsletter-api-error-invalidpublisher-registered": "Argitaletxea ez da erregistratutako erabiltzailea.",
+	"newsletter-api-error-subscribe-notloggedin": "Erregistratutako egon behar duzu buletinetara izenpetua izateko."
+}

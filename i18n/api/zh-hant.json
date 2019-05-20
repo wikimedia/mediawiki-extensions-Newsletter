@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "訂閱或取消訂閱一份電子報。",
+	"apihelp-newslettersubscribe-summary": "訂閱或取消訂閱一份電子報。",
+	"apihelp-newslettersubscribe-param-id": "應更改訂閱的電子報 ID。",
+	"apihelp-newslettersubscribe-param-do": "要進行的操作。應為 <kbd>subscribe</kbd> 或 <kbd>unsubscribe</kbd> 其一。",
+	"apihelp-newslettersubscribe-example-1": "訂閱 ID 為 1 的電子報。",
+	"apihelp-newslettersubscribe-example-2": "取消訂閱 ID 為 2 的電子報。",
+	"apihelp-newslettermanage-description": "管理一份電子報。",
+	"apihelp-newslettermanage-summary": "管理一份電子報。",
+	"apihelp-newslettermanage-param-id": "要管理的電子報 ID。",
+	"apihelp-newslettermanage-param-do": "要進行的操作。應為 <kbd>addpublisher</kbd> 或 <kbd>removepublisher</kbd> 其一。",
+	"apihelp-newslettermanage-param-publisher": "要管理的發佈者之使用者 ID。",
+	"apihelp-newslettermanage-example-1": "將 ID 為 3 的使用者，添加成 ID 為 1 的電子報的發佈者。",
+	"apihelp-newslettermanage-example-2": "將 ID 為 5 的使用者，從 ID 為 2 的電子報的發佈者裡移除。",
+	"newsletter-api-error-notfound": "電子報不存在",
+	"newsletter-api-error-nopermissions": "您沒有權限管理來管理電子報。",
+	"newsletter-api-error-invalidpublisher-registered": "發佈者不是已註冊的使用者。",
+	"newsletter-api-error-subscribe-notloggedin": "您必須要先登入才能訂閱電子報。"
+}

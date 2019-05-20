@@ -1,0 +1,10 @@
+{
+	"@metadata": {
+		"authors": [
+			"Zygimantus"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Užsisakyti ar atsisakyti naujienlaiškio.",
+	"apihelp-newslettersubscribe-example-1": "Užsiprenumeruokite naujienlaiškį su id 1.",
+	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2."
+}

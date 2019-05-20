@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tacsipacsi"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Feliratkozás egy hírlevélre, vagy leiratkozás arról.",
+	"apihelp-newslettersubscribe-summary": "Feliratkozás egy hírlevélre, vagy leiratkozás arról.",
+	"apihelp-newslettersubscribe-param-id": "A módosítandó hírlevél azonosítója.",
+	"apihelp-newslettersubscribe-param-do": "A végrehajtandó művelet: <kbd>subscribe</kbd> vagy <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Feliratkozás az 1-es azonosítójú hírlevélre.",
+	"apihelp-newslettersubscribe-example-2": "Leiratkozás a 2-es azonosítójú hírlevélről.",
+	"apihelp-newslettermanage-description": "Egy hírlevél kezelése.",
+	"apihelp-newslettermanage-summary": "Egy hírlevél kezelése.",
+	"apihelp-newslettermanage-param-id": "A módosítandó hírlevél azonosítója.",
+	"apihelp-newslettermanage-param-do": "A végrehajtandó művelet: <kbd>addpublisher</kbd> vagy <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "A módosítandó felhasználó azonosítója.",
+	"apihelp-newslettermanage-example-1": "A 3-as azonosítójú felhasználó hozzáadása az 1-es azonosítójú hírlevél közzétevőihez.",
+	"apihelp-newslettermanage-example-2": "Az 5-ös azonosítójú felhasználó eltávolítása a 2-es azonosítójú hírlevél közzétevői közül.",
+	"newsletter-api-error-notfound": "A hírlevél nem létezik",
+	"newsletter-api-error-nopermissions": "Nincs jogosultságod hírlevelek kezeléséhez.",
+	"newsletter-api-error-invalidpublisher-registered": "A közzétevő nem egy regisztrált felhasználó.",
+	"newsletter-api-error-subscribe-notloggedin": "Be kell jelentkezned a hírlevelekre való feliratkozáshoz."
+}

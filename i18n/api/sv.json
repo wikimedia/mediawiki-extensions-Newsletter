@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fader",
+			"WikiPhoenix"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Prenumerera eller avprenumerera från ett nyhetsbrev.",
+	"apihelp-newslettersubscribe-summary": "Prenumerera på eller avprenumerera från ett nyhetsbrev.",
+	"apihelp-newslettersubscribe-param-id": "ID för nyhetsbrevet som prenumerationen bör ändras.",
+	"apihelp-newslettersubscribe-param-do": "Handling att utföra. Bör antingen vara <kbd>subscribe</kbd> eller <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Prenumerera på nyhetsbrevet med ID 1.",
+	"apihelp-newslettersubscribe-example-2": "Sluta prenumerera på nyhetsbrevet med ID 2.",
+	"apihelp-newslettermanage-description": "Hantera ett nyhetsbrev.",
+	"apihelp-newslettermanage-summary": "Hantera ett nyhetsbrev.",
+	"apihelp-newslettermanage-param-id": "ID för nyhetsbrevet att hantera.",
+	"apihelp-newslettermanage-param-do": "Handling att utföra. Bör antingen vara <kbd>addpublisher</kbd> eller <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "Användar-ID för utgivaren att hantera.",
+	"apihelp-newslettermanage-example-1": "Lägg till en utgivare med ett användar-ID på 3 i nyhetsbrevet med ID 1.",
+	"apihelp-newslettermanage-example-2": "Ta bort utgivare med ett användar-ID på 5 från nyhetsbrevet med ID 2.",
+	"newsletter-api-error-notfound": "Nyhetsbrevet finns inte",
+	"newsletter-api-error-nopermissions": "Du har inte behörighet att hantera nyhetsbrev.",
+	"newsletter-api-error-invalidpublisher-registered": "Utgivaren är inte en registrerad användare.",
+	"newsletter-api-error-subscribe-notloggedin": "Du måste vara inloggad för att prenumerera till nyhetsbrev."
+}

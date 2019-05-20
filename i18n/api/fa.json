@@ -1,0 +1,18 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ladsgroup"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "اشتراک یا لغو اشتراک به یک خبرنامه.",
+	"apihelp-newslettersubscribe-summary": "اشتراک یا لغو اشتراک به یک خبرنامه.",
+	"apihelp-newslettersubscribe-example-1": "اشتراک به خبرنامه با شناسه ۱.",
+	"apihelp-newslettersubscribe-example-2": "لغو اشتراک به خبرنامه با شناسه ۲",
+	"apihelp-newslettermanage-description": "مدیریت یک خبرنامه",
+	"apihelp-newslettermanage-summary": "مدیریت یک خبرنامه.",
+	"apihelp-newslettermanage-param-id": "شماره خبرنامه برای مدیریت",
+	"newsletter-api-error-notfound": "خبرنامه وجود ندارد",
+	"newsletter-api-error-nopermissions": "شماره دسترسی مدیریت خبرنامه‌ها را ندارید.",
+	"newsletter-api-error-invalidpublisher-registered": "ناشر یک کاربر ثبت‌شده نیست.",
+	"newsletter-api-error-subscribe-notloggedin": "شما برای اشتراک به خبرنامه باید اول وارد شوید."
+}

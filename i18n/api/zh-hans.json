@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Liuxinyu970226"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "订阅或退订一则新闻报。",
+	"apihelp-newslettersubscribe-summary": "订阅或退订一则新闻报。",
+	"apihelp-newslettersubscribe-param-id": "应更改订阅选项的新闻报的ID。",
+	"apihelp-newslettersubscribe-param-do": "要进行的操作。应为<kbd>subscribe</kbd>或<kbd>unsubscribe</kbd>二者之一。",
+	"apihelp-newslettersubscribe-example-1": "订阅ID为1的新闻报。",
+	"apihelp-newslettersubscribe-example-2": "退订ID为2的新闻报。",
+	"apihelp-newslettermanage-description": "管理一个新闻报。",
+	"apihelp-newslettermanage-summary": "管理一个新闻报。",
+	"apihelp-newslettermanage-param-id": "要管理的新闻报ID。",
+	"apihelp-newslettermanage-param-do": "要进行的操作。应为<kbd>addpublisher</kbd>或<kbd>removepublisher</kbd>。",
+	"apihelp-newslettermanage-param-publisher": "要管理的发布者用户ID。",
+	"apihelp-newslettermanage-example-1": "将用户ID为3的用户作为发布者添加到ID为1的新闻报。",
+	"apihelp-newslettermanage-example-2": "从ID为2的新闻报中移除用户ID为5的发布者。",
+	"newsletter-api-error-notfound": "新闻报不存在",
+	"newsletter-api-error-nopermissions": "您没有权限管理新闻报。",
+	"newsletter-api-error-invalidpublisher-registered": "发布者不是注册用户。",
+	"newsletter-api-error-subscribe-notloggedin": "您必须登录才能订阅新闻报。"
+}

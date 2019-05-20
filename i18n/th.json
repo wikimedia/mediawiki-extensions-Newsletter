@@ -66,10 +66,6 @@
 	"right-newsletter-delete": "ลบจดหมายข่าว",
 	"action-newsletter-delete": "ลบจดหมายข่าว",
 	"action-newsletter-manage": "จัดการจดหมายข่าว",
-	"apihelp-newslettersubscribe-description": "สมัครรับหรือเลิกสมัครรับจดหมายข่าว",
-	"apihelp-newslettersubscribe-example-1": "สมัครรับจดหมายข่าวด้วย ID 1",
-	"apihelp-newslettersubscribe-example-2": "เลิกสมัครรับจดหมายข่าวด้วย ID 2",
-	"apihelp-newslettermanage-description": "จัดการจดหมายข่าว",
 	"newsletter-list-table": "กรองข้อมูลตาม:",
 	"newsletter-list-option-all": "จดหมายข่าวทั้งหมด"
 }

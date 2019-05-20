@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Felipe L. Ewald"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Inscreva-se ou cancele a inscrição em um boletim informativo.",
+	"apihelp-newslettersubscribe-summary": "Inscreva-se ou cancele a inscrição em um boletim informativo.",
+	"apihelp-newslettersubscribe-param-id": "ID do boletim informativo para a qual a assinatura deve ser alterada.",
+	"apihelp-newslettersubscribe-param-do": "Ação a ser feita. Deveria ser <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Assine o boletim informativo com ID 1.",
+	"apihelp-newslettersubscribe-example-2": "Cancelar a inscrição no boletim informativo com ID 2.",
+	"apihelp-newslettermanage-description": "Gerenciar um boletim de informação.",
+	"apihelp-newslettermanage-summary": "Gerenciar um boletim de informação.",
+	"apihelp-newslettermanage-param-id": "ID do boletim informativo a ser gerenciado.",
+	"apihelp-newslettermanage-param-do": "Ação a ser feita. Deve ser <kbd>addpublisher</kbd> ou <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "ID do usuário da editora para gerenciar.",
+	"apihelp-newslettermanage-example-1": "Adicione um editor com um ID de usuário de 3 para o boletim informativo com ID 1.",
+	"apihelp-newslettermanage-example-2": "Remova o editor com um ID de usuário de 5 do boletim informativo com ID 2.",
+	"newsletter-api-error-notfound": "O boletim informativo não existe",
+	"newsletter-api-error-nopermissions": "Você não tem permissão para gerenciar boletins informativos.",
+	"newsletter-api-error-invalidpublisher-registered": "O editor não é um usuário cadastrado.",
+	"newsletter-api-error-subscribe-notloggedin": "Você deve estar logado para se inscrever nos boletins informativos."
+}

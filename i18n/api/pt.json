@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Subscrever ou cancelar a subscrição de um boletim informativo.",
+	"apihelp-newslettersubscribe-summary": "Subscrever ou cancelar a subscrição de um boletim informativo.",
+	"apihelp-newslettersubscribe-param-id": "Identificador do boletim para o qual a subscrição deverá ser alterada.",
+	"apihelp-newslettersubscribe-param-do": "Ação a ser executada. Deve ser <kbd>subscribe</kbd> (subscrever) ou <kbd>unsubscribe</kbd> (cancelar subscrição).",
+	"apihelp-newslettersubscribe-example-1": "Subscrever o boletim com o identificador 1.",
+	"apihelp-newslettersubscribe-example-2": "Cancelar a subscrição do boletim com o identificador 2.",
+	"apihelp-newslettermanage-description": "Gerir um boletim informativo.",
+	"apihelp-newslettermanage-summary": "Gerir um boletim informativo.",
+	"apihelp-newslettermanage-param-id": "Identificador do boletim informativo a ser gerido.",
+	"apihelp-newslettermanage-param-do": "Ação a ser executada. Deve ser <kbd>addpublisher</kbd> (acrescentar editor) ou <kbd>removepublisher</kbd> (remover editor).",
+	"apihelp-newslettermanage-param-publisher": "Identificador de utilizador do editor a ser gerido.",
+	"apihelp-newslettermanage-example-1": "Adicionar um editor com um identificador de utilizador 3 ao boletim com o identificador 1.",
+	"apihelp-newslettermanage-example-2": "Remover editor com o identificador de utilizador 5 do boletim com o identificador 2.",
+	"newsletter-api-error-notfound": "O boletim não existe",
+	"newsletter-api-error-nopermissions": "Não tem permissão para gerir boletins.",
+	"newsletter-api-error-invalidpublisher-registered": "O editor não é um utilizador registado.",
+	"newsletter-api-error-subscribe-notloggedin": "Para subscrever boletins tem que ter uma sessão iniciada."
+}

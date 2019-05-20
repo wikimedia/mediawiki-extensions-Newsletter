@@ -126,8 +126,6 @@
 	"action-newsletter-manage": "управление рассылками",
 	"right-newsletter-restore": "Восстановление рассылок",
 	"action-newsletter-restore": "восстановление рассылок",
-	"apihelp-newslettersubscribe-description": "Подписаться или отписаться от рассылки.",
-	"apihelp-newslettersubscribe-summary": "Подписаться или отписаться от рассылки.",
 	"newsletter-list-intro": "Это список новостных рассылок, зарегистрированных в этой вики. Подписывайтесь на рассылку, чтобы получать уведомления о новых выпусках. Вы будете получать уведомления через интернет или по электронной почте, в соответствии с вашими [[Special:Preferences#mw-prefsection-echo|персональными настройками]].",
 	"newsletter-list-table": "Фильтровать:",
 	"newsletter-list-option-all": "Все рассылки",
@@ -155,9 +153,5 @@
 	"newsletter-restore-failure-title": "Рассылку восстановить не удалось.",
 	"newsletter-diff-descheader": "Изменения в описании:",
 	"newsletter-diff-mainpageheader": "Изменения на основной странице:",
-	"newsletter-diff-publishersheader": "Изменения в списке публикаторов:",
-	"newsletter-api-error-notfound": "Такой рассылки не существует",
-	"newsletter-api-error-nopermissions": "У вас нет прав для управления рассылками.",
-	"newsletter-api-error-invalidpublisher-registered": "Публикатор не является зарегистрированным участником.",
-	"newsletter-api-error-subscribe-notloggedin": "Вы должны войти, чтобы подписаться на рассылку."
+	"newsletter-diff-publishersheader": "Изменения в списке публикаторов:"
 }

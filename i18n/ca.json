@@ -76,8 +76,6 @@
 	"action-newsletter-manage": "gestionar butlletins",
 	"right-newsletter-restore": "Restaura un butlletí",
 	"action-newsletter-restore": "restaura un butlletí",
-	"apihelp-newslettersubscribe-description": "Subscriure's o donar-se de baixa d'un butlletí.",
-	"apihelp-newslettermanage-description": "Gestionar un butlletí.",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|ha anunciat}} una nova publicació de $3.",
 	"newsletter-list-table": "Filtra per",
 	"newsletter-list-option-all": "Tots els butlletins",

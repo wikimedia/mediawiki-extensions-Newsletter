@@ -33,7 +33,6 @@
 	"action-newsletter-delete": "वार्तापत्रे वगळा",
 	"right-newsletter-manage": "वार्तापत्रात प्रकाशक जोडा अथवा त्यातुन हटवा",
 	"action-newsletter-manage": "वार्तापत्रांचे व्यवस्थापन करा",
-	"apihelp-newslettermanage-description": "वार्तापत्राचे व्यवस्थापन करा.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$2|आपण}} \"$1\" या बातमीपत्राचे संपादक म्हणून {{GENDER:$3|जोडल्या गेले}} आहात.",
 	"newsletter-list-table": "सारणी याद्वारा गाळा:",
 	"newsletter-list-option-all": "सर्व वार्तापत्रे",
@@ -42,7 +41,5 @@
 	"newsletter-list-go-button": "जा",
 	"newsletter-deleted-log": "या बातमीपत्राच्या वगळण्याच्या नोंदी खाली पुरविण्यात आल्या आहेत.",
 	"log-action-filter-newsletter-publisher-added": "प्रकाशकाची जोड",
-	"log-action-filter-newsletter-newsletter-added": "बातमीपत्र तयार करणे",
-	"newsletter-api-error-notfound": "वृत्तपत्र अस्तित्वात नाही",
-	"newsletter-api-error-invalidpublisher-registered": "\nप्रकाशक नोंदणीकृत वापरकर्ता नाही"
+	"log-action-filter-newsletter-newsletter-added": "बातमीपत्र तयार करणे"
 }

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Emem.calist"
+		]
+	},
+	"newsletter-api-error-notfound": "Mukhang Wala sa 'Criteria' ang iyong hinahanap",
+	"newsletter-api-error-nopermissions": "Hoy! Bawal yang iyong ginagawa .. Gusto mong makulong ??",
+	"newsletter-api-error-invalidpublisher-registered": "Mukhang hindi naka-rehistro ng maayos ang 'user' na nakasaad",
+	"newsletter-api-error-subscribe-notloggedin": "mag'Log-In' muna bago makagamit ng 'site' namin."
+}

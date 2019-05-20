@@ -91,8 +91,6 @@
 	"action-newsletter-create": "stwórz newslettery",
 	"right-newsletter-delete": "Usuń newslettery",
 	"action-newsletter-delete": "usuń newslettery",
-	"apihelp-newslettermanage-description": "Zarządzaj newsletterem.",
-	"apihelp-newslettermanage-summary": "Zarządzaj newsletterem.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Zostałeś|Zostałaś|Zostałeś(aś)}} {{GENDER:$2|dodany|dodana}} do grona wydawców newslettera „$1”.",
 	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Zostałeś|Zostałaś|Zostałeś(aś)}} {{GENDER:$2|usunięty|usunięta}} z grona wydawców newslettera „$1”.",
 	"newsletter-list-intro": "To jest lista newsletterów zarejestrowanych na tej wiki. Możesz zasubskrybować newsletter aby otrzymywać powiadomienia o nowych wydarzeniach. Powiadomienia mogą być otrzymywane za pośrednictwem e-maila lub w przeglądarce, w zależności od twoich [[Special:Preferences#mw-prefsection-echo|preferencji]].",
@@ -120,9 +118,5 @@
 	"newsletter-restore-failure": "Newsletter „$1” nie mógł zostać odtworzony. Spróbuj ponownie.",
 	"newsletter-restore-failure-title": "Newsletter nie mógł zostać odtworzony.",
 	"newsletter-diff-descheader": "Zmiany w opisie:",
-	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
-	"newsletter-api-error-notfound": "Newsletter nie istnieje",
-	"newsletter-api-error-nopermissions": "Nie masz uprawnień do zarządzania newsletterami.",
-	"newsletter-api-error-invalidpublisher-registered": "Publikator nie jest zarejestrowanym użytkownikiem.",
-	"newsletter-api-error-subscribe-notloggedin": "Musisz być zalogowany, by subskrybować newslettery."
+	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:"
 }

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Aefgh39622"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "สมัครรับหรือเลิกสมัครรับจดหมายข่าว",
+	"apihelp-newslettersubscribe-example-1": "สมัครรับจดหมายข่าวด้วย ID 1",
+	"apihelp-newslettersubscribe-example-2": "เลิกสมัครรับจดหมายข่าวด้วย ID 2",
+	"apihelp-newslettermanage-description": "จัดการจดหมายข่าว"
+}

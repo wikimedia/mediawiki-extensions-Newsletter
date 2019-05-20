@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sujiniku",
+			"Suyama"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "ニュースレターの入会または退会をする。",
+	"apihelp-newslettersubscribe-example-1": "id 1 でニュースレターを購読する。",
+	"apihelp-newslettersubscribe-example-2": "id 2 でニュースレターから退会する。",
+	"apihelp-newslettermanage-description": "ニュースレターを管理。",
+	"apihelp-newslettermanage-summary": "ニュースレターを管理する。"
+}

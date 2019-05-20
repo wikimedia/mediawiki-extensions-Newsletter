@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Elisardojm"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Subscribirse a ou desubscribirse dun boletín.",
+	"apihelp-newslettersubscribe-summary": "Subscribirse a ou desubscribirse dun boletín.",
+	"apihelp-newslettersubscribe-param-id": "Identificador do boletín para o que cambiar a subscrición.",
+	"apihelp-newslettersubscribe-param-do": "Acción a realizar. Debe ser <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Subscribirse ó boletín con identificador 1.",
+	"apihelp-newslettersubscribe-example-2": "Desubscribirse do boletín con identificador 2.",
+	"apihelp-newslettermanage-description": "Xestionar un boletín.",
+	"apihelp-newslettermanage-summary": "Xestionar un boletín.",
+	"apihelp-newslettermanage-param-id": "Identificador do boletín a xestionar.",
+	"apihelp-newslettermanage-param-do": "Acción a realizar. Debe ser <kbd>addpublisher</kbd> (engadir editor) ou <kbd>removepublisher</kbd> (quitar editor).",
+	"apihelp-newslettermanage-param-publisher": "Identificador do editor a xestionar.",
+	"apihelp-newslettermanage-example-1": "Engadir un editor con identificador 3 ó boletín con identificador 1.",
+	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
+	"newsletter-api-error-notfound": "O boletín non existe",
+	"newsletter-api-error-nopermissions": "Non ten permisos para xestionar boletíns.",
+	"newsletter-api-error-invalidpublisher-registered": "O editor non é un usuario rexistrado.",
+	"newsletter-api-error-subscribe-notloggedin": "Debe estar conectado para subscribirse ós boletíns."
+}

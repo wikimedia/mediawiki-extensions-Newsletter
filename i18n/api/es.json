@@ -1,0 +1,25 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido",
+			"Macofe"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "Suscribirse a o desuscribirse de un boletín.",
+	"apihelp-newslettersubscribe-summary": "Suscribirse a, o darse de baja de, un boletín.",
+	"apihelp-newslettersubscribe-param-id": "Identificador del boletín para el que cambiar la suscripción.",
+	"apihelp-newslettersubscribe-param-do": "Acción que realizar. O bien <kbd>subscribe</kbd> o bien <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Suscribirse al boletín con identificador 1.",
+	"apihelp-newslettersubscribe-example-2": "Desuscribirse al boletín con identificador 2.",
+	"apihelp-newslettermanage-description": "Gestionar un boletín.",
+	"apihelp-newslettermanage-summary": "Gestionar un boletín.",
+	"apihelp-newslettermanage-param-id": "Identificador del boletín que gestionar.",
+	"apihelp-newslettermanage-param-do": "Acción que realizar. Debe ser <kbd>addpublisher</kbd> (agregar editor) o <kbd>removepublisher</kbd> (quitar editor).",
+	"apihelp-newslettermanage-param-publisher": "Identificador del editor que gestionar.",
+	"apihelp-newslettermanage-example-1": "Añadir un editor con identificador 3 al boletín con identificador 1.",
+	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 del boletín con identificador 2.",
+	"newsletter-api-error-notfound": "No existe el boletín",
+	"newsletter-api-error-nopermissions": "No tienes permiso para gestionar boletines.",
+	"newsletter-api-error-invalidpublisher-registered": "El editor no es un usuario registrado.",
+	"newsletter-api-error-subscribe-notloggedin": "Tienes que haber iniciado sesión para suscribirte a boletines."
+}
