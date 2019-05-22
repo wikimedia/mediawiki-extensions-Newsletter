@@ -6,8 +6,11 @@
 	},
 	"newsletter-name": "Nome d'a newsletter",
 	"newsletter-desc": "Descrizione",
-	"right-newsletter-create": "Ccreje 'na newsletter",
-	"action-newsletter-create": "ccreje 'na newsletter",
+	"newslettercreate": "Reggìstre 'a newsletter",
+	"newsletter-create-submit": "Reggìstre 'a newsletter",
+	"newsletter-create-editsummary": "Reggìstre 'na newsletter nove",
+	"right-newsletter-create": "Reggìstre 'na newsletter",
+	"action-newsletter-create": "reggìstre 'na newsletter",
 	"action-newsletter-delete": "scangille 'a newsletter",
 	"newsletter-list-table": "Filtre pe:"
 }
