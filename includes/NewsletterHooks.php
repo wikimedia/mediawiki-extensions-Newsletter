@@ -216,8 +216,7 @@ class NewsletterHooks {
 			if ( !$newsletter->canDelete( $user ) ) {
 				throw new PermissionsError( 'newsletter-delete' );
 			}
-			$success = NewsletterStore::getDefaultInstance()
-				->deleteNewsletter( $newsletter, $reason );
+			$success = NewsletterStore::getDefaultInstance()->deleteNewsletter( $newsletter );
 			if ( $success ) {
 				$status->setOK( $success );
 				return true;

@@ -144,11 +144,10 @@ class NewsletterStore {
 
 	/**
 	 * @param Newsletter $newsletter
-	 * @param string $reason
 	 *
 	 * @return bool success of the action
 	 */
-	public function deleteNewsletter( Newsletter $newsletter, $reason ) {
+	public function deleteNewsletter( Newsletter $newsletter ) {
 		return $this->db->deleteNewsletter( $newsletter );
 	}
 
