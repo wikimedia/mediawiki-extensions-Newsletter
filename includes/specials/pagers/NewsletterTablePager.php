@@ -60,13 +60,15 @@ class NewsletterTablePager extends TablePager {
 	/**
 	 * Get the query for newsletters for which the user is subscribed to.
 	 *
-	 * This is either run directly or as part as a union. its
-	 * done as part of a union to avoid expensive filesort.
+	 * This is either run directly or as part as a union. It's done as part of
+	 * a union to avoid expensive filesort.
 	 *
 	 * @param string $offset The indexpager offset (Number of subscribers)
 	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
 	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
+	 *
+	 * @return string
 	 */
 	private function getSubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
@@ -244,7 +246,7 @@ class NewsletterTablePager extends TablePager {
 				'nl_name',
 				'nl_desc',
 				'nl_id',
-				"nl_subscriber_count",
+				'nl_subscriber_count',
 				'nls_subscriber_id'
 			],
 		];
