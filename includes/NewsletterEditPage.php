@@ -182,12 +182,14 @@ class NewsletterEditPage {
 
 			// Default fields are the same, regardless of action
 			if ( $oldRevision->getContentModel() === 'NewsletterContent'
-				&& $oldRevision->getContent() !== null ) {
-				$fields['MainPage']['default'] =
-					$oldRevision->getContent()->getMainPage()->getPrefixedText();
-				$fields['Description']['default'] = $oldRevision->getContent()->getDescription();
+				&& $oldRevision->getContent() !== null
+			) {
+				$content = $oldRevision->getContent();
+				'@phan-var NewsletterContent $content';
+				$fields['MainPage']['default'] = $content->getMainPage()->getPrefixedText();
+				$fields['Description']['default'] = $content->getDescription();
 				// HTMLUsersMultiselectField expects a string, so we implode here
-				$publisherNames = $oldRevision->getContent()->getPublishers();
+				$publisherNames = $content->getPublishers();
 				$fields['Publishers']['default'] = implode( "\n", $publishersNames );
 			}
 		}
