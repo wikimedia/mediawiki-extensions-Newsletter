@@ -4,7 +4,8 @@
 			"Nike",
 			"Pyscowicz",
 			"Silvonen",
-			"Valtlait"
+			"Valtlait",
+			"Antsa"
 		]
 	},
 	"newsletter-create-submit": "Rekisteröi uutiskirje",
@@ -13,5 +14,6 @@
 	"newsletter-manage-summary": "Muutoksen yhteenveto:",
 	"newsletter-subscribe-button-label": "Kyllä",
 	"newsletter-unsubscribe-button-label": "Ei",
-	"newsletter-header-name": "Nimi"
+	"newsletter-header-name": "Nimi",
+	"newsletter-list-table": "Suodata:"
 }
