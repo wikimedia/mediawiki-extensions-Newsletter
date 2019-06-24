@@ -6,9 +6,23 @@
 		]
 	},
 	"newsletter-desc": "ဖော်ပြချက်",
+	"newsletters": "သတင်းလွှာများ",
+	"newsletter-notfound": "သတင်းလွှာ မတွေ့ပါ",
 	"newsletter-view-description": "ဖော်ပြချက်:",
+	"newsletter-manage-button": "စီမံရန်",
+	"newsletter-announce-button": "ကြေငြာရန်",
+	"newsletter-announce-submit": "ကြေငြာရန်",
+	"newsletter-manage-title": "ပင်မစာမျက်နှာခေါင်းစဉ်",
 	"newsletter-manage-description": "ဖော်ပြချက်:",
+	"newsletter-managenewsletter-button": "ထည့်သွင်းရန်",
 	"newsletter-subscribe-button-label": "လုပ်မည်",
 	"newsletter-unsubscribe-button-label": "မလုပ်ပါ",
-	"newsletter-header-description": "ဖော်ပြချက်"
+	"echo-category-title-newsletter": "သတင်းလွှာများ",
+	"newsletter-header-name": "အမည်",
+	"newsletter-header-description": "ဖော်ပြချက်",
+	"newsletter-list-option-all": "သတင်းလွှာများအားလုံး",
+	"newsletter-list-go-button": "သွားပါ",
+	"newsletter-notification-link-text-new-publisher": "သတင်းလွှာ စီမံရန်",
+	"newsletter-notification-link-text-del-publisher": "သတင်းလွှာ ကြည့်ရန်",
+	"log-name-newsletter": "သတင်းလွှာ မှတ်တမ်း"
 }
