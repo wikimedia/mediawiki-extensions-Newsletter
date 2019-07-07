@@ -1,0 +1,24 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "'Scrizione o scangellazzione da 'na newsletter.",
+	"apihelp-newslettersubscribe-summary": "'Scrizione o scangellazzione da 'na newsletter.",
+	"apihelp-newslettersubscribe-param-id": "ID d'a newsletter pa quale 'a 'scrizione avessa essere cangiate.",
+	"apihelp-newslettersubscribe-param-do": "Azione da fà. Avessa essere <kbd>subscribe</kbd> o <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "'Scrivete jndr'à newslettere cu ID 1.",
+	"apihelp-newslettersubscribe-example-2": "Scangillate da 'a newsletter cu ID 2.",
+	"apihelp-newslettermanage-description": "Gestisce 'na newsletter.",
+	"apihelp-newslettermanage-summary": "Gestisce 'na newsletter.",
+	"apihelp-newslettermanage-param-id": "ID d'a newsletter da gestì.",
+	"apihelp-newslettermanage-param-do": "Azione da fà. Avessa essere <kbd>addpublisher</kbd> o <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "ID de l'utende d'u pubblecatore da gestì.",
+	"apihelp-newslettermanage-example-1": "Aggiugne 'nu pubblecatore cu 'n ID utende 3 jndr'à newsletter cu ID 1.",
+	"apihelp-newslettermanage-example-2": "Lìve 'u pubblecatore cu ID utende 5 da 'a newsletter cu ID 2.",
+	"newsletter-api-error-notfound": "'A newletter non g'esiste",
+	"newsletter-api-error-nopermissions": "Non ge tìne le permesse pe gestì le newsletter.",
+	"newsletter-api-error-invalidpublisher-registered": "'U pubblecatore non g'è 'n'utende reggistrate.",
+	"newsletter-api-error-subscribe-notloggedin": "A trasè pe iscriverte a le newsletter."
+}
