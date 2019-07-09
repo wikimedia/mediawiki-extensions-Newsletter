@@ -4,7 +4,7 @@ use Wikimedia\Assert\Assert;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\DBUnexpectedError;
 use Wikimedia\Rdbms\IResultWrapper;
-use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Rdbms\ILoadBalancer;
 
 /**
  * @license GPL-2.0-or-later
@@ -13,11 +13,11 @@ use Wikimedia\Rdbms\LoadBalancer;
 class NewsletterDb {
 
 	/**
-	 * @var LoadBalancer
+	 * @var ILoadBalancer
 	 */
 	private $lb;
 
-	public function __construct( LoadBalancer $lb ) {
+	public function __construct( ILoadBalancer $lb ) {
 		$this->lb = $lb;
 	}
 
