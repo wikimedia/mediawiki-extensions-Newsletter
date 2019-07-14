@@ -154,6 +154,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( $newsletter->getPublishers(), $expectedUsers );
 		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
 	}
+
 	public function testRemovePublisher() {
 		# Set up
 		$newsletter = $this->createNewsletter();

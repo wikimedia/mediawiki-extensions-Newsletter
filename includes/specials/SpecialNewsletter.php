@@ -398,6 +398,7 @@ class SpecialNewsletter extends SpecialPage {
 		// Yay!
 		return true;
 	}
+
 	/**
 	 * Build the form for displaying the subscribers to a newsletter. This includes
 	 * a permission check, and then lists them all in a textarea.
@@ -439,6 +440,7 @@ class SpecialNewsletter extends SpecialPage {
 			$out->addReturnTo( Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() ) );
 		}
 	}
+
 	/**
 	 * Submit callback for the subscribers form (validate, edit subscribers table).
 	 * This assumes that permissions check etc has been done already.
@@ -514,6 +516,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 		return true;
 	}
+
 	/**
 	 * Don't list this page in Special:SpecialPages as we just redirect to
 	 * Special:Newsletters if no ID was provided.
