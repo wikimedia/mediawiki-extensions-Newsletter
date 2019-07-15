@@ -9,9 +9,15 @@
 			"Zoranzoki21"
 		]
 	},
+	"newsletter-subtitlelinks-unsubscribe": "одјави се",
+	"newsletter-subtitlelinks-subscribe": "пријави се",
+	"newsletter-subtitlelinks-announce": "огласи",
+	"newsletter-subtitlelinks-manage": "управљај",
 	"newsletters": "Билтени",
 	"newsletter-view-mainpage": "Главна страна:",
 	"newsletter-view-description": "Опис:",
+	"newsletter-announce-button": "Огласи",
+	"newsletter-announce-submit": "Огласи",
 	"echo-category-title-newsletter": "Билтени",
 	"right-newsletter-delete": "Брисање билтенâ",
 	"action-newsletter-delete": "избриши билтене",
