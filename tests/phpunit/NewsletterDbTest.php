@@ -349,7 +349,8 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'update' )
 			->with(
 				'nl_newsletters',
-				[ 'nl_active' => 0 ], [ 'nl_id' => $newsletter->getId() ]
+				[ 'nl_active' => 0 ],
+				[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
 			);
 		$mockWriteDb
 			->expects( $this->once() )
@@ -376,11 +377,13 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->withConsecutive(
 				[
 					'nl_newsletters',
-					[ 'nl_active' => 0 ], [ 'nl_id' => $newsletter->getId() ]
+					[ 'nl_active' => 0 ],
+					[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
 				],
 				[
 					'nl_newsletters',
-					[ 'nl_active' => 1 ], [ 'nl_name' => $newsletter->getName() ]
+					[ 'nl_active' => 1 ],
+					[ 'nl_name' => $newsletter->getName(), 'nl_active' => 0 ]
 				]
 			);
 		$mockWriteDb

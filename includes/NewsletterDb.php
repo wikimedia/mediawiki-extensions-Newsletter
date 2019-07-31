@@ -270,7 +270,7 @@ class NewsletterDb {
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 0 ],
-			[ 'nl_id' => $newsletter->getId() ],
+			[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ],
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
@@ -293,7 +293,7 @@ class NewsletterDb {
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 1 ],
-			[ 'nl_name' => $newsletterName ],
+			[ 'nl_name' => $newsletterName, 'nl_active' => 0 ],
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
