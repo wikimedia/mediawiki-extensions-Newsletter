@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ильнар"
+			"Ильнар",
+			"Ерней"
 		]
 	},
-	"echo-category-title-newsletter": "Хат тарату"
+	"echo-category-title-newsletter": "Яңалыклар тарату"
 }
