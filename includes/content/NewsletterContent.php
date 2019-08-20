@@ -10,7 +10,6 @@ class NewsletterContent extends JsonContent {
 
 	/** Subpage actions */
 	const NEWSLETTER_ANNOUNCE = 'announce';
-	const NEWSLETTER_MANAGE = 'manage';
 	const NEWSLETTER_SUBSCRIBE = 'subscribe';
 	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 	const NEWSLETTER_SUBSCRIBERS = 'subscribers';
