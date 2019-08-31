@@ -433,9 +433,9 @@ class NewsletterContent extends JsonContent {
 	 * @return string
 	 */
 	public function getTextForSummary( $maxLength = 250 ) {
-		global $wgContLang;
+		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
-		$truncatedtext = $wgContLang->truncateForVisual(
+		$truncatedtext = $contLang->truncateForVisual(
 			preg_replace( "/[\n\r]/", ' ',  $this->getDescription() ), max( 0, $maxLength )
 		);
 

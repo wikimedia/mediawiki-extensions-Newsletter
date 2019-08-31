@@ -285,9 +285,9 @@ class NewsletterTablePager extends TablePager {
 	}
 
 	public function formatValue( $field, $value ) {
-		global $wgContLang;
-
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
+		$services = MediaWikiServices::getInstance();
+		$linkRenderer = $services->getLinkRenderer();
+		$contLang = $services->getContentLanguage();
 		$id = $this->mCurrentRow->nl_id;
 		$newsletter = $this->newslettersArray[(int)$id];
 		switch ( $field ) {
@@ -299,12 +299,12 @@ class NewsletterTablePager extends TablePager {
 					return htmlspecialchars( $value );
 				}
 			case 'nl_desc':
-				return htmlspecialchars( $wgContLang->truncateForVisual( $value, 644 ) );
+				return htmlspecialchars( $contLang->truncateForVisual( $value, 644 ) );
 			case 'subscriber_count':
 				return Html::element(
 					'span',
 					[ 'id' => "nl-count-$id" ],
-					$wgContLang->formatNum( -(int)$this->mCurrentRow->nl_subscriber_count )
+					$contLang->formatNum( -(int)$this->mCurrentRow->nl_subscriber_count )
 				);
 			case 'action' :
 				if ( $this->mCurrentRow->nls_subscriber_id ) {
