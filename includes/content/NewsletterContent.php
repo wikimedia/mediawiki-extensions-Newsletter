@@ -282,6 +282,7 @@ class NewsletterContent extends JsonContent {
 
 		OutputPage::setupOOUI();
 		$output->setEnableOOUI( true );
+		$output->addModuleStyles( [ 'oojs-ui.styles.icons-interactions' ] );
 
 		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
