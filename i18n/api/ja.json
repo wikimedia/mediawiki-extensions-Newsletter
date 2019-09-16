@@ -2,12 +2,23 @@
 	"@metadata": {
 		"authors": [
 			"Sujiniku",
-			"Suyama"
+			"Suyama",
+			"Omotecho"
 		]
 	},
 	"apihelp-newslettersubscribe-description": "ニュースレターの入会または退会をする。",
+	"apihelp-newslettersubscribe-summary": "ニュースレターを購読もしくは購読解除する。",
+	"apihelp-newslettersubscribe-param-id": "購読状態の変更対象のニュースレターのID。",
+	"apihelp-newslettersubscribe-param-do": "操作の指定。<kbd>subscribe</kbd>もしくは <kbd>unsubscribe</kbd>のどちらかを選択。",
 	"apihelp-newslettersubscribe-example-1": "id 1 でニュースレターを購読する。",
 	"apihelp-newslettersubscribe-example-2": "id 2 でニュースレターから退会する。",
 	"apihelp-newslettermanage-description": "ニュースレターを管理。",
-	"apihelp-newslettermanage-summary": "ニュースレターを管理する。"
+	"apihelp-newslettermanage-summary": "ニュースレターを管理する。",
+	"apihelp-newslettermanage-param-id": "管理する対象のニュースレターのID。",
+	"apihelp-newslettermanage-param-do": "操作の指定。<kbd>addpublisher</kbd> もしくは <kbd>removepublisher</kbd>のどちらかを選択。",
+	"apihelp-newslettermanage-param-publisher": "管理対象の発行者の利用者ID。",
+	"newsletter-api-error-notfound": "ニュースレターが存在しません",
+	"newsletter-api-error-nopermissions": "ニュースレターを管理する権限がありません。",
+	"newsletter-api-error-invalidpublisher-registered": "発行者は登録利用者ではありません。",
+	"newsletter-api-error-subscribe-notloggedin": "ニュースレターの購読にはログインが必要です。"
 }
