@@ -8,9 +8,11 @@
 			"Antsa"
 		]
 	},
+	"newsletter-desc": "Kuvaus",
 	"newsletter-create-submit": "Rekisteröi uutiskirje",
 	"newsletter-create-editsummary": "Rekisteröi uusi uutiskirje",
 	"newsletter-manage-publishers": "Julkaisijat:",
+	"newsletter-managenewsletter-button": "Lähetä",
 	"newsletter-manage-summary": "Muutoksen yhteenveto:",
 	"newsletter-subscribe-button-label": "Kyllä",
 	"newsletter-unsubscribe-button-label": "Ei",
