@@ -2,7 +2,7 @@
 
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\LoadBalancer;
-use Wikimedia\Rdbms\ResultWrapper;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * @covers NewsletterDb
@@ -407,7 +407,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
-		$mockResWrapper = $this->getMockBuilder( ResultWrapper::class )
+		$mockResWrapper = $this->getMockBuilder( IResultWrapper::class )
 			->disableOriginalConstructor()
 			->getMock();
 		$mockResWrapper->expects( $this->once() )
