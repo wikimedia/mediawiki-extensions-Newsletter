@@ -1,5 +1,6 @@
 <?php
 
+use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\LoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
@@ -12,14 +13,14 @@ use Wikimedia\Rdbms\IResultWrapper;
 class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 	/**
-	 * @return PHPUnit_Framework_MockObject_MockObject|IDatabase
+	 * @return MockObject|IDatabase
 	 */
 	private function getMockIDatabase() {
 		return $this->getMockBuilder( IDatabase::class )->getMock();
 	}
 
 	/**
-	 * @return PHPUnit_Framework_MockObject_MockObject|LoadBalancer
+	 * @return MockObject|LoadBalancer
 	 */
 	private function getMockLoadBalancer( $db ) {
 		$mock = $this->getMockBuilder( LoadBalancer::class )
