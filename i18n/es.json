@@ -8,7 +8,8 @@
 			"Fitoschido",
 			"Dgstranz",
 			"Fortega",
-			"KATRINE1992"
+			"KATRINE1992",
+			"MarcoAurelio"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",
@@ -103,7 +104,7 @@
 	"newsletter-subscribers-invalid": "\"$1\" no es un usuario válido. Asegúrate de que el nombre de usuario exista e inténtalo de nuevo.",
 	"newsletter-available-newsletters-field-label": "Boletines dispomibles",
 	"newsletter-subscribed-newsletters-field-label": "Boletines suscritos",
-	"newsletter-none-found": "No existen boletines. Puedes crear un boletín nuevo mediante [[Special:CreateNewsletter]].",
+	"newsletter-none-found": "No existen boletines. Puedes registrar un boletín nuevo mediante [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Ningún boletín coincide con tu consulta.",
 	"echo-category-title-newsletter": "Boletines",
 	"echo-pref-tooltip-newsletter": "Notificarme cuando cualquiera de los boletines a los que me he suscrito anuncia una edición nueva.",
