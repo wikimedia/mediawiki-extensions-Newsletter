@@ -4,8 +4,12 @@
 			"Joetaras"
 		]
 	},
+	"newsletter-extension-desc": "Abbilite le utinde a pubblecà e iscriverse a le newsletter",
 	"newsletter-name": "Nome d'a newsletter",
 	"newsletter-desc": "Descrizione",
+	"newsletter-title": "Pàgene uicchi cu le 'mbormaziune sus 'a newsletter",
+	"newsletter-exist-error": "'Na newsletter cu 'u nome \"$1\" ggià esiste. Pruève arrete cu 'n'otre nome.",
+	"newsletter-create-error": "Ha assute 'n'errore mendre ste pruvave a reggistrà 'na newsletter nove. Pruève arrete.",
 	"newsletter-oldrev-undo-error-title": "Ne despiace, st'oeprazione no se pò ffà.",
 	"newslettercreate": "Reggìstre 'a newsletter",
 	"newsletter-create-submit": "Reggìstre 'a newsletter",
@@ -43,6 +47,8 @@
 	"newsletter-subscribing": "Me stoche a iscrive...",
 	"newsletter-unsubscribing": "Me stoche a scangelle...",
 	"echo-category-title-newsletter": "Newsletter",
+	"newsletter-notification-link-text-new-issue": "'Ndruche l'ediziona nove",
+	"newsletter-notification-link-text-view-newsletter": "'Ndruche 'a newsletter",
 	"newsletter-header-name": "Nome",
 	"newsletter-header-description": "Descrizione",
 	"newsletter-header-subscriber_count": "Iscritte",
