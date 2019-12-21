@@ -56,9 +56,9 @@ class NewsletterEditPage {
 					->params( $this->newsletter->getName() )
 			);
 
-			$revId = $this->context->getRequest()->getVal( 'undoafter', null );
-			$undoId = $this->context->getRequest()->getVal( 'undo', null );
-			$oldId = $this->context->getRequest()->getVal( 'oldid', null );
+			$revId = $this->context->getRequest()->getInt( 'undoafter' );
+			$undoId = $this->context->getRequest()->getInt( 'undo' );
+			$oldId = $this->context->getRequest()->getInt( 'oldid' );
 			$this->getManageForm( $revId, $undoId, $oldId )->show();
 		} else {
 			$permErrors = $this->getPermissionErrors();

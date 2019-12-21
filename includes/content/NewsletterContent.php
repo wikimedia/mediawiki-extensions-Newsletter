@@ -202,7 +202,7 @@ class NewsletterContent extends JsonContent {
 				$logs = '';
 				$logCount = LogEventsList::showLogExtract( $logs, // by reference
 					'newsletter',
-					SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ), '',
+					SpecialPage::getTitleFor( 'Newsletter', (string)$this->newsletter->getId() ), '',
 					[
 						'lim' => 10,
 						'showIfEmpty' => false,
@@ -295,6 +295,7 @@ class NewsletterContent extends JsonContent {
 				]
 			);
 		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
+			// @phan-suppress-previous-line PhanTypeMismatchArgumentNullable
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-unsubscribe-button' )->text(),
@@ -385,7 +386,7 @@ class NewsletterContent extends JsonContent {
 		);
 
 		$newsletterLink = Linker::makeSelfLinkObj(
-			SpecialPage::getTitleFor( 'Newsletter', $this->newsletter->getId() ),
+			SpecialPage::getTitleFor( 'Newsletter', (string)$this->newsletter->getId() ),
 			$this->getEscapedName()
 		);
 
