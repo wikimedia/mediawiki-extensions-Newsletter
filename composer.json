@@ -2,7 +2,7 @@
 	"type": "mediawiki-extension",
 	"license": "GPL-2.0-or-later",
 	"require": {
-		"wikimedia/assert": ">=0.1 <0.3"
+		"wikimedia/assert": ">=0.1 <0.5"
 	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
