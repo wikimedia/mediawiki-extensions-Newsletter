@@ -80,7 +80,7 @@ class SpecialNewsletter extends SpecialPage {
 			$num = LogEventsList::showLogExtract(
 				$out,
 				'newsletter',
-				$this->getPageTitle( (int)$id ),
+				$this->getPageTitle( $id ),
 				'',
 				[
 					'showIfEmpty' => false,
@@ -140,7 +140,7 @@ class SpecialNewsletter extends SpecialPage {
 				$msg = $this->msg( 'newsletter-subtitlelinks-' . $action )->text();
 				$link = $linkRenderer->makeKnownLink( $title, $msg, [], [ 'action' => 'edit' ] );
 			}
-			if ( $current === $action ) {
+			if ( $current === $action && $title ) {
 				$links[] = Linker::makeSelfLinkObj( $title, htmlspecialchars( $msg ) );
 			} else {
 

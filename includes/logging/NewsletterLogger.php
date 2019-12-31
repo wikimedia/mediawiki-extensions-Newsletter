@@ -33,7 +33,7 @@ class NewsletterLogger {
 		$id = $newsletter->getId();
 		$log = new ManualLogEntry( 'newsletter', 'newsletter-added' );
 		$log->setPerformer( RequestContext::getMain()->getUser() );
-		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $id ) );
+		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', (string)$id ) );
 		$log->setParameters( [
 			'4:newsletter-link:nl_id' => "$id:{$newsletter->getName()}"
 		] );
@@ -50,7 +50,7 @@ class NewsletterLogger {
 	) {
 		$log = new ManualLogEntry( 'newsletter', 'issue-added' );
 		$log->setPerformer( $publisher );
-		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() ) );
+		$log->setTarget( SpecialPage::getTitleFor( 'Newsletter', (string)$newsletter->getId() ) );
 		$log->setParameters( [
 			'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}",
 			'5::nli_issue_id' => $issueId,

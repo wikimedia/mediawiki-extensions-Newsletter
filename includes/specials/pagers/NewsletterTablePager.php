@@ -15,7 +15,7 @@ class NewsletterTablePager extends TablePager {
 	const EXTRAINT = 150000000;
 
 	/**
-	 * @var string[]
+	 * @var (string|null)[]
 	 */
 	private $fieldNames;
 
@@ -63,12 +63,12 @@ class NewsletterTablePager extends TablePager {
 	 * This is either run directly or as part as a union. It's done as part of
 	 * a union to avoid expensive filesort.
 	 *
-	 * @param string $offset The indexpager offset (Number of subscribers)
+	 * @param int $offset The indexpager offset (Number of subscribers)
 	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
-	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
+	 * @param string|false $secondaryOffset For tiebreaking the order (nl_name)
 	 *
-	 * @return string
+	 * @return string raw sql
 	 */
 	private function getSubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
@@ -76,7 +76,7 @@ class NewsletterTablePager extends TablePager {
 		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'subscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
-			$this->buildQueryInfo( $offset, $limit, $descending );
+			$this->buildQueryInfo( (string)$offset, $limit, $descending );
 
 		if ( $secondaryOffset !== false ) {
 			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
@@ -96,10 +96,10 @@ class NewsletterTablePager extends TablePager {
 	/**
 	 * Add paging conditions for tie-breaking
 	 *
-	 * @param string $desc
+	 * @param bool $desc
 	 * @param int $offset
-	 * @param int $secondaryOffset
-	 * @return mixed
+	 * @param string|false $secondaryOffset
+	 * @return string raw sql
 	 */
 	private function getSecondaryOrderBy( $desc, $offset, $secondaryOffset ) {
 		$operator = $this->getOp( $desc );
@@ -118,10 +118,11 @@ class NewsletterTablePager extends TablePager {
 	 * This is either run directly or as part as a union. its
 	 * done as part of a union to avoid expensive filesort.
 	 *
-	 * @param string $offset The indexpager offset (Number of subscribers)
+	 * @param int $offset The indexpager offset (Number of subscribers)
 	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
-	 * @param string $secondaryOffset For tiebreaking the order (nl_name)
+	 * @param string|false $secondaryOffset For tiebreaking the order (nl_name)
+	 * @return string raw sql
 	 */
 	private function getUnsubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
@@ -129,7 +130,7 @@ class NewsletterTablePager extends TablePager {
 		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'unsubscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
-			$this->buildQueryInfo( $offset, $limit, $descending );
+			$this->buildQueryInfo( (string)$offset, $limit, $descending );
 		if ( $secondaryOffset !== false ) {
 			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
 		}
@@ -171,10 +172,10 @@ class NewsletterTablePager extends TablePager {
 	public function reallyDoQuery( $offset, $limit, $descending ) {
 		$pipePos = strpos( $offset, '|' );
 		if ( $pipePos !== false ) {
-			$realOffset = substr( $offset, 1, $pipePos - 1 ) - self::EXTRAINT;
+			$realOffset = (int)substr( $offset, 1, $pipePos - 1 ) - self::EXTRAINT;
 			$secondaryOffset = substr( $offset, $pipePos + 1 );
 		} elseif ( strlen( $offset ) >= 2 ) {
-			$realOffset = substr( $offset, 1 ) - self::EXTRAINT;
+			$realOffset = (int)substr( $offset, 1 ) - self::EXTRAINT;
 			$secondaryOffset = false;
 		} else {
 			$realOffset = 0;
