@@ -10,7 +10,7 @@
 	 * which is loaded on load time (instead of runtime unlike this module) to prevent FOUCs.
 	 */
 	OO.ui.infuse( $( '#mw-newsletter-filter-options' ) ).on( 'change', function () {
-		$( '#mw-newsletter-filter-form' ).submit();
+		$( '#mw-newsletter-filter-form' ).trigger( 'submit' );
 	} );
 
 	/**
@@ -28,7 +28,7 @@
 		return api.postWithToken( 'csrf', {
 			action: 'newslettersubscribe',
 			id: nlId,
-			'do': doAction
+			do: doAction
 		} );
 	}
 
@@ -54,7 +54,7 @@
 	}
 
 	$( function () {
-		$( '.newsletter-subscription' ).click( function ( event ) {
+		$( '.newsletter-subscription' ).on( 'click', function ( event ) {
 			var $link = $( this ),
 				newsletterId = $link.data( 'mw-newsletter-id' ),
 				$subscriberCount, promise;
