@@ -4,8 +4,8 @@ use MediaWiki\MediaWikiServices;
 use Wikimedia\Assert\Assert;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\DBUnexpectedError;
-use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IResultWrapper;
 
 /**
  * @license GPL-2.0-or-later

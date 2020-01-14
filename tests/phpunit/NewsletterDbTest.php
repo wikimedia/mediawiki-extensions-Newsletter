@@ -2,8 +2,8 @@
 
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\IDatabase;
-use Wikimedia\Rdbms\LoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\LoadBalancer;
 
 /**
  * @covers NewsletterDb
@@ -80,7 +80,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 		$result = $table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 
-		$this->assertEquals( true, $result );
+		$this->assertTrue( $result );
 	}
 
 	/**
