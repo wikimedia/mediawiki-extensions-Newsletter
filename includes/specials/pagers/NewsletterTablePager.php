@@ -76,7 +76,7 @@ class NewsletterTablePager extends TablePager {
 		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'subscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
-			$this->buildQueryInfo( (string)$offset, $limit, $descending );
+			$this->buildQueryInfo( $offset, $limit, $descending );
 
 		if ( $secondaryOffset !== false ) {
 			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
@@ -130,7 +130,7 @@ class NewsletterTablePager extends TablePager {
 		$this->mIndexField = 'nl_subscriber_count';
 		$this->mode = 'unsubscribed';
 		list( $tables, $fields, $conds, $fname, $options, $join_conds ) =
-			$this->buildQueryInfo( (string)$offset, $limit, $descending );
+			$this->buildQueryInfo( $offset, $limit, $descending );
 		if ( $secondaryOffset !== false ) {
 			$conds[] = $this->getSecondaryOrderBy( $descending, $offset, $secondaryOffset );
 		}
