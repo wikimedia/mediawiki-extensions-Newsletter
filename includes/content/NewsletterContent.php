@@ -461,10 +461,10 @@ class NewsletterContent extends JsonContent {
 		$recursive = true,
 		ParserOutput $parserOutput = null
 	) {
-		global $wgUser;
+		$user = RequestContext::getMain()->getUser();
 		// @todo This user object might not be the right one in some cases.
 		// but that should be pretty rare in the context of newsletters.
-		$mwUpdate = new NewsletterDataUpdate( $this, $title, $wgUser );
+		$mwUpdate = new NewsletterDataUpdate( $this, $title, $user );
 		return array_merge(
 			parent::getSecondaryDataUpdates( $title, $old, $recursive, $parserOutput ),
 			[ $mwUpdate ]
