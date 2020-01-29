@@ -351,7 +351,7 @@ class NewsletterHooks {
 		}
 		$mainPageId = $content->getMainPage()->getArticleID();
 		$store = NewsletterStore::getDefaultInstance();
-		if ( !$newsletter || ( $newsletter && $newsletter->getPageId() !== $mainPageId ) ) {
+		if ( !$newsletter || $newsletter->getPageId() !== $mainPageId ) {
 			$rows = $store->newsletterExistsForMainPage( $mainPageId );
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {

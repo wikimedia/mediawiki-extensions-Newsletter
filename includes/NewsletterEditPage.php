@@ -153,6 +153,7 @@ class NewsletterEditPage {
 
 		// Ensure action is not editing the current revision
 		if ( ( $revId && $undoId ) || $oldId ) {
+			$oldRevision = null;
 			// Editing a previous revision
 			if ( $oldId ) {
 				$oldRevision = Revision::newFromId( $oldId );
@@ -181,7 +182,7 @@ class NewsletterEditPage {
 			}
 
 			// Default fields are the same, regardless of action
-			if ( $oldRevision->getContentModel() === 'NewsletterContent'
+			if ( $oldRevision && $oldRevision->getContentModel() === 'NewsletterContent'
 				&& $oldRevision->getContent() !== null
 			) {
 				$content = $oldRevision->getContent();
