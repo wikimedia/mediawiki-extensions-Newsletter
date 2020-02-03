@@ -22,9 +22,6 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		parent::setUp();
 		$dbw = wfGetDB( DB_MASTER );
 
-		$user = self::$users['sysop']->getUser();
-		$this->doLogin( 'sysop' );
-
 		$rowData = [
 			'nl_name' => 'MyNewsletter',
 			'nl_desc' => 'This is a newsletter',
