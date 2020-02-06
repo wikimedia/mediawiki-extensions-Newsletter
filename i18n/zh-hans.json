@@ -3,7 +3,8 @@
 		"authors": [
 			"Liuxinyu970226",
 			"Liang860908",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"铁桶"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",
@@ -18,8 +19,8 @@
 	"newsletter-invalid-name": "您为新闻报输入的名称无效。请重试。",
 	"newslettercreate": "创建新闻报",
 	"newslettercreate-text": "此页面允许您创建一个新的新闻报。您将被添加为发布者，并在它创建之时订阅新闻报。所有字段均为必填项。",
-	"newsletter-create-submit": "创建新闻报",
-	"newsletter-create-editsummary": "创建一个新的新闻报",
+	"newsletter-create-submit": "注册新闻报",
+	"newsletter-create-editsummary": "注册一份新的新闻报",
 	"newsletter-create-confirmation": "一个新的新闻报：[[Newsletter:$1|$1]]已被创建。",
 	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
 	"newsletter-mainpage-non-existent": "新闻报首页不存在。请输入一个有效的现有页面。",
