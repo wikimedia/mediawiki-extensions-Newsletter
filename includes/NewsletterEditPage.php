@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * @license GPL-2.0-or-later
  * @author tonythomas
@@ -75,14 +77,14 @@ class NewsletterEditPage {
 	}
 
 	protected function getPermissionErrors() {
-		$rigor = 'secure';
-		$permErrors = $this->title->getUserPermissionsErrors( 'edit', $this->user, $rigor );
+		$permManager = MediaWikiServices::getInstance()->getPermissionManager();
+		$permErrors = $permManager->getPermissionErrors( 'edit', $this->user, $this->title );
 
 		if ( $this->createNew ) {
 			$permErrors = array_merge(
 				$permErrors,
 				wfArrayDiff2(
-					$this->title->getUserPermissionsErrors( 'create', $this->user, $rigor ),
+					$permManager->getPermissionErrors( 'create', $this->user, $this->title ),
 					$permErrors
 				)
 			);
