@@ -284,7 +284,7 @@ class NewsletterContent extends JsonContent {
 		$output->setEnableOOUI( true );
 		$output->addModuleStyles( [ 'oojs-ui.styles.icons-interactions' ] );
 
-		if ( !$user || ( $user && !$this->newsletter->isSubscribed( $user ) ) ) {
+		if ( !$user || !$this->newsletter->isSubscribed( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-subscribe-button' )->text(),
@@ -294,8 +294,7 @@ class NewsletterContent extends JsonContent {
 
 				]
 			);
-		} elseif ( $this->newsletter->isSubscribed( $user ) ) {
-			// @phan-suppress-previous-line PhanTypeMismatchArgumentNullable
+		} else {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-unsubscribe-button' )->text(),

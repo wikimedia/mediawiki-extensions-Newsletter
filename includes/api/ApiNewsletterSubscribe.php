@@ -27,6 +27,8 @@ class ApiNewsletterSubscribe extends ApiBase {
 			case 'unsubscribe':
 				$status = $newsletter->unsubscribe( $user );
 				break;
+			default:
+				throw new LogicException( 'do action not implemented' );
 		}
 
 		if ( !$status->isGood() ) {
