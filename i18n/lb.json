@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Soued031"
 		]
 	},
 	"newsletter-extension-desc": "Erméiglecht et Benotzer fir Newsletteren ze publizéieren an z'abonnéieren",
 	"newsletter-name": "Numm vun der Newsletter",
 	"newsletter-desc": "Beschreiwung",
 	"newsletter-title": "Wikisäit,mat INformatiounen iwwer d'Newsletter",
-	"newsletter-exist-error": "Et gëtt schonn eng Newsletter mam Numm \"$1\". Probéiert w.e.g. nach eng Kéier mat engem aneren Numm.",
+	"newsletter-exist-error": "Et gëtt schonn eng Newsletter mam Numm \"$1\". Probéiert wgl. nach eng Kéier mat engem aneren Numm.",
 	"newsletter-create-submit": "Newsletter registéieren",
 	"newsletter-create-editsummary": "Eng nei Newsletter registréieren",
 	"newsletter-create-confirmation": "Eng nei Newsletter: [[Newsletter:$1|$1]] gouf registréiert.",
@@ -40,7 +41,7 @@
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",
 	"newsletter-subscribe-fail": "D'Newsletter \"$1\" konnt net abonnéiert ginn, well Dir se schonn abonnéiert hutt.",
 	"newsletter-subscribe-error": "Feeler  beim Abonnéiere vun der Newsletter.",
-	"newsletter-subscribe-ip-notallowed": "Loggt Iech w.e.g. a fir eng Newsletter z'abonnéieren.",
+	"newsletter-subscribe-ip-notallowed": "Loggt Iech wgl. a fir eng Newsletter z'abonnéieren.",
 	"newsletter-unsubscribe-success": "Dir sidd net méi op \"$1\" abonnéiert.",
 	"newsletter-unsubscribe-error": "Feeler beim Ofbestelle vun der Newsletter.",
 	"newsletter-subscribe-button-label": "Jo",
@@ -51,7 +52,7 @@
 	"newsletter-subscribers-nopermission": "Dir hutt net d'Recht fir d'Abonnente vun dëser Newsletter z'änneren",
 	"newsletter-edit-subscribers-nochanges": "Et goufe keng Ännerungen un der Lëscht vun den Abonnente vun der Newsletter gemaach.",
 	"newsletter-edit-subscribers-success": "D'Abonnente vun der Newsletter goufen aktualiséiert.",
-	"newsletter-subscribers-invalid": "\"$1\" ass kee valabele Benotzer. Vergewëssert Iech w.e.g. ob et dee Benotzernumm gëtt a probéiert nach eng Kéier.",
+	"newsletter-subscribers-invalid": "\"$1\" ass kee valabele Benotzer. Vergewëssert Iech wgl. ob et dee Benotzernumm gëtt a probéiert nach eng Kéier.",
 	"newsletter-available-newsletters-field-label": "Disponibel Newsletteren",
 	"newsletter-none-found": "Et gëtt keng Newsletteren. Dir kënnt eng nei Newsletter iwwer [[Special:RegisterNewsletter]] registréieren.",
 	"echo-category-title-newsletter": "Newsletteren",
