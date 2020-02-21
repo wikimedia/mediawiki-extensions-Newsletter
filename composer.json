@@ -1,9 +1,6 @@
 {
 	"type": "mediawiki-extension",
 	"license": "GPL-2.0-or-later",
-	"require": {
-		"wikimedia/assert": "~0.1.0|~0.2.0|~0.3.0|~0.4.0|~0.5.0"
-	},
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
 		"jakub-onderka/php-console-highlighter": "0.4.0",
