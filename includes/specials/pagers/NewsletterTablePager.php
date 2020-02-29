@@ -112,7 +112,7 @@ class NewsletterTablePager extends TablePager {
 		], LIST_OR );
 	}
 
-	/*
+	/**
 	 * Get the query for newsletters for which the user is not subscribed to.
 	 *
 	 * This is either run directly or as part as a union. its

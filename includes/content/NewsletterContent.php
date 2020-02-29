@@ -50,7 +50,7 @@ class NewsletterContent extends JsonContent {
 	/**
 	 * Validate username and make sure it exists
 	 *
-	 * @param $userName
+	 * @param string $userName
 	 * @return bool
 	 */
 	private function validateUserName( $userName ) {
