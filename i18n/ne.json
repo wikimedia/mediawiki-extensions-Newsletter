@@ -1,9 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"जनक राज भट्ट"
+			"जनक राज भट्ट",
+			"पर्वत सुबेदी"
 		]
 	},
-	"newsletter-delete-confirm-cancel": "रद्द",
-	"newsletter-delete-confirm-delete": "मेट्ने"
+	"newsletter-subtitlelinks-manage": "व्यवस्थापन गर्नुहाेस्",
+	"newsletter-manage-button": "व्यवस्थापन गर्नुहाेस्"
 }
