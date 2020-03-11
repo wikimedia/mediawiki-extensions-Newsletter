@@ -130,42 +130,18 @@
 		"remoteExtPath": "Newsletter/modules"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": [
-			"NewsletterHooks::onLoadExtensionSchemaUpdates"
-		],
-		"BeforeCreateEchoEvent": [
-			"NewsletterHooks::onBeforeCreateEchoEvent"
-		],
-		"LoginFormValidErrorMessages": [
-			"NewsletterHooks::onLoginFormValidErrorMessages"
-		],
-		"UserMergeAccountFields": [
-			"NewsletterHooks::onUserMergeAccountFields"
-		],
-		"AlternateEdit": [
-			"NewsletterHooks::onAlternateEdit"
-		],
-		"CustomEditor": [
-			"NewsletterHooks::onCustomEditor"
-		],
-		"ArticleDelete": [
-			"NewsletterHooks::onArticleDelete"
-		],
-		"UndeleteForm::undelete": [
-			"NewsletterHooks::onUndeleteForm"
-		],
-		"TitleMove": [
-			"NewsletterHooks::onTitleMove"
-		],
-		"ContentModelCanBeUsedOn": [
-			"NewsletterHooks::onContentModelCanBeUsedOn"
-		],
-		"EditFilterMergedContent": [
-			"NewsletterHooks::onEditFilterMergedContent"
-		],
-		"SkinTemplateNavigation": [
-			"NewsletterHooks::onSkinTemplateNavigation"
-		]
+		"LoadExtensionSchemaUpdates": "NewsletterHooks::onLoadExtensionSchemaUpdates",
+		"BeforeCreateEchoEvent": "NewsletterHooks::onBeforeCreateEchoEvent",
+		"LoginFormValidErrorMessages": "NewsletterHooks::onLoginFormValidErrorMessages",
+		"UserMergeAccountFields": "NewsletterHooks::onUserMergeAccountFields",
+		"AlternateEdit": "NewsletterHooks::onAlternateEdit",
+		"CustomEditor": "NewsletterHooks::onCustomEditor",
+		"ArticleDelete": "NewsletterHooks::onArticleDelete",
+		"UndeleteForm::undelete": "NewsletterHooks::onUndeleteForm",
+		"TitleMove": "NewsletterHooks::onTitleMove",
+		"ContentModelCanBeUsedOn": "NewsletterHooks::onContentModelCanBeUsedOn",
+		"EditFilterMergedContent": "NewsletterHooks::onEditFilterMergedContent",
+		"SkinTemplateNavigation": "NewsletterHooks::onSkinTemplateNavigation"
 	},
 	"namespaces": [
 		{
