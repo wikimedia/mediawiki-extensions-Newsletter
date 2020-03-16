@@ -407,7 +407,7 @@ class NewsletterEditPage {
 			$modified = true;
 		}
 
-		$publisherNames = explode( "\n", $data['Publishers'] );
+		$publisherNames = $data['Publishers'] ? explode( "\n", $data['Publishers'] ) : [];
 		// Ask for confirmation before removing all the publishers
 		if ( !$confirmed && count( $publisherNames ) === 0 ) {
 			return Status::newFatal( 'newsletter-manage-no-publishers' );
