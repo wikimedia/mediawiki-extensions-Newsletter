@@ -1,6 +1,8 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Revision\RevisionRecord;
+use MediaWiki\Revision\SlotRecord;
 
 /**
  * @license GPL-2.0-or-later
@@ -155,24 +157,37 @@ class NewsletterEditPage {
 
 		// Ensure action is not editing the current revision
 		if ( ( $revId && $undoId ) || $oldId ) {
-			$oldRevision = null;
+			$oldRevRecord = null;
+			$revLookup = MediaWikiServices::getInstance()->getRevisionLookup();
 			// Editing a previous revision
 			if ( $oldId ) {
-				$oldRevision = Revision::newFromId( $oldId );
-				if ( $oldRevision->getContentModel() === 'NewsletterContent'
-					&& $oldRevision->getContent() !== null ) {
+				$oldRevRecord = $revLookup->getRevisionById( $oldId );
+				$oldMainSlot = $oldRevRecord->getSlot(
+					SlotRecord::MAIN,
+					RevisionRecord::RAW
+				);
+				if ( $oldMainSlot->getModel() === 'NewsletterContent'
+					&& !$oldRevRecord->isDeleted( RevisionRecord::DELETED_TEXT )
+				) {
 					$fields['Summary']['default'] = '';
 				}
 			} elseif /* Undoing the latest revision */ ( $revId && $undoId ) {
-				$oldRevision = Revision::newFromId( $revId );
-				$undoRevision = Revision::newFromId( $undoId );
-				if ( $undoRevision->isCurrent()
-					&& $undoRevision->getContentModel() === 'NewsletterContent'
-					&& $undoRevision->getContent() !== null
+				$oldRevRecord = $revLookup->getRevisionById( $revId );
+				$undoRevRecord = $revLookup->getRevisionById( $undoId );
+				$undoMainSlot = $undoRevRecord->getSlot(
+					SlotRecord::MAIN,
+					RevisionRecord::RAW
+				);
+				if ( $undoRevRecord->isCurrent()
+					&& $undoMainSlot->getModel() === 'NewsletterContent'
+					&& !$undoRevRecord->isDeleted( RevisionRecord::DELETED_TEXT )
 				) {
+					$userText = $undoRevRecord->getUser() ?
+						$undoRevRecord->getUser()->getName() :
+						'';
 					$fields['Summary']['default'] =
 						$this->context->msg( 'undo-summary' )
-							->params( $undoRevision->getId(), $undoRevision->getUserText() )
+							->params( $undoRevRecord->getId(), $userText )
 							->inContentLanguage()
 							->text();
 				} else /* User attempts to undo prior revision */ {
@@ -183,11 +198,12 @@ class NewsletterEditPage {
 				}
 			}
 
-			// Default fields are the same, regardless of action
-			if ( $oldRevision && $oldRevision->getContentModel() === 'NewsletterContent'
-				&& $oldRevision->getContent() !== null
+			if ( $oldRevRecord
+				&& $oldRevRecord->getSlot( SlotRecord::MAIN, RevisionRecord::RAW )
+					->getModel() === 'NewsletterContent'
+				&& !$oldRevRecord->isDeleted( RevisionRecord::DELETED_TEXT )
 			) {
-				$content = $oldRevision->getContent();
+				$content = $oldRevRecord->getContent( SlotRecord::MAIN );
 				'@phan-var NewsletterContent $content';
 				$fields['MainPage']['default'] = $content->getMainPage()->getPrefixedText();
 				$fields['Description']['default'] = $content->getDescription();
