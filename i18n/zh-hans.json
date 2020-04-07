@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Liuxinyu970226",
 			"Liang860908",
-			"飞舞回堂前",
-			"铁桶"
+			"Liuxinyu970226",
+			"铁桶",
+			"飞舞回堂前"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",

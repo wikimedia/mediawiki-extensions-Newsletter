@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Rafael.minuesa",
-			"Yllelder",
-			"Idontknow",
-			"Fitoschido",
 			"Dgstranz",
+			"Fitoschido",
 			"Fortega",
+			"Idontknow",
 			"KATRINE1992",
-			"MarcoAurelio"
+			"Macofe",
+			"MarcoAurelio",
+			"Rafael.minuesa",
+			"Yllelder"
 		]
 	},
 	"newsletter-extension-desc": "Permite a los usuarios publicar y suscribirse a boletines",

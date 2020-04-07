@@ -1,16 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Sujiniku",
-			"Otokoume",
 			"2nd-player",
+			"Omotecho",
+			"Otokoume",
 			"Ridmevo",
-			"Thibaut120094",
-			"ネイ",
-			"Yusuke1109",
-			"Suyama",
 			"Shirayuki",
-			"Omotecho"
+			"Sujiniku",
+			"Suyama",
+			"Thibaut120094",
+			"Yusuke1109",
+			"ネイ"
 		]
 	},
 	"newsletter-extension-desc": "利用者がニュースレターの発行や購読をできるようにする",

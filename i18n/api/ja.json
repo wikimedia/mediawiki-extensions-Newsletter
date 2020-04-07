@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Omotecho",
 			"Sujiniku",
-			"Suyama",
-			"Omotecho"
+			"Suyama"
 		]
 	},
 	"apihelp-newslettersubscribe-description": "ニュースレターの入会または退会をする。",

@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Macofe",
-			"Vitorvicentevalente",
-			"Imperadeiro90",
-			"Fúlvio",
-			"Mansil",
-			"Hamilton Abreu",
-			"MokaAkashiyaPT",
 			"Athena in Wonderland",
-			"CaiusSPQR"
+			"CaiusSPQR",
+			"Fúlvio",
+			"Hamilton Abreu",
+			"Imperadeiro90",
+			"Macofe",
+			"Mansil",
+			"MokaAkashiyaPT",
+			"Vitorvicentevalente"
 		]
 	},
 	"newsletter-extension-desc": "Permite que os utilizadores publiquem e subscrevam boletins informativos",
