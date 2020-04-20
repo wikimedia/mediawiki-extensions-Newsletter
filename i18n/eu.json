@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Joseba",
 			"Mikel Ibaiba",
 			"Sator",
 			"Subi"
@@ -10,7 +11,7 @@
 	"newsletter-oldrev-undo-error-title": "Eragiketa hau ez da onartzen, sentitzen dut.",
 	"newsletter-oldrev-undo-error-body": "Aurreko berrikusketa bat aldatzea ezin da egin Newsletter estentsioaren bidez. Eguneratu azken berrikusketa, mesedez.",
 	"newsletter-subtitlelinks-subscribers": "harpidedunak aldatu",
-	"newsletter-view-mainpage": "Orrialde nagusia:",
+	"newsletter-view-mainpage": "Buletineko orrialde nagusia:",
 	"newsletter-view-description": "Deskribapena:",
 	"newsletter-manage-button": "Kudeatu",
 	"newsletter-subscribers-button": "harpidedunak aldatu",
@@ -25,7 +26,7 @@
 	"newsletter-header-name": "Izena",
 	"newsletter-header-description": "Deskribapena",
 	"newsletter-header-subscriber_count": "Harpidedunak",
-	"right-newsletter-create": "Albistegiak sortu",
+	"right-newsletter-create": "Erregistro buletinak",
 	"right-newsletter-delete": "Albistegiak ezabatu",
 	"newsletter-list-option-all": "Albistegi guztiak",
 	"newsletter-list-go-button": "Joan"
