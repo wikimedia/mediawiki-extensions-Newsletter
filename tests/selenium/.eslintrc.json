@@ -8,8 +8,5 @@
 	},
 	"globals": {
 		"browser": false
-	},
-	"rules": {
-		"no-console": 0
 	}
 }

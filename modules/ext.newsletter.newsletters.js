@@ -9,7 +9,9 @@
 	 * the button. The button is hidden for users on ext.newsletter.newsletters.styles
 	 * which is loaded on load time (instead of runtime unlike this module) to prevent FOUCs.
 	 */
+	// eslint-disable-next-line no-jquery/no-global-selector
 	OO.ui.infuse( $( '#mw-newsletter-filter-options' ) ).on( 'change', function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#mw-newsletter-filter-form' ).trigger( 'submit' );
 	} );
 
@@ -54,6 +56,7 @@
 	}
 
 	$( function () {
+		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.newsletter-subscription' ).on( 'click', function ( event ) {
 			var $link = $( this ),
 				newsletterId = $link.data( 'mw-newsletter-id' ),
@@ -73,6 +76,7 @@
 
 			$link.data( 'nlDisabled', true ).addClass( 'newsletter-link-disabled' );
 
+			// eslint-disable-next-line no-jquery/no-class-state
 			if ( $link.hasClass( 'newsletter-subscribed' ) ) {
 				// Currently subscribed so let them unsubscribe.
 				$link.text( mw.msg( 'newsletter-unsubscribing' ) );
