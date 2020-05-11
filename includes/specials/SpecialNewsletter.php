@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 /**
  * Special page to handle actions related to specific newsletters
  *
@@ -356,7 +358,9 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		// Validate summary
-		$reasonSpamMatch = EditPage::matchSummarySpamRegex( $data['summary'] );
+		$reasonSpamMatch = MediaWikiServices::getInstance()
+			->getSpamChecker()
+			->checkSummary( $data['summary'] );
 		if ( $reasonSpamMatch ) {
 			return Status::newFatal( 'spamprotectionmatch', $reasonSpamMatch );
 		}
