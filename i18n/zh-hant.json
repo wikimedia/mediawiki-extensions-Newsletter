@@ -8,6 +8,7 @@
 			"LNDDYL",
 			"Liuxinyu970226",
 			"MoonYaksha",
+			"Xiplus",
 			"烈羽"
 		]
 	},
@@ -146,12 +147,12 @@
 	"newsletter-notification-del-publisher-flyout": "您不再是電子報 $1 的發佈者。",
 	"log-name-newsletter": "電子報日誌",
 	"log-description-newsletter": "此為對電子報做出更改的日誌。",
-	"logentry-newsletter-publisher-added": "$1 已將 {{GENDER:$6|$3}} {{GENDER:$2|添加}}為電子報 $4 的發佈者",
-	"logentry-newsletter-publisher-removed": "$1 已將 {{GENDER:$6|$3}} 從電子報 $4 的發佈者裡{{GENDER:$2|移除}}",
+	"logentry-newsletter-publisher-added": "$1已將{{GENDER:$6|$3}}{{GENDER:$2|添加}}為電子報$4的發布者",
+	"logentry-newsletter-publisher-removed": "$1已將{{GENDER:$6|$3}}從電子報$4的發布者裡{{GENDER:$2|移除}}",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|註冊}}了電子報 $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|刪除}}了電子報 $4",
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|復原}}了電子報 $4",
-	"logentry-newsletter-issue-added": "$1 已在電子報 $4 的 $6 上{{GENDER:$2|發佈}}新期號",
+	"logentry-newsletter-issue-added": "$1已在電子報$4的$6上{{GENDER:$2|發布}}新期號",
 	"log-action-filter-newsletter": "操作類型：",
 	"log-action-filter-newsletter-publisher-added": "發行人新增",
 	"log-action-filter-newsletter-publisher-removed": "發行人移除",
