@@ -1,7 +1,7 @@
 const Page = require( 'wdio-mediawiki/Page' );
 
 class NewsletterPage extends Page {
-	get title() { return browser.element( '#firstHeading' ); }
+	get title() { return $( '#firstHeading' ); }
 	open() {
 		super.openTitle( 'Special:Newsletters' );
 	}
