@@ -264,7 +264,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 		$result = $table->addNewsletter( $newsletter );
 
-		$this->assertEquals( 1, $result );
+		$this->assertSame( 1, $result );
 	}
 
 	/**
