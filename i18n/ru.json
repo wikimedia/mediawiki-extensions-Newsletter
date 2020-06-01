@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Diman Russkov",
 			"Diralik",
 			"Edible Melon",
 			"Ghiutun",
@@ -104,6 +105,7 @@
 	"newsletter-unsubscribing": "Отмена подписки...",
 	"newsletter-subscribers": "Подписчики рассылки",
 	"newsletter-subscribers-nopermission": "У вас нет прав на изменение списка подписчиков этой рассылки",
+	"newsletter-subscribers-invalid": "\"$1\" не является действующим участником. Пожалуйста, убедитесь, что имя участника существует, и попробуйте снова.",
 	"newsletter-available-newsletters-field-label": "Доступные рассылки",
 	"newsletter-subscribed-newsletters-field-label": "Рассылки, на которые оформлена подписка",
 	"newsletter-list-search-none-found": "Нет рассылок, отвечающих вашему запросу",
