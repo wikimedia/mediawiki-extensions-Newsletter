@@ -29,7 +29,6 @@ class NewsletterDataUpdate extends DataUpdate {
 	}
 
 	/**
-	 * @suppress SecurityCheck-SQLInjection For IDatabase::makeList, see T201987
 	 * @param string $newNewsletterName
 	 * @return int
 	 */
