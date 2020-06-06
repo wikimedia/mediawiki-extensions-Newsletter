@@ -429,7 +429,8 @@ class NewsletterDb {
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_main_page_id', 'nl_active' ],
-			[ 'nl_main_page_id' => $mainPageId ]
+			[ 'nl_main_page_id' => $mainPageId ],
+			__METHOD__
 		);
 
 		$this->lb->reuseConnection( $dbr );

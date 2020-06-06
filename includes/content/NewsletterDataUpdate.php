@@ -45,7 +45,8 @@ class NewsletterDataUpdate extends DataUpdate {
 						'nl_main_page_id' => $this->content->getMainPage()->getArticleID(),
 						'nl_active' => 1
 					], LIST_AND )
-			], LIST_OR )
+			], LIST_OR ),
+			__METHOD__
 		);
 	}
 

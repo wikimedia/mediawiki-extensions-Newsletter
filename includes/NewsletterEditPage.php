@@ -314,7 +314,8 @@ class NewsletterEditPage {
 						'nl_main_page_id' => $mainPageId,
 						'nl_active' => 1
 					], LIST_AND )
-			], LIST_OR )
+			], LIST_OR ),
+			__METHOD__
 		);
 		// Check whether another existing newsletter has the same name or main page
 		foreach ( $rows as $row ) {
