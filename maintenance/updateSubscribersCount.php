@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
 
@@ -18,6 +20,8 @@ class UpdateSubscribersCount extends Maintenance {
 	public function execute() {
 		$dbw = $this->getDB( DB_MASTER );
 		$offset = 0;
+		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
+
 		while ( true ) {
 			$res = $dbw->select( [ 'nl_newsletters', 'nl_subscriptions' ],
 				[ 'nl_id', 'subscriber_count' => 'COUNT(nls_subscriber_id)' ],
@@ -43,7 +47,7 @@ class UpdateSubscribersCount extends Maintenance {
 
 			$this->output( "Updated " . $res->numRows() . " rows \n" );
 
-			wfWaitForSlaves();
+			$lbFactory->waitForReplication();
 
 			// We need to get the last element and add to offset.
 			$offset = $row->nl_id;
