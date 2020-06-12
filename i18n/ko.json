@@ -8,6 +8,7 @@
 			"Revi",
 			"Ykhwong",
 			"고솜",
+			"렌즈",
 			"아라"
 		]
 	},
@@ -19,9 +20,11 @@
 	"newsletter-oldrev-undo-error-title": "죄송합니다. 이 작업은 허용되지 않습니다.",
 	"newsletter-oldrev-undo-error-body": "뉴스레터 확장은 이전 판의 편집을 지원하지 않습니다. 대신에 최신 판을 업데이트해 주십시오",
 	"newslettercreate": "뉴스레터 등록",
+	"newslettercreate-text": "이 페이지에서 새로운 뉴스레터를 등록 할 수 있습니다. 당신은 게시자로 추가되고 뉴스레터 생성 후 뉴스레터를 구독하게 됩니다. 모든 항목을 채워야 합니다.",
 	"newsletter-create-submit": "뉴스레터 등록",
 	"newsletter-create-editsummary": "새 뉴스레터 등록",
-	"newsletter-create-confirmation": "새로운 뉴스레터: [[Newsletter:$1|$1]]이(가) 등록되었습니다.",
+	"newsletter-create-confirmation": "새로운 [[Newsletter:$1|$1]] 뉴스레터가 등록되었습니다.",
+	"newsletter-create-mainpage-error": "뉴스레터 주 문서가 잘못 입력되었습니다. 다시 시도하십시오.",
 	"newsletter-subtitlelinks-list": "뉴스레터 목록",
 	"newsletter-subtitlelinks-create": "새 뉴스레터 등록",
 	"newsletter-subtitlelinks-unsubscribe": "구독 해지",
