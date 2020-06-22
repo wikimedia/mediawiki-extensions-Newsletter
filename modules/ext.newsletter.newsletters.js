@@ -21,7 +21,7 @@
 	 *
 	 * @param {string} doAction The action to execute (see newslettersubscribe api
 	 *  for possible options)
-	 * @param {int} nlId The newsletter id
+	 * @param {number} nlId The newsletter id
 	 * @return {jQuery.Promise} See #post
 	 */
 	function doAPIRequest( doAction, nlId ) {

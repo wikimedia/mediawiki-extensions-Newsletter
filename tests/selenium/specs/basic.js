@@ -1,4 +1,6 @@
-var assert = require( 'assert' ),
+'use strict';
+
+const assert = require( 'assert' ),
 	NewsletterPage = require( '../pageobjects/newsletter.page' );
 
 describe( 'Newsletter', function () {
