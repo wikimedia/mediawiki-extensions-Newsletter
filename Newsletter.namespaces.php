@@ -13,3 +13,8 @@ $namespaceNames['en'] = [
 	NS_NEWSLETTER => 'Newsletter',
 	NS_NEWSLETTER_TALK => 'Newsletter_talk',
 ];
+
+$namespaceNames['ko'] = [
+	NS_NEWSLETTER => '뉴스레터',
+	NS_NEWSLETTER_TALK => '뉴스레터토론',
+];
