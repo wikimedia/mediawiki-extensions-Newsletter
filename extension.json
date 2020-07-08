@@ -65,7 +65,8 @@
 		}
 	},
 	"ExtensionMessagesFiles": {
-		"NewsletterAlias": "Newsletter.alias.php"
+		"NewsletterAlias": "Newsletter.alias.php",
+		"NewsletterNamespaces": "Newsletter.namespaces.php"
 	},
 	"ContentHandlers": {
 		"NewsletterContent": "NewsletterContentHandler"
