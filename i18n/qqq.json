@@ -136,7 +136,7 @@
 	"notification-header-newsletter-announce": "Header text for a notification when a new issue of a newsletter is announced. Parameters:\n* $1 is that user's name (not suitable for GENDER).\n* $2 is the user's name for use in GENDER.\n* $3 is the title of the newsletter.",
 	"notification-header-newsletter-newpublisher": "Notifications header message when a user is added as a newsletter publisher. Parameters:\n* $1 - name of the newsletter\n* $2 - name of the user viewing the notification, for GENDER support\n* $3 - name of the user who added the current user as a publisher, for GENDER support",
 	"notification-header-newsletter-delpublisher": "Notifications header message when a user is removed as a newsletter publisher. Parameters:\n* $1 - name of the newsletter\n* $2 - name of the user viewing the notification, for GENDER support\n* $3 - name of the user who removed the current user as a publisher, for GENDER support",
-	"notification-body-newsletter-announce": "Body text for a notification when a new issue of a newsletter is announced. Parameters:\n* $1 is the summary of the new newsletter issue.",
+	"notification-body-newsletter-announce": "{{notranslate}}\nBody text for a notification when a new issue of a newsletter is announced. Parameters:\n* $1 is the summary of the new newsletter issue.",
 	"newsletter-list-intro": "Intro message right under the header in [[Special:Newsletters]] if the user is logged in",
 	"newsletter-list-intro-not-logged-in": "Intro message right under the header in [[Special:Newsletters]] if the user is not logged in",
 	"newsletter-list-table": "Label of the drop down menu in [[Special:Newsletters]], the options of which can be used to customize the search of newsletters",
