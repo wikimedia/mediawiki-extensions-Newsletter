@@ -12,7 +12,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->tablesUsed = [ 'nl_newsletters', 'nl_publishers', 'nl_subscriptions' ];
 	}
 
-	const DESCRIPTION = "A description that is at least 30 characters long";
+	private const DESCRIPTION = "A description that is at least 30 characters long";
 
 	public function testCreation() {
 		$newsletterTitle = "Newsletter:Test";

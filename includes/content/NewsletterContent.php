@@ -9,10 +9,10 @@ use MediaWiki\MediaWikiServices;
 class NewsletterContent extends JsonContent {
 
 	/** Subpage actions */
-	const NEWSLETTER_ANNOUNCE = 'announce';
-	const NEWSLETTER_SUBSCRIBE = 'subscribe';
-	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
-	const NEWSLETTER_SUBSCRIBERS = 'subscribers';
+	private const NEWSLETTER_ANNOUNCE = 'announce';
+	private const NEWSLETTER_SUBSCRIBE = 'subscribe';
+	private const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
+	private const NEWSLETTER_SUBSCRIBERS = 'subscribers';
 
 	/**
 	 * @var string|null

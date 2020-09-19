@@ -12,7 +12,7 @@ use Wikimedia\Rdbms\IDatabase;
 class NewsletterTablePager extends TablePager {
 
 	/** Added to offset for sorting reasons */
-	const EXTRAINT = 150000000;
+	private const EXTRAINT = 150000000;
 
 	/**
 	 * @var (string|null)[]

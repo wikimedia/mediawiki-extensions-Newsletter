@@ -9,8 +9,8 @@
  */
 class Newsletter {
 
-	const NEWSLETTER_PUBLISHERS_ADDED = 'added';
-	const NEWSLETTER_PUBLISHERS_REMOVED = 'removed';
+	public const NEWSLETTER_PUBLISHERS_ADDED = 'added';
+	public const NEWSLETTER_PUBLISHERS_REMOVED = 'removed';
 
 	/**
 	 * @var int

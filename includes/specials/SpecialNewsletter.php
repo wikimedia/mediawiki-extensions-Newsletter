@@ -11,11 +11,11 @@ use MediaWiki\MediaWikiServices;
 class SpecialNewsletter extends SpecialPage {
 
 	/** Subpage actions */
-	const NEWSLETTER_MANAGE = 'manage';
-	const NEWSLETTER_ANNOUNCE = 'announce';
-	const NEWSLETTER_SUBSCRIBE = 'subscribe';
-	const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
-	const NEWSLETTER_SUBSCRIBERS = 'subscribers';
+	private const NEWSLETTER_MANAGE = 'manage';
+	private const NEWSLETTER_ANNOUNCE = 'announce';
+	public const NEWSLETTER_SUBSCRIBE = 'subscribe';
+	public const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
+	public const NEWSLETTER_SUBSCRIBERS = 'subscribers';
 
 	/**
 	 * @var Newsletter|null
