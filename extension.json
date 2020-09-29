@@ -142,7 +142,7 @@
 		"TitleMove": "NewsletterHooks::onTitleMove",
 		"ContentModelCanBeUsedOn": "NewsletterHooks::onContentModelCanBeUsedOn",
 		"EditFilterMergedContent": "NewsletterHooks::onEditFilterMergedContent",
-		"SkinTemplateNavigation": "NewsletterHooks::onSkinTemplateNavigation"
+		"SkinTemplateNavigation::Universal": "NewsletterHooks::onSkinTemplateNavigationUniversal"
 	},
 	"namespaces": [
 		{
