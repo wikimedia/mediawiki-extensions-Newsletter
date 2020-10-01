@@ -1,24 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
 	"apihelp-newslettersubscribe-description": "Bültene abone olun veya bülten aboneliğinizi iptal edin.",
 	"apihelp-newslettersubscribe-summary": "Bültene abone olun veya bülten aboneliğinizi iptal edin.",
 	"apihelp-newslettersubscribe-param-id": "Aboneliğin değiştirilmesi gereken bültenin kimliği.",
 	"apihelp-newslettersubscribe-param-do": "Yapılacak eylem. <kbd>subscribe</kbd> veya <kbd>unsubscribe</kbd> olmalıdır.",
-	"apihelp-newslettersubscribe-example-1": "1 numaralı bültene abone olun.",
-	"apihelp-newslettersubscribe-example-2": "Kimlik 2 içeren bülten listesinden çıkın.",
-	"apihelp-newslettermanage-description": "Bir bülteni yönetin.",
-	"apihelp-newslettermanage-summary": "Bir bülteni yönetin.",
-	"apihelp-newslettermanage-param-id": "Yönetilecek bültenin kimliği.",
+	"apihelp-newslettersubscribe-example-1": "1 kimlik bültene abone olun.",
+	"apihelp-newslettersubscribe-example-2": "2 kimlik haber bülteni aboneliğinden çıkın.",
+	"apihelp-newslettermanage-description": "Bir haber bülteni yönetin.",
+	"apihelp-newslettermanage-summary": "Bir haber bülteni yönetin.",
+	"apihelp-newslettermanage-param-id": "Yönetilecek haber bülteninin kimliği.",
 	"apihelp-newslettermanage-param-do": "Yapılacak eylem. <kbd>addpublisher</kbd> veya <kbd>removepublisher</kbd> olmalıdır.",
-	"apihelp-newslettermanage-param-publisher": "Yönetilecek yayıncının kullanıcı kimliği.",
-	"apihelp-newslettermanage-example-1": "Kimlik 1 içeren bültene kullanıcı kimliği 3 olan bir yayıncı ekleyin.",
-	"apihelp-newslettermanage-example-2": "Kullanıcı kimliği 5 olan yayıncıyı, Kimlik 2 içeren bültenden kaldırın.",
+	"apihelp-newslettermanage-param-publisher": "Yönetilecek yayımcının kullanıcı kimliği.",
+	"apihelp-newslettermanage-example-1": "1 numaralı haber bültenine kullanıcı kimliği 3 olan bir yayımcı ekleyin.",
+	"apihelp-newslettermanage-example-2": "Kullanıcı kimliği 5 olan yayımcıyı 2 numaralı haber bülteninden kaldırın.",
 	"newsletter-api-error-notfound": "Bülten mevcut değil",
-	"newsletter-api-error-nopermissions": "Bültenleri yönetme izniniz yok.",
-	"newsletter-api-error-invalidpublisher-registered": "Yayınlayıcı kayıtlı bir kullanıcı değil.",
-	"newsletter-api-error-subscribe-notloggedin": "Bültenlere abone olmak için giriş yapmış olmalısınız."
+	"newsletter-api-error-nopermissions": "Haber bültenlerini yönetme izniniz yok.",
+	"newsletter-api-error-invalidpublisher-registered": "Yayımlayıcı kayıtlı bir kullanıcı değil.",
+	"newsletter-api-error-subscribe-notloggedin": "Bültenlere abone olmak için oturum açmış olmalısınız."
 }
