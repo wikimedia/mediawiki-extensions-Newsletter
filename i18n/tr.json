@@ -41,7 +41,7 @@
 	"newsletter-notfound": "Bülten bulunamadı",
 	"newsletter-not-found-id": "Bu kimliğe sahip bir bülten mevcut değil. [[Special:Newsletters|Mevcut bültenlerin listesi]] mevcuttur.",
 	"newsletter-view-mainpage": "Bülten anasayfası:",
-	"newsletter-view-description": "Açıklama",
+	"newsletter-view-description": "Açıklama:",
 	"newsletter-view-publishers": "{{PLURAL:$1|Yayımcı:|Yayımcılar:}}",
 	"newsletter-view-subscriber-count": "Abone sayısı:",
 	"newsletter-view-no-publishers": "Yayımcı yok.",
