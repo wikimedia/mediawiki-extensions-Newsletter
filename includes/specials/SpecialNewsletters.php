@@ -11,7 +11,7 @@
 class SpecialNewsletters extends SpecialPage {
 
 	/**
-	 * @var string $option Filter option for the table - doesn't affect anons
+	 * @var string Filter option for the table - doesn't affect anons
 	 */
 	private $option;
 

@@ -49,8 +49,9 @@
 		}
 
 		// Invert action name because this is how the class is named.
+		// eslint-disable-next-line mediawiki/class-doc
 		$link
-			.text( mw.msg( 'newsletter-' + action + '-button' ) )
+			.text( mw.msg( 'newsletter-' + action + '-button' ) ) // eslint-disable-line mediawiki/msg-doc
 			.removeClass( 'newsletter-' + action + 'd' )
 			.addClass( 'newsletter-' + inverseAction + 'd' );
 	}
