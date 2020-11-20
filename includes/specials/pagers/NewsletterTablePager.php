@@ -300,7 +300,6 @@ class NewsletterTablePager extends TablePager {
 					return htmlspecialchars( $value );
 				}
 			case 'nl_desc':
-				// @phan-suppress-next-line SecurityCheck-DoubleEscaped
 				return htmlspecialchars( $contLang->truncateForVisual( $value, 644 ) );
 			case 'subscriber_count':
 				return Html::element(

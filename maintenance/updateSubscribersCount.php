@@ -50,6 +50,7 @@ class UpdateSubscribersCount extends Maintenance {
 			$lbFactory->waitForReplication();
 
 			// We need to get the last element and add to offset.
+			// @phan-suppress-next-line PhanPossiblyUndeclaredVariable
 			$offset = $row->nl_id;
 		}
 
