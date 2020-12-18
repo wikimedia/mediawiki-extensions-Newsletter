@@ -48,7 +48,7 @@ class NewsletterTablePager extends TablePager {
 				'subscriber_count' => $this->msg( 'newsletter-header-subscriber_count' )->text(),
 			];
 
-			if ( $this->getUser()->isLoggedIn() ) {
+			if ( $this->getUser()->isRegistered() ) {
 				// Only logged-in users can (un)subscribe
 				$this->fieldNames['action'] = null;
 			}

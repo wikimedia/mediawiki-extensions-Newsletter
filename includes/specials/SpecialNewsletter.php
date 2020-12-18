@@ -116,7 +116,7 @@ class SpecialNewsletter extends SpecialPage {
 		// Build the links taking the current user's access levels into account
 		$user = $this->getUser();
 		$actions = [];
-		if ( $user->isLoggedIn() ) {
+		if ( $user->isRegistered() ) {
 			$actions[] = $this->newsletter->isSubscribed( $user )
 				? self::NEWSLETTER_UNSUBSCRIBE
 				: self::NEWSLETTER_SUBSCRIBE;

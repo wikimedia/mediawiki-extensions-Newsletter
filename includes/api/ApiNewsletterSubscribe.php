@@ -9,7 +9,7 @@ class ApiNewsletterSubscribe extends ApiBase {
 	public function execute() {
 		$user = $this->getUser();
 
-		if ( !$user->isLoggedIn() ) {
+		if ( !$user->isRegistered() ) {
 			$this->dieWithError( 'newsletter-api-error-subscribe-notloggedin', 'notloggedin' );
 		}
 

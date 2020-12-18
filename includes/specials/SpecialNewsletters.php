@@ -45,7 +45,7 @@ class SpecialNewsletters extends SpecialPage {
 
 		$formHtml = '';
 		$introMessage = 'newsletter-list-intro-not-logged-in';
-		if ( $user->isLoggedIn() ) {
+		if ( $user->isRegistered() ) {
 			// Filter form and resource modules needed for logged-in users only
 			$out->addModuleStyles( 'ext.newsletter.newsletters.styles' );
 			$out->addModules( 'ext.newsletter.newsletters' );
