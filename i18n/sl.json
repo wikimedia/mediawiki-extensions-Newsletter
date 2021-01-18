@@ -12,6 +12,8 @@
 	"newsletter-view-description": "Opis:",
 	"newsletter-manage-title": "Naslov glavne strani",
 	"newsletter-manage-description": "Opis:",
+	"newsletter-subscribe-button-label": "Da",
+	"newsletter-unsubscribe-button-label": "Ne",
 	"echo-category-title-newsletter": "Novosti",
 	"echo-pref-tooltip-newsletter": "Obvesti me o vseh obvestilih, ki jih imam naročene, kadar se pojavi nova zadeva."
 }
