@@ -20,6 +20,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
+	 * @param IDatabase $db
 	 * @return MockObject|LoadBalancer
 	 */
 	private function getMockLoadBalancer( $db ) {
