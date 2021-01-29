@@ -67,7 +67,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			__METHOD__
 		);
 
-		$this->assertEquals( $result, 1 );
+		$this->assertSame( 1, $result );
 	}
 
 	public function testApiNewsletterForUnsubscribingNewsletter() {
@@ -97,7 +97,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			__METHOD__
 		);
 
-		$this->assertEquals( $result, 0 );
+		$this->assertSame( 0, $result );
 	}
 
 }
