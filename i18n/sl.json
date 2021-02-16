@@ -7,6 +7,7 @@
 			"NegativeTwelveDollars"
 		]
 	},
+	"newsletter-desc": "Opis",
 	"newsletter-create-editsummary": "Registiraj novo novico",
 	"newsletter-view-mainpage": "Glavna stran novic:",
 	"newsletter-view-description": "Opis:",
@@ -15,5 +16,6 @@
 	"newsletter-subscribe-button-label": "Da",
 	"newsletter-unsubscribe-button-label": "Ne",
 	"echo-category-title-newsletter": "Novosti",
-	"echo-pref-tooltip-newsletter": "Obvesti me o vseh obvestilih, ki jih imam naročene, kadar se pojavi nova zadeva."
+	"echo-pref-tooltip-newsletter": "Obvesti me o vseh obvestilih, ki jih imam naročene, kadar se pojavi nova zadeva.",
+	"newsletter-header-description": "Opis"
 }

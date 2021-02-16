@@ -107,7 +107,7 @@
 	"newsletter-subscribers-nopermission": "Vous n’avez pas l’autorisation de modifier les abonnés de ce bulletin d’information",
 	"newsletter-edit-subscribers-nochanges": "Aucune modification n’a été faite pour les abonnés du bulletin d’information.",
 	"newsletter-edit-subscribers-success": "Les abonnés du bulletin d’information ont été mis à jour.",
-	"newsletter-subscribers-invalid": "« $1 » n’est pas un utilisateur valide. Assurez-vous que le nom d’utilisateur existe et essayez de nouveau.",
+	"newsletter-subscribers-invalid": "« $1 » n’est pas un utilisateur valide. Assurez-vous que le nom d’utilisateur existe et essayez de nouveau.",
 	"newsletter-available-newsletters-field-label": "Bulletins d’information disponibles",
 	"newsletter-subscribed-newsletters-field-label": "Bulletins d’information auxquels vous êtes abonné{{GENDER:||e}}",
 	"newsletter-none-found": "Il n’existe aucun bulletin d’information. Vous pouvez créer un nouveau bulletin par le biais de [[Special:RegisterNewsletter]].",
