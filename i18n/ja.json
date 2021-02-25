@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"2nd-player",
+			"LaMagiaaa",
 			"Omotecho",
 			"Otokoume",
 			"Ridmevo",
@@ -22,7 +23,7 @@
 	"newsletter-oldrev-undo-error-title": "残念ですが、この操作は許可されていません。",
 	"newsletter-oldrev-undo-error-body": "ニュースレター拡張機能は過去号の取り消しをサポートしません。換わりに最新の変更を取り消してください。",
 	"newsletter-input-required": "必要な入力が済んでいません。もう一度お試しください。",
-	"newsletter-invalid-name": "もう一度お試しください。",
+	"newsletter-invalid-name": "無効なニュースレターの名前を入力しました。もう一度お試しください。",
 	"newslettercreate": "ニュースレターの登録",
 	"newslettercreate-text": "このページでは新規ニュースレターの登録を行います。記入すると発行者として追加され、作成したニュースレターの公開時に購読が登録されます。すべての欄に必ず記入してください。",
 	"newsletter-create-submit": "ニュースレターを登録",
