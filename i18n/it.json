@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"ArTrix",
 			"Beta16",
 			"Fringio",
@@ -138,7 +139,7 @@
 	"newsletter-notification-new-publisher-flyout": "Ora sei un editore per la newsletter $1.",
 	"newsletter-notification-link-text-del-publisher": "Visualizza newsletter",
 	"newsletter-notification-del-publisher-title": "Sei stato rimosso come editore della newsletter $1.",
-	"newsletter-notification-del-publisher-flyout": "Non sei piu un editore della newsletter $1.",
+	"newsletter-notification-del-publisher-flyout": "Non sei più un editore della newsletter $1.",
 	"log-name-newsletter": "Newsletter",
 	"log-description-newsletter": "Questo è un registro delle modifiche apportate alle newsletter.",
 	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|ha aggiunto}} {{GENDER:$6|$3}} come editore della newsletter $4",
