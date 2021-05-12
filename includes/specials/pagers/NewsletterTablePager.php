@@ -307,7 +307,7 @@ class NewsletterTablePager extends TablePager {
 					[ 'id' => "nl-count-$id" ],
 					$contLang->formatNum( -(int)$this->mCurrentRow->nl_subscriber_count )
 				);
-			case 'action' :
+			case 'action':
 				if ( $this->mCurrentRow->nls_subscriber_id ) {
 					$title = SpecialPage::getTitleFor(
 						'Newsletter', $id . '/' . SpecialNewsletter::NEWSLETTER_UNSUBSCRIBE

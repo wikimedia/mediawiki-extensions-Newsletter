@@ -225,7 +225,7 @@ class NewsletterContent extends JsonContent {
 			}
 			$form = $this->getHTMLForm(
 				$fields,
-				function () {
+				static function () {
 					return false;
 				} // nothing to submit - the buttons on this page are just links
 			);
