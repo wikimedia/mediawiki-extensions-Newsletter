@@ -36,7 +36,7 @@ class NewsletterDb {
 				'nls_subscriber_id' => $userId
 			];
 		}
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
@@ -69,7 +69,7 @@ class NewsletterDb {
 			'nls_subscriber_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
@@ -105,7 +105,7 @@ class NewsletterDb {
 			];
 		}
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
 
@@ -126,7 +126,7 @@ class NewsletterDb {
 			'nlp_publisher_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
 
@@ -150,7 +150,7 @@ class NewsletterDb {
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$success = $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
@@ -188,7 +188,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 
@@ -218,7 +218,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 
@@ -248,7 +248,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 
@@ -266,7 +266,7 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ) {
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		$dbw->update(
 			'nl_newsletters',
@@ -289,7 +289,7 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function restoreNewsletter( $newsletterName ) {
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		$dbw->update(
 			'nl_newsletters',
@@ -460,7 +460,7 @@ class NewsletterDb {
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
-		$dbw = $this->lb->getConnection( DB_MASTER );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 		$lastIssueId = (int)$dbw->selectField(

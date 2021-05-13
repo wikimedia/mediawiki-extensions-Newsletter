@@ -19,7 +19,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 
 		if ( !$this->hasOption( 'delete' ) ) {
 			$count = $dbw->selectField(

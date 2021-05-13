@@ -20,7 +20,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 
 	protected function setUp() : void {
 		parent::setUp();
-		$dbw = wfGetDB( DB_MASTER );
+		$dbw = wfGetDB( DB_PRIMARY );
 
 		$rowData = [
 			'nl_name' => 'MyNewsletter',

@@ -18,7 +18,7 @@ class UpdateSubscribersCount extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = $this->getDB( DB_MASTER );
+		$dbw = $this->getDB( DB_PRIMARY );
 		$offset = 0;
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
