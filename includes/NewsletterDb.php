@@ -463,12 +463,16 @@ class NewsletterDb {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
+		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
 		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
-			'MAX(nli_issue_id)',
+			'nli_issue_id',
 			[ 'nli_newsletter_id' => $newsletter->getId() ],
 			__METHOD__,
-			[ 'FOR UPDATE' ]
+			[
+				'ORDER BY' => 'nli_issue_id DESC',
+				'FOR UPDATE'
+			]
 		);
 		$nextIssueId = $lastIssueId + 1;
 
