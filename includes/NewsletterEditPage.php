@@ -66,7 +66,8 @@ class NewsletterEditPage {
 			$oldId = $this->context->getRequest()->getInt( 'oldid' );
 			$this->getManageForm( $revId, $undoId, $oldId )->show();
 		} else {
-			$permErrors = $this->getPermissionErrors();
+			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
+			$permErrors = $permManager->getPermissionErrors( 'edit', $this->user, $this->title );
 			if ( count( $permErrors ) ) {
 				$this->out->showPermissionsErrorPage( $permErrors );
 				return;
@@ -77,23 +78,6 @@ class NewsletterEditPage {
 			);
 			$this->getForm()->show();
 		}
-	}
-
-	protected function getPermissionErrors() {
-		$permManager = MediaWikiServices::getInstance()->getPermissionManager();
-		$permErrors = $permManager->getPermissionErrors( 'edit', $this->user, $this->title );
-
-		if ( $this->createNew ) {
-			$permErrors = array_merge(
-				$permErrors,
-				wfArrayDiff2(
-					$permManager->getPermissionErrors( 'create', $this->user, $this->title ),
-					$permErrors
-				)
-			);
-		}
-
-		return $permErrors;
 	}
 
 	/**
