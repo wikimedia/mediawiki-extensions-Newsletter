@@ -355,7 +355,9 @@ class NewsletterHooks {
 			$rows = $store->newsletterExistsForMainPage( $mainPageId );
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
-					$status->newFatal( 'newsletter-mainpage-in-use' );
+					$status->fatal( 'newsletter-mainpage-in-use' );
+					// @todo Remove this line after this extension do not support mediawiki version 1.36 and before
+					$status->value = EditPage::AS_HOOK_ERROR_EXPECTED;
 					return false;
 				}
 			}
