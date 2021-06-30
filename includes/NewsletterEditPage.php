@@ -47,8 +47,9 @@ class NewsletterEditPage {
 		$this->createNew = !$this->title->exists();
 		if ( !$this->createNew ) {
 			// A newsletter exists, lets open the edit page
-			if ( $this->user->isBlocked() ) {
-				throw new UserBlockedError( $this->user->getBlock() );
+			$block = $this->user->getBlock();
+			if ( $block ) {
+				throw new UserBlockedError( $block );
 			}
 
 			if ( !$this->newsletter->canManage( $this->user ) ) {

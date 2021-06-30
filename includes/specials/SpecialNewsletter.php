@@ -274,9 +274,10 @@ class SpecialNewsletter extends SpecialPage {
 		// that wiki is currently in read-only mode and stop from here.
 		$this->checkReadOnly();
 
-		if ( $user->isBlocked() ) {
+		$block = $user->getBlock();
+		if ( $block ) {
 			// Blocked users should just stay blocked.
-			throw new UserBlockedError( $user->getBlock() );
+			throw new UserBlockedError( $block );
 		}
 
 		if ( !$this->newsletter->isPublisher( $user ) ) {
