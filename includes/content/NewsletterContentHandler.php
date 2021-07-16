@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Revision\SlotRenderingProvider;
+
 /**
  * @license GPL-2.0-or-later
  * @author tonythomas
@@ -47,6 +49,33 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 */
 	public function isParserCacheSupported() {
 		return false;
+	}
+
+	/**
+	 * @param Title $title The title of the page to supply the updates for.
+	 * @param Content $content The content to generate data updates for.
+	 * @param string $role The role (slot) in which the content is being used.
+	 * @param SlotRenderingProvider $slotOutput A provider that can be used to gain access to
+	 *        a ParserOutput of $content by calling $slotOutput->getSlotParserOutput( $role, false ).
+	 * @return DeferrableUpdate[] A list of DeferrableUpdate objects for putting information
+	 *        about this content object somewhere.
+	 */
+	public function getSecondaryDataUpdates(
+		Title $title,
+		Content $content,
+		$role,
+		SlotRenderingProvider $slotOutput
+	) {
+		$user = RequestContext::getMain()->getUser();
+		// @todo This user object might not be the right one in some cases.
+		// but that should be pretty rare in the context of newsletters.
+		/** @var NewsletterContent $content */
+		'@phan-var NewsletterContent $content';
+		$newsletterUpdate = new NewsletterDataUpdate( $content, $title, $user );
+		return array_merge(
+			parent::getSecondaryDataUpdates( $title, $content, $role, $slotOutput ),
+			[ $newsletterUpdate ]
+		);
 	}
 
 	/**
