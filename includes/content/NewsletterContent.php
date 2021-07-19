@@ -443,31 +443,4 @@ class NewsletterContent extends JsonContent {
 		return $truncatedtext;
 	}
 
-	/**
-	 * @param Title $title Title of the page that is being edited.
-	 * @param Content|null $old Content object representing the page's content before the edit.
-	 * @param bool $recursive bool indicating whether DataUpdates should trigger recursive
-	 * updates (relevant mostly for LinksUpdate).
-	 * @param ParserOutput|null $parserOutput ParserOutput representing the rendered version of
-	 * the page after the edit.
-	 * @return DataUpdate[]
-	 *
-	 * @see Content::getSecondaryDataUpdates()
-	 */
-	public function getSecondaryDataUpdates(
-		Title $title,
-		Content $old = null,
-		$recursive = true,
-		ParserOutput $parserOutput = null
-	) {
-		$user = RequestContext::getMain()->getUser();
-		// @todo This user object might not be the right one in some cases.
-		// but that should be pretty rare in the context of newsletters.
-		$mwUpdate = new NewsletterDataUpdate( $this, $title, $user );
-		return array_merge(
-			parent::getSecondaryDataUpdates( $title, $old, $recursive, $parserOutput ),
-			[ $mwUpdate ]
-		);
-	}
-
 }
