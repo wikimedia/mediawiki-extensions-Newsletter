@@ -18,7 +18,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		$this->tablesUsed[] = 'nl_subscriptions';
 	}
 
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$dbw = wfGetDB( DB_PRIMARY );
 

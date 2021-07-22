@@ -7,7 +7,7 @@
  * @covers NewsletterDataUpdate
  */
 class NewsletterAPIEditTest extends ApiTestCase {
-	protected function setUp() : void {
+	protected function setUp(): void {
 		parent::setUp();
 		$this->tablesUsed = [ 'nl_newsletters', 'nl_publishers', 'nl_subscriptions' ];
 	}
