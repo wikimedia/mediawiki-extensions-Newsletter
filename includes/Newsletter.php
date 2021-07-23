@@ -1,5 +1,8 @@
 <?php
 
+use MediaWiki\Permissions\Authority;
+use MediaWiki\User\UserIdentity;
+
 /**
  * Class representing a newsletter
  *
@@ -137,21 +140,21 @@ class Newsletter {
 	/**
 	 * @todo this is probably not scalable...
 	 *
-	 * @param User $user
+	 * @param UserIdentity $user
 	 *
 	 * @return bool
 	 */
-	public function isSubscribed( User $user ) {
+	public function isSubscribed( UserIdentity $user ) {
 		$this->loadSubscribers();
 		return in_array( $user->getId(), $this->subscribers );
 	}
 
 	/**
-	 * @param User $user
+	 * @param UserIdentity $user
 	 *
 	 * @return bool
 	 */
-	public function isPublisher( User $user ) {
+	public function isPublisher( UserIdentity $user ) {
 		$this->loadPublishers();
 		return in_array( $user->getId(), $this->publishers );
 	}
@@ -234,12 +237,12 @@ class Newsletter {
 	 * The user is allowed to manage a newsletter if the user is a publisher of
 	 * the newsletter, or if the user has the newsletter-manage right.
 	 *
-	 * @param User $user
+	 * @param Authority $user
 	 *
 	 * @return bool
 	 */
-	public function canManage( User $user ) {
-		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-manage' );
+	public function canManage( Authority $user ) {
+		return $this->isPublisher( $user->getUser() ) || $user->isAllowed( 'newsletter-manage' );
 	}
 
 	/**

@@ -276,7 +276,7 @@ class NewsletterContent extends JsonContent {
 	protected function getNewsletterActionButtons( ParserOptions &$options, ParserOutput $output
 	) {
 		// We are building the 'Subscribe' action button for anonymous users as well
-		$user = $options->getUser() ? : null;
+		$user = $options->getUserIdentity();
 		$id = $this->newsletter->getId();
 		$buttons = [];
 
@@ -284,7 +284,7 @@ class NewsletterContent extends JsonContent {
 		$output->setEnableOOUI( true );
 		$output->addModuleStyles( [ 'oojs-ui.styles.icons-interactions' ] );
 
-		if ( !$user || !$this->newsletter->isSubscribed( $user ) ) {
+		if ( !$this->newsletter->isSubscribed( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-subscribe-button' )->text(),
@@ -305,7 +305,8 @@ class NewsletterContent extends JsonContent {
 				]
 			);
 		}
-		if ( $user && $this->newsletter->canManage( $user ) ) {
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		if ( $this->newsletter->canManage( $userFactory->newFromUserIdentity( $user ) ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-manage-button' )->text(),
@@ -324,7 +325,7 @@ class NewsletterContent extends JsonContent {
 				]
 			);
 		}
-		if ( $user && $this->newsletter->isPublisher( $user ) ) {
+		if ( $this->newsletter->isPublisher( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-announce-button' )->text(),
