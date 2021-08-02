@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54"
+		]
+	},
+	"newsletter-extension-desc": "Permite utilizatorilor să publice și să se aboneze la newslettere",
+	"newsletter-name": "Numele newsletter-ului",
+	"newsletter-desc": "Descriere",
+	"newsletter-title": "Pagina wiki cu informație despre newletter",
+	"newsletter-manage-description": "Descriere:",
+	"newsletter-subscribe-button-label": "Da",
+	"newsletter-unsubscribe-button-label": "Nu",
+	"newsletter-notification-flyout": "$2 {{GENDER:$3|a anunțat}} un nou număr al $1.",
+	"newsletter-notification-link-text-new-issue": "Vezi noul număr",
+	"newsletter-notification-link-text-view-newsletter": "Vezi newsletter",
+	"newsletter-header-name": "Nume",
+	"newsletter-header-description": "Descriere",
+	"newsletter-header-subscriber_count": "Abonați",
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|a anunțat}} un nou număr al $3."
+}
