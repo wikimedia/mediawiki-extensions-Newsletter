@@ -248,12 +248,12 @@ class Newsletter {
 	/**
 	 * Check whether the user is allowed to restore the newsletter.
 	 *
-	 * @param User $user
+	 * @param Authority $performer
 	 *
 	 * @return bool
 	 */
-	public function canRestore( User $user ) {
-		return $this->isPublisher( $user ) || $user->isAllowed( 'newsletter-restore' );
+	public function canRestore( Authority $performer ) {
+		return $this->isPublisher( $performer->getUser() ) || $performer->isAllowed( 'newsletter-restore' );
 	}
 
 	/**

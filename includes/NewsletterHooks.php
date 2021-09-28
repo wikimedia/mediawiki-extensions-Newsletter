@@ -1,5 +1,9 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\ProperPageIdentity;
+use MediaWiki\Permissions\Authority;
+
 /**
  * Class to add Hooks used by Newsletter.
  */
@@ -230,28 +234,42 @@ class NewsletterHooks {
 	}
 
 	/**
-	 * @param PageArchive &$archive
-	 * @param Title $title
-	 * @throws ErrorPageError
-	 * @throws PermissionsError
+	 * @param ProperPageIdentity $page
+	 * @param Authority $performer
+	 * @param string $reason
+	 * @param bool $unsuppress
+	 * @param array $timestamps
+	 * @param array $fileVersions
+	 * @param StatusValue $status
+	 * @return bool|void
 	 */
-	public static function onUndeleteForm( PageArchive &$archive, Title $title ) {
+	public static function onPageUndelete(
+		ProperPageIdentity $page,
+		Authority $performer,
+		string $reason,
+		bool $unsuppress,
+		array $timestamps,
+		array $fileVersions,
+		StatusValue $status
+	) {
+		$title = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page )->getTitle();
 		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
 			return;
 		}
-		$user = RequestContext::getMain()->getUser();
 		$newsletterName = $title->getText();
 		$newsletter = Newsletter::newFromName( $newsletterName, false );
 		if ( $newsletter ) {
-			if ( !$newsletter->canRestore( $user ) ) {
-				throw new PermissionsError( 'newsletter-restore' );
+			if ( !$newsletter->canRestore( $performer ) ) {
+				$status->merge( User::newFatalPermissionDeniedStatus( 'newsletter-restore' ) );
+				return false;
 			}
 			$store = NewsletterStore::getDefaultInstance();
 			$rows = $store->newsletterExistsForMainPage( $newsletter->getPageId() );
 
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $newsletter->getPageId() && (int)$row->nl_active === 1 ) {
-					throw new ErrorPageError( 'newsletter-mainpage-in-use', 'newsletter-mainpage-in-use-title' );
+					$status->fatal( 'newsletter-mainpage-in-use' );
+					return false;
 				}
 			}
 			$success = $store->restoreNewsletter( $newsletterName );
@@ -259,11 +277,8 @@ class NewsletterHooks {
 				return;
 			}
 		}
-		// Throw error message
-		throw new ErrorPageError(
-			'newsletter-restore-failure-title',
-			wfMessage( 'newsletter-restore-failure', $newsletterName )
-		);
+		$status->fatal( 'newsletter-restore-failure', $newsletterName );
+		return false;
 	}
 
 	/**

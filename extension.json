@@ -138,7 +138,7 @@
 		"AlternateEdit": "NewsletterHooks::onAlternateEdit",
 		"CustomEditor": "NewsletterHooks::onCustomEditor",
 		"ArticleDelete": "NewsletterHooks::onArticleDelete",
-		"UndeleteForm::undelete": "NewsletterHooks::onUndeleteForm",
+		"PageUndelete": "NewsletterHooks::onPageUndelete",
 		"TitleMove": "NewsletterHooks::onTitleMove",
 		"ContentModelCanBeUsedOn": "NewsletterHooks::onContentModelCanBeUsedOn",
 		"EditFilterMergedContent": "NewsletterHooks::onEditFilterMergedContent",
