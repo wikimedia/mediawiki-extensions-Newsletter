@@ -23,7 +23,6 @@
 	"newsletter-create-mainpage-error": "Ugyldig hovedside for nyhedsbrev indtastet. Prøv igen.",
 	"newsletter-mainpage-non-existent": "Hovedsiden til nyhedsbrevet findes ikke. Indtast venligt en gyldig eksisterende side.",
 	"newsletter-mainpage-in-use": "Et eksisterende nyhedsbrev har samme hovedside. Indtast venligst en anden titel.",
-	"newsletter-mainpage-in-use-title": "Et eksisterende nyhedsbrev har same hovedside.",
 	"newsletter-create-short-description-error": "Beskrivelsen er for kort (mindre end 30 tegn). Prøv igen.",
 	"newsletter-subtitlelinks-list": "Liste over nyhedsbrev",
 	"newsletter-subtitlelinks-create": "Registrer et nyt nyhedsbrev",

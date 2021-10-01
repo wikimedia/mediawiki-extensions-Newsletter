@@ -30,7 +30,6 @@
 	"newsletter-create-mainpage-error": "Ongeldinge nieuwsbriefhoofdpagina ingevoerd. Probeer het opnieuw.",
 	"newsletter-mainpage-non-existent": "De nieuwsbriefhoofdpagina bestaan niet. Voer een geldige bestaande pagina in.",
 	"newsletter-mainpage-in-use": "Een bestaande nieuwsbrief heeft dezelfde hoofdpagina. Probeer het opnieuw met een andere titel.",
-	"newsletter-mainpage-in-use-title": "Een bestaande nieuwsbrief heeft dezelfde hoofdpagina.",
 	"newsletter-create-short-description-error": "De beschrijving is te kort (minder dan 30 tekens). Probeer het opnieuw.",
 	"newsletter-subtitlelinks-list": "Lijst met nieuwbrieven",
 	"newsletter-subtitlelinks-create": "Een nieuwe nieuwsbrief registreren",
@@ -158,7 +157,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Nieuwsbrief verwijderd",
 	"log-action-filter-newsletter-issue-added": "Aankondiging van nieuwe uitgaven",
 	"newsletter-restore-failure": "De nieuwsbrief \"$1\" kon niet worden hersteld. Probeer het opnieuw.",
-	"newsletter-restore-failure-title": "De nieuwsbrief kon niet worden hersteld.",
 	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:",
 	"newsletter-diff-mainpageheader": "Wijzigingen aan de hoofdpagina:",
 	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:"

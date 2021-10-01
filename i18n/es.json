@@ -29,7 +29,6 @@
 	"newsletter-create-mainpage-error": "No es válida la página principal del boletín. Inténtalo de nuevo.",
 	"newsletter-mainpage-non-existent": "No existe la página principal del boletín. Escribe una página existente válida.",
 	"newsletter-mainpage-in-use": "Un boletín existente tiene la misma página principal. Escribe otro título.",
-	"newsletter-mainpage-in-use-title": "Una boletín existente tiene la misma página principal.",
 	"newsletter-create-short-description-error": "La descripción es demasiado corta (menos de 30 caracteres). Inténtalo de nuevo.",
 	"newsletter-subtitlelinks-list": "Lista de boletines",
 	"newsletter-subtitlelinks-create": "Registrar un boletín nuevo",
@@ -159,7 +158,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Eliminación de boletín",
 	"log-action-filter-newsletter-issue-added": "Anuncios de ediciones nuevas",
 	"newsletter-restore-failure": "El boletín \"$1\" no se pudo restaurar. Inténtalo de nuevo.",
-	"newsletter-restore-failure-title": "El boletín no ha podido recuperarse.",
 	"newsletter-diff-descheader": "Cambios en la descripción:",
 	"newsletter-diff-mainpageheader": "Cambios en la página principal:",
 	"newsletter-diff-publishersheader": "Cambios en los editores:"

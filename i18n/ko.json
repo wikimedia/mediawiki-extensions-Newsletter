@@ -112,6 +112,5 @@
 	"log-name-newsletter": "뉴스레터 기록",
 	"log-description-newsletter": "이것은 뉴스레터의 변경 기록입니다.",
 	"logentry-newsletter-newsletter-added": "$1님이 $4 뉴스레터를 {{GENDER:$2|등록했습니다}}",
-	"logentry-newsletter-issue-added": "$1 님이 $4 뉴스레터의 $6 새 제호를 {{GENDER:$2|발행했습니다.}}",
-	"newsletter-restore-failure-title": "뉴스레터를 복구할 수 없습니다."
+	"logentry-newsletter-issue-added": "$1 님이 $4 뉴스레터의 $6 새 제호를 {{GENDER:$2|발행했습니다.}}"
 }

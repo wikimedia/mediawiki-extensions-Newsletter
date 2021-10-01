@@ -24,7 +24,6 @@
 	"newsletter-create-mainpage-error": "Vnesli ste napačen naslov glavne strani novičnika. Prosimo, poskusite znova.",
 	"newsletter-mainpage-non-existent": "Ta glavna stran novičnika ne obstaja. Prosimo, vnesite veljavno obstoječo stran.",
 	"newsletter-mainpage-in-use": "Tako glavno stran ima že obstoječ novičnik. Prosimo, vnesite drug naslov.",
-	"newsletter-mainpage-in-use-title": "Vsi obstoječi novičniki imajo isto glavno stran.",
 	"newsletter-create-short-description-error": "Opis je prekratek (manj kot 30 znakov). Prosimo, poskusite znova.",
 	"newsletter-subtitlelinks-list": "Seznam novičnikov",
 	"newsletter-subtitlelinks-create": "Registriraj nov novičnik",
@@ -135,7 +134,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Izbris novičnika",
 	"log-action-filter-newsletter-issue-added": "Obvestila o novi izdaji",
 	"newsletter-restore-failure": "Novičnika »$1« ni bilo mogoče obnoviti. Prosimo, poskusite znova.",
-	"newsletter-restore-failure-title": "Novičnika ni bilo mogoče obnoviti.",
 	"newsletter-diff-descheader": "Spremembe opisa:",
 	"newsletter-diff-mainpageheader": "Spremembe glavne strani:",
 	"newsletter-diff-publishersheader": "Spremembe izdajateljev:"

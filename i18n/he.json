@@ -26,7 +26,6 @@
 	"newsletter-create-mainpage-error": "הוזן דף ראשי בלתי־תקין לידיעון. נא לנסות שוב.",
 	"newsletter-mainpage-non-existent": "הדף הראשי של הידיעון אינו קיים. נא להזין דף ראשי תקין.",
 	"newsletter-mainpage-in-use": "לידיעון קיים יש אותו דף. נא להזין כותרת אחרת.",
-	"newsletter-mainpage-in-use-title": "לידיעון קיים יש אותו דף ראשי.",
 	"newsletter-create-short-description-error": "התיאור קצר מדי (פחות מ־30 תווים). נא לנסות שוב.",
 	"newsletter-subtitlelinks-list": "רשימת הידיעונים",
 	"newsletter-subtitlelinks-create": "רישום ידיעון חדש",
@@ -156,7 +155,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "מחיקת ידיעון",
 	"log-action-filter-newsletter-issue-added": "הודעות על גיליונות חדשים",
 	"newsletter-restore-failure": "לא ניתן היה לשחזר את הידיעון \"$1\". נא לנסות שוב.",
-	"newsletter-restore-failure-title": "לא היה אפשר לשחזר את הידיעון.",
 	"newsletter-diff-descheader": "שינויים בתיאור:",
 	"newsletter-diff-mainpageheader": "שינויים בדף הראשי:",
 	"newsletter-diff-publishersheader": "שינויים במפרסמים:"

@@ -30,7 +30,6 @@
 	"newsletter-create-mainpage-error": "所輸入的電子報首頁無效。請重試？",
 	"newsletter-mainpage-non-existent": "電子報首頁不存在。請輸入有效的存在頁面。",
 	"newsletter-mainpage-in-use": "現有電子報已有相同首頁。請輸入別的標題。",
-	"newsletter-mainpage-in-use-title": "現有電子報已有相同的首頁。",
 	"newsletter-create-short-description-error": "描述太短（少於 30 個字元）。請重試。",
 	"newsletter-subtitlelinks-list": "電子報清單",
 	"newsletter-subtitlelinks-create": "註冊一個新的電子報",
@@ -160,7 +159,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "電子報刪除",
 	"log-action-filter-newsletter-issue-added": "新期號公告",
 	"newsletter-restore-failure": "電子報「$1」無法復原。請重試。",
-	"newsletter-restore-failure-title": "電子報無法復原。",
 	"newsletter-diff-descheader": "描述中的變更：",
 	"newsletter-diff-mainpageheader": "首頁中的變更：",
 	"newsletter-diff-publishersheader": "發佈者的變更："

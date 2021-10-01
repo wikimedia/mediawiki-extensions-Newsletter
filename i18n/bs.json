@@ -21,7 +21,6 @@
 	"newsletter-create-mainpage-error": "Upisali ste neispravnu početnu stranu biltena. Pokušajte ponovo.",
 	"newsletter-mainpage-non-existent": "Početna strana biltena ne postoji. Upišite ispravnu, postojeću stranicu.",
 	"newsletter-mainpage-in-use": "Postojeći bilten ima istu početnu stranu. Upišite neku drugu stranicu.",
-	"newsletter-mainpage-in-use-title": "Postojeći bilten ima istu početnu stranu.",
 	"newsletter-create-short-description-error": "Opis je prekratak (sadrži manje od 30 znakova). Pokušajte ponovo.",
 	"newsletter-subtitlelinks-list": "Spisak biltena",
 	"newsletter-subtitlelinks-create": "Napravi novi bilten",

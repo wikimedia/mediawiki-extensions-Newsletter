@@ -35,7 +35,6 @@
 	"newsletter-create-mainpage-error": "Введено некорректное имя основной страницы рассылки. Пожалуйста, попробуйте ещё раз.",
 	"newsletter-mainpage-non-existent": "Основная страница рассылки не существует. Пожалуйста, введите корректное имя существующей страницы.",
 	"newsletter-mainpage-in-use": "Уже существует рассылка с такой основной страницей. Пожалуйста, укажите другую страницу.",
-	"newsletter-mainpage-in-use-title": "Существующая рассылка с этой же основной страницей.",
 	"newsletter-create-short-description-error": "Описание слишком короткое (менее 30 символов). Пожалуйста, попробуйте снова.",
 	"newsletter-subtitlelinks-list": "Список рассылок",
 	"newsletter-subtitlelinks-create": "Регистрация новой рассылки",
@@ -152,7 +151,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "удаление рассылки",
 	"log-action-filter-newsletter-issue-added": "анонсирование новых выпусков",
 	"newsletter-restore-failure": "Не удалось восстановить рассылку «$1». Пожалуйста, попробуйте снова.",
-	"newsletter-restore-failure-title": "Рассылку восстановить не удалось.",
 	"newsletter-diff-descheader": "Изменения в описании:",
 	"newsletter-diff-mainpageheader": "Изменения на основной странице:",
 	"newsletter-diff-publishersheader": "Изменения в списке публикаторов:"

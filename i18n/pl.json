@@ -29,7 +29,6 @@
 	"newsletter-create-mainpage-error": "Wprowadzono nieprawidłową stronę główną newslettera. Spróbuj jeszcze raz.",
 	"newsletter-mainpage-non-existent": "Strona główna newslettera nie istnieje. Proszę wprowadzić poprawną, istniejącą nazwę strony.",
 	"newsletter-mainpage-in-use": "Istniejący już newsletter ma taką samą stronę główną. Wprowadź inny tytuł.",
-	"newsletter-mainpage-in-use-title": "Istniejący newsletter posiada tę samą stronę główną.",
 	"newsletter-create-short-description-error": "Opis jest zbyt krótki (mniej niż 30 znaków). Spróbuj ponownie.",
 	"newsletter-subtitlelinks-list": "Lista newsletterów",
 	"newsletter-subtitlelinks-create": "Zarejestruj nowy newsletter",
@@ -159,7 +158,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Usunięcie newslettera",
 	"log-action-filter-newsletter-issue-added": "Ogłoszenie nowego wydania",
 	"newsletter-restore-failure": "Newsletter „$1” nie mógł zostać odtworzony. Spróbuj ponownie.",
-	"newsletter-restore-failure-title": "Newsletter nie mógł zostać odtworzony.",
 	"newsletter-diff-descheader": "Zmiany w opisie:",
 	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
 	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:"

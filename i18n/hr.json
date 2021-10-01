@@ -22,7 +22,6 @@
 	"newsletter-create-mainpage-error": "Unijeli ste naziv glavne stranice koji nije valjan. Molimo Vas, pokušajte opet.",
 	"newsletter-mainpage-non-existent": "Traženi naziv glavne stranice ne postoji. Molimo Vas, unesite valjani naziv postojeće stranice.",
 	"newsletter-mainpage-in-use": "Postojeći vjesnik ima istu glavnu stranicu. Molimo Vas, unesite drugi naziv stranice.",
-	"newsletter-mainpage-in-use-title": "Postojeći vjesnik ima istu glavnu stranicu.",
 	"newsletter-create-short-description-error": "Opis je prekratak (sadržava manje od 30 znakova). Molimo Vas, pokušajte ponovo.",
 	"newsletter-subtitlelinks-list": "Popis vjesnika",
 	"newsletter-subtitlelinks-create": "Registriranje novoga vjesnika",

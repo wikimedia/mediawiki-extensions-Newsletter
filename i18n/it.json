@@ -25,7 +25,6 @@
 	"newsletter-create-mainpage-error": "È stata inserita una pagina principale della newsletter non valida. Riprova.",
 	"newsletter-mainpage-non-existent": "La pagina principale della newsletter non esiste. Inserisci una pagina esistente valida.",
 	"newsletter-mainpage-in-use": "Una newsletter esistente ha la stessa pagina principale. Inserisci un altro titolo.",
-	"newsletter-mainpage-in-use-title": "Una newsletter già esistente ha la stessa pagina principale.",
 	"newsletter-create-short-description-error": "La descrizione è troppo breve (meno di 30 caratteri). Riprova.",
 	"newsletter-subtitlelinks-list": "Elenco delle newsletter",
 	"newsletter-subtitlelinks-create": "Registra una nuova newsletter",
@@ -155,7 +154,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Cancellazione newsletter",
 	"log-action-filter-newsletter-issue-added": "Annunci nuova edizione",
 	"newsletter-restore-failure": "La newsletter \"$1\" non può essere ripristinata. Riprova.",
-	"newsletter-restore-failure-title": "Non è stato possibile ripristinare la newsletter.",
 	"newsletter-diff-descheader": "Modifiche nella descrizione:",
 	"newsletter-diff-mainpageheader": "Modifiche nella pagina principale:",
 	"newsletter-diff-publishersheader": "Modifiche agli editori:"

@@ -27,7 +27,6 @@
 	"newsletter-create-mainpage-error": "Geçersiz bülten ana sayfası girildi. Lütfen tekrar deneyin.",
 	"newsletter-mainpage-non-existent": "Bülten ana sayfası mevcut değil. Lütfen geçerli bir sayfa girin.",
 	"newsletter-mainpage-in-use": "Mevcut bir bülten aynı ana sayfaya sahiptir. Lütfen başka bir başlık girin.",
-	"newsletter-mainpage-in-use-title": "Mevcut bir bülten aynı ana sayfaya sahiptir.",
 	"newsletter-create-short-description-error": "Açıklama çok kısa (30 karakterden az). Lütfen tekrar deneyin.",
 	"newsletter-subtitlelinks-list": "Bülten listesi",
 	"newsletter-subtitlelinks-create": "Yeni bir bültene kayıt olun",
@@ -157,7 +156,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Bülten silme",
 	"log-action-filter-newsletter-issue-added": "Yeni sorun duyuruları",
 	"newsletter-restore-failure": "\"$1\" bülteni geri yüklenemedi. Lütfen tekrar deneyin.",
-	"newsletter-restore-failure-title": "Bülten geri yüklenemedi.",
 	"newsletter-diff-descheader": "Açıklamadaki değişiklikler:",
 	"newsletter-diff-mainpageheader": "Anasayfada ki değişiklikler:",
 	"newsletter-diff-publishersheader": "Yayımcılarda ki değişiklikler:"

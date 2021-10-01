@@ -24,7 +24,6 @@
 	"newsletter-create-mainpage-error": "Ugyldig hovedside for nyhetsbrev ble angitt. Prøv igjen.",
 	"newsletter-mainpage-non-existent": "Hovedsiden til nyhetsbrevet finnes ikke. Skriv inn en gyldig eksisterende side.",
 	"newsletter-mainpage-in-use": "Et eksisterende nyhetsbrev har samme hovedside. Skriv inn en annen tittel.",
-	"newsletter-mainpage-in-use-title": "Et eksisterende nyhetsbrev har same hovedside.",
 	"newsletter-create-short-description-error": "Beskrivelsen er for kort (mindre enn 30 tegn). Prøv igjen.",
 	"newsletter-subtitlelinks-list": "Liste over nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Registrer et nytt nyhetsbrev",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Sletting av nyhetsbrev",
 	"log-action-filter-newsletter-issue-added": "Annonsering av ny utgave",
 	"newsletter-restore-failure": "Nyhetsbrevet «$1» kunne ikke gjenopprettes. Prøv igjen.",
-	"newsletter-restore-failure-title": "Nyhetsbrevet kunne ikke gjenopprettes.",
 	"newsletter-diff-descheader": "Endringer i beskrivelsen:",
 	"newsletter-diff-mainpageheader": "Endringer i hovedsiden:",
 	"newsletter-diff-publishersheader": "Endringer i utgivere:"

@@ -19,7 +19,6 @@
 	"newsletter-create-submit": "ایجاد خبرنامه",
 	"newsletter-create-editsummary": "ایجاد خبرنامه جدید",
 	"newsletter-create-confirmation": "یک خبرنامه جدید [[Newsletter:$1|$1]] ایجاد شد.",
-	"newsletter-mainpage-in-use-title": "یک خبرنامه موجود صفحه اصلی یکسانی دارد.",
 	"newsletter-subtitlelinks-list": "فهرست خبرنامه‌ها",
 	"newsletter-subtitlelinks-create": "یک خبرنامه جدید ایجاد کنید",
 	"newsletter-subtitlelinks-unsubscribe": "لغو اشتراک",
@@ -114,7 +113,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "حذف خبرنامه",
 	"log-action-filter-newsletter-issue-added": "اعلان شماره جدید",
 	"newsletter-restore-failure": "خبرنامه «$1» قابل احیا نیست. لطفا دوباره سعی کنید.",
-	"newsletter-restore-failure-title": "خبرنامه قابل دریافت نیست",
 	"newsletter-diff-descheader": "تغییر در توضیحات",
 	"newsletter-diff-mainpageheader": "تغییرات در صفحه اصلی",
 	"newsletter-diff-publishersheader": "تغییرات در ناشران"

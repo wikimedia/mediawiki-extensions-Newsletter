@@ -35,7 +35,6 @@
 	"newsletter-create-mainpage-error": "Page principale du bulletin d’information entrée non valide. Veuillez réessayer.",
 	"newsletter-mainpage-non-existent": "La page principale du bulletin d’information n'existe pas. Veuillez saisir une page existante valide.",
 	"newsletter-mainpage-in-use": "Un bulletin d’information existant a la même page principale. Veuillez entrer un autre titre.",
-	"newsletter-mainpage-in-use-title": "Un bulletin d’information existant a la même page principale.",
 	"newsletter-create-short-description-error": "La description est trop courte (moins de 30 caractères). Veuillez réessayer.",
 	"newsletter-subtitlelinks-list": "Liste des bulletins d’information",
 	"newsletter-subtitlelinks-create": "Inscrire un nouveau bulletin d’information",
@@ -165,7 +164,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Suppression du bulletin d’information",
 	"log-action-filter-newsletter-issue-added": "Annonces d’un nouveau numéro",
 	"newsletter-restore-failure": "Le bulletin d’information « $1 » n’a pas pu être rétabli. Veuillez réessayer.",
-	"newsletter-restore-failure-title": "Le bulletin d’information n’a pas pu être rétabli.",
 	"newsletter-diff-descheader": "Changements dans la description :",
 	"newsletter-diff-mainpageheader": "Changements dans la page principale :",
 	"newsletter-diff-publishersheader": "Changements dans les éditeurs :"

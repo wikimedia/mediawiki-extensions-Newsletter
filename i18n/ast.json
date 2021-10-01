@@ -23,7 +23,6 @@
 	"newsletter-create-mainpage-error": "Dióse una páxina principal del boletín inválida. Vuelve a intentalo.",
 	"newsletter-mainpage-non-existent": "Nun esiste la páxina principal del boletín. Escribe una páxina esistiente válida.",
 	"newsletter-mainpage-in-use": "Un boletín esistiente tien la mesma páxina principal. Escribe otru títulu.",
-	"newsletter-mainpage-in-use-title": "Un boletín esistiente tien la mesma páxina principal.",
 	"newsletter-create-short-description-error": "La descripción ye demasiáu curtia (menos de 30 carácteres) Téntalo nuevamente.",
 	"newsletter-subtitlelinks-list": "Llista de boletinos",
 	"newsletter-subtitlelinks-create": "Rexistrar un boletín nuevu",
@@ -153,7 +152,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Desaniciu de boletín",
 	"log-action-filter-newsletter-issue-added": "Anuncios d'ediciones nueves",
 	"newsletter-restore-failure": "El boletín «$1» nun pudo restaurase. Téntalo nuevamente.",
-	"newsletter-restore-failure-title": "El boletín nun pudo restaurase.",
 	"newsletter-diff-descheader": "Cambios na descripción:",
 	"newsletter-diff-mainpageheader": "Cambios na páxina principal:",
 	"newsletter-diff-publishersheader": "Cambios nos editores:"

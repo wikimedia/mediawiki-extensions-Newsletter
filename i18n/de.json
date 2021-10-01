@@ -26,7 +26,6 @@
 	"newsletter-create-mainpage-error": "Ungültige Newsletter-Hauptseite eingegeben. Bitte erneut versuchen.",
 	"newsletter-mainpage-non-existent": "Die Hauptseite des Newsletters ist nicht vorhanden. Bitte gib eine vorhandene Seite ein, die gültig ist.",
 	"newsletter-mainpage-in-use": "Ein vorhandener Newsletter hat die gleiche Hauptseite. Bitte gib einen anderen Titel ein.",
-	"newsletter-mainpage-in-use-title": "Ein vorhandener Newsletter hat die gleiche Hauptseite.",
 	"newsletter-create-short-description-error": "Die Beschreibung ist zu kurz (weniger als 30 Zeichen). Bitte erneut versuchen.",
 	"newsletter-subtitlelinks-list": "Liste der Newsletter",
 	"newsletter-subtitlelinks-create": "Einen neuen Newsletter registrieren",
@@ -156,7 +155,6 @@
 	"log-action-filter-newsletter-newsletter-removed": "Löschen von Newslettern",
 	"log-action-filter-newsletter-issue-added": "Veröffentlichungen neuer Ausgaben",
 	"newsletter-restore-failure": "Der Newsletter „$1“ konnte nicht wiederhergestellt werden. Bitte erneut versuchen.",
-	"newsletter-restore-failure-title": "Der Newsletter konnte nicht wiederhergestellt werden.",
 	"newsletter-diff-descheader": "Änderungen an der Beschreibung:",
 	"newsletter-diff-mainpageheader": "Änderungen an der Hauptseite:",
 	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:"
