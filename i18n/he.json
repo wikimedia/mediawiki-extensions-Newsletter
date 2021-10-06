@@ -14,7 +14,7 @@
 	"newsletter-title": "דף ויקי עם מידע על הידיעון",
 	"newsletter-exist-error": "ידיעון בשם \"$1\" כבר קיים. נא לנסות עם שם אחר.",
 	"newsletter-create-error": "אירעה שגיאה בעת ניסיון לרשום ידיעון חדש. נא לנסות שוב.",
-	"newsletter-oldrev-undo-error-title": "סליחה. הפעולה הזאת אינה מורשית.",
+	"newsletter-oldrev-undo-error-title": "מצטערים, הפעולה הזאת אינה מורשית.",
 	"newsletter-oldrev-undo-error-body": "ביטול גרסה קודמת אינו נתמך בהרחבת הידיעונים. נא לבטל את הגרסה האחרונה במקום זאת.",
 	"newsletter-input-required": "לא הוכנס קלט נדרש. נא לנסות שוב.",
 	"newsletter-invalid-name": "השם שהזנת לידיעון אינו תקין. נא לנסות שוב.",
