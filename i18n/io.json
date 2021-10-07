@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"JSantos",
 			"Joao Xavier"
 		]
 	},
 	"newsletter-manage-description": "Deskripto:",
+	"newsletter-header-name": "Nomo",
 	"newsletter-list-go-button": "Irez"
 }
