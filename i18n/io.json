@@ -6,6 +6,8 @@
 		]
 	},
 	"newsletter-manage-description": "Deskripto:",
+	"newsletter-subscribe-button-label": "Yes",
+	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-header-name": "Nomo",
 	"newsletter-list-go-button": "Irez"
 }
