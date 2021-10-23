@@ -37,7 +37,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 
 		// The description is too small
 		$this->assertEquals(
-			$res->getMessage()->getKey(), 'newsletter-create-short-description-error'
+			'newsletter-create-short-description-error', $res->getMessage()->getKey()
 		);
 	}
 
@@ -53,7 +53,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 
 		// The main page is nonexistent
 		$this->assertEquals(
-			$res->getMessage()->getKey(), 'newsletter-mainpage-non-existent'
+			'newsletter-mainpage-non-existent', $res->getMessage()->getKey()
 		);
 
 		// The newsletter was not created
@@ -84,7 +84,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			'mainpage' => $mainpage->getBaseText()
 		];
 		$res = $this->newSpecialPage()->onSubmit( $input );
-		$this->assertEquals( $res->getMessage()->getKey(), 'newsletter-mainpage-in-use' );
+		$this->assertEquals( 'newsletter-mainpage-in-use', $res->getMessage()->getKey() );
 
 		// The newsletter was not created
 		$this->assertNull(
@@ -114,7 +114,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 			'mainpage' => $secondMainPage->getBaseText()
 		];
 		$res = $this->newSpecialPage()->onSubmit( $input );
-		$this->assertEquals( $res->getMessage()->getKey(), 'newsletter-exist-error' );
+		$this->assertEquals( 'newsletter-exist-error', $res->getMessage()->getKey() );
 
 		// The second newsletter was not created
 		$this->assertNull(
