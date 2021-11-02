@@ -6,9 +6,12 @@
 	},
 	"newsletter-desc": "Discrizzioni",
 	"newsletter-view-description": "Discrizzioni:",
+	"newsletter-manage-title": "Tìtulu dâ pàggina principali",
 	"newsletter-manage-description": "Discrizzioni:",
 	"newsletter-subscribe-button-label": "Sì",
 	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-header-name": "Nomu",
-	"newsletter-header-description": "Discrizzioni"
+	"newsletter-header-description": "Discrizzioni",
+	"log-action-filter-newsletter": "Tipu di azzioni:",
+	"newsletter-diff-mainpageheader": "Canciamenti ntâ pàggina principali:"
 }
