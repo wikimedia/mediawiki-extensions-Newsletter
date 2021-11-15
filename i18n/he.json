@@ -19,7 +19,7 @@
 	"newsletter-input-required": "לא הוכנס קלט נדרש. נא לנסות שוב.",
 	"newsletter-invalid-name": "השם שהזנת לידיעון אינו תקין. נא לנסות שוב.",
 	"newslettercreate": "רישום ידיעון",
-	"newslettercreate-text": "הד הזה מאפשר לך לרשום ידיעון חדש. תתווסף בתור מפרסם ומנוי לידיעון בעת היצירה. כל השדות נדרשים.",
+	"newslettercreate-text": "הדף הזה מאפשר לך לרשום ידיעון חדש. תתווסף בתור מפרסם ומנוי לידיעון בעת היצירה. כל השדות נדרשים.",
 	"newsletter-create-submit": "רישום ידיעון",
 	"newsletter-create-editsummary": "רישום ידיעון חדש",
 	"newsletter-create-confirmation": "ידיעון חדש [[Newsletter:$1|$1]] נרשם.",
