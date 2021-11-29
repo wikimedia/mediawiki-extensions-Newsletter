@@ -1,11 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Iflaq",
 			"Shahwaqar"
 		]
 	},
 	"newsletter-deleted-log": "یٔمِہ خَبَرِیکھت خٲطرٕ چھ دِليشن لؤگ  تَلہٕ کَنِہ دِتھ۔",
-	"log-action-filter-newsletter": "خَبَرِیکھتِک بَدلاوُک قٕسٕم:",
+	"log-action-filter-newsletter": "عَملہٕ ہُنٛد قسٕم:",
 	"log-action-filter-newsletter-publisher-added": "Publisher addition",
 	"log-action-filter-newsletter-publisher-removed": "پبلِشر ہَہٹاوُن",
 	"log-action-filter-newsletter-newsletter-added": "نِیوذلیٹرُک تَخلیٖق",
