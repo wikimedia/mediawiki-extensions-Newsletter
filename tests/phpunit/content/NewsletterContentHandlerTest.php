@@ -3,7 +3,7 @@
 /**
  * @covers NewsletterContentHandler
  */
-class NewsletterContentHandlerTest extends MediaWikiTestCase {
+class NewsletterContentHandlerTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetParserOutput() {
 		$expectedText = 'Foo';
