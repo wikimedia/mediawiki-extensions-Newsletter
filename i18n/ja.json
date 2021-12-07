@@ -12,7 +12,8 @@
 			"Suyama",
 			"Thibaut120094",
 			"Yusuke1109",
-			"ネイ"
+			"ネイ",
+			"Ajeje Brazorf"
 		]
 	},
 	"newsletter-extension-desc": "利用者がニュースレターの発行や購読をできるようにする",
@@ -139,6 +140,7 @@
 	"newsletter-list-option-all": "すべてのニュースレター",
 	"newsletter-list-option-subscribed": "私が購読中のニュースレター",
 	"newsletter-list-option-unsubscribed": "未購読のニュースレター",
+	"newsletter-list-go-button": "実行",
 	"newsletter-deleted-log": "このニュースレターの削除履歴は以下のとおりです。",
 	"newsletter-notification-link-text-new-publisher": "ニュースレターを管理",
 	"newsletter-notification-new-publisher-title": "あなたはニュースレター $1 の発行者に追加されました。",
