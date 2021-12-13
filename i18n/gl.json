@@ -4,7 +4,8 @@
 			"Banjo",
 			"Elisardojm",
 			"Loischantada",
-			"Macofe"
+			"Macofe",
+			"ArenaL5"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
@@ -19,7 +20,7 @@
 	"newslettercreate": "Crear boletín de novas",
 	"newslettercreate-text": "Esta páxina permítelle crear un boletín novo. Será engadido como editor e será subscrito ó boletín na súa creación. Son necesarios todos os campos.",
 	"newsletter-create-submit": "Crear boletín de novas",
-	"newsletter-create-editsummary": "Crear un boletín novo",
+	"newsletter-create-editsummary": "Crear un novo boletín de novas",
 	"newsletter-create-confirmation": "Creouse un novo boletínː [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "Non é válida a páxina principal do boletín. Probe de novo.",
 	"newsletter-mainpage-non-existent": "Non existe a páxina principal do boletín. Por favor, indique unha páxina existente válida.",
@@ -99,7 +100,7 @@
 	"newsletter-subscribers-invalid": "\"$1\" non é un usuario válido. Por favor, asegúrese de que o nome de usuario existe e inténteo de novo.",
 	"newsletter-available-newsletters-field-label": "Boletíns de novas dispoñibles",
 	"newsletter-subscribed-newsletters-field-label": "Boletíns subscritos",
-	"newsletter-none-found": "Non existen boletíns. Pode crear un boletín novo mediante [[Special:CreateNewsletter]].",
+	"newsletter-none-found": "Non existen boletíns. Pode crear un boletín novo mediante [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Ningún boletín coincide coa súa consulta.",
 	"echo-category-title-newsletter": "Boletíns de novas",
 	"echo-pref-tooltip-newsletter": "Avisarme cando calquera dos boletíns ós que estou subscrito anuncie unha edición nova.",

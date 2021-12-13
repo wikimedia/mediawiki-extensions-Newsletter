@@ -4,6 +4,10 @@
 			"Умар"
 		]
 	},
+	"newsletter-subtitlelinks-unsubscribe": "йаздалар дӀадаккха",
+	"newsletter-subtitlelinks-subscribe": "йаздала",
 	"newsletter-view-mainpage": "Коьрта агӀо:",
-	"newsletter-manage-button": "Урхалладар"
+	"newsletter-manage-button": "Урхалладар",
+	"newsletter-unsubscribe-button": "Йаздалар дӀадаккха",
+	"newsletter-subscribe-button": "Йаздала"
 }

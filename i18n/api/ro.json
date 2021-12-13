@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"NGC 54"
+		]
+	},
+	"newsletter-api-error-notfound": "Newsletter-ul nu există.",
+	"newsletter-api-error-invalidpublisher-registered": "Publicatorul nu este un utilizator înregistrat."
+}

@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"newsletter-api-error-notfound": "Ta novičnik ne obstaja",
+	"newsletter-api-error-nopermissions": "Nimate dovoljenja za upravljanje novičnikov.",
+	"newsletter-api-error-invalidpublisher-registered": "Izdajatelj ni registriran uporabnik.",
+	"newsletter-api-error-subscribe-notloggedin": "Da se lahko naročite na novičnike, morate biti prijavljeni."
+}

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Robby",
-			"Soued031"
+			"Soued031",
+			"Les Meloures"
 		]
 	},
 	"newsletter-extension-desc": "Erméiglecht et Benotzer fir Newsletteren ze publizéieren an z'abonnéieren",
@@ -65,7 +66,7 @@
 	"newsletter-header-description": "Beschreiwung",
 	"newsletter-header-subscriber_count": "Abonnenten",
 	"right-newsletter-delete": "Newslettere läschen",
-	"right-newsletter-manage": "Publizisten oder Abonnente vun Newsletteren dobäisetzen oder ewechhuelen",
+	"right-newsletter-manage": "Publizisten oder Abonnente vun Newsletteren derbäisetzen oder ewechhuelen",
 	"right-newsletter-restore": "Eng Newsletter restauréieren",
 	"action-newsletter-restore": "eng Newsletter restauréieren",
 	"newsletter-list-table": "Filteren no:",

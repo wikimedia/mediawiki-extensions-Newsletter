@@ -3,11 +3,14 @@
 		"authors": [
 			"Bikarhêner",
 			"George Animal",
-			"Ghybu"
+			"Ghybu",
+			"Balyozxane"
 		]
 	},
 	"newsletter-view-mainpage": "Destpêka nûçenameyêː",
 	"newsletter-view-description": "Danasînː",
+	"newsletter-manage-description": "Danasîn:",
 	"newsletter-subscribe-button-label": "Erê",
-	"newsletter-unsubscribe-button-label": "Na"
+	"newsletter-unsubscribe-button-label": "Na",
+	"newsletter-header-description": "Danasîn"
 }

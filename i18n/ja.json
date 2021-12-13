@@ -11,7 +11,9 @@
 			"Suyama",
 			"Thibaut120094",
 			"Yusuke1109",
-			"ネイ"
+			"ネイ",
+			"Ajeje Brazorf",
+			"LaMagiaaa"
 		]
 	},
 	"newsletter-extension-desc": "利用者がニュースレターの発行や購読をできるようにする",
@@ -22,7 +24,7 @@
 	"newsletter-oldrev-undo-error-title": "残念ですが、この操作は許可されていません。",
 	"newsletter-oldrev-undo-error-body": "ニュースレター拡張機能は過去号の取り消しをサポートしません。換わりに最新の変更を取り消してください。",
 	"newsletter-input-required": "必要な入力が済んでいません。もう一度お試しください。",
-	"newsletter-invalid-name": "もう一度お試しください。",
+	"newsletter-invalid-name": "無効なニュースレターの名前を入力しました。もう一度お試しください。",
 	"newslettercreate": "ニュースレターの登録",
 	"newslettercreate-text": "このページでは新規ニュースレターの登録を行います。記入すると発行者として追加され、作成したニュースレターの公開時に購読が登録されます。すべての欄に必ず記入してください。",
 	"newsletter-create-submit": "ニュースレターを登録",
@@ -138,6 +140,7 @@
 	"newsletter-list-option-all": "すべてのニュースレター",
 	"newsletter-list-option-subscribed": "私が購読中のニュースレター",
 	"newsletter-list-option-unsubscribed": "未購読のニュースレター",
+	"newsletter-list-go-button": "実行",
 	"newsletter-deleted-log": "このニュースレターの削除履歴は以下のとおりです。",
 	"newsletter-notification-link-text-new-publisher": "ニュースレターを管理",
 	"newsletter-notification-new-publisher-title": "あなたはニュースレター $1 の発行者に追加されました。",

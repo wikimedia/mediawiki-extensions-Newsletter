@@ -1,9 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Kareyac",
+			"Kizule"
 		]
 	},
+	"newsletter-subscribe-button-label": "Da",
 	"right-newsletter-delete": "Brisanje biltena",
 	"action-newsletter-delete": "obriši biltene",
 	"right-newsletter-manage": "Dodavanje ili uklanjanje objavljivača ili pretplatnika sa biltena",
