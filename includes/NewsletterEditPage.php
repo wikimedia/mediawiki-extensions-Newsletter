@@ -41,7 +41,8 @@ class NewsletterEditPage {
 	}
 
 	public function edit() {
-		if ( wfReadOnly() ) {
+		$services = MediaWikiServices::getInstance();
+		if ( $services->getReadOnlyMode()->isReadOnly() ) {
 			throw new ReadOnlyError;
 		}
 		$this->createNew = !$this->title->exists();
@@ -66,7 +67,7 @@ class NewsletterEditPage {
 			$oldId = $this->context->getRequest()->getInt( 'oldid' );
 			$this->getManageForm( $revId, $undoId, $oldId )->show();
 		} else {
-			$permManager = MediaWikiServices::getInstance()->getPermissionManager();
+			$permManager = $services->getPermissionManager();
 			$permErrors = $permManager->getPermissionErrors( 'edit', $this->user, $this->title );
 			if ( count( $permErrors ) ) {
 				$this->out->showPermissionsErrorPage( $permErrors );
