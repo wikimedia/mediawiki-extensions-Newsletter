@@ -4,15 +4,16 @@
 			"Devwebtel",
 			"InternerowyGołąb",
 			"Rail",
-			"Railfail536"
+			"Railfail536",
+			"Woytecr"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Zasubskrybuj lub anuluj subskrybcję newslettera.",
-	"apihelp-newslettersubscribe-summary": "Zasubskrybuj lub anuluj subskrybcję newslettera.",
-	"apihelp-newslettersubscribe-param-id": "ID newslettera którego subskrybcja powinna zostać zmieniona.",
+	"apihelp-newslettersubscribe-description": "Zasubskrybuj lub anuluj subskrypcję newslettera.",
+	"apihelp-newslettersubscribe-summary": "Zasubskrybuj lub anuluj subskrypcję newslettera.",
+	"apihelp-newslettersubscribe-param-id": "ID newslettera którego subskrypcja powinna zostać zmieniona.",
 	"apihelp-newslettersubscribe-param-do": "Operacja do wykonania. Wartość powinna stanowić <kbd>subscribe</kbd> lub <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Zasubskrybuj newsletter o ID 1.",
-	"apihelp-newslettersubscribe-example-2": "Anuluj subskrybcję newslettera o ID 2.",
+	"apihelp-newslettersubscribe-example-2": "Anuluj subskrypcję newslettera o ID 2.",
 	"apihelp-newslettermanage-description": "Zarządzaj newsletterem.",
 	"apihelp-newslettermanage-summary": "Zarządzaj newsletterem.",
 	"apihelp-newslettermanage-param-id": "ID newslettera do zarządzania.",
