@@ -4,8 +4,8 @@ const assert = require( 'assert' ),
 	NewsletterPage = require( '../pageobjects/newsletter.page' );
 
 describe( 'Newsletter', function () {
-	it( 'page should exist on installation', function () {
-		NewsletterPage.open();
-		assert.equal( NewsletterPage.title.getText(), 'Newsletters' );
+	it( 'page should exist on installation', async function () {
+		await NewsletterPage.open();
+		assert.equal( await NewsletterPage.title.getText(), 'Newsletters' );
 	} );
 } );
