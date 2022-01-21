@@ -99,7 +99,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 		$parserOptions = $cpoParams->getParserOptions();
 		$generateHtml = $cpoParams->getGenerateHtml();
 
-		$output->addModuleStyles( 'ext.newsletter.newsletter.styles' );
+		$output->addModuleStyles( [ 'ext.newsletter.newsletter.styles' ] );
 
 		if ( $generateHtml ) {
 			$text = $title->getText();
