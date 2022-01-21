@@ -36,7 +36,7 @@ class NewsletterDb {
 				'nls_subscriber_id' => $userId
 			];
 		}
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
@@ -52,7 +52,6 @@ class NewsletterDb {
 		}
 
 		$dbw->endAtomic( __METHOD__ );
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -69,7 +68,7 @@ class NewsletterDb {
 			'nls_subscriber_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
@@ -84,7 +83,6 @@ class NewsletterDb {
 		}
 
 		$dbw->endAtomic( __METHOD__ );
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -105,11 +103,9 @@ class NewsletterDb {
 			];
 		}
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
 		$success = (bool)$dbw->affectedRows();
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -126,11 +122,9 @@ class NewsletterDb {
 			'nlp_publisher_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 		$success = (bool)$dbw->affectedRows();
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -150,7 +144,7 @@ class NewsletterDb {
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
 			$success = $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
@@ -160,8 +154,6 @@ class NewsletterDb {
 		if ( $success ) {
 			$success = $dbw->insertId();
 		}
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -188,14 +180,12 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
-
 		} catch ( DBQueryError $ex ) {
 			$success = false;
 		}
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -218,14 +208,12 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
-
 		} catch ( DBQueryError $ex ) {
 			$success = false;
 		}
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -248,14 +236,13 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
 			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 
 		} catch ( DBQueryError $ex ) {
 			$success = false;
 		}
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -266,7 +253,7 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ) {
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 
 		$dbw->update(
 			'nl_newsletters',
@@ -275,8 +262,6 @@ class NewsletterDb {
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -289,7 +274,7 @@ class NewsletterDb {
 	 * @return bool success of the action
 	 */
 	public function restoreNewsletter( $newsletterName ) {
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 
 		$dbw->update(
 			'nl_newsletters',
@@ -298,8 +283,6 @@ class NewsletterDb {
 			__METHOD__
 		);
 		$success = (bool)$dbw->affectedRows();
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
@@ -312,14 +295,13 @@ class NewsletterDb {
 	public function getNewsletter( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
 			[ 'nl_id' => $id, 'nl_active' => 1 ],
 			__METHOD__
 		);
-		$this->lb->reuseConnection( $dbr );
 
 		if ( $res->numRows() === 0 ) {
 			return null;
@@ -357,15 +339,13 @@ class NewsletterDb {
 	public function getPublishersFromID( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_REPLICA );
-
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_publishers',
 			'nlp_publisher_id',
 			[ 'nlp_newsletter_id' => $id ],
 			__METHOD__
 		);
-		$this->lb->reuseConnection( $dbr );
 
 		return array_map( 'intval', $result );
 	}
@@ -377,16 +357,13 @@ class NewsletterDb {
 	public function getNewsletterSubscribersCount( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_REPLICA );
-
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectField(
 			'nl_newsletters',
 			'nl_subscriber_count',
 			[ 'nl_id' => $id ],
 			__METHOD__
 		);
-
-		$this->lb->reuseConnection( $dbr );
 
 		// We store nl_subscriber_count as negative numbers so that sorting should work on one
 		// direction
@@ -401,15 +378,13 @@ class NewsletterDb {
 	public function getSubscribersFromID( $id ) {
 		Assert::parameterType( 'integer', $id, '$id' );
 
-		$dbr = $this->lb->getConnection( DB_REPLICA );
-
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
 			'nls_subscriber_id',
 			[ 'nls_newsletter_id' => $id ],
 			__METHOD__
 		);
-		$this->lb->reuseConnection( $dbr );
 
 		return array_map( 'intval', $result );
 	}
@@ -424,8 +399,8 @@ class NewsletterDb {
 	 */
 	public function newsletterExistsForMainPage( $mainPageId ) {
 		Assert::parameterType( 'integer', $mainPageId, '$mainPageId' );
-		$dbr = $this->lb->getConnection( DB_REPLICA );
 
+		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_main_page_id', 'nl_active' ],
@@ -433,7 +408,6 @@ class NewsletterDb {
 			__METHOD__
 		);
 
-		$this->lb->reuseConnection( $dbr );
 		return $res;
 	}
 
@@ -460,7 +434,7 @@ class NewsletterDb {
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 
 		$dbw->startAtomic( __METHOD__ );
 		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
@@ -496,8 +470,6 @@ class NewsletterDb {
 		if ( $success ) {
 			$success = $nextIssueId;
 		}
-
-		$this->lb->reuseConnection( $dbw );
 
 		return $success;
 	}
