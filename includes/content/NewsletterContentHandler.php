@@ -92,14 +92,14 @@ class NewsletterContentHandler extends JsonContentHandler {
 	protected function fillParserOutput(
 		Content $content,
 		ContentParseParams $cpoParams,
-		ParserOutput &$output
+		ParserOutput &$parserOutput
 	) {
 		'@phan-var NewsletterContent $content';
 		$title = Title::castFromPageReference( $cpoParams->getPage() );
 		$parserOptions = $cpoParams->getParserOptions();
 		$generateHtml = $cpoParams->getGenerateHtml();
 
-		$output->addModuleStyles( [ 'ext.newsletter.newsletter.styles' ] );
+		$parserOutput->addModuleStyles( [ 'ext.newsletter.newsletter.styles' ] );
 
 		if ( $generateHtml ) {
 			$text = $title->getText();
@@ -107,7 +107,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 
 			$newsletterActionButtons = !$newsletter
 				? ''
-				: $this->getNewsletterActionButtons( $newsletter, $parserOptions, $output );
+				: $this->getNewsletterActionButtons( $newsletter, $parserOptions, $parserOutput );
 			$mainTitle = $content->getMainPage();
 
 			$fields = [
@@ -191,14 +191,14 @@ class NewsletterContentHandler extends JsonContentHandler {
 			$form->prepareForm();
 
 			if ( !$newsletter ) {
-				$output->setText( $form->getBody() );
+				$parserOutput->setText( $form->getBody() );
 			} else {
 				$this->setupNavigationLinks( $newsletter, $parserOptions );
-				$output->setText( $newsletterActionButtons . "<br><br>" . $form->getBody() );
+				$parserOutput->setText( $newsletterActionButtons . "<br><br>" . $form->getBody() );
 			}
 
 		} else {
-			$output->setText( '' );
+			$parserOutput->setText( '' );
 		}
 	}
 
@@ -268,13 +268,13 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 *
 	 * @param Newsletter $newsletter
 	 * @param ParserOptions &$options
-	 * @param ParserOutput $output
+	 * @param ParserOutput $parserOutput
 	 * @return string HTML for the button group
 	 */
 	private function getNewsletterActionButtons(
 		Newsletter $newsletter,
 		ParserOptions &$options,
-		ParserOutput $output
+		ParserOutput $parserOutput
 	) {
 		// We are building the 'Subscribe' action button for anonymous users as well
 		$user = $options->getUserIdentity();
@@ -282,8 +282,8 @@ class NewsletterContentHandler extends JsonContentHandler {
 		$buttons = [];
 
 		OutputPage::setupOOUI();
-		$output->setEnableOOUI( true );
-		$output->addModuleStyles( [ 'oojs-ui.styles.icons-interactions' ] );
+		$parserOutput->setEnableOOUI( true );
+		$parserOutput->addModuleStyles( [ 'oojs-ui.styles.icons-interactions' ] );
 
 		if ( !$newsletter->isSubscribed( $user ) ) {
 			$buttons[] = new OOUI\ButtonWidget(
