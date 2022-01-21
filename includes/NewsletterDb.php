@@ -1,9 +1,7 @@
 <?php
 
 use MediaWiki\MediaWikiServices;
-use Wikimedia\Assert\Assert;
 use Wikimedia\Rdbms\DBQueryError;
-use Wikimedia\Rdbms\DBUnexpectedError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
 
@@ -25,10 +23,8 @@ class NewsletterDb {
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function addSubscription( Newsletter $newsletter, $userIds ) {
+	public function addSubscription( Newsletter $newsletter, array $userIds ): void {
 		$rowData = [];
 		foreach ( $userIds as $userId ) {
 			$rowData[] = [
@@ -38,10 +34,12 @@ class NewsletterDb {
 		}
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
-		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
-		$success = (bool)$dbw->affectedRows();
 
-		if ( $success ) {
+		// Tolerate (silently ignore) if it was already there
+		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
+
+		// But only update the count if there was a change
+		if ( $dbw->affectedRows() ) {
 			$dbw->update(
 				'nl_newsletters',
 				// For index reasons, count is negative
@@ -52,17 +50,13 @@ class NewsletterDb {
 		}
 
 		$dbw->endAtomic( __METHOD__ );
-
-		return $success;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function removeSubscription( Newsletter $newsletter, $userIds ) {
+	public function removeSubscription( Newsletter $newsletter, array $userIds ): void {
 		$rowData = [
 			'nls_newsletter_id' => $newsletter->getId(),
 			'nls_subscriber_id' => $userIds
@@ -70,9 +64,12 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
+
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
-		$success = (bool)$dbw->affectedRows();
-		if ( $success ) {
+
+		// Delete query succeeds even if the row already gone
+		// But only update the count if there was a change
+		if ( $dbw->affectedRows() ) {
 			$dbw->update(
 				'nl_newsletters',
 				// For index reasons, count is negative
@@ -83,17 +80,14 @@ class NewsletterDb {
 		}
 
 		$dbw->endAtomic( __METHOD__ );
-
-		return $success;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function addPublisher( Newsletter $newsletter, $userIds ) {
+	public function addPublisher( Newsletter $newsletter, array $userIds ): bool {
 		$newsletterId = $newsletter->getId();
 		$rowData = [];
 		foreach ( $userIds as $userId ) {
@@ -104,35 +98,38 @@ class NewsletterDb {
 		}
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
-		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
-		$success = (bool)$dbw->affectedRows();
 
-		return $success;
+		// Let the user action appear success even if the row is already there.
+		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
+		// Provide a bool that reflects actual creation of a row,
+		// used for decide whether to create a matching MW log entry.
+		return (bool)$dbw->affectedRows();
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
+	 * @return bool
 	 */
-	public function removePublisher( Newsletter $newsletter, $userIds ) {
+	public function removePublisher( Newsletter $newsletter, array $userIds ): bool {
 		$rowData = [
 			'nlp_newsletter_id' => $newsletter->getId(),
 			'nlp_publisher_id' => $userIds
 		];
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
-		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
-		$success = (bool)$dbw->affectedRows();
 
-		return $success;
+		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
+
+		// Delete query succeeds even if the row was already gone.
+		// Provide a bool that reflects actual creation of a row,
+		// used for decide whether to create a matching MW log entry.
+		return (bool)$dbw->affectedRows();
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 *
-	 * @return bool|int the id of the newsletter added, false on failure
+	 * @return int|bool The ID of the newsletter added, or false on failure
 	 */
 	public function addNewsletter( Newsletter $newsletter ) {
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
@@ -146,155 +143,119 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
-			$success = $dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			return $dbw->insertId();
 		} catch ( DBQueryError $ex ) {
-			$success = false;
+			return false;
 		}
-
-		if ( $success ) {
-			$success = $dbw->insertId();
-		}
-
-		return $success;
 	}
 
 	/**
 	 * @param int $id
 	 * @param string $description
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function updateDescription( $id, $description ) {
+	public function updateDescription( int $id, string $description ): bool {
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
-
-		Assert::parameterType( 'integer', $id, '$id' );
-		Assert::parameterType( 'string', $description, '$description' );
 
 		$rowData = [
 			// nl_newsletters.nl_desc is a blob but put some limit
 			// here which is less than the max size for blobs
 			'nl_desc' => $contLang->truncateForDatabase( $description, 600000 ),
 		];
-
 		$conds = [
 			'nl_id' => $id,
 		];
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
-			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
-			$success = false;
+			return false;
 		}
 
-		return $success;
+		return true;
 	}
 
 	/**
 	 * @param int $id
 	 * @param string $name
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function updateName( $id, $name ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-		Assert::parameterType( 'string', $name, '$name' );
-
+	public function updateName( int $id, string $name ): bool {
 		$rowData = [
 			'nl_name' => $name,
 		];
-
 		$conds = [
 			'nl_id' => $id,
 		];
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
-			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
-			$success = false;
+			return false;
 		}
 
-		return $success;
+		return true;
 	}
 
 	/**
 	 * @param int $id
 	 * @param int $pageId
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function updateMainPage( $id, $pageId ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-		Assert::parameterType( 'integer', $pageId, '$pageId' );
-
+	public function updateMainPage( int $id, int $pageId ): bool {
 		$rowData = [
 			'nl_main_page_id' => $pageId,
 		];
-
 		$conds = [
 			'nl_id' => $id,
 		];
 
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
 		try {
-			$success = $dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
-
+			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
-			$success = false;
+			return false;
 		}
 
-		return $success;
+		return true;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 *
-	 * @return bool success of the action
 	 */
-	public function deleteNewsletter( Newsletter $newsletter ) {
+	public function deleteNewsletter( Newsletter $newsletter ): void {
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
-
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 0 ],
 			[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ],
 			__METHOD__
 		);
-		$success = (bool)$dbw->affectedRows();
-
-		return $success;
 	}
 
 	/**
 	 * Set an inactive newsletter to active again
 	 *
 	 * @param string $newsletterName
-	 *
-	 * @return bool success of the action
 	 */
-	public function restoreNewsletter( $newsletterName ) {
+	public function restoreNewsletter( string $newsletterName ): void {
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
-
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 1 ],
 			[ 'nl_name' => $newsletterName, 'nl_active' => 0 ],
 			__METHOD__
 		);
-		$success = (bool)$dbw->affectedRows();
-
-		return $success;
 	}
 
 	/**
 	 * @param int $id
-	 *
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
-	public function getNewsletter( $id ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-
+	public function getNewsletter( int $id ) {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
@@ -317,9 +278,7 @@ class NewsletterDb {
 	 * @param bool $active
 	 * @return Newsletter|null
 	 */
-	public function getNewsletterFromName( $name, $active = true ) {
-		Assert::parameterType( 'string', $name, '$name' );
-
+	public function getNewsletterFromName( string $name, bool $active = true ) {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'nl_newsletters',
@@ -333,12 +292,9 @@ class NewsletterDb {
 
 	/**
 	 * @param int $id
-	 *
 	 * @return int[]
 	 */
-	public function getPublishersFromID( $id ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-
+	public function getPublishersFromID( int $id ): array {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_publishers',
@@ -354,9 +310,7 @@ class NewsletterDb {
 	 * @param int $id
 	 * @return int
 	 */
-	public function getNewsletterSubscribersCount( $id ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-
+	public function getNewsletterSubscribersCount( int $id ): int {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectField(
 			'nl_newsletters',
@@ -372,12 +326,9 @@ class NewsletterDb {
 
 	/**
 	 * @param int $id
-	 *
 	 * @return int[]
 	 */
-	public function getSubscribersFromID( $id ) {
-		Assert::parameterType( 'integer', $id, '$id' );
-
+	public function getSubscribersFromID( int $id ): array {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
@@ -393,30 +344,23 @@ class NewsletterDb {
 	 * Fetch all newsletter Main Pages
 	 *
 	 * @param int $mainPageId
-	 * @return bool|IResultWrapper
-	 * @throws DBUnexpectedError
-	 * @throws MWException
+	 * @return IResultWrapper
 	 */
-	public function newsletterExistsForMainPage( $mainPageId ) {
-		Assert::parameterType( 'integer', $mainPageId, '$mainPageId' );
-
+	public function newsletterExistsForMainPage( int $mainPageId ) {
 		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
-		$res = $dbr->select(
+		return $dbr->select(
 			'nl_newsletters',
 			[ 'nl_main_page_id', 'nl_active' ],
 			[ 'nl_main_page_id' => $mainPageId ],
 			__METHOD__
 		);
-
-		return $res;
 	}
 
 	/**
 	 * @param stdClass $row
-	 *
 	 * @return Newsletter
 	 */
-	private function getNewsletterFromRow( $row ) {
+	private function getNewsletterFromRow( $row ): Newsletter {
 		return new Newsletter(
 			$row->nl_id,
 			$row->nl_name,
@@ -429,14 +373,13 @@ class NewsletterDb {
 	 * @param Newsletter $newsletter
 	 * @param Title $title
 	 * @param User $publisher
-	 *
 	 * @return bool|int the id of the issue added, false on failure
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
 		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
-
 		$dbw->startAtomic( __METHOD__ );
+
 		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
 		$lastIssueId = (int)$dbw->selectField(
 			'nl_issues',
@@ -451,7 +394,7 @@ class NewsletterDb {
 		$nextIssueId = $lastIssueId + 1;
 
 		try {
-			$success = $dbw->insert(
+			$dbw->insert(
 				'nl_issues',
 				[
 					'nli_issue_id' => $nextIssueId,
@@ -464,14 +407,10 @@ class NewsletterDb {
 			$dbw->endAtomic( __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			$dbw->rollback( __METHOD__ );
-			$success = false;
+			return false;
 		}
 
-		if ( $success ) {
-			$success = $nextIssueId;
-		}
-
-		return $success;
+		return $nextIssueId;
 	}
 
 }

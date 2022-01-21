@@ -80,8 +80,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
-
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 	}
 
 	/**
@@ -115,8 +114,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->removeSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
-
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 	}
 
 	/**
@@ -146,7 +144,8 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 					]
 				]
 			);
-		$mockWriteDb->expects( $this->once() )
+		$mockWriteDb
+			->expects( $this->once() )
 			->method( 'affectedRows' )
 			->will( $this->returnValue( 2 ) );
 		$mockWriteDb
@@ -177,7 +176,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			$firstUser->getId(),
 			$secondUser->getId()
 		] );
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 
 		$result = $table->getNewsletterSubscribersCount( $newsletter->getId() );
 		$this->assertEquals( 2, $result );
@@ -206,7 +205,6 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->addPublisher( $this->getTestNewsletter(), [ $user->getId() ] );
-
 		$this->assertTrue( $result );
 	}
 
@@ -233,7 +231,6 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->removePublisher( $this->getTestNewsletter(), [ $user->getId() ] );
-
 		$this->assertTrue( $result );
 	}
 
@@ -354,16 +351,11 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				[ 'nl_active' => 0 ],
 				[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
 			);
-		$mockWriteDb
-			->expects( $this->once() )
-			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->deleteNewsletter( $newsletter );
-
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 	}
 
 	/**
@@ -388,18 +380,14 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 					[ 'nl_name' => $newsletter->getName(), 'nl_active' => 0 ]
 				]
 			);
-		$mockWriteDb
-			->expects( $this->exactly( 2 ) )
-			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		$result = $table->deleteNewsletter( $newsletter );
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 
 		$result = $table->restoreNewsletter( $newsletter->getName() );
-		$this->assertTrue( $result );
+		$this->assertNull( $result );
 	}
 
 	/**

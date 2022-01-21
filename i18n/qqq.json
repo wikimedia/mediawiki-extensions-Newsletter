@@ -80,7 +80,6 @@
 	"newsletter-manage-newsletter-nochanges": "Message shown on Special:Newsletter if no changes were made to the existing publishers' list.",
 	"newsletter-manage-summary": "Edit summary for updating fields in Special:Newsletter's manage form",
 	"newsletter-delete": "Header message shown on Special:Newsletter/<id>/delete.\n\nSee also:\n* {{msg-mw|newsletter-view}}\n*{{msg-mw|newsletter-subscribe}}",
-	"newsletter-delete-failure": "Error message shown on Special:Newsletter/<id>/delete when the newsletter deletion fails.\n\nParameters:\n* $1 - Newsletter name",
 	"newsletter-delete-log": "Default message passed to the logentry as a comment when a newsletter is deleted in NewsletterDeletionUpdate\n\nParameters:\n* $1 - Newsletter name",
 	"newsletter-subscribe": "Header message shown on Special:Newsletter/<id>/subscribe.\n\nSee also:\n* {{msg-mw|newsletter-delete}}\n*{{msg-mw|newsletter-view}}",
 	"newsletter-subscribe-text": "Introductory message shown on Special:Newsletter/<id>/subscribe if the current user is not subscribed to the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
@@ -164,7 +163,6 @@
 	"log-action-filter-newsletter-newsletter-added": "{{doc-log-action-filter-action|newsletter|newsletter-added}}",
 	"log-action-filter-newsletter-newsletter-removed": "{{doc-log-action-filter-action|newsletter|newsletter-removed}}",
 	"log-action-filter-newsletter-issue-added": "{{doc-log-action-filter-action|newsletter|issue-added}}",
-	"newsletter-restore-failure": "Error message shown on title=Special:Undelete&target=Newsletter:<name>&action=submit when the newsletter restoration fails.\n\nParameters:\n* $1 - Newsletter name",
 	"newsletter-diff-descheader": "Header for the diff of the description between two revisions",
 	"newsletter-diff-mainpageheader": "Header for the diff of Main Page between two revisions",
 	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions"

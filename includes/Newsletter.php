@@ -125,7 +125,7 @@ class Newsletter {
 	/**
 	 * @return int
 	 */
-	public function getSubscribersCount() {
+	public function getSubscribersCount(): int {
 		return NewsletterStore::getDefaultInstance()->getNewsletterSubscribersCount( $this->id );
 	}
 
@@ -195,29 +195,20 @@ class Newsletter {
 		}
 
 		$store = NewsletterStore::getDefaultInstance();
-
-		if ( $store->addSubscription( $this, [ $user->getId() ] ) ) {
-			return Status::newGood();
-		} else {
-			return Status::newFatal( 'newsletter-subscribe-fail', $this->name );
-		}
+		$store->addSubscription( $this, [ $user->getId() ] );
+		return Status::newGood();
 	}
 
 	/**
 	 * Unsubscribe the specified user from this newsletter
 	 *
 	 * @param User $user
-	 *
 	 * @return Status
 	 */
 	public function unsubscribe( User $user ) {
 		$store = NewsletterStore::getDefaultInstance();
-
-		if ( $store->removeSubscription( $this, [ $user->getId() ] ) ) {
-			return Status::newGood();
-		} else {
-			return Status::newFatal( 'newsletter-unsubscribe-fail', $this->name );
-		}
+		$store->removeSubscription( $this, [ $user->getId() ] );
+		return Status::newGood();
 	}
 
 	/**

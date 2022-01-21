@@ -73,7 +73,6 @@
 	"newsletter-manage-newsletter-nochanges": "No changes were made to the existing newsletter.",
 	"newsletter-manage-summary": "Summary of the change:",
 	"newsletter-delete": "Delete newsletter",
-	"newsletter-delete-failure": "\"$1\" newsletter could not be deleted. Please try again.",
 	"newsletter-delete-log": "Newsletter \"$1\" has been deleted.",
 	"newsletter-subscribe": "Newsletter subscription management",
 	"newsletter-subscribe-text": "This page allows you to subscribe to \"$1\" newsletter. If you subscribe, you will receive notifications when new issues of this newsletter are announced.",
@@ -157,7 +156,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Newsletter creation",
 	"log-action-filter-newsletter-newsletter-removed": "Newsletter deletion",
 	"log-action-filter-newsletter-issue-added": "New issue announcements",
-	"newsletter-restore-failure": "\"$1\" newsletter could not be restored. Please try again.",
 	"newsletter-diff-descheader": "Changes in the description:",
 	"newsletter-diff-mainpageheader": "Changes in Main Page:",
 	"newsletter-diff-publishersheader": "Changes in publishers:"

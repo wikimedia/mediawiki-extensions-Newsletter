@@ -220,15 +220,8 @@ class NewsletterHooks {
 			if ( !$newsletter->canDelete( $user ) ) {
 				throw new PermissionsError( 'newsletter-delete' );
 			}
-			$success = NewsletterStore::getDefaultInstance()->deleteNewsletter( $newsletter );
-			if ( $success ) {
-				$status->setOK( $success );
-				return true;
-			} else {
-				// Show error message and allow resubmitting in case of failure
-				$status->error( 'newsletter-delete-failure', $newsletter->getName() );
-				return false;
-			}
+			NewsletterStore::getDefaultInstance()->deleteNewsletter( $newsletter );
+			$status->setOK( true );
 		}
 		return false;
 	}
@@ -265,20 +258,14 @@ class NewsletterHooks {
 			}
 			$store = NewsletterStore::getDefaultInstance();
 			$rows = $store->newsletterExistsForMainPage( $newsletter->getPageId() );
-
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $newsletter->getPageId() && (int)$row->nl_active === 1 ) {
 					$status->fatal( 'newsletter-mainpage-in-use' );
 					return false;
 				}
 			}
-			$success = $store->restoreNewsletter( $newsletterName );
-			if ( $success ) {
-				return;
-			}
+			$store->restoreNewsletter( $newsletterName );
 		}
-		$status->fatal( 'newsletter-restore-failure', $newsletterName );
-		return false;
 	}
 
 	/**

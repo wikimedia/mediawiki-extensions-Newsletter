@@ -49,67 +49,56 @@ class NewsletterStore {
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function addSubscription( Newsletter $newsletter, $userIds ) {
-		return $this->db->addSubscription( $newsletter, $userIds );
+	public function addSubscription( Newsletter $newsletter, array $userIds ): void {
+		$this->db->addSubscription( $newsletter, $userIds );
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function removeSubscription( Newsletter $newsletter, $userIds ) {
-		return $this->db->removeSubscription( $newsletter, $userIds );
+	public function removeSubscription( Newsletter $newsletter, array $userIds ): void {
+		$this->db->removeSubscription( $newsletter, $userIds );
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function addPublisher( Newsletter $newsletter, $userIds ) {
+	public function addPublisher( Newsletter $newsletter, array $userIds ): void {
 		$success = $this->db->addPublisher( $newsletter, $userIds );
 		if ( $success ) {
 			foreach ( $userIds as $userId ) {
 				$this->logger->logPublisherAdded( $newsletter, User::newFromId( $userId ) );
 			}
 		}
-		return $success;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
 	 * @param array $userIds
-	 *
-	 * @return bool success of the action
 	 */
-	public function removePublisher( Newsletter $newsletter, $userIds ) {
+	public function removePublisher( Newsletter $newsletter, array $userIds ): void {
 		$success = $this->db->removePublisher( $newsletter, $userIds );
 		if ( $success ) {
 			foreach ( $userIds as $userId ) {
 				$this->logger->logPublisherRemoved( $newsletter, User::newFromId( $userId ) );
 			}
 		}
-		return $success;
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function addNewsletter( Newsletter $newsletter ) {
-		$success = $this->db->addNewsletter( $newsletter );
-		if ( $success ) {
-			$newsletter->setId( $success );
+	public function addNewsletter( Newsletter $newsletter ): bool {
+		$id = $this->db->addNewsletter( $newsletter );
+		if ( $id ) {
+			$newsletter->setId( $id );
 			$this->logger->logNewsletterAdded( $newsletter );
 		}
-		return (bool)$success;
+		return (bool)$id;
 	}
 
 	/**
@@ -135,31 +124,26 @@ class NewsletterStore {
 	/**
 	 * @param int $id
 	 * @param int $pageId
-	 *
-	 * @return bool success of the action
+	 * @return bool Success of the action
 	 */
-	public function updateMainPage( $id, $pageId ) {
+	public function updateMainPage( int $id, int $pageId ): bool {
 		return $this->db->updateMainPage( $id, $pageId );
 	}
 
 	/**
 	 * @param Newsletter $newsletter
-	 *
-	 * @return bool success of the action
 	 */
-	public function deleteNewsletter( Newsletter $newsletter ) {
-		return $this->db->deleteNewsletter( $newsletter );
+	public function deleteNewsletter( Newsletter $newsletter ): void {
+		$this->db->deleteNewsletter( $newsletter );
 	}
 
 	/**
 	 * Restore a newsletter from the delete logs
 	 *
 	 * @param string $newsletterName
-	 *
-	 * @return bool success of the action
 	 */
-	public function restoreNewsletter( $newsletterName ) {
-		return $this->db->restoreNewsletter( $newsletterName );
+	public function restoreNewsletter( string $newsletterName ): void {
+		$this->db->restoreNewsletter( $newsletterName );
 	}
 
 	/**
@@ -168,7 +152,7 @@ class NewsletterStore {
 	 *
 	 * @param Newsletter $newsletter
 	 */
-	public function rollBackNewsletterAddition( Newsletter $newsletter ) {
+	public function rollBackNewsletterAddition( Newsletter $newsletter ): void {
 		$this->db->deleteNewsletter( $newsletter );
 	}
 
@@ -186,16 +170,15 @@ class NewsletterStore {
 	 * @param bool $active
 	 * @return Newsletter|null
 	 */
-	public function getNewsletterFromName( $name, $active = true ) {
+	public function getNewsletterFromName( string $name, bool $active = true ) {
 		return $this->db->getNewsletterFromName( $name, $active );
 	}
 
 	/**
 	 * @param int $id
-	 *
 	 * @return int[]
 	 */
-	public function getPublishersFromID( $id ) {
+	public function getPublishersFromID( int $id ): array {
 		return $this->db->getPublishersFromID( $id );
 	}
 
@@ -203,16 +186,15 @@ class NewsletterStore {
 	 * @param int $id
 	 * @return int
 	 */
-	public function getNewsletterSubscribersCount( $id ) {
+	public function getNewsletterSubscribersCount( int $id ): int {
 		return $this->db->getNewsletterSubscribersCount( $id );
 	}
 
 	/**
 	 * @param int $id
-	 *
 	 * @return int[]
 	 */
-	public function getSubscribersFromID( $id ) {
+	public function getSubscribersFromID( int $id ): array {
 		return $this->db->getSubscribersFromID( $id );
 	}
 
@@ -220,10 +202,9 @@ class NewsletterStore {
 	 * Fetch all newsletter Main Pages
 	 *
 	 * @param int $mainPageId
-	 * @return bool|IResultWrapper
-	 * @throws MWException
+	 * @return IResultWrapper
 	 */
-	public function newsletterExistsForMainPage( $mainPageId ) {
+	public function newsletterExistsForMainPage( int $mainPageId ) {
 		return $this->db->newsletterExistsForMainPage( $mainPageId );
 	}
 
