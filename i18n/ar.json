@@ -71,7 +71,6 @@
 	"newsletter-manage-newsletter-nochanges": "لم يتم إجراء تغييرات على الرسالة الإخبارية الموجودة.",
 	"newsletter-manage-summary": "ملخص التغيير:",
 	"newsletter-delete": "حذف النشرة الإخبارية",
-	"newsletter-delete-failure": "لا يمكن حذف الرسالة الإخبارية \"$1\"; حاول مرة اخرى.",
 	"newsletter-delete-log": "تم حذف الرسالة الإخبارية \"$1\".",
 	"newsletter-subscribe": "إدارة الاشتراك في النشرة الإخبارية",
 	"newsletter-subscribe-text": "تتيح لك هذه الصفحة الاشتراك في النشرة الإخبارية \"$1\"، إذا قمت بالاشتراك، سوف تتلقى إخطارات عندما يتم الإعلان عن أعداد جديدة من هذه النشرة الإخبارية.",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-added": "إنشاء النشرة الإخبارية",
 	"log-action-filter-newsletter-newsletter-removed": "حذف النشرة الإخبارية",
 	"log-action-filter-newsletter-issue-added": "إعلانات أعداد جديدة",
-	"newsletter-restore-failure": "لا يمكن استرجاع الرسالة الإخبارية \"$1\"; حاول مرة اخرى.",
 	"newsletter-diff-descheader": "التغييرات في الوصف:",
 	"newsletter-diff-mainpageheader": "التغييرات في الصفحة الرئيسية:",
 	"newsletter-diff-publishersheader": "التغييرات في الناشرين:"

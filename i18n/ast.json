@@ -68,7 +68,6 @@
 	"newsletter-manage-newsletter-nochanges": "Nun se fixeron cambeos al boletín esistiente.",
 	"newsletter-manage-summary": "Resume del cambéu:",
 	"newsletter-delete": "Desaniciar boletín",
-	"newsletter-delete-failure": "El boletín \"$1\" nun pudo desaniciase. Téntalo nuevamente.",
 	"newsletter-delete-log": "Desanicióse'l boletín «$1».",
 	"newsletter-subscribe": "Alministración de suscripciones a boletinos",
 	"newsletter-subscribe-text": "Esta páxina te permite suscribite al boletín «$1». Si te suscribes, vas recibir notificaciones cuando s'anuncien nueves ediciones d'esti boletín.",
@@ -151,7 +150,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Creación de boletín",
 	"log-action-filter-newsletter-newsletter-removed": "Desaniciu de boletín",
 	"log-action-filter-newsletter-issue-added": "Anuncios d'ediciones nueves",
-	"newsletter-restore-failure": "El boletín «$1» nun pudo restaurase. Téntalo nuevamente.",
 	"newsletter-diff-descheader": "Cambios na descripción:",
 	"newsletter-diff-mainpageheader": "Cambios na páxina principal:",
 	"newsletter-diff-publishersheader": "Cambios nos editores:"

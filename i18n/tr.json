@@ -72,7 +72,6 @@
 	"newsletter-manage-newsletter-nochanges": "Mevcut bültende değişiklik yapılmadı.",
 	"newsletter-manage-summary": "Değişikliğin özeti:",
 	"newsletter-delete": "Bülteni sil",
-	"newsletter-delete-failure": "\"$1\" bülteni silinemedi. Lütfen tekrar deneyin.",
 	"newsletter-delete-log": "\"$1\" bülteni silindi.",
 	"newsletter-subscribe": "Bülten aboneliği yönetimi",
 	"newsletter-subscribe-text": "Bu sayfa \"$1\" bültenine abone olmanızı sağlar. Abone olursanız, bu haber bülteninin yeni sayıları duyurulduğunda bildirim alırsınız.",
@@ -155,7 +154,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Bülten oluşturma",
 	"log-action-filter-newsletter-newsletter-removed": "Bülten silme",
 	"log-action-filter-newsletter-issue-added": "Yeni sorun duyuruları",
-	"newsletter-restore-failure": "\"$1\" bülteni geri yüklenemedi. Lütfen tekrar deneyin.",
 	"newsletter-diff-descheader": "Açıklamadaki değişiklikler:",
 	"newsletter-diff-mainpageheader": "Anasayfada ki değişiklikler:",
 	"newsletter-diff-publishersheader": "Yayımcılarda ki değişiklikler:"

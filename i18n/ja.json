@@ -78,7 +78,6 @@
 	"newsletter-manage-newsletter-nochanges": "この既存のニュースレターには何も変更が加わっていません。",
 	"newsletter-manage-summary": "変更の要約:",
 	"newsletter-delete": "ニュースレターの削除",
-	"newsletter-delete-failure": "ニュースレター「$1」は削除できませんでした。毛一度お試しください。",
 	"newsletter-delete-log": "ニュースラター「$1」の削除が完了しました。",
 	"newsletter-subscribe": "ニュースレター購読の管理",
 	"newsletter-subscribe-text": "このページではニュースレター「$1」を購読できます。購読すると、このニュースレターの新たな発行がアナウンスされた際にあなたに通知が届きます。",
@@ -161,7 +160,6 @@
 	"log-action-filter-newsletter-newsletter-added": "ニュースレターの作成",
 	"log-action-filter-newsletter-newsletter-removed": "ニュースレターの削除",
 	"log-action-filter-newsletter-issue-added": "新しい号の発行通知",
-	"newsletter-restore-failure": "ニュースレター「$1」の復元ができませんでした。もう一度試してください。",
 	"newsletter-diff-descheader": "説明文書の変更:",
 	"newsletter-diff-mainpageheader": "メインページの変更:",
 	"newsletter-diff-publishersheader": "発行者の変更:"

@@ -71,7 +71,6 @@
 	"newsletter-manage-newsletter-nochanges": "לא נעשו שינויים לידיעון הקיים.",
 	"newsletter-manage-summary": "תקציר השינוי:",
 	"newsletter-delete": "מחיקת ידיעון",
-	"newsletter-delete-failure": "לא היה אפשר למחוק את הידיעון \"$1\". נא לנסות שוב.",
 	"newsletter-delete-log": "הידיעון \"$1\" נמחק.",
 	"newsletter-subscribe": "ניהול מינוי לידיעון",
 	"newsletter-subscribe-text": "הדף הזה מאפשר לך לעשות מינוי לידיעון \"$1\". אם תעשה מינוי, תקבל הודעה על גיליונות חדשים.",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-added": "יצירת ידיעון",
 	"log-action-filter-newsletter-newsletter-removed": "מחיקת ידיעון",
 	"log-action-filter-newsletter-issue-added": "הודעות על גיליונות חדשים",
-	"newsletter-restore-failure": "לא ניתן היה לשחזר את הידיעון \"$1\". נא לנסות שוב.",
 	"newsletter-diff-descheader": "שינויים בתיאור:",
 	"newsletter-diff-mainpageheader": "שינויים בדף הראשי:",
 	"newsletter-diff-publishersheader": "שינויים במפרסמים:"

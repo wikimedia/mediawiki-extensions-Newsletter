@@ -69,7 +69,6 @@
 	"newsletter-manage-newsletter-nochanges": "Ingen endringer ble gjort i det eksisterende nyhetsbrevet.",
 	"newsletter-manage-summary": "Sammendrag av endringen:",
 	"newsletter-delete": "Slett nyhetsbrev",
-	"newsletter-delete-failure": "Nyhetsbrevet «$1» kunne ikke slettes. Prøv igjen.",
 	"newsletter-delete-log": "Nyhetsbrevet «$1» har blitt slettet.",
 	"newsletter-subscribe": "Behandling av nyhetsbrevabonnement",
 	"newsletter-subscribe-text": "Denne siden lar deg abonnere på nyhetsbrevet «$1». Om du abonnerer vil du få varsler når nye utgaver av nyhetsbrevet annonseres.",
@@ -152,7 +151,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Opprettelse av nyhetsbrev",
 	"log-action-filter-newsletter-newsletter-removed": "Sletting av nyhetsbrev",
 	"log-action-filter-newsletter-issue-added": "Annonsering av ny utgave",
-	"newsletter-restore-failure": "Nyhetsbrevet «$1» kunne ikke gjenopprettes. Prøv igjen.",
 	"newsletter-diff-descheader": "Endringer i beskrivelsen:",
 	"newsletter-diff-mainpageheader": "Endringer i hovedsiden:",
 	"newsletter-diff-publishersheader": "Endringer i utgivere:"

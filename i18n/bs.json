@@ -55,7 +55,6 @@
 	"newsletter-manage-remove-self-publisher": "Jeste li sigurni da sebe želite ukloniti sa spiska izdavača?",
 	"newsletter-manage-summary": "Sažetak izmjene:",
 	"newsletter-delete": "Obriši bilten",
-	"newsletter-delete-failure": "Bilten \"$1\" nije se mogao obrisati. Pokušajte ponovo.",
 	"newsletter-subscribe-success": "Pretplatili ste se na bilten \"$1\".",
 	"newsletter-unsubscribe-success": "Više niste pretplatnik biltena \"$1\".",
 	"newsletter-subscribe-confirmation": "Sad ste pretplaćeni na bilten.",

@@ -66,7 +66,6 @@
 	"newsletter-manage-newsletter-nochanges": "Nem módosult a hírlevél.",
 	"newsletter-manage-summary": "A változtatás összefoglalása:",
 	"newsletter-delete": "Hírlevél törlése",
-	"newsletter-delete-failure": "A(z) „$1” hírlevél törlése sikertelen. Próbáld újra.",
 	"newsletter-delete-log": "A(z) „$1” hírlevél törölve.",
 	"newsletter-subscribe": "Hírlevél-feliratkozás kezelése",
 	"newsletter-subscribe-text": "Ez a lap lehetővé teszi, hogy feliratkozz a(z) „$1” hírlevélre. Ha feliratkozol, értesítést fogsz kapni a hírlevél új számainak bejelentéseiről.",
@@ -147,7 +146,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Hírlevél létrehozása",
 	"log-action-filter-newsletter-newsletter-removed": "Hírlevél törlése",
 	"log-action-filter-newsletter-issue-added": "Új szám bejelentése",
-	"newsletter-restore-failure": "A(z) „$1”  hírlevél nem állítható helyre. Próbáld újra.",
 	"newsletter-diff-descheader": "Változtatások a leírásban:",
 	"newsletter-diff-mainpageheader": "Változtatások a kezdőlapban:",
 	"newsletter-diff-publishersheader": "Változtatások a közzétevőkben:"

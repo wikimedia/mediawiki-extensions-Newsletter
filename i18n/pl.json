@@ -74,7 +74,6 @@
 	"newsletter-manage-newsletter-nochanges": "Nie wykonano żadnych zmian w istniejącym newsletterze.",
 	"newsletter-manage-summary": "Opis zmiany:",
 	"newsletter-delete": "Usuń newsletter",
-	"newsletter-delete-failure": "Newletter „$1” nie może zostać usunięty. Spróbuj ponownie.",
 	"newsletter-delete-log": "Newsletter „$1” został usunięty.",
 	"newsletter-subscribe": "Zarządzanie subskrypcją newslettera",
 	"newsletter-subscribe-text": "Ta strona umożliwia ci subskrypcję newslettera „$1”. Subskrybując go będziesz otrzymywać powiadomienia o nowych wydaniach tego newslettera.",
@@ -157,7 +156,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Utworzenie newslettera",
 	"log-action-filter-newsletter-newsletter-removed": "Usunięcie newslettera",
 	"log-action-filter-newsletter-issue-added": "Ogłoszenie nowego wydania",
-	"newsletter-restore-failure": "Newsletter „$1” nie mógł zostać odtworzony. Spróbuj ponownie.",
 	"newsletter-diff-descheader": "Zmiany w opisie:",
 	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
 	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:"

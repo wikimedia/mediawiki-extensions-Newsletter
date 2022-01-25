@@ -69,7 +69,6 @@
 	"newsletter-manage-newsletter-nochanges": "Obstoječi novičnik ni bil spremenjen.",
 	"newsletter-manage-summary": "Povzetek sprememb:",
 	"newsletter-delete": "Izbriši novičnik",
-	"newsletter-delete-failure": "Novičnika »$1« ni bilo mogoče izbrisati. Prosimo, poskusite znova.",
 	"newsletter-delete-log": "Novičnik »$1« je izbrisan.",
 	"newsletter-subscribe": "Upravljanje naročila na novičnik",
 	"newsletter-subscribe-text": "Ta stran vam omogoča, da se naročite na novičnik »$1«. Če se boste naročili, vas bomo obveščali o novih izdajah tega novičnika.",
@@ -133,7 +132,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Ustvaritev novičnika",
 	"log-action-filter-newsletter-newsletter-removed": "Izbris novičnika",
 	"log-action-filter-newsletter-issue-added": "Obvestila o novi izdaji",
-	"newsletter-restore-failure": "Novičnika »$1« ni bilo mogoče obnoviti. Prosimo, poskusite znova.",
 	"newsletter-diff-descheader": "Spremembe opisa:",
 	"newsletter-diff-mainpageheader": "Spremembe glavne strani:",
 	"newsletter-diff-publishersheader": "Spremembe izdajateljev:"

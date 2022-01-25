@@ -37,7 +37,6 @@
 	"newsletter-manage-newsletter-success": "D'Newsletter gouf geännert.",
 	"newsletter-manage-summary": "Resumé fir z'änneren:",
 	"newsletter-delete": "Newsletter läschen",
-	"newsletter-delete-failure": "D'Newsletter \"$1\" konnt net geläscht ginn. Probéiert et w. e. g. nach eng Kéier.",
 	"newsletter-delete-log": "Newsletter \"$1\" gouf geläscht.",
 	"newsletter-do-subscribe": "Op dës Newsletter abonnéieren",
 	"newsletter-subscribe-fail": "D'Newsletter \"$1\" konnt net abonnéiert ginn, well Dir se schonn abonnéiert hutt.",

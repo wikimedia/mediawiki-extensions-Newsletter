@@ -75,7 +75,6 @@
 	"newsletter-manage-newsletter-nochanges": "Er zijn geen wijzigingen gemaakt aan de huidige nieuwbrief.",
 	"newsletter-manage-summary": "Samenvatting van de wijziging:",
 	"newsletter-delete": "Nieuwsbrief verwijderen",
-	"newsletter-delete-failure": "De nieuwsbrief \"$1\" kon niet worden verwijderd. Probeer het opnieuw.",
 	"newsletter-delete-log": "De nieuwbrief \"$1\" is verwijderd.",
 	"newsletter-subscribe": "Nieuwsbrief abboneebeheer",
 	"newsletter-subscribe-text": "Deze pagina biedt u de mogelijkheid om u te abboneren op de nieuwsbrief \"$1\". Als u zich abboneert, krijgt u een melding wanneer er een nieuwe uitgave van deze nieuwsbrief wordt aangekondigd.",
@@ -156,7 +155,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Nieuwsbrief aangemaakt",
 	"log-action-filter-newsletter-newsletter-removed": "Nieuwsbrief verwijderd",
 	"log-action-filter-newsletter-issue-added": "Aankondiging van nieuwe uitgaven",
-	"newsletter-restore-failure": "De nieuwsbrief \"$1\" kon niet worden hersteld. Probeer het opnieuw.",
 	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:",
 	"newsletter-diff-mainpageheader": "Wijzigingen aan de hoofdpagina:",
 	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:"

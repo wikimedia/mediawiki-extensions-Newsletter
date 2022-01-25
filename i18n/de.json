@@ -71,7 +71,6 @@
 	"newsletter-manage-newsletter-nochanges": "Am vorhandenen Newsletter wurden keine Änderungen durchgeführt.",
 	"newsletter-manage-summary": "Zusammenfassung der Änderung:",
 	"newsletter-delete": "Newsletter löschen",
-	"newsletter-delete-failure": "Der Newsletter „$1“ konnte nicht gelöscht werden. Bitte erneut versuchen.",
 	"newsletter-delete-log": "Der Newsletter „$1“ wurde gelöscht.",
 	"newsletter-subscribe": "Abonnementverwaltung für Newsletter",
 	"newsletter-subscribe-text": "Diese Seite erlaubt dir, den Newsletter „$1“ zu abonnieren. Falls du den Newsletter abonnierst, erhältst du Benachrichtigungen, wenn neue Artikel dieses Newsletters angekündigt werden.",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Erstellung von Newslettern",
 	"log-action-filter-newsletter-newsletter-removed": "Löschen von Newslettern",
 	"log-action-filter-newsletter-issue-added": "Veröffentlichungen neuer Ausgaben",
-	"newsletter-restore-failure": "Der Newsletter „$1“ konnte nicht wiederhergestellt werden. Bitte erneut versuchen.",
 	"newsletter-diff-descheader": "Änderungen an der Beschreibung:",
 	"newsletter-diff-mainpageheader": "Änderungen an der Hauptseite:",
 	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:"

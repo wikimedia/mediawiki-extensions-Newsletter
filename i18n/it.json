@@ -71,7 +71,6 @@
 	"newsletter-manage-newsletter-nochanges": "Non è stata apportata alcuna modifica alle newsletter esistenti.",
 	"newsletter-manage-summary": "Sommario delle modifiche:",
 	"newsletter-delete": "Cancella newsletter",
-	"newsletter-delete-failure": "La newsletter \"$1\" non può essere cancellata. Riprova.",
 	"newsletter-delete-log": "La newsletter \"$1\" è stata cancellata.",
 	"newsletter-subscribe": "Gestione iscrizione newsletter",
 	"newsletter-subscribe-text": "Questa pagina ti permette di iscriverti alla newsletter \"$1\". Se ti iscrivi, riceverai le notifiche quando le nuove edizioni di questa newsletter saranno pubblicate.",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Creazione newsletter",
 	"log-action-filter-newsletter-newsletter-removed": "Cancellazione newsletter",
 	"log-action-filter-newsletter-issue-added": "Annunci nuova edizione",
-	"newsletter-restore-failure": "La newsletter \"$1\" non può essere ripristinata. Riprova.",
 	"newsletter-diff-descheader": "Modifiche nella descrizione:",
 	"newsletter-diff-mainpageheader": "Modifiche nella pagina principale:",
 	"newsletter-diff-publishersheader": "Modifiche agli editori:"

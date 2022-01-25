@@ -80,7 +80,6 @@
 	"newsletter-manage-newsletter-nochanges": "Никаких изменений в имеющихся рассылках сделано не было.",
 	"newsletter-manage-summary": "Краткое описание изменений:",
 	"newsletter-delete": "Удалить рассылку",
-	"newsletter-delete-failure": "Не удалось удалить рассылку «$1». Пожалуйста, попробуйте снова.",
 	"newsletter-delete-log": "Рассылка «$1» успешно удалена.",
 	"newsletter-subscribe": "Управление подпиской на рассылку",
 	"newsletter-subscribe-text": "Эта страница позволяет вам подписаться на рассылку «$1». Если вы подпишетесь, то будете получать уведомления с анонсами новых выпусков этой рассылки.",
@@ -150,7 +149,6 @@
 	"log-action-filter-newsletter-newsletter-added": "создание рассылки",
 	"log-action-filter-newsletter-newsletter-removed": "удаление рассылки",
 	"log-action-filter-newsletter-issue-added": "анонсирование новых выпусков",
-	"newsletter-restore-failure": "Не удалось восстановить рассылку «$1». Пожалуйста, попробуйте снова.",
 	"newsletter-diff-descheader": "Изменения в описании:",
 	"newsletter-diff-mainpageheader": "Изменения на основной странице:",
 	"newsletter-diff-publishersheader": "Изменения в списке публикаторов:"

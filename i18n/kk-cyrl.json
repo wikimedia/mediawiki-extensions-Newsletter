@@ -58,7 +58,6 @@
 	"newsletter-manage-newsletter-success": "Жаңалықхат өзгертілді.",
 	"newsletter-manage-newsletter-nochanges": "Бұрыннан бар жаңалықхатта жасалған өзгерістер жоқ.",
 	"newsletter-delete": "Жаңалықхаты өшіру",
-	"newsletter-delete-failure": "\"$1\" жаңалықхаты жойылмады. Қайта байқап көріңіз.",
 	"newsletter-subscribe": "Жаңалықхат жазылу басқаруы",
 	"newsletter-subscribe-text": "Бұл интерфейс сізге \"$1\" жаңалықхатынна жазылуға мүмкіндік береді. Егер жазылсаңыз, бұл жаңалықхатында жаңа шығарылымдар жарияланғанда ескертпелер аласыз.",
 	"newsletter-do-subscribe": "Бұл жаңалықхатқа жазылу",

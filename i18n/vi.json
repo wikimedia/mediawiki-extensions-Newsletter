@@ -46,7 +46,6 @@
 	"newsletter-manage-description": "Miêu tả:",
 	"newsletter-manage-summary": "Tóm lược thay đổi:",
 	"newsletter-delete": "Xóa thư tin",
-	"newsletter-delete-failure": "Không thể xóa thư tin “$1”. Hãy thử lại.",
 	"newsletter-delete-log": "Thư tin “$1” đã được xóa.",
 	"newsletter-do-subscribe": "Theo dõi thư tin này",
 	"newsletter-subscribe-success": "Bạn đã bắt đầu theo dõi “$1”.",

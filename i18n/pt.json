@@ -75,7 +75,6 @@
 	"newsletter-manage-newsletter-nochanges": "Não foram efetuadas alterações ao boletim existente.",
 	"newsletter-manage-summary": "Resumo da alteração:",
 	"newsletter-delete": "Eliminar boletim informativo",
-	"newsletter-delete-failure": "Não foi possível eliminar o boletim \"$1\". Tente novamente, por favor.",
 	"newsletter-delete-log": "O boletim informativo \"$1\" foi eliminado.",
 	"newsletter-subscribe": "Gestão de subscrições de boletins",
 	"newsletter-subscribe-text": "Esta página permite-lhe subscrever o boletim informativo \"$1\". Ao subscrevê-lo, irá receber notificações quando forem anunciadas novas edições do boletim.",
@@ -158,7 +157,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Criação de boletim informativo",
 	"log-action-filter-newsletter-newsletter-removed": "Eliminação de boletim informativo",
 	"log-action-filter-newsletter-issue-added": "Anúncios de novas edições",
-	"newsletter-restore-failure": "Não foi possível restaurar o boletim \"$1\". Tente novamente, por favor.",
 	"newsletter-diff-descheader": "Alterações na descrição:",
 	"newsletter-diff-mainpageheader": "Alterações na página principal:",
 	"newsletter-diff-publishersheader": "Alterações nos editores:"

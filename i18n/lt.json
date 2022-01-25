@@ -41,7 +41,6 @@
 	"action-newsletter-delete": "ištrinti naujienlaiškius",
 	"newsletter-list-table": "Filtruoti pagal:",
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|atkūrė}} naujienlaiškį $4",
-	"newsletter-restore-failure": "„$1“ naujienlaiškis negali būti atkurtas. Prašome bandyti dar kartą.",
 	"newsletter-diff-descheader": "Pakeitimai aprašyme:",
 	"newsletter-diff-mainpageheader": "Pakeitimai Pagrindiniame Puslapyje:"
 }

@@ -70,7 +70,6 @@
 	"newsletter-manage-newsletter-nochanges": "Inga ändringar har gjorts i det befintliga nyhetsbrevet.",
 	"newsletter-manage-summary": "Ändringens sammanfattning:",
 	"newsletter-delete": "Radera nyhetsbrev",
-	"newsletter-delete-failure": "Nyhetsbrevet \"$1\" kunde inte raderats. Försök igen senare.",
 	"newsletter-delete-log": "Nyhetsbrevet \"$1\" har raderats.",
 	"newsletter-subscribe": "Hantering av nyhetsbrevsprenumeration",
 	"newsletter-subscribe-text": "Denna sida låter dig prenumerera på nyhetsbrevet \"$1\". Om du prenumererar kommer du få notifikationer när nya utgåvor av detta nyhetsbrev tillkännages.",
@@ -153,7 +152,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Nyhetsbrev skapades",
 	"log-action-filter-newsletter-newsletter-removed": "Nyhetsbrev raderades",
 	"log-action-filter-newsletter-issue-added": "Tillkännagivande av ny utgåva",
-	"newsletter-restore-failure": "Nyhetsbrevet \"$1\" kunde inte återställas. var god försök igen senare.",
 	"newsletter-diff-descheader": "Ändringar i beskrivningen:",
 	"newsletter-diff-mainpageheader": "Ändringar i huvudsidan:",
 	"newsletter-diff-publishersheader": "Ändringar i utgivare:"

@@ -74,7 +74,6 @@
 	"newsletter-manage-newsletter-nochanges": "Не було внесено жодних змін до поточної розсилки новин.",
 	"newsletter-manage-summary": "Короткий опис зміни:",
 	"newsletter-delete": "Вилучити розсилку новин",
-	"newsletter-delete-failure": "Розсилку новин «$1» не вдалося вилучити. Будь ласка, спробуйте знову.",
 	"newsletter-delete-log": "Розсилку новин «$1» вилучено.",
 	"newsletter-subscribe": "Управління підписками на розсилки новин",
 	"newsletter-subscribe-text": "Ця сторінка дозволяє Вам підписатися на розсилку новин «$1». Якщо Ви підпишетеся, то будете отримувати сповіщення, коли з'являтимуться нові випуски цієї розсилки новин.",
@@ -157,7 +156,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Створення розсилки новин",
 	"log-action-filter-newsletter-newsletter-removed": "Вилучення розсилки новин",
 	"log-action-filter-newsletter-issue-added": "Оголошення про новий випуск",
-	"newsletter-restore-failure": "Розсилку новин «$1» не вдалося відновити. Будь ласка, спробуйте ще раз.",
 	"newsletter-diff-descheader": "Зміни в описі:",
 	"newsletter-diff-mainpageheader": "Зміни на Головній сторінці:",
 	"newsletter-diff-publishersheader": "Зміни у видавцях:"

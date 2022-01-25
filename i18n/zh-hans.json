@@ -71,7 +71,6 @@
 	"newsletter-manage-newsletter-nochanges": "没有对现有新闻报做出更改。",
 	"newsletter-manage-summary": "更改的摘要：",
 	"newsletter-delete": "删除新闻报",
-	"newsletter-delete-failure": "“$1”新闻报不能删除。请重试。",
 	"newsletter-delete-log": "新闻报“$1”已被删除。",
 	"newsletter-subscribe": "新闻报订阅管理",
 	"newsletter-subscribe-text": "此页面允许您订阅“$1”新闻报。如果您订阅，您将在此新闻报宣布发行新一期时接收到通知。",
@@ -154,7 +153,6 @@
 	"log-action-filter-newsletter-newsletter-added": "新闻报创建",
 	"log-action-filter-newsletter-newsletter-removed": "新闻报删除",
 	"log-action-filter-newsletter-issue-added": "新一期发行公告",
-	"newsletter-restore-failure": "“$1”新闻报不能恢复。请重试。",
 	"newsletter-diff-descheader": "描述中的更改：",
 	"newsletter-diff-mainpageheader": "首页中的更改：",
 	"newsletter-diff-publishersheader": "发布者的更改："

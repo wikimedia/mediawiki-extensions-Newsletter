@@ -69,7 +69,6 @@
 	"newsletter-manage-newsletter-nochanges": "Не се направени измени во постоечкиот билтен.",
 	"newsletter-manage-summary": "Краток опис на промената:",
 	"newsletter-delete": "Избриши билтен",
-	"newsletter-delete-failure": "Не можев да го избришам билтенот „$1“. Обидете се повторно.",
 	"newsletter-delete-log": "Билтенот „$1“ е избришан.",
 	"newsletter-subscribe": "Раководење со претплатници на билтен",
 	"newsletter-subscribe-text": "Страницава ви овозможува да се претплатите на билтенот „$1“. Ако се претплатите, ќе бидете известувани кога ќе излегуваат нови броеви.",
@@ -152,7 +151,6 @@
 	"log-action-filter-newsletter-newsletter-added": "Создавање на билтен",
 	"log-action-filter-newsletter-newsletter-removed": "Бришење на билтен",
 	"log-action-filter-newsletter-issue-added": "Објави за нов број",
-	"newsletter-restore-failure": "Не можев да го повратам билтенот „$1“. Обидете се повторно.",
 	"newsletter-diff-descheader": "Промени во описот:",
 	"newsletter-diff-mainpageheader": "Промени во Главната страница:",
 	"newsletter-diff-publishersheader": "Промени во издавачите:"
