@@ -129,7 +129,7 @@
 	"notification-header-newsletter-delpublisher": "{{GENDER:$3|{{GENDER:$2|הוסרת}}}} מרשימת המפרסמים של הידיעון \"$1\".",
 	"newsletter-list-intro": "זוהי רשימת ידיעונים שרשומים בוויקי הזה. יש לעשות מינוי לידיעון כדי לקבל התראה כשמתפרסם גיליון חדש. תישלחנה אליך התראות דרך באתר או בדואר האלקטרוני, בהתאם ל[[Special:Preferences#mw-prefsection-echo|העדפות]] שלך.",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|יש להיכנס לחשבון]] כדי לעשות מינוי לידיעון ולקבל התראות כשמתפרסם גיליון חדש.",
-	"newsletter-list-table": "סינון מאת:",
+	"newsletter-list-table": "סינון לפי:",
 	"newsletter-list-option-all": "כל הידיעונים",
 	"newsletter-list-option-subscribed": "ידיעונים שעשיתי להם מינוי",
 	"newsletter-list-option-unsubscribed": "ידיעונים שלא עשיתי להם מינוי",
