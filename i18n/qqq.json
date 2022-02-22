@@ -154,7 +154,7 @@
 	"log-name-newsletter": "{{log-name|newsletter}}",
 	"log-description-newsletter": "{{log-description|newsletter}}",
 	"logentry-newsletter-publisher-added": "{{logentry}}\nAdditional parameters:\n* $4 - the newsletter affected by the action",
-	"logentry-newsletter-publisher-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action\n* $6 - unused, or the full user name that was removed, whose display name is on $3 (to be used with GENDER)",
+	"logentry-newsletter-publisher-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action\n* $6 - unused, or the full username that was removed, whose display name is on $3 (to be used with GENDER)",
 	"logentry-newsletter-newsletter-added": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
 	"logentry-newsletter-newsletter-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
 	"logentry-newsletter-newsletter-restored": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
