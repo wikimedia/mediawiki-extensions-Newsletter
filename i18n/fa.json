@@ -5,12 +5,13 @@
 			"GMozafarian",
 			"Ladsgroup",
 			"Reza1615",
-			"Jeeputer"
+			"Jeeputer",
+			"Beginneruser"
 		]
 	},
 	"newsletter-extension-desc": "به کاربران اجازه انتشار و اشتراک به خبرنامه‌ها را می‌دهد",
 	"newsletter-name": "عنوان خبرنامه",
-	"newsletter-desc": "توضیح",
+	"newsletter-desc": "توضیحات",
 	"newsletter-title": "صفحه ویکی که اطلاعات در مورد خبرنامه را دارد",
 	"newsletter-exist-error": "یک خبرنامه با نام یکسان «$1» وجود دارد. لطفا نام دیگری را امتحان کنید.",
 	"newsletter-create-error": "یک خطا در هنگام تلاش برای ایجاد خبرنامه جدید رخ داد. لطفا باز سعی کنید.",
