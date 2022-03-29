@@ -111,7 +111,7 @@
 	"newsletter-none-found": "ニュースレターが存在しません。[[Special:RegisterNewsletter]] で新しいニュースレターを登録できます。",
 	"newsletter-list-search-none-found": "利用者のクエリに照合するニュースレターがありません。",
 	"echo-category-title-newsletter": "ニュースレター",
-	"echo-pref-tooltip-newsletter": "購読しているニュースレターのどれかで新刊号のお知らせがあったら、私に通知してください。",
+	"echo-pref-tooltip-newsletter": "購読中のニュースレターのいずれかで新刊が発表されたときに通知する。",
 	"newsletter-notification-title": "[[User:$3|$3]] がニュースレター「$1」の[[$2|新しい議題]]を{{GENDER:$4|アナウンスしました}}。",
 	"newsletter-notification-subscribed": "ニュースレター「$1」の購読は、管理者の取り計らいです。",
 	"newsletter-notification-unsubscribed": "ニュースレター「$1」の購読解除は、管理者の取り計らいです。",
