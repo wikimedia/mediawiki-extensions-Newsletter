@@ -43,13 +43,13 @@
 	"newsletter-announce-nopermission": "شما مشترک این خبرنامه نیستید.",
 	"newsletter-announce": "یک شماه جدید از «$1» اعلان کنید",
 	"newsletter-announce-submit": "اعلان",
-	"newsletter-announce-issuetitle": "عنوان صفحه انتشار",
+	"newsletter-announce-issuetitle": "عنوان صفحۀ انتشار",
 	"newsletter-announce-summary": "خلاصه این انتشار",
 	"newsletter-announce-invalid-page": "لطفا عنوان معتبری برای صفحه شماره وارد کنید.",
 	"newsletter-manage": "مدیریت خبرنامه «$1»",
 	"newsletter-manage-publishers": "ناشران:",
 	"newsletter-manage-name": "عنوان خبرنامه:",
-	"newsletter-manage-title": "عنوان صفحه اصلی",
+	"newsletter-manage-title": "عنوان صفحۀ اصلی",
 	"newsletter-manage-description": "شرح:",
 	"newsletter-managenewsletter-button": "ارسال",
 	"newsletter-manage-newsletter-success": "خبرنامه ویرایش شد.",
@@ -116,6 +116,6 @@
 	"log-action-filter-newsletter-issue-added": "اعلان شماره جدید",
 	"newsletter-restore-failure": "خبرنامه «$1» قابل احیا نیست. لطفا دوباره سعی کنید.",
 	"newsletter-diff-descheader": "تغییر در توضیحات",
-	"newsletter-diff-mainpageheader": "تغییرات در صفحه اصلی",
+	"newsletter-diff-mainpageheader": "تغییرات در صفحۀ اصلی",
 	"newsletter-diff-publishersheader": "تغییرات در ناشران"
 }
