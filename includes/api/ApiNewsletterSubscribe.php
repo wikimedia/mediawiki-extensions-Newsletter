@@ -1,5 +1,7 @@
 <?php
 
+use Wikimedia\ParamValidator\ParamValidator;
+
 /**
  * @license GPL-2.0-or-later
  * @author Glaisher
@@ -46,12 +48,12 @@ class ApiNewsletterSubscribe extends ApiBase {
 	public function getAllowedParams() {
 		return [
 			'id' => [
-				ApiBase::PARAM_TYPE => 'integer',
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => 'integer',
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 			'do' => [
-				ApiBase::PARAM_TYPE => [ 'subscribe', 'unsubscribe' ],
-				ApiBase::PARAM_REQUIRED => true,
+				ParamValidator::PARAM_TYPE => [ 'subscribe', 'unsubscribe' ],
+				ParamValidator::PARAM_REQUIRED => true,
 			],
 		];
 	}
