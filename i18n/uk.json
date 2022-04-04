@@ -151,7 +151,7 @@
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|зареєстрував|зареєструвала}} розсилку новин $4",
 	"logentry-newsletter-newsletter-removed": "$1 {{GENDER:$2|вилучив|вилучила}} розсилку новин $4",
 	"logentry-newsletter-newsletter-restored": "$1 {{GENDER:$2|відновив|відновила}} розсилку новин $4",
-	"logentry-newsletter-issue-added": "$1 о $6 {{GENDER:$2|опублікував|опублікувала}} новий випуск розсилки новин $4",
+	"logentry-newsletter-issue-added": "$1 {{GENDER:$2|опублікував|опублікувала}} новий випуск розсилки новин $4 на $6",
 	"log-action-filter-newsletter": "Тип дії:",
 	"log-action-filter-newsletter-publisher-added": "Доповнення списку осіб, що можуть публікувати",
 	"log-action-filter-newsletter-publisher-removed": "Вилучення зі списку осіб, що можуть публікувати",
