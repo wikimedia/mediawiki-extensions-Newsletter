@@ -1,6 +1,11 @@
 <?php
 
+namespace MediaWiki\Extension\Newsletter;
+
+use MediaWiki\Extension\Newsletter\Logging\NewsletterLogger;
 use MediaWiki\MediaWikiServices;
+use Title;
+use User;
 use Wikimedia\Rdbms\IResultWrapper;
 
 /**

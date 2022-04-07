@@ -1,12 +1,14 @@
 <?php
 
+use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Extension\Newsletter\NewsletterDb;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LoadBalancer;
 
 /**
- * @covers NewsletterDb
+ * @covers \MediaWiki\Extension\Newsletter\NewsletterDb
  *
  * @author Addshore
  */
@@ -29,10 +31,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->getMock();
 		$mock->expects( $this->any() )
 			->method( 'getConnection' )
-			->will( $this->returnValue( $db ) );
+			->willReturn( $db );
 		$mock->expects( $this->any() )
 			->method( 'getConnectionRef' )
-			->will( $this->returnValue( $db ) );
+			->willReturn( $db );
 		return $mock;
 	}
 
@@ -67,7 +69,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			);
 		$mockWriteDb->expects( $this->once() )
 			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
+			->willReturn( 1 );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'update' )
@@ -101,7 +103,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
+			->willReturn( 1 );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'update' )
@@ -147,7 +149,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
-			->will( $this->returnValue( 2 ) );
+			->willReturn( 2 );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'update' )
@@ -164,9 +166,9 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				'nl_newsletters',
 				'nl_subscriber_count',
 				[ 'nl_id' => $newsletter->getId() ]
-			)->will(
+			)->willReturn(
 				// For index reasons, count is negative
-				$this->returnValue( -2 )
+				-2
 			);
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
@@ -200,7 +202,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
+			->willReturn( 1 );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -226,7 +228,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
-			->will( $this->returnValue( 1 ) );
+			->willReturn( 1 );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -252,11 +254,11 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 					'nl_main_page_id' => $newsletter->getPageId()
 				]
 			)
-			->will( $this->returnValue( true ) );
+			->willReturn( true );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'insertId' )
-			->will( $this->returnValue( 1 ) );
+			->willReturn( 1 );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -324,7 +326,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'update' )
-			->will( $this->returnValue( true ) )
+			->willReturn( true )
 			->with(
 				'nl_newsletters',
 				[ 'nl_main_page_id' => $newMainPage ], [ 'nl_id' => $newsletterId ]
@@ -402,14 +404,14 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->getMock();
 		$mockResWrapper->expects( $this->once() )
 			->method( 'current' )
-			->will( $this->returnValue(
+			->willReturn(
 				(object)[
 					'nl_id' => $newsletter->getId(),
 					'nl_name' => $newsletter->getName(),
 					'nl_desc' => $newsletter->getDescription(),
 					'nl_main_page_id' => $newsletter->getPageId(),
 				]
-			) );
+			);
 
 		$mockWriteDb
 			->expects( $this->once() )
@@ -419,7 +421,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
 				[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
 			)
-			->will( $this->returnValue( $mockResWrapper ) );
+			->willReturn( $mockResWrapper );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -442,14 +444,14 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
 				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 1 ]
 			)
-			->will( $this->returnValue(
+			->willReturn(
 				(object)[
 					'nl_id' => $newsletter->getId(),
 					'nl_name' => $newsletter->getName(),
 					'nl_desc' => $newsletter->getDescription(),
 					'nl_main_page_id' => $newsletter->getPageId(),
 				]
-			) );
+			);
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 

@@ -1,7 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\Newsletter;
+
+use EchoEvent;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\User\UserIdentity;
+use Status;
+use User;
 
 /**
  * Class representing a newsletter

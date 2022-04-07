@@ -1,5 +1,10 @@
 <?php
 
+namespace MediaWiki\Extension\Newsletter;
+
+use Status;
+use Title;
+
 /**
  * Handles validation for newsletters
  */

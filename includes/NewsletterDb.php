@@ -1,6 +1,11 @@
 <?php
 
+namespace MediaWiki\Extension\Newsletter;
+
 use MediaWiki\MediaWikiServices;
+use stdClass;
+use Title;
+use User;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;

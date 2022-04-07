@@ -1,8 +1,23 @@
 <?php
 
+namespace MediaWiki\Extension\Newsletter;
+
+use BadRequestError;
+use HTMLForm;
+use IContextSource;
+use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use OutputPage;
+use PermissionsError;
+use ReadOnlyError;
+use Status;
+use ThrottledError;
+use Title;
+use User;
+use UserArray;
+use UserBlockedError;
 
 /**
  * @license GPL-2.0-or-later
@@ -190,7 +205,7 @@ class NewsletterEditPage {
 				&& !$oldRevRecord->isDeleted( RevisionRecord::DELETED_TEXT )
 			) {
 				$content = $oldRevRecord->getContent( SlotRecord::MAIN );
-				'@phan-var NewsletterContent $content';
+				'@phan-var \MediaWiki\Extension\Newsletter\Content\NewsletterContent $content';
 				$fields['MainPage']['default'] = $content->getMainPage()->getPrefixedText();
 				$fields['Description']['default'] = $content->getDescription();
 				// HTMLUsersMultiselectField expects a string, so we implode here

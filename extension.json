@@ -36,12 +36,12 @@
 		}
 	},
 	"SpecialPages": {
-		"NewsletterCreate": "SpecialNewsletterCreate",
-		"Newsletters": "SpecialNewsletters",
-		"Newsletter": "SpecialNewsletter"
+		"NewsletterCreate": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletterCreate",
+		"Newsletters": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletters",
+		"Newsletter": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletter"
 	},
 	"APIModules": {
-		"newslettersubscribe": "ApiNewsletterSubscribe"
+		"newslettersubscribe": "MediaWiki\\Extension\\Newsletter\\Api\\ApiNewsletterSubscribe"
 	},
 	"MessagesDirs": {
 		"Newsletter": [
@@ -53,7 +53,7 @@
 		"newsletter"
 	],
 	"LogActionsHandlers": {
-		"newsletter/*": "NewsletterLogFormatter"
+		"newsletter/*": "MediaWiki\\Extension\\Newsletter\\Logging\\NewsletterLogFormatter"
 	},
 	"ActionFilteredLogs": {
 		"newsletter": {
@@ -69,33 +69,10 @@
 		"NewsletterNamespaces": "Newsletter.namespaces.php"
 	},
 	"ContentHandlers": {
-		"NewsletterContent": "NewsletterContentHandler"
+		"NewsletterContent": "MediaWiki\\Extension\\Newsletter\\Content\\NewsletterContentHandler"
 	},
-	"AutoloadClasses": {
-		"Newsletter": "includes/Newsletter.php",
-		"NewsletterDb": "includes/NewsletterDb.php",
-		"NewsletterEditPage": "includes/NewsletterEditPage.php",
-		"NewsletterStore": "includes/NewsletterStore.php",
-		"NewsletterHooks": "includes/NewsletterHooks.php",
-		"NewsletterValidator": "includes/NewsletterValidator.php",
-		"NewsletterLogFormatter": "includes/logging/NewsletterLogFormatter.php",
-		"NewsletterLogger": "includes/logging/NewsletterLogger.php",
-		"SpecialNewsletter": "includes/specials/SpecialNewsletter.php",
-		"SpecialNewsletters": "includes/specials/SpecialNewsletters.php",
-		"SpecialNewsletterCreate": "includes/specials/SpecialNewsletterCreate.php",
-		"NewsletterTablePager": "includes/specials/pagers/NewsletterTablePager.php",
-		"ApiNewsletterSubscribe": "includes/api/ApiNewsletterSubscribe.php",
-		"NewsletterContent": "includes/content/NewsletterContent.php",
-		"NewsletterContentHandler": "includes/content/NewsletterContentHandler.php",
-		"NewsletterDataUpdate": "includes/content/NewsletterDataUpdate.php",
-		"NewsletterDiffEngine": "includes/content/NewsletterDiffEngine.php",
-		"EchoNewsletterUserLocator": "includes/Echo/EchoNewsletterUserLocator.php",
-		"BaseNewsletterPresentationModel": "includes/Echo/BaseNewsletterPresentationModel.php",
-		"EchoNewsletterPresentationModel": "includes/Echo/EchoNewsletterPresentationModel.php",
-		"EchoNewsletterPublisherAddedPresentationModel": "includes/Echo/EchoNewsletterPublisherAddedPresentationModel.php",
-		"EchoNewsletterPublisherRemovedPresentationModel": "includes/Echo/EchoNewsletterPublisherRemovedPresentationModel.php",
-		"EchoNewsletterUnsubscribedPresentationModel": "includes/Echo/EchoNewsletterUnsubscribedPresentationModel.php",
-		"EchoNewsletterSubscribedPresentationModel": "includes/Echo/EchoNewsletterSubscribedPresentationModel.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\Newsletter\\": "includes/"
 	},
 	"DefaultUserOptions": {
 		"echo-subscriptions-web-newsletter": true,
@@ -131,18 +108,18 @@
 		"remoteExtPath": "Newsletter/modules"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "NewsletterHooks::onLoadExtensionSchemaUpdates",
-		"BeforeCreateEchoEvent": "NewsletterHooks::onBeforeCreateEchoEvent",
-		"LoginFormValidErrorMessages": "NewsletterHooks::onLoginFormValidErrorMessages",
-		"UserMergeAccountFields": "NewsletterHooks::onUserMergeAccountFields",
-		"AlternateEdit": "NewsletterHooks::onAlternateEdit",
-		"CustomEditor": "NewsletterHooks::onCustomEditor",
-		"ArticleDelete": "NewsletterHooks::onArticleDelete",
-		"PageUndelete": "NewsletterHooks::onPageUndelete",
-		"TitleMove": "NewsletterHooks::onTitleMove",
-		"ContentModelCanBeUsedOn": "NewsletterHooks::onContentModelCanBeUsedOn",
-		"EditFilterMergedContent": "NewsletterHooks::onEditFilterMergedContent",
-		"SkinTemplateNavigation::Universal": "NewsletterHooks::onSkinTemplateNavigationUniversal"
+		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\Newsletter\\Hooks::onLoadExtensionSchemaUpdates",
+		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\Newsletter\\Hooks::onBeforeCreateEchoEvent",
+		"LoginFormValidErrorMessages": "MediaWiki\\Extension\\Newsletter\\Hooks::onLoginFormValidErrorMessages",
+		"UserMergeAccountFields": "MediaWiki\\Extension\\Newsletter\\Hooks::onUserMergeAccountFields",
+		"AlternateEdit": "MediaWiki\\Extension\\Newsletter\\Hooks::onAlternateEdit",
+		"CustomEditor": "MediaWiki\\Extension\\Newsletter\\Hooks::onCustomEditor",
+		"ArticleDelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onArticleDelete",
+		"PageUndelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onPageUndelete",
+		"TitleMove": "MediaWiki\\Extension\\Newsletter\\Hooks::onTitleMove",
+		"ContentModelCanBeUsedOn": "MediaWiki\\Extension\\Newsletter\\Hooks::onContentModelCanBeUsedOn",
+		"EditFilterMergedContent": "MediaWiki\\Extension\\Newsletter\\Hooks::onEditFilterMergedContent",
+		"SkinTemplateNavigation::Universal": "MediaWiki\\Extension\\Newsletter\\Hooks::onSkinTemplateNavigationUniversal"
 	},
 	"namespaces": [
 		{
