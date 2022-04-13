@@ -4,11 +4,14 @@
 			"Yupik"
 		]
 	},
+	"newsletter-notfound": "Oođâsǩeʹrjj ij käunnʼjam",
 	"newsletter-view-mainpage": "Oođâsǩeeʹrj ouddseidd:",
+	"newsletter-manage-title": "Ouddseeid nõmm",
 	"newsletter-delete": "Jaukkâd oođâsǩeeʹrj",
 	"newsletter-notification-link-text-view-newsletter": "Čuäʹjet oođâsǩeeʹrj",
 	"newsletter-header-name": "Nõmm",
 	"right-newsletter-delete": "Jaukkâd oođâsǩiiʹrjid",
 	"action-newsletter-delete": "jaukkeed oođâsǩiiʹrjid",
-	"newsletter-notification-link-text-del-publisher": "Čuäʹjet oođâsǩeeʹrj"
+	"newsletter-notification-link-text-del-publisher": "Čuäʹjet oođâsǩeeʹrj",
+	"newsletter-diff-mainpageheader": "Muttâz ouddseeidast:"
 }
