@@ -45,13 +45,13 @@ class NewsletterAPIEditTest extends ApiTestCase {
 
 		# Check main page
 		$expectedPageId = Title::newFromText( $mainPage )->getArticleId();
-		$this->assertEquals( $newsletter->getPageId(), $expectedPageId );
+		$this->assertEquals( $expectedPageId, $newsletter->getPageId() );
 		$this->assertEquals( $content->getMainPage(), $mainPage );
 
 		# Check publishers and subsrcibers
 		$expectedUsers = [ User::newFromname( "UTSysop" )->getId() ];
-		$this->assertEquals( $newsletter->getPublishers(), $expectedUsers );
-		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
+		$this->assertEquals( $expectedUsers, $newsletter->getPublishers() );
+		$this->assertEquals( $expectedUsers, $newsletter->getSubscribers() );
 	}
 
 	private function createNewsletter() {
@@ -150,8 +150,8 @@ class NewsletterAPIEditTest extends ApiTestCase {
 			$secondUser->getId()
 		];
 		$newsletter = Newsletter::newFromName( "Test" );
-		$this->assertEquals( $newsletter->getPublishers(), $expectedUsers );
-		$this->assertEquals( $newsletter->getSubscribers(), $expectedUsers );
+		$this->assertEquals( $expectedUsers, $newsletter->getPublishers() );
+		$this->assertEquals( $expectedUsers, $newsletter->getSubscribers() );
 	}
 
 	public function testRemovePublisher() {
