@@ -34,7 +34,8 @@ class NewsletterAPIEditTest extends ApiTestCase {
 			]
 		);
 
-		$page = new WikiPage( Title::newFromText( $newsletterTitle ) );
+		$page = $this->getServiceContainer()->getWikiPageFactory()
+			->newFromTitle( Title::newFromText( $newsletterTitle ) );
 		$content = $page->getContent();
 		$newsletter = NewsletterStore::getDefaultInstance()->getNewsletterFromName( "Test" );
 		$this->assertNotNull( $newsletter );
