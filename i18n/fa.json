@@ -89,6 +89,7 @@
 	"action-newsletter-create": "ثبت خبرنامه‌ها",
 	"right-newsletter-delete": "حذف خبرنامه‌ها",
 	"action-newsletter-delete": "حذف خبرنامه‌ها",
+	"right-newsletter-manage": "افزودن یا حذف انتشاردهندگان یا مشترکان از خبرنامه‌ها",
 	"action-newsletter-manage": "مدیریت خبرنامه‌ها",
 	"right-newsletter-restore": "احیای یک خبرنامه",
 	"action-newsletter-restore": "احیای یک خبرنامه",
