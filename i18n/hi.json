@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Sachinkatiyar",
+			"Saurmandal",
 			"Sfic",
 			"जनक राज भट्ट"
 		]
 	},
-	"newsletter-oldrev-undo-error-body": "पिछले संशोधन को पूर्ववत करना समाचारपत्र विस्तार द्वारा समर्थित नहीं है। कृपया इसके बजाय नवीनतम संशोधन को पूर्ववत करें।"
+	"newsletter-oldrev-undo-error-body": "पिछले संशोधन को पूर्ववत करना समाचारपत्र विस्तार द्वारा समर्थित नहीं है। कृपया इसके बजाय नवीनतम संशोधन को पूर्ववत करें।",
+	"echo-category-title-newsletter": "समाचार पत्र"
 }
