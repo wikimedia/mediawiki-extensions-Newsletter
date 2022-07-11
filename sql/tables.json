@@ -1,0 +1,134 @@
+[
+	{
+		"name": "nl_newsletters",
+		"columns": [
+			{
+				"name": "nl_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true, "autoincrement": true }
+			},
+			{
+				"name": "nl_name",
+				"type": "string",
+				"options": { "notnull": true, "length": 64 }
+			},
+			{
+				"name": "nl_desc",
+				"type": "blob",
+				"options": { "notnull": false, "length": 65530 }
+			},
+			{
+				"name": "nl_main_page_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "nl_active",
+				"type": "mwtinyint",
+				"options": { "notnull": true, "length": 1, "default": 1 }
+			},
+			{
+				"name": "nl_subscriber_count",
+				"type": "integer",
+				"options": { "notnull": true, "default": 0 }
+			}
+		],
+		"indexes": [
+			{
+				"name": "nl_name",
+				"columns": [ "nl_name" ],
+				"unique": true
+			},
+			{
+				"name": "nl_main_page_active",
+				"columns": [ "nl_main_page_id", "nl_active" ],
+				"unique": true
+			},
+			{
+				"name": "nl_active",
+				"columns": [ "nl_active" ],
+				"unique": false
+			},
+			{
+				"name": "nl_active_subscriber_name",
+				"columns": [ "nl_active", "nl_subscriber_count", "nl_name" ],
+				"unique": false
+			}
+		],
+		"pk": [ "nl_id" ]
+	},
+	{
+		"name": "nl_issues",
+		"columns": [
+			{
+				"name": "nli_issue_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "nli_newsletter_id",
+				"comment": "Foreign key referenced from nl_newsletters",
+				"type": "integer",
+				"options": { "notnull": false }
+			},
+			{
+				"name": "nli_page_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "nli_publisher_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [],
+		"pk": [ "nli_newsletter_id", "nli_issue_id" ]
+	},
+	{
+		"name": "nl_subscriptions",
+		"columns": [
+			{
+				"name": "nls_newsletter_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			},
+			{
+				"name": "nls_subscriber_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "nls_subscriber_id",
+				"columns": [ "nls_subscriber_id" ],
+				"unique": false
+			}
+		],
+		"pk": [ "nls_newsletter_id", "nls_subscriber_id" ]
+	},
+	{
+		"name": "nl_publishers",
+		"columns": [
+			{
+				"name": "nlp_newsletter_id",
+				"type": "integer",
+				"options": { "notnull": true, "unsigned": true }
+			},
+			{
+				"name": "nlp_publisher_id",
+				"type": "integer",
+				"options": { "notnull": true }
+			}
+		],
+		"indexes": [
+			{
+				"name": "nlp_nl_id",
+				"columns": [ "nlp_newsletter_id" ],
+				"unique": false
+			}
+		],
+		"pk": [ "nlp_publisher_id", "nlp_newsletter_id" ]
+	}
+]
