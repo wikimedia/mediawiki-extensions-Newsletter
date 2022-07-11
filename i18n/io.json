@@ -6,8 +6,13 @@
 		]
 	},
 	"newsletter-desc": "Deskriptado",
+	"newsletter-subtitlelinks-unsubscribe": "desabonar",
+	"newsletter-subtitlelinks-subscribe": "signatar",
+	"newsletter-subtitlelinks-announce": "anuncar",
 	"newsletter-subtitlelinks-manage": "administrar",
 	"newsletter-view-description": "Deskriptado:",
+	"newsletter-announce-button": "Anuncar",
+	"newsletter-announce-submit": "Anuncar",
 	"newsletter-manage-description": "Deskripto:",
 	"newsletter-managenewsletter-button": "Sendez!",
 	"newsletter-subscribe-button-label": "Yes",
