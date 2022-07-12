@@ -158,7 +158,7 @@
 	"logentry-newsletter-newsletter-removed": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
 	"logentry-newsletter-newsletter-restored": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action",
 	"logentry-newsletter-issue-added": "{{logentry}}\n\nAdditional parameters:\n* $4 - the newsletter affected by the action\n* $5 - ID of the issue (unused) \n* $6 - link to the issue page",
-	"log-action-filter-newsletter": "{{doc-log-action-filter-type|newsletter}}\n{{Related|Log-action-filter}}",
+	"log-action-filter-newsletter": "{{Doc-log-action-filter-type|newsletter}}\n{{Identical|Type of action}}\n{{Related|Log-action-filter}}",
 	"log-action-filter-newsletter-publisher-added": "{{doc-log-action-filter-action|newsletter|publisher-added}}",
 	"log-action-filter-newsletter-publisher-removed": "{{doc-log-action-filter-action|newsletter|publisher-removed}}",
 	"log-action-filter-newsletter-newsletter-added": "{{doc-log-action-filter-action|newsletter|newsletter-added}}",
