@@ -4,9 +4,11 @@
 			"Yupik"
 		]
 	},
+	"newsletter-subscribe-loginrequired": "Ǩeeʹrjtõõđ sizz, jõs haaʹlääk tiʹllʼjed [[Special:Newsletters| oođâsǩiiʹrjid]].",
 	"newsletter-notfound": "Oođâsǩeʹrjj ij käunnʼjam",
 	"newsletter-view-mainpage": "Oođâsǩeeʹrj ouddseidd:",
 	"newsletter-manage-title": "Ouddseeid nõmm",
+	"newsletter-managenewsletter-button": "Vuõlttâd",
 	"newsletter-delete": "Jaukkâd oođâsǩeeʹrj",
 	"newsletter-notification-link-text-view-newsletter": "Čuäʹjet oođâsǩeeʹrj",
 	"newsletter-header-name": "Nõmm",
