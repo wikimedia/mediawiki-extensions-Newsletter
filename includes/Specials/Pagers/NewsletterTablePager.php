@@ -263,9 +263,12 @@ class NewsletterTablePager extends TablePager {
 		$info['conds'] = [ 'nl_active' => 1 ];
 
 		if ( $this->mode == "unsubscribed" ) {
-			$info['fields']['sort'] = $this->mDb->buildConcat(
-				[ '"U"', 'nl_subscriber_count+' . self::EXTRAINT, '"|"',  'nl_name' ]
-			);
+			$info['fields']['sort'] = $this->mDb->buildConcat( [
+				$this->mDb->addQuotes( 'U' ),
+				'nl_subscriber_count+' . self::EXTRAINT,
+				$this->mDb->addQuotes( '|' ),
+				'nl_name',
+			] );
 			$info['join_conds'] = [
 				'nl_subscriptions' => [
 					'LEFT OUTER JOIN',
@@ -277,9 +280,12 @@ class NewsletterTablePager extends TablePager {
 			];
 			$info['conds']['nls_subscriber_id'] = null;
 		} elseif ( $this->mode == "subscribed" ) {
-			$info['fields']['sort'] = $this->mDb->buildConcat(
-				[ '"S"', 'nl_subscriber_count+' . self::EXTRAINT, '"|"',  'nl_name' ]
-			);
+			$info['fields']['sort'] = $this->mDb->buildConcat( [
+				$this->mDb->addQuotes( 'S' ),
+				'nl_subscriber_count+' . self::EXTRAINT,
+				$this->mDb->addQuotes( '|' ),
+				'nl_name',
+			] );
 			$info['join_conds'] = [
 				'nl_subscriptions' => [
 					'INNER JOIN',
