@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Arystanbek",
-			"Macofe"
+			"Macofe",
+			"СеніңШешең"
 		]
 	},
 	"newsletter-name": "Жаңалық хаттар атауы",
@@ -85,7 +86,7 @@
 	"newsletter-list-search-none-found": "Сіздің сұрауыңызға сәйкес жаңалықхаттар жоқ.",
 	"echo-category-title-newsletter": "Жаңалықхаттар",
 	"echo-pref-tooltip-newsletter": "Мен жазылған қандайда бір жаңалықхатында жаңа шығарымдар жарияланғанда маған ескерт.",
-	"newsletter-notification-link-text-new-issue": "Жаңа шығарылымды қарау",
+	"newsletter-notification-link-text-new-issue": "Жаңа шығарылымды көру",
 	"newsletter-notification-link-text-view-newsletter": "Жаңалықхатты көру",
 	"newsletter-email-subject": "$1 дегенде жаңа шығарылым жарияланды.",
 	"newsletter-email-batch-body": "$2 $1 дегенде жаңа шығарылым {{GENDER:$3|жариялады}}.",
