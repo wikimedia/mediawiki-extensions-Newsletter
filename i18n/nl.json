@@ -9,7 +9,8 @@
 			"PiefPafPier",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"McDutchie"
 		]
 	},
 	"newsletter-extension-desc": "Bied gebruikers de mogelijkheid om nieuwbrieven te publiceren en om zich te abboneren op nieuwsbrieven",
@@ -117,9 +118,9 @@
 	"newsletter-header-description": "Beschrijving",
 	"newsletter-header-subscriber_count": "Abonnees",
 	"right-newsletter-create": "Nieuwsbrieven registreren",
-	"action-newsletter-create": "nieuwsbrieven inschrijven",
+	"action-newsletter-create": "nieuwsbrieven in te schrijven",
 	"right-newsletter-delete": "Nieuwsbrieven verwijderen",
-	"action-newsletter-delete": "nieuwsbrieven verwijderen",
+	"action-newsletter-delete": "nieuwsbrieven te verwijderen",
 	"right-newsletter-manage": "Uitgevers of abbonees van nieuwsbrieven toevoegen of verwijderen",
 	"action-newsletter-manage": "nieuwsbrieven beheren",
 	"right-newsletter-restore": "Een nieuwsbrief terugplaatsen",
