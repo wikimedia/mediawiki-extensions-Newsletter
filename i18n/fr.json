@@ -47,7 +47,7 @@
 	"newsletters": "Bulletins d’information",
 	"newsletter-subscribe-loginrequired": "Veuillez vous connecter pour vous abonner aux [[Special:Newsletters|bulletins d’information]].",
 	"newsletter-notfound": "Bulletins d’information introuvable",
-	"newsletter-not-found-id": "Il n’existe pas de bulletin d’information avec cet identifiant. Une [[Special:Newsletters|liste des bulletins d’information existants]] est disponible.",
+	"newsletter-not-found-id": "Il n’existe aucun bulletin d’information avec cet identifiant. Une [[Special:Newsletters|liste des bulletins d’information existants]] est disponible.",
 	"newsletter-view-mainpage": "Page d'accueil du bulletin d'actualités :",
 	"newsletter-view-description": "Description :",
 	"newsletter-view-publishers": "{{PLURAL:$1|Éditeur :|Éditeurs :}}",
