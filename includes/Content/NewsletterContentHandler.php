@@ -278,7 +278,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	}
 
 	protected function getDiffEngineClass() {
-		return 'NewsletterDiffEngine';
+		return NewsletterDiffEngine::class;
 	}
 
 	/**
