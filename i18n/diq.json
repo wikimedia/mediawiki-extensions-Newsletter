@@ -6,13 +6,17 @@
 		]
 	},
 	"newsletter-desc": "Şınasnayış",
+	"newsletter-subtitlelinks-unsubscribe": "aboneyiye ra veciye",
+	"newsletter-subtitlelinks-subscribe": "abone be",
 	"newsletter-view-description": "Şınasnayış:",
+	"newsletter-unsubscribe-button": "Aboneyiye ra veciye",
 	"newsletter-manage-publishers": "Weşanayoği:",
 	"newsletter-manage-description": "Şınasnayış:",
 	"newsletter-subscribe-button-label": "Eya",
 	"newsletter-unsubscribe-button-label": "Nê",
 	"newsletter-header-name": "Name",
 	"newsletter-header-description": "Şınasnayış",
+	"newsletter-header-subscriber_count": "Aboneyi",
 	"newsletter-list-go-button": "Şo",
 	"log-action-filter-newsletter": "Tipê fealiyeti:"
 }
