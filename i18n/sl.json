@@ -113,6 +113,8 @@
 	"newsletter-header-name": "Ime",
 	"newsletter-header-description": "Opis",
 	"newsletter-header-subscriber_count": "Naročnikov",
+	"right-newsletter-delete": "Brisanje novičnikov",
+	"action-newsletter-delete": "brisanje novičnikov",
 	"newsletter-list-intro": "To je seznam novičnikov, registriranih za ta viki. Za prejemanje obvestil o novih izdajah se naročite na novičnik. Obvestila boste glede na vaše [[Special:Preferences#mw-prefsection-echo|nastavitve]] prejemali po spletu ali e-pošti.",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Prijavite se]] za naročilo na novičnik in prejemanje obvestil o novih izdajah.",
 	"newsletter-list-option-all": "Vsi novičniki",
