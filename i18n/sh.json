@@ -48,5 +48,8 @@
 	"newsletter-announce-button": "Objavi",
 	"newsletter-announce-nopermission": "Niste izdavač ovoga vjesnika.",
 	"newsletter-announce": "Objava novoga izdanja vjesnika \"$1\"",
-	"newsletter-announce-submit": "Objavi"
+	"newsletter-announce-submit": "Objavi",
+	"newsletter-announce-issuetitle": "Naslov stranice izdanja",
+	"newsletter-announce-summary": "Sažetak ovog izdanja",
+	"newsletter-announce-success": "Novo izdanje vjesnika \"$1\" objavljeno je za $2 {{PLURAL:$2|pretplatnika}}."
 }
