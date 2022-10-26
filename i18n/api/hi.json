@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Saurmandal"
+		]
+	},
+	"apihelp-newslettersubscribe-description": "समाचार पत्रिका पर सदस्यता लेना या छोड़ना।",
+	"apihelp-newslettersubscribe-summary": "समाचार पत्रिका पर सदस्यता लें या छोड़ें।"
+}
