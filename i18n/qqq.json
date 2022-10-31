@@ -14,7 +14,8 @@
 			"Tina Johnson",
 			"Umherirrender",
 			"Verdy p",
-			"Zoranzoki21"
+			"Zoranzoki21",
+			"Saurmandal"
 		]
 	},
 	"newsletter-extension-desc": "{{desc|name=Newsletter|url=https://www.mediawiki.org/wiki/Extension:Newsletter}}",
@@ -94,7 +95,7 @@
 	"newsletter-do-unsubscribe": "Label for button shown on Special:Newsletter/<id>/unsubscribe. Unsubscribes the current user from the newsletter when clicked on.",
 	"newsletter-unsubscribe-success": "Success message shown on Special:Newsletter/<id>/unsubscribe when the user gets unsubscribed from the newsletter.\n\nParameters:\n* $1 - Name of the newsletter for the specified id",
 	"newsletter-unsubscribe-fail": "Error message shown when the user attempts to unsubscribe but fails to do so.\n\nParameters:\n* $1 - Name of the newsletter",
-	"newsletter-unsubscribe-error": " Error message shown on [[Special:Newsletters]] if unsubscription from a newsletter fails.",
+	"newsletter-unsubscribe-error": "Error message shown on [[Special:Newsletters]] if unsubscription from a newsletter fails.",
 	"newsletter-subscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to subscribe.",
 	"newsletter-unsubscribe-section": "Section header of HTML form in [[Special:Newsletters]] which allows users to un-subscribe.",
 	"newsletter-subscribe-confirmation": "Confirmation message displayed after subscribing to a newsletter",
