@@ -6,7 +6,8 @@
 			"Beta16",
 			"Fringio",
 			"Macofe",
-			"Mannivu"
+			"Mannivu",
+			"Pierpao"
 		]
 	},
 	"newsletter-extension-desc": "Consente agli utenti di pubblicare e iscriversi alla newsletter",
@@ -45,7 +46,7 @@
 	"newsletter-view-no-publishers": "Nessun editore.",
 	"newsletter-view-issues-log": "{{PLURAL:$1|Annuncio|Annunci}} edizione newsletter:",
 	"newsletter-manage-button": "Gestisci",
-	"newsletter-unsubscribe-button": "Cancella iscrizione",
+	"newsletter-unsubscribe-button": "Annulla l'iscrizione",
 	"newsletter-subscribe-button": "Iscriviti",
 	"newsletter-subscribers-button": "Modifica gli iscritti",
 	"newsletter-announce-button": "Annuncia",
