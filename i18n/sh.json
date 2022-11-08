@@ -51,5 +51,6 @@
 	"newsletter-announce-submit": "Objavi",
 	"newsletter-announce-issuetitle": "Naslov stranice izdanja",
 	"newsletter-announce-summary": "Sažetak ovog izdanja",
-	"newsletter-announce-success": "Novo izdanje vjesnika \"$1\" objavljeno je za $2 {{PLURAL:$2|pretplatnika}}."
+	"newsletter-announce-success": "Novo izdanje vjesnika \"$1\" objavljeno je za $2 {{PLURAL:$2|pretplatnika}}.",
+	"newsletter-announce-invalid-page": "Unesite važeći naslov za stranicu izdanja."
 }
