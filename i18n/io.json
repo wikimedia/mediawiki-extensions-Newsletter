@@ -11,6 +11,7 @@
 	"newsletter-subtitlelinks-announce": "anuncar",
 	"newsletter-subtitlelinks-manage": "administrar",
 	"newsletter-view-description": "Deskriptado:",
+	"newsletter-unsubscribe-button": "Desabonar",
 	"newsletter-announce-button": "Anuncar",
 	"newsletter-announce-submit": "Anuncar",
 	"newsletter-manage-description": "Deskripto:",
@@ -19,6 +20,7 @@
 	"newsletter-unsubscribe-button-label": "No",
 	"newsletter-header-name": "Nomo",
 	"newsletter-header-description": "Deskriptado",
+	"newsletter-header-subscriber_count": "Abonanti",
 	"newsletter-list-go-button": "Irez",
 	"log-action-filter-newsletter-publisher-removed": "Efaco di redaktero"
 }
