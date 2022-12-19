@@ -14,7 +14,6 @@ use HTMLForm;
 use IContextSource;
 use Iterator;
 use JsonContentHandler;
-use LinkBatch;
 use Linker;
 use LogEventsList;
 use MediaWiki\Content\Renderer\ContentParseParams;
@@ -398,7 +397,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 * @param Iterator $users
 	 */
 	private function doLinkCacheQuery( Iterator $users ) {
-		$batch = new LinkBatch();
+		$batch = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 		foreach ( $users as $user ) {
 			$batch->addObj( $user->getUserPage() );
 			$batch->addObj( $user->getTalkPage() );
