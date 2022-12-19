@@ -101,7 +101,7 @@
 	"newsletter-none-found": "Ne obstaja še noben novičnik. Nov novičnik lahko registrirate na posebni strani [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Z vašo poizvedbo se ne ujema noben novičnik.",
 	"echo-category-title-newsletter": "Novičniki",
-	"echo-pref-tooltip-newsletter": "Obvesti me o vsakem novičniku, na katerega sem naročen_a, ko se pojavi nova izdaja.",
+	"echo-pref-tooltip-newsletter": "Obvesti me, ko kateri koli novičnik, na katerega sem naročen_a, objavi novo izdajo.",
 	"newsletter-notification-title": "[[User:$3|$3]] je {{GENDER:$4|objavil|objavila|objavil_a}} obvestilo o [[$2|novi izdaji]] novičnika »$1«.",
 	"newsletter-notification-subscribed": "Administrator vas je prijavil na novičnik »$1«.",
 	"newsletter-notification-unsubscribed": "Administrator vas je odjavil od novičnika »$1«.",
