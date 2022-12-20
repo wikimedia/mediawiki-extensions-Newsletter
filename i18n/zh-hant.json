@@ -9,7 +9,8 @@
 			"Liuxinyu970226",
 			"MoonYaksha",
 			"Xiplus",
-			"烈羽"
+			"烈羽",
+			"捍粵者"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱電子報的功能",
@@ -71,7 +72,7 @@
 	"newsletter-managenewsletter-button": "送出",
 	"newsletter-manage-no-publishers": "您確定要移除此電子報上的所有發佈者嗎？",
 	"newsletter-manage-remove-self-publisher": "您確定要從發佈者裡移除您自己嗎？",
-	"newsletter-manage-newsletter-success": "電子報已被變動。",
+	"newsletter-manage-newsletter-success": "電子報已變更。",
 	"newsletter-manage-newsletter-nochanges": "沒有對現有的電子報做出更改。",
 	"newsletter-manage-summary": "變更摘要：",
 	"newsletter-delete": "刪除電子報",
