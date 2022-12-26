@@ -6,12 +6,23 @@
 			"Kizule"
 		]
 	},
+	"newsletter-subtitlelinks-unsubscribe": "odjavi se",
+	"newsletter-subtitlelinks-subscribe": "prijavi se",
+	"newsletter-subtitlelinks-announce": "oglasi",
+	"newsletter-subtitlelinks-manage": "upravljaj",
+	"newsletters": "Bilteni",
+	"newsletter-view-mainpage": "Glavna strana:",
+	"newsletter-view-description": "Opis:",
+	"newsletter-announce-button": "Oglasi",
+	"newsletter-announce-submit": "Oglasi",
 	"newsletter-subscribe-button-label": "Da",
-	"right-newsletter-delete": "Brisanje biltena",
-	"action-newsletter-delete": "obriši biltene",
-	"right-newsletter-manage": "Dodavanje ili uklanjanje objavljivača ili pretplatnika sa biltena",
-	"action-newsletter-manage": "upravljaj biltenom",
+	"echo-category-title-newsletter": "Bilteni",
+	"right-newsletter-delete": "Brisanje biltenâ",
+	"action-newsletter-delete": "izbriši biltene",
+	"right-newsletter-manage": "Dodavanje ili uklanjanje objavljivačâ ili pretplatnikâ sa biltenâ",
+	"action-newsletter-manage": "upravljaj biltenima",
 	"right-newsletter-restore": "Vraćanje biltena",
 	"action-newsletter-restore": "vrati bilten",
-	"log-name-newsletter": "Dnevnik biltena"
+	"log-name-newsletter": "Dnevnik biltena",
+	"log-action-filter-newsletter": "Vrsta radnje:"
 }
