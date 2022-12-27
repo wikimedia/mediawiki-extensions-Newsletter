@@ -237,7 +237,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		$form = $this->getHTMLForm( $button, [ $this, 'submitSubscribeForm' ] );
-		$form->addHeaderText( $txt );
+		$form->addHeaderHtml( $txt );
 		$form->suppressDefaultSubmit();
 		$form->show();
 		$this->getOutput()->addReturnTo( Title::makeTitleSafe(
