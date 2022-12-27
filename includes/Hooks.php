@@ -59,7 +59,7 @@ class Hooks {
 				'destination' => 'newsletter'
 			],
 			'user-locators' => [
-				[ EchoNewsletterUserLocator::class . '::locateNewsletterSubscribedUsers' ],
+				[ [ EchoNewsletterUserLocator::class, 'locateNewsletterSubscribedUsers' ] ],
 			],
 			'canNotifyAgent' => true,
 			'presentation-model' => EchoNewsletterPresentationModel::class,
@@ -81,7 +81,7 @@ class Hooks {
 				'destination' => 'newsletter'
 			],
 			'user-locators' => [
-				[ EchoUserLocator::class . '::locateFromEventExtra', [ 'new-publishers-id' ] ]
+				[ [ EchoUserLocator::class, 'locateFromEventExtra' ], [ 'new-publishers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterPublisherAddedPresentationModel::class,
 			'title-message' => 'newsletter-notification-new-publisher-title',
@@ -96,7 +96,7 @@ class Hooks {
 				'destination' => 'newsletter'
 			],
 			'user-locators' => [
-				[ EchoUserLocator::class . '::locateFromEventExtra', [ 'del-publishers-id' ] ]
+				[ [ EchoUserLocator::class, 'locateFromEventExtra' ], [ 'del-publishers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterPublisherRemovedPresentationModel::class,
 			'title-message' => 'newsletter-notification-del-publisher-title',
@@ -111,7 +111,7 @@ class Hooks {
 				'destination' => 'newsletter'
 			],
 			'user-locators' => [
-				[ EchoUserLocator::class . '::locateFromEventExtra', [ 'new-subscribers-id' ] ]
+				[ [ EchoUserLocator::class, 'locateFromEventExtra' ], [ 'new-subscribers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterSubscribedPresentationModel::class,
 			'title-message' => 'newsletter-notification-subscribed',
@@ -124,7 +124,7 @@ class Hooks {
 				'destination' => 'newsletter'
 			],
 			'user-locators' => [
-				[ EchoUserLocator::class . '::locateFromEventExtra', [ 'removed-subscribers-id' ] ]
+				[ [ EchoUserLocator::class, 'locateFromEventExtra' ], [ 'removed-subscribers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterUnsubscribedPresentationModel::class,
 			'title-message' => 'newsletter-notification-unsubscribed',
