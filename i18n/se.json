@@ -4,5 +4,8 @@
 			"Yupik"
 		]
 	},
-	"newsletter-manage-name": "Ođasreivve namma:"
+	"newsletter-manage-name": "Ođasreivve namma:",
+	"newsletter-delete": "Sihko ođasreivve",
+	"right-newsletter-delete": "Sihko ođasreivviid",
+	"action-newsletter-delete": "sihkkut ođasreivviid"
 }
