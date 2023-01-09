@@ -4,6 +4,10 @@
 			"Eleassar"
 		]
 	},
+	"apihelp-newslettersubscribe-description": "Naroči ali odnaroči dopisni seznam.",
+	"apihelp-newslettersubscribe-summary": "Naroči ali odnaroči novičnik.",
+	"apihelp-newslettersubscribe-param-do": "Dejanje za izvedbo. Biti mora bodisi <kbd>subscribe</kbd> bodisi <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-2": "Odnaroči dopisni seznam z ID 2.",
 	"newsletter-api-error-notfound": "Ta novičnik ne obstaja",
 	"newsletter-api-error-nopermissions": "Nimate dovoljenja za upravljanje novičnikov.",
 	"newsletter-api-error-invalidpublisher-registered": "Izdajatelj ni registriran uporabnik.",
