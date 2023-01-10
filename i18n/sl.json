@@ -122,7 +122,7 @@
 	"right-newsletter-restore": "Obnova novičnikov",
 	"action-newsletter-restore": "obnovo novičnika",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|je objavil|je objavila|je objavil_a}} obvestilo o novi izdaji novičnika $3.",
-	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Bili}} ste {{GENDER:$3|dodani}} kot izdajatelj novičnika »$1«.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$3|Dodani}} {{GENDER:$2|ste bili}} kot izdajatelj novičnika »$1«.",
 	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Bili}} ste {{GENDER:$3|odstranjeni}} kot izdajatelj novičnika »$1«.",
 	"newsletter-list-intro": "To je seznam novičnikov, registriranih za ta viki. Za prejemanje obvestil o novih izdajah se naročite na novičnik. Obvestila boste glede na vaše [[Special:Preferences#mw-prefsection-echo|nastavitve]] prejemali po spletu ali e-pošti.",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Prijavite se]] za naročilo na novičnik in prejemanje obvestil o novih izdajah.",
