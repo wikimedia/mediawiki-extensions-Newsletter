@@ -6,7 +6,8 @@
 			"Hedda",
 			"KorkmazO",
 			"MuratTheTurkish",
-			"Vito Genovese"
+			"Vito Genovese",
+			"Rapsar"
 		]
 	},
 	"newsletter-extension-desc": "Kullanıcıların bültenleri yayımlamalarına ve bültenlere abone olmalarına olanak tanır",
@@ -34,7 +35,7 @@
 	"newsletter-subtitlelinks-subscribe": "abone ol",
 	"newsletter-subtitlelinks-announce": "duyur",
 	"newsletter-subtitlelinks-manage": "yönet",
-	"newsletter-subtitlelinks-subscribers": "aboneleri düzenle",
+	"newsletter-subtitlelinks-subscribers": "aboneleri değiştir",
 	"newsletters": "Haber bültenleri",
 	"newsletter-subscribe-loginrequired": "[[Special:Newsletters|Bültenlere]] abone olmak için lütfen oturum açın.",
 	"newsletter-notfound": "Bülten bulunamadı",
@@ -48,7 +49,7 @@
 	"newsletter-manage-button": "Yönet",
 	"newsletter-unsubscribe-button": "Abonelikten çık",
 	"newsletter-subscribe-button": "Abone ol",
-	"newsletter-subscribers-button": "Aboneleri düzenle",
+	"newsletter-subscribers-button": "Aboneleri değiştir",
 	"newsletter-announce-button": "Duyur",
 	"newsletter-announce-nopermission": "Bu bülten için yayımcı değilsiniz.",
 	"newsletter-announce": "\"$1\" adlı yeni bir sayıyı duyurun",
