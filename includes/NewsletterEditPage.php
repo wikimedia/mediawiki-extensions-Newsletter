@@ -226,7 +226,7 @@ class NewsletterEditPage {
 		);
 		$form->setSubmitCallback( [ $this, 'submitManageForm' ] );
 		$form->setAction( $this->title->getLocalURL( 'action=submit' ) );
-		$form->addHeaderText(
+		$form->addHeaderHtml(
 			$this->context->msg( 'newsletter-manage-text' )
 				->params( $this->newsletter->getName() )->parse()
 		);
@@ -244,14 +244,14 @@ class NewsletterEditPage {
 		);
 		$form->setSubmitCallback( [ $this, 'attemptSave' ] );
 		$form->setAction( $this->title->getLocalURL( 'action=edit' ) );
-		$form->addHeaderText( $this->context->msg( 'newslettercreate-text' )->parseAsBlock() );
+		$form->addHeaderHtml( $this->context->msg( 'newslettercreate-text' )->parseAsBlock() );
 		// Retain query parameters (uselang etc)
 		$params = array_diff_key(
 			$this->context->getRequest()->getQueryValues(), [ 'title' => null ] );
 		$form->addHiddenField( 'redirectparams', wfArrayToCgi( $params ) );
 		$form->setSubmitTextMsg( 'newsletter-create-submit' );
 
-		// @todo $form->addPostText( save/copyright warnings etc. );
+		// @todo $form->addPostHtml( save/copyright warnings etc. );
 		return $form;
 	}
 
