@@ -95,7 +95,7 @@
 	"newsletter-edit-subscribers-nochanges": "Нема промени во претплатниците на билтенот.",
 	"newsletter-edit-subscribers-success": "Претплатниците на билтенот се изменети.",
 	"newsletter-subscribers-invalid": "„$1“ не претставува важечки корисник. Проверете дали такво користничко име навистина постои и пробајте повторно.",
-	"newsletter-available-newsletters-field-label": "Расположиви билтени",
+	"newsletter-available-newsletters-field-label": "Расположливи билтени",
 	"newsletter-subscribed-newsletters-field-label": "Претплатени билтени",
 	"newsletter-none-found": "Нема билтени. Можете да пријавите нов преку [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Нема билтени што одговараат на бараното.",
