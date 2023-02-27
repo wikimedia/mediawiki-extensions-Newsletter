@@ -3,7 +3,8 @@
 		"authors": [
 			"Robby",
 			"Soued031",
-			"Les Meloures"
+			"Les Meloures",
+			"Volvox"
 		]
 	},
 	"newsletter-extension-desc": "Erméiglecht et Benotzer fir Newsletteren ze publizéieren an z'abonnéieren",
@@ -71,7 +72,7 @@
 	"action-newsletter-restore": "eng Newsletter restauréieren",
 	"newsletter-list-table": "Filteren no:",
 	"newsletter-list-option-all": "Alle Newsletteren",
-	"newsletter-list-option-subscribed": "Newsletteren op déi ech abonnéiert sinn",
+	"newsletter-list-option-subscribed": "Newsletteren, op déi ech abonéiert sinn",
 	"newsletter-list-go-button": "Lass",
 	"newsletter-notification-link-text-new-publisher": "Newsletter geréieren",
 	"newsletter-notification-link-text-del-publisher": "Newsletter weisen",
