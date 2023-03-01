@@ -5,7 +5,8 @@
 			"Macofe",
 			"Metalhead64",
 			"Osnard",
-			"Tacsipacsi"
+			"Tacsipacsi",
+			"Brettchenweber"
 		]
 	},
 	"newsletter-extension-desc": "Ermöglicht es Benutzern, Newsletter zu veröffentlichen und zu abonnieren",
@@ -15,7 +16,7 @@
 	"newsletter-exist-error": "Ein Newsletter mit dem Namen „$1“ ist bereits vorhanden. Bitte versuche es mit einem abweichenden Namen erneut.",
 	"newsletter-create-error": "Beim Versuch, einen neuen Newsletter zu registrieren, ist ein Fehler aufgetreten. Bitte versuche es erneut.",
 	"newsletter-oldrev-undo-error-title": "Leider ist diese Operation nicht erlaubt.",
-	"newsletter-oldrev-undo-error-body": "Das Verwerfen einer älteren Version wird von der Erweiterung „Newsletter“ nicht unterstützt. Bitte verwerfe stattdessen die neueste Version.",
+	"newsletter-oldrev-undo-error-body": "Das Verwerfen einer älteren Version wird von der Erweiterung „Newsletter“ nicht unterstützt. Bitte verwirf stattdessen die neueste Version.",
 	"newsletter-input-required": "Es fehlt eine erforderliche Eingabe. Bitte erneut versuchen.",
 	"newsletter-invalid-name": "Der eingegebene Name für den Newsletter ist ungültig. Bitte erneut versuchen.",
 	"newslettercreate": "Newsletter registrieren",
@@ -96,7 +97,7 @@
 	"newsletter-subscribers-nopermission": "Du hast keine Berechtigung, die Abonnenten dieses Newsletters zu bearbeiten.",
 	"newsletter-edit-subscribers-nochanges": "An den Abonnenten des Newsletters wurden keine Änderungen durchgeführt.",
 	"newsletter-edit-subscribers-success": "Die Abonnenten des Newsletters wurden aktualisiert.",
-	"newsletter-subscribers-invalid": "„$1“ ist kein gültiger Benutzer. Bitte stelle sicher, dass der Benutzername vorhanden ist und versuche es erneut.",
+	"newsletter-subscribers-invalid": "„$1“ ist kein gültiger Benutzer. Bitte stelle sicher, dass der Benutzername vorhanden ist, und versuche es erneut.",
 	"newsletter-available-newsletters-field-label": "Verfügbare Newsletter",
 	"newsletter-subscribed-newsletters-field-label": "Abonnierte Newsletter",
 	"newsletter-none-found": "Es sind keine Newsletter vorhanden. Du kannst einen neuen Newsletter auf [[Special:RegisterNewsletter]] registrieren.",
