@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Pacha Tchernof",
 			"פוילישער"
 		]
 	},
 	"newsletter-manage-publishers": "פֿאַרלעגער:",
+	"newsletter-list-go-button": "גיין",
 	"log-action-filter-newsletter": "טיפ פון אקציע:"
 }
