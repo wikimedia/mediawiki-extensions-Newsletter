@@ -10,7 +10,7 @@
 	"descriptionmsg": "newsletter-extension-desc",
 	"license-name": "GPL-2.0-or-later",
 	"requires": {
-		"MediaWiki": ">= 1.38.0"
+		"MediaWiki": ">= 1.40.0"
 	},
 	"type": "other",
 	"AvailableRights": [
@@ -29,10 +29,16 @@
 	},
 	"RateLimits": {
 		"newsletter": {
-			"user": [ 3, 3600 ]
+			"user": [
+				3,
+				3600
+			]
 		},
 		"newsletter-announce": {
-			"user": [ 2, 1800 ]
+			"user": [
+				2,
+				1800
+			]
 		}
 	},
 	"SpecialPages": {
@@ -57,11 +63,21 @@
 	},
 	"ActionFilteredLogs": {
 		"newsletter": {
-			"issue-added": [ "issue-added" ],
-			"newsletter-added": [ "newsletter-added" ],
-			"newsletter-removed": [ "newsletter-removed" ],
-			"publisher-added": [ "publisher-added" ],
-			"publisher-removed": [ "publisher-removed" ]
+			"issue-added": [
+				"issue-added"
+			],
+			"newsletter-added": [
+				"newsletter-added"
+			],
+			"newsletter-removed": [
+				"newsletter-removed"
+			],
+			"publisher-added": [
+				"publisher-added"
+			],
+			"publisher-removed": [
+				"publisher-removed"
+			]
 		}
 	},
 	"ExtensionMessagesFiles": {
