@@ -45,8 +45,8 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertNotNull( $newsletter );
 
 		# Check description
-		$this->assertEquals( $newsletter->getDescription(), self::DESCRIPTION );
-		$this->assertEquals( $content->getDescription(), self::DESCRIPTION );
+		$this->assertEquals( self::DESCRIPTION, $newsletter->getDescription() );
+		$this->assertEquals( self::DESCRIPTION, $content->getDescription() );
 
 		# Check main page
 		$expectedPageId = Title::newFromText( $mainPage )->getArticleId();
@@ -125,8 +125,8 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$newsletter = $this->createNewsletter();
 
 		# Newsletter should initially have no publishers and no subscribers
-		$this->assertEquals( $newsletter->getPublishers(), [] );
-		$this->assertEquals( $newsletter->getSubscribers(), [] );
+		$this->assertEquals( [], $newsletter->getPublishers() );
+		$this->assertEquals( [], $newsletter->getSubscribers() );
 
 		$firstUser = User::newFromName( 'UTSysop' );
 		$secondUser = User::newFromName( 'Second User' );
@@ -185,6 +185,6 @@ class NewsletterAPIEditTest extends ApiTestCase {
 
 		# Check that users were correctly removed
 		$newsletter = Newsletter::newFromName( "Test" );
-		$this->assertEquals( $newsletter->getPublishers(), [] );
+		$this->assertEquals( [], $newsletter->getPublishers() );
 	}
 }
