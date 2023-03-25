@@ -1,5 +1,4 @@
 <?php
-
 namespace MediaWiki\Extension\Newsletter;
 
 use Article;
@@ -361,6 +360,7 @@ class Hooks {
 		$validator = new NewsletterValidator( $formData );
 		$validation = $validator->validate( !$newsletter );
 		if ( !$validation->isGood() ) {
+			$status->merge( $validation );
 			// Invalid input was entered
 			return false;
 		}
@@ -371,8 +371,6 @@ class Hooks {
 			foreach ( $rows as $row ) {
 				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
 					$status->fatal( 'newsletter-mainpage-in-use' );
-					// @todo Remove this line after this extension do not support mediawiki version 1.36 and before
-					$status->value = EditPage::AS_HOOK_ERROR_EXPECTED;
 					return false;
 				}
 			}
@@ -394,4 +392,34 @@ class Hooks {
 		}
 	}
 
+	/**
+	 * @param Title $title The title that permissions are being checked for
+	 * @param User $user The User object representing the user who is attempting to perform the action
+	 * @param string $action The action attempting to be performed
+	 * @param bool &$result Output parameter, set to a string to signify that the action isn't allowed
+	 * @return bool
+	 */
+	public static function onGetUserPermissionsErrors( Title $title, User $user, $action, &$result ) {
+		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
+			return true;
+		}
+		if ( $action === 'edit' ) {
+			if ( $title->exists() ) {
+				$newsletter = Newsletter::newFromName( $title->getText() );
+				if ( !$newsletter->canManage( $user ) ) {
+					// This case can only trigger when using the API - the UI won't display an edit form at all
+					$result = "newsletter-api-error-nopermissions";
+					return false;
+				}
+			}
+		} elseif ( $action === 'create' ) {
+			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
+			if ( !$permissionManager->userHasRight( $user, 'newsletter-create' ) ) {
+				// This case can only trigger when using the API - the UI will display the standard
+				// "The action you have requested is limited to users in the group <groupnames>" error
+				$result = "newsletter-api-error-nocreate";
+				return false;
+			}
+		}
+	}
 }

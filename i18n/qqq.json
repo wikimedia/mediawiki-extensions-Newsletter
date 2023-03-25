@@ -166,5 +166,7 @@
 	"log-action-filter-newsletter-issue-added": "{{doc-log-action-filter-action|newsletter|issue-added}}",
 	"newsletter-diff-descheader": "Header for the diff of the description between two revisions",
 	"newsletter-diff-mainpageheader": "Header for the diff of Main Page between two revisions",
-	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions"
+	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions",
+	"newsletter-ch-apierror": "Error shown when there was an error saving page. $1 contains an error code",
+	"newsletter-ch-tojsonerror": "An error saving the page (possibly invalid syntax)"
 }

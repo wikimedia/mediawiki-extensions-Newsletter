@@ -24,7 +24,8 @@
 	"apihelp-newslettermanage-example-1": "Add a publisher with a user ID of 3 to newsletter with ID 1.",
 	"apihelp-newslettermanage-example-2": "Remove publisher with a user ID of 5 from newsletter with ID 2.",
 	"newsletter-api-error-notfound": "Newsletter does not exist",
-	"newsletter-api-error-nopermissions": "You do not have permission to manage newsletters.",
+	"newsletter-api-error-nopermissions": "You do not have permission to manage this newsletter.",
+	"newsletter-api-error-nocreate": "You do not have permission to create newsletters.",
 	"newsletter-api-error-invalidpublisher-registered": "Publisher is not a registered user.",
 	"newsletter-api-error-subscribe-notloggedin": "You must be logged-in to subscribe to newsletters."
 }

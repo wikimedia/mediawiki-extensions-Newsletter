@@ -119,17 +119,14 @@
 		"TitleMove": "MediaWiki\\Extension\\Newsletter\\Hooks::onTitleMove",
 		"ContentModelCanBeUsedOn": "MediaWiki\\Extension\\Newsletter\\Hooks::onContentModelCanBeUsedOn",
 		"EditFilterMergedContent": "MediaWiki\\Extension\\Newsletter\\Hooks::onEditFilterMergedContent",
-		"SkinTemplateNavigation::Universal": "MediaWiki\\Extension\\Newsletter\\Hooks::onSkinTemplateNavigationUniversal"
+		"SkinTemplateNavigation::Universal": "MediaWiki\\Extension\\Newsletter\\Hooks::onSkinTemplateNavigationUniversal",
+		"getUserPermissionsErrors": "MediaWiki\\Extension\\Newsletter\\Hooks::onGetUserPermissionsErrors"
 	},
 	"namespaces": [
 		{
 			"id": 5500,
 			"constant": "NS_NEWSLETTER",
 			"name": "Newsletter",
-			"protection": [
-				"newsletter-manage",
-				"newsletter-create"
-			],
 			"defaultcontentmodel": "NewsletterContent"
 		},
 		{

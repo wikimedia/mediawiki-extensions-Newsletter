@@ -157,6 +157,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			} else {
 				// The content creation was unsuccessful, lets rollback the newsletter from db
 				$store->rollBackNewsletterAddition( $this->newsletter );
+				return $result;
 			}
 		}
 

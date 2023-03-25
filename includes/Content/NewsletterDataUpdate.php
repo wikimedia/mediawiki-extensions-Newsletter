@@ -142,7 +142,6 @@ class NewsletterDataUpdate extends DataUpdate {
 		if ( $added ) {
 			// Adds the new publishers to subscription list
 			$store->addSubscription( $newsletter, $added );
-
 			$store->addPublisher( $newsletter, $added );
 			$newsletter->notifyPublishers(
 				$added, $this->user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
