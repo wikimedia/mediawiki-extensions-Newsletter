@@ -3,7 +3,8 @@
 		"authors": [
 			"Jon Harald Søby",
 			"Kingu",
-			"Macofe"
+			"Macofe",
+			"EdoAug"
 		]
 	},
 	"newsletter-extension-desc": "Lar brukere publisere og abonnere på nyhetsbrev",
@@ -90,8 +91,8 @@
 	"newsletter-unsubscribe-confirmation": "Du har nå avsluttet abonnementet på nyhetsbrevet.",
 	"newsletter-subscribe-button-label": "Ja",
 	"newsletter-unsubscribe-button-label": "Nei",
-	"newsletter-subscribing": "Abonnerer...",
-	"newsletter-unsubscribing": "Avslutter abonnement...",
+	"newsletter-subscribing": "Abonnerer ...",
+	"newsletter-unsubscribing": "Avslutter abonnement ...",
 	"newsletter-subscribers": "Nyhetsbrevabonnenter",
 	"newsletter-subscribers-nopermission": "Du har ikke tillatelse til å redigere abonnentene til dette nyhetsbrevet",
 	"newsletter-edit-subscribers-nochanges": "Ingen endringer har blitt gjort i abonnentene til nyhetsbrevet.",
