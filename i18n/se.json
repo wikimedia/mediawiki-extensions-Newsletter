@@ -1,14 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"newsletter-subtitlelinks-unsubscribe": "heaitte diŋgomis",
 	"newsletter-subtitlelinks-subscribe": "diŋgo",
+	"newsletters": "Ođasreivvet",
 	"newsletter-unsubscribe-button": "Heaitte diŋgomis",
 	"newsletter-manage-name": "Ođasreivve namma:",
 	"newsletter-delete": "Sihko ođasreivve",
+	"echo-category-title-newsletter": "Ođasreivvet",
 	"right-newsletter-delete": "Sihko ođasreivviid",
 	"action-newsletter-delete": "sihkkut ođasreivviid"
 }
