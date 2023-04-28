@@ -5,6 +5,7 @@
 			"Nike",
 			"Pyscowicz",
 			"Silvonen",
+			"Stryn",
 			"Valtlai",
 			"Valtlait"
 		]
@@ -12,6 +13,8 @@
 	"newsletter-desc": "Kuvaus",
 	"newsletter-create-submit": "Rekisteröi uutiskirje",
 	"newsletter-create-editsummary": "Rekisteröi uusi uutiskirje",
+	"newsletter-subtitlelinks-subscribe": "tilaa",
+	"newsletter-subscribe-button": "Tilaa",
 	"newsletter-manage-publishers": "Julkaisijat:",
 	"newsletter-managenewsletter-button": "Lähetä",
 	"newsletter-manage-summary": "Muutoksen yhteenveto:",
