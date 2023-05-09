@@ -96,7 +96,7 @@
 	"newsletter-unsubscribing": "Unsubscribing...",
 	"newsletter-subscribers": "Newsletter subscribers",
 	"newsletter-subscribers-nopermission": "You do not have permission to edit the subscribers of this newsletter",
-	"newsletter-edit-subscribers-nochanges": "No changes have been made to the subscribers of the newsletter.",
+	"newsletter-edit-subscribers-nochanges": "No changes have been made to the list of subscribers of the newsletter.",
 	"newsletter-edit-subscribers-success": "The subscribers of the newsletter have been updated.",
 	"newsletter-subscribers-invalid": "\"$1\" is not a valid user. Please make sure that the username exists and try again.",
 	"newsletter-available-newsletters-field-label": "Available newsletters",
