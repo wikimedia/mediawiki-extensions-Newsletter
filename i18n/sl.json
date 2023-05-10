@@ -93,7 +93,7 @@
 	"newsletter-unsubscribing": "Odnaročam ...",
 	"newsletter-subscribers": "Naročniki novičnika",
 	"newsletter-subscribers-nopermission": "Nimate dovoljenja za urejanje naročnikov tega novičnika.",
-	"newsletter-edit-subscribers-nochanges": "Naročniki tega novičnika niso bili spremenjeni.",
+	"newsletter-edit-subscribers-nochanges": "Seznam naročnikov tega novičnika ni bil spremenjen.",
 	"newsletter-edit-subscribers-success": "Naročniki tega novičnika so bili posodobljeni.",
 	"newsletter-subscribers-invalid": "»$1« ni veljaven uporabnik. Preverite uporabniško ime in poskusite znova.",
 	"newsletter-available-newsletters-field-label": "Razpoložljivi novičniki",

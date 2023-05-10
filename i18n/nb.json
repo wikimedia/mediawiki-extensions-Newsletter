@@ -93,7 +93,7 @@
 	"newsletter-unsubscribing": "Avslutter abonnement ...",
 	"newsletter-subscribers": "Nyhetsbrevabonnenter",
 	"newsletter-subscribers-nopermission": "Du har ikke tillatelse til å redigere abonnentene til dette nyhetsbrevet",
-	"newsletter-edit-subscribers-nochanges": "Ingen endringer har blitt gjort i abonnentene til nyhetsbrevet.",
+	"newsletter-edit-subscribers-nochanges": "Ingen endringer har blitt gjort i lista over abonnenter på nyhetsbrevet.",
 	"newsletter-edit-subscribers-success": "Abonnentene til nyhetsbrevet har blitt oppdatert.",
 	"newsletter-subscribers-invalid": "«$1» er ikke en gyldig bruker. Sjekk at brukernavnet er korrekt og prøv igjen.",
 	"newsletter-available-newsletters-field-label": "Tilgjengelige nyhetsbrev",

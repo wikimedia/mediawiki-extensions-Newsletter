@@ -95,7 +95,7 @@
 	"newsletter-unsubscribing": "Bestelle ab …",
 	"newsletter-subscribers": "Newsletter-Abonnenten",
 	"newsletter-subscribers-nopermission": "Du hast keine Berechtigung, die Abonnenten dieses Newsletters zu bearbeiten.",
-	"newsletter-edit-subscribers-nochanges": "An den Abonnenten des Newsletters wurden keine Änderungen durchgeführt.",
+	"newsletter-edit-subscribers-nochanges": "An der Liste der Abonnenten des Newsletters wurden keine Änderungen vorgenommen.",
 	"newsletter-edit-subscribers-success": "Die Abonnenten des Newsletters wurden aktualisiert.",
 	"newsletter-subscribers-invalid": "„$1“ ist kein gültiger Benutzer. Bitte stelle sicher, dass der Benutzername vorhanden ist, und versuche es erneut.",
 	"newsletter-available-newsletters-field-label": "Verfügbare Newsletter",

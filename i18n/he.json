@@ -94,7 +94,7 @@
 	"newsletter-unsubscribing": "ביטול מינוי...",
 	"newsletter-subscribers": "מנויי הידיעון",
 	"newsletter-subscribers-nopermission": "אין לך הרשאה מתאימה לעריכה של מנויי הידיעון",
-	"newsletter-edit-subscribers-nochanges": "לא נעשו שינויים למנויי הידיעון.",
+	"newsletter-edit-subscribers-nochanges": "לא נעשו שינויים ברשימת הנרשמים לידיעון.",
 	"newsletter-edit-subscribers-success": "המנויים של הידיעון עודכנו.",
 	"newsletter-subscribers-invalid": "\"$1\" אינו משתמש תקין. נא לוודא ששם המשתמש קיים ולנסות שוב.",
 	"newsletter-available-newsletters-field-label": "ידיעונים זמינים",
