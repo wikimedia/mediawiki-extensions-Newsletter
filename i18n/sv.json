@@ -93,7 +93,7 @@
 	"newsletter-unsubscribing": "Avbryter prenumerationen...",
 	"newsletter-subscribers": "Nyhetsbrevsprenumeranter",
 	"newsletter-subscribers-nopermission": "Du har inte behörighet att redigera prenumeranterna för detta nyhetsbrev",
-	"newsletter-edit-subscribers-nochanges": "Inga ändringar har gjorts i prenumeranterna för nyhetsbrevet.",
+	"newsletter-edit-subscribers-nochanges": "Inga ändringar har gjorts i listan över prenumeranter för nyhetsbrevet.",
 	"newsletter-edit-subscribers-success": "Prenumeranterna för nyhetsbrevet har uppdaterats.",
 	"newsletter-subscribers-invalid": "\"$1\" är inte en giltig användare. Se till att användarnamnet finns och försök igen.",
 	"newsletter-available-newsletters-field-label": "Tillgängliga nyhetsbrev",

@@ -97,7 +97,7 @@
 	"newsletter-unsubscribing": "Aan het afmelden...",
 	"newsletter-subscribers": "Nieuwsbrief abbonees",
 	"newsletter-subscribers-nopermission": "U hebt geen toestemming om de abbonees van deze nieuwsbrief bij te werken",
-	"newsletter-edit-subscribers-nochanges": "De abbonees van deze nieuwsbrief zijn niet gewijzigd.",
+	"newsletter-edit-subscribers-nochanges": "Er zijn geen wijzigingen aangebracht in de lijst met abonnees van de nieuwsbrief.",
 	"newsletter-edit-subscribers-success": "De abbonees van de nieuwsbrief zijn bijgewerkt.",
 	"newsletter-subscribers-invalid": "\"$1\" is geen geldige gebruiker. Zorg ervoor dat de gebruikersnaam bestaat en probeer opnieuw.",
 	"newsletter-available-newsletters-field-label": "Beschikbare nieuwbrieven",
