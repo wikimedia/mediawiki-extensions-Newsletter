@@ -95,7 +95,7 @@
 	"newsletter-unsubscribing": "Cancellazione iscrizione...",
 	"newsletter-subscribers": "Iscritti alla newsletter",
 	"newsletter-subscribers-nopermission": "Non hai i permessi per modificare gli iscritti a questa newsletter",
-	"newsletter-edit-subscribers-nochanges": "Non è stata fatta alcuna modifica agli iscritti alla newsletter.",
+	"newsletter-edit-subscribers-nochanges": "Non è stata fatta alcuna modifica all'elenco degli iscritti alla newsletter.",
 	"newsletter-edit-subscribers-success": "Gli iscritti alla newsletter sono stati aggiornati.",
 	"newsletter-subscribers-invalid": "\"$1\" non è un utente valido. Verifica che il nome utente esista e riprova.",
 	"newsletter-available-newsletters-field-label": "Newsletter disponibili",

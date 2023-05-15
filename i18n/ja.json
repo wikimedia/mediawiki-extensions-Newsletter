@@ -101,7 +101,7 @@
 	"newsletter-unsubscribing": "退会中...",
 	"newsletter-subscribers": "ニュースラターの購読者",
 	"newsletter-subscribers-nopermission": "このニュースレターの購読者名を編集する権限がありません",
-	"newsletter-edit-subscribers-nochanges": "このニュースレターの購読者に変更はありません。",
+	"newsletter-edit-subscribers-nochanges": "ニュースレターの購読者リストに変更は加えられていません。",
 	"newsletter-edit-subscribers-success": "このニュースレターの購読者を更新しました。",
 	"newsletter-subscribers-invalid": "「$1」は有効な利用者ではありません。利用者名が存在していることをご確認の上、もう一度お試しください。",
 	"newsletter-available-newsletters-field-label": "利用可能なニュースレター",
