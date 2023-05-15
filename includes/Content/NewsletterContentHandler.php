@@ -380,11 +380,10 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 * @return HTMLForm
 	 */
 	private function getHTMLForm( array $fields, /* callable */ $submit ) {
-		global $wgOut;
 		$form = HTMLForm::factory(
 			'ooui',
 			$fields,
-			$wgOut->getContext()
+			RequestContext::getMain()
 		);
 		$form->setSubmitCallback( $submit );
 		return $form;
@@ -426,12 +425,12 @@ class NewsletterContentHandler extends JsonContentHandler {
 	}
 
 	private function setupNavigationLinks( Newsletter $newsletter, ParserOptions $options ) {
-		global $wgOut;
+		$context = RequestContext::getMain();
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
 		$listLink = $linkRenderer->makeKnownLink(
 			SpecialPage::getTitleFor( 'Newsletters' ),
-			wfMessage( 'backlinksubtitle',
-				wfMessage( 'newsletter-subtitlelinks-list' )->text()
+			$context->msg( 'backlinksubtitle',
+				$context->msg( 'newsletter-subtitlelinks-list' )->text()
 			)->text()
 		);
 
@@ -440,7 +439,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 			htmlspecialchars( $newsletter->getName() )
 		);
 
-		$wgOut->setSubtitle(
+		$context->getOutput()->setSubtitle(
 			$options->getUserLangObj()->pipeList( [ $listLink, $newsletterLink ] )
 		);
 	}
