@@ -4,24 +4,25 @@
 			"Gomoko",
 			"Urhixidur",
 			"Wladek92",
-			"Verdy p"
+			"Verdy p",
+			"Thibaut120094"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Vous abonner ou vous désabonner d’un bulletin.",
+	"apihelp-newslettersubscribe-description": "Vous abonner ou vous désabonner d’un bulletin d’information.",
 	"apihelp-newslettersubscribe-summary": "S’abonner ou se désabonner d’un bulletin d’information.",
 	"apihelp-newslettersubscribe-param-id": "Identifiant du bulletin d’information pour lequel l’abonnement devrait être modifié.",
-	"apihelp-newslettersubscribe-param-do": "Action à effectuer. Devrait être <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
-	"apihelp-newslettersubscribe-example-1": "S’abonner au bulletin d’information d’id 1.",
-	"apihelp-newslettersubscribe-example-2": "Se désabonner du bulletin d’information avec l’id 2.",
+	"apihelp-newslettersubscribe-param-do": "Action à effectuer. Devrait être <kbd>subscribe</kbd> (s’abonner) ou <kbd>unsubscribe</kbd> (se désabonner).",
+	"apihelp-newslettersubscribe-example-1": "S’abonner au bulletin d’information avec l’identifiant 1.",
+	"apihelp-newslettersubscribe-example-2": "Se désabonner du bulletin d’information avec l’identifiant 2.",
 	"apihelp-newslettermanage-description": "Gérer un bulletin d’information.",
 	"apihelp-newslettermanage-summary": "Gérer un bulletin d’information.",
 	"apihelp-newslettermanage-param-id": "Identifiant du bulletin d’information à gérer.",
-	"apihelp-newslettermanage-param-do": "Action à effectuer. Doit être <kbd>addpublisher</kbd> ou <kbd>removepublisher</kbd>.",
-	"apihelp-newslettermanage-param-publisher": "Identifiant de l’utilisateur éditeur à gérer.",
+	"apihelp-newslettermanage-param-do": "Action à effectuer. Doit être <kbd>addpublisher</kbd> (ajouter un éditeur de publication) ou <kbd>removepublisher</kbd> (retirer un éditeur de publication).",
+	"apihelp-newslettermanage-param-publisher": "Identifiant d’utilisateur de l’éditeur de publication à gérer.",
 	"apihelp-newslettermanage-example-1": "Ajouter un éditeur ayant l'identifiant d’utilisateur 3 au bulletin d’information ayant l’identifiant 1.",
 	"apihelp-newslettermanage-example-2": "Supprimer l’éditeur ayant l’identifiant d’utilisateur 5 du bulletin d’information ayant l’identifiant 2.",
 	"newsletter-api-error-notfound": "Le bulletin d’information n’existe pas",
 	"newsletter-api-error-nopermissions": "Vous n’avez pas le droit de gérer les bulletins d’information.",
-	"newsletter-api-error-invalidpublisher-registered": "L’éditeur n’est pas un utilisateur enregistré.",
-	"newsletter-api-error-subscribe-notloggedin": "Vous devez être connecté pour vous abonner aux bulletins d’information."
+	"newsletter-api-error-invalidpublisher-registered": "L’éditeur n’est pas un utilisateur inscrit.",
+	"newsletter-api-error-subscribe-notloggedin": "Vous devez être connecté(e) pour vous abonner aux bulletins d’information."
 }
