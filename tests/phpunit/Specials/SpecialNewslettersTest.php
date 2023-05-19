@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletters;
+use MediaWiki\Request\FauxRequest;
 
 /**
  * @covers \MediaWiki\Extension\Newsletter\Specials\SpecialNewsletters
