@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Srdjan m"
+			"Srdjan m",
+			"Srđan"
 		]
 	},
 	"newsletter-extension-desc": "Omogućava korisnicima da objave i da se pretplate na biltene",
@@ -66,5 +67,6 @@
 	"newsletter-unsubscribing": "Otkazujem pretplatu...",
 	"newsletter-available-newsletters-field-label": "Dostupni bilteni",
 	"echo-category-title-newsletter": "Bilteni",
-	"action-newsletter-restore": "vratite bilten"
+	"action-newsletter-restore": "vratite bilten",
+	"log-action-filter-newsletter": "Vrsta radnje:"
 }
