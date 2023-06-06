@@ -65,5 +65,6 @@
 	"newsletter-unsubscribing": "Otkazujem pretplatu...",
 	"newsletter-available-newsletters-field-label": "Dostupni bilteni",
 	"echo-category-title-newsletter": "Bilteni",
-	"action-newsletter-restore": "vratite bilten"
+	"action-newsletter-restore": "vratite bilten",
+	"log-action-filter-newsletter": "Vrsta radnje:"
 }
