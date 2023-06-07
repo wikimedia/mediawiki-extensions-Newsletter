@@ -5,13 +5,17 @@
 			"Kimberli Mäkäräinen (WMNO)"
 		]
 	},
+	"newsletter-desc": "Govvádus",
 	"newsletter-subtitlelinks-unsubscribe": "heaitte diŋgomis",
 	"newsletter-subtitlelinks-subscribe": "diŋgo",
 	"newsletters": "Ođasreivvet",
+	"newsletter-view-description": "Govvádus:",
 	"newsletter-unsubscribe-button": "Heaitte diŋgomis",
 	"newsletter-manage-name": "Ođasreivve namma:",
+	"newsletter-manage-description": "Govvádus:",
 	"newsletter-delete": "Sihko ođasreivve",
 	"echo-category-title-newsletter": "Ođasreivvet",
+	"newsletter-header-description": "Govvádus",
 	"right-newsletter-delete": "Sihko ođasreivviid",
 	"action-newsletter-delete": "sihkkut ođasreivviid"
 }
