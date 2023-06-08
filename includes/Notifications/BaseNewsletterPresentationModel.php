@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
 
 use EchoEventPresentationModel;
 use MediaWiki\Extension\Newsletter\Newsletter;
-use MWException;
+use RuntimeException;
 use Title;
 
 abstract class BaseNewsletterPresentationModel extends EchoEventPresentationModel {
@@ -28,7 +28,7 @@ abstract class BaseNewsletterPresentationModel extends EchoEventPresentationMode
 			$this->getNewsletterName()
 		)->getFullURL();
 		if ( !$result ) {
-			throw new MWException( 'Cannot find newsletter with name \"' .
+			throw new RuntimeException( 'Cannot find newsletter with name \"' .
 				$this->getNewsletterName() .
 				'\"'
 			);

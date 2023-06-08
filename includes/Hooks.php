@@ -18,9 +18,9 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Permissions\Authority;
-use MWException;
 use PermissionsError;
 use ReadOnlyError;
+use RuntimeException;
 use SkinTemplate;
 use SpecialPage;
 use Status;
@@ -287,7 +287,6 @@ class Hooks {
 	 * @param User $user
 	 * @param string $reason
 	 * @param Status $status
-	 * @throws MWException
 	 */
 	public static function onTitleMove(
 		Title $title,
@@ -301,7 +300,7 @@ class Hooks {
 			if ( $newsletter ) {
 				NewsletterStore::getDefaultInstance()->updateName( $newsletter->getId(), $newtitle->getText() );
 			} else {
-				throw new MWException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
+				throw new RuntimeException( 'Cannot find newsletter with name \"' . $title->getText() . '\"' );
 			}
 		}
 	}
