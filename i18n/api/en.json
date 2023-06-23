@@ -10,13 +10,11 @@
 			"Zoranzoki21"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Subscribe to or unsubscribe from a newsletter.",
 	"apihelp-newslettersubscribe-summary": "Subscribe to or unsubscribe from a newsletter.",
 	"apihelp-newslettersubscribe-param-id": "ID of the newsletter for which the subscription should be changed.",
 	"apihelp-newslettersubscribe-param-do": "Action to do. Should be either <kbd>subscribe</kbd> or <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Subscribe to newsletter with ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Unsubscribe from newsletter with ID 2.",
-	"apihelp-newslettermanage-description": "Manage a newsletter.",
 	"apihelp-newslettermanage-summary": "Manage a newsletter.",
 	"apihelp-newslettermanage-param-id": "ID of the newsletter to manage.",
 	"apihelp-newslettermanage-param-do": "Action to do. Should be either <kbd>addpublisher</kbd> or <kbd>removepublisher</kbd>.",
