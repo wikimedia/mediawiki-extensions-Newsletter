@@ -125,11 +125,17 @@ class NewsletterEditPage {
 			$publishersNames[] = $publisher->getName();
 		}
 
+		if ( $mainTitle === null ) {
+			$mainText = null;
+		} else {
+			$mainText = $mainTitle->getPrefixedText();
+		}
+
 		$fields = [
 			'MainPage' => [
 				'type' => 'title',
 				'label-message' => 'newsletter-manage-title',
-				'default' => $mainTitle->getPrefixedText(),
+				'default' => $mainText,
 				'required' => true,
 			],
 			'Description' => [

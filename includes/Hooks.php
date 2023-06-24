@@ -213,7 +213,6 @@ class Hooks {
 	 * @param string &$error
 	 * @param Status &$status
 	 * @param bool $suppress
-	 * @return bool
 	 * @throws PermissionsError
 	 */
 	public static function onArticleDelete(
@@ -225,7 +224,7 @@ class Hooks {
 		$suppress
 	) {
 		if ( !$wikiPage->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
-			return true;
+			return;
 		}
 		$newsletter = Newsletter::newFromName( $wikiPage->getTitle()->getText() );
 		if ( $newsletter ) {
@@ -233,9 +232,7 @@ class Hooks {
 				throw new PermissionsError( 'newsletter-delete' );
 			}
 			NewsletterStore::getDefaultInstance()->deleteNewsletter( $newsletter );
-			$status->setOK( true );
 		}
-		return false;
 	}
 
 	/**
