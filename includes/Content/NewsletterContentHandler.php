@@ -251,6 +251,8 @@ class NewsletterContentHandler extends JsonContentHandler {
 			return Status::newFatal( 'newsletter-ch-tojsonerror' );
 		}
 
+		// FIXME It would be better if this editing directly, instead of
+		// invoking the api.
 		// Ensure that a valid context is provided to the API in unit tests
 		$der = new DerivativeContext( $context );
 		$request = new DerivativeRequest(
@@ -267,13 +269,33 @@ class NewsletterContentHandler extends JsonContentHandler {
 		);
 		$der->setRequest( $request );
 
+		$status = Status::newGood();
 		try {
 			$api = new ApiMain( $der, true );
 			$api->execute();
+			$res = $api->getResult()->getResultData();
+			if (
+				!isset( $res['edit']['result'] )
+				|| $res['edit']['result'] !== 'Success'
+			) {
+				if ( isset( $res['edit']['message'] ) ) {
+					$status->fatal(
+						$context->msg(
+							$res['edit']['message']['key'],
+							$res['edit']['message']['params']
+						)
+					);
+				} else {
+					$status->fatal( $context->msg(
+						'newsletter-ch-apierror',
+						$res['edit']['code'] ?? ''
+					) );
+				}
+			}
 		} catch ( ApiUsageException $e ) {
 			return Status::wrap( $e->getStatusValue() );
 		}
-		return Status::newGood();
+		return $status;
 	}
 
 	protected function getDiffEngineClass() {

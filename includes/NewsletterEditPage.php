@@ -285,6 +285,9 @@ class NewsletterEditPage {
 	/**
 	 * Do input validation, error handling and create a new newletter.
 	 *
+	 * This is only for saving a new page. Modifying an existing page
+	 * is submitManageForm()
+	 *
 	 * @param array $input The data entered by user in the form
 	 * @throws ThrottledError
 	 * @return Status
@@ -362,6 +365,7 @@ class NewsletterEditPage {
 			} else {
 				// The content creation was unsuccessful, lets rollback the newsletter from db
 				$store->rollBackNewsletterAddition( $this->newsletter );
+				return $result;
 			}
 		}
 
@@ -372,6 +376,9 @@ class NewsletterEditPage {
 	/**
 	 * Submit callback for the manage form.
 	 *
+	 * This is only for editing an existing page. Making a new page
+	 * is attemptSave()
+	 *
 	 * @todo Move most of this code out of SpecialNewsletter class
 	 * @param array $data
 	 *
@@ -379,10 +386,6 @@ class NewsletterEditPage {
 	 */
 	public function submitManageForm( array $data ) {
 		$confirmed = (bool)$data['Confirm'];
-		$modified = false;
-
-		$oldDescription = $this->newsletter->getDescription();
-		$oldMainPage = $this->newsletter->getPageId();
 
 		$description = trim( $data['Description'] );
 		$mainPage = Title::newFromText( $data['MainPage'] );
@@ -403,29 +406,12 @@ class NewsletterEditPage {
 			return $validation;
 		}
 
-		$mainPageId = $mainPage->getArticleID();
-
-		$store = NewsletterStore::getDefaultInstance();
 		$newsletterId = $this->newsletter->getId();
 
 		$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 
-		if ( $description != $oldDescription ) {
-			$store->updateDescription( $newsletterId, $description );
-			$modified = true;
-		}
-		if ( $oldMainPage != $mainPageId ) {
-			$rows = $store->newsletterExistsForMainPage( $mainPageId );
-			foreach ( $rows as $row ) {
-				if ( (int)$row->nl_main_page_id === $mainPageId && (int)$row->nl_active === 1 ) {
-					return Status::newFatal( 'newsletter-mainpage-in-use' );
-				}
-			}
-			$store->updateMainPage( $newsletterId, $mainPageId );
-			$modified = true;
-		}
-
 		$publisherNames = $data['Publishers'] ? explode( "\n", $data['Publishers'] ) : [];
+
 		// Ask for confirmation before removing all the publishers
 		if ( !$confirmed && count( $publisherNames ) === 0 ) {
 			return Status::newFatal( 'newsletter-manage-no-publishers' );
@@ -433,8 +419,6 @@ class NewsletterEditPage {
 
 		/** @var User[] $newPublishers */
 		$newPublishers = array_map( 'User::newFromName', $publisherNames );
-
-		$oldPublishersIds = $this->newsletter->getPublishers();
 		$newPublishersIds = self::getIdsFromUsers( $newPublishers );
 
 		// Confirm whether the current user (if already a publisher)
@@ -444,36 +428,6 @@ class NewsletterEditPage {
 			&& !in_array( $user->getId(), $newPublishersIds )
 		) {
 			return Status::newFatal( 'newsletter-manage-remove-self-publisher' );
-		}
-
-		// Do the actual modifications now
-		$added = array_diff( $newPublishersIds, $oldPublishersIds );
-		$removed = array_diff( $oldPublishersIds, $newPublishersIds );
-
-		// Check if people has been added
-		if ( $added ) {
-			$store->addPublisher( $this->newsletter, $added );
-			// Adds the new publishers to subscription list
-			$store->addSubscription( $this->newsletter, $added );
-			$this->newsletter->notifyPublishers(
-				$added, $user, Newsletter::NEWSLETTER_PUBLISHERS_ADDED
-			);
-		}
-
-		// Check if people have been removed
-		if ( $removed ) {
-			$store->removePublisher( $this->newsletter, $removed );
-			$this->newsletter->notifyPublishers(
-				$removed, $user, Newsletter::NEWSLETTER_PUBLISHERS_REMOVED
-			);
-		}
-
-		// Now report to the user
-		if ( $added || $removed || $modified ) {
-			$this->out->addWikiMsg( 'newsletter-manage-newsletter-success' );
-		} else {
-			// Submitted without any changes to the existing publishers
-			$this->out->addWikiMsg( 'newsletter-manage-newsletter-nochanges' );
 		}
 
 		$editResult = NewsletterContentHandler::edit(
@@ -487,6 +441,8 @@ class NewsletterEditPage {
 
 		if ( $editResult->isGood() ) {
 			$this->out->redirect( $title->getLocalURL() );
+		} else {
+			return $editResult;
 		}
 
 		return true;
