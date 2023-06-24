@@ -160,5 +160,6 @@
 	"newsletter-diff-mainpageheader": "Changes in Main Page:",
 	"newsletter-diff-publishersheader": "Changes in publishers:",
 	"newsletter-ch-apierror": "Error saving page: $1",
-	"newsletter-ch-tojsonerror": "Error serializing to JSON during save."
+	"newsletter-ch-tojsonerror": "Error serializing to JSON during save.",
+	"newsletter-orphan-revisions": "Can't undelete revisions that don't correspond to an actual deleted newsletter."
 }

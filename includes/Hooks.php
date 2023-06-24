@@ -277,6 +277,12 @@ class Hooks {
 				}
 			}
 			$store->restoreNewsletter( $newsletterName );
+		} elseif ( !$title->exists() ) {
+			// If the title exists, then there's no reason to block the undeletion
+			// whatever you are doing is probably a bad idea, but won't cause any inconsistencies
+			// since it will attach the disconnected revisions to the existing page
+			$status->fatal( 'newsletter-orphan-revisions' );
+			return false;
 		}
 	}
 
