@@ -335,42 +335,22 @@ class NewsletterEditPage {
 			// so add a throttle here to prevent abuse (eg. mass vandalism spree)
 			throw new ThrottledError;
 		}
-
-		$store = NewsletterStore::getDefaultInstance();
-		$this->newsletter = new Newsletter( 0,
-			$data['Name'],
-			// nl_newsletters.nl_desc is a blob but put some limit
-			// here which is less than the max size for blobs
+		$title = Title::makeTitleSafe( NS_NEWSLETTER, $data['Name'] );
+		$editSummaryMsg = $this->context->msg( 'newsletter-create-editsummary' );
+		$result = NewsletterContentHandler::edit(
+			$title,
 			$data['Description'],
-			$mainPageId
+			$input['mainpage'],
+			[ $this->user->getName() ],
+			$editSummaryMsg->inContentLanguage()->plain(),
+			$this->context
 		);
-		$newsletterCreated = $store->addNewsletter( $this->newsletter );
-		if ( $newsletterCreated ) {
-			$title = Title::makeTitleSafe( NS_NEWSLETTER, $data['Name'] );
-			$editSummaryMsg = $this->context->msg( 'newsletter-create-editsummary' );
-			$result = NewsletterContentHandler::edit(
-				$title,
-				$data['Description'],
-				$input['mainpage'],
-				[ $this->user->getName() ],
-				$editSummaryMsg->inContentLanguage()->plain(),
-				$this->context
-			);
-			if ( $result->isGood() ) {
-				$this->newsletter->subscribe( $this->user );
-				$store = NewsletterStore::getDefaultInstance();
-				$store->addPublisher( $this->newsletter, [ $this->user->getId() ] );
-				$this->out->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getName() );
-				return Status::newGood();
-			} else {
-				// The content creation was unsuccessful, lets rollback the newsletter from db
-				$store->rollBackNewsletterAddition( $this->newsletter );
-				return $result;
-			}
+		if ( $result->isGood() ) {
+			$this->out->addWikiMsg( 'newsletter-create-confirmation', $data['Name'] );
+			return Status::newGood();
+		} else {
+			return $result;
 		}
-
-		// Couldn't insert to the DB..
-		return Status::newFatal( 'newsletter-create-error' );
 	}
 
 	/**

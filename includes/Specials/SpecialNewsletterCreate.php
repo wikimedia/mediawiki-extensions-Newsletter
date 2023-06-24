@@ -5,14 +5,11 @@ namespace MediaWiki\Extension\Newsletter\Specials;
 use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
-use MediaWiki\Extension\Newsletter\Newsletter;
-use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use SpecialPage;
 use Status;
 use ThrottledError;
 use Title;
-use User;
 
 /**
  * Special page for creating newsletters
@@ -23,9 +20,9 @@ use User;
 class SpecialNewsletterCreate extends FormSpecialPage {
 
 	/**
-	 * @var Newsletter
+	 * @var string
 	 */
-	protected $newsletter;
+	protected $newsletterName;
 
 	public function __construct() {
 		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
@@ -131,53 +128,22 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 			throw new ThrottledError;
 		}
 
+		$this->newsletterName = $data['Name'];
 		$title = Title::makeTitleSafe( NS_NEWSLETTER, $data['Name'] );
-
-		$store = NewsletterStore::getDefaultInstance();
-		$this->newsletter = new Newsletter( 0,
-			$title->getText(),
+		$editSummaryMsg = $this->msg( 'newsletter-create-editsummary' );
+		$result = NewsletterContentHandler::edit(
+			$title,
 			$data['Description'],
-			$mainPageId
+			$input['mainpage'],
+			[ $user->getName() ],
+			$editSummaryMsg->inContentLanguage()->plain(),
+			$this->getContext()
 		);
-		$newsletterCreated = $store->addNewsletter( $this->newsletter );
-
-		if ( $newsletterCreated ) {
-			$editSummaryMsg = $this->msg( 'newsletter-create-editsummary' );
-			$result = NewsletterContentHandler::edit(
-				$title,
-				$data['Description'],
-				$input['mainpage'],
-				[ $user->getName() ],
-				$editSummaryMsg->inContentLanguage()->plain(),
-				$this->getContext()
-			);
-			if ( $result->isGood() ) {
-				$this->onPostCreation( $user );
-				return Status::newGood();
-			} else {
-				// The content creation was unsuccessful, lets rollback the newsletter from db
-				$store->rollBackNewsletterAddition( $this->newsletter );
-				return $result;
-			}
-		}
-
-		// Couldn't insert to the DB..
-		return Status::newFatal( 'newsletter-create-error' );
-	}
-
-	/**
-	 * Subscribe and add the creator to the publisher's list of the
-	 * newly created newsletter.
-	 *
-	 * @param User $user User object of the creator
-	 */
-	private function onPostCreation( User $user ) {
-		$this->newsletter->subscribe( $user );
-		NewsletterStore::getDefaultInstance()->addPublisher( $this->newsletter, [ $user->getId() ] );
+		return $result;
 	}
 
 	public function onSuccess() {
-		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletter->getName() );
+		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletterName );
 	}
 
 	public function doesWrites() {

@@ -104,7 +104,7 @@ class NewsletterDataUpdate extends DataUpdate {
 		];
 
 		if ( !$newsletter ) {
-			// Possible API edit to create a new newsletter, and the newsletter is not in the
+			// Creating a new newsletter that newsletter is not in the
 			// database yet.
 			$newsletter = $this->createNewNewsletterWithData( $store, $formData );
 			if ( !$newsletter ) {
