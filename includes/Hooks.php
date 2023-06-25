@@ -6,7 +6,6 @@ use Content;
 use DatabaseUpdater;
 use EchoUserLocator;
 use IContextSource;
-use MediaWiki\EditPage\EditPage;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContent;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherAddedPresentationModel;
@@ -21,7 +20,6 @@ use PermissionsError;
 use ReadOnlyError;
 use RuntimeException;
 use SkinTemplate;
-use SpecialPage;
 use Status;
 use StatusValue;
 use ThrottledError;
@@ -162,28 +160,6 @@ class Hooks {
 	}
 
 	/**
-	 * @param EditPage $editPage
-	 * @return bool
-	 */
-	public static function onAlternateEdit( EditPage $editPage ) {
-		$out = $editPage->getContext()->getOutput();
-		$title = $editPage->getTitle();
-
-		if ( $title->inNamespace( NS_NEWSLETTER ) ) {
-			if ( $title->hasContentModel( 'NewsletterContent' ) ) {
-				$newsletter = Newsletter::newFromName( $title->getText() );
-				if ( $newsletter ) {
-					$title = SpecialPage::getTitleFor( 'Newsletter', $newsletter->getId() . '/' . 'manage' );
-					$out->redirect( $title->getFullURL() );
-				}
-			}
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
 	 * @param Article $article
 	 * @param User $user
 	 * @return bool
@@ -305,6 +281,9 @@ class Hooks {
 	}
 
 	/**
+	 * Enforce the invariant that all pages in the Newsletter namespace
+	 * correspond to an actual newsletter in the database by preventing
+	 * any other content models from being used there.
 	 * @param string $contentModel ID of the content model in question
 	 * @param Title $title the Title in question.
 	 * @param bool &$ok Output parameter, whether it is OK to use $contentModel on $title.
