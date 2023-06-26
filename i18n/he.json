@@ -155,5 +155,7 @@
 	"log-action-filter-newsletter-issue-added": "הודעות על גיליונות חדשים",
 	"newsletter-diff-descheader": "שינויים בתיאור:",
 	"newsletter-diff-mainpageheader": "שינויים בדף הראשי:",
-	"newsletter-diff-publishersheader": "שינויים במפרסמים:"
+	"newsletter-diff-publishersheader": "שינויים במפרסמים:",
+	"newsletter-ch-apierror": "שגיאה בשמירת הדף: $1",
+	"newsletter-ch-tojsonerror": "שגיאה בהסדרה ל־JSON במהלך השמירה."
 }

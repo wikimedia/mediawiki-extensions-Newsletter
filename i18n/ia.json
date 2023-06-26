@@ -21,7 +21,7 @@
 	"newsletter-create-confirmation": "Un nove bulletin de novas: [[Newsletter:$1|$1]] ha essite registrate.",
 	"newsletter-create-mainpage-error": "Le pagina principal de bulletin de novas fornite non es valide. Per favor tenta lo de novo.",
 	"newsletter-mainpage-non-existent": "Le pagina principal del bulletin de novas non existe. Per favor insere un pagina existente e valide.",
-	"newsletter-mainpage-in-use": "Un bulletin de novas existente ha le mesme pagina principal. Per favor insere un altere titulo.",
+	"newsletter-mainpage-in-use": "Un bulletin de novas existente ha le mesme pagina principal. Per favor insere un altere pagina principal.",
 	"newsletter-create-short-description-error": "Le description es troppo curte (minus de 30 characteres). Per favor tenta lo de novo.",
 	"newsletter-subtitlelinks-list": "Lista de bulletines de novas",
 	"newsletter-subtitlelinks-create": "Registrar un nove bulletin de novas",
@@ -151,5 +151,7 @@
 	"log-action-filter-newsletter-issue-added": "Annuncios de nove editiones",
 	"newsletter-diff-descheader": "Cambiamentos in le description:",
 	"newsletter-diff-mainpageheader": "Cambiamentos in le pagina principal:",
-	"newsletter-diff-publishersheader": "Cambiamentos in le editores:"
+	"newsletter-diff-publishersheader": "Cambiamentos in le editores:",
+	"newsletter-ch-apierror": "Error salveguardante pagina: $1",
+	"newsletter-ch-tojsonerror": "Error serialisante a JSON durante salveguarda."
 }

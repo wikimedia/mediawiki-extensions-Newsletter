@@ -4,13 +4,11 @@
 			"McDutchie"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Abonar te a, o disabonar te de, un bulletin de novas.",
 	"apihelp-newslettersubscribe-summary": "Abonar te a, o disabonar te de, un bulletin de novas.",
 	"apihelp-newslettersubscribe-param-id": "ID del bulletin de novas pro le qual le abonamento debe esser cambiate.",
 	"apihelp-newslettersubscribe-param-do": "Le action a prender. Debe esser <kbd>subscribe</kbd> o <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Abonar se al bulletin de novas con ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Disabonar se del bulletin de novas con ID 2.",
-	"apihelp-newslettermanage-description": "Gerer un bulletin de novas.",
 	"apihelp-newslettermanage-summary": "Gerer un bulletin de novas.",
 	"apihelp-newslettermanage-param-id": "ID del bulletin de novas a gerer.",
 	"apihelp-newslettermanage-param-do": "Le action a prender. Debe esser <kbd>addpublisher</kbd> o <kbd>removepublisher</kbd>.",
@@ -18,7 +16,8 @@
 	"apihelp-newslettermanage-example-1": "Adder un editor con ID de usator 3 al bulletin de novas con ID 1.",
 	"apihelp-newslettermanage-example-2": "Remover le editor con ID de usator 5 del bulletin de novas con ID 2.",
 	"newsletter-api-error-notfound": "Le bulletin de novas non existe",
-	"newsletter-api-error-nopermissions": "Tu non ha le permission de gerer le bulletines de novas.",
+	"newsletter-api-error-nopermissions": "Tu non ha le permission de gerer iste bulletin de novas.",
+	"newsletter-api-error-nocreate": "Tu non ha le permission de crear bulletines de novas.",
 	"newsletter-api-error-invalidpublisher-registered": "Le editor non es un usator registrate.",
 	"newsletter-api-error-subscribe-notloggedin": "Tu debe aperir session pro abonar te a bulletines de novas."
 }

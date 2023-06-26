@@ -4,13 +4,11 @@
 			"Jon Harald Søby"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Abonner på eller avslutt abonnement på et nyhetsbrev.",
 	"apihelp-newslettersubscribe-summary": "Abonner på eller avslutt abonnement på et nyhetsbrev.",
 	"apihelp-newslettersubscribe-param-id": "ID-en til nyhetsbrevet abonnementet skal endres for.",
 	"apihelp-newslettersubscribe-param-do": "Handling som skal utføres. Bør være enten <kbd>subscribe</kbd> eller <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Abonner på nyhetsbrevet med ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Fjern abonnement fra nyhetsbrevet med ID 2.",
-	"apihelp-newslettermanage-description": "Behandle et nyhetsbrev.",
 	"apihelp-newslettermanage-summary": "Behandle et nyhetsbrev.",
 	"apihelp-newslettermanage-param-id": "ID-en til nyhetsbrevet som skal behandles.",
 	"apihelp-newslettermanage-param-do": "Handling som skal utføres. Bør være enten <kbd>addpublisher</kbd> eller <kbd>removepublisher</kbd>.",

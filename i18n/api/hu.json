@@ -4,13 +4,11 @@
 			"Tacsipacsi"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Feliratkozás egy hírlevélre, vagy leiratkozás arról.",
 	"apihelp-newslettersubscribe-summary": "Feliratkozás egy hírlevélre, vagy leiratkozás arról.",
 	"apihelp-newslettersubscribe-param-id": "A módosítandó hírlevél azonosítója.",
 	"apihelp-newslettersubscribe-param-do": "A végrehajtandó művelet: <kbd>subscribe</kbd> vagy <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Feliratkozás az 1-es azonosítójú hírlevélre.",
 	"apihelp-newslettersubscribe-example-2": "Leiratkozás a 2-es azonosítójú hírlevélről.",
-	"apihelp-newslettermanage-description": "Egy hírlevél kezelése.",
 	"apihelp-newslettermanage-summary": "Egy hírlevél kezelése.",
 	"apihelp-newslettermanage-param-id": "A módosítandó hírlevél azonosítója.",
 	"apihelp-newslettermanage-param-do": "A végrehajtandó művelet: <kbd>addpublisher</kbd> vagy <kbd>removepublisher</kbd>.",

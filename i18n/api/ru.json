@@ -5,7 +5,6 @@
 			"Nk88"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Подписаться или отписаться от рассылки.",
 	"apihelp-newslettersubscribe-summary": "Подписаться или отписаться от рассылки.",
 	"newsletter-api-error-notfound": "Такой рассылки не существует",
 	"newsletter-api-error-nopermissions": "У вас нет прав для управления рассылками.",

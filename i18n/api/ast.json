@@ -4,13 +4,11 @@
 			"Xuacu"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Suscribise o dase de baxa d'un boletín.",
 	"apihelp-newslettersubscribe-summary": "Suscribise o dase de baxa d'un boletín.",
 	"apihelp-newslettersubscribe-param-id": "Identificador del boletín pal que camudar la suscripción.",
 	"apihelp-newslettersubscribe-param-do": "Aición a facer. Tien de ser <kbd>suscribise</kbd> o <kbd>dase de baxa</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Suscribise al boletín con ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Dase de baxa del boletín con ID 2.",
-	"apihelp-newslettermanage-description": "Alministrar un boletín.",
 	"apihelp-newslettermanage-summary": "Alministrar un boletín.",
 	"apihelp-newslettermanage-param-id": "ID del boletín a alministrar.",
 	"apihelp-newslettermanage-param-do": "Aición a facer. Tien de ser o <kbd>addpublisher</kbd> (amestar editor) o <kbd>removepublisher</kbd> (quitar editor).",

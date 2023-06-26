@@ -4,13 +4,11 @@
 			"Krabina"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Abonniert einen Newsletter oder bestellt ihn ab.",
 	"apihelp-newslettersubscribe-summary": "Abonniert einen Newsletter oder beendet ein bestehendes Abonnement.",
 	"apihelp-newslettersubscribe-param-id": "Kennung des Newsletters, für den das Abonnement geändert werden soll.",
 	"apihelp-newslettersubscribe-param-do": "Auszuführende Aktion. Sollte entweder <kbd>subscribe</kbd> oder <kbd>unsubscribe</kbd> sein.",
 	"apihelp-newslettersubscribe-example-1": "Abonniert den Newsletter mit der Kennung 1.",
 	"apihelp-newslettersubscribe-example-2": "Bestellt den Newsletter mit der Kennung 2 ab.",
-	"apihelp-newslettermanage-description": "Newsletter verwalten",
 	"apihelp-newslettermanage-summary": "Newsletter verwalten",
 	"apihelp-newslettermanage-param-id": "Kennung des zu verwaltenden Newsletters.",
 	"apihelp-newslettermanage-param-do": "Auszuführende Aktion. Sollte entweder <kbd>addpublisher</kbd> oder <kbd>removepublisher</kbd> sein.",

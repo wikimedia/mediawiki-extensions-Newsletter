@@ -4,13 +4,11 @@
 			"Felipe L. Ewald"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Inscreva-se ou cancele a inscrição em um boletim informativo.",
 	"apihelp-newslettersubscribe-summary": "Inscreva-se ou cancele a inscrição em um boletim informativo.",
 	"apihelp-newslettersubscribe-param-id": "ID do boletim informativo para a qual a assinatura deve ser alterada.",
 	"apihelp-newslettersubscribe-param-do": "Ação a ser feita. Deveria ser <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Assine o boletim informativo com ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Cancelar a inscrição no boletim informativo com ID 2.",
-	"apihelp-newslettermanage-description": "Gerenciar um boletim de informação.",
 	"apihelp-newslettermanage-summary": "Gerenciar um boletim de informação.",
 	"apihelp-newslettermanage-param-id": "ID do boletim informativo a ser gerenciado.",
 	"apihelp-newslettermanage-param-do": "Ação a ser feita. Deve ser <kbd>addpublisher</kbd> ou <kbd>removepublisher</kbd>.",

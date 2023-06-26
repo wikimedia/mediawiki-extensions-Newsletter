@@ -5,7 +5,6 @@
 			"V.narsikar"
 		]
 	},
-	"apihelp-newslettermanage-description": "वार्तापत्राचे व्यवस्थापन करा.",
 	"newsletter-api-error-notfound": "वृत्तपत्र अस्तित्वात नाही",
 	"newsletter-api-error-invalidpublisher-registered": "\nप्रकाशक नोंदणीकृत वापरकर्ता नाही"
 }

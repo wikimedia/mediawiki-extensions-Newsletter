@@ -26,7 +26,7 @@
 	"newsletter-create-confirmation": "Der neue Newsletter „[[Newsletter:$1|$1]]“ wurde registriert.",
 	"newsletter-create-mainpage-error": "Ungültige Newsletter-Hauptseite eingegeben. Bitte erneut versuchen.",
 	"newsletter-mainpage-non-existent": "Die Hauptseite des Newsletters ist nicht vorhanden. Bitte gib eine vorhandene Seite ein, die gültig ist.",
-	"newsletter-mainpage-in-use": "Ein vorhandener Newsletter hat die gleiche Hauptseite. Bitte gib einen anderen Titel ein.",
+	"newsletter-mainpage-in-use": "Ein vorhandener Newsletter hat die gleiche Hauptseite. Bitte gib eine andere Hauptseite ein.",
 	"newsletter-create-short-description-error": "Die Beschreibung ist zu kurz (weniger als 30 Zeichen). Bitte erneut versuchen.",
 	"newsletter-subtitlelinks-list": "Liste der Newsletter",
 	"newsletter-subtitlelinks-create": "Einen neuen Newsletter registrieren",
@@ -156,5 +156,7 @@
 	"log-action-filter-newsletter-issue-added": "Veröffentlichungen neuer Ausgaben",
 	"newsletter-diff-descheader": "Änderungen an der Beschreibung:",
 	"newsletter-diff-mainpageheader": "Änderungen an der Hauptseite:",
-	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:"
+	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:",
+	"newsletter-ch-apierror": "Fehler beim Speichern der Seite: $1",
+	"newsletter-ch-tojsonerror": "Fehler beim Serialisieren in JSON beim Speichern."
 }

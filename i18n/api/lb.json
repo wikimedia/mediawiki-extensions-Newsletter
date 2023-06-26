@@ -1,15 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Abonéieren oder ofmelle vun enger Newsletter.",
 	"apihelp-newslettersubscribe-summary": "Eng Newsletter abonéieren oder d'Abonnement opléisen.",
 	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
 	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",
 	"apihelp-newslettermanage-summary": "Eng Newsletter geréieren.",
 	"newsletter-api-error-notfound": "Newsletter gëtt et net",
-	"newsletter-api-error-nopermissions": "Dir hutt net d'Recht fir Newsletteren ze geréieren.",
+	"newsletter-api-error-nopermissions": "Dir hutt net d'Recht fir dësen Newsletter ze geréieren.",
 	"newsletter-api-error-subscribe-notloggedin": "Dir musst ageloggt si fir Iech op Newsletteren z'abonnéieren."
 }

@@ -5,13 +5,11 @@
 			"Macofe"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Suscribirse a o desuscribirse de un boletín.",
 	"apihelp-newslettersubscribe-summary": "Suscribirse a, o darse de baja de, un boletín.",
 	"apihelp-newslettersubscribe-param-id": "Identificador del boletín para el que cambiar la suscripción.",
 	"apihelp-newslettersubscribe-param-do": "Acción que realizar. O bien <kbd>subscribe</kbd> o bien <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Suscribirse al boletín con identificador 1.",
 	"apihelp-newslettersubscribe-example-2": "Desuscribirse al boletín con identificador 2.",
-	"apihelp-newslettermanage-description": "Gestionar un boletín.",
 	"apihelp-newslettermanage-summary": "Gestionar un boletín.",
 	"apihelp-newslettermanage-param-id": "Identificador del boletín que gestionar.",
 	"apihelp-newslettermanage-param-do": "Acción que realizar. Debe ser <kbd>addpublisher</kbd> (agregar editor) o <kbd>removepublisher</kbd> (quitar editor).",

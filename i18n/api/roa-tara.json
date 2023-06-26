@@ -4,13 +4,11 @@
 			"Joetaras"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "'Scrizione o scangellazzione da 'na newsletter.",
 	"apihelp-newslettersubscribe-summary": "'Scrizione o scangellazzione da 'na newsletter.",
 	"apihelp-newslettersubscribe-param-id": "ID d'a newsletter pa quale 'a 'scrizione avessa essere cangiate.",
 	"apihelp-newslettersubscribe-param-do": "Azione da fà. Avessa essere <kbd>subscribe</kbd> o <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "'Scrivete jndr'à newslettere cu ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Scangillate da 'a newsletter cu ID 2.",
-	"apihelp-newslettermanage-description": "Gestisce 'na newsletter.",
 	"apihelp-newslettermanage-summary": "Gestisce 'na newsletter.",
 	"apihelp-newslettermanage-param-id": "ID d'a newsletter da gestì.",
 	"apihelp-newslettermanage-param-do": "Azione da fà. Avessa essere <kbd>addpublisher</kbd> o <kbd>removepublisher</kbd>.",

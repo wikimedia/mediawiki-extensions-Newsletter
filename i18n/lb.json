@@ -80,5 +80,6 @@
 	"log-action-filter-newsletter": "Typ vun Aktioun:",
 	"newsletter-diff-descheader": "Ännerungen an der Beschreiwung:",
 	"newsletter-diff-mainpageheader": "Ännerungen op der Haaptsäit:",
-	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:"
+	"newsletter-diff-publishersheader": "Ännerunge bei de Publizisten:",
+	"newsletter-ch-apierror": "Feeler beim Späichere vun der Säit: $1"
 }

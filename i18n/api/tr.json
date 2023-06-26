@@ -5,13 +5,11 @@
 			"MuratTheTurkish"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Bültene abone olun veya bülten aboneliğinizi iptal edin.",
 	"apihelp-newslettersubscribe-summary": "Bültene abone olun veya bülten aboneliğinizi iptal edin.",
 	"apihelp-newslettersubscribe-param-id": "Aboneliğin değiştirilmesi gereken bültenin kimliği.",
 	"apihelp-newslettersubscribe-param-do": "Yapılacak eylem. <kbd>subscribe</kbd> veya <kbd>unsubscribe</kbd> olmalıdır.",
 	"apihelp-newslettersubscribe-example-1": "1 kimlik bültene abone olun.",
 	"apihelp-newslettersubscribe-example-2": "2 kimlik haber bülteni aboneliğinden çıkın.",
-	"apihelp-newslettermanage-description": "Bir haber bülteni yönetin.",
 	"apihelp-newslettermanage-summary": "Bir haber bülteni yönetin.",
 	"apihelp-newslettermanage-param-id": "Yönetilecek haber bülteninin kimliği.",
 	"apihelp-newslettermanage-param-do": "Yapılacak eylem. <kbd>addpublisher</kbd> veya <kbd>removepublisher</kbd> olmalıdır.",

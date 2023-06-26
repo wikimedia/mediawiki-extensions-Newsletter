@@ -5,7 +5,6 @@
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "뉴스레터를 구독하거나 구독을 해지합니다.",
-	"apihelp-newslettermanage-description": "뉴스레터를 관리합니다.",
 	"apihelp-newslettermanage-summary": "뉴스레터를 관리합니다.",
 	"newsletter-api-error-notfound": "뉴스레터가 존재하지 않습니다",
 	"newsletter-api-error-nopermissions": "뉴스레터를 관리할 권한이 없습니다.",

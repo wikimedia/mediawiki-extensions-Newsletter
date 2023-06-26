@@ -4,13 +4,11 @@
 			"ديفيد"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "اشترك أو ألغِ الاشتراك في رسالة إخبارية.",
 	"apihelp-newslettersubscribe-summary": "اشترك أو ألغِ الاشتراك في رسالة إخبارية.",
 	"apihelp-newslettersubscribe-param-id": "معرف النشرة الإخبارية التي يجب تغيير الاشتراك فيها.",
 	"apihelp-newslettersubscribe-param-do": "عمل للقيام به، يجب أن تكون إما <kbd>subscribe</kbd> أو <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "اشترك في النشرة الإخبارية مع معرف 1.",
 	"apihelp-newslettersubscribe-example-2": "إلغاء الاشتراك من النشرة الإخبارية مع معرف 2.",
-	"apihelp-newslettermanage-description": "إدارة رسالة إخبارية.",
 	"apihelp-newslettermanage-summary": "إدارة رسالة إخبارية.",
 	"apihelp-newslettermanage-param-id": "معرف النشرة لإدارتها.",
 	"apihelp-newslettermanage-param-do": "عمل للقيام به، يجب أن يكون <kbd>addpublisher</kbd> أو <kbd>removepublisher</kbd>.",

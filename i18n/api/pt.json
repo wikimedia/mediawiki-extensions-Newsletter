@@ -4,13 +4,11 @@
 			"Hamilton Abreu"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Subscrever ou cancelar a subscrição de um boletim informativo.",
 	"apihelp-newslettersubscribe-summary": "Subscrever ou cancelar a subscrição de um boletim informativo.",
 	"apihelp-newslettersubscribe-param-id": "Identificador do boletim para o qual a subscrição deverá ser alterada.",
 	"apihelp-newslettersubscribe-param-do": "Ação a ser executada. Deve ser <kbd>subscribe</kbd> (subscrever) ou <kbd>unsubscribe</kbd> (cancelar subscrição).",
 	"apihelp-newslettersubscribe-example-1": "Subscrever o boletim com o identificador 1.",
 	"apihelp-newslettersubscribe-example-2": "Cancelar a subscrição do boletim com o identificador 2.",
-	"apihelp-newslettermanage-description": "Gerir um boletim informativo.",
 	"apihelp-newslettermanage-summary": "Gerir um boletim informativo.",
 	"apihelp-newslettermanage-param-id": "Identificador do boletim informativo a ser gerido.",
 	"apihelp-newslettermanage-param-do": "Ação a ser executada. Deve ser <kbd>addpublisher</kbd> (acrescentar editor) ou <kbd>removepublisher</kbd> (remover editor).",

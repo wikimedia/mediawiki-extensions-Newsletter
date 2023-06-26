@@ -4,13 +4,11 @@
 			"Elisardojm"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Subscribirse a ou desubscribirse dun boletín.",
 	"apihelp-newslettersubscribe-summary": "Subscribirse a ou desubscribirse dun boletín.",
 	"apihelp-newslettersubscribe-param-id": "Identificador do boletín para o que cambiar a subscrición.",
 	"apihelp-newslettersubscribe-param-do": "Acción a realizar. Debe ser <kbd>subscribe</kbd> ou <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Subscribirse ó boletín con identificador 1.",
 	"apihelp-newslettersubscribe-example-2": "Desubscribirse do boletín con identificador 2.",
-	"apihelp-newslettermanage-description": "Xestionar un boletín.",
 	"apihelp-newslettermanage-summary": "Xestionar un boletín.",
 	"apihelp-newslettermanage-param-id": "Identificador do boletín a xestionar.",
 	"apihelp-newslettermanage-param-do": "Acción a realizar. Debe ser <kbd>addpublisher</kbd> (engadir editor) ou <kbd>removepublisher</kbd> (quitar editor).",

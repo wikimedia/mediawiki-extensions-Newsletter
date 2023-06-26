@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiGro",
 			"Elroy",
 			"Festina90",
 			"Hex",
@@ -158,5 +159,7 @@
 	"log-action-filter-newsletter-issue-added": "Aankondiging van nieuwe uitgaven",
 	"newsletter-diff-descheader": "Wijzigingen in de beschrijving:",
 	"newsletter-diff-mainpageheader": "Wijzigingen aan de hoofdpagina:",
-	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:"
+	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:",
+	"newsletter-ch-apierror": "Fout bij het opslaan van pagina: $1",
+	"newsletter-ch-tojsonerror": "Fout bij het serialiseren naar JSON tijdens het opslaan."
 }

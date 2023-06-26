@@ -164,5 +164,7 @@
 	"log-action-filter-newsletter-issue-added": "Annonces d’un nouveau numéro",
 	"newsletter-diff-descheader": "Changements dans la description :",
 	"newsletter-diff-mainpageheader": "Changements dans la page principale :",
-	"newsletter-diff-publishersheader": "Changements dans les éditeurs :"
+	"newsletter-diff-publishersheader": "Changements dans les éditeurs :",
+	"newsletter-ch-apierror": "Erreur à l’enregistrement de la page : $1",
+	"newsletter-ch-tojsonerror": "Erreur de sérialisation du JSON lors de l’enregistrement."
 }

@@ -158,5 +158,6 @@
 	"log-action-filter-newsletter-issue-added": "Ogłoszenie nowego wydania",
 	"newsletter-diff-descheader": "Zmiany w opisie:",
 	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
-	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:"
+	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:",
+	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1"
 }

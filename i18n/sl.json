@@ -24,7 +24,7 @@
 	"newsletter-create-confirmation": "Registrirali ste nov novičnik: [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "Vnesli ste napačen naslov glavne strani novičnika. Prosimo, poskusite znova.",
 	"newsletter-mainpage-non-existent": "Ta glavna stran novičnika ne obstaja. Prosimo, vnesite veljavno obstoječo stran.",
-	"newsletter-mainpage-in-use": "Tako glavno stran ima že obstoječ novičnik. Prosimo, vnesite drug naslov.",
+	"newsletter-mainpage-in-use": "Tako glavno stran ima že obstoječ novičnik. Prosimo, vnesite drugo glavno stran.",
 	"newsletter-create-short-description-error": "Opis je prekratek (manj kot 30 znakov). Prosimo, poskusite znova.",
 	"newsletter-subtitlelinks-list": "Seznam novičnikov",
 	"newsletter-subtitlelinks-create": "Registriraj nov novičnik",
@@ -154,5 +154,7 @@
 	"log-action-filter-newsletter-issue-added": "Obvestila o novi izdaji",
 	"newsletter-diff-descheader": "Spremembe opisa:",
 	"newsletter-diff-mainpageheader": "Spremembe glavne strani:",
-	"newsletter-diff-publishersheader": "Spremembe izdajateljev:"
+	"newsletter-diff-publishersheader": "Spremembe izdajateljev:",
+	"newsletter-ch-apierror": "Napaka pri shranjevanju strani: $1",
+	"newsletter-ch-tojsonerror": "Napaka serializiranja v JSON pri shranjevanju."
 }

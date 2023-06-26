@@ -92,7 +92,7 @@
 	"newsletter-unsubscribing": "Ве отпишувам...",
 	"newsletter-subscribers": "Претплатници на билтенот",
 	"newsletter-subscribers-nopermission": "Немате дозвола да ги менувате претплатниците на билтенов",
-	"newsletter-edit-subscribers-nochanges": "Нема промени во претплатниците на билтенот.",
+	"newsletter-edit-subscribers-nochanges": "Нема промени во списокот на претплатници на билтенот.",
 	"newsletter-edit-subscribers-success": "Претплатниците на билтенот се изменети.",
 	"newsletter-subscribers-invalid": "„$1“ не претставува важечки корисник. Проверете дали такво користничко име навистина постои и пробајте повторно.",
 	"newsletter-available-newsletters-field-label": "Расположливи билтени",
@@ -153,5 +153,7 @@
 	"log-action-filter-newsletter-issue-added": "Објави за нов број",
 	"newsletter-diff-descheader": "Промени во описот:",
 	"newsletter-diff-mainpageheader": "Промени во Главната страница:",
-	"newsletter-diff-publishersheader": "Промени во издавачите:"
+	"newsletter-diff-publishersheader": "Промени во издавачите:",
+	"newsletter-ch-apierror": "Грешка при зачувувањето на страницата: $1",
+	"newsletter-ch-tojsonerror": "Грешка во серилизацијата на JSON при зачувувањето."
 }

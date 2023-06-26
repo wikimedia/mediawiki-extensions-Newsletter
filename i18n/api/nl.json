@@ -1,18 +1,17 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiGro",
 			"Festina90",
 			"Mainframe98",
 			"Siebrand"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Abonneren op of uitschrijven voor een nieuwsbrief.",
 	"apihelp-newslettersubscribe-summary": "Abonneren op of uitschrijven voor een nieuwsbrief.",
 	"apihelp-newslettersubscribe-param-id": "Het ID van de nieuwsbrief waarvoor het abonnement moet worden gewijzigd.",
 	"apihelp-newslettersubscribe-param-do": "Uit te voeren handeling. Moet <kbd>subscribe</kbd> of <kbd>unsubscribe</kbd> zijn.",
 	"apihelp-newslettersubscribe-example-1": "Abonneren op de nieuwsbrief met ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Uitschrijven voor de nieuwsbrief met ID 2.",
-	"apihelp-newslettermanage-description": "Een nieuwsbrief beheren.",
 	"apihelp-newslettermanage-summary": "Een nieuwsbrief beheren.",
 	"apihelp-newslettermanage-param-id": "ID van de nieuwsbrief om te beheren.",
 	"apihelp-newslettermanage-param-do": "Uit te voeren handeling. Moet <kbd>addpublisher</kbd> of <kbd>removepublisher</kbd> zijn.",
@@ -21,6 +20,7 @@
 	"apihelp-newslettermanage-example-2": "Verwijder een uitgever met de gebruikers-ID 5, van de nieuwsbrief met ID 2.",
 	"newsletter-api-error-notfound": "Nieuwsbrief bestaat niet",
 	"newsletter-api-error-nopermissions": "U hebt geen rechten om nieuwsbrieven te beheren.",
+	"newsletter-api-error-nocreate": "U hebt geen rechten om nieuwsbrieven te maken.",
 	"newsletter-api-error-invalidpublisher-registered": "De uitgever is geen geregistreerde gebruiker.",
 	"newsletter-api-error-subscribe-notloggedin": "U hoeft aangemeld te zijn om u aan te melden voor de nieuwsbrieven."
 }

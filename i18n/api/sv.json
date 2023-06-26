@@ -5,13 +5,11 @@
 			"WikiPhoenix"
 		]
 	},
-	"apihelp-newslettersubscribe-description": "Prenumerera eller avprenumerera från ett nyhetsbrev.",
 	"apihelp-newslettersubscribe-summary": "Prenumerera på eller avprenumerera från ett nyhetsbrev.",
 	"apihelp-newslettersubscribe-param-id": "ID för nyhetsbrevet som prenumerationen bör ändras.",
 	"apihelp-newslettersubscribe-param-do": "Handling att utföra. Bör antingen vara <kbd>subscribe</kbd> eller <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Prenumerera på nyhetsbrevet med ID 1.",
 	"apihelp-newslettersubscribe-example-2": "Sluta prenumerera på nyhetsbrevet med ID 2.",
-	"apihelp-newslettermanage-description": "Hantera ett nyhetsbrev.",
 	"apihelp-newslettermanage-summary": "Hantera ett nyhetsbrev.",
 	"apihelp-newslettermanage-param-id": "ID för nyhetsbrevet att hantera.",
 	"apihelp-newslettermanage-param-do": "Handling att utföra. Bör antingen vara <kbd>addpublisher</kbd> eller <kbd>removepublisher</kbd>.",
