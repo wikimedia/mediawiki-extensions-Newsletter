@@ -446,6 +446,10 @@ class NewsletterContentHandler extends JsonContentHandler {
 		return Html::rawElement( 'ul', [], $str );
 	}
 
+	/**
+	 * @param Newsletter $newsletter
+	 * @param ParserOptions $options
+	 */
 	private function setupNavigationLinks( Newsletter $newsletter, ParserOptions $options ) {
 		$context = RequestContext::getMain();
 		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();

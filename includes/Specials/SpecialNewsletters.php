@@ -89,7 +89,7 @@ class SpecialNewsletters extends SpecialPage {
 		}
 	}
 
-	private function getFormFields() {
+	private function getFormFields(): array {
 		return [
 			'filter' => [
 				'id' => 'mw-newsletter-filter-options',
