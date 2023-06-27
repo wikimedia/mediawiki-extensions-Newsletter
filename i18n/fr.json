@@ -34,7 +34,7 @@
 	"newsletter-create-confirmation": "Un nouveau bulletin d’information : [[Newsletter:$1|$1]] a été inscrit.",
 	"newsletter-create-mainpage-error": "Page principale du bulletin d’information saisie non valide. Veuillez essayer à nouveau.",
 	"newsletter-mainpage-non-existent": "La page principale du bulletin d’information n'existe pas. Veuillez saisir une page existante valide.",
-	"newsletter-mainpage-in-use": "Un bulletin d’information existant a la même page principale. Veuillez saisir un autre titre.",
+	"newsletter-mainpage-in-use": "Un bulletin d’information existant a la même page principale. Veuillez saisir une autre page principale.",
 	"newsletter-create-short-description-error": "La description est trop courte (moins de 30 caractères). Veuillez essayer à nouveau.",
 	"newsletter-subtitlelinks-list": "Liste des bulletins d’information",
 	"newsletter-subtitlelinks-create": "Inscrire un nouveau bulletin d’information",

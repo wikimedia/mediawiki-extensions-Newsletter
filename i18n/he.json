@@ -25,7 +25,7 @@
 	"newsletter-create-confirmation": "ידיעון חדש [[Newsletter:$1|$1]] נרשם.",
 	"newsletter-create-mainpage-error": "הוזן דף ראשי בלתי־תקין לידיעון. נא לנסות שוב.",
 	"newsletter-mainpage-non-existent": "הדף הראשי של הידיעון אינו קיים. נא להזין דף ראשי תקין.",
-	"newsletter-mainpage-in-use": "לידיעון קיים יש אותו דף. נא להזין כותרת אחרת.",
+	"newsletter-mainpage-in-use": "לידיעון קיים יש אותו דף. נא להזין עמוד ראשי אחר.",
 	"newsletter-create-short-description-error": "התיאור קצר מדי (פחות מ־30 תווים). נא לנסות שוב.",
 	"newsletter-subtitlelinks-list": "רשימת הידיעונים",
 	"newsletter-subtitlelinks-create": "רישום ידיעון חדש",

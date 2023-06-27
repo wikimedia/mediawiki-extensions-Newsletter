@@ -30,7 +30,7 @@
 	"newsletter-create-confirmation": "已註冊一份新的電子報：[[Newsletter:$1|$1]]。",
 	"newsletter-create-mainpage-error": "所輸入的電子報首頁無效。請重試？",
 	"newsletter-mainpage-non-existent": "電子報首頁不存在。請輸入有效的存在頁面。",
-	"newsletter-mainpage-in-use": "現有電子報已有相同首頁。請輸入別的標題。",
+	"newsletter-mainpage-in-use": "現有電子報已有相同首頁。請輸入別的主頁。",
 	"newsletter-create-short-description-error": "描述太短（少於 30 個字元）。請重試。",
 	"newsletter-subtitlelinks-list": "電子報清單",
 	"newsletter-subtitlelinks-create": "註冊一個新的電子報",
@@ -99,7 +99,7 @@
 	"newsletter-unsubscribing": "取消訂閱中…",
 	"newsletter-subscribers": "電子報訂閱者",
 	"newsletter-subscribers-nopermission": "您沒有權限來編輯此電子報的訂閱者",
-	"newsletter-edit-subscribers-nochanges": "沒有對電子報的訂閱者做出更改。",
+	"newsletter-edit-subscribers-nochanges": "沒有對電子報的訂閱者清單做出更改。",
 	"newsletter-edit-subscribers-success": "電子報的訂閱者已更新。",
 	"newsletter-subscribers-invalid": "「$1」不是個有效使用者。請確認該使用者名稱存在並重試。",
 	"newsletter-available-newsletters-field-label": "可用的電子報",
@@ -160,5 +160,7 @@
 	"log-action-filter-newsletter-issue-added": "新期號公告",
 	"newsletter-diff-descheader": "描述中的變更：",
 	"newsletter-diff-mainpageheader": "首頁中的變更：",
-	"newsletter-diff-publishersheader": "發佈者的變更："
+	"newsletter-diff-publishersheader": "發佈者的變更：",
+	"newsletter-ch-apierror": "儲存頁面時發生錯誤：$1",
+	"newsletter-ch-tojsonerror": "序列化成 JSON 在儲存時發生錯誤。"
 }

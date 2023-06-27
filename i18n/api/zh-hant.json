@@ -17,7 +17,8 @@
 	"apihelp-newslettermanage-example-1": "將 ID 為 3 的使用者，添加成 ID 為 1 的電子報的發佈者。",
 	"apihelp-newslettermanage-example-2": "將 ID 為 5 的使用者，從 ID 為 2 的電子報的發佈者裡移除。",
 	"newsletter-api-error-notfound": "電子報不存在",
-	"newsletter-api-error-nopermissions": "您沒有權限管理來管理電子報。",
+	"newsletter-api-error-nopermissions": "您沒有權限管理來管理此電子報。",
+	"newsletter-api-error-nocreate": "您沒有權限管理來建立電子報。",
 	"newsletter-api-error-invalidpublisher-registered": "發佈者不是已註冊的使用者。",
 	"newsletter-api-error-subscribe-notloggedin": "您必須要先登入才能訂閱電子報。"
 }
