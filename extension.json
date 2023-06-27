@@ -128,7 +128,6 @@
 		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\Newsletter\\Hooks::onBeforeCreateEchoEvent",
 		"LoginFormValidErrorMessages": "MediaWiki\\Extension\\Newsletter\\Hooks::onLoginFormValidErrorMessages",
 		"UserMergeAccountFields": "MediaWiki\\Extension\\Newsletter\\Hooks::onUserMergeAccountFields",
-		"AlternateEdit": "MediaWiki\\Extension\\Newsletter\\Hooks::onAlternateEdit",
 		"CustomEditor": "MediaWiki\\Extension\\Newsletter\\Hooks::onCustomEditor",
 		"ArticleDelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onArticleDelete",
 		"PageUndelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onPageUndelete",
