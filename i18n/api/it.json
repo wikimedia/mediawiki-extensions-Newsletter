@@ -17,7 +17,7 @@
 	"apihelp-newslettermanage-example-1": "Aggiungi editore con ID utente 3 dalla newsletter con ID 1.",
 	"apihelp-newslettermanage-example-2": "Rimuovi editore con ID utente 5 dalla newsletter con ID 2.",
 	"newsletter-api-error-notfound": "La newsletter non esiste",
-	"newsletter-api-error-nopermissions": "Non si dispone dei permessi necessari per gestire le newsletter.",
+	"newsletter-api-error-nopermissions": "Non si dispone dei permessi necessari per gestire questa newsletter.",
 	"newsletter-api-error-invalidpublisher-registered": "L'editore non è un utente registrato.",
 	"newsletter-api-error-subscribe-notloggedin": "Devi aver effettuato l'accesso per iscriverti alle newsletters."
 }

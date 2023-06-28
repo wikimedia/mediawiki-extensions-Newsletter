@@ -26,7 +26,7 @@
 	"newsletter-create-confirmation": "Una nuova newsletter: [[Newsletter:$1|$1]] è stata registrata.",
 	"newsletter-create-mainpage-error": "È stata inserita una pagina principale della newsletter non valida. Riprova.",
 	"newsletter-mainpage-non-existent": "La pagina principale della newsletter non esiste. Inserisci una pagina esistente valida.",
-	"newsletter-mainpage-in-use": "Una newsletter esistente ha la stessa pagina principale. Inserisci un altro titolo.",
+	"newsletter-mainpage-in-use": "Una newsletter esistente ha la stessa pagina principale. Inserisci un'altra pagina principale.",
 	"newsletter-create-short-description-error": "La descrizione è troppo breve (meno di 30 caratteri). Riprova.",
 	"newsletter-subtitlelinks-list": "Elenco delle newsletter",
 	"newsletter-subtitlelinks-create": "Registra una nuova newsletter",
