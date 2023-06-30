@@ -298,8 +298,11 @@ class NewsletterContentHandler extends JsonContentHandler {
 		return $status;
 	}
 
-	protected function getDiffEngineClass() {
-		return NewsletterDiffEngine::class;
+	public function getSlotDiffRendererWithOptions( IContextSource $context, $options = [] ) {
+		return new NewsletterSlotDiffRenderer(
+			$this->createTextSlotDiffRenderer( $options ),
+			$context
+		);
 	}
 
 	/**
