@@ -23,7 +23,7 @@
 	"newsletter-create-confirmation": "Новиот билтен „[[Newsletter:$1|$1]]“ е пријавен.",
 	"newsletter-create-mainpage-error": "Внесена е неважечка слика за главната страница на билтенот. Обидете се повторно",
 	"newsletter-mainpage-non-existent": "Главната страница на билтенот не постои. Внесете важечка постоечка страница.",
-	"newsletter-mainpage-in-use": "Постоечкиот билтен ја има истата главна страница. Внесете друг наслов.",
+	"newsletter-mainpage-in-use": "Постои билтен со истата главна страница. Внесете друга главна страница.",
 	"newsletter-create-short-description-error": "Описот е прекраток. Внесете повеќе знаци (барем 30).",
 	"newsletter-subtitlelinks-list": "Список на билтени",
 	"newsletter-subtitlelinks-create": "Пријавете нов билтен",
