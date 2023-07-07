@@ -27,5 +27,6 @@
 	"right-newsletter-restore": "Враћање билтена",
 	"action-newsletter-restore": "врати билтен",
 	"log-name-newsletter": "Дневник билтена",
-	"log-action-filter-newsletter": "Врста радње:"
+	"log-action-filter-newsletter": "Врста радње:",
+	"newsletter-ch-apierror": "Грешка при чувању странице: $1"
 }
