@@ -24,7 +24,7 @@
 	"newsletter-create-confirmation": "Nytt nyhetsbrev: [[Newsletter:$1|$1]] har blitt registrert.",
 	"newsletter-create-mainpage-error": "Ugyldig hovedside for nyhetsbrev ble angitt. Prøv igjen.",
 	"newsletter-mainpage-non-existent": "Hovedsiden til nyhetsbrevet finnes ikke. Skriv inn en gyldig eksisterende side.",
-	"newsletter-mainpage-in-use": "Et eksisterende nyhetsbrev har samme hovedside. Skriv inn en annen tittel.",
+	"newsletter-mainpage-in-use": "Et eksisterende nyhetsbrev har samme hovedside. Skriv inn en annen hovedside.",
 	"newsletter-create-short-description-error": "Beskrivelsen er for kort (mindre enn 30 tegn). Prøv igjen.",
 	"newsletter-subtitlelinks-list": "Liste over nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Registrer et nytt nyhetsbrev",
@@ -154,5 +154,7 @@
 	"log-action-filter-newsletter-issue-added": "Annonsering av ny utgave",
 	"newsletter-diff-descheader": "Endringer i beskrivelsen:",
 	"newsletter-diff-mainpageheader": "Endringer i hovedsiden:",
-	"newsletter-diff-publishersheader": "Endringer i utgivere:"
+	"newsletter-diff-publishersheader": "Endringer i utgivere:",
+	"newsletter-ch-apierror": "Feil under lagring av side: $1",
+	"newsletter-ch-tojsonerror": "Feil ved serialisering til JSON under lagring."
 }
