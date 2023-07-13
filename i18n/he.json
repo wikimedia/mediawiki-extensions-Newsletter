@@ -5,7 +5,8 @@
 			"Eraab",
 			"Guycn2",
 			"Macofe",
-			"תומר ט"
+			"תומר ט",
+			"Neriah"
 		]
 	},
 	"newsletter-extension-desc": "מאפשרת למשתמשים לפרסם ידיעונים ולעשות להם מינוי",
@@ -67,7 +68,7 @@
 	"newsletter-managenewsletter-button": "שליחה",
 	"newsletter-manage-no-publishers": "האם ברצונך באמת להסיר את כל המפרסמים מהידיעון הזה?",
 	"newsletter-manage-remove-self-publisher": "האם ברצונך באמת להסיר את עצמך מהמפרסמים?",
-	"newsletter-manage-newsletter-success": "הידיעון שוּנה.",
+	"newsletter-manage-newsletter-success": "הידיעון שונה.",
 	"newsletter-manage-newsletter-nochanges": "לא נעשו שינויים לידיעון הקיים.",
 	"newsletter-manage-summary": "תקציר השינוי:",
 	"newsletter-delete": "מחיקת ידיעון",
