@@ -26,7 +26,7 @@
 	"newsletter-create-confirmation": "Naujas naujienlaiškis: [[Newsletter:$1|$1]] buvo užregistruotas.",
 	"newsletter-create-mainpage-error": "Įvestas neteisingas naujienlaiškio pagrindinis puslapis. Pabandykite dar kartą.",
 	"newsletter-mainpage-non-existent": "Pagrindinis naujienlaiškio puslapis neegzistuoja. Įveskite galimą egzistuojantį puslapį.",
-	"newsletter-mainpage-in-use": "Egzistuojantis naujienlaiškis turi tą patį pagrindinį puslapį. Įveskite kitą pavadinimą.",
+	"newsletter-mainpage-in-use": "Egzistuojantis naujienlaiškis turi tą patį pagrindinį puslapį. Įveskite kitą pagridninį puslapį.",
 	"newsletter-create-short-description-error": "Aprašymas per trumpas (mažiau nei 30 simbolių). Pabandykite dar kartą.",
 	"newsletter-subtitlelinks-list": "Naujienlaiškių sąrašas",
 	"newsletter-subtitlelinks-create": "Registruoti naują naujienlaiškį",
@@ -123,6 +123,10 @@
 	"right-newsletter-restore": "Atstatyti naujienlaiškį",
 	"action-newsletter-restore": "atstatyti naujienlaiškį",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|paskelbė}} apie naują $3 numerį.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Jūs}} buvote {{GENDER:$3|pridėtas|pridėta}} kaip „$1“ naujienlaiškio {{GENDER:$3|leidėjas|leidėja}}.",
+	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Jūs}} buvote {{GENDER:$3|pašalintas|pašalinta}} kaip „$1“ naujienlaiškio {{GENDER:$3|leidėjas|leidėja}}.",
+	"newsletter-list-intro": "Tai naujienlaiškių, užregistruotų šioje viki, sąrašas. Prenumeruokite naujienlaiškį, kad gautumėte pranešimą, kai bus paskelbtas naujas numeris. Pranešimus gausite žiniatinklyje arba el. paštu pagal savo [[Special:Preferences#mw-prefsection-echo|nustatymus]].",
+	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Prisijunkite]], kad užsiprenumeruotumėte naujienlaiškį ir gautumėte pranešimus, kai paskelbiamas naujas numeris.",
 	"newsletter-list-table": "Filtruoti pagal:",
 	"newsletter-list-option-all": "Visi naujienlaiškiai",
 	"newsletter-list-option-subscribed": "Naujienlaiškiai, kuriuos prenumeruoju",
@@ -151,5 +155,6 @@
 	"log-action-filter-newsletter-issue-added": "Pranešimai apie naują numerį",
 	"newsletter-diff-descheader": "Pakeitimai aprašyme:",
 	"newsletter-diff-mainpageheader": "Pakeitimai Pagrindiniame Puslapyje:",
-	"newsletter-diff-publishersheader": "Leidėjų pakeitimai:"
+	"newsletter-diff-publishersheader": "Leidėjų pakeitimai:",
+	"newsletter-ch-apierror": "Klaida išsaugant puslapį: $1"
 }

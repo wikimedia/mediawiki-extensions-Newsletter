@@ -1,9 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nokeoo",
 			"Zygimantus"
 		]
 	},
+	"apihelp-newslettersubscribe-summary": "Užsisakyti ar atsisakyti naujienlaiškio.",
+	"apihelp-newslettersubscribe-param-id": "Naujienlaiškio, kurio prenumerata keistina, ID.",
+	"apihelp-newslettersubscribe-param-do": "Veiksmas, kurį reikia atlikti. Turėtų būti arba <kbd>subscribe</kbd>, arba <kbd>unsubscribe</kbd>.",
 	"apihelp-newslettersubscribe-example-1": "Užsiprenumeruokite naujienlaiškį su id 1.",
-	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2."
+	"apihelp-newslettersubscribe-example-2": "Atsisakyti naujienlaiškio su id 2.",
+	"apihelp-newslettermanage-summary": "Tvarkyti naujienlaiškį.",
+	"apihelp-newslettermanage-param-id": "Tvarkytino naujienlaiškio ID.",
+	"apihelp-newslettermanage-param-do": "Veiksmas, kurį reikia atlikti. Turėtų būti arba <kbd>addpublisher</kbd>, arba <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "Tvarkytino leidėjo ID.",
+	"apihelp-newslettermanage-example-1": "Pridėti leidėją su naudotojo ID 3 prie naujienlaiškio su ID 1.",
+	"apihelp-newslettermanage-example-2": "Pašalinti leidėją su naudotojo ID 5 iš naujienlaiškio su ID 2.",
+	"newsletter-api-error-notfound": "Naujienlaiškis neegzistuoja",
+	"newsletter-api-error-nopermissions": "Neturite leidimo tvarkyti šio naujienlaiškio.",
+	"newsletter-api-error-nocreate": "Neturite leidimo kurti naujienlaiškių.",
+	"newsletter-api-error-invalidpublisher-registered": "Leidėjas nėra registruotas naudotojas.",
+	"newsletter-api-error-subscribe-notloggedin": "Norėdami užsiprenumeruoti naujienlaiškius, turite būti prisijungę."
 }
