@@ -168,5 +168,6 @@
 	"newsletter-diff-mainpageheader": "Header for the diff of Main Page between two revisions",
 	"newsletter-diff-publishersheader": "Header for the diff of publishers between two revisions",
 	"newsletter-ch-apierror": "Error shown when there was an error saving page. $1 contains an error code",
-	"newsletter-ch-tojsonerror": "An error saving the page (possibly invalid syntax)"
+	"newsletter-ch-tojsonerror": "An error saving the page (possibly invalid syntax)",
+	"newsletter-orphan-revisions": "Error message displayed in undeletion page."
 }
