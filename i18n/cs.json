@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bedami",
 			"Cvanca",
 			"Mormegil"
 		]
@@ -27,5 +28,6 @@
 	"newsletter-list-table": "Filtr tabulky:",
 	"newsletter-list-option-all": "Všechny zpravodaje",
 	"newsletter-list-option-subscribed": "Zpravodaje, jež odebírám",
-	"newsletter-list-option-unsubscribed": "Zpravodaje, jež neodebírám"
+	"newsletter-list-option-unsubscribed": "Zpravodaje, jež neodebírám",
+	"newsletter-orphan-revisions": "Nelze obnovit revize, které neodpovídají skutečnému smazanému zpravodaji."
 }

@@ -158,5 +158,6 @@
 	"newsletter-diff-mainpageheader": "שינויים בדף הראשי:",
 	"newsletter-diff-publishersheader": "שינויים במפרסמים:",
 	"newsletter-ch-apierror": "שגיאה בשמירת הדף: $1",
-	"newsletter-ch-tojsonerror": "שגיאה בהסדרה ל־JSON במהלך השמירה."
+	"newsletter-ch-tojsonerror": "שגיאה בהסדרה ל־JSON במהלך השמירה.",
+	"newsletter-orphan-revisions": "לא ניתן לבטל מחיקה של גרסאות שאינן תואמות לידיעון אמיתי מחוק."
 }

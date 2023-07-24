@@ -153,5 +153,6 @@
 	"newsletter-diff-mainpageheader": "Cambiamentos in le pagina principal:",
 	"newsletter-diff-publishersheader": "Cambiamentos in le editores:",
 	"newsletter-ch-apierror": "Error salveguardante pagina: $1",
-	"newsletter-ch-tojsonerror": "Error serialisante a JSON durante salveguarda."
+	"newsletter-ch-tojsonerror": "Error serialisante a JSON durante salveguarda.",
+	"newsletter-orphan-revisions": "Non pote restaurar versiones que non corresponde a un actual bulletin de novas delite."
 }

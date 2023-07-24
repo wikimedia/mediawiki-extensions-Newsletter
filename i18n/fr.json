@@ -166,5 +166,6 @@
 	"newsletter-diff-mainpageheader": "Changements dans la page principale :",
 	"newsletter-diff-publishersheader": "Changements dans les éditeurs :",
 	"newsletter-ch-apierror": "Erreur à l’enregistrement de la page : $1",
-	"newsletter-ch-tojsonerror": "Erreur de sérialisation du JSON lors de l’enregistrement."
+	"newsletter-ch-tojsonerror": "Erreur de sérialisation du JSON lors de l’enregistrement.",
+	"newsletter-orphan-revisions": "Impossible d’annuler les révisions qui ne correspondent pas à un bulletin d’informations effectivement supprimé."
 }

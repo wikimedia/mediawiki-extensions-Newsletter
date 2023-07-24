@@ -156,5 +156,6 @@
 	"newsletter-diff-mainpageheader": "Spremembe glavne strani:",
 	"newsletter-diff-publishersheader": "Spremembe izdajateljev:",
 	"newsletter-ch-apierror": "Napaka pri shranjevanju strani: $1",
-	"newsletter-ch-tojsonerror": "Napaka serializiranja v JSON pri shranjevanju."
+	"newsletter-ch-tojsonerror": "Napaka serializiranja v JSON pri shranjevanju.",
+	"newsletter-orphan-revisions": "Ni mogoče odizbrisati redakcij, ki ne ustrezajo dejanskemu izbrisanemu novičniku."
 }
