@@ -155,5 +155,6 @@
 	"newsletter-diff-mainpageheader": "Промени во Главната страница:",
 	"newsletter-diff-publishersheader": "Промени во издавачите:",
 	"newsletter-ch-apierror": "Грешка при зачувувањето на страницата: $1",
-	"newsletter-ch-tojsonerror": "Грешка во серилизацијата на JSON при зачувувањето."
+	"newsletter-ch-tojsonerror": "Грешка во серилизацијата на JSON при зачувувањето.",
+	"newsletter-orphan-revisions": "Не можам да вратам избришани преработки кои не одговараат на фактички избришан билтен."
 }
