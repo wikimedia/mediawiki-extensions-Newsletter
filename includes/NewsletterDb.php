@@ -37,7 +37,7 @@ class NewsletterDb {
 				'nls_subscriber_id' => $userId
 			];
 		}
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		// Tolerate (silently ignore) if it was already there
@@ -67,7 +67,7 @@ class NewsletterDb {
 			'nls_subscriber_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
@@ -102,7 +102,7 @@ class NewsletterDb {
 			];
 		}
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		// Let the user action appear success even if the row is already there.
 		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
@@ -122,7 +122,7 @@ class NewsletterDb {
 			'nlp_publisher_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
 
@@ -146,7 +146,7 @@ class NewsletterDb {
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
 			return $dbw->insertId();
@@ -172,7 +172,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
@@ -195,7 +195,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
@@ -218,7 +218,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
 			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
 		} catch ( DBQueryError $ex ) {
@@ -232,7 +232,7 @@ class NewsletterDb {
 	 * @param Newsletter $newsletter
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ): void {
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 0 ],
@@ -247,7 +247,7 @@ class NewsletterDb {
 	 * @param string $newsletterName
 	 */
 	public function restoreNewsletter( string $newsletterName ): void {
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->update(
 			'nl_newsletters',
 			[ 'nl_active' => 1 ],
@@ -261,7 +261,7 @@ class NewsletterDb {
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public function getNewsletter( int $id ) {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
@@ -284,7 +284,7 @@ class NewsletterDb {
 	 * @return Newsletter|null
 	 */
 	public function getNewsletterFromName( string $name, bool $active = true ) {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$res = $dbr->selectRow(
 			'nl_newsletters',
 			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
@@ -300,7 +300,7 @@ class NewsletterDb {
 	 * @return int[]
 	 */
 	public function getPublishersFromID( int $id ): array {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_publishers',
 			'nlp_publisher_id',
@@ -316,7 +316,7 @@ class NewsletterDb {
 	 * @return int
 	 */
 	public function getNewsletterSubscribersCount( int $id ): int {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$result = $dbr->selectField(
 			'nl_newsletters',
 			'nl_subscriber_count',
@@ -334,7 +334,7 @@ class NewsletterDb {
 	 * @return int[]
 	 */
 	public function getSubscribersFromID( int $id ): array {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		$result = $dbr->selectFieldValues(
 			'nl_subscriptions',
 			'nls_subscriber_id',
@@ -352,7 +352,7 @@ class NewsletterDb {
 	 * @return IResultWrapper
 	 */
 	public function newsletterExistsForMainPage( int $mainPageId ) {
-		$dbr = $this->lb->getConnectionRef( DB_REPLICA );
+		$dbr = $this->lb->getConnection( DB_REPLICA );
 		return $dbr->select(
 			'nl_newsletters',
 			[ 'nl_main_page_id', 'nl_active' ],
@@ -382,7 +382,7 @@ class NewsletterDb {
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
-		$dbw = $this->lb->getConnectionRef( DB_PRIMARY );
+		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
