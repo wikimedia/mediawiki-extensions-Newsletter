@@ -32,9 +32,6 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mock->expects( $this->any() )
 			->method( 'getConnection' )
 			->willReturn( $db );
-		$mock->expects( $this->any() )
-			->method( 'getConnectionRef' )
-			->willReturn( $db );
 		return $mock;
 	}
 
