@@ -10,6 +10,7 @@
 			"Сербијана"
 		]
 	},
+	"newsletter-desc": "Опис",
 	"newsletter-subtitlelinks-unsubscribe": "одјави се",
 	"newsletter-subtitlelinks-subscribe": "пријави се",
 	"newsletter-subtitlelinks-announce": "огласи",
@@ -19,6 +20,8 @@
 	"newsletter-view-description": "Опис:",
 	"newsletter-announce-button": "Огласи",
 	"newsletter-announce-submit": "Огласи",
+	"newsletter-subscribe-button-label": "Да",
+	"newsletter-unsubscribe-button-label": "Не",
 	"echo-category-title-newsletter": "Билтени",
 	"right-newsletter-delete": "Брисање билтенâ",
 	"action-newsletter-delete": "избриши билтене",
