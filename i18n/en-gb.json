@@ -1,0 +1,8 @@
+{
+	"@metadata": {
+		"authors": [
+			"Reedy"
+		]
+	},
+	"newsletter-ch-tojsonerror": "Error serialising to JSON during save."
+}
