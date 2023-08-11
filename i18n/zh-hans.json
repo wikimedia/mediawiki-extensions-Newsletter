@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"CrownedWharf566",
 			"Lakejason0",
 			"Liang860908",
 			"Liuxinyu970226",
@@ -26,7 +27,7 @@
 	"newsletter-create-confirmation": "一份新的新闻报：[[Newsletter:$1|$1]]已被注册。",
 	"newsletter-create-mainpage-error": "输入了无效的新闻报首页。请重试。",
 	"newsletter-mainpage-non-existent": "新闻报首页不存在。请输入一个有效的现有页面。",
-	"newsletter-mainpage-in-use": "现有新闻报有相同的首页。请输入另一个标题。",
+	"newsletter-mainpage-in-use": "现有新闻报有相同的首页。请输入另一个首页。",
 	"newsletter-create-short-description-error": "描述太短（少于30个字符）。请重试。",
 	"newsletter-subtitlelinks-list": "新闻报列表",
 	"newsletter-subtitlelinks-create": "注册一份新的新闻报",
