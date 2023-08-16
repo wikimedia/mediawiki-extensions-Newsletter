@@ -156,5 +156,6 @@
 	"newsletter-diff-mainpageheader": "Endringer i hovedsiden:",
 	"newsletter-diff-publishersheader": "Endringer i utgivere:",
 	"newsletter-ch-apierror": "Feil under lagring av side: $1",
-	"newsletter-ch-tojsonerror": "Feil ved serialisering til JSON under lagring."
+	"newsletter-ch-tojsonerror": "Feil ved serialisering til JSON under lagring.",
+	"newsletter-orphan-revisions": "Kan ikke gjenopprette sideversjoner som ikke tilsvarer det slettede nyhetsbrevet."
 }
