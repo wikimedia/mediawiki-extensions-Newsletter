@@ -6,10 +6,10 @@ use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
+use MediaWiki\Title\Title;
 use SpecialPage;
 use Status;
 use ThrottledError;
-use Title;
 
 /**
  * Special page for creating newsletters

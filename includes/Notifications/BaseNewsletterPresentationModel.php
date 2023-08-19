@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
 
 use EchoEventPresentationModel;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Title\Title;
 use RuntimeException;
-use Title;
 
 abstract class BaseNewsletterPresentationModel extends EchoEventPresentationModel {
 

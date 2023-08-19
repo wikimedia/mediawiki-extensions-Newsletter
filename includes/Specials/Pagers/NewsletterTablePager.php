@@ -7,9 +7,9 @@ use IContextSource;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletter;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use SpecialPage;
 use TablePager;
-use Title;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
