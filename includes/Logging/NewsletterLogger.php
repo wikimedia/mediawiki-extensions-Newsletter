@@ -4,9 +4,9 @@ namespace MediaWiki\Extension\Newsletter\Logging;
 
 use ManualLogEntry;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Title\Title;
 use RequestContext;
 use SpecialPage;
-use Title;
 use User;
 
 /**

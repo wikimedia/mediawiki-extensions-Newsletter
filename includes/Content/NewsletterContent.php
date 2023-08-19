@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\Newsletter\Content;
 
 use JsonContent;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 
 /**

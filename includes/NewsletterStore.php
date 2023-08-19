@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\Newsletter;
 
 use MediaWiki\Extension\Newsletter\Logging\NewsletterLogger;
 use MediaWiki\MediaWikiServices;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 use Wikimedia\Rdbms\IResultWrapper;
 

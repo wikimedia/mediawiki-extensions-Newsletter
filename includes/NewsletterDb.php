@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\Newsletter;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use stdClass;
-use Title;
 use User;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\ILoadBalancer;

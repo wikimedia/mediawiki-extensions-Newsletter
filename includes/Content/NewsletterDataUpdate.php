@@ -7,7 +7,7 @@ use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\Logger\LoggerFactory;
-use Title;
+use MediaWiki\Title\Title;
 use User;
 
 /**

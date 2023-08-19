@@ -16,6 +16,7 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Title\Title;
 use PermissionsError;
 use ReadOnlyError;
 use RuntimeException;
@@ -23,7 +24,6 @@ use SkinTemplate;
 use Status;
 use StatusValue;
 use ThrottledError;
-use Title;
 use User;
 use WikiPage;
 

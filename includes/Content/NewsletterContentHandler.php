@@ -20,6 +20,7 @@ use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Revision\SlotRenderingProvider;
+use MediaWiki\Title\Title;
 use MWContentSerializationException;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonWidget;
@@ -29,7 +30,6 @@ use ParserOutput;
 use RequestContext;
 use SpecialPage;
 use Status;
-use Title;
 use UserArray;
 use UserArrayFromResult;
 

@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\Newsletter\Logging;
 
 use LogFormatter;
+use MediaWiki\Title\Title;
 use Message;
 use SpecialPage;
-use Title;
 use User;
 
 /**
