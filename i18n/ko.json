@@ -99,6 +99,8 @@
 	"action-newsletter-delete": "뉴스레터 삭제",
 	"right-newsletter-manage": "뉴스레터의 게시자나 구독자를 추가하거나 제거합니다",
 	"action-newsletter-manage": "뉴스레터 관리",
+	"right-newsletter-restore": "뉴스레터 복구",
+	"action-newsletter-restore": "뉴스레터를 복구할",
 	"notification-header-newsletter-announce": "$1 님이 \"$3\"의 새 제호를 {{GENDER:$2|발행했습니다.}}",
 	"newsletter-list-intro": "이 위키에 등록된 뉴스레터의 목록입니다. 새로운 이슈가 공지될 때 알림을 받으려면 뉴스레터를 구독하십시오. [[Special:Preferences#mw-prefsection-echo|환경 설정]]에 의거하여 웹이나 이메일을 통해 알림을 받게 됩니다.",
 	"newsletter-list-table": "필터 기준:",
