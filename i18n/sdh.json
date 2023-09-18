@@ -1,8 +1,16 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kurdbuddha"
+			"Kurdbuddha",
+			"TerranBoy"
 		]
 	},
-	"newsletter-subscribe-button-label": "بەڵێ"
+	"newsletter-desc": "وەسف",
+	"newsletter-subscribe-button-label": "بەڵێ",
+	"newsletter-unsubscribe-button-label": "نە",
+	"newsletter-header-name": "ناو",
+	"newsletter-header-description": "وەسف",
+	"newsletter-header-subscriber_count": "بەشداربۊەگان",
+	"newsletter-list-go-button": "بچوو",
+	"log-action-filter-newsletter": "جوور کردار:"
 }
