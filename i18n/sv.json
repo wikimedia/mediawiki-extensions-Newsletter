@@ -24,7 +24,7 @@
 	"newsletter-create-confirmation": "Ett nytt nyhetsbrev: [[Newsletter:$1|$1]] har registrerats.",
 	"newsletter-create-mainpage-error": "Ogiltigt huvudsida för nyhetsbrev har angivits. Försök igen.",
 	"newsletter-mainpage-non-existent": "Nyhetsbrevets huvudsida finns inte. Ange en giltig befintlig sida.",
-	"newsletter-mainpage-in-use": "Ett befintligt nyhetsbrev har samma huvudsida. Ange en annan titel.",
+	"newsletter-mainpage-in-use": "Ett befintligt nyhetsbrev har samma huvudsida. Ange en annan huvudsida.",
 	"newsletter-create-short-description-error": "Beskrivningen är för kort (mindre än tecken). Försök igen.",
 	"newsletter-subtitlelinks-list": "Lista över nyhetsbrev",
 	"newsletter-subtitlelinks-create": "Registrera ett nytt nyhetsbrev",
@@ -154,5 +154,8 @@
 	"log-action-filter-newsletter-issue-added": "Tillkännagivande av ny utgåva",
 	"newsletter-diff-descheader": "Ändringar i beskrivningen:",
 	"newsletter-diff-mainpageheader": "Ändringar i huvudsidan:",
-	"newsletter-diff-publishersheader": "Ändringar i utgivare:"
+	"newsletter-diff-publishersheader": "Ändringar i utgivare:",
+	"newsletter-ch-apierror": "Fel när sidan skulle sparas: $1",
+	"newsletter-ch-tojsonerror": "Fel vid serialisering till JSON under sparning.",
+	"newsletter-orphan-revisions": "Kan inte återställa versioner som inte motsvarar ett faktiskt raderat nyhetsbrev."
 }

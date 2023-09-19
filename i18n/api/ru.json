@@ -2,12 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Nk88"
+			"Nk88",
+			"Okras"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "Подписаться или отписаться от рассылки.",
 	"newsletter-api-error-notfound": "Такой рассылки не существует",
-	"newsletter-api-error-nopermissions": "У вас нет прав для управления рассылками.",
+	"newsletter-api-error-nopermissions": "У вас нет прав для управления этой рассылкой.",
 	"newsletter-api-error-invalidpublisher-registered": "Публикатор не является зарегистрированным участником.",
 	"newsletter-api-error-subscribe-notloggedin": "Вы должны войти, чтобы подписаться на рассылку."
 }

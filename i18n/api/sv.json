@@ -17,7 +17,8 @@
 	"apihelp-newslettermanage-example-1": "Lägg till en utgivare med ett användar-ID på 3 i nyhetsbrevet med ID 1.",
 	"apihelp-newslettermanage-example-2": "Ta bort utgivare med ett användar-ID på 5 från nyhetsbrevet med ID 2.",
 	"newsletter-api-error-notfound": "Nyhetsbrevet finns inte",
-	"newsletter-api-error-nopermissions": "Du har inte behörighet att hantera nyhetsbrev.",
+	"newsletter-api-error-nopermissions": "Du har inte behörighet att hantera detta nyhetsbrev.",
+	"newsletter-api-error-nocreate": "Du har inte behörighet att skapa nyhetsbrev.",
 	"newsletter-api-error-invalidpublisher-registered": "Utgivaren är inte en registrerad användare.",
 	"newsletter-api-error-subscribe-notloggedin": "Du måste vara inloggad för att prenumerera till nyhetsbrev."
 }
