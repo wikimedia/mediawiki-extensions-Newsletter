@@ -404,7 +404,7 @@ class NewsletterEditPage {
 		}
 
 		/** @var User[] $newPublishers */
-		$newPublishers = array_map( 'User::newFromName', $publisherNames );
+		$newPublishers = array_map( [ User::class, 'newFromName' ], $publisherNames );
 		$newPublishersIds = self::getIdsFromUsers( $newPublishers );
 
 		// Confirm whether the current user (if already a publisher)

@@ -125,7 +125,7 @@ class NewsletterDataUpdate extends DataUpdate {
 			$store->updateMainPage( $newsletterId, $updatedMainPageId );
 		}
 
-		$updatedPublishers = array_map( 'User::newFromName', $this->content->getPublishers() );
+		$updatedPublishers = array_map( [ User::class, 'newFromName' ], $this->content->getPublishers() );
 		$oldPublishersIds = $newsletter->getPublishers();
 		$updatedPublishersIds = [];
 
