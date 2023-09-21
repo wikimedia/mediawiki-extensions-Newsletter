@@ -4,17 +4,20 @@ use MediaWiki\Extension\Newsletter\Content\NewsletterContent;
 
 /**
  * @covers \MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler
+ * @group Database
  */
 class NewsletterContentHandlerTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetParserOutput() {
 		$expectedText = 'Foo';
 		$newsletterTitle = "Newsletter:Test";
+		$mainpage = $this->getExistingTestPage()->getTitle()->getPrefixedText();
+		$publisher = $this->getTestSysop()->getUser()->getName();
 		$text = '{
 			"description": "' . $expectedText . '",
-			"mainpage": "UTPage",
+			"mainpage": "' . $mainpage . '",
 			"publishers": [
-				"UTSysop"
+				"' . $publisher . '"
 			]
 		}';
 		$title = Title::newFromText( $newsletterTitle );
