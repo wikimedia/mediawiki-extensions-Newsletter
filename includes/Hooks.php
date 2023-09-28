@@ -1,11 +1,14 @@
 <?php
+
+// phpcs:disable MediaWiki.NamingConventions.LowerCamelFunctionsName.FunctionName
+
 namespace MediaWiki\Extension\Newsletter;
 
 use Article;
 use Content;
-use DatabaseUpdater;
 use EchoUserLocator;
 use IContextSource;
+use MediaWiki\Content\Hook\ContentModelCanBeUsedOnHook;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContent;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherAddedPresentationModel;
@@ -13,9 +16,17 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherRemovedP
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterSubscribedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUnsubscribedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
+use MediaWiki\Hook\CustomEditorHook;
+use MediaWiki\Hook\EditFilterMergedContentHook;
+use MediaWiki\Hook\LoginFormValidErrorMessagesHook;
+use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
+use MediaWiki\Hook\TitleMoveHook;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Page\Hook\ArticleDeleteHook;
+use MediaWiki\Page\Hook\PageUndeleteHook;
 use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\Title\Title;
 use PermissionsError;
 use ReadOnlyError;
@@ -30,7 +41,17 @@ use WikiPage;
 /**
  * Class to add Hooks used by Newsletter.
  */
-class Hooks {
+class Hooks implements
+	LoginFormValidErrorMessagesHook,
+	CustomEditorHook,
+	ArticleDeleteHook,
+	PageUndeleteHook,
+	TitleMoveHook,
+	ContentModelCanBeUsedOnHook,
+	EditFilterMergedContentHook,
+	SkinTemplateNavigation__UniversalHook,
+	GetUserPermissionsErrorsHook
+{
 
 	/**
 	 * Function to be called before EchoEvent
@@ -134,19 +155,9 @@ class Hooks {
 	 *
 	 * @param array &$messages
 	 */
-	public static function onLoginFormValidErrorMessages( &$messages ) {
+	public function onLoginFormValidErrorMessages( array &$messages ) {
 		// on Special:Newsletter/id/subscribe
 		$messages[] = 'newsletter-subscribe-loginrequired';
-	}
-
-	/**
-	 * Add tables to Database
-	 *
-	 * @param DatabaseUpdater $updater
-	 */
-	public static function onLoadExtensionSchemaUpdates( DatabaseUpdater $updater ) {
-		$type = $updater->getDB()->getType();
-		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/../sql/' . $type . '/tables-generated.sql' );
 	}
 
 	/**
@@ -165,7 +176,7 @@ class Hooks {
 	 * @return bool
 	 * @throws ReadOnlyError
 	 */
-	public static function onCustomEditor( Article $article, User $user ) {
+	public function onCustomEditor( $article, $user ) {
 		if ( !$article->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}
@@ -183,17 +194,17 @@ class Hooks {
 	}
 
 	/**
-	 * @param WikiPage &$wikiPage
-	 * @param User &$user
+	 * @param WikiPage $wikiPage
+	 * @param User $user
 	 * @param string &$reason
 	 * @param string &$error
 	 * @param Status &$status
 	 * @param bool $suppress
 	 * @throws PermissionsError
 	 */
-	public static function onArticleDelete(
-		&$wikiPage,
-		&$user,
+	public function onArticleDelete(
+		WikiPage $wikiPage,
+		User $user,
 		&$reason,
 		&$error,
 		Status &$status,
@@ -221,7 +232,7 @@ class Hooks {
 	 * @param StatusValue $status
 	 * @return bool|void
 	 */
-	public static function onPageUndelete(
+	public function onPageUndelete(
 		ProperPageIdentity $page,
 		Authority $performer,
 		string $reason,
@@ -264,14 +275,14 @@ class Hooks {
 	 * @param Title $newtitle
 	 * @param User $user
 	 * @param string $reason
-	 * @param Status $status
+	 * @param Status &$status
 	 */
-	public static function onTitleMove(
+	public function onTitleMove(
 		Title $title,
 		Title $newtitle,
 		User $user,
 		$reason,
-		Status $status
+		Status &$status
 	) {
 		if ( $newtitle->inNamespace( NS_NEWSLETTER ) ) {
 			$newsletter = Newsletter::newFromName( $title->getText() );
@@ -291,7 +302,7 @@ class Hooks {
 	 * @param Title $title the Title in question.
 	 * @param bool &$ok Output parameter, whether it is OK to use $contentModel on $title.
 	 */
-	public static function onContentModelCanBeUsedOn( $contentModel, Title $title, &$ok ) {
+	public function onContentModelCanBeUsedOn( $contentModel, $title, &$ok ) {
 		if ( $title->inNamespace( NS_NEWSLETTER ) && $contentModel != 'NewsletterContent' ) {
 			$ok = false;
 		} elseif ( !$title->inNamespace( NS_NEWSLETTER ) && $contentModel == 'NewsletterContent' ) {
@@ -309,7 +320,7 @@ class Hooks {
 	 * @return bool
 	 * @throws ThrottledError
 	 */
-	public static function onEditFilterMergedContent(
+	public function onEditFilterMergedContent(
 		IContextSource $context,
 		Content $content,
 		Status $status,
@@ -367,7 +378,7 @@ class Hooks {
 	 * @param SkinTemplate $skinTemplate The skin template on which the UI is built.
 	 * @param array &$links Navigation links.
 	 */
-	public static function onSkinTemplateNavigationUniversal( SkinTemplate $skinTemplate, array &$links ) {
+	public function onSkinTemplateNavigation__Universal( $skinTemplate, &$links ): void {
 		if ( $skinTemplate->getTitle()->inNamespace( NS_NEWSLETTER ) ) {
 			unset( $links['views']['viewsource'] );
 		}
@@ -377,10 +388,10 @@ class Hooks {
 	 * @param Title $title The title that permissions are being checked for
 	 * @param User $user The User object representing the user who is attempting to perform the action
 	 * @param string $action The action attempting to be performed
-	 * @param bool &$result Output parameter, set to a string to signify that the action isn't allowed
+	 * @param string &$result Output parameter, set to a string to signify that the action isn't allowed
 	 * @return bool
 	 */
-	public static function onGetUserPermissionsErrors( Title $title, User $user, $action, &$result ) {
+	public function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
 		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
 			return true;
 		}

@@ -124,18 +124,26 @@
 		"remoteExtPath": "Newsletter/modules"
 	},
 	"Hooks": {
-		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\Newsletter\\Hooks::onLoadExtensionSchemaUpdates",
+		"LoadExtensionSchemaUpdates": "schema",
 		"BeforeCreateEchoEvent": "MediaWiki\\Extension\\Newsletter\\Hooks::onBeforeCreateEchoEvent",
-		"LoginFormValidErrorMessages": "MediaWiki\\Extension\\Newsletter\\Hooks::onLoginFormValidErrorMessages",
+		"LoginFormValidErrorMessages": "main",
 		"UserMergeAccountFields": "MediaWiki\\Extension\\Newsletter\\Hooks::onUserMergeAccountFields",
-		"CustomEditor": "MediaWiki\\Extension\\Newsletter\\Hooks::onCustomEditor",
-		"ArticleDelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onArticleDelete",
-		"PageUndelete": "MediaWiki\\Extension\\Newsletter\\Hooks::onPageUndelete",
-		"TitleMove": "MediaWiki\\Extension\\Newsletter\\Hooks::onTitleMove",
-		"ContentModelCanBeUsedOn": "MediaWiki\\Extension\\Newsletter\\Hooks::onContentModelCanBeUsedOn",
-		"EditFilterMergedContent": "MediaWiki\\Extension\\Newsletter\\Hooks::onEditFilterMergedContent",
-		"SkinTemplateNavigation::Universal": "MediaWiki\\Extension\\Newsletter\\Hooks::onSkinTemplateNavigationUniversal",
-		"getUserPermissionsErrors": "MediaWiki\\Extension\\Newsletter\\Hooks::onGetUserPermissionsErrors"
+		"CustomEditor": "main",
+		"ArticleDelete": "main",
+		"PageUndelete": "main",
+		"TitleMove": "main",
+		"ContentModelCanBeUsedOn": "main",
+		"EditFilterMergedContent": "main",
+		"SkinTemplateNavigation::Universal": "main",
+		"getUserPermissionsErrors": "main"
+	},
+	"HookHandlers": {
+		"main": {
+			"class": "MediaWiki\\Extension\\Newsletter\\Hooks"
+		},
+		"schema": {
+			"class": "MediaWiki\\Extension\\Newsletter\\SchemaHooks"
+		}
 	},
 	"namespaces": [
 		{
