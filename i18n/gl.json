@@ -5,7 +5,8 @@
 			"Banjo",
 			"Elisardojm",
 			"Loischantada",
-			"Macofe"
+			"Macofe",
+			"Toliño"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
@@ -15,6 +16,7 @@
 	"newsletter-exist-error": "Xa existe un boletín de novas co nome \"$1\". Por favor, inténteo de novo con outro nome",
 	"newsletter-create-error": "Ocurreu un erro ó intentar crear un boletín novo. Por favor, inténteo de novo.",
 	"newsletter-oldrev-undo-error-title": "Sentímolo, esta operación non está permitida.",
+	"newsletter-oldrev-undo-error-body": "A extensión de boletíns non admite desfacer unha revisión anterior. No canto diso, desfaga a última revisión.",
 	"newsletter-input-required": "Non se proporcionou a entrada requirida. Por favor, inténteo de novo.",
 	"newsletter-invalid-name": "O nome proporcionado para o boletín non é válido. Por favor, inténteo de novo.",
 	"newslettercreate": "Crear boletín de novas",
@@ -24,7 +26,7 @@
 	"newsletter-create-confirmation": "Creouse un novo boletínː [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "Non é válida a páxina principal do boletín. Probe de novo.",
 	"newsletter-mainpage-non-existent": "Non existe a páxina principal do boletín. Por favor, indique unha páxina existente válida.",
-	"newsletter-mainpage-in-use": "Un boletín existente ten a mesma páxina principal. Por favor, indique outro título.",
+	"newsletter-mainpage-in-use": "Xa existe un boletín coa mesma páxina principal. Por favor, indique outra páxina principal.",
 	"newsletter-create-short-description-error": "A descrición é demasiado curta (menos de 30 caracteres). Por favor, inténteo de novo.",
 	"newsletter-subtitlelinks-list": "Lista de boletíns de novas",
 	"newsletter-subtitlelinks-create": "Crear un novo boletín de novas",
@@ -93,7 +95,7 @@
 	"newsletter-unsubscribing": "Cancelando a subscrición...",
 	"newsletter-subscribers": "Subscritores do boletín",
 	"newsletter-subscribers-nopermission": "Non ten permiso para editar os subscritores deste boletín",
-	"newsletter-edit-subscribers-nochanges": "Non se realizaron cambios ós subscritores do boletín.",
+	"newsletter-edit-subscribers-nochanges": "Non se realizaron cambios na lista de subscritores do boletín.",
 	"newsletter-edit-subscribers-success": "Actualizáronse os subscritores do boletín.",
 	"newsletter-subscribers-invalid": "\"$1\" non é un usuario válido. Por favor, asegúrese de que o nome de usuario existe e inténteo de novo.",
 	"newsletter-available-newsletters-field-label": "Boletíns de novas dispoñibles",
@@ -124,6 +126,7 @@
 	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$3|Engadírono|Engadírona}} como {{GENDER:$2|editor|editora}} do boletín \"$1\".",
 	"notification-header-newsletter-delpublisher": "Foi {{GENDER:$2|eliminado como editor|eliminada como editora}}{{GENDER:$3|}} do boletín informativo \"$1\".",
+	"newsletter-list-intro": "Esta é unha lista dos boletíns rexistrados neste wiki. Subscríbase a un boletín para recibir unha notificación cando se anuncie un novo número. Recibirá notificacións na web ou no correo electrónico, segundo as súas [[Special:Preferences#mw-prefsection-echo|preferencias]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Conéctese]] para subscribirse a un boletín e recibir avisos cando se anuncie un novo número.",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-list-option-all": "Todos os boletíns",
@@ -152,6 +155,9 @@
 	"log-action-filter-newsletter-newsletter-removed": "Borrado de boletín",
 	"log-action-filter-newsletter-issue-added": "Anuncios dun novo número",
 	"newsletter-diff-descheader": "Cambios na descrición:",
-	"newsletter-diff-mainpageheader": "Cambios na Páxina Principal:",
-	"newsletter-diff-publishersheader": "Cambios nos editores:"
+	"newsletter-diff-mainpageheader": "Cambios na páxina principal:",
+	"newsletter-diff-publishersheader": "Cambios nos editores:",
+	"newsletter-ch-apierror": "Erro ao gardar a páxina: $1",
+	"newsletter-ch-tojsonerror": "Produciuse un erro ao serializar a JSON durante o gardado.",
+	"newsletter-orphan-revisions": "Non se poden recuperar as revisións que non corresponden a un boletín real que foi eliminado."
 }
