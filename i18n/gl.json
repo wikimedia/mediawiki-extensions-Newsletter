@@ -5,7 +5,8 @@
 			"Elisardojm",
 			"Loischantada",
 			"Macofe",
-			"ArenaL5"
+			"ArenaL5",
+			"Toliño"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
@@ -15,6 +16,7 @@
 	"newsletter-exist-error": "Xa existe un boletín de novas co nome \"$1\". Por favor, inténteo de novo con outro nome",
 	"newsletter-create-error": "Ocurreu un erro ó intentar crear un boletín novo. Por favor, inténteo de novo.",
 	"newsletter-oldrev-undo-error-title": "Sentímolo, esta operación non está permitida.",
+	"newsletter-oldrev-undo-error-body": "A extensión de boletíns non admite desfacer unha revisión anterior. No canto diso, desfaga a última revisión.",
 	"newsletter-input-required": "Non se proporcionou a entrada requirida. Por favor, inténteo de novo.",
 	"newsletter-invalid-name": "O nome proporcionado para o boletín non é válido. Por favor, inténteo de novo.",
 	"newslettercreate": "Crear boletín de novas",
@@ -126,6 +128,7 @@
 	"notification-header-newsletter-announce": "$1 {{XÉNERO:$2|anunciou}} un novo número de $3.",
 	"notification-header-newsletter-newpublisher": "{{GENDER:$3|Engadírono|Engadírona}} como {{GENDER:$2|editor|editora}} do boletín \"$1\".",
 	"notification-header-newsletter-delpublisher": "Foi {{GENDER:$2|eliminado como editor|eliminada como editora}}{{GENDER:$3|}} do boletín informativo \"$1\".",
+	"newsletter-list-intro": "Esta é unha lista dos boletíns rexistrados neste wiki. Subscríbase a un boletín para recibir unha notificación cando se anuncie un novo número. Recibirá notificacións na web ou no correo electrónico, segundo as súas [[Special:Preferences#mw-prefsection-echo|preferencias]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Conéctese]] para subscribirse a un boletín e recibir avisos cando se anuncie un novo número.",
 	"newsletter-list-table": "Filtrar por:",
 	"newsletter-list-option-all": "Todos os boletíns",
@@ -156,6 +159,6 @@
 	"newsletter-restore-failure": "O boletín \"$1\" non se puido restaurar. Inténteo de novo.",
 	"newsletter-restore-failure-title": "O boletín non puido restaurarse.",
 	"newsletter-diff-descheader": "Cambios na descrición:",
-	"newsletter-diff-mainpageheader": "Cambios na Páxina Principal:",
+	"newsletter-diff-mainpageheader": "Cambios na páxina principal:",
 	"newsletter-diff-publishersheader": "Cambios nos editores:"
 }
