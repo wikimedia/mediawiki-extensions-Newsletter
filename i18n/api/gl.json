@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Elisardojm"
+			"Elisardojm",
+			"Toliño"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "Subscribirse a ou desubscribirse dun boletín.",
@@ -16,7 +17,8 @@
 	"apihelp-newslettermanage-example-1": "Engadir un editor con identificador 3 ó boletín con identificador 1.",
 	"apihelp-newslettermanage-example-2": "Quitar editor con identificador 5 do boletín con identificador 2.",
 	"newsletter-api-error-notfound": "O boletín non existe",
-	"newsletter-api-error-nopermissions": "Non ten permisos para xestionar boletíns.",
+	"newsletter-api-error-nopermissions": "Non ten permisos para xestionar este boletín.",
+	"newsletter-api-error-nocreate": "Non ten permisos para crear boletíns.",
 	"newsletter-api-error-invalidpublisher-registered": "O editor non é un usuario rexistrado.",
 	"newsletter-api-error-subscribe-notloggedin": "Debe estar conectado para subscribirse ós boletíns."
 }
