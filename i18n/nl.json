@@ -10,7 +10,9 @@
 			"PiefPafPier",
 			"SPQRobin",
 			"Siebrand",
-			"Sjoerddebruin"
+			"Sjoerddebruin",
+			"DiGro",
+			"HanV"
 		]
 	},
 	"newsletter-extension-desc": "Bied gebruikers de mogelijkheid om nieuwbrieven te publiceren en om zich te abboneren op nieuwsbrieven",
@@ -89,6 +91,8 @@
 	"newsletter-unsubscribe-success": "U bent niet langer een abbonee van \"$1\".",
 	"newsletter-unsubscribe-fail": "Het was niet mogelijk uit te schrijven van de nieuwsbrief \"$1\" omdat u niet bent geabonneerd op deze nieuwsbrief.",
 	"newsletter-unsubscribe-error": "Fout tijdens het afmelden als abbonee van de nieuwsbrief.",
+	"newsletter-subscribe-section": "Abonneren op nieuwsbrieven",
+	"newsletter-unsubscribe-section": "Afmelden van nieuwsbrieven",
 	"newsletter-subscribe-confirmation": "U bent nu geabboneerd op de nieuwsbrief.",
 	"newsletter-unsubscribe-confirmation": "U bent afgemeld als abbonee van de nieuwsbrief.",
 	"newsletter-subscribe-button-label": "Ja",
