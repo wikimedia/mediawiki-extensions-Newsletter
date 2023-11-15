@@ -91,6 +91,8 @@
 	"newsletter-unsubscribe-success": "U bent niet langer een abbonee van \"$1\".",
 	"newsletter-unsubscribe-fail": "Het was niet mogelijk uit te schrijven van de nieuwsbrief \"$1\" omdat u niet bent geabonneerd op deze nieuwsbrief.",
 	"newsletter-unsubscribe-error": "Fout tijdens het afmelden als abbonee van de nieuwsbrief.",
+	"newsletter-subscribe-section": "Abonneren op nieuwsbrieven",
+	"newsletter-unsubscribe-section": "Afmelden van nieuwsbrieven",
 	"newsletter-subscribe-confirmation": "U bent nu geabboneerd op de nieuwsbrief.",
 	"newsletter-unsubscribe-confirmation": "U bent afgemeld als abbonee van de nieuwsbrief.",
 	"newsletter-subscribe-button-label": "Ja",
@@ -162,5 +164,6 @@
 	"newsletter-diff-mainpageheader": "Wijzigingen aan de hoofdpagina:",
 	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:",
 	"newsletter-ch-apierror": "Fout bij het opslaan van pagina: $1",
-	"newsletter-ch-tojsonerror": "Fout bij het serialiseren naar JSON tijdens het opslaan."
+	"newsletter-ch-tojsonerror": "Fout bij het serialiseren naar JSON tijdens het opslaan.",
+	"newsletter-orphan-revisions": "Het verwijderen van versies die niet overeenkomen met een daadwerkelijk verwijderde nieuwsbrief kan niet ongedaan worden gemaakt."
 }
