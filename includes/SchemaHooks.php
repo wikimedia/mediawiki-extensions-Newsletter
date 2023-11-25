@@ -17,5 +17,7 @@ class SchemaHooks implements LoadExtensionSchemaUpdatesHook {
 	public function onLoadExtensionSchemaUpdates( $updater ) {
 		$type = $updater->getDB()->getType();
 		$updater->addExtensionTable( 'nl_newsletters', __DIR__ . '/../sql/' . $type . '/tables-generated.sql' );
+		$updater->modifyExtensionTable( 'nl_newsletters',
+			__DIR__ . '/../sql/' . $type . '/patch-drop-unique-indices.sql' );
 	}
 }

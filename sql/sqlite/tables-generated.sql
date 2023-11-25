@@ -11,9 +11,9 @@ CREATE TABLE /*_*/nl_newsletters (
   nl_subscriber_count INTEGER DEFAULT 0 NOT NULL
 );
 
-CREATE UNIQUE INDEX nl_name ON /*_*/nl_newsletters (nl_name);
+CREATE INDEX nl_name ON /*_*/nl_newsletters (nl_name);
 
-CREATE UNIQUE INDEX nl_main_page_active ON /*_*/nl_newsletters (nl_main_page_id, nl_active);
+CREATE INDEX nl_main_page_active ON /*_*/nl_newsletters (nl_main_page_id, nl_active);
 
 CREATE INDEX nl_active ON /*_*/nl_newsletters (nl_active);
 

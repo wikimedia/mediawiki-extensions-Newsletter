@@ -12,9 +12,9 @@ CREATE TABLE nl_newsletters (
   PRIMARY KEY(nl_id)
 );
 
-CREATE UNIQUE INDEX nl_name ON nl_newsletters (nl_name);
+CREATE INDEX nl_name ON nl_newsletters (nl_name);
 
-CREATE UNIQUE INDEX nl_main_page_active ON nl_newsletters (nl_main_page_id, nl_active);
+CREATE INDEX nl_main_page_active ON nl_newsletters (nl_main_page_id, nl_active);
 
 CREATE INDEX nl_active ON nl_newsletters (nl_active);
 

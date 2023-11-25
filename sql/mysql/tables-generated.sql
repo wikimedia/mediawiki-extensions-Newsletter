@@ -9,8 +9,8 @@ CREATE TABLE /*_*/nl_newsletters (
   nl_main_page_id INT UNSIGNED NOT NULL,
   nl_active TINYINT(1) DEFAULT 1 NOT NULL,
   nl_subscriber_count INT DEFAULT 0 NOT NULL,
-  UNIQUE INDEX nl_name (nl_name),
-  UNIQUE INDEX nl_main_page_active (nl_main_page_id, nl_active),
+  INDEX nl_name (nl_name),
+  INDEX nl_main_page_active (nl_main_page_id, nl_active),
   INDEX nl_active (nl_active),
   INDEX nl_active_subscriber_name (
     nl_active, nl_subscriber_count, nl_name
