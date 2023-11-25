@@ -129,6 +129,9 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( [], $newsletter->getSubscribers() );
 
 		$firstUser = User::newFromName( 'UTSysop' );
+		if ( !$firstUser->isRegistered() ) {
+			$firstUser->addToDatabase();
+		}
 		$secondUser = User::newFromName( 'Second User' );
 		$secondUser->addToDatabase();
 
