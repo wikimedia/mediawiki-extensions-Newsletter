@@ -364,21 +364,27 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
+		$expectedUpdateArgs = [
+			[
+				'nl_newsletters',
+				[ 'nl_active' => 0 ],
+				[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
+			],
+			[
+				'nl_newsletters',
+				[ 'nl_active' => 1 ],
+				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 0 ]
+			]
+		];
 		$mockWriteDb
 			->expects( $this->exactly( 2 ) )
 			->method( 'update' )
-			->withConsecutive(
-				[
-					'nl_newsletters',
-					[ 'nl_active' => 0 ],
-					[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
-				],
-				[
-					'nl_newsletters',
-					[ 'nl_active' => 1 ],
-					[ 'nl_name' => $newsletter->getName(), 'nl_active' => 0 ]
-				]
-			);
+			->willReturnCallback( function ( $table, $set, $conds ) use ( &$expectedUpdateArgs ) {
+				$curExpectedArgs = array_shift( $expectedUpdateArgs );
+				$this->assertSame( $curExpectedArgs[0], $table );
+				$this->assertSame( $curExpectedArgs[1], $set );
+				$this->assertSame( $curExpectedArgs[2], $conds );
+			} );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
