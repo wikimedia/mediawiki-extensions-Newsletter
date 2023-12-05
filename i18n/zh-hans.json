@@ -5,7 +5,10 @@
 			"Liang860908",
 			"Liuxinyu970226",
 			"铁桶",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"CrownedWharf566",
+			"U.T.",
+			"Winston Sung"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",
@@ -34,7 +37,7 @@
 	"newsletter-subtitlelinks-announce": "通告",
 	"newsletter-subtitlelinks-manage": "管理",
 	"newsletter-subtitlelinks-subscribers": "编辑订阅者",
-	"newsletters": "新闻报",
+	"newsletters": "电子报",
 	"newsletter-subscribe-loginrequired": "请登录以订阅[[Special:Newsletters|新闻报]]。",
 	"newsletter-notfound": "找不到新闻报",
 	"newsletter-not-found-id": "此ID的新闻报不存在。这里有[[Special:Newsletters|现有的新闻报列表]]。",
