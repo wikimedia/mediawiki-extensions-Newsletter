@@ -11,7 +11,9 @@
 			"Xiplus",
 			"列维劳德",
 			"捍粵者",
-			"烈羽"
+			"烈羽",
+			"H78c67c",
+			"Winston Sung"
 		]
 	},
 	"newsletter-extension-desc": "開啟使用者發佈及訂閱電子報的功能",
@@ -40,7 +42,7 @@
 	"newsletter-subtitlelinks-announce": "通告",
 	"newsletter-subtitlelinks-manage": "管理",
 	"newsletter-subtitlelinks-subscribers": "編輯訂閱者",
-	"newsletters": "Newsletters",
+	"newsletters": "電子報",
 	"newsletter-subscribe-loginrequired": "請登入來訂閱[[Special:Newsletters|電子報]]。",
 	"newsletter-notfound": "查無電子報",
 	"newsletter-not-found-id": "為此 ID 的電子報不存在。[[Special:Newsletters|現有電子報清單]]裡有可用的項目。",
