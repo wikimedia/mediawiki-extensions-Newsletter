@@ -6,13 +6,14 @@
 			"Elisardojm",
 			"Loischantada",
 			"Macofe",
+			"O Breixo",
 			"Toliño"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuarios publicar e subscribirse a boletíns de novas",
 	"newsletter-name": "Nome do boletín de novas",
 	"newsletter-desc": "Descrición",
-	"newsletter-title": "Página wiki con información sobre o boletín",
+	"newsletter-title": "Páxina wiki con información sobre o boletín",
 	"newsletter-exist-error": "Xa existe un boletín de novas co nome \"$1\". Por favor, inténteo de novo con outro nome",
 	"newsletter-create-error": "Ocurreu un erro ó intentar crear un boletín novo. Por favor, inténteo de novo.",
 	"newsletter-oldrev-undo-error-title": "Sentímolo, esta operación non está permitida.",
