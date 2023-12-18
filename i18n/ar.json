@@ -5,6 +5,7 @@
 			"Maroen1990",
 			"Meno25",
 			"ديفيد",
+			"علاء",
 			"محمد أحمد عبد الفتاح"
 		]
 	},
@@ -93,7 +94,7 @@
 	"newsletter-subscribing": "جارٍ الاشتراك...",
 	"newsletter-unsubscribing": "جارٍ إلغاء الاشتراك...",
 	"newsletter-subscribers": "المشتركون في النشرة الإخبارية",
-	"newsletter-subscribers-nopermission": "ليست لديك صلاحية تعديل المشتركين في هذه الرسالة الإخبارية",
+	"newsletter-subscribers-nopermission": "ليس لديك صلاحية تعديل المشتركين في هذه الرسالة الإخبارية",
 	"newsletter-edit-subscribers-nochanges": "لم يتم إجراء تغييرات على المشتركين في النشرة الإخبارية.",
 	"newsletter-edit-subscribers-success": "تم تحديث المشتركين في النشرة الإخبارية.",
 	"newsletter-subscribers-invalid": "\"$1\" ليس مستخدما صالحا; يُرجَى التأكد من وجود اسم المستخدم والمحاولة مرة أخرى.",
