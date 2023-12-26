@@ -42,7 +42,7 @@
 	"newsletter-subtitlelinks-manage": "beheren",
 	"newsletter-subtitlelinks-subscribers": "abonnees bewerken",
 	"newsletters": "Nieuwsbrieven",
-	"newsletter-subscribe-loginrequired": "Log in om op [[Special:Newsletters|nieuwbrieven]] te abonneren.",
+	"newsletter-subscribe-loginrequired": "Meld u aan om u op [[Special:Newsletters|nieuwbrieven]] te abonneren.",
 	"newsletter-notfound": "Nieuwsbrief niet gevonden",
 	"newsletter-not-found-id": "Een nieuwsbrief met deze ID bestaat niet. Een  [[Special:Newsletters|lijst met bestaande nieuwsbrieven]] is beschikbaar.",
 	"newsletter-view-mainpage": "Nieuwsbrief hoofdpagina:",
