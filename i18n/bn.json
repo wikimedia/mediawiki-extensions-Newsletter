@@ -5,7 +5,8 @@
 			"Bodhisattwa",
 			"Elias Ahmmad",
 			"আফতাবুজ্জামান",
-			"খাত্তাব হাসান"
+			"খাত্তাব হাসান",
+			"Aishik Rehman"
 		]
 	},
 	"newsletter-extension-desc": "ব্যবহারকারীদের বার্তাপত্র প্রকাশ করতে এবং সদস্যতা নিতে সক্ষম করে",
@@ -37,7 +38,7 @@
 	"newsletter-view-description": "বিবরণ:",
 	"newsletter-view-publishers": "{{PLURAL:$1|প্রকাশক:|প্রকাশকগণ:}}",
 	"newsletter-view-subscriber-count": "সদস্যদের গণনা:",
-	"newsletter-view-no-publishers": "কোন প্রকাশক নেই।",
+	"newsletter-view-no-publishers": "কোনো প্রকাশক নেই।",
 	"newsletter-manage-button": "পরিচালনা করুন",
 	"newsletter-unsubscribe-button": "সদস্যতা ত্যাগ করুন",
 	"newsletter-subscribe-button": "সদস্যতা নিন",
