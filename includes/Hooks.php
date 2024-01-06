@@ -27,15 +27,15 @@ use MediaWiki\Page\Hook\PageUndeleteHook;
 use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use PermissionsError;
 use ReadOnlyError;
 use RuntimeException;
 use SkinTemplate;
-use Status;
 use StatusValue;
 use ThrottledError;
-use User;
 use WikiPage;
 
 /**

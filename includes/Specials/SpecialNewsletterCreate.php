@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
-use FormSpecialPage;
 use HTMLForm;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
+use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use SpecialPage;
-use Status;
 use ThrottledError;
 
 /**

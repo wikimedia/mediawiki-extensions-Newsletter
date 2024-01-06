@@ -3,10 +3,10 @@
 namespace MediaWiki\Extension\Newsletter\Logging;
 
 use LogFormatter;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use Message;
-use SpecialPage;
-use User;
 
 /**
  * Log formatter for Extension:Newsletter log messages

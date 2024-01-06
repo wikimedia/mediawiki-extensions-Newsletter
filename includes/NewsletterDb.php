@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\Newsletter;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use stdClass;
-use User;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;

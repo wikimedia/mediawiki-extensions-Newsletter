@@ -7,16 +7,16 @@ use HTMLForm;
 use IContextSource;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Revision\RevisionRecord;
 use MediaWiki\Revision\SlotRecord;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use OutputPage;
+use MediaWiki\User\User;
+use MediaWiki\User\UserArray;
 use PermissionsError;
 use ReadOnlyError;
-use Status;
 use ThrottledError;
-use User;
-use UserArray;
 use UserBlockedError;
 
 /**

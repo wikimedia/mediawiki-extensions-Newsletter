@@ -1,6 +1,7 @@
 <?php
 
 use MediaWiki\Extension\Newsletter\Content\NewsletterContent;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler

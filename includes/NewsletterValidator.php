@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use Status;
 
 /**
  * Handles validation for newsletters

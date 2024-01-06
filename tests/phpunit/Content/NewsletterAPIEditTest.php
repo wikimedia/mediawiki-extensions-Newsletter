@@ -2,6 +2,8 @@
 
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
+use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 
 /**
  * @group API

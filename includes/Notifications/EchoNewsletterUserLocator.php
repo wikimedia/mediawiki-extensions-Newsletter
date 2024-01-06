@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
 
 use EchoEvent;
 use MediaWiki\Extension\Newsletter\Newsletter;
-use UserArray;
-use UserArrayFromResult;
+use MediaWiki\User\UserArray;
+use MediaWiki\User\UserArrayFromResult;
 
 class EchoNewsletterUserLocator {
 

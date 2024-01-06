@@ -4,10 +4,10 @@ namespace MediaWiki\Extension\Newsletter\Logging;
 
 use ManualLogEntry;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use RequestContext;
-use SpecialPage;
-use User;
 
 /**
  * @license GPL-2.0-or-later

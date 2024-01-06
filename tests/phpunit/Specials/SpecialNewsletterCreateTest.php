@@ -3,6 +3,7 @@
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletterCreate;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \MediaWiki\Extension\Newsletter\Specials\SpecialNewsletterCreate

@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\Newsletter\Content;
 
-use DataUpdate;
+use MediaWiki\Deferred\DataUpdate;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Title\Title;
-use User;
+use MediaWiki\User\User;
 
 /**
  * @license GPL-2.0-or-later

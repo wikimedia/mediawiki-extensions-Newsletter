@@ -6,17 +6,17 @@ use EchoEvent;
 use Exception;
 use ExtensionRegistry;
 use HTMLForm;
-use Linker;
 use LogEventsList;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
+use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use SpecialPage;
-use Status;
+use MediaWiki\User\User;
+use MediaWiki\User\UserArray;
 use ThrottledError;
-use User;
-use UserArray;
 use UserBlockedError;
 
 /**

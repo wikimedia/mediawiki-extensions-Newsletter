@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\Newsletter\Specials;
 
 use HTMLForm;
 use MediaWiki\Extension\Newsletter\Specials\Pagers\NewsletterTablePager;
-use SpecialPage;
+use MediaWiki\SpecialPage\SpecialPage;
 
 /**
  * Implements Special:Newsletter which lists all the newsletters on the wiki.

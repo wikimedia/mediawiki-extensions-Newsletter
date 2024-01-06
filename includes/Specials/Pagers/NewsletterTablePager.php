@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials\Pagers;
 
-use Html;
 use IContextSource;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletter;
+use MediaWiki\Html\Html;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Pager\TablePager;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use SpecialPage;
-use TablePager;
 use Wikimedia\Rdbms\IDatabase;
 
 /**
