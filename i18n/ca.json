@@ -5,7 +5,8 @@
 			"Jaumeortola",
 			"Jmarchn",
 			"Macofe",
-			"QuimGil"
+			"QuimGil",
+			"SMP"
 		]
 	},
 	"newsletter-extension-desc": "Permet als usuaris publicar i subscriure's a butlletins de notícies",
@@ -69,14 +70,14 @@
 	"newsletter-header-name": "Nom",
 	"newsletter-header-description": "Descripció",
 	"newsletter-header-subscriber_count": "Subscriptors",
-	"right-newsletter-create": "Registre de butlletins",
-	"action-newsletter-create": "registre de butlletins",
+	"right-newsletter-create": "Registrar butlletins",
+	"action-newsletter-create": "registrar butlletins",
 	"right-newsletter-delete": "Esborrar butlletins",
 	"action-newsletter-delete": "esborrar butlletins",
 	"right-newsletter-manage": "Afegir o eliminar editors o subscriptors de butlletins",
 	"action-newsletter-manage": "gestionar butlletins",
-	"right-newsletter-restore": "Restaura un butlletí",
-	"action-newsletter-restore": "restaura un butlletí",
+	"right-newsletter-restore": "Restaurar un butlletí",
+	"action-newsletter-restore": "restaurar un butlletí",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|ha anunciat}} una nova publicació de $3.",
 	"newsletter-list-table": "Filtra per",
 	"newsletter-list-option-all": "Tots els butlletins",
