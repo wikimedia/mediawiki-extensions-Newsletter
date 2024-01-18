@@ -16,7 +16,8 @@
 	"apihelp-newslettermanage-example-1": "Adicionar um editor com um identificador de utilizador 3 ao boletim com o identificador 1.",
 	"apihelp-newslettermanage-example-2": "Remover editor com o identificador de utilizador 5 do boletim com o identificador 2.",
 	"newsletter-api-error-notfound": "O boletim não existe",
-	"newsletter-api-error-nopermissions": "Não tem permissão para gerir boletins.",
+	"newsletter-api-error-nopermissions": "Não tem permissão para gerir este boletim.",
+	"newsletter-api-error-nocreate": "Não tem permissão para criar boletins.",
 	"newsletter-api-error-invalidpublisher-registered": "O editor não é um utilizador registado.",
 	"newsletter-api-error-subscribe-notloggedin": "Para subscrever boletins tem que ter uma sessão iniciada."
 }
