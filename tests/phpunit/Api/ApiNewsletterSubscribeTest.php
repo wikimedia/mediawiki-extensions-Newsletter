@@ -11,13 +11,6 @@
  */
 class ApiNewsletterSubscribeTest extends ApiTestCase {
 
-	public function __construct( $name = null, array $data = [], $dataName = '' ) {
-		parent::__construct( $name, $data, $dataName );
-
-		$this->tablesUsed[] = 'nl_newsletters';
-		$this->tablesUsed[] = 'nl_subscriptions';
-	}
-
 	protected function setUp(): void {
 		parent::setUp();
 		$dbw = wfGetDB( DB_PRIMARY );

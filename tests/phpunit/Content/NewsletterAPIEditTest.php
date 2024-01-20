@@ -13,11 +13,6 @@ use MediaWiki\User\User;
  * @covers \MediaWiki\Extension\Newsletter\Content\NewsletterDataUpdate
  */
 class NewsletterAPIEditTest extends ApiTestCase {
-	protected function setUp(): void {
-		parent::setUp();
-		$this->tablesUsed = [ 'nl_newsletters', 'nl_publishers', 'nl_subscriptions' ];
-	}
-
 	private const DESCRIPTION = "A description that is at least 30 characters long";
 
 	public function testCreation() {
