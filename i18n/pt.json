@@ -29,7 +29,7 @@
 	"newsletter-create-confirmation": "Foi registado um novo boletim informativo: [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "Foi introduzida uma página principal do boletim inválida. Tente novamente, por favor.",
 	"newsletter-mainpage-non-existent": "A página principal do boletim não existe. Introduza uma página existente válida, por favor.",
-	"newsletter-mainpage-in-use": "Já existe um boletim com essa página principal. Introduza outro título, por favor.",
+	"newsletter-mainpage-in-use": "Já existe um boletim com essa página principal. Introduza outra página principal, por favor.",
 	"newsletter-create-short-description-error": "A descrição é demasiado curta (menos de 30 caracteres). Tente novamente, por favor.",
 	"newsletter-subtitlelinks-list": "Lista de boletins informativos",
 	"newsletter-subtitlelinks-create": "Registar novo boletim informativo",
@@ -98,7 +98,7 @@
 	"newsletter-unsubscribing": "A cancelar subscrição...",
 	"newsletter-subscribers": "Subscritores do boletim",
 	"newsletter-subscribers-nopermission": "Não tem permissão para editar os subscritores deste boletim",
-	"newsletter-edit-subscribers-nochanges": "Não foram realizadas alterações dos subscritores do boletim.",
+	"newsletter-edit-subscribers-nochanges": "Não foram realizadas alterações à lista dos subscritores do boletim.",
 	"newsletter-edit-subscribers-success": "Os subscritores do boletim foram atualizados.",
 	"newsletter-subscribers-invalid": "\"$1\" não é um utilizador válido. Verifique que o nome de utilizador existe e tente novamente, por favor.",
 	"newsletter-available-newsletters-field-label": "Boletins informativos disponíveis",
@@ -159,5 +159,8 @@
 	"log-action-filter-newsletter-issue-added": "Anúncios de novas edições",
 	"newsletter-diff-descheader": "Alterações na descrição:",
 	"newsletter-diff-mainpageheader": "Alterações na página principal:",
-	"newsletter-diff-publishersheader": "Alterações nos editores:"
+	"newsletter-diff-publishersheader": "Alterações nos editores:",
+	"newsletter-ch-apierror": "Erro ao gravar a página: $1",
+	"newsletter-ch-tojsonerror": "Erro ao seriar para JSON durante a gravação.",
+	"newsletter-orphan-revisions": "Não é possível restaurar revisões que não correspondem a um boletim efetivamente eliminado."
 }

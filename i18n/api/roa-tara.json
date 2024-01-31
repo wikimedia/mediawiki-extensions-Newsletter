@@ -16,7 +16,8 @@
 	"apihelp-newslettermanage-example-1": "Aggiugne 'nu pubblecatore cu 'n ID utende 3 jndr'à newsletter cu ID 1.",
 	"apihelp-newslettermanage-example-2": "Lìve 'u pubblecatore cu ID utende 5 da 'a newsletter cu ID 2.",
 	"newsletter-api-error-notfound": "'A newletter non g'esiste",
-	"newsletter-api-error-nopermissions": "Non ge tìne le permesse pe gestì le newsletter.",
+	"newsletter-api-error-nopermissions": "Non ge tìne le permesse pe gestì sta newsletter.",
+	"newsletter-api-error-nocreate": "Non ge tine le permesse pe ccreja le newsletter.",
 	"newsletter-api-error-invalidpublisher-registered": "'U pubblecatore non g'è 'n'utende reggistrate.",
 	"newsletter-api-error-subscribe-notloggedin": "A trasè pe iscriverte a le newsletter."
 }
