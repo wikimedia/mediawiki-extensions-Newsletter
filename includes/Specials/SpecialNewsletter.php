@@ -3,10 +3,10 @@
 namespace MediaWiki\Extension\Newsletter\Specials;
 
 use EchoEvent;
-use Exception;
 use ExtensionRegistry;
 use HTMLForm;
 use LogEventsList;
+use MediaWiki\Config\ConfigException;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Linker\Linker;
@@ -16,6 +16,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArray;
+use RuntimeException;
 use ThrottledError;
 use UserBlockedError;
 
@@ -247,7 +248,6 @@ class SpecialNewsletter extends SpecialPage {
 
 	/**
 	 * Submit callback for subscribe form.
-	 * @throws Exception
 	 * @return Status
 	 */
 	public function submitSubscribeForm() {
@@ -261,7 +261,7 @@ class SpecialNewsletter extends SpecialPage {
 			$status = $this->newsletter->unsubscribe( $user );
 			$action = 'unsubscribe';
 		} else {
-			throw new Exception( 'POST data corrupted or required parameter missing from request' );
+			throw new RuntimeException( 'POST data corrupted or required parameter missing from request' );
 		}
 
 		if ( $status->isGood() ) {
@@ -353,11 +353,11 @@ class SpecialNewsletter extends SpecialPage {
 	/**
 	 * Submit callback for the announce form (validate, add to issues table and create
 	 * Echo event). This assumes that permissions check etc has been done already.
+	 * The method is only called if the Echo extension is installed.
 	 *
 	 * @param array $data
 	 *
 	 * @return Status|bool true on success, Status fatal otherwise
-	 * @throws Exception if Echo is not installed
 	 */
 	public function submitAnnounceForm( array $data ) {
 		$title = Title::newFromText( $data['issuepage'] );
@@ -385,7 +385,7 @@ class SpecialNewsletter extends SpecialPage {
 		}
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
-			throw new Exception( 'Echo extension is not installed.' );
+			throw new ConfigException( 'Echo extension is not installed.' );
 		}
 
 		$user = $this->getUser();
@@ -467,6 +467,7 @@ class SpecialNewsletter extends SpecialPage {
 	/**
 	 * Submit callback for the subscribers form (validate, edit subscribers table).
 	 * This assumes that permissions check etc has been done already.
+	 * The method is only called if the Echo extension is installed.
 	 *
 	 * @param array $data
 	 *
@@ -504,7 +505,7 @@ class SpecialNewsletter extends SpecialPage {
 		// Now report to the user
 		if ( $added || $removed ) {
 			if ( !ExtensionRegistry::getInstance()->isLoaded( 'Echo' ) ) {
-				throw new Exception( 'Echo extension is not installed.' );
+				throw new ConfigException( 'Echo extension is not installed.' );
 			}
 			if ( $added ) {
 				EchoEvent::create(
