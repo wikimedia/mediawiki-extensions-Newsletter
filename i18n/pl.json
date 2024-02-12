@@ -8,7 +8,8 @@
 			"Rail",
 			"Railfail536",
 			"Rzuwig",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"newsletter-extension-desc": "Umożliwia użytkownikom publikowanie i subskrybowanie newsletterów",
@@ -126,8 +127,8 @@
 	"right-newsletter-restore": "Odtwarzanie newsletterów",
 	"action-newsletter-restore": "odtwarzania newsletterów",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|ogłosił|ogłosiła|ogłosił(a)}} nowe wydanie $3.",
-	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Zostałeś|Zostałaś|Zostałeś(aś)}} {{GENDER:$2|dodany|dodana}} do grona wydawców newslettera „$1”.",
-	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Zostałeś|Zostałaś|Zostałeś(aś)}} {{GENDER:$2|usunięty|usunięta}} z grona wydawców newslettera „$1”.",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Zostałeś dodany|Zostałaś dodana|Zostałeś(-aś) dodany(-a)}} do grona {{GENDER:$3|wydawców}} newslettera „$1”.",
+	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Zostałeś usunięty|Zostałaś usunięta|Zostałeś(-aś) usunięty(-a)}} do grona {{GENDER:$3|wydawców}} newslettera „$1”.",
 	"newsletter-list-intro": "To jest lista newsletterów zarejestrowanych na tej wiki. Możesz zasubskrybować newsletter aby otrzymywać powiadomienia o nowych wydarzeniach. Powiadomienia mogą być otrzymywane za pośrednictwem e-maila lub w przeglądarce, w zależności od twoich [[Special:Preferences#mw-prefsection-echo|preferencji]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Zaloguj się]] aby zasubskrybować newsletter i otrzymywać powiadomienia o nowych wydarzeniach.",
 	"newsletter-list-table": "Posortuj według:",
