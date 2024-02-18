@@ -7,6 +7,7 @@ use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
@@ -41,7 +42,7 @@ class NewsletterDataUpdate extends DataUpdate {
 	 * @return int
 	 */
 	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
 		return $dbr->selectRowCount(
 			'nl_newsletters',

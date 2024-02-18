@@ -13,7 +13,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$dbw = wfGetDB( DB_PRIMARY );
+		$dbw = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
 
 		$rowData = [
 			'nl_name' => 'MyNewsletter',
@@ -24,7 +24,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 	}
 
 	protected function getNewsletterId() {
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$res = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_id' ],
@@ -50,7 +50,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			[ 'nls_subscriber_id' ],
@@ -80,7 +80,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$result = $dbr->selectRowCount(
 			'nl_subscriptions',
 			[ 'nls_subscriber_id' ],

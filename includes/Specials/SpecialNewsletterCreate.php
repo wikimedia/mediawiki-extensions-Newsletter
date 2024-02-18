@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Newsletter\Specials;
 use HTMLForm;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
@@ -98,7 +99,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 		$mainPageId = $data['MainPage']->getArticleID();
 
-		$dbr = wfGetDB( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 		$rows = $dbr->select(
 			'nl_newsletters',
 			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
