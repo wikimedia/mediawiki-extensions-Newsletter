@@ -207,7 +207,7 @@ class SpecialNewsletter extends SpecialPage {
 		// IPs shouldn't be able to subscribe to newsletters
 		$this->requireLogin( 'newsletter-subscribe-loginrequired' );
 		$this->checkReadOnly();
-		$this->getOutput()->setPageTitle( $this->msg( 'newsletter-subscribe' ) );
+		$this->getOutput()->setPageTitleMsg( $this->msg( 'newsletter-subscribe' ) );
 
 		if ( $this->newsletter->isSubscribed( $this->getUser() ) ) {
 			// User is subscribed so show the unsubscribe form
@@ -305,7 +305,7 @@ class SpecialNewsletter extends SpecialPage {
 			return;
 		}
 
-		$out->setPageTitle(
+		$out->setPageTitleMsg(
 			$this->msg( 'newsletter-announce' )
 				->plaintextParams( $this->newsletter->getName() )
 		);

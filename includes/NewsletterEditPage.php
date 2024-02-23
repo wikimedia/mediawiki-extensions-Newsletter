@@ -72,7 +72,7 @@ class NewsletterEditPage {
 				throw new PermissionsError( 'newsletter-manage' );
 			}
 
-			$this->out->setPageTitle(
+			$this->out->setPageTitleMsg(
 				$this->context->msg( 'newsletter-manage' )
 					->params( $this->newsletter->getName() )
 			);
