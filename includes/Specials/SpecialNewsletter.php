@@ -66,7 +66,7 @@ class SpecialNewsletter extends SpecialPage {
 		// Separate out newsletter id and action from subpage
 		$params = explode( '/', $par );
 		$params[1] ??= null;
-		list( $id, $action ) = $params;
+		[ $id, $action ] = $params;
 
 		$out = $this->getOutput();
 		$this->newsletter = Newsletter::newFromID( (int)$id );

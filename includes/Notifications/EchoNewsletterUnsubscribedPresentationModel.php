@@ -17,7 +17,7 @@ class EchoNewsletterUnsubscribedPresentationModel extends BaseNewsletterPresenta
 	}
 
 	public function getHeaderMessage() {
-		list( $agentFormattedName, $agentGenderName ) = $this->getAgentForOutput();
+		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'newsletter-notification-unsubscribed' );
 		$msg->params( $this->getNewsletterName() );
 		return $msg;

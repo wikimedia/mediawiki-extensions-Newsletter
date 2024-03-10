@@ -16,7 +16,7 @@ class EchoNewsletterPublisherRemovedPresentationModel extends BaseNewsletterPres
 	}
 
 	public function getHeaderMessage() {
-		list( $agentFormattedName, $agentGenderName ) = $this->getAgentForOutput();
+		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'notification-header-newsletter-delpublisher' );
 		$msg->params( $this->getNewsletterName() );
 		$msg->params( $this->getViewingUserForGender() );

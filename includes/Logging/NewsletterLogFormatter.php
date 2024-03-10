@@ -55,7 +55,7 @@ class NewsletterLogFormatter extends LogFormatter {
 			return parent::formatParameterValue( $type, $value );
 		}
 
-		list( $id, $name ) = explode( ':', $value, 2 );
+		[ $id, $name ] = explode( ':', $value, 2 );
 		$title = SpecialPage::getTitleFor( 'Newsletter', $id );
 		if ( !$this->plaintext ) {
 			return Message::rawParam( $this->getLinkRenderer()->makeLink(

@@ -52,7 +52,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::addSubscription
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::addSubscription
 	 */
 	public function testAddSubscriber() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -85,7 +85,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::removeSubscription
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::removeSubscription
 	 */
 	public function testRemoveSubscriber() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -119,7 +119,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::getNewsletterSubscribersCount
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::getNewsletterSubscribersCount
 	 */
 	public function testGetSubscribersCount() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -184,7 +184,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::addPublisher
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::addPublisher
 	 */
 	public function testAddPublisher() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -210,7 +210,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::removePublisher
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::removePublisher
 	 */
 	public function testRemovePublisher() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -236,7 +236,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::addNewsletter
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::addNewsletter
 	 */
 	public function testAddNewsletter() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -267,7 +267,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::updateName
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::updateName
 	 */
 	public function testUpdateName() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -289,7 +289,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::updateDescription
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::updateDescription
 	 */
 	public function testUpdateDescription() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -312,7 +312,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::updateMainPage
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::updateMainPage
 	 */
 	public function testUpdateMainPage() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -338,7 +338,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::deleteNewsletter
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::deleteNewsletter
 	 */
 	public function testDeleteNewsletter() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -360,7 +360,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::restoreNewsletter
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::restoreNewsletter
 	 */
 	public function testRestoreNewsletter() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -398,7 +398,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::getNewsletter
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::getNewsletter
 	 */
 	public function testGetNewsletter() {
 		$mockWriteDb = $this->getMockIDatabase();
@@ -435,7 +435,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	}
 
 	/**
-	 * @covers NewsletterDb::getNewsletterFromName
+	 * @covers \MediaWiki\Extension\Newsletter\NewsletterDb::getNewsletterFromName
 	 */
 	public function testGetNewsletterFromName() {
 		$mockWriteDb = $this->getMockIDatabase();

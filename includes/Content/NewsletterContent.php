@@ -151,7 +151,7 @@ class NewsletterContent extends JsonContent {
 		$contLang = MediaWikiServices::getInstance()->getContentLanguage();
 
 		$truncatedtext = $contLang->truncateForVisual(
-			preg_replace( "/[\n\r]/", ' ',  $this->getDescription() ), max( 0, $maxLength )
+			preg_replace( "/[\n\r]/", ' ', $this->getDescription() ), max( 0, $maxLength )
 		);
 
 		return $truncatedtext;

@@ -16,7 +16,7 @@ class EchoNewsletterPublisherAddedPresentationModel extends BaseNewsletterPresen
 	}
 
 	public function getHeaderMessage() {
-		list( $agentFormattedName, $agentGenderName ) = $this->getAgentForOutput();
+		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'notification-header-newsletter-newpublisher' );
 		$msg->params( $this->getNewsletterName() );
 		$msg->params( $this->getViewingUserForGender() );
