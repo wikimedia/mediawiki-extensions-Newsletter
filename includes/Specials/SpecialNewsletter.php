@@ -12,6 +12,7 @@ use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
@@ -26,7 +27,7 @@ use UserBlockedError;
  * @author Glaisher
  * @license GPL-2.0-or-later
  */
-class SpecialNewsletter extends SpecialPage {
+class SpecialNewsletter extends UnlistedSpecialPage {
 
 	/** Subpage actions */
 	private const NEWSLETTER_MANAGE = 'manage';
@@ -540,15 +541,4 @@ class SpecialNewsletter extends SpecialPage {
 		}
 		return true;
 	}
-
-	/**
-	 * Don't list this page in Special:SpecialPages as we just redirect to
-	 * Special:Newsletters if no ID was provided.
-	 *
-	 * @return bool
-	 */
-	public function isListed() {
-		return false;
-	}
-
 }
