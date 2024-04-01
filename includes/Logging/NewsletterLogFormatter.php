@@ -21,7 +21,7 @@ class NewsletterLogFormatter extends LogFormatter {
 	 * @return array
 	 */
 	public function getMessageParameters() {
-		if ( isset( $this->parsedParameters ) ) {
+		if ( $this->parsedParameters !== null ) {
 			return $this->parsedParameters;
 		}
 
