@@ -47,35 +47,35 @@ class DeleteInactiveNewsletters extends Maintenance {
 			return;
 		}
 
-		$dbw->delete(
-			'nl_newsletters',
-			'nl_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_newsletters' )
+			->where( [ 'nl_id' => $idsToDelete ] )
+			->caller( __METHOD__ )
+			->execute();
 		$count = $dbw->affectedRows();
 		$this->output( "Deleted $count inactive newsletters.\n" );
 
-		$dbw->delete(
-			'nl_issues',
-			'nli_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_issues' )
+			->where( [ 'nli_newsletter_id' => $idsToDelete ] )
+			->caller( __METHOD__ )
+			->execute();
 		$count = $dbw->affectedRows();
 		$this->output( "Deleted $count inactive newsletter issues.\n" );
 
-		$dbw->delete(
-			'nl_publishers',
-			'nlp_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_publishers' )
+			->where( [ 'nlp_newsletter_id' => $idsToDelete ] )
+			->caller( __METHOD__ )
+			->execute();
 		$count = $dbw->affectedRows();
 		$this->output( "Deleted $count inactive newsletter publishers.\n" );
 
-		$dbw->delete(
-			'nl_subscriptions',
-			'nls_newsletter_id = ' . $dbw->makeList( $idsToDelete, LIST_OR ),
-			__METHOD__
-		);
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_subscriptions' )
+			->where( [ 'nls_newsletter_id' => $idsToDelete ] )
+			->caller( __METHOD__ )
+			->execute();
 		$count = $dbw->affectedRows();
 		$this->output( "Deleted $count inactive newsletter subscriptions.\n" );
 

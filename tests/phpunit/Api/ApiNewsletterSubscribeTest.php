@@ -20,7 +20,11 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			'nl_desc' => 'This is a newsletter',
 			'nl_main_page_id' => 1
 		];
-		$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'nl_newsletters' )
+			->row( $rowData )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	protected function getNewsletterId() {

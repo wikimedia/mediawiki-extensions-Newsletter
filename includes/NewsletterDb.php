@@ -30,6 +30,10 @@ class NewsletterDb {
 	 * @param array $userIds
 	 */
 	public function addSubscription( Newsletter $newsletter, array $userIds ): void {
+		if ( !$userIds ) {
+			return;
+		}
+
 		$rowData = [];
 		foreach ( $userIds as $userId ) {
 			$rowData[] = [
@@ -41,7 +45,12 @@ class NewsletterDb {
 		$dbw->startAtomic( __METHOD__ );
 
 		// Tolerate (silently ignore) if it was already there
-		$dbw->insert( 'nl_subscriptions', $rowData, __METHOD__, [ 'IGNORE' ] );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'nl_subscriptions' )
+			->ignore()
+			->rows( $rowData )
+			->caller( __METHOD__ )
+			->execute();
 
 		// But only update the count if there was a change
 		if ( $dbw->affectedRows() ) {
@@ -70,7 +79,11 @@ class NewsletterDb {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
-		$dbw->delete( 'nl_subscriptions', $rowData, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_subscriptions' )
+			->where( $rowData )
+			->caller( __METHOD__ )
+			->execute();
 
 		// Delete query succeeds even if the row already gone
 		// But only update the count if there was a change
@@ -93,6 +106,10 @@ class NewsletterDb {
 	 * @return bool Success of the action
 	 */
 	public function addPublisher( Newsletter $newsletter, array $userIds ): bool {
+		if ( !$userIds ) {
+			return false;
+		}
+
 		$newsletterId = $newsletter->getId();
 		$rowData = [];
 		foreach ( $userIds as $userId ) {
@@ -105,7 +122,12 @@ class NewsletterDb {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
 		// Let the user action appear success even if the row is already there.
-		$dbw->insert( 'nl_publishers', $rowData, __METHOD__, [ 'IGNORE' ] );
+		$dbw->newInsertQueryBuilder()
+			->insertInto( 'nl_publishers' )
+			->ignore()
+			->rows( $rowData )
+			->caller( __METHOD__ )
+			->execute();
 		// Provide a bool that reflects actual creation of a row,
 		// used for decide whether to create a matching MW log entry.
 		return (bool)$dbw->affectedRows();
@@ -124,7 +146,11 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 
-		$dbw->delete( 'nl_publishers', $rowData, __METHOD__ );
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'nl_publishers' )
+			->where( $rowData )
+			->caller( __METHOD__ )
+			->execute();
 
 		// Delete query succeeds even if the row was already gone.
 		// Provide a bool that reflects actual creation of a row,
@@ -148,7 +174,11 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
-			$dbw->insert( 'nl_newsletters', $rowData, __METHOD__ );
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'nl_newsletters' )
+				->row( $rowData )
+				->caller( __METHOD__ )
+				->execute();
 			return $dbw->insertId();
 		} catch ( DBQueryError $ex ) {
 			return false;
@@ -399,16 +429,16 @@ class NewsletterDb {
 		$nextIssueId = $lastIssueId + 1;
 
 		try {
-			$dbw->insert(
-				'nl_issues',
-				[
+			$dbw->newInsertQueryBuilder()
+				->insertInto( 'nl_issues' )
+				->row( [
 					'nli_issue_id' => $nextIssueId,
 					'nli_page_id' => $title->getArticleID(),
 					'nli_newsletter_id' => $newsletter->getId(),
 					'nli_publisher_id' => $publisher->getId(),
-				],
-				__METHOD__
-			);
+				] )
+				->caller( __METHOD__ )
+				->execute();
 			$dbw->endAtomic( __METHOD__ );
 		} catch ( DBQueryError $ex ) {
 			$dbw->rollback( __METHOD__ );
