@@ -5,7 +5,9 @@ use MediaWiki\Extension\Newsletter\NewsletterDb;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use PHPUnit\Framework\MockObject\MockObject;
+use Wikimedia\Rdbms\DeleteQueryBuilder;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\InsertQueryBuilder;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LoadBalancer;
 
@@ -59,13 +61,16 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user = User::newFromName( 'Test User' );
 		$user->addToDatabase();
 
+		$iqb = $this->createMock( InsertQueryBuilder::class );
+		$iqb->expects( $this->once() )->method( 'insertInto' )->with( 'nl_subscriptions' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'ignore' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'rows' )
+			->with( [ [ 'nls_subscriber_id' => $user->getId(), 'nls_newsletter_id' => 1 ] ] )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'insert' )
-			->with(
-				'nl_subscriptions',
-				[ [ 'nls_subscriber_id' => $user->getId(), 'nls_newsletter_id' => 1 ] ]
-			);
+			->method( 'newInsertQueryBuilder' )
+			->willReturn( $iqb );
 		$mockWriteDb->expects( $this->once() )
 			->method( 'affectedRows' )
 			->willReturn( 1 );
@@ -92,13 +97,15 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user = User::newFromName( 'Test User' );
 		$user->addToDatabase();
 
+		$dqb = $this->createMock( DeleteQueryBuilder::class );
+		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_subscriptions' )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'where' )
+			->with( [ 'nls_subscriber_id' => [ $user->getId() ], 'nls_newsletter_id' => 1 ] )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'caller' )->willReturn( $dqb );
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'delete' )
-			->with(
-				'nl_subscriptions',
-				[ 'nls_subscriber_id' => [ $user->getId() ], 'nls_newsletter_id' => 1 ]
-			);
+			->method( 'newDeleteQueryBuilder' )
+			->willReturn( $dqb );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
@@ -129,22 +136,26 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$firstUser->addToDatabase();
 		$secondUser->addToDatabase();
 
+		$iqb = $this->createMock( InsertQueryBuilder::class );
+		$iqb->expects( $this->once() )->method( 'insertInto' )->with( 'nl_subscriptions' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'ignore' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'rows' )
+			->with( [
+				[
+					'nls_subscriber_id' => $firstUser->getId(),
+					'nls_newsletter_id' => $newsletter->getId()
+				],
+				[
+					'nls_subscriber_id' => $secondUser->getId(),
+					'nls_newsletter_id' => $newsletter->getId()
+				]
+			] )
+			->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'insert' )
-			->with(
-				'nl_subscriptions',
-				[
-					[
-						'nls_subscriber_id' => $firstUser->getId(),
-						'nls_newsletter_id' => $newsletter->getId()
-					],
-					[
-						'nls_subscriber_id' => $secondUser->getId(),
-						'nls_newsletter_id' => $newsletter->getId()
-					]
-				]
-			);
+			->method( 'newInsertQueryBuilder' )
+			->willReturn( $iqb );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
@@ -191,13 +202,16 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user = User::newFromName( 'Test User' );
 		$user->addToDatabase();
 
+		$iqb = $this->createMock( InsertQueryBuilder::class );
+		$iqb->expects( $this->once() )->method( 'insertInto' )->with( 'nl_publishers' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'ignore' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'rows' )
+			->with( [ [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ] ] )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'insert' )
-			->with(
-				'nl_publishers',
-				[ [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => $user->getId() ] ]
-			);
+			->method( 'newInsertQueryBuilder' )
+			->willReturn( $iqb );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
@@ -217,13 +231,15 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user = User::newFromName( 'Test User' );
 		$user->addtoDatabase();
 
+		$dqb = $this->createMock( DeleteQueryBuilder::class );
+		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_publishers' )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'where' )
+			->with( [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => [ $user->getId() ] ] )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'caller' )->willReturn( $dqb );
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'delete' )
-			->with(
-				'nl_publishers',
-				[ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => [ $user->getId() ] ]
-			);
+			->method( 'newDeleteQueryBuilder' )
+			->willReturn( $dqb );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'affectedRows' )
@@ -242,18 +258,20 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
+		$iqb = $this->createMock( InsertQueryBuilder::class );
+		$iqb->expects( $this->once() )->method( 'insertInto' )->with( 'nl_newsletters' )->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'row' )
+			->with( [
+				'nl_name' => $newsletter->getName(),
+				'nl_desc' => $newsletter->getDescription(),
+				'nl_main_page_id' => $newsletter->getPageId()
+			] )
+			->willReturnSelf();
+		$iqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'insert' )
-			->with(
-				'nl_newsletters',
-				[
-					'nl_name' => $newsletter->getName(),
-					'nl_desc' => $newsletter->getDescription(),
-					'nl_main_page_id' => $newsletter->getPageId()
-				]
-			)
-			->willReturn( true );
+			->method( 'newInsertQueryBuilder' )
+			->willReturn( $iqb );
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'insertId' )
