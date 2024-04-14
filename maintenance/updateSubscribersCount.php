@@ -36,13 +36,13 @@ class UpdateSubscribersCount extends Maintenance {
 			}
 
 			foreach ( $res as $row ) {
-				$dbw->update(
-					'nl_newsletters',
+				$dbw->newUpdateQueryBuilder()
+					->update( 'nl_newsletters' )
 					// This column is negative for index reasons.
-					[ 'nl_subscriber_count' => -$row->subscriber_count ],
-					[ 'nl_id' => $row->nl_id ],
-					__METHOD__
-				);
+					->set( [ 'nl_subscriber_count' => -$row->subscriber_count ] )
+					->where( [ 'nl_id' => $row->nl_id ] )
+					->caller( __METHOD__ )
+					->execute();
 			}
 
 			$this->output( "Updated " . $res->numRows() . " rows \n" );

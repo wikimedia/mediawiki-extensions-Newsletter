@@ -54,13 +54,13 @@ class NewsletterDb {
 
 		// But only update the count if there was a change
 		if ( $dbw->affectedRows() ) {
-			$dbw->update(
-				'nl_newsletters',
+			$dbw->newUpdateQueryBuilder()
+				->update( 'nl_newsletters' )
 				// For index reasons, count is negative
-				[ 'nl_subscriber_count=nl_subscriber_count-' . count( $userIds ) ],
-				[ 'nl_id' => $newsletter->getId() ],
-				__METHOD__
-			);
+				->set( [ 'nl_subscriber_count=nl_subscriber_count-' . count( $userIds ) ] )
+				->where( [ 'nl_id' => $newsletter->getId() ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$dbw->endAtomic( __METHOD__ );
@@ -88,13 +88,13 @@ class NewsletterDb {
 		// Delete query succeeds even if the row already gone
 		// But only update the count if there was a change
 		if ( $dbw->affectedRows() ) {
-			$dbw->update(
-				'nl_newsletters',
+			$dbw->newUpdateQueryBuilder()
+				->update( 'nl_newsletters' )
 				// For index reasons, count is negative
-				[ 'nl_subscriber_count=nl_subscriber_count+' . count( $userIds ) ],
-				[ 'nl_id' => $newsletter->getId() ],
-				__METHOD__
-			);
+				->set( [ 'nl_subscriber_count=nl_subscriber_count+' . count( $userIds ) ] )
+				->where( [ 'nl_id' => $newsletter->getId() ] )
+				->caller( __METHOD__ )
+				->execute();
 		}
 
 		$dbw->endAtomic( __METHOD__ );
@@ -204,7 +204,12 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
-			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+			$dbw->newUpdateQueryBuilder()
+				->update( 'nl_newsletters' )
+				->set( $rowData )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->execute();
 		} catch ( DBQueryError $ex ) {
 			return false;
 		}
@@ -227,7 +232,12 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
-			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+			$dbw->newUpdateQueryBuilder()
+				->update( 'nl_newsletters' )
+				->set( $rowData )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->execute();
 		} catch ( DBQueryError $ex ) {
 			return false;
 		}
@@ -250,7 +260,12 @@ class NewsletterDb {
 
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		try {
-			$dbw->update( 'nl_newsletters', $rowData, $conds, __METHOD__ );
+			$dbw->newUpdateQueryBuilder()
+				->update( 'nl_newsletters' )
+				->set( $rowData )
+				->where( $conds )
+				->caller( __METHOD__ )
+				->execute();
 		} catch ( DBQueryError $ex ) {
 			return false;
 		}
@@ -263,12 +278,12 @@ class NewsletterDb {
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ): void {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
-		$dbw->update(
-			'nl_newsletters',
-			[ 'nl_active' => 0 ],
-			[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'nl_newsletters' )
+			->set( [ 'nl_active' => 0 ] )
+			->where( [ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
@@ -278,12 +293,12 @@ class NewsletterDb {
 	 */
 	public function restoreNewsletter( string $newsletterName ): void {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
-		$dbw->update(
-			'nl_newsletters',
-			[ 'nl_active' => 1 ],
-			[ 'nl_name' => $newsletterName, 'nl_active' => 0 ],
-			__METHOD__
-		);
+		$dbw->newUpdateQueryBuilder()
+			->update( 'nl_newsletters' )
+			->set( [ 'nl_active' => 1 ] )
+			->where( [ 'nl_name' => $newsletterName, 'nl_active' => 0 ] )
+			->caller( __METHOD__ )
+			->execute();
 	}
 
 	/**
