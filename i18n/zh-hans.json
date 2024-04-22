@@ -7,6 +7,7 @@
 			"Liuxinyu970226",
 			"U.T.",
 			"Winston Sung",
+			"沈澄心",
 			"铁桶",
 			"飞舞回堂前"
 		]
@@ -159,5 +160,7 @@
 	"newsletter-diff-descheader": "描述中的更改：",
 	"newsletter-diff-mainpageheader": "首页中的更改：",
 	"newsletter-diff-publishersheader": "发布者的更改：",
-	"newsletter-ch-apierror": "保存页面时出错： $1"
+	"newsletter-ch-apierror": "保存页面时出错： $1",
+	"newsletter-ch-tojsonerror": "保存期间序列化为JSON时出错。",
+	"newsletter-orphan-revisions": "无法取消删除与实际删除的电子报不对应的修订。"
 }
