@@ -11,6 +11,7 @@ use MediaWiki\Pager\TablePager;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * @license GPL-2.0-or-later
@@ -77,7 +78,7 @@ class NewsletterTablePager extends TablePager {
 	 * @param bool $descending Ascending or descending?
 	 * @param string|false $secondaryOffset For tiebreaking the order (nl_name)
 	 *
-	 * @return string raw sql
+	 * @return SelectQueryBuilder
 	 */
 	private function getSubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
@@ -95,9 +96,13 @@ class NewsletterTablePager extends TablePager {
 			unset( $options['ORDER BY'] );
 			unset( $options['LIMIT'] );
 		}
-		$subscribedPart = $this->mDb->selectSQLText(
-			$tables, $fields, $conds, $fname, $options, $join_conds
-		);
+		$subscribedPart = $this->mDb->newSelectQueryBuilder()
+			->tables( $tables )
+			->fields( $fields )
+			->where( $conds )
+			->caller( $fname )
+			->options( $options )
+			->joinConds( $join_conds );
 		$this->mIndexField = $oldIndex;
 		return $subscribedPart;
 	}
@@ -130,7 +135,7 @@ class NewsletterTablePager extends TablePager {
 	 * @param int $limit
 	 * @param bool $descending Ascending or descending?
 	 * @param string|false $secondaryOffset For tiebreaking the order (nl_name)
-	 * @return string raw sql
+	 * @return SelectQueryBuilder
 	 */
 	private function getUnsubscribedQuery( $offset, $limit, $descending, $secondaryOffset ) {
 		// XXX Hacky
@@ -147,9 +152,13 @@ class NewsletterTablePager extends TablePager {
 			unset( $options['ORDER BY'] );
 			unset( $options['LIMIT'] );
 		}
-		$unsubscribedPart = $this->mDb->selectSQLText(
-			$tables, $fields, $conds, $fname, $options, $join_conds
-		);
+		$unsubscribedPart = $this->mDb->newSelectQueryBuilder()
+			->tables( $tables )
+			->fields( $fields )
+			->where( $conds )
+			->caller( $fname )
+			->options( $options )
+			->joinConds( $join_conds );
 		$this->mIndexField = $oldIndex;
 		return $unsubscribedPart;
 	}
@@ -207,30 +216,26 @@ class NewsletterTablePager extends TablePager {
 				$descending,
 				$descending ? false : $secondaryOffset
 			);
-			$combinedResult = $this->mDb->unionQueries(
-				[ $subscribedPart, $unsubscribedPart ],
-				true
-			);
+			$unionQueryBuilder = $this->mDb->newUnionQueryBuilder()
+				->add( $subscribedPart )->add( $unsubscribedPart )
+				->all();
 			// For some reason, this is the opposite of what
 			// you would expect.
 			$dir = $descending ? 'ASC' : 'DESC';
-			$combinedResult .= " ORDER BY sort $dir LIMIT " . (int)$limit;
-			return $this->mDb->query( $combinedResult, __METHOD__ );
+			return $unionQueryBuilder->orderBy( 'sort', $dir )
+				->limit( (int)$limit )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 		} elseif ( $this->option === 'subscribed' || $offsetMode === 'S' ) {
-			return $this->mDb->query(
-				$this->getSubscribedQuery(
+			return $this->getSubscribedQuery(
 					$realOffset, $limit, $descending, $secondaryOffset
-				),
-				__METHOD__
-			);
+				)->fetchResultSet();
 
 		} else {
 			// unsubscribed, or we are out of subscribed results.
-			return $this->mDb->query(
-				$this->getUnsubscribedQuery(
+			return $this->getUnsubscribedQuery(
 					$realOffset, $limit, $descending, $secondaryOffset
-				), __METHOD__
-			);
+				)->fetchResultSet();
 		}
 	}
 
