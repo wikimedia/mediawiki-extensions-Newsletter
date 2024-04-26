@@ -44,19 +44,17 @@ class NewsletterDataUpdate extends DataUpdate {
 	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
 
-		return $dbr->selectRowCount(
-			'nl_newsletters',
-			'*',
-			$dbr->makeList( [
-				'nl_name' => $newNewsletterName,
-				$dbr->makeList(
-					[
-						'nl_main_page_id' => $this->content->getMainPage()->getArticleID(),
-						'nl_active' => 1
-					], LIST_AND )
-			], LIST_OR ),
-			__METHOD__
-		);
+		return $dbr->newSelectQueryBuilder()
+			->select( '*' )
+			->from( 'nl_newsletters' )
+			->where(
+				$dbr->expr( 'nl_name', '=', $newNewsletterName )->orExpr(
+					$dbr->expr( 'nl_main_page_id', '=', $this->content->getMainPage()->getArticleID() )
+						->and( 'nl_active', '=', 1 )
+				)
+			)
+			->caller( __METHOD__ )
+			->fetchRowCount();
 	}
 
 	protected function createNewNewsletterWithData( NewsletterStore $store, $formData ) {

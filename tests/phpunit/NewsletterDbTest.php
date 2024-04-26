@@ -8,8 +8,8 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\DeleteQueryBuilder;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\InsertQueryBuilder;
-use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\LoadBalancer;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\Rdbms\UpdateQueryBuilder;
 
 /**
@@ -181,17 +181,23 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->expects( $this->once() )
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
-		$mockWriteDb
-			->expects( $this->once() )
-			->method( 'selectField' )
-			->with(
-				'nl_newsletters',
-				'nl_subscriber_count',
-				[ 'nl_id' => $newsletter->getId() ]
-			)->willReturn(
+		$sqb = $this->createMock( SelectQueryBuilder::class );
+		$sqb->expects( $this->once() )->method( 'select' )
+			->with( 'nl_subscriber_count' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'from' )
+			->with( 'nl_newsletters' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'where' )
+			->with( [ 'nl_id' => $newsletter->getId() ] )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'fetchField' )
+			->willReturn(
 				// For index reasons, count is negative
 				-2
 			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'newSelectQueryBuilder' )
+			->willReturn( $sqb );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -458,11 +464,15 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
-		$mockResWrapper = $this->getMockBuilder( IResultWrapper::class )
-			->disableOriginalConstructor()
-			->getMock();
-		$mockResWrapper->expects( $this->once() )
-			->method( 'current' )
+		$sqb = $this->createMock( SelectQueryBuilder::class );
+		$sqb->expects( $this->once() )->method( 'select' )
+			->with( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'from' )
+			->with( 'nl_newsletters' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'where' )
+			->with( [ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ] )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'fetchRow' )
 			->willReturn(
 				(object)[
 					'nl_id' => $newsletter->getId(),
@@ -471,16 +481,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 					'nl_main_page_id' => $newsletter->getPageId(),
 				]
 			);
-
 		$mockWriteDb
 			->expects( $this->once() )
-			->method( 'select' )
-			->with(
-				'nl_newsletters',
-				[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
-				[ 'nl_id' => $newsletter->getId(), 'nl_active' => 1 ]
-			)
-			->willReturn( $mockResWrapper );
+			->method( 'newSelectQueryBuilder' )
+			->willReturn( $sqb );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
@@ -495,14 +499,15 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mockWriteDb = $this->getMockIDatabase();
 		$newsletter = $this->getTestNewsletter();
 
-		$mockWriteDb
-			->expects( $this->once() )
-			->method( 'selectRow' )
-			->with(
-				'nl_newsletters',
-				[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
-				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 1 ]
-			)
+		$sqb = $this->createMock( SelectQueryBuilder::class );
+		$sqb->expects( $this->once() )->method( 'select' )
+			->with( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'from' )
+			->with( 'nl_newsletters' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'where' )
+			->with( [ 'nl_name' => $newsletter->getName(), 'nl_active' => 1 ] )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
+		$sqb->expects( $this->once() )->method( 'fetchRow' )
 			->willReturn(
 				(object)[
 					'nl_id' => $newsletter->getId(),
@@ -511,6 +516,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 					'nl_main_page_id' => $newsletter->getPageId(),
 				]
 			);
+		$mockWriteDb
+			->expects( $this->once() )
+			->method( 'newSelectQueryBuilder' )
+			->willReturn( $sqb );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 

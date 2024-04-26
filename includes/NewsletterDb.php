@@ -9,6 +9,7 @@ use stdClass;
 use Wikimedia\Rdbms\DBQueryError;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Wikimedia\Rdbms\IResultWrapper;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * @license GPL-2.0-or-later
@@ -307,18 +308,14 @@ class NewsletterDb {
 	 */
 	public function getNewsletter( int $id ) {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		$res = $dbr->select(
-			'nl_newsletters',
-			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
-			[ 'nl_id' => $id, 'nl_active' => 1 ],
-			__METHOD__
-		);
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )
+			->from( 'nl_newsletters' )
+			->where( [ 'nl_id' => $id, 'nl_active' => 1 ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
-		if ( $res->numRows() === 0 ) {
-			return null;
-		}
-
-		return $this->getNewsletterFromRow( $res->current() );
+		return $res ? $this->getNewsletterFromRow( $res ) : null;
 	}
 
 	/**
@@ -330,12 +327,12 @@ class NewsletterDb {
 	 */
 	public function getNewsletterFromName( string $name, bool $active = true ) {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		$res = $dbr->selectRow(
-			'nl_newsletters',
-			[ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ],
-			[ 'nl_name' => $name, 'nl_active' => $active ],
-			__METHOD__
-		);
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )
+			->from( 'nl_newsletters' )
+			->where( [ 'nl_name' => $name, 'nl_active' => $active ] )
+			->caller( __METHOD__ )
+			->fetchRow();
 
 		return $res ? $this->getNewsletterFromRow( $res ) : null;
 	}
@@ -346,12 +343,12 @@ class NewsletterDb {
 	 */
 	public function getPublishersFromID( int $id ): array {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		$result = $dbr->selectFieldValues(
-			'nl_publishers',
-			'nlp_publisher_id',
-			[ 'nlp_newsletter_id' => $id ],
-			__METHOD__
-		);
+		$result = $dbr->newSelectQueryBuilder()
+			->select( 'nlp_publisher_id' )
+			->from( 'nl_publishers' )
+			->where( [ 'nlp_newsletter_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		return array_map( 'intval', $result );
 	}
@@ -362,12 +359,12 @@ class NewsletterDb {
 	 */
 	public function getNewsletterSubscribersCount( int $id ): int {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		$result = $dbr->selectField(
-			'nl_newsletters',
-			'nl_subscriber_count',
-			[ 'nl_id' => $id ],
-			__METHOD__
-		);
+		$result = $dbr->newSelectQueryBuilder()
+			->select( 'nl_subscriber_count' )
+			->from( 'nl_newsletters' )
+			->where( [ 'nl_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchField();
 
 		// We store nl_subscriber_count as negative numbers so that sorting should work on one
 		// direction
@@ -380,12 +377,12 @@ class NewsletterDb {
 	 */
 	public function getSubscribersFromID( int $id ): array {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		$result = $dbr->selectFieldValues(
-			'nl_subscriptions',
-			'nls_subscriber_id',
-			[ 'nls_newsletter_id' => $id ],
-			__METHOD__
-		);
+		$result = $dbr->newSelectQueryBuilder()
+			->select( 'nls_subscriber_id' )
+			->from( 'nl_subscriptions' )
+			->where( [ 'nls_newsletter_id' => $id ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		return array_map( 'intval', $result );
 	}
@@ -398,12 +395,12 @@ class NewsletterDb {
 	 */
 	public function newsletterExistsForMainPage( int $mainPageId ) {
 		$dbr = $this->lb->getConnection( DB_REPLICA );
-		return $dbr->select(
-			'nl_newsletters',
-			[ 'nl_main_page_id', 'nl_active' ],
-			[ 'nl_main_page_id' => $mainPageId ],
-			__METHOD__
-		);
+		return $dbr->newSelectQueryBuilder()
+			->select( [ 'nl_main_page_id', 'nl_active' ] )
+			->from( 'nl_newsletters' )
+			->where( [ 'nl_main_page_id' => $mainPageId ] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
 	}
 
 	/**
@@ -431,16 +428,14 @@ class NewsletterDb {
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
-		$lastIssueId = (int)$dbw->selectField(
-			'nl_issues',
-			'nli_issue_id',
-			[ 'nli_newsletter_id' => $newsletter->getId() ],
-			__METHOD__,
-			[
-				'ORDER BY' => 'nli_issue_id DESC',
-				'FOR UPDATE'
-			]
-		);
+		$lastIssueId = (int)$dbw->newSelectQueryBuilder()
+			->select( 'nli_issue_id' )
+			->from( 'nl_issues' )
+			->where( [ 'nli_newsletter_id' => $newsletter->getId() ] )
+			->orderBy( 'nli_issue_id', SelectQueryBuilder::SORT_DESC )
+			->forUpdate()
+			->caller( __METHOD__ )
+			->fetchField();
 		$nextIssueId = $lastIssueId + 1;
 
 		try {

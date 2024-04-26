@@ -100,19 +100,16 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		$mainPageId = $data['MainPage']->getArticleID();
 
 		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$rows = $dbr->select(
-			'nl_newsletters',
-			[ 'nl_name', 'nl_main_page_id', 'nl_active' ],
-			$dbr->makeList( [
-				'nl_name' => $data['Name'],
-				$dbr->makeList(
-					[
-						'nl_main_page_id' => $mainPageId,
-						'nl_active' => 1
-					], LIST_AND )
-			], LIST_OR ),
-			__METHOD__
-		);
+		$rows = $dbr->newSelectQueryBuilder()
+			->select( [ 'nl_name', 'nl_main_page_id', 'nl_active' ] )
+			->from( 'nl_newsletters' )
+			->where(
+				$dbr->expr( 'nl_name', '=', $data['Name'] )->orExpr(
+					$dbr->expr( 'nl_main_page_id', '=', $mainPageId )->and( 'nl_active', '=', 1 )
+				)
+			)
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		// Check whether another existing newsletter has the same name or main page
 		foreach ( $rows as $row ) {
 			if ( $row->nl_name === $data['Name'] ) {

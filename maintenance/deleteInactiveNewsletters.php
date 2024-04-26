@@ -22,12 +22,12 @@ class DeleteInactiveNewsletters extends Maintenance {
 		$dbw = $this->getDB( DB_PRIMARY );
 
 		if ( !$this->hasOption( 'delete' ) ) {
-			$count = $dbw->selectField(
-				'nl_newsletters',
-				'COUNT(*)',
-				[ 'nl_active' => 0 ],
-				__METHOD__
-			);
+			$count = $dbw->newSelectQueryBuilder()
+				->select( 'COUNT(*)' )
+				->from( 'nl_newsletters' )
+				->where( [ 'nl_active' => 0 ] )
+				->caller( __METHOD__ )
+				->fetchField();
 			$this->output( "Found $count inactive newsletters to delete.\n" );
 			$this->output( "Please run the script again with the --delete option "
 				. "to really delete the revisions.\n" );
@@ -35,12 +35,12 @@ class DeleteInactiveNewsletters extends Maintenance {
 		}
 
 		$this->output( "Getting inactive newsletters...\n" );
-		$idsToDelete = $dbw->selectFieldValues(
-			'nl_newsletters',
-			'nl_id',
-			[ 'nl_active' => 0 ],
-			__METHOD__
-		);
+		$idsToDelete = $dbw->newSelectQueryBuilder()
+			->select( 'nl_id' )
+			->from( 'nl_newsletters' )
+			->where( [ 'nl_active' => 0 ] )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 
 		if ( !$idsToDelete ) {
 			$this->output( "No newsletters found to be deleted" );

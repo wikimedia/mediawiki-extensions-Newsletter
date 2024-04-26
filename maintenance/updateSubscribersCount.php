@@ -23,13 +23,16 @@ class UpdateSubscribersCount extends Maintenance {
 		$lbFactory = MediaWikiServices::getInstance()->getDBLoadBalancerFactory();
 
 		while ( true ) {
-			$res = $dbw->select( [ 'nl_newsletters', 'nl_subscriptions' ],
-				[ 'nl_id', 'subscriber_count' => 'COUNT(nls_subscriber_id)' ],
-				'nl_id > ' . $dbw->addQuotes( $offset ),
-				__METHOD__,
-				[ 'GROUP BY' => 'nl_id', 'LIMIT' => 50, 'ORDER BY' => 'nl_id' ],
-				[ 'nl_subscriptions' => [ 'LEFT JOIN', 'nls_newsletter_id=nl_id' ] ]
-			);
+			$res = $dbw->newSelectQueryBuilder()
+				->select( [ 'nl_id', 'subscriber_count' => 'COUNT(nls_subscriber_id)' ] )
+				->from( 'nl_newsletters' )
+				->leftJoin( 'nl_subscriptions', null, 'nls_newsletter_id=nl_id' )
+				->where( $dbw->expr( 'nl_id', '>', $offset ) )
+				->groupBy( 'nl_id' )
+				->limit( 50 )
+				->orderBy( 'nl_id' )
+				->caller( __METHOD__ )
+				->fetchResultSet();
 
 			if ( $res->numRows() === 0 ) {
 				break;

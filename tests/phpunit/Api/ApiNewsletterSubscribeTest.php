@@ -29,20 +29,18 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 
 	protected function getNewsletterId() {
 		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$res = $dbr->select(
-			'nl_newsletters',
-			[ 'nl_id' ],
-			[
+		$res = $dbr->newSelectQueryBuilder()
+			->select( 'nl_id' )
+			->from( 'nl_newsletters' )
+			->where( [
 				'nl_name' => 'MyNewsletter',
-			],
-			__METHOD__
-		);
-		$newsletterId = null;
-		foreach ( $res as $row ) {
-			$newsletterId = $row->nl_id;
+			] )
+			->caller( __METHOD__ )
+			->fetchField();
+		if ( $res !== false ) {
+			return $res;
 		}
-
-		return $newsletterId;
+		return null;
 	}
 
 	public function testApiNewsletterForSubscribingNewsletter() {
@@ -55,14 +53,14 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		);
 
 		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$result = $dbr->selectRowCount(
-			'nl_subscriptions',
-			[ 'nls_subscriber_id' ],
-			[
+		$result = $dbr->newSelectQueryBuilder()
+			->select( [ 'nls_subscriber_id' ] )
+			->from( 'nl_subscriptions' )
+			->where( [
 				'nls_newsletter_id' => $this->getNewsletterId(),
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchRowCount();
 
 		$this->assertSame( 1, $result );
 	}
@@ -85,14 +83,14 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 		);
 
 		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
-		$result = $dbr->selectRowCount(
-			'nl_subscriptions',
-			[ 'nls_subscriber_id' ],
-			[
+		$result = $dbr->newSelectQueryBuilder()
+			->select( [ 'nls_subscriber_id' ] )
+			->from( 'nl_subscriptions' )
+			->where( [
 				'nls_newsletter_id' => $this->getNewsletterId(),
-			],
-			__METHOD__
-		);
+			] )
+			->caller( __METHOD__ )
+			->fetchRowCount();
 
 		$this->assertSame( 0, $result );
 	}
