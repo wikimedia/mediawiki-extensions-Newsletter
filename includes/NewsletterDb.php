@@ -427,7 +427,12 @@ class NewsletterDb {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->startAtomic( __METHOD__ );
 
-		$dbw->lockForUpdate( 'nl_newsletters', [ 'nl_id' => $newsletter->getId() ], __METHOD__ );
+		$dbw->newSelectQueryBuilder()
+			->table( 'nl_newsletters' )
+			->conds( [ 'nl_id' => $newsletter->getId() ] )
+			->forUpdate()
+			->caller( __METHOD__ )
+			->acquireRowLocks();
 		$lastIssueId = (int)$dbw->newSelectQueryBuilder()
 			->select( 'nli_issue_id' )
 			->from( 'nl_issues' )
