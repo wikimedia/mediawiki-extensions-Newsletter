@@ -103,10 +103,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user->addToDatabase();
 
 		$dqb = $this->createMock( DeleteQueryBuilder::class );
-		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_subscriptions' )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_subscriptions' )->willReturnSelf();
 		$dqb->expects( $this->once() )->method( 'where' )
-			->with( [ 'nls_subscriber_id' => [ $user->getId() ], 'nls_newsletter_id' => 1 ] )->willReturn( $dqb );
-		$dqb->expects( $this->once() )->method( 'caller' )->willReturn( $dqb );
+			->with( [ 'nls_subscriber_id' => [ $user->getId() ], 'nls_newsletter_id' => 1 ] )->willReturnSelf();
+		$dqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'newDeleteQueryBuilder' )
@@ -250,10 +250,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$user->addtoDatabase();
 
 		$dqb = $this->createMock( DeleteQueryBuilder::class );
-		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_publishers' )->willReturn( $dqb );
+		$dqb->expects( $this->once() )->method( 'deleteFrom' )->with( 'nl_publishers' )->willReturnSelf();
 		$dqb->expects( $this->once() )->method( 'where' )
-			->with( [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => [ $user->getId() ] ] )->willReturn( $dqb );
-		$dqb->expects( $this->once() )->method( 'caller' )->willReturn( $dqb );
+			->with( [ 'nlp_newsletter_id' => 1, 'nlp_publisher_id' => [ $user->getId() ] ] )->willReturnSelf();
+		$dqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$mockWriteDb
 			->expects( $this->once() )
 			->method( 'newDeleteQueryBuilder' )
