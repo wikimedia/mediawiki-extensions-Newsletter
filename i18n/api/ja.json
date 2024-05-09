@@ -3,7 +3,8 @@
 		"authors": [
 			"Omotecho",
 			"Sujiniku",
-			"Suyama"
+			"Suyama",
+			"Chqaz"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "ニュースレターを購読もしくは購読解除する。",
@@ -16,7 +17,8 @@
 	"apihelp-newslettermanage-param-do": "操作の指定。<kbd>addpublisher</kbd> もしくは <kbd>removepublisher</kbd>のどちらかを選択。",
 	"apihelp-newslettermanage-param-publisher": "管理対象の発行者の利用者ID。",
 	"newsletter-api-error-notfound": "ニュースレターが存在しません",
-	"newsletter-api-error-nopermissions": "ニュースレターを管理する権限がありません。",
+	"newsletter-api-error-nopermissions": "このニュースレターを管理する権限がありません。",
+	"newsletter-api-error-nocreate": "ニュース・レターを作成する権限がありません。",
 	"newsletter-api-error-invalidpublisher-registered": "発行者は登録利用者ではありません。",
 	"newsletter-api-error-subscribe-notloggedin": "ニュースレターの購読にはログインが必要です。"
 }
