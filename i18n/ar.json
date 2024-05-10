@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Hiba Alshawi",
+			"Hubaishan",
 			"Maroen1990",
 			"Meno25",
 			"ديفيد",
@@ -62,7 +63,7 @@
 	"newsletter-manage": "إدارة الرسالة الإخبارية \"$1\"",
 	"newsletter-manage-publishers": "الناشرون:",
 	"newsletter-manage-name": "اسم الرسالة الإخبارية:",
-	"newsletter-manage-title": "عنوان الصفحة الرئيسية",
+	"newsletter-manage-title": "عنوان الصفحة الرئيسة",
 	"newsletter-manage-description": "الوصف:",
 	"newsletter-manage-text": "يمكنك إضافة أو إزالة ناشرين لـ\"$1\" عن طريق تعديل القائمة أدناه.",
 	"newsletter-managenewsletter-button": "إرسال",
