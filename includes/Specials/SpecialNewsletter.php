@@ -438,7 +438,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 			return;
 		}
 
-		$out->setPageTitle( $this->msg( 'newsletter-subscribers' )->text() );
+		$out->setPageTitleMsg( $this->msg( 'newsletter-subscribers' ) );
 		$subscribers = UserArray::newFromIDs( $this->newsletter->getSubscribers() );
 		$subscribersNames = [];
 		foreach ( $subscribers as $subscriber ) {
