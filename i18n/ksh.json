@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Purodha"
+			"Purodha",
+			"Matma Rex"
 		]
 	},
 	"newsletter-extension-desc": "Löht Metmaacher Rondschrihve veröffentlesche un abbonnehre",
@@ -36,7 +37,7 @@
 	"newsletter-unsubscribing": "Ben aam Affbeschtälle …",
 	"newsletter-available-newsletters-field-label": "Rondschrihve em Aanjbott",
 	"newsletter-subscribed-newsletters-field-label": "Rondschrihve em Abonnemang",
-	"newsletter-none-found": "Et sinn-er kein Rondschrihve doh. mer kann e neu Rondschrihve aanlähje övver di Sigg [[Special:CreateNewsletter]]. ",
+	"newsletter-none-found": "Et sinn-er kein Rondschrihve doh. mer kann e neu Rondschrihve aanlähje övver di Sigg [[Special:CreateNewsletter]].",
 	"echo-category-title-newsletter": "Rondschrihve",
 	"echo-pref-tooltip-newsletter": "Lohß mesch wesse, wann eneu Ußjahb aanjkondesch weed för e Rondschrihve, wadd_esch em Abonnemang han.",
 	"newsletter-notification-title": "{{GENDER:$4|Dä|Dat|Dä Metmaacher|De|Dat}} [[User:$3|$3]] hädd_en [[$2|neuje Ußjahb]] vum Rondschrihve „$1“ aanjeköndesch.",
