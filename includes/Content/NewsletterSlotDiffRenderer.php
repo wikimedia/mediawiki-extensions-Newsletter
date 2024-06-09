@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\Newsletter\Content;
 
 use Content;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Title\Title;

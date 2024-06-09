@@ -3,11 +3,11 @@
 namespace MediaWiki\Extension\Newsletter\Logging;
 
 use ManualLogEntry;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
-use RequestContext;
 
 /**
  * @license GPL-2.0-or-later

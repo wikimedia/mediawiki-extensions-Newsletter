@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
-use HTMLForm;
 use MediaWiki\Extension\Newsletter\Specials\Pagers\NewsletterTablePager;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\SpecialPage\SpecialPage;
 
 /**

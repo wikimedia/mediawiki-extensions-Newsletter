@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
+use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 

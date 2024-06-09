@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
-use EchoEvent;
+use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
@@ -275,7 +275,7 @@ class Newsletter {
 			$notification['type'] = 'newsletter-delpublisher';
 			$notification['extra']['del-publishers-id'] = $affectedUsers;
 		}
-		EchoEvent::create( $notification );
+		Event::create( $notification );
 	}
 
 }

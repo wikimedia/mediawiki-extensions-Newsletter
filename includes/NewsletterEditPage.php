@@ -3,9 +3,9 @@
 namespace MediaWiki\Extension\Newsletter;
 
 use BadRequestError;
-use HTMLForm;
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Revision\RevisionRecord;

@@ -5,17 +5,18 @@ namespace MediaWiki\Extension\Newsletter\Content;
 use ApiMain;
 use ApiUsageException;
 use Content;
-use DerivativeContext;
 use FormatJson;
-use HTMLForm;
-use IContextSource;
 use Iterator;
 use JsonContentHandler;
 use LogEventsList;
 use MediaWiki\Content\Renderer\ContentParseParams;
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\IContextSource;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferrableUpdate;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
@@ -31,7 +32,6 @@ use MWContentSerializationException;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonWidget;
 use ParserOptions;
-use RequestContext;
 
 /**
  * @license GPL-2.0-or-later

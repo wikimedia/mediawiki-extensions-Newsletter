@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Newsletter\Notifications;
 
-use EchoEventPresentationModel;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Extension\Notifications\Formatters\EchoEventPresentationModel;
 use MediaWiki\Title\Title;
 use RuntimeException;
 

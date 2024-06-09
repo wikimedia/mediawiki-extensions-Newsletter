@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials\Pagers;
 
-use IContextSource;
+use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletter;
 use MediaWiki\Html\Html;

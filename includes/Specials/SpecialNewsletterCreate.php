@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
-use HTMLForm;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;

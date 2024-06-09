@@ -2,13 +2,13 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
-use EchoEvent;
 use ExtensionRegistry;
-use HTMLForm;
 use LogEventsList;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
+use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -406,7 +406,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 			return Status::newFatal( 'newsletter-announce-failure' );
 		}
 
-		EchoEvent::create(
+		Event::create(
 			[
 				'type' => 'newsletter-announce',
 				'title' => $title,
@@ -509,7 +509,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 				throw new ConfigException( 'Echo extension is not installed.' );
 			}
 			if ( $added ) {
-				EchoEvent::create(
+				Event::create(
 					[
 						'type' => 'newsletter-subscribed',
 						'extra' => [
@@ -522,7 +522,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 				);
 			}
 			if ( $removed ) {
-				EchoEvent::create(
+				Event::create(
 					[
 						'type' => 'newsletter-unsubscribed',
 						'extra' => [
