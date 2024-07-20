@@ -16,6 +16,14 @@ use MediaWiki\User\User;
 class NewsletterAPIEditTest extends ApiTestCase {
 	private const DESCRIPTION = "A description that is at least 30 characters long";
 
+	public function setUp(): void {
+		parent::setUp();
+		// Make sure the context user is set to a named user account, otherwise
+		// ::createList will fail when temp accounts are enabled, because
+		// that generates a log entry which requires a named or temp account actor
+		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
+	}
+
 	public function testCreation() {
 		$newsletterTitle = "Newsletter:Test";
 		$mainPage = "UTPage";

@@ -9,7 +9,7 @@ use Content;
 use MediaWiki\Content\Hook\ContentModelCanBeUsedOnHook;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContent;
-use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPresentationModel;
+use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterAnnouncePresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherAddedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherRemovedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterSubscribedPresentationModel;
@@ -80,7 +80,7 @@ class Hooks implements
 				[ [ EchoNewsletterUserLocator::class, 'locateNewsletterSubscribedUsers' ] ],
 			],
 			'canNotifyAgent' => true,
-			'presentation-model' => EchoNewsletterPresentationModel::class,
+			'presentation-model' => EchoNewsletterAnnouncePresentationModel::class,
 			'title-message' => 'newsletter-notification-title',
 			'title-params' => [ 'newsletter-name', 'title', 'agent', 'user' ],
 			'flyout-message' => 'newsletter-notification-flyout',

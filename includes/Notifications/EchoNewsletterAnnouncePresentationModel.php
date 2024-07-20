@@ -6,7 +6,7 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
  * Class that returns structured data for the newsletter echo events.
  * @see https://www.mediawiki.org/wiki/Echo_%28Notifications%29/New_formatter_system
  */
-class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
+class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentationModel {
 
 	public function getIconType() {
 		return 'site';
@@ -29,6 +29,11 @@ class EchoNewsletterPresentationModel extends BaseNewsletterPresentationModel {
 				'url' => $this->getNewsletterUrl(),
 				'label' => $this->msg( 'newsletter-notification-link-text-view-newsletter' ),
 				'prioritized' => true,
+			],
+			[
+				'url' => $this->getNewsletterUnsubscribeUrl(),
+				'label' => $this->msg( 'newsletter-notification-link-text-unsubscribe-newsletter' ),
+				'prioritized' => false,
 			],
 		];
 	}

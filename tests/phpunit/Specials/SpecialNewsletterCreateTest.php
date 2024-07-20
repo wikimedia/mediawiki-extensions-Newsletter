@@ -64,6 +64,10 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 	}
 
 	public function testCreateNewsletterMainPageAlreadyUsed() {
+		// Make sure the context user is set to a named user account, otherwise
+		// ::createList will fail when temp accounts are enabled, because
+		// that generates a log entry which requires a named or temp account actor
+		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		// Create 1st newsletter with conflicting main page
 		$mainpage = Title::newFromText( 'UTPage' );
 		$firstNewsletterTitle = Title::makeTitleSafe( NS_NEWSLETTER, 'First Newsletter' );
@@ -94,6 +98,10 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 
 	public function testCreateNewsletterNameUnique() {
 		// Create 1st newsletter that will have a duplicated name
+		// Make sure the context user is set to a named user account, otherwise
+		// ::createList will fail when temp accounts are enabled, because
+		// that generates a log entry which requires a named or temp account actor
+		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		$newsletterTitle = Title::makeTitleSafe( NS_NEWSLETTER, 'Duplicated Newsletter' );
 		$firstMainPage = Title::newFromText( 'Test Page' );
 		$store = NewsletterStore::getDefaultInstance();
