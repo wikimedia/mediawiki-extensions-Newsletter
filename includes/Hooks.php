@@ -260,7 +260,7 @@ class Hooks implements
 					return false;
 				}
 			}
-			$store->restoreNewsletter( $newsletterName );
+			$store->restoreNewsletter( $newsletter );
 		} elseif ( !$title->exists() ) {
 			// If the title exists, then there's no reason to block the undeletion
 			// whatever you are doing is probably a bad idea, but won't cause any inconsistencies

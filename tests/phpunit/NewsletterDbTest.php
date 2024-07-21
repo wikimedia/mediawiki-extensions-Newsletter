@@ -429,7 +429,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			[
 				'nl_newsletters',
 				[ 'nl_active' => 1 ],
-				[ 'nl_name' => $newsletter->getName(), 'nl_active' => 0 ]
+				[ 'nl_id' => $newsletter->getId() ]
 			]
 		];
 		$mockWriteDb
@@ -453,7 +453,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$result = $table->deleteNewsletter( $newsletter );
 		$this->assertNull( $result );
 
-		$result = $table->restoreNewsletter( $newsletter->getName() );
+		$result = $table->restoreNewsletter( $newsletter );
 		$this->assertNull( $result );
 	}
 

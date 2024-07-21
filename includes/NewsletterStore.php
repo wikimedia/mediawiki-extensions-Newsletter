@@ -145,10 +145,10 @@ class NewsletterStore {
 	/**
 	 * Restore a newsletter from the delete logs
 	 *
-	 * @param string $newsletterName
+	 * @param Newsletter $newsletter
 	 */
-	public function restoreNewsletter( string $newsletterName ): void {
-		$this->db->restoreNewsletter( $newsletterName );
+	public function restoreNewsletter( Newsletter $newsletter ): void {
+		$this->db->restoreNewsletter( $newsletter );
 	}
 
 	/**

@@ -290,14 +290,14 @@ class NewsletterDb {
 	/**
 	 * Set an inactive newsletter to active again
 	 *
-	 * @param string $newsletterName
+	 * @param Newsletter $newsletter
 	 */
-	public function restoreNewsletter( string $newsletterName ): void {
+	public function restoreNewsletter( Newsletter $newsletter ): void {
 		$dbw = $this->lb->getConnection( DB_PRIMARY );
 		$dbw->newUpdateQueryBuilder()
 			->update( 'nl_newsletters' )
 			->set( [ 'nl_active' => 1 ] )
-			->where( [ 'nl_name' => $newsletterName, 'nl_active' => 0 ] )
+			->where( [ 'nl_id' => $newsletter->getId() ] )
 			->caller( __METHOD__ )
 			->execute();
 	}
