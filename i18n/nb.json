@@ -108,6 +108,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|har}} annonser en ny utgave av $1.",
 	"newsletter-notification-link-text-new-issue": "Vis ny utgave",
 	"newsletter-notification-link-text-view-newsletter": "Vis nyhetsbrev",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Avslutt abonnement",
 	"newsletter-email-subject": "En ny utgave av $1 har blitt kunngjort.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|har}} annonsert en ny utgave av $1.",
 	"newsletter-header-name": "Navn",

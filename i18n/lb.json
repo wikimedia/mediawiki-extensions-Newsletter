@@ -60,6 +60,7 @@
 	"newsletter-notification-subscribed": "Dir gouft vun engem Administrateur an d'Lëscht vun den Abonnente vun der \"$1\"-Newsletter dragesat.",
 	"newsletter-notification-unsubscribed": "Dir gouft vun engem Administrateur aus der Lëscht vun den Abonnente vun der \"$1\"-Newsletter erofgeholl.",
 	"newsletter-notification-link-text-view-newsletter": "Newsletter weisen",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Ofbestellen",
 	"newsletter-email-subject": "Eng nei Ausgab vu(n) $1 gouf annoncéiert.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|huet}} eng nei Ausgab vum $1 annoncéiert.",
 	"newsletter-header-name": "Numm",
