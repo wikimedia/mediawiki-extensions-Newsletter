@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Assorted-Interests",
 			"Gomoko",
 			"Grind24",
 			"Lbayle",
@@ -118,6 +119,7 @@
 	"newsletter-notification-flyout": "$2{{GENDER:$3|}} a annoncé un nouveau numéro de $1.",
 	"newsletter-notification-link-text-new-issue": "Voir le nouveau numéro",
 	"newsletter-notification-link-text-view-newsletter": "Voir le bulletin d’information",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Se désabonner",
 	"newsletter-email-subject": "Un nouveau numéro de « $1 » a été annoncé.",
 	"newsletter-email-batch-body": "$2{{GENDER:$3|}} a annoncé un nouveau numéro de « $1 ».",
 	"newsletter-header-name": "Nom",

@@ -107,6 +107,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|објави}} нов број на $1.",
 	"newsletter-notification-link-text-new-issue": "Погледајте го новиот број",
 	"newsletter-notification-link-text-view-newsletter": "Погл. билтен",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Отпиши ме",
 	"newsletter-email-subject": "Објавен е нов број на $1",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|објави}} нов број на $1.",
 	"newsletter-header-name": "Назив",

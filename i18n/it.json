@@ -110,6 +110,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ha pubblicato}} una nuova edizione di $1.",
 	"newsletter-notification-link-text-new-issue": "Vedi nuova edizione",
 	"newsletter-notification-link-text-view-newsletter": "Visualizza newsletter",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Annulla iscrizione",
 	"newsletter-email-subject": "Una nuova edizione di $1 è stata pubblicata.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|ha pubblicato}} una nuova edizione di $1.",
 	"newsletter-header-name": "Nome",

@@ -110,6 +110,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|הודיע|הודיעה}} על גיליון חדש של \"$1\".",
 	"newsletter-notification-link-text-new-issue": "הצגת הגיליון החדש",
 	"newsletter-notification-link-text-view-newsletter": "הצגת הידיעון",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "ביטול מינוי",
 	"newsletter-email-subject": "פורסם גיליון חדש של $1.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|הודיע|הודיעה}} על גיליון חדש של \"$1\".",
 	"newsletter-header-name": "שם",
