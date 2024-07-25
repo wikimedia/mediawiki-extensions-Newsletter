@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"CrownedWharf566",
+			"Huajing",
 			"Lakejason0",
 			"Liang860908",
 			"Liuxinyu970226",
@@ -113,6 +114,7 @@
 	"newsletter-notification-flyout": "$2{{GENDER:$3|发布}}了$1的新一期。",
 	"newsletter-notification-link-text-new-issue": "查看新期刊",
 	"newsletter-notification-link-text-view-newsletter": "查看新闻报",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "取消订阅",
 	"newsletter-email-subject": "$1的新一期已发布。",
 	"newsletter-email-batch-body": "$2{{GENDER:$3|发布}}了$1的新一期。",
 	"newsletter-header-name": "名称",
