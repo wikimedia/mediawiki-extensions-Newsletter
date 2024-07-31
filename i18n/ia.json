@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Karmwiki",
 			"McDutchie"
 		]
 	},
@@ -105,6 +106,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ha annunciate}} un nove edition de $1.",
 	"newsletter-notification-link-text-new-issue": "Vide le nove edition",
 	"newsletter-notification-link-text-view-newsletter": "Vider le bulletin de novas",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Cancellar subscription",
 	"newsletter-email-subject": "Un nove edition de $1 ha essite annunciate.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|ha annunciate}} un nove edition de $1.",
 	"newsletter-header-name": "Nomine",
