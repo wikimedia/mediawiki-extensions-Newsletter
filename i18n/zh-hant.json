@@ -117,6 +117,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|已發佈}} $1 的新期號。",
 	"newsletter-notification-link-text-new-issue": "檢視新期號",
 	"newsletter-notification-link-text-view-newsletter": "查看電子報",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "取消訂閱",
 	"newsletter-email-subject": "新期號 $1 已發佈。",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|已發佈}} $1 的新期號。",
 	"newsletter-header-name": "名稱",

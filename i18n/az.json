@@ -1,0 +1,15 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nemoralis"
+		]
+	},
+	"newsletter-extension-desc": "İstifadəçilərin xəbərlər üçün yayım və abunə olmalarını təmin edir",
+	"newsletter-name": "Bülletenin adı",
+	"newsletter-desc": "Açıqlama",
+	"newsletter-title": "Bülleten haqqında məlumat ehtiva edən viki səhifəsi",
+	"newsletter-exist-error": "\"$1\" adlı bir bülleten artıq mövcuddur. Zəhmət olmasa başqa adla yenidən cəhd edin.",
+	"newsletter-create-error": "Yeni bir bülleten qeydiyyatdan keçirməyə çalışırkən bir səhv baş verib. Xahiş edirik, yenidən cəhd edin.",
+	"newsletter-oldrev-undo-error-title": "Üzr istəyirik, bu əməliyyatın icazəsi yoxdur.",
+	"newsletter-oldrev-undo-error-body": "Əvvəlki versiyanı geri qaytarmaq Newsletter uzantısı tərəfindən dəstəklənmir. Xahiş edirik son versiyanı geri qaytarın."
+}
