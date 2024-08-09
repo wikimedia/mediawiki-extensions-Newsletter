@@ -11,6 +11,7 @@ use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Status\Status;
@@ -300,9 +301,9 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 		}
 
 		if ( !$this->newsletter->isPublisher( $user ) ) {
-			$out->showPermissionsErrorPage(
-				[ [ 'newsletter-announce-nopermission' ] ]
-			);
+			$out->showPermissionStatus( PermissionStatus::newFatal(
+				'newsletter-announce-nopermission'
+			) );
 			return;
 		}
 
@@ -432,9 +433,9 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 		$out = $this->getOutput();
 
 		if ( !$this->newsletter->canManage( $user ) ) {
-			$out->showPermissionsErrorPage(
-				[ [ 'newsletter-subscribers-nopermission' ] ]
-			);
+			$out->showPermissionStatus( PermissionStatus::newFatal(
+				'newsletter-subscribers-nopermission'
+			) );
 			return;
 		}
 

@@ -83,9 +83,9 @@ class NewsletterEditPage {
 			$this->getManageForm( $revId, $undoId, $oldId )->show();
 		} else {
 			$permManager = $services->getPermissionManager();
-			$permErrors = $permManager->getPermissionErrors( 'edit', $this->user, $this->title );
-			if ( count( $permErrors ) ) {
-				$this->out->showPermissionsErrorPage( $permErrors );
+			$status = $permManager->getPermissionStatus( 'edit', $this->user, $this->title );
+			if ( !$status->isGood() ) {
+				$this->out->showPermissionStatus( $status );
 				return;
 			}
 
