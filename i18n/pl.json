@@ -113,6 +113,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|ogłosił|ogłosiła|ogłosił(a)}} nowe wydanie $1.",
 	"newsletter-notification-link-text-new-issue": "Pokaż nowe wydanie",
 	"newsletter-notification-link-text-view-newsletter": "Pokaż newsletter",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Zrezygnuj z subskrypcji",
 	"newsletter-email-subject": "Nowe wydanie $1 zostało ogłoszone.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|ogłosił|ogłosiła|ogłosił(a)}} nowe wydanie $1.",
 	"newsletter-header-name": "Nazwa",
@@ -160,5 +161,7 @@
 	"newsletter-diff-descheader": "Zmiany w opisie:",
 	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
 	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:",
-	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1"
+	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1",
+	"newsletter-ch-tojsonerror": "Błąd w serializacji do JSON podczas zapisywania.",
+	"newsletter-orphan-revisions": "Nie można odtworzyć wersji niezwiązanych z usuniętym newsletterem."
 }
