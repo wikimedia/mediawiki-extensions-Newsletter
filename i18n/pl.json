@@ -160,5 +160,7 @@
 	"newsletter-diff-descheader": "Zmiany w opisie:",
 	"newsletter-diff-mainpageheader": "Zmiany na stronie głównej:",
 	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:",
-	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1"
+	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1",
+	"newsletter-ch-tojsonerror": "Błąd w serializacji do JSON podczas zapisywania.",
+	"newsletter-orphan-revisions": "Nie można odtworzyć wersji niezwiązanych z usuniętym newsletterem."
 }
