@@ -20,7 +20,8 @@
 	"apihelp-newslettermanage-example-1": "Dodaj wydawcę o ID użytkownika 3 do newslettera o ID 1.",
 	"apihelp-newslettermanage-example-2": "Usuń z newslettera o ID 2 wydawcę o ID użytkownika 5.",
 	"newsletter-api-error-notfound": "Newsletter nie istnieje",
-	"newsletter-api-error-nopermissions": "Nie masz uprawnień do zarządzania newsletterami.",
+	"newsletter-api-error-nopermissions": "Nie masz uprawnień do zarządzania tym newsletterem.",
+	"newsletter-api-error-nocreate": "Nie masz uprawnień do tworzenia newsletterów.",
 	"newsletter-api-error-invalidpublisher-registered": "Publikator nie jest zarejestrowanym użytkownikiem.",
 	"newsletter-api-error-subscribe-notloggedin": "Musisz być zalogowany, by subskrybować newslettery."
 }
