@@ -162,5 +162,7 @@
 	"newsletter-diff-publishersheader": "Changes in publishers:",
 	"newsletter-ch-apierror": "Error saving page: $1",
 	"newsletter-ch-tojsonerror": "Error serializing to JSON during save.",
-	"newsletter-orphan-revisions": "Can't undelete revisions that don't correspond to an actual deleted newsletter."
+	"newsletter-orphan-revisions": "Can't undelete revisions that don't correspond to an actual deleted newsletter.",
+	"namespaceinfo-description-ns5500": "Namespace containing newsletter content",
+	"namespaceinfo-description-ns5501": "Talk page for a newsletter in the Newsletter namespace"
 }
