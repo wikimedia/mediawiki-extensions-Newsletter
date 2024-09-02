@@ -160,5 +160,7 @@
 	"newsletter-diff-publishersheader": "Änderungen an den Herausgebern:",
 	"newsletter-ch-apierror": "Fehler beim Speichern der Seite: $1",
 	"newsletter-ch-tojsonerror": "Fehler beim Serialisieren in JSON beim Speichern.",
-	"newsletter-orphan-revisions": "Versionen, die nicht mit einem tatsächlich gelöschten Newsletter übereinstimmen, können nicht rückgängig gemacht werden."
+	"newsletter-orphan-revisions": "Versionen, die nicht mit einem tatsächlich gelöschten Newsletter übereinstimmen, können nicht rückgängig gemacht werden.",
+	"namespaceinfo-description-ns5500": "Namensraum mit Newsletter-Inhalten",
+	"namespaceinfo-description-ns5501": "Diskussionsseite für einen Newsletter im Newsletter-Namensraum"
 }

@@ -167,5 +167,7 @@
 	"newsletter-diff-publishersheader": "發佈者的變更：",
 	"newsletter-ch-apierror": "儲存頁面時發生錯誤：$1",
 	"newsletter-ch-tojsonerror": "序列化成 JSON 在儲存時發生錯誤。",
-	"newsletter-orphan-revisions": "無法取消刪除與實際刪除的電子報不對應的修訂。"
+	"newsletter-orphan-revisions": "無法取消刪除與實際刪除的電子報不對應的修訂。",
+	"namespaceinfo-description-ns5500": "包含電子報內容的命名空間",
+	"namespaceinfo-description-ns5501": "在 Newsletter 命名空間中電子報的討論頁面"
 }

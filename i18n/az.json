@@ -155,5 +155,7 @@
 	"newsletter-diff-publishersheader": "Naşirlərdə dəyişikliklər:",
 	"newsletter-ch-apierror": "Səhifəni yadda saxlayarkən xəta: $1",
 	"newsletter-ch-tojsonerror": "Yadda saxlama zamanı JSON-a seriallaşdırma xətası.",
-	"newsletter-orphan-revisions": "Faktiki silinmiş bülleten ilə uyğun gəlməyən versiyaları geri qaytarmaq mümkün deyil."
+	"newsletter-orphan-revisions": "Faktiki silinmiş bülleten ilə uyğun gəlməyən versiyaları geri qaytarmaq mümkün deyil.",
+	"namespaceinfo-description-ns5500": "Bülleten məzmununu ehtiva edən ad fəzası",
+	"namespaceinfo-description-ns5501": "Newsletter ad fəzasındakı bülleten üçün müzakirə səhifəsi"
 }

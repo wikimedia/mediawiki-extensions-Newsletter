@@ -157,5 +157,7 @@
 	"newsletter-diff-publishersheader": "Промени во издавачите:",
 	"newsletter-ch-apierror": "Грешка при зачувувањето на страницата: $1",
 	"newsletter-ch-tojsonerror": "Грешка во серилизацијата на JSON при зачувувањето.",
-	"newsletter-orphan-revisions": "Не можам да вратам избришани преработки кои не одговараат на фактички избришан билтен."
+	"newsletter-orphan-revisions": "Не можам да вратам избришани преработки кои не одговараат на фактички избришан билтен.",
+	"namespaceinfo-description-ns5500": "Именски простор кој има билтенска содржина",
+	"namespaceinfo-description-ns5501": "Разговорна страница за билтен во именскиот простор Билтен"
 }

@@ -160,5 +160,7 @@
 	"newsletter-diff-publishersheader": "שינויים במפרסמים:",
 	"newsletter-ch-apierror": "שגיאה בשמירת הדף: $1",
 	"newsletter-ch-tojsonerror": "שגיאה בהסדרה ל־JSON במהלך השמירה.",
-	"newsletter-orphan-revisions": "לא ניתן לבטל מחיקה של גרסאות שאינן תואמות לידיעון אמיתי מחוק."
+	"newsletter-orphan-revisions": "לא ניתן לבטל מחיקה של גרסאות שאינן תואמות לידיעון אמיתי מחוק.",
+	"namespaceinfo-description-ns5500": "מרחב שם שמכיל תוכן של ידיעונים",
+	"namespaceinfo-description-ns5501": "דף שיחה של ידיעון במרחב השם של ידיעונים"
 }
