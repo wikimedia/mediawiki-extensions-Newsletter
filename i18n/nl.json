@@ -116,6 +116,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|heeft}} een nieuwe uitgave van $1 aangekondigd.",
 	"newsletter-notification-link-text-new-issue": "Toon de nieuwe uitgave",
 	"newsletter-notification-link-text-view-newsletter": "Toon de nieuwsbrief",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Uitschrijven",
 	"newsletter-email-subject": "Een nieuwe uitgave van $1 is aangekondigd.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|heeft}} een nieuwe uitgave van $1 aangekondigd.",
 	"newsletter-header-name": "Naam",
@@ -165,5 +166,7 @@
 	"newsletter-diff-publishersheader": "Wijzigingen aan de uitgevers:",
 	"newsletter-ch-apierror": "Fout bij het opslaan van pagina: $1",
 	"newsletter-ch-tojsonerror": "Fout bij het serialiseren naar JSON tijdens het opslaan.",
-	"newsletter-orphan-revisions": "Het verwijderen van versies die niet overeenkomen met een daadwerkelijk verwijderde nieuwsbrief kan niet ongedaan worden gemaakt."
+	"newsletter-orphan-revisions": "Het verwijderen van versies die niet overeenkomen met een daadwerkelijk verwijderde nieuwsbrief kan niet ongedaan worden gemaakt.",
+	"namespaceinfo-description-ns5500": "Naamruimte met nieuwsbriefinhoud",
+	"namespaceinfo-description-ns5501": "Overlegpagina voor een nieuwsbrief in de naamruimte Nieuwsbrief"
 }
