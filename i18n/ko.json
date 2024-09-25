@@ -115,5 +115,7 @@
 	"log-description-newsletter": "이것은 뉴스레터의 변경 기록입니다.",
 	"logentry-newsletter-newsletter-added": "$1님이 $4 뉴스레터를 {{GENDER:$2|등록했습니다}}",
 	"logentry-newsletter-issue-added": "$1 님이 $4 뉴스레터의 $6 새 제호를 {{GENDER:$2|발행했습니다.}}",
-	"log-action-filter-newsletter": "조치 유형:"
+	"log-action-filter-newsletter": "조치 유형:",
+	"namespaceinfo-description-ns5500": "뉴스레터 내용을 포함하는 이름공간",
+	"namespaceinfo-description-ns5501": "뉴스레터 이름공간에 속하는 뉴스레터의 토론 문서"
 }
