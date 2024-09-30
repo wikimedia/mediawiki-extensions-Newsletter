@@ -156,5 +156,7 @@
 	"newsletter-diff-publishersheader": "Cambiamentos in le editores:",
 	"newsletter-ch-apierror": "Error salveguardante pagina: $1",
 	"newsletter-ch-tojsonerror": "Error serialisante a JSON durante salveguarda.",
-	"newsletter-orphan-revisions": "Non pote restaurar versiones que non corresponde a un actual bulletin de novas delite."
+	"newsletter-orphan-revisions": "Non pote restaurar versiones que non corresponde a un actual bulletin de novas delite.",
+	"namespaceinfo-description-ns5500": "Spatio de nomines con le contento de bulletines de novas",
+	"namespaceinfo-description-ns5501": "Pagina de discussion pro un bulletin de novas in le spatio de nomines Newsletter"
 }

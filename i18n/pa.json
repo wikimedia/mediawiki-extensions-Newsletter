@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
+			"Cabal",
 			"Jimidar"
 		]
 	},
+	"newsletter-view-mainpage": "ਸਮਾਚਾਰ-ਪੱਤਰ ਮੁੱਢਲਾ ਵਰਕਾ:",
 	"log-action-filter-newsletter": "ਕਾਰਵਾਈ ਦੀ ਕਿਸਮː"
 }
