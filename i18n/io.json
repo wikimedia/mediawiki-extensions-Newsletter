@@ -23,5 +23,10 @@
 	"newsletter-header-description": "Deskriptado",
 	"newsletter-header-subscriber_count": "Abonanti",
 	"newsletter-list-go-button": "Irez",
-	"log-action-filter-newsletter-publisher-removed": "Efaco di redaktero"
+	"log-action-filter-newsletter": "Tipo di agado:",
+	"log-action-filter-newsletter-publisher-added": "Adjuntar redaktero",
+	"log-action-filter-newsletter-publisher-removed": "Efaco di redaktero",
+	"log-action-filter-newsletter-newsletter-added": "Kreo di \"jurnalo pri novaji\" (''Newsletter'')",
+	"log-action-filter-newsletter-newsletter-removed": "Efaco di \"jurnalo pri novaji\" (''Newsletter'')",
+	"log-action-filter-newsletter-issue-added": "Anunci pri nova resursi"
 }
