@@ -23,3 +23,13 @@ $namespaceNames['ko'] = [
 	NS_NEWSLETTER => '뉴스레터',
 	NS_NEWSLETTER_TALK => '뉴스레터토론',
 ];
+
+$namespaceNames['nb'] = [
+	NS_NEWSLETTER => 'Nyhetsbrev',
+	NS_NEWSLETTER_TALK => 'Nyhetsbrevsdiskusjon',
+];
+
+$namespaceNames['nn'] = [
+	NS_NEWSLETTER => 'Nyhendebrev',
+	NS_NEWSLETTER_TALK => 'Nyhendebrevsdiskusjon',
+];

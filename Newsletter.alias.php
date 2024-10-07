@@ -35,3 +35,17 @@ $specialPageAliases['ko'] = [
 	'Newsletters' => [ '뉴스레터목록' ],
 	'Newsletter' => [ '뉴스레터' ],
 ];
+
+/** Norwegian (Bokmål) (norsk (bokmål)) */
+$specialPageAliases['nb'] = [
+	'NewsletterCreate' => [ 'Opprett_nyhetsbrev' ],
+	'Newsletters' => [ 'Liste_over_nyhetsbrev' ],
+	'Newsletter' => [ 'Nyhetsbrev' ],
+];
+
+/** Norwegian (Nynorsk) (norsk (nynorsk)) */
+$specialPageAliases['nn'] = [
+	'NewsletterCreate' => [ 'Opprett_nyhendesbrev' ],
+	'Newsletters' => [ 'Liste_over_nyhendebrev' ],
+	'Newsletter' => [ 'Nyhendebrev' ],
+];
