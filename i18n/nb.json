@@ -158,5 +158,7 @@
 	"newsletter-diff-publishersheader": "Endringer i utgivere:",
 	"newsletter-ch-apierror": "Feil under lagring av side: $1",
 	"newsletter-ch-tojsonerror": "Feil ved serialisering til JSON under lagring.",
-	"newsletter-orphan-revisions": "Kan ikke gjenopprette sideversjoner som ikke tilsvarer det slettede nyhetsbrevet."
+	"newsletter-orphan-revisions": "Kan ikke gjenopprette sideversjoner som ikke tilsvarer det slettede nyhetsbrevet.",
+	"namespaceinfo-description-ns5500": "Navnerom som inneholder nyhetsbrevsinnhold",
+	"namespaceinfo-description-ns5501": "Diskusjonsside for et nyhetsbrev i nyhetsbrevsnavnerommet"
 }
