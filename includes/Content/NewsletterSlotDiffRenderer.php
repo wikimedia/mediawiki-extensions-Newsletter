@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter\Content;
 
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Html\Html;
 use MediaWiki\Output\OutputPage;

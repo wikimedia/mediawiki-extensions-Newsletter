@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletterCreate;

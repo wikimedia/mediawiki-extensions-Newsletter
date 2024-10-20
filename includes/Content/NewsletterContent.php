@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter\Content;
 
-use JsonContent;
+use MediaWiki\Content\JsonContent;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

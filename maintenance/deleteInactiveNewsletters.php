@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\Maintenance\Maintenance;
+
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
 

@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
-use ExtensionRegistry;
 use LogEventsList;
 use MediaWiki\Config\ConfigException;
 use MediaWiki\Extension\Newsletter\Newsletter;
@@ -12,6 +11,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionStatus;
+use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
 use MediaWiki\Status\Status;

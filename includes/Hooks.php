@@ -5,7 +5,7 @@
 namespace MediaWiki\Extension\Newsletter;
 
 use Article;
-use Content;
+use MediaWiki\Content\Content;
 use MediaWiki\Content\Hook\ContentModelCanBeUsedOnHook;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContent;

@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\Newsletter\Api;
 
-use ApiBase;
 use LogicException;
+use MediaWiki\Api\ApiBase;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use Wikimedia\ParamValidator\ParamValidator;
 
