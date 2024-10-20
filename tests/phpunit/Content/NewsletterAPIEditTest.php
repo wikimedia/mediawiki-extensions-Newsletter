@@ -55,12 +55,12 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( self::DESCRIPTION, $newsletter->getDescription() );
 		$this->assertEquals( self::DESCRIPTION, $content->getDescription() );
 
-		# Check main page
+		# Check the main page exists
 		$expectedPageId = $mainPage->getId();
 		$this->assertEquals( $expectedPageId, $newsletter->getPageId() );
 		$this->assertEquals( $content->getMainPage(), $mainPage->getTitle()->getText() );
 
-		# Check publishers and subsrcibers
+		# Check publishers and subscribers
 		$expectedUsers = [ User::newFromname( "UTSysop" )->getId() ];
 		$this->assertEquals( $expectedUsers, $newsletter->getPublishers() );
 		$this->assertEquals( $expectedUsers, $newsletter->getSubscribers() );
