@@ -69,7 +69,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		// that generates a log entry which requires a named or temp account actor
 		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		// Create 1st newsletter with conflicting main page
-		$mainpage = Title::newFromText( 'UTPage' );
+		$mainpage = $this->getExistingTestPage( 'UTPage' )->getTitle();
 		$firstNewsletterTitle = Title::makeTitleSafe( NS_NEWSLETTER, 'First Newsletter' );
 		$store = NewsletterStore::getDefaultInstance();
 
@@ -115,7 +115,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		$this->assertTrue( $newsletterCreated );
 
 		// Create 2nd newsletter with a duplicated name
-		$secondMainPage = Title::newFromText( 'UTPage' );
+		$secondMainPage = $this->getExistingTestPage( 'UTPage' )->getTitle();
 		$input = [
 			'name' => $newsletterTitle->getText(),
 			'description' => 'This newsletter duplicates a name, returning an error',

@@ -26,7 +26,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 
 	public function testCreation() {
 		$newsletterTitle = "Newsletter:Test";
-		$mainPage = "UTPage";
+		$mainPage = $this->getExistingTestPage( 'UTPage' );
 		$text = '{
 			"description": "' . self::DESCRIPTION . '",
 			"mainpage": "UTPage",
@@ -55,9 +55,9 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->assertEquals( self::DESCRIPTION, $content->getDescription() );
 
 		# Check main page
-		$expectedPageId = Title::newFromText( $mainPage )->getArticleId();
+		$expectedPageId = $mainPage->getId();
 		$this->assertEquals( $expectedPageId, $newsletter->getPageId() );
-		$this->assertEquals( $content->getMainPage(), $mainPage );
+		$this->assertEquals( $content->getMainPage(), $mainPage->getTitle()->getText() );
 
 		# Check publishers and subsrcibers
 		$expectedUsers = [ User::newFromname( "UTSysop" )->getId() ];
@@ -79,6 +79,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$this->createNewsletter();
 		$newDescription = "A description that is still at least 30 characters long";
 
+		$this->getExistingTestPage( 'UTPage' );
 		# Modify the description
 		$newText = "{
 			\"description\": \"$newDescription\",
@@ -141,6 +142,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$secondUser = User::newFromName( 'Second User' );
 		$secondUser->addToDatabase();
 
+		$this->getExistingTestPage( 'UTPage' );
 		# Modify the publishers
 		$newText = '{
 			"description": "' . self::DESCRIPTION . '",
@@ -177,6 +179,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 		$publisherIds = [ $firstUser->getId(), $secondUser->getId() ];
 		NewsletterStore::getDefaultInstance()->addPublisher( $newsletter, $publisherIds );
 
+		$this->getExistingTestPage( 'UTPage' );
 		# Modify the publishers
 		$newText = '{
 			"description": "' . self::DESCRIPTION . '",
