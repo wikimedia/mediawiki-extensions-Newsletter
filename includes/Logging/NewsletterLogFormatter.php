@@ -48,7 +48,7 @@ class NewsletterLogFormatter extends LogFormatter {
 	 * newsletter ID and name separated by a colon, into a link
 	 * @param string $type
 	 * @param string $value
-	 * @return string|array
+	 * @return mixed
 	 */
 	public function formatParameterValue( $type, $value ) {
 		if ( $type !== 'newsletter-link' ) {
