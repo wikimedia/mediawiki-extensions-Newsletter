@@ -40,7 +40,7 @@ class NewsletterTablePager extends TablePager {
 	/** @var Newsletter[] */
 	private $newslettersArray;
 
-	public function __construct( IContextSource $context = null, IDatabase $readDb = null ) {
+	public function __construct( ?IContextSource $context = null, ?IDatabase $readDb = null ) {
 		if ( $readDb !== null ) {
 			$this->mDb = $readDb;
 		}
