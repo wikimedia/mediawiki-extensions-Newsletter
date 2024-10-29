@@ -37,7 +37,7 @@ class NewsletterSlotDiffRenderer extends SlotDiffRenderer {
 		$this->textSlotDiffRenderer->addModules( $output );
 	}
 
-	public function getDiff( Content $oldContent = null, Content $newContent = null ) {
+	public function getDiff( ?Content $oldContent = null, ?Content $newContent = null ) {
 		$this->normalizeContents( $oldContent, $newContent, [ NewsletterContent::class ] );
 		/** @var NewsletterContent $oldContent */
 		'@phan-var NewsletterContent $oldContent';

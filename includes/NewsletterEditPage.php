@@ -47,7 +47,7 @@ class NewsletterEditPage {
 	/** @var OutputPage */
 	private $out;
 
-	public function __construct( IContextSource $context, Newsletter $newsletter = null ) {
+	public function __construct( IContextSource $context, ?Newsletter $newsletter = null ) {
 		$this->context = $context;
 		$this->user = $context->getUser();
 		$this->title = $context->getTitle();
