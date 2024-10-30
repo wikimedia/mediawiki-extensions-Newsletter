@@ -6,6 +6,7 @@
 			"Grind24",
 			"Lbayle",
 			"Macofe",
+			"Mahabarata",
 			"Mattho69",
 			"Orlodrim",
 			"Pols12",
@@ -169,5 +170,7 @@
 	"newsletter-diff-publishersheader": "Changements dans les éditeurs :",
 	"newsletter-ch-apierror": "Erreur à l’enregistrement de la page : $1",
 	"newsletter-ch-tojsonerror": "Erreur de sérialisation du JSON lors de l’enregistrement.",
-	"newsletter-orphan-revisions": "Impossible d’annuler les révisions qui ne correspondent pas à un bulletin d’informations effectivement supprimé."
+	"newsletter-orphan-revisions": "Impossible d’annuler les révisions qui ne correspondent pas à un bulletin d’informations effectivement supprimé.",
+	"namespaceinfo-description-ns5500": "Espace de noms contenant le contenu de la newsletter",
+	"namespaceinfo-description-ns5501": "Page de discussion pour une newsletter dans l'espace de noms Newsletter"
 }
