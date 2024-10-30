@@ -34,8 +34,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$mock = $this->getMockBuilder( LoadBalancer::class )
 			->disableOriginalConstructor()
 			->getMock();
-		$mock->expects( $this->any() )
-			->method( 'getConnection' )
+		$mock->method( 'getConnection' )
 			->willReturn( $db );
 		return $mock;
 	}
@@ -89,9 +88,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->willReturn( $uqb );
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
-
-		$result = $table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
-		$this->assertNull( $result );
+		$table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 	}
 
 	/**
@@ -130,8 +127,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$result = $table->removeSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
-		$this->assertNull( $result );
+		$table->removeSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 	}
 
 	/**
@@ -191,7 +187,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$sqb->expects( $this->once() )->method( 'caller' )->willReturnSelf();
 		$sqb->expects( $this->once() )->method( 'fetchField' )
 			->willReturn(
-				// For index reasons, count is negative
+				// For index reasons, the count is negative
 				-2
 			);
 		$mockWriteDb
@@ -202,11 +198,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
 		// Add two subscribers before checking subscribers count
-		$result = $table->addSubscription( $this->getTestNewsletter(), [
+		$table->addSubscription( $this->getTestNewsletter(), [
 			$firstUser->getId(),
 			$secondUser->getId()
 		] );
-		$this->assertNull( $result );
 
 		$result = $table->getNewsletterSubscribersCount( $newsletter->getId() );
 		$this->assertEquals( 2, $result );
@@ -409,8 +404,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$result = $table->deleteNewsletter( $newsletter );
-		$this->assertNull( $result );
+		$table->deleteNewsletter( $newsletter );
 	}
 
 	/**
@@ -450,11 +444,8 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 
 		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
 
-		$result = $table->deleteNewsletter( $newsletter );
-		$this->assertNull( $result );
-
-		$result = $table->restoreNewsletter( $newsletter );
-		$this->assertNull( $result );
+		$table->deleteNewsletter( $newsletter );
+		$table->restoreNewsletter( $newsletter );
 	}
 
 	/**
