@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"ديفيد",
-			"علاء"
+			"علاء",
+			"Meno25"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "اشترك أو ألغِ الاشتراك في رسالة إخبارية.",
@@ -17,7 +18,7 @@
 	"apihelp-newslettermanage-example-1": "إضافة ناشر بمعرف مستخدم من 3 إلى رسالة إخبارية مع معرف 1.",
 	"apihelp-newslettermanage-example-2": "إزالة ناشر بمعرف مستخدم 5 من النشرة الإخبارية بمعرف 2.",
 	"newsletter-api-error-notfound": "النشرة غير موجودة",
-	"newsletter-api-error-nopermissions": "ليس لديك صلاحية إدارة الرسائل الإخبارية.",
+	"newsletter-api-error-nopermissions": "ليس لديك إذن لإدارة هذه النشرة الإخبارية.",
 	"newsletter-api-error-invalidpublisher-registered": "الناشر ليس مستخدما مسجلا.",
 	"newsletter-api-error-subscribe-notloggedin": "يجب عليك تسجيل الدخول للاشتراك في نشرات إخبارية."
 }
