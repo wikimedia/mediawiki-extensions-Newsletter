@@ -27,7 +27,7 @@
 	"newsletter-create-confirmation": "رسالة إخبارية جديدة: تم تسجيل [[Newsletter:$1|$1]].",
 	"newsletter-create-mainpage-error": "صفحة رسالة إخبارية رئيسية غير صالحة تم إدخالها; حاول مرة اخرى.",
 	"newsletter-mainpage-non-existent": "الصفحة الرئيسية للنشرة الإخبارية غير موجودة; يُرجَى إدخال صفحة موجودة صالحة.",
-	"newsletter-mainpage-in-use": "توجد رسالة إخبارية حالية تحتوي على نفس الصفحة الرئيسية; يُرجَى إدخال عنوان آخر.",
+	"newsletter-mainpage-in-use": "رسالة أخبارية موجودة لها نفس الصفحة الرئيسية. من فضلك ادخل صفحة رئيسية أخرى.",
 	"newsletter-create-short-description-error": "الوصف قصير جدًا (أقل من 30 حرفا); حاول مرة اخرى.",
 	"newsletter-subtitlelinks-list": "قائمة النشرات الإخبارية",
 	"newsletter-subtitlelinks-create": "تسجيل رسالة إخبارية جديدة",

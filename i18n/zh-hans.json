@@ -164,5 +164,7 @@
 	"newsletter-diff-publishersheader": "发布者的更改：",
 	"newsletter-ch-apierror": "保存页面时出错： $1",
 	"newsletter-ch-tojsonerror": "保存期间序列化为JSON时出错。",
-	"newsletter-orphan-revisions": "无法取消删除与实际删除的电子报不对应的修订。"
+	"newsletter-orphan-revisions": "无法取消删除与实际删除的电子报不对应的修订。",
+	"namespaceinfo-description-ns5500": "包含电子报内容的命名空间",
+	"namespaceinfo-description-ns5501": "在Newsletter命名空间中电子报的讨论页面"
 }
