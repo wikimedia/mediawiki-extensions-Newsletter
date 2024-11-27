@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ajeje Brazorf"
+			"Ajeje Brazorf",
+			"GianAntonucci"
 		]
 	},
 	"newsletter-desc": "Discrizzioni",
@@ -9,7 +10,7 @@
 	"newsletter-view-description": "Discrizzioni:",
 	"newsletter-announce-button": "Annunzia",
 	"newsletter-announce-submit": "Annunzia",
-	"newsletter-manage-title": "Tìtulu dâ pàggina principali",
+	"newsletter-manage-title": "Tìtulu dâ pàggina mastra",
 	"newsletter-manage-description": "Discrizzioni:",
 	"newsletter-managenewsletter-button": "Manna",
 	"newsletter-subscribe-button-label": "Sì",
@@ -17,5 +18,5 @@
 	"newsletter-header-name": "Nomu",
 	"newsletter-header-description": "Discrizzioni",
 	"log-action-filter-newsletter": "Tipu di azzioni:",
-	"newsletter-diff-mainpageheader": "Canciamenti ntâ pàggina principali:"
+	"newsletter-diff-mainpageheader": "Canci â pàggina mastra:"
 }
