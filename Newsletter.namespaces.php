@@ -14,6 +14,11 @@ $namespaceNames['en'] = [
 	NS_NEWSLETTER_TALK => 'Newsletter_talk',
 ];
 
+$namespaceNames['az'] = [
+	NS_NEWSLETTER => 'Bülleten',
+	NS_NEWSLETTER_TALK => 'Bülleten_müzakirəsi'
+];
+
 $namespaceNames['ko'] = [
 	NS_NEWSLETTER => '뉴스레터',
 	NS_NEWSLETTER_TALK => '뉴스레터토론',

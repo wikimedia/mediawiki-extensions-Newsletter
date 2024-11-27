@@ -15,6 +15,13 @@ $specialPageAliases['en'] = [
 	'Newsletter' => [ 'Newsletter' ],
 ];
 
+/** Azerbaijani (Azərbaycanca) */
+$specialPageAliases['az'] = [
+	'NewsletterCreate' => [ 'BülletenYarat' ],
+	'Newsletters' => [ 'Bülletenlər' ],
+	'Newsletter' => [ 'Bülleten' ],
+];
+
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = [
 	'NewsletterCreate' => [ 'יצירת_ידיעון' ],
