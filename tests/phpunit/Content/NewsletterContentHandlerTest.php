@@ -27,6 +27,6 @@ class NewsletterContentHandlerTest extends MediaWikiIntegrationTestCase {
 		$contentRenderer = $this->getServiceContainer()->getContentRenderer();
 
 		$parserOutput = $contentRenderer->getParserOutput( $content, $title );
-		$this->assertStringContainsString( $expectedText, $parserOutput->getText() );
+		$this->assertStringContainsString( $expectedText, $parserOutput->getRawText() );
 	}
 }
