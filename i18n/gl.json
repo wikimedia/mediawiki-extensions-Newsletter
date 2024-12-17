@@ -111,6 +111,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|anunciou}} un novo número de $1.",
 	"newsletter-notification-link-text-new-issue": "Ver novo número",
 	"newsletter-notification-link-text-view-newsletter": "Ver boletín",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Cancelar a subscrición",
 	"newsletter-email-subject": "Anunciouse unha edición nova de $1.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|anunciou}} unha nova edición de $1.",
 	"newsletter-header-name": "Nome",
@@ -160,5 +161,7 @@
 	"newsletter-diff-publishersheader": "Cambios nos editores:",
 	"newsletter-ch-apierror": "Erro ao gardar a páxina: $1",
 	"newsletter-ch-tojsonerror": "Produciuse un erro ao serializar a JSON durante o gardado.",
-	"newsletter-orphan-revisions": "Non se poden recuperar as revisións que non corresponden a un boletín real que foi eliminado."
+	"newsletter-orphan-revisions": "Non se poden recuperar as revisións que non corresponden a un boletín real que foi eliminado.",
+	"namespaceinfo-description-ns5500": "Espazo de nomes que contén contido do boletín de novas",
+	"namespaceinfo-description-ns5501": "Páxina de conversa para un boletín de novas no espazo de nomes Newsletter"
 }
