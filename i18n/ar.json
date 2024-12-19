@@ -157,5 +157,8 @@
 	"log-action-filter-newsletter-issue-added": "إعلانات أعداد جديدة",
 	"newsletter-diff-descheader": "التغييرات في الوصف:",
 	"newsletter-diff-mainpageheader": "التغييرات في الصفحة الرئيسية:",
-	"newsletter-diff-publishersheader": "التغييرات في الناشرين:"
+	"newsletter-diff-publishersheader": "التغييرات في الناشرين:",
+	"newsletter-ch-apierror": "خطأ في حفظ الصفحة: $1",
+	"newsletter-ch-tojsonerror": "حدث خطأ أثناء التحويل إلى JSON أثناء الحفظ.",
+	"newsletter-orphan-revisions": "لا يمكن إلغاء حذف المراجعات التي لا تتوافق مع النشرة الإخبارية المحذوفة فعليًا."
 }
