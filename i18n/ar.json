@@ -111,6 +111,7 @@
 	"newsletter-notification-flyout": "$2{{GENDER:$3|أعلن|أعلنت}} عن إصدار جديد من \"$1\".",
 	"newsletter-notification-link-text-new-issue": "عرض عدد جديد",
 	"newsletter-notification-link-text-view-newsletter": "عرض النشرة الإخبارية",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "إلغاء الاشتراك",
 	"newsletter-email-subject": "تم الإعلان عن إصدار جديد من $1.",
 	"newsletter-email-batch-body": "$2{{GENDER:$3|أعلن|أعلنت}} عن إصدار جديد من \"$1\".",
 	"newsletter-header-name": "الاسم",
@@ -157,5 +158,10 @@
 	"log-action-filter-newsletter-issue-added": "إعلانات أعداد جديدة",
 	"newsletter-diff-descheader": "التغييرات في الوصف:",
 	"newsletter-diff-mainpageheader": "التغييرات في الصفحة الرئيسية:",
-	"newsletter-diff-publishersheader": "التغييرات في الناشرين:"
+	"newsletter-diff-publishersheader": "التغييرات في الناشرين:",
+	"newsletter-ch-apierror": "خطأ في حفظ الصفحة: $1",
+	"newsletter-ch-tojsonerror": "حدث خطأ أثناء التحويل إلى JSON أثناء الحفظ.",
+	"newsletter-orphan-revisions": "لا يمكن إلغاء حذف المراجعات التي لا تتوافق مع النشرة الإخبارية المحذوفة فعليًا.",
+	"namespaceinfo-description-ns5500": "المساحة الاسمية التي تحتوي على محتوى النشرة الإخبارية",
+	"namespaceinfo-description-ns5501": "صفحة نقاش لنشرة إخبارية في مساحة اسم النشرة الإخبارية"
 }
