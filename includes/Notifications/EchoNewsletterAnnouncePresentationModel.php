@@ -8,14 +8,17 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
  */
 class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentationModel {
 
+	/** @inheritDoc */
 	public function getIconType() {
 		return 'site';
 	}
 
+	/** @inheritDoc */
 	public function canRender() {
 		return (bool)$this->event->getTitle() && parent::canRender();
 	}
 
+	/** @inheritDoc */
 	public function getPrimaryLink() {
 		return [
 			'url' => $this->event->getTitle()->getFullURL(),
@@ -23,6 +26,7 @@ class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentation
 		];
 	}
 
+	/** @inheritDoc */
 	public function getSecondaryLinks() {
 		return [
 			[
@@ -38,6 +42,7 @@ class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentation
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHeaderMessage() {
 		$msg = parent::getHeaderMessage();
 
@@ -45,6 +50,7 @@ class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentation
 		return $msg->params( $this->getNewsletterName() );
 	}
 
+	/** @inheritDoc */
 	public function getBodyMessage() {
 		return $this->msg( 'notification-body-newsletter-announce' )
 			->params( $this->event->getExtraParam( 'section-text' ) );

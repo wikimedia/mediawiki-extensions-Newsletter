@@ -298,6 +298,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 		return $status;
 	}
 
+	/** @inheritDoc */
 	public function getSlotDiffRendererWithOptions( IContextSource $context, $options = [] ) {
 		return new NewsletterSlotDiffRenderer(
 			$this->createTextSlotDiffRenderer( $options ),

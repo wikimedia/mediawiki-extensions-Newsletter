@@ -4,10 +4,12 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
 
 class EchoNewsletterSubscribedPresentationModel extends BaseNewsletterPresentationModel {
 
+	/** @inheritDoc */
 	public function getIconType() {
 		return 'site';
 	}
 
+	/** @inheritDoc */
 	public function getPrimaryLink() {
 		return [
 			'url' => $this->getNewsletterUrl(),
@@ -16,6 +18,7 @@ class EchoNewsletterSubscribedPresentationModel extends BaseNewsletterPresentati
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHeaderMessage() {
 		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'newsletter-notification-subscribed' );

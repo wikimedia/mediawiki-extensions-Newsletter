@@ -29,6 +29,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->requireLogin();
 		parent::execute( $par );
@@ -140,14 +141,17 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 		return $result;
 	}
 
+	/** @inheritDoc */
 	public function onSuccess() {
 		$this->getOutput()->addWikiMsg( 'newsletter-create-confirmation', $this->newsletterName );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	protected function getDisplayFormat() {
 		return 'ooui';
 	}

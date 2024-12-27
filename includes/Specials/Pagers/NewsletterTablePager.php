@@ -50,6 +50,7 @@ class NewsletterTablePager extends TablePager {
 		parent::__construct( $context );
 	}
 
+	/** @inheritDoc */
 	public function getFieldNames() {
 		if ( $this->fieldNames === null ) {
 			$this->fieldNames = [
@@ -304,6 +305,7 @@ class NewsletterTablePager extends TablePager {
 		return $info;
 	}
 
+	/** @inheritDoc */
 	public function formatValue( $field, $value ) {
 		$services = MediaWikiServices::getInstance();
 		$linkRenderer = $services->getLinkRenderer();
@@ -365,10 +367,12 @@ class NewsletterTablePager extends TablePager {
 		return parent::getCellAttrs( $field, $value );
 	}
 
+	/** @inheritDoc */
 	public function getDefaultSort() {
 		return 'sort';
 	}
 
+	/** @inheritDoc */
 	public function isFieldSortable( $field ) {
 		return false;
 	}

@@ -25,6 +25,7 @@ class SpecialNewsletters extends SpecialPage {
 		parent::__construct( 'Newsletters' );
 	}
 
+	/** @inheritDoc */
 	public function execute( $par ) {
 		$this->setHeaders();
 

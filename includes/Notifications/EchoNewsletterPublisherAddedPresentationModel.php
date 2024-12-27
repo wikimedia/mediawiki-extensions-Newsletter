@@ -4,10 +4,12 @@ namespace MediaWiki\Extension\Newsletter\Notifications;
 
 class EchoNewsletterPublisherAddedPresentationModel extends BaseNewsletterPresentationModel {
 
+	/** @inheritDoc */
 	public function getIconType() {
 		return 'site';
 	}
 
+	/** @inheritDoc */
 	public function getPrimaryLink() {
 		return [
 			'url' => $this->getNewsletterUrl(),
@@ -15,6 +17,7 @@ class EchoNewsletterPublisherAddedPresentationModel extends BaseNewsletterPresen
 		];
 	}
 
+	/** @inheritDoc */
 	public function getHeaderMessage() {
 		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'notification-header-newsletter-newpublisher' );
