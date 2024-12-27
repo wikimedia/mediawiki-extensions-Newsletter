@@ -50,6 +50,13 @@ class NewsletterLogger {
 		$log->publish( $log->insert() );
 	}
 
+	/**
+	 * @param User $publisher
+	 * @param Newsletter $newsletter
+	 * @param Title $issueTitle
+	 * @param int $issueId
+	 * @param string $comment
+	 */
 	public function logNewIssue(
 		User $publisher,
 		Newsletter $newsletter,

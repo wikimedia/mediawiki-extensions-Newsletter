@@ -8,6 +8,7 @@ use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
@@ -57,6 +58,11 @@ class NewsletterDataUpdate extends DataUpdate {
 			->fetchRowCount();
 	}
 
+	/**
+	 * @param NewsletterStore $store
+	 * @param array $formData
+	 * @return Newsletter|Status|false
+	 */
 	protected function createNewNewsletterWithData( NewsletterStore $store, $formData ) {
 		$newNewsletterName = $formData['Name'];
 		if ( $this->getNewslettersWithNewsletterMainPage( $newNewsletterName ) ) {

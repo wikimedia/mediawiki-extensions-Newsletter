@@ -242,6 +242,9 @@ class NewsletterEditPage {
 		return $form;
 	}
 
+	/**
+	 * @return HTMLForm
+	 */
 	protected function getForm() {
 		$form = HTMLForm::factory(
 			'ooui',
