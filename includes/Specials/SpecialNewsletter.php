@@ -189,7 +189,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 	 *
 	 * @return HTMLForm
 	 */
-	private function getHTMLForm( array $fields, /* callable */ $submit ) {
+	private function getHTMLForm( array $fields, $submit ) {
 		$form = HTMLForm::factory(
 			'ooui',
 			$fields,

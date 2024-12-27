@@ -187,7 +187,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 				// Show the 10 most recent issues if there have been announcements
 				$logs = '';
 				$logCount = LogEventsList::showLogExtract(
-					$logs, // by reference
+					$logs,
 					'newsletter',
 					SpecialPage::getTitleFor( 'Newsletter', (string)$newsletter->getId() ), '',
 					[
@@ -213,8 +213,9 @@ class NewsletterContentHandler extends JsonContentHandler {
 			$form = $this->getHTMLForm(
 				$fields,
 				static function () {
+					// nothing to submit - the buttons on this page are just links
 					return false;
-				} // nothing to submit - the buttons on this page are just links
+				}
 			);
 
 			$form->suppressDefaultSubmit();
@@ -265,7 +266,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 				'summary' => $summary,
 				'token' => $context->getUser()->getEditToken(),
 			],
-			true // Treat data as POSTed
+			true
 		);
 		$der->setRequest( $request );
 
@@ -405,7 +406,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 *
 	 * @return HTMLForm
 	 */
-	private function getHTMLForm( array $fields, /* callable */ $submit ) {
+	private function getHTMLForm( array $fields, $submit ) {
 		$form = HTMLForm::factory(
 			'ooui',
 			$fields,

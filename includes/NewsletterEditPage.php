@@ -178,7 +178,8 @@ class NewsletterEditPage {
 				) {
 					$fields['Summary']['default'] = '';
 				}
-			} elseif /* Undoing the latest revision */ ( $revId && $undoId ) {
+			} elseif ( $revId && $undoId ) {
+				// Undoing the latest revision
 				$oldRevRecord = $revLookup->getRevisionById( $revId );
 				$undoRevRecord = $revLookup->getRevisionById( $undoId );
 				$undoMainSlot = $undoRevRecord->getSlot(
@@ -197,7 +198,8 @@ class NewsletterEditPage {
 							->params( $undoRevRecord->getId(), $userText )
 							->inContentLanguage()
 							->text();
-				} else /* User attempts to undo prior revision */ {
+				} else {
+					// User attempts to undo prior revision
 					throw new BadRequestError(
 						'newsletter-oldrev-undo-error-title',
 						'newsletter-oldrev-undo-error-body'
