@@ -8,7 +8,6 @@ use MediaWiki\Extension\Newsletter\NewsletterStore;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
@@ -58,23 +57,17 @@ class NewsletterDataUpdate extends DataUpdate {
 			->fetchRowCount();
 	}
 
-	/**
-	 * @param NewsletterStore $store
-	 * @param array $formData
-	 * @return Newsletter|Status|false
-	 */
-	protected function createNewNewsletterWithData( NewsletterStore $store, $formData ) {
+	protected function createNewNewsletterWithData( NewsletterStore $store, array $formData ): ?Newsletter {
 		$newNewsletterName = $formData['Name'];
 		if ( $this->getNewslettersWithNewsletterMainPage( $newNewsletterName ) ) {
-			return false;
+			return null;
 		}
 
 		$validator = new NewsletterValidator( $formData );
 		$validation = $validator->validate( true );
-
 		if ( !$validation->isGood() ) {
 			// Invalid input was entered
-			return $validation;
+			return null;
 		}
 
 		$title = Title::makeTitleSafe( NS_NEWSLETTER, $newNewsletterName );
@@ -86,7 +79,7 @@ class NewsletterDataUpdate extends DataUpdate {
 
 		$newsletterCreated = $store->addNewsletter( $newsletter );
 		if ( !$newsletterCreated ) {
-			return false;
+			return null;
 		}
 
 		$newsletter->subscribe( $this->user );
@@ -112,7 +105,7 @@ class NewsletterDataUpdate extends DataUpdate {
 			// Creating a new newsletter that newsletter is not in the
 			// database yet.
 			$newsletter = $this->createNewNewsletterWithData( $store, $formData );
-			if ( !$newsletter ) {
+			if ( !( $newsletter instanceof Newsletter ) ) {
 				// Couldn't insert to the DB..
 				$logger->warning( 'newsletter-create-error' );
 				return;
