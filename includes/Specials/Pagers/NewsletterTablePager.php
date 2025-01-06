@@ -373,6 +373,9 @@ class NewsletterTablePager extends TablePager {
 		return false;
 	}
 
+	/**
+	 * @param string $value
+	 */
 	public function setUserOption( $value ) {
 		$this->option = $value;
 	}
