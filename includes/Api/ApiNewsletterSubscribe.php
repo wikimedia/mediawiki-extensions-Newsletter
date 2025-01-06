@@ -50,6 +50,7 @@ class ApiNewsletterSubscribe extends ApiBase {
 		);
 	}
 
+	/** @inheritDoc */
 	public function getAllowedParams() {
 		return [
 			'id' => [
@@ -76,14 +77,17 @@ class ApiNewsletterSubscribe extends ApiBase {
 		];
 	}
 
+	/** @inheritDoc */
 	public function isWriteMode() {
 		return true;
 	}
 
+	/** @inheritDoc */
 	public function needsToken() {
 		return 'csrf';
 	}
 
+	/** @inheritDoc */
 	public function mustBePosted() {
 		return true;
 	}

@@ -29,6 +29,7 @@ class NewsletterSlotDiffRenderer extends SlotDiffRenderer {
 		return $this->textSlotDiffRenderer->getTablePrefix( $context, $newTitle );
 	}
 
+	/** @inheritDoc */
 	public function getExtraCacheKeys() {
 		return $this->textSlotDiffRenderer->getExtraCacheKeys();
 	}
@@ -37,6 +38,7 @@ class NewsletterSlotDiffRenderer extends SlotDiffRenderer {
 		$this->textSlotDiffRenderer->addModules( $output );
 	}
 
+	/** @inheritDoc */
 	public function getDiff( ?Content $oldContent = null, ?Content $newContent = null ) {
 		$this->normalizeContents( $oldContent, $newContent, [ NewsletterContent::class ] );
 		/** @var NewsletterContent $oldContent */
