@@ -163,5 +163,7 @@
 	"newsletter-diff-publishersheader": "Zmiany w gronie wydawców:",
 	"newsletter-ch-apierror": "Błąd podczas zapisywania strony: $1",
 	"newsletter-ch-tojsonerror": "Błąd w serializacji do JSON podczas zapisywania.",
-	"newsletter-orphan-revisions": "Nie można odtworzyć wersji niezwiązanych z usuniętym newsletterem."
+	"newsletter-orphan-revisions": "Nie można odtworzyć wersji niezwiązanych z usuniętym newsletterem.",
+	"namespaceinfo-description-ns5500": "Przestrzeń nazw zawierająca treść newsletterów",
+	"namespaceinfo-description-ns5501": "Strony dyskusji dla newsletterów"
 }
