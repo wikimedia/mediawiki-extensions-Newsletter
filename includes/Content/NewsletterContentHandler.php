@@ -28,7 +28,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserArray;
-use MediaWiki\User\UserArrayFromResult;
 use MWContentSerializationException;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonWidget;
@@ -309,7 +308,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 
 	/**
 	 * @param array $publishersList
-	 * @return bool|UserArrayFromResult
+	 * @return bool|UserArray
 	 */
 	private function getPublishersFromJSONData( $publishersList ) {
 		if ( count( $publishersList ) === 0 ) {
