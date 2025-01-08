@@ -7,8 +7,8 @@ class NewsletterPage extends Page {
 		return $( '#firstHeading' );
 	}
 
-	open() {
-		super.openTitle( 'Special:Newsletters' );
+	async open() {
+		return super.openTitle( 'Special:Newsletters' );
 	}
 }
 module.exports = new NewsletterPage();
