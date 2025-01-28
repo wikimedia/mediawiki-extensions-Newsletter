@@ -108,6 +108,7 @@
 	"newsletter-notification-flyout": "$2 {{GENDER:$3|har meddelat}} ett nytt problem på $1.",
 	"newsletter-notification-link-text-new-issue": "Visa ny utgåva",
 	"newsletter-notification-link-text-view-newsletter": "Visa nyhetsbrev",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Avsluta prenumeration",
 	"newsletter-email-subject": "En ny utgåva av $1 har tillkännagivits.",
 	"newsletter-email-batch-body": "$2 {{GENDER:$3|har meddelat}} ett nytt fel för $1.",
 	"newsletter-header-name": "Namn",
@@ -157,5 +158,7 @@
 	"newsletter-diff-publishersheader": "Ändringar i utgivare:",
 	"newsletter-ch-apierror": "Fel när sidan skulle sparas: $1",
 	"newsletter-ch-tojsonerror": "Fel vid serialisering till JSON under sparning.",
-	"newsletter-orphan-revisions": "Kan inte återställa versioner som inte motsvarar ett faktiskt raderat nyhetsbrev."
+	"newsletter-orphan-revisions": "Kan inte återställa versioner som inte motsvarar ett faktiskt raderat nyhetsbrev.",
+	"namespaceinfo-description-ns5500": "Namnrymd som innehåller nyhetsbrevsinnehåll",
+	"namespaceinfo-description-ns5501": "Diskussionssida för ett nyhetsbrev i nyhetsbrevets namnrymd"
 }
