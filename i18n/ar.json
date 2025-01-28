@@ -5,6 +5,7 @@
 			"Hubaishan",
 			"Maroen1990",
 			"Meno25",
+			"XIDME",
 			"ديفيد",
 			"علاء",
 			"محمد أحمد عبد الفتاح"
@@ -31,7 +32,7 @@
 	"newsletter-create-short-description-error": "الوصف قصير جدًا (أقل من 30 حرفا); حاول مرة اخرى.",
 	"newsletter-subtitlelinks-list": "قائمة النشرات الإخبارية",
 	"newsletter-subtitlelinks-create": "تسجيل رسالة إخبارية جديدة",
-	"newsletter-subtitlelinks-unsubscribe": "ألغ الاشتراك",
+	"newsletter-subtitlelinks-unsubscribe": "إلغاء الإشتراك",
 	"newsletter-subtitlelinks-subscribe": "اشترك",
 	"newsletter-subtitlelinks-announce": "إعلان",
 	"newsletter-subtitlelinks-manage": "إدارة",
