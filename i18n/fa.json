@@ -16,7 +16,7 @@
 	"newsletter-title": "صفحه ویکی که اطلاعات در مورد خبرنامه را دارد",
 	"newsletter-exist-error": "یک خبرنامه با نام یکسان «$1» وجود دارد. لطفاً نام دیگری را امتحان کنید.",
 	"newsletter-create-error": "به‌هنگام تلاش برای ایجاد خبرنامهٔ جدید خطایی رخ داد. لطفاً دوباره تلاش کنید.",
-	"newsletter-oldrev-undo-error-title": "متاسفانه این امکان مجاز نیست",
+	"newsletter-oldrev-undo-error-title": "متأسفانه این امکان مجاز نیست",
 	"newsletter-invalid-name": "نامی که برای خبرنامه وارد کرده‌اید معتبر نیست. لطفاً باز تلاش کنید.",
 	"newslettercreate": "ثبت خبرنامه",
 	"newsletter-create-submit": "ثبت خبرنامه",
