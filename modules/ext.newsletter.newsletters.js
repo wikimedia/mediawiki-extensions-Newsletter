@@ -59,14 +59,13 @@
 	$( () => {
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.newsletter-subscription' ).on( 'click', function ( event ) {
-			let $link = $( this ),
-				newsletterId = $link.data( 'mw-newsletter-id' ),
-				$subscriberCount, promise;
+			const $link = $( this ),
+				newsletterId = $link.data( 'mw-newsletter-id' );
 
 			if ( /\D/.test( newsletterId ) ) {
 				throw new Error( '"data-mw-newsletter-id" attribute must be numeric' );
 			}
-			$subscriberCount = $( '#nl-count-' + newsletterId );
+			const $subscriberCount = $( '#nl-count-' + newsletterId );
 
 			// Avoid double clicks while in progress .newsletter-link-disabled also helps with this
 			if ( $link.data( 'nlDisabled' ) ) {
@@ -77,6 +76,7 @@
 
 			$link.data( 'nlDisabled', true ).addClass( 'newsletter-link-disabled' );
 
+			let promise;
 			// eslint-disable-next-line no-jquery/no-class-state
 			if ( $link.hasClass( 'newsletter-subscribed' ) ) {
 				// Currently subscribed so let them unsubscribe.
