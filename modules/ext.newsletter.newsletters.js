@@ -10,7 +10,7 @@
 	 * which is loaded on load time (instead of runtime unlike this module) to prevent FOUCs.
 	 */
 	// eslint-disable-next-line no-jquery/no-global-selector
-	OO.ui.infuse( $( '#mw-newsletter-filter-options' ) ).on( 'change', function () {
+	OO.ui.infuse( $( '#mw-newsletter-filter-options' ) ).on( 'change', () => {
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '#mw-newsletter-filter-form' ).trigger( 'submit' );
 	} );
@@ -25,7 +25,7 @@
 	 * @return {jQuery.Promise} See #post
 	 */
 	function doAPIRequest( doAction, nlId ) {
-		var api = new mw.Api();
+		const api = new mw.Api();
 
 		return api.postWithToken( 'csrf', {
 			action: 'newslettersubscribe',
@@ -35,7 +35,7 @@
 	}
 
 	function updateLinkAttribs( $link, action ) {
-		var inverseAction;
+		let inverseAction;
 
 		if ( action === 'subscribe' ) {
 			inverseAction = 'unsubscribe';
@@ -56,10 +56,10 @@
 			.addClass( 'newsletter-' + inverseAction + 'd' );
 	}
 
-	$( function () {
+	$( () => {
 		// eslint-disable-next-line no-jquery/no-global-selector
 		$( '.newsletter-subscription' ).on( 'click', function ( event ) {
-			var $link = $( this ),
+			let $link = $( this ),
 				newsletterId = $link.data( 'mw-newsletter-id' ),
 				$subscriberCount, promise;
 
@@ -82,14 +82,14 @@
 				// Currently subscribed so let them unsubscribe.
 				$link.text( mw.msg( 'newsletter-unsubscribing' ) );
 				promise = doAPIRequest( 'unsubscribe', newsletterId )
-					.done( function ( data ) {
+					.done( ( data ) => {
 						updateLinkAttribs( $link, 'subscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) - 1 );
 						mw.notify(
 							mw.msg( 'newsletter-unsubscribe-success', data.newslettersubscribe.name )
 						);
 					} )
-					.fail( function () {
+					.fail( () => {
 						updateLinkAttribs( $link, 'unsubscribe' );
 						mw.notify(
 							mw.msg( 'newsletter-unsubscribe-error' ),
@@ -100,14 +100,14 @@
 				// Not subscribed currently.
 				$link.text( mw.msg( 'newsletter-subscribing' ) );
 				promise = doAPIRequest( 'subscribe', newsletterId )
-					.done( function ( data ) {
+					.done( ( data ) => {
 						updateLinkAttribs( $link, 'unsubscribe' );
 						$subscriberCount.text( parseInt( $subscriberCount.text() ) + 1 );
 						mw.notify(
 							mw.msg( 'newsletter-subscribe-success', data.newslettersubscribe.name )
 						);
 					} )
-					.fail( function () {
+					.fail( () => {
 						updateLinkAttribs( $link, 'subscribe' );
 						mw.notify(
 							mw.msg( 'newsletter-subscribe-error' ),
@@ -117,7 +117,7 @@
 
 			}
 
-			promise.always( function () {
+			promise.always( () => {
 				$link.data( 'nlDisabled', false ).removeClass( 'newsletter-link-disabled' );
 			} );
 
