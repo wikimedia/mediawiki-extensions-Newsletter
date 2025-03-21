@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Newsletter\Specials;
 
 use MediaWiki\Extension\Newsletter\Specials\Pagers\NewsletterTablePager;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Parser\ParserOptions;
 use MediaWiki\SpecialPage\SpecialPage;
 
 /**
@@ -79,7 +80,10 @@ class SpecialNewsletters extends SpecialPage {
 		if ( $pager->getNumRows() ) {
 			$out->addWikiMsg( $introMessage );
 			$out->addHTML( $formHtml );
-			$out->addParserOutput( $pager->getFullOutput() );
+			$out->addParserOutput(
+				$pager->getFullOutput(),
+				ParserOptions::newFromContext( $this->getContext() )
+			);
 		} elseif ( $filtered ) {
 			$out->addWikiMsg( $introMessage );
 			$out->addHTML( $formHtml );
