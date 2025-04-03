@@ -11,6 +11,7 @@ use RuntimeException;
 abstract class BaseNewsletterPresentationModel extends EchoEventPresentationModel {
 	private const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 
+	/** @inheritDoc */
 	public function canRender() {
 		$nl = Newsletter::newFromID( $this->getNewsletterId() );
 		return (bool)$nl;

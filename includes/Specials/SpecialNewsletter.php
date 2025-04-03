@@ -46,6 +46,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 		parent::__construct( 'Newsletter' );
 	}
 
+	/** @inheritDoc */
 	public function doesWrites() {
 		return true;
 	}
