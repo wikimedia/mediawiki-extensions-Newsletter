@@ -104,7 +104,7 @@
 	"newsletter-none-found": "Non existen boletíns. Pode crear un boletín novo mediante [[Special:RegisterNewsletter]].",
 	"newsletter-list-search-none-found": "Ningún boletín coincide coa súa consulta.",
 	"echo-category-title-newsletter": "Boletíns de novas",
-	"echo-pref-tooltip-newsletter": "Avisarme cando calquera dos boletíns ós que estou subscrito anuncie unha edición nova.",
+	"echo-pref-tooltip-newsletter": "Notificádeme cando calquera dos boletíns ós que estou subscrito anuncie unha edición nova.",
 	"newsletter-notification-title": "[[User:$3|$3]] {{GENDER:$4|anunciou}} un [[$2|novo número]] do boletín \"$1\".",
 	"newsletter-notification-subscribed": "Un administrador subscribiuno ó boletín \"$1\".",
 	"newsletter-notification-unsubscribed": "Un administrador eliminou a súa subscrición do boletín \"$1\".",
