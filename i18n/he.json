@@ -139,7 +139,7 @@
 	"newsletter-notification-new-publisher-flyout": "צורפת למפרסמים של $1.",
 	"newsletter-notification-link-text-del-publisher": "הצגת הידיעון",
 	"newsletter-notification-del-publisher-title": "הוסרת מרשימת המפרסמים של הידיעון \"$1\".",
-	"newsletter-notification-del-publisher-flyout": "אינך מפרסם שך הידיעון $1 עוד.",
+	"newsletter-notification-del-publisher-flyout": "אינך מפרסם של הידיעון $1 עוד.",
 	"log-name-newsletter": "יומן ידיעונים",
 	"log-description-newsletter": "זה יומן של שינויים לידיעונים.",
 	"logentry-newsletter-publisher-added": "$1 {{GENDER:$2|הוסיף|הוסיפה}} את $3 בתור {{GENDER:$6|מפרסם|מפרסמת}} לידיעון $4",
