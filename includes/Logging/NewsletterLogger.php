@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\Newsletter\Logging;
 
-use ManualLogEntry;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

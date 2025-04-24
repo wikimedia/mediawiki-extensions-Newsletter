@@ -3,7 +3,6 @@
 namespace MediaWiki\Extension\Newsletter\Content;
 
 use Iterator;
-use LogEventsList;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Content\Content;
@@ -13,11 +12,13 @@ use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferrableUpdate;
+use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Logging\LogEventsList;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Parser\ParserOptions;
@@ -28,7 +29,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserArray;
-use MWContentSerializationException;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonWidget;
 

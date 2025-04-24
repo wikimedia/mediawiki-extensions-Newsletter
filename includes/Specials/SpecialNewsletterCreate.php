@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter\Specials;
 
+use MediaWiki\Exception\ThrottledError;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -10,7 +11,6 @@ use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use ThrottledError;
 
 /**
  * Special page for creating newsletters

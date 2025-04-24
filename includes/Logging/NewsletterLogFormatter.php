@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter\Logging;
 
-use LogFormatter;
+use MediaWiki\Logging\LogFormatter;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;

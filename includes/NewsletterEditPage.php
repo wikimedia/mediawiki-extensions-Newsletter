@@ -2,8 +2,12 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
-use BadRequestError;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Exception\BadRequestError;
+use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Exception\ReadOnlyError;
+use MediaWiki\Exception\ThrottledError;
+use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\MediaWikiServices;
@@ -14,10 +18,6 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArray;
-use PermissionsError;
-use ReadOnlyError;
-use ThrottledError;
-use UserBlockedError;
 
 /**
  * @license GPL-2.0-or-later
