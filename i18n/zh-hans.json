@@ -10,7 +10,8 @@
 			"U.T.",
 			"Winston Sung",
 			"Huajing",
-			"沈澄心"
+			"沈澄心",
+			"LaMagiaaa"
 		]
 	},
 	"newsletter-extension-desc": "为用户启用发布和订阅新闻报的功能",
@@ -87,7 +88,7 @@
 	"newsletter-unsubscribe-text": "此页面允许您取消订阅“$1”新闻报。如果您取消订阅，您将停止接收此新闻报宣布发行新一期的通知。",
 	"newsletter-do-unsubscribe": "取消订阅此新闻报",
 	"newsletter-unsubscribe-success": "您不再是“$1”的订阅者。",
-	"newsletter-unsubscribe-fail": "无法退订“$1”新闻报，因为您已经不再订阅此新闻报。",
+	"newsletter-unsubscribe-fail": "无法退订“$1”新闻报，因为您目前没有订阅此新闻报。",
 	"newsletter-unsubscribe-error": "退订新闻报时出错。",
 	"newsletter-subscribe-section": "订阅新闻报",
 	"newsletter-unsubscribe-section": "取消订阅新闻报",
