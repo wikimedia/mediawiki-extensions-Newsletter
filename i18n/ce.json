@@ -143,5 +143,7 @@
 	"newsletter-diff-mainpageheader": "Коьртачу агӀонан тӀехь хийцамаш:",
 	"newsletter-diff-publishersheader": "Арахоьцучера могӀам тӀехь хийцамаш:",
 	"newsletter-ch-apierror": "АгӀо Ӏалашйеш гӀалат: $1",
-	"newsletter-ch-tojsonerror": "ГӀалат хилла JSON сериализаци йеш ларйарехь."
+	"newsletter-ch-tojsonerror": "ГӀалат хилла JSON сериализаци йеш ларйарехь.",
+	"namespaceinfo-description-ns5500": "ЦӀерийн меттиг шена чохь кхаъ чулацам болуш",
+	"namespaceinfo-description-ns5501": "Бюллетенан дийцаран агӀо Керланийн цӀерийн меттигехь"
 }
