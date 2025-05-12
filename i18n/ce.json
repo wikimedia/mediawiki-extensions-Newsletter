@@ -124,6 +124,7 @@
 	"newsletter-notification-new-publisher-title": "Хьо тӀетоьхна $1 дIасатасаран арахоьцучеран йукъа.",
 	"newsletter-notification-new-publisher-flyout": "Хьо хӀинца $1 дIасатасаран арахехархо ву(йу).",
 	"newsletter-notification-link-text-del-publisher": "ДIасатасаре хьажа",
+	"newsletter-notification-del-publisher-flyout": "Хьо хӀинца $1 дIасатасаран арахехархо вац(йац).",
 	"log-name-newsletter": "Керланийн дIасатасарийн журнал",
 	"log-description-newsletter": "ХӀара журнал ду керланийн дIасатасаршна тӀехь бина хийцамийн.",
 	"logentry-newsletter-newsletter-added": "$1 {{GENDER:$2|регистраци йина}} $4 дIасатасар",
