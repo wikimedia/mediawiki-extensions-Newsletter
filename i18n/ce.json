@@ -116,6 +116,7 @@
 	"action-newsletter-manage": "дIасатасаршна урхалладар",
 	"right-newsletter-restore": "ДIасатасарш меттахӀоттор",
 	"action-newsletter-restore": "дIасатасарш меттахӀоттор",
+	"notification-header-newsletter-announce": "$1 {{GENDER:$2|кхайкхам бина}} «$3» керла арахецарх.",
 	"newsletter-list-intro": "ХӀокху вики тӀехь регистраци йина керланийн дIасатасарш ду хӀара. Керлачу арахецарх лаьцна хаамаш схьаэца йазло керланийн дIасатасаран тӀе. Хьуна хаамаш хир бу интернетехула йа электронан поштехула, хьан [[Special:Preferences#mw-prefsection-echo|нисдаран гӀирс]] тӀе а тевжаш.",
 	"newsletter-list-table": "Фильтр:",
 	"newsletter-list-option-all": "Дерриге дIасатасарш",
