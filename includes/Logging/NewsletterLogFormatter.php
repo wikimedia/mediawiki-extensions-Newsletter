@@ -17,7 +17,8 @@ use MediaWiki\User\User;
 class NewsletterLogFormatter extends LogFormatter {
 
 	/**
-	 * Reformat the target as a user link if the target was a user
+	 * Reformat the target as a user link if the target was a user.
+	 * Adds a link to the issue for issue-added log entries
 	 * @return array
 	 */
 	public function getMessageParameters() {
@@ -35,7 +36,15 @@ class NewsletterLogFormatter extends LogFormatter {
 		}
 
 		if ( $this->entry->getSubtype() === 'issue-added' && isset( $params[5] ) ) {
-			$params[5] = Message::rawParam( $this->makePageLink( Title::newFromText( $params[5] ) ) );
+			$title = Title::newFromText( $params[5] );
+			// makePageLink hides the fragment, which isn't desired here,
+			// so go to the link renderer directly to include it
+			if ( $this->plaintext ) {
+				$link = '[[' . $title->getFullText() . ']]';
+			} else {
+				$link = $this->getLinkRenderer()->makeLink( $title, $title->getFullText() );
+			}
+			$params[5] = Message::rawParam( $link );
 		}
 
 		ksort( $params );

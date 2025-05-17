@@ -20,8 +20,14 @@ class EchoNewsletterAnnouncePresentationModel extends BaseNewsletterPresentation
 
 	/** @inheritDoc */
 	public function getPrimaryLink() {
+		$title = $this->event->getTitle();
+
+		if ( $this->event->getExtraParam( 'title-fragment' ) ) {
+			$title->setFragment( $this->event->getExtraParam( 'title-fragment' ) );
+		}
+
 		return [
-			'url' => $this->event->getTitle()->getFullURL(),
+			'url' => $title->getFullURL(),
 			'label' => $this->msg( 'newsletter-notification-link-text-new-issue' )
 		];
 	}

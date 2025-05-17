@@ -416,6 +416,8 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 					'newsletter-name' => $this->newsletter->getName(),
 					'newsletter-id' => $this->newsletter->getId(),
 					'section-text' => $summary,
+					// Default to '' if no fragment is given
+					'title-fragment' => $title->getFragment(),
 				],
 				'agent' => $user,
 			]

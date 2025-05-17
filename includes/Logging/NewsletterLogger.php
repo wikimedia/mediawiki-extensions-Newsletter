@@ -70,7 +70,7 @@ class NewsletterLogger {
 		$log->setParameters( [
 			'4:newsletter-link:nl_id' => "{$newsletter->getId()}:{$newsletter->getName()}",
 			'5::nli_issue_id' => $issueId,
-			'6::nl_issue_title' => $issueTitle->getPrefixedText(),
+			'6::nl_issue_title' => $issueTitle->getFullText()
 		] );
 		$log->setComment( $comment );
 		$log->setRelations( [ 'nl_id' => $newsletter->getId() ] );
