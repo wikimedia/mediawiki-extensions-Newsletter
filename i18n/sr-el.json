@@ -6,6 +6,7 @@
 			"Zoranzoki21"
 		]
 	},
+	"newsletter-desc": "Opis",
 	"newsletter-subtitlelinks-unsubscribe": "odjavi se",
 	"newsletter-subtitlelinks-subscribe": "prijavi se",
 	"newsletter-subtitlelinks-announce": "oglasi",
@@ -16,6 +17,7 @@
 	"newsletter-announce-button": "Oglasi",
 	"newsletter-announce-submit": "Oglasi",
 	"newsletter-subscribe-button-label": "Da",
+	"newsletter-unsubscribe-button-label": "Ne",
 	"echo-category-title-newsletter": "Bilteni",
 	"right-newsletter-delete": "Brisanje biltenâ",
 	"action-newsletter-delete": "izbriši biltene",
@@ -24,5 +26,6 @@
 	"right-newsletter-restore": "Vraćanje biltena",
 	"action-newsletter-restore": "vrati bilten",
 	"log-name-newsletter": "Dnevnik biltena",
-	"log-action-filter-newsletter": "Vrsta radnje:"
+	"log-action-filter-newsletter": "Vrsta radnje:",
+	"newsletter-ch-apierror": "Greška pri čuvanju stranice: $1"
 }
