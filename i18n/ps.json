@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"newsletter-name": "د خبرليک نوم",
 	"newsletter-desc": "څرگندونه",
-	"newsletter-title": "د لومړي مخ سرليک",
+	"newsletter-title": "ويکي مخ له خبرليک مالوماتو سره",
 	"newslettercreate": "خبرليک جوړول",
 	"newsletter-create-submit": "خبرليک جوړول",
 	"newsletter-subtitlelinks-list": "د خبرليکونو لړليک",
