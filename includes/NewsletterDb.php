@@ -181,7 +181,7 @@ class NewsletterDb {
 				->caller( __METHOD__ )
 				->execute();
 			return $dbw->insertId();
-		} catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError ) {
 			return false;
 		}
 	}
@@ -211,7 +211,7 @@ class NewsletterDb {
 				->where( $conds )
 				->caller( __METHOD__ )
 				->execute();
-		} catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError ) {
 			return false;
 		}
 
@@ -239,7 +239,7 @@ class NewsletterDb {
 				->where( $conds )
 				->caller( __METHOD__ )
 				->execute();
-		} catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError ) {
 			return false;
 		}
 
@@ -267,7 +267,7 @@ class NewsletterDb {
 				->where( $conds )
 				->caller( __METHOD__ )
 				->execute();
-		} catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError ) {
 			return false;
 		}
 
@@ -455,7 +455,7 @@ class NewsletterDb {
 				->caller( __METHOD__ )
 				->execute();
 			$dbw->endAtomic( __METHOD__ );
-		} catch ( DBQueryError $ex ) {
+		} catch ( DBQueryError ) {
 			$dbw->rollback( __METHOD__ );
 			return false;
 		}
