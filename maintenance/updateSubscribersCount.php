@@ -2,10 +2,12 @@
 
 use MediaWiki\Maintenance\Maintenance;
 
+// @codeCoverageIgnoreStart
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
 
 require_once $basePath . '/maintenance/Maintenance.php';
+// @codeCoverageIgnoreEnd
 
 class UpdateSubscribersCount extends Maintenance {
 
@@ -61,5 +63,7 @@ class UpdateSubscribersCount extends Maintenance {
 
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = UpdateSubscribersCount::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd

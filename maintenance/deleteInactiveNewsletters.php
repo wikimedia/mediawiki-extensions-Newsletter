@@ -2,10 +2,12 @@
 
 use MediaWiki\Maintenance\Maintenance;
 
+// @codeCoverageIgnoreStart
 $basePath = getenv( 'MW_INSTALL_PATH' ) !== false ?
 	getenv( 'MW_INSTALL_PATH' ) : __DIR__ . '/../../..';
 
 require_once $basePath . '/maintenance/Maintenance.php';
+// @codeCoverageIgnoreEnd
 
 /**
  * @author Addshore
@@ -86,5 +88,7 @@ class DeleteInactiveNewsletters extends Maintenance {
 
 }
 
+// @codeCoverageIgnoreStart
 $maintClass = DeleteInactiveNewsletters::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
+// @codeCoverageIgnoreEnd
