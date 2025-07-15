@@ -1,0 +1,9 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"newsletter-api-error-notfound": "Иштта дӀасатасар дац",
+	"newsletter-api-error-nopermissions": "Хьан бакъо йац дӀасатасарна урхалла дан."
+}
