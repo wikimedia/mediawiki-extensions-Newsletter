@@ -46,7 +46,7 @@
 	"newsletter-unsubscribe-success": "Dir sidd net méi op \"$1\" abonnéiert.",
 	"newsletter-unsubscribe-error": "Feeler beim Ofbestelle vun der Newsletter.",
 	"newsletter-subscribe-button-label": "Jo",
-	"newsletter-unsubscribe-button-label": "Neen",
+	"newsletter-unsubscribe-button-label": "Nee",
 	"newsletter-subscribing": "Abonéieren...",
 	"newsletter-unsubscribing": "Ofbestellen...",
 	"newsletter-subscribers": "Newsletter-Abonnenten",
