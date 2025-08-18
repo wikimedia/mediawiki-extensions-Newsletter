@@ -1,0 +1,17 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yueman"
+		]
+	},
+	"newsletter-desc": "描述",
+	"newsletter-subtitlelinks-subscribe": "留名",
+	"newsletter-view-description": "描述：",
+	"newsletter-manage-description": "描述：",
+	"newsletter-managenewsletter-button": "遞交",
+	"newsletter-subscribe-button-label": "係",
+	"newsletter-unsubscribe-button-label": "唔係",
+	"newsletter-header-name": "名",
+	"newsletter-header-description": "描述",
+	"log-action-filter-newsletter": "行動類型："
+}
