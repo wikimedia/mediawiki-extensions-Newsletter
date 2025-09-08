@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Winston Sung"
+			"Winston Sung",
+			"Aca"
 		]
 	},
 	"newsletter-extension-desc": "Omogućava korisnicima da objave i da se pretplate na biltene",
@@ -20,8 +21,8 @@
 	"newsletter-create-editsummary": "Registriranje novoga vjesnika",
 	"newsletter-create-confirmation": "Novi vjesnik: »[[Newsletter:$1|$1]]« upravo je registriran.",
 	"newsletter-create-mainpage-error": "Upisali ste neispravnu sliku početne stranice vjesnika. Pokušajte ponovo.",
-	"newsletter-mainpage-non-existent": "Početna stranica vjesnika ne postoji. Upišite ispravnu postojeću stranicu.",
-	"newsletter-create-short-description-error": "Opis je prekratak. Upišite više znakova (barem 30).",
+	"newsletter-mainpage-non-existent": "Glavna stranica biltena ne postoji. Unesite ispravnu postojeću stranicu.",
+	"newsletter-create-short-description-error": "Opis je prekratak. Unesite više znakova (barem 30).",
 	"newsletter-subtitlelinks-list": "Spisak vjesnika",
 	"newsletter-subtitlelinks-create": "Registriranje novoga vjesnika",
 	"newsletter-subtitlelinks-unsubscribe": "otkaži pretplatu",
