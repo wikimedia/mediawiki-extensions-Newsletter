@@ -11,18 +11,10 @@ use SlotDiffRenderer;
 use TextSlotDiffRenderer;
 
 class NewsletterSlotDiffRenderer extends SlotDiffRenderer {
-	/** @var TextSlotDiffRenderer */
-	private $textSlotDiffRenderer;
-
-	/** @var \MessageLocalizer */
-	private $localizer;
-
 	public function __construct(
-		TextSlotDiffRenderer $textSlotDiffRenderer,
-		\MessageLocalizer $localizer
+		private readonly TextSlotDiffRenderer $textSlotDiffRenderer,
+		private readonly \MessageLocalizer $localizer,
 	) {
-		$this->textSlotDiffRenderer = $textSlotDiffRenderer;
-		$this->localizer = $localizer;
 	}
 
 	public function getTablePrefix( IContextSource $context, Title $newTitle ): array {

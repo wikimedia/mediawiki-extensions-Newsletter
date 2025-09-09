@@ -17,13 +17,7 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
  */
 class NewsletterDb {
 
-	/**
-	 * @var ILoadBalancer
-	 */
-	private $lb;
-
-	public function __construct( ILoadBalancer $lb ) {
-		$this->lb = $lb;
+	public function __construct( private readonly ILoadBalancer $lb ) {
 	}
 
 	/**

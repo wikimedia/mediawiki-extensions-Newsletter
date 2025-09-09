@@ -15,27 +15,14 @@ use Wikimedia\Rdbms\IResultWrapper;
 class NewsletterStore {
 
 	/**
-	 * @var NewsletterDb
-	 */
-	private $db;
-
-	/**
-	 * @var NewsletterLogger
-	 */
-	private $logger;
-
-	/**
 	 * @var self
 	 */
 	private static $instance;
 
-	/**
-	 * @param NewsletterDb $db
-	 * @param NewsletterLogger $logger
-	 */
-	public function __construct( NewsletterDb $db, NewsletterLogger $logger ) {
-		$this->db = $db;
-		$this->logger = $logger;
+	public function __construct(
+		private readonly NewsletterDb $db,
+		private readonly NewsletterLogger $logger,
+	) {
 	}
 
 	/**
