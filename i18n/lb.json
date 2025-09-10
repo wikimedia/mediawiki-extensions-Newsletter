@@ -4,7 +4,8 @@
 			"Les Meloures",
 			"Robby",
 			"Soued031",
-			"Volvox"
+			"Volvox",
+			"GilPe"
 		]
 	},
 	"newsletter-extension-desc": "Erméiglecht et Benotzer fir Newsletteren ze publizéieren an z'abonnéieren",
@@ -31,13 +32,13 @@
 	"newsletter-subscribers-button": "Abonnente änneren",
 	"newsletter-announce-button": "Ukënnegen",
 	"newsletter-announce-submit": "Ukënnegen",
-	"newsletter-announce-summary": "Resumé vun dëser Ausgab",
+	"newsletter-announce-summary": "Resümmee vun dëser Ausgab",
 	"newsletter-manage": "Newsletter \"$1\" geréieren",
 	"newsletter-manage-name": "Numm vun der Newsletter:",
 	"newsletter-manage-title": "Titel vun der Hauptsäit",
 	"newsletter-manage-description": "Beschreiwung:",
 	"newsletter-manage-newsletter-success": "D'Newsletter gouf geännert.",
-	"newsletter-manage-summary": "Resumé fir z'änneren:",
+	"newsletter-manage-summary": "Resümmee fir z'änneren:",
 	"newsletter-delete": "Newsletter läschen",
 	"newsletter-delete-log": "Newsletter \"$1\" gouf geläscht.",
 	"newsletter-subscribe-text": "Dës Säit erlaabt Iech fir Iech op den Newsletter „$1“ z'abonéieren. Wann Dir Iech abonéiert, kritt Dir eng Notifikatioun, wann eng nei Ausgab vum Newsletter annoncéiert gëtt.",
