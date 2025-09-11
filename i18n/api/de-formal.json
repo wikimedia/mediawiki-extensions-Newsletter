@@ -4,17 +4,6 @@
 			"Krabina"
 		]
 	},
-	"apihelp-newslettersubscribe-summary": "Abonniert einen Newsletter oder beendet ein bestehendes Abonnement.",
-	"apihelp-newslettersubscribe-param-id": "Kennung des Newsletters, für den das Abonnement geändert werden soll.",
-	"apihelp-newslettersubscribe-param-do": "Auszuführende Aktion. Sollte entweder <kbd>subscribe</kbd> oder <kbd>unsubscribe</kbd> sein.",
-	"apihelp-newslettersubscribe-example-1": "Abonniert den Newsletter mit der Kennung 1.",
-	"apihelp-newslettersubscribe-example-2": "Bestellt den Newsletter mit der Kennung 2 ab.",
-	"apihelp-newslettermanage-summary": "Newsletter verwalten",
-	"apihelp-newslettermanage-param-id": "Kennung des zu verwaltenden Newsletters.",
-	"apihelp-newslettermanage-param-do": "Auszuführende Aktion. Sollte entweder <kbd>addpublisher</kbd> oder <kbd>removepublisher</kbd> sein.",
-	"apihelp-newslettermanage-param-publisher": "Benutzerkennung des zu verwaltenden Herausgebers.",
-	"apihelp-newslettermanage-example-1": "Fügt einen Herausgeber mit der Benutzerkennung 3 zu dem Newsletter mit der Kennung 1 hinzu.",
-	"apihelp-newslettermanage-example-2": "Entfernt den Herausgeber mit der Benutzerkennung 5 von dem Newsletter mit der Kennung 2.",
 	"newsletter-api-error-notfound": "Der Newsletter ist nicht vorhanden",
 	"newsletter-api-error-nopermissions": "Sie haben nicht die erforderliche Berechtigung, um Newsletter zu verwalten.",
 	"newsletter-api-error-invalidpublisher-registered": "Der Herausgeber ist kein angemeldeter Benutzer.",
