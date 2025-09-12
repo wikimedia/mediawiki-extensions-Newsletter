@@ -16,8 +16,8 @@
 	"apihelp-newslettermanage-example-1": "Fügt einen Herausgeber mit der Benutzerkennung 3 zu dem Newsletter mit der Kennung 1 hinzu.",
 	"apihelp-newslettermanage-example-2": "Entfernt den Herausgeber mit der Benutzerkennung 5 von dem Newsletter mit der Kennung 2.",
 	"newsletter-api-error-notfound": "Der Newsletter ist nicht vorhanden",
-	"newsletter-api-error-nopermissions": "Du hast nicht die erforderliche Berechtigung, um diesen Newsletter zu verwalten.",
+	"newsletter-api-error-nopermissions": "{{#FORMAL:Du hast|Sie haben}} nicht die erforderliche Berechtigung, um diesen Newsletter zu verwalten.",
 	"newsletter-api-error-nocreate": "Du hast nicht die erforderliche Berechtigung, um Newsletter zu erstellen.",
 	"newsletter-api-error-invalidpublisher-registered": "Der Herausgeber ist kein angemeldeter Benutzer.",
-	"newsletter-api-error-subscribe-notloggedin": "Du musst angemeldet sein, um Newsletter abonnieren zu können."
+	"newsletter-api-error-subscribe-notloggedin": "{{#FORMAL:Du musst|Sie müssen}} angemeldet sein, um Newsletter abonnieren zu können."
 }
