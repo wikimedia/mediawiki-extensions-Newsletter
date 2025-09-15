@@ -5,24 +5,6 @@
 			"Krabina"
 		]
 	},
-	"newslettercreate": "Newsletter registrieren",
-	"newslettercreate-text": "Diese Seite erlaubt Ihnen, einen neuen Newsletter zu registrieren. Sie werden bei seiner Registrierung als Herausgeber und Abonnent hinzugefügt. Es sind alle Felder erforderlich.",
-	"newsletters": "Newsletter",
-	"newsletter-view-mainpage": "Hauptseite des Newsletters:",
 	"newsletter-view-description": "Beschreibung",
-	"newsletter-view-publishers": "{{PLURAL:$1|Herausgeber:}}",
-	"newsletter-view-subscriber-count": "Anzahl der Abonnent*innen:",
-	"newsletter-view-no-publishers": "Keine Herausgeber.",
-	"newsletter-view-issues-log": "{{PLURAL:$1|Veröffentlichung|Veröffentlichungen}} von Newsletterausgaben:",
-	"newsletter-unsubscribe-text": "Diese Seite erlaubt Ihnen, den Newsletter „$1“ zu abonnieren. Falls Sie den Newsletter abonnieren, erhälen Sie Benachrichtigungen, wenn neue Artikel dieses Newsletters angekündigt werden.",
-	"newsletter-unsubscribe-success": "Sie sind kein Abonnent von „$1“ mehr.",
-	"newsletter-unsubscribe-fail": "Der Newsletter „$1“ konnte nicht abbestellt werden, da Sie ihn bereits abbestellt haben.",
-	"newsletter-unsubscribing": "Bestelle ab …",
-	"right-newsletter-create": "Newsletter registrieren",
-	"right-newsletter-delete": "Newsletter löschen",
-	"right-newsletter-manage": "Herausgeber oder Abonnent*innen von Newslettern hinzufügen oder entfernen",
-	"right-newsletter-restore": "Einen Newsletter wiederherstellen",
-	"notification-header-newsletter-announce": "$2 {{GENDER:$3|hat}} eine neue Ausgabe von $1 veröffentlicht.",
-	"notification-header-newsletter-newpublisher": "Sie wurden als {{GENDER:$2|Herausgeber|Herausgeberin}} des Newsletters „$1“ {{GENDER:$3|hinzugefügt}}.",
-	"notification-header-newsletter-delpublisher": "Sie wurden als {{GENDER:$2|Herausgeber|Herausgeberin}} des Newsletters „$1“ {{GENDER:$3|entfernt}}."
+	"newsletter-unsubscribing": "Bestelle ab …"
 }
