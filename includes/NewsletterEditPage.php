@@ -23,7 +23,6 @@ use MediaWiki\User\UserArray;
  * @license GPL-2.0-or-later
  * @author tonythomas
  */
-
 class NewsletterEditPage {
 
 	/** @var bool */
