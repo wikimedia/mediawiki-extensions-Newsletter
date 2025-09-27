@@ -1,6 +1,4 @@
-'use strict';
-
-const NewsletterPage = require( '../pageobjects/newsletter.page' );
+import NewsletterPage from '../pageobjects/newsletter.page.js';
 
 describe( 'Newsletter', () => {
 	it( 'page should exist on installation', async () => {
