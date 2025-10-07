@@ -221,14 +221,14 @@ class NewsletterContentHandler extends JsonContentHandler {
 			$form->prepareForm();
 
 			if ( !$newsletter ) {
-				$parserOutput->setText( $form->getBody() );
+				$parserOutput->setContentHolderText( $form->getBody() );
 			} else {
 				$this->setupNavigationLinks( $newsletter, $parserOptions );
-				$parserOutput->setText( $newsletterActionButtons . "<br><br>" . $form->getBody() );
+				$parserOutput->setContentHolderText( $newsletterActionButtons . "<br><br>" . $form->getBody() );
 			}
 
 		} else {
-			$parserOutput->setText( '' );
+			$parserOutput->setContentHolderText( '' );
 		}
 	}
 
