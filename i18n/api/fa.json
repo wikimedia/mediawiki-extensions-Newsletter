@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ladsgroup"
+			"Ladsgroup",
+			"LordProfo"
 		]
 	},
 	"apihelp-newslettersubscribe-description": "اشتراک یا لغو اشتراک به یک خبرنامه.",
@@ -14,5 +15,5 @@
 	"newsletter-api-error-notfound": "خبرنامه وجود ندارد",
 	"newsletter-api-error-nopermissions": "شماره دسترسی مدیریت خبرنامه‌ها را ندارید.",
 	"newsletter-api-error-invalidpublisher-registered": "ناشر یک کاربر ثبت‌شده نیست.",
-	"newsletter-api-error-subscribe-notloggedin": "شما برای اشتراک به خبرنامه باید اول وارد شوید."
+	"newsletter-api-error-subscribe-notloggedin": "برای عضویت در خبرنامه‌ها باید وارد سامانه شوید."
 }
