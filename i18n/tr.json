@@ -8,7 +8,8 @@
 			"KorkmazO",
 			"MuratTheTurkish",
 			"Rapsar",
-			"Vito Genovese"
+			"Vito Genovese",
+			"SaldırganSincap"
 		]
 	},
 	"newsletter-extension-desc": "Kullanıcıların bültenleri yayımlamalarına ve bültenlere abone olmalarına olanak tanır",
@@ -28,7 +29,7 @@
 	"newsletter-create-confirmation": "Yeni bir bülten: [[Newsletter:$1|$1]] kaydedildi.",
 	"newsletter-create-mainpage-error": "Geçersiz bülten ana sayfası girildi. Lütfen tekrar deneyin.",
 	"newsletter-mainpage-non-existent": "Bülten ana sayfası mevcut değil. Lütfen geçerli bir sayfa girin.",
-	"newsletter-mainpage-in-use": "Mevcut bir bülten aynı ana sayfaya sahiptir. Lütfen başka bir başlık girin.",
+	"newsletter-mainpage-in-use": "Mevcut bir bültenin ana sayfası aynı. Lütfen farklı bir ana sayfa girin.",
 	"newsletter-create-short-description-error": "Açıklama çok kısa (30 karakterden az). Lütfen tekrar deneyin.",
 	"newsletter-subtitlelinks-list": "Bülten listesi",
 	"newsletter-subtitlelinks-create": "Yeni bir bültene kayıt olun",
@@ -97,7 +98,7 @@
 	"newsletter-unsubscribing": "Abonelikten kaldırılıyor...",
 	"newsletter-subscribers": "Bülten aboneleri",
 	"newsletter-subscribers-nopermission": "Bu bültenin abonelerini düzenleme izniniz yok",
-	"newsletter-edit-subscribers-nochanges": "Bülteninin abonelerinde herhangi bir değişiklik yapılmamıştır.",
+	"newsletter-edit-subscribers-nochanges": "Bülten abone listesinde herhangi bir değişiklik yapılmamıştır.",
 	"newsletter-edit-subscribers-success": "Bülteninin aboneleri güncellendi.",
 	"newsletter-subscribers-invalid": "\"$1\" geçerli bir kullanıcı değil. Lütfen kullanıcı adının mevcut olduğundan emin olun ve tekrar deneyin.",
 	"newsletter-available-newsletters-field-label": "Mevcut bültenler",
