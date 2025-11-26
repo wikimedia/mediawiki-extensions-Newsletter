@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BaRaN6161 TURK",
-			"MuratTheTurkish"
+			"MuratTheTurkish",
+			"SaldırganSincap"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "Bültene abone olun veya bülten aboneliğinizi iptal edin.",
@@ -17,7 +18,8 @@
 	"apihelp-newslettermanage-example-1": "1 numaralı haber bültenine kullanıcı kimliği 3 olan bir yayımcı ekleyin.",
 	"apihelp-newslettermanage-example-2": "Kullanıcı kimliği 5 olan yayımcıyı 2 numaralı haber bülteninden kaldırın.",
 	"newsletter-api-error-notfound": "Bülten mevcut değil",
-	"newsletter-api-error-nopermissions": "Haber bültenlerini yönetme izniniz yok.",
+	"newsletter-api-error-nopermissions": "Bu bülteni yönetme yetkiniz yok.",
+	"newsletter-api-error-nocreate": "Bülteni oluşturma izniniz yok.",
 	"newsletter-api-error-invalidpublisher-registered": "Yayımlayıcı kayıtlı bir kullanıcı değil.",
 	"newsletter-api-error-subscribe-notloggedin": "Bültenlere abone olmak için oturum açmış olmalısınız."
 }
