@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Tamzin"
+		]
+	},
+	"right-newsletter-create": "ona li ken open e lipu tenpo",
+	"right-newsletter-delete": "ona li ken weka e lipu tenpo",
+	"right-newsletter-manage": "ona li ken pana anu weka e jan pana anu jan kute tan lipu tenpo",
+	"right-newsletter-restore": "ona li ken sin e lipu tenpo"
+}
