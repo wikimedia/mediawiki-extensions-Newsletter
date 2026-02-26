@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Ravichandra",
-			"Veeven"
+			"Veeven",
+			"Chaduvari"
 		]
 	},
+	"newsletter-header-name": "పేరు",
 	"newsletter-diff-descheader": "వివరణలో మార్పులు:",
 	"newsletter-diff-mainpageheader": "మొదటి పేజీలో మార్పులు:"
 }
