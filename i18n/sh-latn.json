@@ -10,9 +10,9 @@
 	"newsletter-desc": "Opis",
 	"newsletter-title": "Naslov glavne stranice",
 	"newsletter-exist-error": "Već postoji bilten nazvan \"$1\". Pokušajte s drugim imenom.",
-	"newsletter-create-error": "Prigodom registriranja novoga vjesnika došlo je do pogrješke. Molimo Vas, pokušajte ponovo.",
+	"newsletter-create-error": "Registracija novog biltena nije uspjela. Pokušajte ponovo.",
 	"newsletter-oldrev-undo-error-title": "Oprostite, zahtijevana radnja nije dopuštena.",
-	"newsletter-oldrev-undo-error-body": "Uređivanje prethodne inačice nije podržano vjesničkim proširenjem. Molimo Vas, umjesto toga, podnovite posljednju inačicu",
+	"newsletter-oldrev-undo-error-body": "Uređivanje prethodne inačice nije podržano vjesničkim proširenjem. Umjesto toga, podnovite posljednju inačicu",
 	"newsletter-input-required": "Niste ništa upisali u zahtijevana polja. Pokušajte ponovo.",
 	"newsletter-invalid-name": "Ime vjesnika koje ste unijeli nije ispravno. Pokušajte ponovo.",
 	"newslettercreate": "Registriraj vjesnik",
@@ -32,7 +32,7 @@
 	"newsletter-subtitlelinks-manage": "upravljaj",
 	"newsletter-subtitlelinks-subscribers": "uredi popis pretplatnika",
 	"newsletters": "Vjesnici",
-	"newsletter-subscribe-loginrequired": "Molimo Vas, prijavite se na ili se pretplatite za [[Special:Newsletters|vjesnike]].",
+	"newsletter-subscribe-loginrequired": "Prijavite se na ili se pretplatite za [[Special:Newsletters|vjesnike]].",
 	"newsletter-notfound": "Vjesnik nije pronađen",
 	"newsletter-not-found-id": "Ne postoji vjesnik s navedenom naznakom. Dostupan je [[Special:Newsletters| spisak postojećih vjesnika]].",
 	"newsletter-view-mainpage": "Glavna stranica vjesnika:",
@@ -52,5 +52,5 @@
 	"newsletter-announce-issuetitle": "Naslov stranice izdanja",
 	"newsletter-announce-summary": "Sažetak ovog izdanja",
 	"newsletter-announce-success": "Novo izdanje vjesnika \"$1\" objavljeno je za $2 {{PLURAL:$2|pretplatnika}}.",
-	"newsletter-announce-invalid-page": "Unesite važeći naslov za stranicu izdanja."
+	"newsletter-announce-invalid-page": "Unesite ispravan naslov za stranicu izdanja."
 }
