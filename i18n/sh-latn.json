@@ -12,7 +12,7 @@
 	"newsletter-exist-error": "Već postoji bilten nazvan \"$1\". Pokušajte s drugim imenom.",
 	"newsletter-create-error": "Registracija novog biltena nije uspjela. Pokušajte ponovo.",
 	"newsletter-oldrev-undo-error-title": "Oprostite, zahtijevana radnja nije dopuštena.",
-	"newsletter-oldrev-undo-error-body": "Uređivanje prethodne inačice nije podržano dodatkom Newsletter. Umjesto toga, podnovite posljednju inačicu",
+	"newsletter-oldrev-undo-error-body": "Uređivanje prethodne verzije nije podržano dodatkom Newsletter. Umjesto toga, ažurirajte najnoviju verziju",
 	"newsletter-input-required": "Niste ništa upisali u zahtijevana polja. Pokušajte ponovo.",
 	"newsletter-invalid-name": "Ime biltena koje ste unijeli nije ispravno. Pokušajte ponovo.",
 	"newslettercreate": "Registriraj bilten",
