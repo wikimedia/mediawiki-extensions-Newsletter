@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\Newsletter\Content;
 
-use Iterator;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Content\Content;
@@ -74,7 +73,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	}
 
 	/**
-	 * @return string
+	 * @return class-string<NewsletterContent>
 	 */
 	protected function getContentClass() {
 		return NewsletterContent::class;
@@ -419,9 +418,9 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 * Batch query to determine whether user pages and user talk pages exist
 	 * or not and add them to LinkCache
 	 *
-	 * @param Iterator $users
+	 * @param UserArray $users
 	 */
-	private function doLinkCacheQuery( Iterator $users ) {
+	private function doLinkCacheQuery( UserArray $users ) {
 		$batch = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
 		foreach ( $users as $user ) {
 			$batch->addObj( $user->getUserPage() );
@@ -433,11 +432,11 @@ class NewsletterContentHandler extends JsonContentHandler {
 	/**
 	 * Get a list of users with user-related links next to each username
 	 *
-	 * @param Iterator $users
+	 * @param UserArray $users
 	 *
 	 * @return string
 	 */
-	private function buildUserList( Iterator $users ) {
+	private function buildUserList( UserArray $users ) {
 		$str = '';
 		foreach ( $users as $user ) {
 			$str .= Html::rawElement(
