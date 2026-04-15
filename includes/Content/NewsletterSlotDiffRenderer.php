@@ -4,16 +4,17 @@ namespace MediaWiki\Extension\Newsletter\Content;
 
 use MediaWiki\Content\Content;
 use MediaWiki\Context\IContextSource;
+use MediaWiki\Diff\SlotDiffRenderer;
+use MediaWiki\Diff\TextSlotDiffRenderer;
 use MediaWiki\Html\Html;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Title\Title;
-use SlotDiffRenderer;
-use TextSlotDiffRenderer;
 
 class NewsletterSlotDiffRenderer extends SlotDiffRenderer {
 	public function __construct(
 		private readonly TextSlotDiffRenderer $textSlotDiffRenderer,
-		private readonly \MessageLocalizer $localizer,
+		private readonly MessageLocalizer $localizer,
 	) {
 	}
 

@@ -2,6 +2,7 @@
 
 use MediaWiki\Extension\Newsletter\Specials\SpecialNewsletters;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 
 /**
  * @covers \MediaWiki\Extension\Newsletter\Specials\SpecialNewsletters

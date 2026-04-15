@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
+use MediaWiki\Actions\Hook\CustomEditorHook;
 use MediaWiki\Content\Content;
 use MediaWiki\Content\Hook\ContentModelCanBeUsedOnHook;
 use MediaWiki\Context\IContextSource;
@@ -16,10 +17,7 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterSubscribedPresent
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUnsubscribedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
 use MediaWiki\Extension\Notifications\UserLocator;
-use MediaWiki\Hook\CustomEditorHook;
 use MediaWiki\Hook\EditFilterMergedContentHook;
-use MediaWiki\Hook\LoginFormValidErrorMessagesHook;
-use MediaWiki\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Hook\TitleMoveHook;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\Article;
@@ -29,7 +27,9 @@ use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Page\WikiPage;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\Skin\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Skin\SkinTemplate;
+use MediaWiki\Specials\Hook\LoginFormValidErrorMessagesHook;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

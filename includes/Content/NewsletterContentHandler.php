@@ -5,13 +5,13 @@ namespace MediaWiki\Extension\Newsletter\Content;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Content\Content;
+use MediaWiki\Content\ContentSerializationException;
 use MediaWiki\Content\JsonContentHandler;
 use MediaWiki\Content\Renderer\ContentParseParams;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferrableUpdate;
-use MediaWiki\Exception\MWContentSerializationException;
 use MediaWiki\Extension\Newsletter\Newsletter;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
@@ -61,13 +61,13 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 * @param string $text
 	 * @param string|null $format
 	 * @return NewsletterContent
-	 * @throws MWContentSerializationException
+	 * @throws ContentSerializationException
 	 */
 	public function unserializeContent( $text, $format = null ) {
 		$this->checkFormat( $format );
 		$content = new NewsletterContent( $text );
 		if ( !$content->isValid() ) {
-			throw new MWContentSerializationException( 'The Newsletter content is invalid.' );
+			throw new ContentSerializationException( 'The Newsletter content is invalid.' );
 		}
 		return $content;
 	}
