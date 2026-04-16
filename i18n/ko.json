@@ -6,6 +6,7 @@
 			"Jerrykim306",
 			"Macofe",
 			"Revi",
+			"Tensama0415",
 			"YeBoy371",
 			"Ykhwong",
 			"고솜",
@@ -125,6 +126,7 @@
 	"log-action-filter-newsletter-publisher-removed": "발행자 삭제",
 	"log-action-filter-newsletter-newsletter-added": "뉴스레터 생성",
 	"log-action-filter-newsletter-newsletter-removed": "뉴스레터 삭제",
+	"log-action-filter-newsletter-issue-added": "새로운 이슈 공지",
 	"namespaceinfo-description-ns5500": "뉴스레터 내용을 포함하는 이름공간",
 	"namespaceinfo-description-ns5501": "뉴스레터 이름공간에 속하는 뉴스레터의 토론 문서"
 }
