@@ -6,7 +6,7 @@
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "Eng Newsletter abonéieren oder d'Abonnement opléisen.",
-	"apihelp-newslettersubscribe-example-1": "Abonnéiert d'Newsletter mat der Nummer 1.",
+	"apihelp-newslettersubscribe-example-1": "Abonéiert d'Newsletter mat der Nummer 1.",
 	"apihelp-newslettersubscribe-example-2": "D'Newsletter mat der Nummer 2 ofbestellen.",
 	"apihelp-newslettermanage-summary": "Eng Newsletter geréieren.",
 	"newsletter-api-error-notfound": "Newsletter gëtt et net",
