@@ -11,5 +11,5 @@
 	"apihelp-newslettermanage-summary": "Eng Newsletter geréieren.",
 	"newsletter-api-error-notfound": "Newsletter gëtt et net",
 	"newsletter-api-error-nopermissions": "Dir hutt net d'Recht fir dësen Newsletter ze geréieren.",
-	"newsletter-api-error-subscribe-notloggedin": "Dir musst ageloggt si fir Iech op Newsletteren z'abonnéieren."
+	"newsletter-api-error-subscribe-notloggedin": "Dir musst ageloggt sinn, fir Iech op Newsletteren z'abonéieren."
 }
