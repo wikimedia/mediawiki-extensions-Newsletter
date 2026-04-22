@@ -10,7 +10,8 @@
 			"고솜",
 			"렌즈",
 			"아라",
-			"YeBoy371"
+			"YeBoy371",
+			"Tensama0415"
 		]
 	},
 	"newsletter-extension-desc": "사용자가 뉴스레터를 발행하고 구독할 수 있도록 합니다",
@@ -125,6 +126,7 @@
 	"log-action-filter-newsletter-publisher-removed": "발행자 삭제",
 	"log-action-filter-newsletter-newsletter-added": "뉴스레터 생성",
 	"log-action-filter-newsletter-newsletter-removed": "뉴스레터 삭제",
+	"log-action-filter-newsletter-issue-added": "새로운 이슈 공지",
 	"namespaceinfo-description-ns5500": "뉴스레터 내용을 포함하는 이름공간",
 	"namespaceinfo-description-ns5501": "뉴스레터 이름공간에 속하는 뉴스레터의 토론 문서"
 }
