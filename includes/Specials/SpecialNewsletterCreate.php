@@ -26,7 +26,12 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	protected $newsletterName;
 
 	public function __construct() {
-		parent::__construct( 'NewsletterCreate', 'newsletter-create' );
+		parent::__construct( 'NewsletterCreate' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'newsletter-create';
 	}
 
 	/** @inheritDoc */
