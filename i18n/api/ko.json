@@ -1,13 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
+			"Tensama0415",
 			"Ykhwong"
 		]
 	},
 	"apihelp-newslettersubscribe-summary": "뉴스레터를 구독하거나 구독을 해지합니다.",
+	"apihelp-newslettersubscribe-param-id": "구독 상태를 변경할 뉴스레터의 ID입니다.",
+	"apihelp-newslettersubscribe-param-do": "수행할 작업입니다. <kbd>subscribe</kbd> 또는 <kbd>unsubscribe</kbd> 중 하나여야 합니다.",
+	"apihelp-newslettersubscribe-example-1": "ID 1인 뉴스레터를 구독합니다.",
+	"apihelp-newslettersubscribe-example-2": "ID 2인 뉴스레터를 구독 해제합니다.",
 	"apihelp-newslettermanage-summary": "뉴스레터를 관리합니다.",
+	"apihelp-newslettermanage-param-id": "관리할 뉴스레터의 ID입니다.",
+	"apihelp-newslettermanage-param-do": "수행할 작업입니다. <kbd>addpublisher</kbd> 또는 <kbd>removepublisher</kbd> 중 하나여야 합니다.",
+	"apihelp-newslettermanage-param-publisher": "관리할 게시자의 사용자 ID입니다.",
+	"apihelp-newslettermanage-example-1": "사용자 ID가 3인 게시자를 ID가 1인 뉴스레터에 추가합니다.",
+	"apihelp-newslettermanage-example-2": "사용자 ID가 5인 게시자를 ID가 2인 뉴스레터에서 제거합니다.",
 	"newsletter-api-error-notfound": "뉴스레터가 존재하지 않습니다",
-	"newsletter-api-error-nopermissions": "뉴스레터를 관리할 권한이 없습니다.",
+	"newsletter-api-error-nopermissions": "이 뉴스레터를 관리할 권한이 없습니다.",
+	"newsletter-api-error-nocreate": "이 뉴스레터를 만들할 권한이 없습니다.",
 	"newsletter-api-error-invalidpublisher-registered": "게시자가 등록된 사용자가 아닙니다.",
 	"newsletter-api-error-subscribe-notloggedin": "뉴스레터를 구독하려면 로그인해야 합니다."
 }
