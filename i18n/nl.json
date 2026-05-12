@@ -24,7 +24,7 @@
 	"newsletter-oldrev-undo-error-title": "Sorry, deze handeling is niet toegestaan",
 	"newsletter-oldrev-undo-error-body": "Het ongedaan maken van een vorige versie wordt niet ondersteund door de uitbreiding Newsletter. Maak in plaats daarvan de laatste versie ongedaan.",
 	"newsletter-input-required": "Vereiste invoer ontbreekt. Probeer het opnieuw.",
-	"newsletter-invalid-name": "De opgegeven nieuwsbriefnaam is ongeldig. Probeer het opnieuw.",
+	"newsletter-invalid-name": "De opgegeven nieuwsbriefnaam is onjuist. Probeer het opnieuw.",
 	"newslettercreate": "Nieuwsbrief inschrijven",
 	"newslettercreate-text": "Op deze pagina kunt u nieuwe nieuwsbrieven registreren. U wordt toegevoegd als uitgever en geabonneerd op de nieuwsbrief nadat deze is aangemaakt. Alle velden zijn verplicht.",
 	"newsletter-create-submit": "Nieuwsbrief registreren",
