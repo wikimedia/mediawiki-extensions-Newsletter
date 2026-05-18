@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\Newsletter\Specials;
 
 use MediaWiki\Config\ConfigException;
+use MediaWiki\EditPage\SpamChecker;
 use MediaWiki\Exception\ThrottledError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\Newsletter\Newsletter;
@@ -11,7 +12,6 @@ use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Logging\LogEventsList;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -42,7 +42,9 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 	 */
 	protected $newsletter;
 
-	public function __construct() {
+	public function __construct(
+		private readonly SpamChecker $spamChecker,
+	) {
 		parent::__construct( 'Newsletter' );
 	}
 
@@ -380,9 +382,7 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 		}
 
 		// Validate summary
-		$reasonSpamMatch = MediaWikiServices::getInstance()
-			->getSpamChecker()
-			->checkSummary( $data['summary'] );
+		$reasonSpamMatch = $this->spamChecker->checkSummary( $data['summary'] );
 		if ( $reasonSpamMatch ) {
 			return Status::newFatal( 'spamprotectionmatch', $reasonSpamMatch );
 		}

@@ -6,11 +6,11 @@ use MediaWiki\Exception\ThrottledError;
 use MediaWiki\Extension\Newsletter\Content\NewsletterContentHandler;
 use MediaWiki\Extension\Newsletter\NewsletterValidator;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
+use Wikimedia\Rdbms\IConnectionProvider;
 
 /**
  * Special page for creating newsletters
@@ -25,7 +25,9 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 	 */
 	protected $newsletterName;
 
-	public function __construct() {
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+	) {
 		parent::__construct( 'NewsletterCreate' );
 	}
 
@@ -105,7 +107,7 @@ class SpecialNewsletterCreate extends FormSpecialPage {
 
 		$mainPageId = $data['MainPage']->getArticleID();
 
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'nl_name', 'nl_main_page_id', 'nl_active' ] )
 			->from( 'nl_newsletters' )

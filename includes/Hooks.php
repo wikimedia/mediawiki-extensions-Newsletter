@@ -19,14 +19,15 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
 use MediaWiki\Extension\Notifications\UserLocator;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Hook\TitleMoveHook;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\Article;
 use MediaWiki\Page\Hook\ArticleDeleteHook;
 use MediaWiki\Page\Hook\PageUndeleteHook;
 use MediaWiki\Page\ProperPageIdentity;
 use MediaWiki\Page\WikiPage;
+use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
+use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Skin\Hook\SkinTemplateNavigation__UniversalHook;
 use MediaWiki\Skin\SkinTemplate;
 use MediaWiki\Specials\Hook\LoginFormValidErrorMessagesHook;
@@ -50,6 +51,12 @@ class Hooks implements
 	SkinTemplateNavigation__UniversalHook,
 	GetUserPermissionsErrorsHook
 {
+
+	public function __construct(
+		private readonly PermissionManager $permissionManager,
+		private readonly WikiPageFactory $wikiPageFactory,
+	) {
+	}
 
 	/**
 	 * Function to be called before EchoEvent
@@ -239,7 +246,7 @@ class Hooks implements
 		array $fileVersions,
 		StatusValue $status
 	) {
-		$title = MediaWikiServices::getInstance()->getWikiPageFactory()->newFromTitle( $page )->getTitle();
+		$title = $this->wikiPageFactory->newFromTitle( $page )->getTitle();
 		if ( !$title->inNamespace( NS_NEWSLETTER ) ) {
 			return;
 		}
@@ -403,8 +410,7 @@ class Hooks implements
 				}
 			}
 		} elseif ( $action === 'create' ) {
-			$permissionManager = MediaWikiServices::getInstance()->getPermissionManager();
-			if ( !$permissionManager->userHasRight( $user, 'newsletter-create' ) ) {
+			if ( !$this->permissionManager->userHasRight( $user, 'newsletter-create' ) ) {
 				// This case can only trigger when using the API - the UI will display the standard
 				// "The action you have requested is limited to users in the group <groupnames>" error
 				$result = "newsletter-api-error-nocreate";

@@ -42,9 +42,19 @@
 		}
 	},
 	"SpecialPages": {
-		"NewsletterCreate": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletterCreate",
+		"NewsletterCreate": {
+			"class": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletterCreate",
+			"services": [
+				"ConnectionProvider"
+			]
+		},
 		"Newsletters": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletters",
-		"Newsletter": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletter"
+		"Newsletter": {
+			"class": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletter",
+			"services": [
+				"SpamChecker"
+			]
+		}
 	},
 	"APIModules": {
 		"newslettersubscribe": "MediaWiki\\Extension\\Newsletter\\Api\\ApiNewsletterSubscribe"
@@ -139,7 +149,11 @@
 	},
 	"HookHandlers": {
 		"main": {
-			"class": "MediaWiki\\Extension\\Newsletter\\Hooks"
+			"class": "MediaWiki\\Extension\\Newsletter\\Hooks",
+			"services": [
+				"PermissionManager",
+				"WikiPageFactory"
+			]
 		},
 		"schema": {
 			"class": "MediaWiki\\Extension\\Newsletter\\SchemaHooks"

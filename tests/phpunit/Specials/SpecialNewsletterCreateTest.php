@@ -18,7 +18,9 @@ use MediaWiki\Title\Title;
 class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 
 	protected function newSpecialPage() {
-		return new SpecialNewsletterCreate();
+		return new SpecialNewsletterCreate(
+			$this->getServiceContainer()->getConnectionProvider()
+		);
 	}
 
 	public function testSpecialPageDoesNotFatal() {
