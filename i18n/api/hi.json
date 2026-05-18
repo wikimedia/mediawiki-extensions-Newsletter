@@ -1,8 +1,24 @@
 {
 	"@metadata": {
 		"authors": [
+			"AnupamM",
 			"Saurmandal"
 		]
 	},
-	"apihelp-newslettersubscribe-summary": "समाचार पत्रिका पर सदस्यता लें या छोड़ें।"
+	"apihelp-newslettersubscribe-summary": "सूचनापत्र की सदस्यता लें या छोड़ें।",
+	"apihelp-newslettersubscribe-param-id": "उस सूचनापत्र की ID जिसके लिए सदस्यता बदली जानी चाहिए।",
+	"apihelp-newslettersubscribe-param-do": "करने के लिए क्रिया। या तो <kbd>subscribe</kbd> या फिर <kbd>unsubscribe</kbd> होना चाहिए।",
+	"apihelp-newslettersubscribe-example-1": "ID 1 वाले सूचनापत्र की सदस्यता लें।",
+	"apihelp-newslettersubscribe-example-2": "ID 1 वाले सूचनापत्र की सदस्यता छोड़ें।",
+	"apihelp-newslettermanage-summary": "सूचनापत्र प्रबंधित करें।",
+	"apihelp-newslettermanage-param-id": "प्रबंधित करने के लिए सूचनापत्र की ID।",
+	"apihelp-newslettermanage-param-do": "करने के लिए क्रिया। या तो <kbd>addpublisher</kbd> या फिर <kbd>removepublisher</kbd> होना चाहिए।",
+	"apihelp-newslettermanage-param-publisher": "प्रबंधित करने के लिए प्रकाशक की सदस्य ID।",
+	"apihelp-newslettermanage-example-1": "ID 1 वाले सूचनापत्र पर सदस्य ID 3 वाला एक प्रकाशक जोड़ें।",
+	"apihelp-newslettermanage-example-2": "ID 2 वाले सूचनापत्र पर से सदस्य ID 5 वाले प्रकाशक को हटा दें।",
+	"newsletter-api-error-notfound": "सूचनापत्र मौजूद नहीं है",
+	"newsletter-api-error-nopermissions": "आपको यह सूचनापत्र प्रबंधित करने की अनुमति नहीं है।",
+	"newsletter-api-error-nocreate": "आपको सूचनापत्र बनाने की अनुमति नहीं है।",
+	"newsletter-api-error-invalidpublisher-registered": "प्रकाशक पंजीकृत सदस्य नहीं है।",
+	"newsletter-api-error-subscribe-notloggedin": "सूचनापत्रों की सदस्यता लेने के लिए आपको लॉग-इन किया हुआ होना होगा।"
 }
