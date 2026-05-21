@@ -42,7 +42,7 @@ class NewsletterDataUpdate extends DataUpdate {
 	 * @return int
 	 */
 	protected function getNewslettersWithNewsletterMainPage( $newNewsletterName ) {
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 
 		return $dbr->newSelectQueryBuilder()
 			->select( '*' )

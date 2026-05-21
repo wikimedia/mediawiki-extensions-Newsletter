@@ -317,7 +317,7 @@ class NewsletterEditPage {
 		}
 
 		$mainPageId = $data['MainPage']->getArticleID();
-		$dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = MediaWikiServices::getInstance()->getConnectionProvider()->getReplicaDatabase();
 		$rows = $dbr->newSelectQueryBuilder()
 			->select( [ 'nl_name', 'nl_main_page_id', 'nl_active' ] )
 			->from( 'nl_newsletters' )

@@ -15,7 +15,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 
 	protected function setUp(): void {
 		parent::setUp();
-		$dbw = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_PRIMARY );
+		$dbw = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
 
 		$rowData = [
 			'nl_name' => 'MyNewsletter',
@@ -30,7 +30,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 	}
 
 	protected function getNewsletterId() {
-		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getConnectionProvider()->getReplicaDatabase();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'nl_id' )
 			->from( 'nl_newsletters' )
@@ -54,7 +54,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getConnectionProvider()->getReplicaDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( [ 'nls_subscriber_id' ] )
 			->from( 'nl_subscriptions' )
@@ -84,7 +84,7 @@ class ApiNewsletterSubscribeTest extends ApiTestCase {
 			]
 		);
 
-		$dbr = $this->getServiceContainer()->getDBLoadBalancer()->getConnection( DB_REPLICA );
+		$dbr = $this->getServiceContainer()->getConnectionProvider()->getReplicaDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( [ 'nls_subscriber_id' ] )
 			->from( 'nl_subscriptions' )

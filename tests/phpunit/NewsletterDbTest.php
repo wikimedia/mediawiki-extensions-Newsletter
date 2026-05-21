@@ -6,9 +6,9 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use PHPUnit\Framework\MockObject\MockObject;
 use Wikimedia\Rdbms\DeleteQueryBuilder;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\InsertQueryBuilder;
-use Wikimedia\Rdbms\LoadBalancer;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\Rdbms\UpdateQueryBuilder;
 
@@ -26,16 +26,10 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		return $this->getMockBuilder( IDatabase::class )->getMock();
 	}
 
-	/**
-	 * @param IDatabase $db
-	 * @return MockObject|LoadBalancer
-	 */
-	private function getMockLoadBalancer( $db ) {
-		$mock = $this->getMockBuilder( LoadBalancer::class )
-			->disableOriginalConstructor()
-			->getMock();
-		$mock->method( 'getConnection' )
-			->willReturn( $db );
+	private function getConnectionProvider( IDatabase $db ): IConnectionProvider {
+		$mock = $this->createMock( IConnectionProvider::class );
+		$mock->method( 'getPrimaryDatabase' )->willReturn( $db );
+		$mock->method( 'getReplicaDatabase' )->willReturn( $db );
 		return $mock;
 	}
 
@@ -87,7 +81,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 		$table->addSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 	}
 
@@ -125,7 +119,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$table->removeSubscription( $this->getTestNewsletter(), [ $user->getId() ] );
 	}
@@ -195,7 +189,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newSelectQueryBuilder' )
 			->willReturn( $sqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		// Add two subscribers before checking subscribers count
 		$table->addSubscription( $this->getTestNewsletter(), [
@@ -230,7 +224,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'affectedRows' )
 			->willReturn( 1 );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->addPublisher( $this->getTestNewsletter(), [ $user->getId() ] );
 		$this->assertTrue( $result );
@@ -258,7 +252,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'affectedRows' )
 			->willReturn( 1 );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->removePublisher( $this->getTestNewsletter(), [ $user->getId() ] );
 		$this->assertTrue( $result );
@@ -290,7 +284,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'insertId' )
 			->willReturn( 1 );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->addNewsletter( $newsletter );
 
@@ -320,7 +314,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 		$table->updateName( $newsletterId, $newName );
 	}
 
@@ -348,7 +342,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 		$table->updateDescription( $newsletterId, $newDescription );
 	}
 
@@ -376,7 +370,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->updateMainPage( $newsletterId, $newMainPage );
 		$this->assertTrue( $result );
@@ -402,7 +396,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newUpdateQueryBuilder' )
 			->willReturn( $uqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$table->deleteNewsletter( $newsletter );
 	}
@@ -442,7 +436,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 				return $uqb;
 			} );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$table->deleteNewsletter( $newsletter );
 		$table->restoreNewsletter( $newsletter );
@@ -477,7 +471,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newSelectQueryBuilder' )
 			->willReturn( $sqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->getNewsletter( $newsletter->getId() );
 		$this->assertEquals( $newsletter, $result );
@@ -512,7 +506,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 			->method( 'newSelectQueryBuilder' )
 			->willReturn( $sqb );
 
-		$table = new NewsletterDb( $this->getMockLoadBalancer( $mockWriteDb ) );
+		$table = new NewsletterDb( $this->getConnectionProvider( $mockWriteDb ) );
 
 		$result = $table->getNewsletterFromName( $newsletter->getName() );
 		$this->assertEquals( $newsletter, $result );

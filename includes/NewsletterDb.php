@@ -7,7 +7,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use stdClass;
 use Wikimedia\Rdbms\DBQueryError;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IResultWrapper;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 
@@ -17,7 +17,9 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
  */
 class NewsletterDb {
 
-	public function __construct( private readonly ILoadBalancer $lb ) {
+	public function __construct(
+		private readonly IConnectionProvider $dbProvider,
+	) {
 	}
 
 	/**
@@ -36,7 +38,7 @@ class NewsletterDb {
 				'nls_subscriber_id' => $userId
 			];
 		}
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->startAtomic( __METHOD__ );
 
 		// Tolerate (silently ignore) if it was already there
@@ -71,7 +73,7 @@ class NewsletterDb {
 			'nls_subscriber_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->newDeleteQueryBuilder()
@@ -114,7 +116,7 @@ class NewsletterDb {
 			];
 		}
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		// Let the user action appear success even if the row is already there.
 		$dbw->newInsertQueryBuilder()
@@ -139,7 +141,7 @@ class NewsletterDb {
 			'nlp_publisher_id' => $userIds
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'nl_publishers' )
@@ -167,7 +169,7 @@ class NewsletterDb {
 			'nl_main_page_id' => $newsletter->getPageId(),
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		try {
 			$dbw->newInsertQueryBuilder()
 				->insertInto( 'nl_newsletters' )
@@ -197,7 +199,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		try {
 			$dbw->newUpdateQueryBuilder()
 				->update( 'nl_newsletters' )
@@ -225,7 +227,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		try {
 			$dbw->newUpdateQueryBuilder()
 				->update( 'nl_newsletters' )
@@ -253,7 +255,7 @@ class NewsletterDb {
 			'nl_id' => $id,
 		];
 
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		try {
 			$dbw->newUpdateQueryBuilder()
 				->update( 'nl_newsletters' )
@@ -272,7 +274,7 @@ class NewsletterDb {
 	 * @param Newsletter $newsletter
 	 */
 	public function deleteNewsletter( Newsletter $newsletter ): void {
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'nl_newsletters' )
 			->set( [ 'nl_active' => 0 ] )
@@ -287,7 +289,7 @@ class NewsletterDb {
 	 * @param Newsletter $newsletter
 	 */
 	public function restoreNewsletter( Newsletter $newsletter ): void {
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'nl_newsletters' )
 			->set( [ 'nl_active' => 1 ] )
@@ -301,7 +303,7 @@ class NewsletterDb {
 	 * @return Newsletter|null null if no newsletter exists with the provided id
 	 */
 	public function getNewsletter( int $id ) {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )
 			->from( 'nl_newsletters' )
@@ -320,7 +322,7 @@ class NewsletterDb {
 	 * @return Newsletter|null
 	 */
 	public function getNewsletterFromName( string $name, bool $active = true ) {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$res = $dbr->newSelectQueryBuilder()
 			->select( [ 'nl_id', 'nl_name', 'nl_desc', 'nl_main_page_id' ] )
 			->from( 'nl_newsletters' )
@@ -336,7 +338,7 @@ class NewsletterDb {
 	 * @return int[]
 	 */
 	public function getPublishersFromID( int $id ): array {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( 'nlp_publisher_id' )
 			->from( 'nl_publishers' )
@@ -352,7 +354,7 @@ class NewsletterDb {
 	 * @return int
 	 */
 	public function getNewsletterSubscribersCount( int $id ): int {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( 'nl_subscriber_count' )
 			->from( 'nl_newsletters' )
@@ -370,7 +372,7 @@ class NewsletterDb {
 	 * @return int[]
 	 */
 	public function getSubscribersFromID( int $id ): array {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		$result = $dbr->newSelectQueryBuilder()
 			->select( 'nls_subscriber_id' )
 			->from( 'nl_subscriptions' )
@@ -388,7 +390,7 @@ class NewsletterDb {
 	 * @return IResultWrapper
 	 */
 	public function newsletterExistsForMainPage( int $mainPageId ) {
-		$dbr = $this->lb->getConnection( DB_REPLICA );
+		$dbr = $this->dbProvider->getReplicaDatabase();
 		return $dbr->newSelectQueryBuilder()
 			->select( [ 'nl_main_page_id', 'nl_active' ] )
 			->from( 'nl_newsletters' )
@@ -418,7 +420,7 @@ class NewsletterDb {
 	 */
 	public function addNewsletterIssue( Newsletter $newsletter, Title $title, User $publisher ) {
 		// Note: the writeDb is used as this is used in the next insert
-		$dbw = $this->lb->getConnection( DB_PRIMARY );
+		$dbw = $this->dbProvider->getPrimaryDatabase();
 		$dbw->startAtomic( __METHOD__ );
 
 		$dbw->newSelectQueryBuilder()

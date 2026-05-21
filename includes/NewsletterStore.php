@@ -31,7 +31,7 @@ class NewsletterStore {
 	public static function getDefaultInstance() {
 		if ( !self::$instance ) {
 			self::$instance = new self(
-				new NewsletterDb( MediaWikiServices::getInstance()->getDBLoadBalancer() ),
+				new NewsletterDb( MediaWikiServices::getInstance()->getConnectionProvider() ),
 				new NewsletterLogger()
 			);
 		}
