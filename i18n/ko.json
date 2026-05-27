@@ -154,7 +154,7 @@
 	"logentry-newsletter-newsletter-removed": "$1님이 $4 뉴스레터를 {{GENDER:$2|삭제했습니다}}",
 	"logentry-newsletter-newsletter-restored": "$1님이 $4 뉴스레터를 {{GENDER:$2|복구했습니다}}",
 	"logentry-newsletter-issue-added": "$1님이 $4 뉴스레터의 $6 새로운 호를 {{GENDER:$2|발행했습니다}}",
-	"log-action-filter-newsletter": "조치 유형:",
+	"log-action-filter-newsletter": "작업 유형:",
 	"log-action-filter-newsletter-publisher-added": "발행자 추가",
 	"log-action-filter-newsletter-publisher-removed": "발행자 삭제",
 	"log-action-filter-newsletter-newsletter-added": "뉴스레터 생성",
