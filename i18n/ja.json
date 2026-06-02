@@ -11,6 +11,7 @@
 			"Siglite3",
 			"Sujiniku",
 			"Suyama",
+			"Tensama0415",
 			"Thibaut120094",
 			"Yusuke1109",
 			"ネイ"
@@ -32,7 +33,7 @@
 	"newsletter-create-confirmation": "新しいニュースレター[[Newsletter:$1|$1]]が登録されました。",
 	"newsletter-create-mainpage-error": "無効なニュースレターメインページが入力されました。もう一度やり直してください",
 	"newsletter-mainpage-non-existent": "ニュースレターのメインページが存在しません。有効な現存するページ名を入力してください。",
-	"newsletter-mainpage-in-use": "既存のニュースレターに同名のメインページがあります。別の名称を入力してください。",
+	"newsletter-mainpage-in-use": "既存のニュースレターに同名のメインページがあります。別のメインページを入力してください。",
 	"newsletter-create-short-description-error": "説明が短すぎます (30文字未満)。もう一度お試しください。",
 	"newsletter-subtitlelinks-list": "ニュースレターの一覧",
 	"newsletter-subtitlelinks-create": "新たなニュースレターを登録",
