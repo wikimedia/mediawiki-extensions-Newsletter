@@ -165,7 +165,7 @@
 	"newsletter-diff-publishersheader": "발행자의 변경 사항:",
 	"newsletter-ch-apierror": "문서 저장 오류: $1",
 	"newsletter-ch-tojsonerror": "저장 중 JSON을 직렬화 하는 과정에서 오류 발생.",
-	"newsletter-orphan-revisions": "실제로 삭제된 뉴스레터에 대응되지 않은 판은 삭제를 취소할 수 없습니다.",
+	"newsletter-orphan-revisions": "실제로 삭제된 뉴스레터에 대응되지 않은 판은 복구할 수 없습니다.",
 	"namespaceinfo-description-ns5500": "뉴스레터 내용을 포함하는 이름공간",
 	"namespaceinfo-description-ns5501": "뉴스레터 이름공간에 속하는 뉴스레터의 토론 문서"
 }
