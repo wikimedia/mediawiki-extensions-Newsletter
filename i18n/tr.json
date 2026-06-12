@@ -113,6 +113,7 @@
 	"newsletter-notification-flyout": "$2, $1 için yeni bir sayı {{GENDER:$3|duyurdu}}.",
 	"newsletter-notification-link-text-new-issue": "Yeni sorunu görüntüle",
 	"newsletter-notification-link-text-view-newsletter": "Bültenini görüntüle",
+	"newsletter-notification-link-text-unsubscribe-newsletter": "Abonelikten çık",
 	"newsletter-email-subject": "$1 için yeni bir sayı duyuruldu.",
 	"newsletter-email-batch-body": "$2, $1 için yeni bir sayı {{GENDER:$3|duyurdu}}.",
 	"newsletter-header-name": "Ad",
