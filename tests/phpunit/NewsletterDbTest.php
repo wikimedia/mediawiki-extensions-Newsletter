@@ -43,7 +43,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 	 * @return Newsletter
 	 */
 	private function getTestNewsletter() {
-		$mainPage = Title::newFromText( 'Test content' );
+		$mainPage = Title::makeTitle( NS_MAIN, 'Test content' );
 
 		return new Newsletter(
 			1,
@@ -360,7 +360,7 @@ class NewsletterDbTest extends PHPUnit\Framework\TestCase {
 		$newsletter = $this->getTestNewsletter();
 		$newsletterId = $newsletter->getId();
 
-		$mainpage = Title::newFromText( 'UTPage' );
+		$mainpage = Title::makeTitle( NS_MAIN, 'UTPage' );
 		$newMainPage = $mainpage->getArticleID();
 
 		$uqb = $this->createMock( UpdateQueryBuilder::class );

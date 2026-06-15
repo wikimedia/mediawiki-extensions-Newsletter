@@ -11,7 +11,6 @@ class NewsletterContentHandlerTest extends MediaWikiIntegrationTestCase {
 
 	public function testGetParserOutput() {
 		$expectedText = 'Foo';
-		$newsletterTitle = "Newsletter:Test";
 		$mainpage = $this->getExistingTestPage()->getTitle()->getPrefixedText();
 		$publisher = $this->getTestSysop()->getUser()->getName();
 		$text = '{
@@ -21,7 +20,7 @@ class NewsletterContentHandlerTest extends MediaWikiIntegrationTestCase {
 				"' . $publisher . '"
 			]
 		}';
-		$title = Title::newFromText( $newsletterTitle );
+		$title = Title::makeTitle( NS_NEWSLETTER, 'Test' );
 		$content = new NewsletterContent( $text );
 
 		$contentRenderer = $this->getServiceContainer()->getContentRenderer();

@@ -31,7 +31,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		$input = [
 			'name' => 'Test Newsletter',
 			'description' => 'Test description',
-			'mainpage' => Title::newFromText( 'TestPage' )->getBaseText()
+			'mainpage' => 'TestPage'
 		];
 
 		// Mock the submission of this text
@@ -47,7 +47,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		$input = [
 			'name' => 'Test Newsletter',
 			'description' => 'This newsletter has a nonexistent main page',
-			'mainpage' => Title::newFromText( 'BdaMianPage' )->getBaseText()
+			'mainpage' => 'BdaMianPage'
 		];
 
 		// Mock submission of bad main page
@@ -105,7 +105,7 @@ class SpecialNewsletterCreateTest extends SpecialPageTestBase {
 		// that generates a log entry which requires a named or temp account actor
 		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
 		$newsletterTitle = Title::makeTitleSafe( NS_NEWSLETTER, 'Duplicated Newsletter' );
-		$firstMainPage = Title::newFromText( 'Test Page' );
+		$firstMainPage = Title::makeTitle( NS_MAIN, 'Test Page' );
 		$store = NewsletterStore::getDefaultInstance();
 
 		$firstNewsletter = new Newsletter( 0,

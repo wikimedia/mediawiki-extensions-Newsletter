@@ -67,7 +67,7 @@ class NewsletterAPIEditTest extends ApiTestCase {
 	}
 
 	private function createNewsletter() {
-		$mainPageId = Title::newFromText( "UTPage" )->getArticleId();
+		$mainPageId = Title::makeTitle( NS_MAIN, 'UTPage' )->getArticleId();
 		$newsletter = new Newsletter( 0, 'Test', self::DESCRIPTION, $mainPageId );
 		NewsletterStore::getDefaultInstance()->addNewsletter( $newsletter );
 
