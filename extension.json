@@ -97,7 +97,14 @@
 		"NewsletterNamespaces": "Newsletter.namespaces.php"
 	},
 	"ContentHandlers": {
-		"NewsletterContent": "MediaWiki\\Extension\\Newsletter\\Content\\NewsletterContentHandler"
+		"NewsletterContent": {
+			"class": "MediaWiki\\Extension\\Newsletter\\Content\\NewsletterContentHandler",
+			"services": [
+				"LinkBatchFactory",
+				"LinkRenderer",
+				"UserFactory"
+			]
+		}
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\Newsletter\\": "includes/"

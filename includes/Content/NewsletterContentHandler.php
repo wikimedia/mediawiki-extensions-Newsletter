@@ -17,9 +17,10 @@ use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Json\FormatJson;
 use MediaWiki\Linker\Linker;
+use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Logging\LogEventsList;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Parser\ParserOutput;
 use MediaWiki\Request\DerivativeRequest;
@@ -28,6 +29,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserArray;
+use MediaWiki\User\UserFactory;
 use OOUI\ButtonGroupWidget;
 use OOUI\ButtonWidget;
 
@@ -43,10 +45,12 @@ class NewsletterContentHandler extends JsonContentHandler {
 	private const NEWSLETTER_UNSUBSCRIBE = 'unsubscribe';
 	private const NEWSLETTER_SUBSCRIBERS = 'subscribers';
 
-	/**
-	 * @param string $modelId
-	 */
-	public function __construct( $modelId = 'NewsletterContent' ) {
+	public function __construct(
+		string $modelId,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly UserFactory $userFactory,
+	) {
 		parent::__construct( $modelId );
 	}
 
@@ -149,7 +153,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 				'mainpage' => [
 					'type' => 'info',
 					'label-message' => 'newsletter-view-mainpage',
-					'default' => MediaWikiServices::getInstance()->getLinkRenderer()->makeLink( $mainTitle ),
+					'default' => $this->linkRenderer->makeLink( $mainTitle ),
 					'cssclass' => 'newsletter-headered-element',
 					'raw' => true,
 				],
@@ -361,8 +365,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 				]
 			);
 		}
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
-		if ( $newsletter->canManage( $userFactory->newFromUserIdentity( $user ) ) ) {
+		if ( $newsletter->canManage( $this->userFactory->newFromUserIdentity( $user ) ) ) {
 			$buttons[] = new ButtonWidget(
 				[
 					'label' => wfMessage( 'newsletter-manage-button' )->text(),
@@ -421,7 +424,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 * @param UserArray $users
 	 */
 	private function doLinkCacheQuery( UserArray $users ) {
-		$batch = MediaWikiServices::getInstance()->getLinkBatchFactory()->newLinkBatch();
+		$batch = $this->linkBatchFactory->newLinkBatch();
 		foreach ( $users as $user ) {
 			$batch->addObj( $user->getUserPage() );
 			$batch->addObj( $user->getTalkPage() );
@@ -455,8 +458,7 @@ class NewsletterContentHandler extends JsonContentHandler {
 	 */
 	private function setupNavigationLinks( Newsletter $newsletter, ParserOptions $options ) {
 		$context = RequestContext::getMain();
-		$linkRenderer = MediaWikiServices::getInstance()->getLinkRenderer();
-		$listLink = $linkRenderer->makeKnownLink(
+		$listLink = $this->linkRenderer->makeKnownLink(
 			SpecialPage::getTitleFor( 'Newsletters' ),
 			$context->msg( 'backlinksubtitle',
 				$context->msg( 'newsletter-subtitlelinks-list' )->text()
