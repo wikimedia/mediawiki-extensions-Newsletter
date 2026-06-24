@@ -31,9 +31,6 @@ class NewsletterEditPage {
 	/** @var IContextSource */
 	protected $context;
 
-	/** @var bool */
-	protected $readOnly = false;
-
 	/** @var Newsletter|null */
 	protected $newsletter;
 
@@ -93,16 +90,6 @@ class NewsletterEditPage {
 			);
 			$this->getForm()->show();
 		}
-	}
-
-	/**
-	 * We need the escaped newsletter name several times so
-	 * extract the method here.
-	 *
-	 * @return string
-	 */
-	protected function getEscapedName() {
-		return htmlspecialchars( $this->newsletter->getName() );
 	}
 
 	/**
@@ -216,7 +203,6 @@ class NewsletterEditPage {
 				$fields['MainPage']['default'] = $content->getMainPage()->getPrefixedText();
 				$fields['Description']['default'] = $content->getDescription();
 				// HTMLUsersMultiselectField expects a string, so we implode here
-				$publisherNames = $content->getPublishers();
 				$fields['Publishers']['default'] = implode( "\n", $publishersNames );
 			}
 		}
@@ -392,8 +378,6 @@ class NewsletterEditPage {
 			// Invalid input was entered
 			return $validation;
 		}
-
-		$newsletterId = $this->newsletter->getId();
 
 		$title = Title::makeTitleSafe( NS_NEWSLETTER, $this->newsletter->getName() );
 

@@ -20,7 +20,6 @@ class EchoNewsletterSubscribedPresentationModel extends BaseNewsletterPresentati
 
 	/** @inheritDoc */
 	public function getHeaderMessage() {
-		[ $agentFormattedName, $agentGenderName ] = $this->getAgentForOutput();
 		$msg = $this->msg( 'newsletter-notification-subscribed' );
 		$msg->params( $this->getNewsletterName() );
 		return $msg;
