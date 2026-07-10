@@ -125,7 +125,7 @@
 	"action-newsletter-create": "뉴스레터 등록",
 	"right-newsletter-delete": "뉴스레터 삭제",
 	"action-newsletter-delete": "뉴스레터 삭제",
-	"right-newsletter-manage": "뉴스레터의 발행자나 구독자를 추가하거나 삭제",
+	"right-newsletter-manage": "뉴스레터의 발행자나 구독자를 추가하거나 제거",
 	"action-newsletter-manage": "뉴스레터 관리",
 	"right-newsletter-restore": "뉴스레터 복구",
 	"action-newsletter-restore": "뉴스레터 복구",
