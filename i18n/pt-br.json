@@ -7,7 +7,8 @@
 			"Guilhermemau",
 			"Iagocds",
 			"Luk3",
-			"Rukasuoribera"
+			"Rukasuoribera",
+			"NenhumaFênix"
 		]
 	},
 	"newsletter-extension-desc": "Permite aos usuários publicar e assinar os boletins informativos",
@@ -126,8 +127,8 @@
 	"right-newsletter-restore": "Restaurar um boletim informativo",
 	"action-newsletter-restore": "restaurar um boletim informativo",
 	"notification-header-newsletter-announce": "$1 {{GENDER:$2|anunciou}} uma nova edição de $3.",
-	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Você}} foi {{GENDER:$3|adicionado como editor|adicionada como editora}} do boletim informativo \"$1\".",
-	"notification-header-newsletter-delpublisher": "Foi {{GENDER:$2|removido como editor|removida como editora}}{{GENDER:$3|}} do boletim informativo \"$1\".",
+	"notification-header-newsletter-newpublisher": "{{GENDER:$2|Você}} foi {{GENDER:$2|adicionado como editor|adicionada como editora|adicionado(a) como editor(a)}} do boletim informativo \"$1\".",
+	"notification-header-newsletter-delpublisher": "Foi {{GENDER:$2|removido como editor|removida como editora|removido(a) como editor(a)}}{{GENDER:$3|}} do boletim informativo \"$1\".",
 	"newsletter-list-intro": "Esta é uma lista de boletins informativos registrados nesta wiki. Assine um boletim informativo para receber uma notificação quando uma nova edição for anunciada. Você receberá notificações via web ou e-mail, de acordo com suas [[Special:Preferences#mw-prefsection-echo|preferências]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Entre]] para se inscrever em um boletim informativo e receber notificações quando uma nova edição for anunciada.",
 	"newsletter-list-table": "Filtrar por:",

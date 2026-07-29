@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"apihelp-newslettersubscribe-summary": "يو خبرليک کې گډون کول يا پرېښودل.",
+	"apihelp-newslettersubscribe-param-id": "د هغه خبرليک پېژند چې گډون يې بايد بدل شي.",
+	"apihelp-newslettersubscribe-param-do": "چاره چې بايد ترسره شي. بايد يا <kbd>subscribe</kbd> وي يا <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "له ۱ پېژند سره خبرليک کې گډون کول.",
+	"apihelp-newslettersubscribe-example-2": "له ۲ پېژند سره خبرليک کې گډون پرېښودل.",
+	"apihelp-newslettermanage-summary": "خبرليک مهارول.",
+	"apihelp-newslettermanage-param-id": "خبرليک پېژند چې بايد مهار شي.",
+	"apihelp-newslettermanage-param-do": "چاره چې بايد ترسره شي. بايد يا <kbd>addpublisher</kbd> وي يا <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "د خپروونکي کارن پېژند چې بايد مهار شي.",
+	"apihelp-newslettermanage-example-1": "د ۱ پېژند خبرليک ته د ۳  پېژند لرونکی کارن د خپروونکي په توگه ورگډول.",
+	"apihelp-newslettermanage-example-2": "د ۲ پېژند لرونکي خبرليک نه د ۵ پېژند لرونکي کارن د خپروونکي په توگه لرې‌کول.",
+	"newsletter-api-error-notfound": "خبرليک شتون نلري",
+	"newsletter-api-error-nopermissions": "تاسې د دې خبرليک د مهارولو پرېښله نلرئ.",
+	"newsletter-api-error-nocreate": "تاسې د نوو خبرليکونو د جوړولو پرېښله نلرئ.",
+	"newsletter-api-error-invalidpublisher-registered": "خپروونکی نوم‌ليکلی کارن نه دی.",
+	"newsletter-api-error-subscribe-notloggedin": "خبرليکونو کې د گډون کولو لپاره تاسو بايد ننوتلي ياست."
+}

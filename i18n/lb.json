@@ -13,6 +13,7 @@
 	"newsletter-desc": "Beschreiwung",
 	"newsletter-title": "Wikisäit,mat INformatiounen iwwer d'Newsletter",
 	"newsletter-exist-error": "Et gëtt schonn eng Newsletter mam Numm \"$1\". Probéiert wgl. nach eng Kéier mat engem aneren Numm.",
+	"newsletter-invalid-name": "Den Numm, deen Dir fir den Newsletter aginn hutt, ass ongülteg. Probéiert wgl. nach eng Kéier.",
 	"newsletter-create-submit": "Newsletter registéieren",
 	"newsletter-create-editsummary": "Eng nei Newsletter registréieren",
 	"newsletter-create-confirmation": "Eng nei Newsletter: [[Newsletter:$1|$1]] gouf registréiert.",
