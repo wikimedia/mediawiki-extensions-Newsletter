@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"apihelp-newslettersubscribe-summary": "Iska diiwaangeli ama ka bax diiwaangelinta wargeys.",
+	"apihelp-newslettersubscribe-param-id": "Aqoonsiga wargeyska ee diiwaangelintiisa la beddelayo.",
+	"apihelp-newslettersubscribe-param-do": "Falka la samaynayo. Waa inuu noqdaa midkood <kbd>subscribe</kbd> ama <kbd>unsubscribe</kbd>.",
+	"apihelp-newslettersubscribe-example-1": "Iska diiwaangeli wargeyska leh aqoonsiga 1.",
+	"apihelp-newslettersubscribe-example-2": "Ka bax diiwaangelinta wargeyska leh aqoonsiga 2.",
+	"apihelp-newslettermanage-summary": "Maamul wargeyska.",
+	"apihelp-newslettermanage-param-id": "Aqoonsiga wargeyska la maamulayo.",
+	"apihelp-newslettermanage-param-do": "Falka la samaynayo. Waa inuu noqdaa midkood <kbd>addpublisher</kbd> ama <kbd>removepublisher</kbd>.",
+	"apihelp-newslettermanage-param-publisher": "Aqoonsiga isticmaalaha ee daabacaha la maamulayo.",
+	"apihelp-newslettermanage-example-1": "Ku dar daabace leh aqoonsiga isticmaalaha 3 wargeyska leh aqoonsiga 1.",
+	"apihelp-newslettermanage-example-2": "Ka saar daabacaha leh aqoonsiga isticmaalaha 5 wargeyska leh aqoonsiga 2.",
+	"newsletter-api-error-notfound": "Wargeysku ma jiro",
+	"newsletter-api-error-nopermissions": "Ma haysatid oggolaansho aad ku maamusho wargeyskan.",
+	"newsletter-api-error-nocreate": "Ma haysatid oggolaansho aad ku abuurto wargeysyo.",
+	"newsletter-api-error-invalidpublisher-registered": "Daabacuhu ma aha isticmaale diiwaangashan.",
+	"newsletter-api-error-subscribe-notloggedin": "Waa inaad soo gashaa si aad iska diiwaangeliso wargeysyada."
+}
