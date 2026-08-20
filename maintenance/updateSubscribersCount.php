@@ -20,7 +20,7 @@ class UpdateSubscribersCount extends Maintenance {
 	}
 
 	public function execute() {
-		$dbw = $this->getDB( DB_PRIMARY );
+		$dbw = $this->getPrimaryDB();
 		$offset = 0;
 
 		while ( true ) {
