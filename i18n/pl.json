@@ -22,7 +22,7 @@
 	"newsletter-oldrev-undo-error-title": "Ta operacja jest niedozwolona.",
 	"newsletter-oldrev-undo-error-body": "Wycofywanie poprzedniej wersji nie jest wspierane przez rozszerzenie Newsletter. Zamiast tego wycofaj ostatnią wersję.",
 	"newsletter-input-required": "Wymagane pola nie zostały wypełnione. Spróbuj jeszcze raz.",
-	"newsletter-invalid-name": "Nazwa newslettera, którą podałeś jest nieprawidłowa. Spróbuj jeszcze raz.",
+	"newsletter-invalid-name": "Podana przez Ciebie nazwa newslettera jest nieprawidłowa. Spróbuj jeszcze raz.",
 	"newslettercreate": "Zarejestruj newsletter",
 	"newslettercreate-text": "Ta strona umożliwia Ci rejestrację nowego newslettera. Po utworzeniu zostaniesz dodany jako publikujący oraz subskrybujący ten newsletter. Wszystkie pola są wymagane.",
 	"newsletter-create-submit": "Zarejestruj newsletter",
