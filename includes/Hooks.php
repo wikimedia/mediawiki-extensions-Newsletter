@@ -16,7 +16,6 @@ use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterPublisherRemovedP
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterSubscribedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUnsubscribedPresentationModel;
 use MediaWiki\Extension\Newsletter\Notifications\EchoNewsletterUserLocator;
-use MediaWiki\Extension\Notifications\UserLocator;
 use MediaWiki\Hook\EditFilterMergedContentHook;
 use MediaWiki\Hook\TitleMoveHook;
 use MediaWiki\Page\Article;
@@ -103,9 +102,6 @@ class Hooks implements
 				'message' => 'newsletter-notification-link-text-new-publisher',
 				'destination' => 'newsletter'
 			],
-			'user-locators' => [
-				[ [ UserLocator::class, 'locateFromEventExtra' ], [ 'new-publishers-id' ] ]
-			],
 			'presentation-model' => EchoNewsletterPublisherAddedPresentationModel::class,
 			'title-message' => 'newsletter-notification-new-publisher-title',
 			'title-params' => [ 'newsletter-name', 'agent' ],
@@ -117,9 +113,6 @@ class Hooks implements
 			'primary-link' => [
 				'message' => 'newsletter-notification-link-text-del-publisher',
 				'destination' => 'newsletter'
-			],
-			'user-locators' => [
-				[ [ UserLocator::class, 'locateFromEventExtra' ], [ 'del-publishers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterPublisherRemovedPresentationModel::class,
 			'title-message' => 'newsletter-notification-del-publisher-title',
@@ -133,9 +126,6 @@ class Hooks implements
 				'message' => 'newsletter-notification-subscribed',
 				'destination' => 'newsletter'
 			],
-			'user-locators' => [
-				[ [ UserLocator::class, 'locateFromEventExtra' ], [ 'new-subscribers-id' ] ]
-			],
 			'presentation-model' => EchoNewsletterSubscribedPresentationModel::class,
 			'title-message' => 'newsletter-notification-subscribed',
 			'title-params' => [ 'newsletter-name' ],
@@ -145,9 +135,6 @@ class Hooks implements
 			'primary-link' => [
 				'message' => 'newsletter-notification-unsubscribed',
 				'destination' => 'newsletter'
-			],
-			'user-locators' => [
-				[ [ UserLocator::class, 'locateFromEventExtra' ], [ 'removed-subscribers-id' ] ]
 			],
 			'presentation-model' => EchoNewsletterUnsubscribedPresentationModel::class,
 			'title-message' => 'newsletter-notification-unsubscribed',

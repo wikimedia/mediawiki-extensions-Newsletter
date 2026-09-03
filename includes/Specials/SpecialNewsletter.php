@@ -7,11 +7,14 @@ use MediaWiki\EditPage\SpamChecker;
 use MediaWiki\Exception\ThrottledError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\Newsletter\Newsletter;
+use MediaWiki\Extension\Newsletter\NewsletterAgentNotification;
 use MediaWiki\Extension\Newsletter\NewsletterStore;
-use MediaWiki\Extension\Notifications\Model\Event;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Notification\NotificationService;
+use MediaWiki\Notification\RecipientSet;
+use MediaWiki\Notification\Types\WikiNotification;
 use MediaWiki\Permissions\PermissionStatus;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -20,6 +23,7 @@ use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserArray;
+use MediaWiki\User\UserFactory;
 use RuntimeException;
 
 /**
@@ -44,6 +48,8 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 
 	public function __construct(
 		private readonly SpamChecker $spamChecker,
+		private readonly NotificationService $notificationService,
+		private readonly UserFactory $userFactory,
 	) {
 		parent::__construct( 'Newsletter' );
 	}
@@ -408,19 +414,17 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 			return Status::newFatal( 'newsletter-announce-failure' );
 		}
 
-		Event::create(
-			[
-				'type' => 'newsletter-announce',
-				'title' => $title,
-				'extra' => [
-					'newsletter-name' => $this->newsletter->getName(),
-					'newsletter-id' => $this->newsletter->getId(),
-					'section-text' => $summary,
-					// Default to '' if no fragment is given
-					'title-fragment' => $title->getFragment(),
-				],
-				'agent' => $user,
-			]
+		$this->notificationService->notify(
+			new WikiNotification( 'newsletter-announce', $title, $user, [
+				'newsletter-name' => $this->newsletter->getName(),
+				'newsletter-id' => $this->newsletter->getId(),
+				'section-text' => $summary,
+				// Default to '' if no fragment is given
+				'title-fragment' => $title->getFragment(),
+			] ),
+			// The actual recipients (newsletter subscribers) are resolved by Echo via the
+			// notification type's own user-locators config.
+			new RecipientSet( [] )
 		);
 
 		// Yay!
@@ -513,29 +517,27 @@ class SpecialNewsletter extends UnlistedSpecialPage {
 				throw new ConfigException( 'Echo extension is not installed.' );
 			}
 			if ( $added ) {
-				Event::create(
-					[
-						'type' => 'newsletter-subscribed',
-						'extra' => [
-							'newsletter-name' => $this->newsletter->getName(),
-							'new-subscribers-id' => $added,
-							'newsletter-id' => $this->newsletter->getId()
-						],
-						'agent' => $this->getUser()
-					]
+				$this->notificationService->notify(
+					new NewsletterAgentNotification( 'newsletter-subscribed', $this->getUser(), [
+						'newsletter-name' => $this->newsletter->getName(),
+						'newsletter-id' => $this->newsletter->getId()
+					] ),
+					new RecipientSet( array_map(
+						fn ( $userId ) => $this->userFactory->newFromId( $userId ),
+						$added
+					) )
 				);
 			}
 			if ( $removed ) {
-				Event::create(
-					[
-						'type' => 'newsletter-unsubscribed',
-						'extra' => [
-							'newsletter-name' => $this->newsletter->getName(),
-							'removed-subscribers-id' => $removed,
-							'newsletter-id' => $this->newsletter->getId()
-						],
-						'agent' => $this->getUser()
-					]
+				$this->notificationService->notify(
+					new NewsletterAgentNotification( 'newsletter-unsubscribed', $this->getUser(), [
+						'newsletter-name' => $this->newsletter->getName(),
+						'newsletter-id' => $this->newsletter->getId()
+					] ),
+					new RecipientSet( array_map(
+						fn ( $userId ) => $this->userFactory->newFromId( $userId ),
+						$removed
+					) )
 				);
 			}
 			$out->addWikiMsg( 'newsletter-edit-subscribers-success' );

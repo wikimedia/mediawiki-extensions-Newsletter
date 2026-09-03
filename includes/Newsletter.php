@@ -2,7 +2,8 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
-use MediaWiki\Extension\Notifications\Model\Event;
+use MediaWiki\MediaWikiServices;
+use MediaWiki\Notification\RecipientSet;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
@@ -260,22 +261,30 @@ class Newsletter {
 	 * @param string $event select between added/removed
 	 */
 	public function notifyPublishers( array $affectedUsers, User $agent, $event ) {
-		$notification = [
-			'extra' => [
-				'newsletter-name' => $this->getName(),
-				'newsletter-id' => $this->getId()
-			],
-			'agent' => $agent
+		$extra = [
+			'newsletter-name' => $this->getName(),
+			'newsletter-id' => $this->getId()
 		];
 
 		if ( $event === self::NEWSLETTER_PUBLISHERS_ADDED ) {
-			$notification['type'] = 'newsletter-newpublisher';
-			$notification['extra']['new-publishers-id'] = $affectedUsers;
+			$type = 'newsletter-newpublisher';
+			$extra['new-publishers-id'] = $affectedUsers;
 		} elseif ( $event === self::NEWSLETTER_PUBLISHERS_REMOVED ) {
-			$notification['type'] = 'newsletter-delpublisher';
-			$notification['extra']['del-publishers-id'] = $affectedUsers;
+			$type = 'newsletter-delpublisher';
+			$extra['del-publishers-id'] = $affectedUsers;
+		} else {
+			return;
 		}
-		Event::create( $notification );
+
+		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+		$recipients = array_map(
+			static fn ( $userId ) => $userFactory->newFromId( $userId ),
+			$affectedUsers
+		);
+		MediaWikiServices::getInstance()->getNotificationService()->notify(
+			new NewsletterAgentNotification( $type, $agent, $extra ),
+			new RecipientSet( $recipients )
+		);
 	}
 
 }

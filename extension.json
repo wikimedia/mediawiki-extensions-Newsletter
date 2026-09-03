@@ -52,7 +52,9 @@
 		"Newsletter": {
 			"class": "MediaWiki\\Extension\\Newsletter\\Specials\\SpecialNewsletter",
 			"services": [
-				"SpamChecker"
+				"SpamChecker",
+				"NotificationService",
+				"UserFactory"
 			]
 		}
 	},
