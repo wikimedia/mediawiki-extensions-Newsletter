@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Newsletter;
 
+use InvalidArgumentException;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Notification\RecipientSet;
 use MediaWiki\Permissions\Authority;
@@ -273,7 +274,7 @@ class Newsletter {
 			$type = 'newsletter-delpublisher';
 			$extra['del-publishers-id'] = $affectedUsers;
 		} else {
-			return;
+			throw new InvalidArgumentException( "Unknown publisher event: $event" );
 		}
 
 		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
