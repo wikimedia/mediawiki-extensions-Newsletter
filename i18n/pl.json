@@ -133,7 +133,7 @@
 	"notification-header-newsletter-delpublisher": "{{GENDER:$2|Zostałeś usunięty|Zostałaś usunięta|Usunięto Cię}} z grona {{GENDER:$3|wydawców}} newslettera „$1”.",
 	"newsletter-list-intro": "To jest lista newsletterów zarejestrowanych na tej wiki. Możesz zasubskrybować newsletter aby otrzymywać powiadomienia o nowych wydarzeniach. Powiadomienia mogą być otrzymywane za pośrednictwem e-maila lub w przeglądarce, w zależności od twoich [[Special:Preferences#mw-prefsection-echo|preferencji]].",
 	"newsletter-list-intro-not-logged-in": "[[Special:UserLogin|Zaloguj się]] aby zasubskrybować newsletter i otrzymywać powiadomienia o nowych wydarzeniach.",
-	"newsletter-list-table": "Posortuj według:",
+	"newsletter-list-table": "Filtruj:",
 	"newsletter-list-option-all": "Wszystkie newslettery",
 	"newsletter-list-option-subscribed": "Newslettery, które subskrybuję",
 	"newsletter-list-option-unsubscribed": "Newslettery, których nie subskrybuję",
