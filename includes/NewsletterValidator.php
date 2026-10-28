@@ -14,14 +14,14 @@ class NewsletterValidator {
 	private $data;
 
 	/** @var string[] */
-	private static $requiredDataOnCreate = [
+	private const REQUIRED_DATA_ON_CREATE = [
 		'Name',
 		'Description',
 		'MainPage',
 	];
 
 	/** @var string[] */
-	private static $requiredDataOnEdit = [
+	private const REQUIRED_DATA_ON_EDIT = [
 		'Description',
 		'MainPage',
 	];
@@ -40,7 +40,7 @@ class NewsletterValidator {
 	 * @return Status fatal if invalid, good otherwise
 	 */
 	public function validate( $new ) {
-		$requiredFields = $new ? self::$requiredDataOnCreate : self::$requiredDataOnEdit;
+		$requiredFields = $new ? self::REQUIRED_DATA_ON_CREATE : self::REQUIRED_DATA_ON_EDIT;
 		// Check whether required fields are not empty
 		foreach ( $requiredFields as $field ) {
 			if ( !isset( $this->data[ $field ] ) || trim( $this->data[ $field ] ) === '' ) {
