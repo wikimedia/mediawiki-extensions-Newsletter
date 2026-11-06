@@ -6,6 +6,7 @@
 			"Ebraminio",
 			"GMozafarian",
 			"Jeeputer",
+			"LProfo",
 			"Ladsgroup",
 			"Reza1615"
 		]
@@ -95,7 +96,7 @@
 	"action-newsletter-restore": "احیای یک خبرنامه",
 	"notification-header-newsletter-announce": "$1 یک شماره جدید از $3 را {{GENDER:$2|اعلان کرده است}}.",
 	"newsletter-list-table": "فیلتر توسط:",
-	"newsletter-list-option-all": "همه خبرنامه‌ها",
+	"newsletter-list-option-all": "همهٔ خبرنامه‌ها",
 	"newsletter-list-option-subscribed": "خبرنامه‌هایی که به آن مشترک هستم",
 	"newsletter-list-option-unsubscribed": "خبرنامه‌هایی که من به آن مشترک نیستم",
 	"newsletter-list-go-button": "برو",
