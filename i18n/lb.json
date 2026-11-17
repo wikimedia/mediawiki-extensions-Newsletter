@@ -46,7 +46,7 @@
 	"newsletter-do-subscribe": "Op dës Newsletter abonéieren",
 	"newsletter-subscribe-fail": "D'Newsletter „$1“ konnt net abonéiert ginn, well Dir se schonn abonéiert hutt.",
 	"newsletter-subscribe-error": "Feeler  beim Abonnéiere vun der Newsletter.",
-	"newsletter-subscribe-ip-notallowed": "Loggt Iech wgl. a fir eng Newsletter z'abonnéieren.",
+	"newsletter-subscribe-ip-notallowed": "Loggt Iech wgl. an, fir eng Newsletter z'abonnéieren.",
 	"newsletter-unsubscribe-success": "Dir sidd net méi op „$1“ abonéiert.",
 	"newsletter-unsubscribe-error": "Feeler beim Ofbestelle vun der Newsletter.",
 	"newsletter-subscribe-section": "Newsletteren abonéieren",
