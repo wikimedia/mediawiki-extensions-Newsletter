@@ -1,8 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
+			"AF1011",
 			"Arief"
 		]
 	},
-	"newsletter-email-subject": "Masalah baru $1 telah diumumkan."
+	"newsletter-email-subject": "Masalah baru $1 telah diumumkan.",
+	"log-action-filter-newsletter": "Jenis tindakan:",
+	"log-action-filter-newsletter-publisher-added": "Penambahan penerbit",
+	"log-action-filter-newsletter-publisher-removed": "Penghapusan penerbit",
+	"log-action-filter-newsletter-newsletter-added": "Pembuatan buletin",
+	"log-action-filter-newsletter-newsletter-removed": "Penghapusan buletin",
+	"log-action-filter-newsletter-issue-added": "Pemberitahuan isu Baru"
 }
